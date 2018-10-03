@@ -17,9 +17,8 @@ various ways.
 
 Importantly, these functions combine and are designed to integrate
 smoothly with existing processing tools.  This includes `TORTOISE
-<https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_
-for processing diffusion weighted (DW) MRI data.  It also uses
-``dcm2niix`` from `mricron
+<https://tortoise.nibib.nih.gov>`_ for processing diffusion weighted
+(DW) MRI data.  It also uses ``dcm2niix`` from `mricron
 <http://people.cas.sc.edu/rorden/mricron/dcm2nii.html>`_ (though,
 conveniently, this is now distributed within AFNI itself, as
 ``dcm2niix_afni``-- thanks, C Rorden!) for converting DICOM files to
@@ -49,13 +48,12 @@ pipeline, the major stages can be described as follows:
 * **Preprocessing.** We then provide a brief set of steps for using
   the TORTOISE GUI to process your DWI data. Note, we don't maintain
   the TORTOISE tools, we just use them a lot; please consult with the
-  real `TORTOISE
-  <https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_
-  gurus for processing, and take everything here with a grain of
-  salt. We describe some default usages, but special cases (infant,
-  pediatric, non-typical brain structure, non-human brains, etc.)
-  should *really* involve the TORTOISE gurus.  We also describe
-  running FreeSurfer and converting volumes to AFNI/SUMA format.
+  real `TORTOISE <https://tortoise.nibib.nih.gov>`_ gurus for
+  processing, and take everything here with a grain of salt. We
+  describe some default usages, but special cases (infant, pediatric,
+  non-typical brain structure, non-human brains, etc.)  should
+  *really* involve the TORTOISE gurus.  We also describe running
+  FreeSurfer and converting volumes to AFNI/SUMA format.
 
 * **Post-preprocessing.** We then show simple steps for tensor fitting
   and parameter estimation, as well as basic whole brain tracking for
@@ -106,6 +104,10 @@ suggestions.*
 TORTOISE and DWIs
 -----------------
 
+.. old TORT website:
+
+   https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE
+
 Diffusion weighted MRI data can be greatly affected by a large number
 of artifacts.  The most (in)famous are probably subject motion, eddy
 current distortion and EPI distortion (B0 inhomogeneity).  Trickiness
@@ -115,13 +117,11 @@ Trying to manage them is serious business, and a combination of
 thoughtful study design and careful data acquisition is as important
 (if not more so) than any computational processing afterwards.
 
-`TORTOISE (Pierpaoli et al., 2010)
-<https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_ is
-a very effective retrospective processing tool for acquired DWIs, and
-it is publicly available from the NIH.  As noted on their `webpage
-<https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_,
-there are two main tools in TORTOISE for corrective preprocessing of
-diffusion data:
+`TORTOISE (Pierpaoli et al., 2010) <https://tortoise.nibib.nih.gov>`_
+is a very effective retrospective processing tool for acquired DWIs,
+and it is publicly available from the NIH.  As noted on their `webpage
+<https://tortoise.nibib.nih.gov>`_, there are two main tools in
+TORTOISE for corrective preprocessing of diffusion data:
 
     * ``DIFFPREP`` - software for image resampling, motion, eddy
       current distortion, and some EPI distortion correction using a

@@ -25,11 +25,10 @@ question, "Are my data clean enough to be appropriate for analysis
 *X*?" depends on what the details and assumptions of that testing are.
 
 These major steps are performed using `the TORTOISE tools
-<https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_,
-which are also freely available from the NIH (thanks, taxpayers!).
-Here, we describe briefly how we use ``DIFFPREP`` and ``DR_BUDDI`` in
-TORTOISE v3.\* (no description of ``DIFF_CALC``; we perform fitting
-with AFNI-FATCAT tools).  
+<https://tortoise.nibib.nih.gov>`_, which are also freely available
+from the NIH (thanks, taxpayers!).  Here, we describe briefly how we
+use ``DIFFPREP`` and ``DR_BUDDI`` in TORTOISE v3.\* (no description of
+``DIFF_CALC``; we perform fitting with AFNI-FATCAT tools).
 
 The data set used here has the following
 characteristics:
