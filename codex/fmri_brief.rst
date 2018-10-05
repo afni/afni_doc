@@ -36,3 +36,6 @@ Publications with example scripts
 
    * .. _public_ex_fmri_2018_ChenEtal_brief:
      .. include:: fmri_proc/2018_ChenEtal/brief.rst
+
+   * .. _public_ex_fmri_2018b_ChenEtal_brief:
+     .. include:: fmri_proc/2018b_ChenEtal/brief.rst

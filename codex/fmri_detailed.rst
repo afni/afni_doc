@@ -18,3 +18,4 @@ Publications with example scripts
    main_det_2016_ChenEtal
    main_det_2018_TaylorEtal
    main_det_2018_ChenEtal
+   main_det_2018b_ChenEtal
