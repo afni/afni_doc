@@ -1,8 +1,7 @@
 .. _public_ex_fmri_2018b_ChenEtal_det:
 
 ==================
-**Chen GC, et al.
-(2018).** Handling Multiplicity in Neuroimaging through Bayesian Lenses with Hierarchical Modeling
+**Chen GC, et al. (2018).** Handling Multiplicity in Neuroimaging through Bayesian Lenses with Hierarchical Modeling
 ==================
 
 .. pub title
