@@ -56,9 +56,10 @@ a. Do the following for your system number:
            xcode-select --install
            /Applications/Utilities/X11.app
 
-   **Purpose:** These install Xcode, which is needed for the gcc
-   compiler and related tools, and XQuartz, which is the desktop
-   manager needed to run X11 programs (such as ``afni``).
+   **Purpose:** These install Xcode command line tools, which are
+   needed for the gcc compiler and related tools, and XQuartz, which
+   is the desktop manager needed to run X11 programs (such as
+   ``afni``).
 
 #. Copy+paste the following::
 
