@@ -36,14 +36,15 @@ please see* :ref:`HERE <install_steps_mac>`.
 Take the File and Run [#f2]_
 ---------------------------
 
-* `Download .zip Version <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_install_BETA.zip>`_
+* `Download OSX 10.7 to 10.11 Version <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_install_10.7_BETA.zip>`_
+* `Download macOS 10.12 or greater Version <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_install_10.12_BETA.zip>`_
 
 Break It Down Again [#f3]_
 --------------------------
 
 * Download the file and open it to extract or mount.
 * Read the README!!
-* Double click the "afni_macOS_install_BETA" icon.
+* Double click the "afni_macOS_install_10.7_BETA" or "afni_macOS_install_10.12_BETA" icon.
 * You may get a popup notification about an "unidentified developer".
 
     .. image:: media/unknown_dev_warning.png
