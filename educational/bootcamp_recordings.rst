@@ -49,18 +49,21 @@ Monday
    * - Video
      - Associated handouts
      - Contents, notes
-   * - AFNI Introduction (Cox)
+   * - `AFNI Introduction, pt 1 (Cox)
+       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day1/day1_00_AFNI_Intro_Cox.mp4>`_
      - `afni01_intro.pdf
-       <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni01_intro.pdf>`_,
-       `AFNI_interactive2.pdf
+       <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni01_intro.pdf>`_
+     - Overview; AFNI principles and concepts; AFNI datasets; installing; batch processing
+   * - AFNI Introduction, pt 2 (Cox)
+     - `AFNI_interactive2.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/AFNI_interactive2.pdf>`_,
        `QuickTasks.pptx.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/QuickTasks.pptx.pdf>`_
-     - AFNI datasets; image viewer; side controls
+     - AFNI GUI; image viewer; side controls
        (brightness/contrast, zoom); help; display panel; montage;
        multiple controllers
    * - `AFNI Interactive, pt1 (Glen)
-       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day1/AFNI_Interactive_DG_Pt1.mp4>`_      
+       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day1/AFNI_Interactive_DG_Pt1.mp4>`_
      - `AFNI_interactive2.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/AFNI_interactive2.pdf>`_,
        `afni03_interactive.pdf
