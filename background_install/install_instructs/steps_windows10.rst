@@ -66,29 +66,29 @@ a. | Click on the following link to start automatic download:
 Install prerequisite: AFNI and  package dependencies
 ----------------------------------------------------
 
-| **If** your version of Ubuntu is **16.04**, then you should follow
-  the following setup instructions through "Make AFNI/SUMA profiles":
-| :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
+#. | *For Ubuntu is 16.04 users,* follow the setup instructions
+     through "Make AFNI/SUMA profiles" here:
+   | :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
 
-| **If** your version of Ubuntu is **18.04**, then you should follow
-  the following setup instructions through "Make AFNI/SUMA profiles":
-| :ref:`Link to Ubuntu 18 setup instructions for AFNI <install_steps_linux_ubuntu18>`
+   | *For Ubuntu is 18.04 users,* follow the setup instructions
+     through "Make AFNI/SUMA profiles" here:
+   | :ref:`Link to Ubuntu 18 setup instructions for AFNI <install_steps_linux_ubuntu18>`
 
-(To see what version of Linux you have, you can type ``lsb_release
--a`` in a terminal.)
+   (To see what version of Linux you have, you can type ``lsb_release
+   -a`` in a terminal.)
 
+   **... while noting:**
 
-**... while noting the following:**
+   * The *R* package installation part might be slow, on the order of
+     hours.  Meditation is often a good thing, anyways.
 
-* The *R* package installation part might be slow, on the order of
-  hours.  Meditation is often a good thing, anyways.
+   * Be sure to include the optional ``gnome-terminal`` installation
+     in the first set of steps, and copy+paste this into the
+     terminal::
 
-* Include the optional ``gnome-terminal`` installation in the first
-  set of steps, and copy+paste this into the terminal::
-
-    echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
-    echo "setenv NO_AT_BRIDGE 1" >> ~/.cshrc
-
+       echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
+       echo "setenv NO_AT_BRIDGE 1" >> ~/.cshrc
+   
 
 Useful setup tips (optional, but recommended)
 ---------------------------------------------
