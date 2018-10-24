@@ -59,19 +59,19 @@ To download particular a set of binaries, then you can click on a link
 below for your desired system.  
 
 Again, to go through full AFNI install for Linux, Mac or even now
-*Windows 10* users, look at :ref:`install_page` instructions.
+*Windows 10* users, look at :ref:`the main install page <install_page>` instructions.
 
 Unless otherwise stated, the binaries are for 64 bit systems.
 
 .. _afni_bin_unix:
 
-.. list-table::
+.. list-table:: 
    :header-rows: 1
    :widths: 40 60
    :align: left
    :stub-columns: 0
       
-   * - **For Linux/Unix (and Windows users with Linux installed)**
+   * - **For Linux/Unix (and Windows with Linux installed)**
      -
    * - `linux_ubuntu_16_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz>`_ 
      - Ubuntu 16.04-17.10
@@ -82,34 +82,37 @@ Unless otherwise stated, the binaries are for 64 bit systems.
    * - `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
      - CentOS, Red Hat (RHEL 7)
 
-|
-
 .. _afni_bin_mac:
 
-.. list-table::
-   :header-rows: 0
+.. list-table:: 
+   :header-rows: 1
    :widths: 40 60
    :align: left
    :stub-columns: 0
       
    * - **For Mac OS**
-     -   
-   * - `macos_10.12_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz>`_
-     - Mac 10.12 and higher
-   * - `macosx_10.7_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz>`_
-     - Mac 10.7 - 10.11, **but NO LONGER UPDATED**
+     -
+   * - `macos_10.12_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz>`_ 
+     - Mac 10.12 and higher                                                                      
+   * - `macosx_10.7_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz>`_ 
+     - Mac 10.7 - 10.11, **but these binaries are no longer updated (email with any questions)**
 
-  .. _afni_bin_other:
+.. _afni_bin_other:
 
--  **Binaries for other systems: the rest.**
-   
+.. list-table:: 
+   :header-rows: 1
+   :widths: 40 60
+   :align: left
+   :stub-columns: 0
+
    * - **For other systems**
-     -   
-   * - `linux_xorg7.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_
+     -
+   * - `linux_xorg7.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_ 
      - 32 bit linux systems
-   * - `linux_xorg7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_
+   * - `linux_xorg7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_ 
      - possibly other Linux-- **but probably use use one of the above options**
 
+|
 
 .. _download_SRC:
 
