@@ -2,7 +2,7 @@
 .. _Download_AFNI:
 
 
-**Downloading other/specific AFNI/SUMA software**
+**Download other/specific AFNI/SUMA software**
 =================================================
 
 .. contents:: :local:
@@ -36,11 +36,8 @@ on the `Message Board
           History
           <https://afni.nimh.nih.gov/pub/dist/doc/misc/history/index.html>`_.
 
-Some additional introductory reading is available `here
-<https://afni.nimh.nih.gov/afni/doc/first>`_.  
 
-
-To: update existing AFNI binaries
+Update existing AFNI binaries
 ---------------------------------
 
 If you already have AFNI binaries working on your computer, all you
@@ -48,93 +45,70 @@ need to do is run::
 
   @update.afni.binaries -d
 
-This will automatically detect which binary version to download and
-where to install it (based on location of the present binaries), and
-then it will unpackage the new binaries so you can just keep rollin'
-along.  (It will also make an automatic backup of your existing
-binaries in a subdirectory called ``auto_backup.BINARY_VERSION/``,
-just in case you want it.)
+This automatically detects which package to download and where to
+install it. The new binaries are placed in the same location so you
+can just keep rollin' along.  (The existing/old binaries are placed in
+a subdirectory called ``auto_backup.BINARY_VERSION/``, just in case
+you want them.)
 
-|
 
-To: download current precompiled AFNI binaries
+Download current precompiled AFNI binaries
 ----------------------------------------------
 
-If you *don't* have AFNI on your computer already, or if you just want
-to download particular a set of binaries, then you can click on a link
-below to get the code for your desired system.  Note that most Mac,
-Linux and even now *Windows 10* users should look at
-:ref:`install_page` instructions for simplest setups.
+To download particular a set of binaries, then you can click on a link
+below for your desired system.  
 
-If you *do* decide to download binaries from links directly, you will
-likely still need to install supplmentary packages to run AFNI
-successfully. For help with that (and for seeing handy command line
-tools to check if things are OK), please see :ref:`install_page`.
+Again, to go through full AFNI install for Linux, Mac or even now
+*Windows 10* users, look at :ref:`install_page` instructions.
+
+Unless otherwise stated, the binaries are for 64 bit systems.
 
 .. _afni_bin_unix:
 
-- **Recommended binaries for (most) Linux/Unix:**
-
-  .. list-table::
-     :header-rows: 0
-     :widths: 40 60
-     :align: left
-     :stub-columns: 0
-        
-     * - `Ubuntu 16, 64 bit <https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz>`_ 
-       - Ubuntu 16+
-     * - `OpenMP, 64 bit <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
-       - Ubuntu (<16), Fedora (< 21), Red Hat, etc. 
-     * - `Fedora21, 64 bit <https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz>`_ 
-       - Fedora 21+                            
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+   :align: left
+   :stub-columns: 0
+      
+   * - **For Linux/Unix (and Windows users with Linux installed)**
+     -
+   * - `linux_ubuntu_16_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz>`_ 
+     - Ubuntu 16.04-17.10
+   * - `linux_fedora_21_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz>`_ 
+     - Fedora 21+                            
+   * - `linux_openmp_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
+     - Ubuntu (<16), Fedora (<21), Red Hat, etc. 
+   * - `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
+     - CentOS, Red Hat (RHEL 7)
 
 |
 
-  .. _afni_bin_mac:
+.. _afni_bin_mac:
 
-- **Recommended binaries for (most) Mac OS: 10.7+.**
-
-  .. list-table::
-     :header-rows: 0
-     :widths: 40 60
-     :align: left
-     :stub-columns: 0
-        
-     * - `Mac OS X (10.7 Intel), 64 bit <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_Intel_64.tgz>`_
-       - Mac 10.7 (Lion) and higher
-
-  For Mac OS 10.11 (El Capitan) users, some additional modifications
-  to your computer settings are required for smooth sailing.  These
-  are currently documented `here
-  <https://afni.nimh.nih.gov/afni/community/board/read.php?1,149775,149775#msg-149775>`_.
+.. list-table::
+   :header-rows: 0
+   :widths: 40 60
+   :align: left
+   :stub-columns: 0
+      
+   * - **For Mac OS**
+     -   
+   * - `macos_10.12_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz>`_
+     - Mac 10.12 and higher
+   * - `macosx_10.7_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz>`_
+     - Mac 10.7 - 10.11, **but NO LONGER UPDATED**
 
   .. _afni_bin_other:
 
 -  **Binaries for other systems: the rest.**
-
-   * for `Mac OS X Mountain Lion (10.8 Intel), 64 bit
-     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_Intel_64.tgz>`_.
- 
-   * for `Mac OS X Snow Leopard (10.6 Intel), 64 bit
-     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.6_Intel_64.tgz>`_.
-
-   * for `Mac OS X Snow Leopard (10.6 Intel), 64bit, no fink
-     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.6_Intel_64.no.fink.tgz>`_.
    
-   * for `Linux xorg7, 64 bit
-     <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_.
-
-   * for `Linux xorg7, 32 bit
-     <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_.
-
-   * for `Linux gcc32, 32 bit
-     <https://afni.nimh.nih.gov/pub/dist/tgz/linux_gcc32.tgz>`_.
-
-   * for `FreeBSD with ports (github)
-     <https://github.com/outpaddling/freebsd-ports-wip>`_.
-
-   * for `Solaris 2.9 suncc
-     <https://afni.nimh.nih.gov/pub/dist/tgz/solaris29_suncc.tgz>`_.
+   * - **For other systems**
+     -   
+   * - `linux_xorg7.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_
+     - 32 bit linux systems
+   * - `linux_xorg7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_
+     - possibly other Linux-- **but probably use use one of the above options**
 
 
 .. _download_SRC:
@@ -153,7 +127,6 @@ work) is to compile from the source itself:
         
      * - `AFNI Source Code <https://afni.nimh.nih.gov/pub/dist/tgz/afni_src.tgz>`_
        - Compilable source (can be built on most Linux/Unix/Mac)
-
 
 There are several usable, example ``Makefile``\s included in the main
 ``afni_src/`` directory, as well as a couple (mainly for Linux
@@ -185,3 +158,25 @@ NB: for most demo sets, there is an ``@Install_*`` command to procure
 and open the directory.
 
 |
+
+
+.. old/unused binaries:
+
+   * for `Mac OS X Mountain Lion (10.8 Intel), 64 bit
+     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_Intel_64.tgz>`_.
+ 
+   * for `Mac OS X Snow Leopard (10.6 Intel), 64 bit
+     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.6_Intel_64.tgz>`_.
+
+   * for `Mac OS X Snow Leopard (10.6 Intel), 64bit, no fink
+     <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.6_Intel_64.no.fink.tgz>`_.
+
+   
+   * for `Linux gcc32, 32 bit
+     <https://afni.nimh.nih.gov/pub/dist/tgz/linux_gcc32.tgz>`_.
+
+   * for `FreeBSD with ports (github)
+     <https://github.com/outpaddling/freebsd-ports-wip>`_.
+
+   * for `Solaris 2.9 suncc
+     <https://afni.nimh.nih.gov/pub/dist/tgz/solaris29_suncc.tgz>`_.
