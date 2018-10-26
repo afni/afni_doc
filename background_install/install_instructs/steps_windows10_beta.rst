@@ -1,22 +1,14 @@
 .. _install_steps_windows10_beta:
 
 
-\*old\* **Windows 10, "Bash on Ubuntu" (beta)**: *The essential system setup*
+\*old\* **Windows 10, "Bash on Ubuntu" (beta)**
 ==============================================================================
 
-.. contents:: :local:
+.. contents:: The essential system setup
+   :local:
 
-Important notice
-----------------
-
-Here we describe installation and system setup for the **(now out of
-date) beta** "Creators Update" version of "Bash on Ubuntu" (BoUoW) for
-Windows 10.  This version of Windows 10 is known officially as
-version 1703, released around April, 2017.
-
-**For instructions about installing the more up-to-date and supported
-"Fall Creators Update" version of WSL, please see** :ref:`the
-instructions HERE <install_steps_windows10>`.
+What to do?
+-----------
 
 .. warning:: This version of Linux is no longer supported.  
 
@@ -26,6 +18,16 @@ instructions HERE <install_steps_windows10>`.
              files on the Linux side, so be sure to backup any files
              onto the Windows side, as they suggest `HERE
              <https://blogs.msdn.microsoft.com/commandline/2017/04/11/windows-10-creators-update-whats-new-in-bashwsl-windows-console/>`_.
+
+These setup instructions are for the **(now out of date) beta**
+"Creators Update" version of "Bash on Ubuntu" (BoUoW) for Windows 10.
+This version of Windows 10 is known officially as version 1703,
+released around April, 2017.
+
+**For instructions for the more modern and supported "Fall Creators
+Update" version of WSL, please see** :ref:`the instructions HERE
+<install_steps_windows10>`.
+
 
 Notes
 -----

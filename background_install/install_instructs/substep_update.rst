@@ -1,4 +1,4 @@
-a. To update your AFNI any time in the future, just run::
+1. To update your AFNI sometime, copy+paste::
 
      @update.afni.binaries -d
 
@@ -8,11 +8,11 @@ a. To update your AFNI any time in the future, just run::
    AFNI version to your computer, replacing your old binaries.  It
    will also update the ``apearch`` help information. Update often!
 
-#. Check your AFNI version by typing::
+#. To check your AFNI version, copy+paste::
 
      afni -ver
 
-   **Purpose:** Report this useful info, whenever asking a question on
+   **Purpose:** Report this useful info whenever asking a question on
    the Message Board!
 
 .. note:: The record of all changes (new options, new programs, bug

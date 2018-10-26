@@ -5,8 +5,9 @@
 **macOS**: *The App-based system setup*
 ========================================
 
-.. contents:: :local:
-    :depth: 2
+.. contents:: The essential system setup
+   :local:
+   
 
 Welcome to the Jungle [#f1]_
 ---------------------------

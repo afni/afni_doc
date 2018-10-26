@@ -1,14 +1,18 @@
 .. _install_steps_windows10:
 
 
-**Windows 10, "Windows Subsystem for Linux (WSL)"**: *The essential system setup*
+**Windows 10, "Windows Subsystem for Linux (WSL)"**
 ===========================================================================
 
-.. contents:: :local:
+.. contents:: The essential system setup
+   :local:
+
+What to do?
+-----------
 
 Here we describe Linux installation and system setup for the **"Fall
-Creators Update"** (FCU) version of Windows 10, known as the Windows
-Subsystem for Linux (WSL).  This FCU was released in Windows version
+Creators Update" (FCU) version of Windows 10**, known as the **Windows
+Subsystem for Linux (WSL).** This FCU was released in Windows version
 1709 around October, 2017.
 
 More technical/background description of updates since the earlier

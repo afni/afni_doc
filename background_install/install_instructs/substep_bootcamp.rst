@@ -1,27 +1,26 @@
 
-Copy+paste::
+1. Copy+paste::
 
-  curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD.tgz
-  tar xvzf CD.tgz
-  cd CD
-  tcsh s2.cp.files . ~
-  cd ..
+     curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD.tgz
+     tar xvzf CD.tgz
+     cd CD
+     tcsh s2.cp.files . ~
+     cd ..
 
-**Purpose:** In order, these commands: download the tarred+zipped
-directory of class data (named "CD") to the current directory;
-untar/unzip it (= open it up); move into the newly opened directory;
-execute a script to copy the files to ``$HOME/CD/``; and finally exit
-the directory.
+   **Purpose:** Download the Bootcamp class data; untar+unzip it (= open
+   it up); move into the newly opened directory; execute a script to copy
+   the files to ``$HOME/.``.
 
-At this point, if there have been no errors, you can delete/remove
-the tarred/zipped package, using "``rm CD.tgz``".  If you are
-*really* confident, you can also deleted the CD tree in the present
-location (but leaving it in ``$HOME/CD/``).
+   If no errors occur in the above, and your ``afni_system_check.py``
+   says things are OK, you can delete/remove the tarred/zipped package,
+   using "``rm CD.tgz``".  If you are *really* confident, you can also
+   deleted the CD/ directory in the present location.
 
-.. note:: If using Linux terminal commands is new to you, then **do**
-          look over the handy :ref:`Unix documentation/tutorial
-          <U_misc_bg0>` and practice a few of the basic commands on
-          your own system (e.g., `ls`, `cd`, `less`, etc.). It will
-          *greatly* enhance your bootcamp experience-- we promise!
+#. Read+practice with the handy :ref:`Unix documentation/tutorial
+   <U_misc_bg0>`.
+
+   **Purpose:** give you a quick lesson/refresher on using basic Linux
+   shell commands (e.g., `ls`, `cd`, `less`, etc.). It will *greatly*
+   enhance your bootcamp experience-- we promise!
 
 

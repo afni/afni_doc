@@ -1,18 +1,17 @@
 
-To install some useful image conversion and processing tools,
-copy+paste these individually::
+1. Copy+paste::
 
-  bash
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+     bash
+     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
 
-then::
+#. Copy+paste::
 
-  brew install netpbm
+   brew install netpbm
 
-and finally::
+#. Copy+paste::
 
   exit
 
-**Purpose:** Netpbm has functionality for converting image formats
-(such as to PNG) and is used in several programs like
+**Purpose:** Install "netpbm", which has functionality for converting
+image formats (such as to PNG) and is used in several programs like
 ``@snapshot_volreg``, ``@chauffeur_afni`` and others.

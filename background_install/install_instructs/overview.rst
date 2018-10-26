@@ -3,10 +3,12 @@
 
 
 ************************
-The Indispensable Overview
+**Overview**
 ************************
 
-.. contents:: :local:
+.. contents:: Indispensable reading
+
+   :local:
 
 Preamble Ramble
 ---------------

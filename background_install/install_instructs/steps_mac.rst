@@ -2,66 +2,59 @@
 .. _install_steps_mac:
 
 
-**Mac OS**: *The essential system setup*
+**Mac OS**
 ========================================
 
-.. contents:: :local:
+.. contents:: The essential system setup
+   :local:
 
 What to do?
 -----------
 
-Here we describe a complete AFNI installation and system setup for
-clean/empty Mac OS versions **10.9+**.
+These setup instructions are for **Mac OS versions 10.9+**.
 
  .. include:: substep_intro.rst
 
 .. note:: *If you are seeking the new App version of install
-          instructions, please see* :ref:`HERE
+          instructions, please :ref:`click HERE
           <install_steps_mac_app>`.
 
 Setup terminal
 --------------
 
-a. Copy+paste the following into a terminal::
+a. Copy+paste::
 
      defaults write org.macosforge.xquartz.X11 wm_ffm -bool true
      defaults write org.x.X11 wm_ffm -bool true
      defaults write com.apple.Terminal FocusFollowsMouse -string YES
 
-   **Purpose:** This sets the policy where "focus follows mouse", so
-   that it is not necessary to first click on a new window (to select
-   it) before subsequent clicks are applied to that window.  These
-   commands set the policy for the 3 applications that this might
-   apply to.
+   **Purpose:** This sets the policy where "focus follows mouse" for
+   relevant applications. After this, clicks on a new window are
+   directly applied, without needing to "pre-click" it.  You're
+   welcome.
 
 Install Xcode and XQuartz
 -------------------------
 
-a. Do the following for your system number:
+#. Copy+paste::
 
-   *  *For OS X >= 10.11,* 
+     xcode-select --install
 
-      i. Copy+paste the following::
+#. For ...
 
-           xcode-select --install
-           
-      #. | Then, click on this link: http://www.xquartz.org 
-         | and then click on the "Quick Download" DMG and 
-           follow instructions to install.
+   * | *... OS X >= 10.11*, click on this link: http://www.xquartz.org 
+     | and then click on the "Quick Download" DMG, and 
+       follow instructions to install.
 
-   *  *For OS X 10.9 and 10.10,* 
+   * *... OS X 10.9 and 10.10*, copy+paste::
 
-      i. Copy+paste these two commands::
+       /Applications/Utilities/X11.app
 
-           xcode-select --install
-           /Applications/Utilities/X11.app
+   **Purpose:** These install Xcode command line tools (needed for the
+   gcc compiler et al.) and XQuartz (the desktop manager needed to run
+   X11 programs, such as ``afni``!).
 
-   **Purpose:** These install Xcode command line tools, which are
-   needed for the gcc compiler and related tools, and XQuartz, which
-   is the desktop manager needed to run X11 programs (such as
-   ``afni``).
-
-#. Copy+paste the following::
+#. Copy+paste this mess::
 
      touch ~/.cshrc
      echo 'if ( $?DYLD_LIBRARY_PATH ) then' >> ~/.cshrc
@@ -80,33 +73,32 @@ a. Do the following for your system number:
 Install AFNI binaries
 ---------------------
 
-a. Copy+paste the following::
+1. Copy+paste::
 
      cd
      curl -O https://afni.nimh.nih.gov/pub/dist/bin/macosx_10.7_local/@update.afni.binaries
 
-#. Then,
+#. For ...
 
-   *  *For OS X >= 10.12*, copy+paste::
+   * *... OS X >= 10.12*, copy+paste::
 
-        tcsh @update.afni.binaries -defaults -package macos_10.12_local
+       tcsh @update.afni.binaries -defaults -package macos_10.12_local
 
-   *  *For OS X < 10.12*, copy+paste::
+   * *... OS X < 10.12*, copy+paste::
+       
+       tcsh @update.afni.binaries -defaults -package macosx_10.7_local
 
-        tcsh @update.afni.binaries -defaults -package macosx_10.7_local
+   **Purpose:** download and unpack the current binaries into your
+   ``$HOME`` directory; set the AFNI binary directory name to
+   ``$HOME/abin/``; and add that location to the ``$PATH`` in both
+   ``~/.cshrc`` and ``~/.bashrc``.
 
-**Purpose:** download and unpack the current binaries into your
-``$HOME`` directory; set the AFNI binary directory name to
-``$HOME/abin/``; and add that location to the ``$PATH`` in both
-``~/.cshrc`` and ``~/.bashrc``.
+   .. note:: If the binary package has already been downloaded
+             somewhere, instead of the above you can use
+             ``-local_package`` with the location+name of the binary
+             file, e.g.::
 
-.. note:: If the AFNI binary package has already been downloaded
-          already (say, to save time/bandwidth), one can use
-          ``-local_package``, followed by the location+name of the
-          binary file, e.g. the third line in the above command could
-          be::
-
-            tcsh @update.afni.binaries -local_package macosx_10.7_local.tgz -do_extras
+               tcsh @update.afni.binaries -local_package macosx_10.7_local.tgz -do_extras
 
 Reboot
 ------
@@ -123,11 +115,12 @@ Install R
   a. | Click on this link: https://cran.r-project.org/bin/macosx
      | and then click on the top/latest package to install.
 
-a. First, click on this link to download a recent (but not the *most*
-   recent) version of R:
+1. Click on this link:
    https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.4.1.pkg
 
-#. Then, copy+paste::
+   **Purpose:** Get a recent (but not the *most* recent) version of R.
+
+#. Copy+paste::
 
      sudo rPkgsInstall -pkgs ALL
 
@@ -169,12 +162,19 @@ Keep up-to-date (remember!)
 Install PyQt4, via JDK and fink (optional)
 ------------------------------------------
 
-a. | Click on this link: http://www.oracle.com/technetwork/java/javase/downloads
+**Note:** at present, this step is only necessary if you want to have
+some of the Python-based GUI programs in AFNI.  However, we don't
+really use these much, and certainly if you are here for
+``uber_subject.py``, we would **strongly** recommend that you just
+build an ``afni_proc.py`` command from existing examples in the
+:ref:`afni_proc.py help <ahelp_afni_proc.py>`, instead!
+
+1. | Click on this link: http://www.oracle.com/technetwork/java/javase/downloads
    | and then click on the ``Java`` icon.
 
    **Purpose:** Install Java SE (standard edition) JDK.
 
-#. Copy+paste the following::
+#. Copy+paste::
    
      curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/save/install.fink.bash
      bash install.fink.bash
@@ -198,13 +198,14 @@ a. | Click on this link: http://www.oracle.com/technetwork/java/javase/downloads
 
    #. If no errors, copy+paste::
 
-       sudo fink install pyqt4-mac-py27
-       sudo ln -s /sw/bin/python2.7 /sw/bin/python
-       echo 'setenv PYTHONPATH /sw/lib/qt4-mac/lib/python2.7/site-packages' >> ~/.cshrc
+        sudo fink install pyqt4-mac-py27
 
-#. Test your PyQt4.
+   #. Copy+paste::
 
-   Copy+paste the following::
+        sudo ln -s /sw/bin/python2.7 /sw/bin/python
+        echo 'setenv PYTHONPATH /sw/lib/qt4-mac/lib/python2.7/site-packages' >> ~/.cshrc
+
+#. To test your PyQt4, copy+paste::
 
      uber_subject.py
 

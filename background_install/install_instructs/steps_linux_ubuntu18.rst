@@ -2,29 +2,29 @@
 .. _install_steps_linux_ubuntu18:
 
 
-**Linux, Ubuntu 18.04**: *The essential system setup*
+**Linux, Ubuntu 18.04**
 ===================================================================
 
-.. contents:: :local:
+.. contents:: The essential system setup
+   :local:
 
 What to do?
 -----------
 
-Here we describe installation and system setup for modern Ubuntu Linux
-versions, specifically 18.04 (Bionic Beaver).  And a note of thanks to
-Kiyotaka and other AFNI users who contributed advice to these
-instructions on the MB!
+These setup instructions are for **Ubuntu Linux version 18.04** (Bionic
+Beaver). *And a note of thanks to Kiyotaka and other AFNI users who
+contributed advice to these instructions on the MB!*
 
 .. include:: substep_intro.rst
 
 Install prerequisite packages
 -----------------------------
 
-a. Copy+paste::
+1. Copy+paste::
 
      sudo add-apt-repository universe
 
-   ::
+#. Copy+paste::
 
      sudo apt-get update
 
@@ -35,85 +35,64 @@ a. Copy+paste::
                              libglu1-mesa-dev libglw1-mesa     \
                              libxm4 build-essential            \
                              libcurl4-openssl-dev libxml2-dev  \
-                             libssl-dev libgfortran3 
-
-   **Purpose:** Installs a lot of packages that AFNI depends on (so we
-   don't have to reinvent the wheel!).
-
-#. Copy+paste::
-
-     sudo apt-get install -y gnome-terminal nautilus          \
+                             libssl-dev libgfortran3           \
+                             gnome-terminal nautilus           \
                              gnome-icon-theme-symbolic
 
-   **Purpose:** Useful for improving terminal behavior, especially if
-   you are following the Windowsy :ref:`WSL <install_steps_windows10>`
-   or (older) :ref:`BoUoW <install_steps_windows10_beta>`
-   instructions. This may take a little while to complete running.
+   **Purpose:** Installs a lot of packages that AFNI depends on (so we
+   don't have to reinvent the wheel!).  This may take a little while
+   to complete running.
+
+   Some of these packages also improve terminal behavior, especially
+   if you are running Ubuntu on a Windows machine.
 
 #. Copy+paste::
      
      sudo ln -s /usr/lib/x86_64-linux-gnu/libgsl.so.23 /usr/lib/x86_64-linux-gnu/libgsl.so.19 
 
    **Purpose:** Make a symbolic link for the specific version of GSL
-   included in this version of Ubuntu.
-
-.. _setup_Ubu18_tcsh:
-Make "tcsh" default shell (optional/recommended)
-------------------------------------------------
-
-Copy+paste::
-
-   chsh -s /usr/bin/tcsh
-
-**Purpose:** Makes ``tcsh`` your default shell in the terminal.
+   included in this version of Ubuntu. 
 
 Install AFNI binaries
 ---------------------
 
-Copy+paste::
+#. Copy+paste::
 
-   cd 
-   curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_ubuntu_16_64/@update.afni.binaries
-   tcsh @update.afni.binaries -package linux_ubuntu_16_64  -do_extras
+     cd 
+     curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_ubuntu_16_64/@update.afni.binaries
+     tcsh @update.afni.binaries -package linux_ubuntu_16_64  -do_extras
 
-**Purpose:** These commands: download and unpack the current binaries
-into your ``$HOME`` directory; set the AFNI binary directory name to
-``$HOME/abin/``; and add that location to the ``$PATH`` in both
-``~/.cshrc`` and ``~/.bashrc``.
+   **Purpose:** Download and unpack the current binaries in your
+   ``$HOME`` directory (and yes, that ``@update*`` program works even,
+   even though the link has "ubuntu_16" in it); set the AFNI binary
+   directory name to ``$HOME/abin/``; and add that location to the
+   ``$PATH`` in both ``~/.cshrc`` and ``~/.bashrc``.
 
-.. note:: If the binary package has already been downloaded, one
-          can use ``-local_package``, followed by the location+name
-          of the binary file, e.g.::
+   .. note:: If the binary package has already been downloaded
+             somewhere, you can use ``-local_package`` with the
+             location+name of the binary file, e.g.::
 
-            tcsh @update.afni.binaries -local_package linux_ubuntu_16_64.tgz -do_extras
-
-Reboot
-------
-
-Copy+paste (to reboot)::
-
-   reboot
-
-**Purpose:** This deals with system updates, any change in login
-shell, and path updates.
+               tcsh @update.afni.binaries -local_package linux_ubuntu_16_64.tgz -do_extras
 
 Install R
 ---------
  
-a. Copy+paste:
+1. For ... 
 
-   * *for* ``tcsh``::
+   * ... a ``tcsh`` terminal, copy+paste::
    
        setenv R_LIBS $HOME/R
-       mkdir $R_LIBS
-       echo 'setenv R_LIBS ~/R' >> ~/.cshrc
+       mkdir  $R_LIBS
+       echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
+       echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        sudo apt-get install -y r-base-dev r-cran-rmpi 
 
-   * *for* ``bash``::
+   * ... a ``bash`` terminal, copy+paste::
    
        export R_LIBS=$HOME/R
-       mkdir $R_LIBS
-       echo 'export R_LIBS=$HOME/R' >> ~/.bashrc
+       mkdir  $R_LIBS
+       echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
+       echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        sudo apt-get install -y r-base-dev r-cran-rmpi 
 
    **Purpose:** Setup modern R from scratch. This relies on the
@@ -126,8 +105,7 @@ a. Copy+paste:
      rPkgsInstall -pkgs ALL
 
    **Purpose:** Get specific R packages needed for AFNI programs.
-   This step might take a while to complete (installing the various R
-   package dependencies).
+   This step might take a while to complete.
    
 .. ---------- HERE/BELOW: copy for all installs --------------
 
@@ -153,11 +131,11 @@ Niceify terminal (optional, but goood)
 
 .. include:: substep_rcfiles.rst
 
-Also, consider running ``gnome-tweak-tool`` and changing ``Windows``
--> ``Focus Mode`` from 'click' to 'mouse'.
+#. Also, consider running ``gnome-tweak-tool`` and changing
+   ``Windows`` -> ``Focus Mode`` from 'click' to 'mouse'.
 
-Also, consider extending time for screen saver: ``System Settings`` ->
-``Brightness & Lock``, and set inactivity duration.
+#. Also, consider extending time for screen saver: ``System Settings``
+   -> ``Brightness & Lock``, and set inactivity duration.
 
 Keep up-to-date (remember!)
 ---------------------------

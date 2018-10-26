@@ -75,10 +75,8 @@ Unless otherwise stated, the binaries are for 64 bit systems.
      -
    * - `linux_ubuntu_16_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz>`_ 
      - Ubuntu 16.04-17.10
-   * - `linux_fedora_21_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz>`_ 
-     - Fedora 21+                            
    * - `linux_openmp_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
-     - Ubuntu (<16), Fedora (<21), Red Hat, etc. 
+     - Ubuntu (<16), Fedora, Red Hat, etc. 
    * - `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
      - CentOS, Red Hat (RHEL 7)
 
@@ -110,7 +108,9 @@ Unless otherwise stated, the binaries are for 64 bit systems.
    * - `linux_xorg7.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_ 
      - 32 bit linux systems
    * - `linux_xorg7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_ 
-     - possibly other Linux-- **but probably use use one of the above options**
+     - possibly other Linux, **but probably use one of the above options**
+   * - `linux_fedora_21_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz>`_ 
+     - Fedora 21, **but these binaries are no longer updated (at the moment)**
 
 |
 
