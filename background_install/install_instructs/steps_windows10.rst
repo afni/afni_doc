@@ -10,107 +10,107 @@
 What to do?
 -----------
 
-Here we describe Linux installation and system setup for the **"Fall
+These setup instructions are for setting up Ubuntu on the **"Fall
 Creators Update" (FCU) version of Windows 10**, known as the **Windows
 Subsystem for Linux (WSL).** This FCU was released in Windows version
 1709 around October, 2017.
 
-More technical/background description of updates since the earlier
-beta version of WSL can be found `HERE on their "What's New" page
-<https://blogs.msdn.microsoft.com/commandline/2017/10/11/whats-new-in-wsl-in-windows-10-fall-creators-update/>`_.
-Mainly, the installation is a lot easier now, and one can even run
-``tcsh`` shells.  Yippee.
+See `this "What's New" page
+<https://blogs.msdn.microsoft.com/commandline/2017/10/11/whats-new-in-wsl-in-windows-10-fall-creators-update/>`_
+for more information about the Windows updates since their earlier
+beta version of having Ubuntu.  Mainly, the present installation is a
+lot easier now.  Yippee.
 
-Importantly, as with other installation instructions, you are required
-to have administrator privileges on your operating system. 
+#. **The user must have admin privileges** (can run ``sudo ...``).
+   Some steps require an internet connection.
 
-Install prerequisite: Getting Linux
+Install Linux
 -----------------------------------
 
-| Follow the short number of steps to install WSL described here,
-  selecting "Ubuntu" as your desired flavor of Linux: 
-| `https://docs.microsoft.com/en-us/windows/wsl/install-win10
-  <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
-
+1. | Click here to install WSL, selecting "Ubuntu" as your desired flavor
+     of Linux:
+   | `https://docs.microsoft.com/en-us/windows/wsl/install-win10
+     <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 
 .. _install_windows_VcXsrv:
 
-Install prerequisite: VcXsrv Windows X Server
+Install VcXsrv Windows X Server
 ---------------------------------------------
 
-a. | Click on the following link to start automatic download:
+1. | Click here to start automatic download:
    | `https://sourceforge.net/projects/vcxsrv/files/latest/download
      <https://sourceforge.net/projects/vcxsrv/files/latest/download>`_
    | Use default installation settings.  
 
-#. *First* start the X Server, and *then* start Ubuntu.
+#. *Now and forever,* **first** doubleclick on the VcXsrv icon on your
+   Desktop, and **then** start Ubuntu, for example by typing "ubuntu"
+   in the Windows search bar.  (Sorry, not our design!)
 
-   .. note:: From here on out, **whenever** you start up your WSL
-             Ubuntu, you will need to double-click on the VcXsrv icon
-             on your Desktop in order to start the X Server.  (Sorry,
-             not our design!)
+#. **To enable copy+paste ability in Ubuntu terminal,** right-click on
+   the toolbar at the top of the Ubuntu terminal, and select
+   "Properties"; in the Options tab, make sure the box next to
+   "QuickEdit Mode" is selected.
 
-#. To enable copy+paste ability in Ubuntu terminal, right-click on the
-   toolbar at the top of the Ubuntu terminal, and select "Properties";
-   in the Options tab, make sure the box next to "QuickEdit Mode" is
-   selected.  
+   You can then paste into a terminal by either right-clicking or
+   hitting the "Enter" key.  (To "copy" text that is *in* the
+   terminal, just highlight it, and then you should be able to
+   right-click to paste; to "copy" text from *outside* the terminal,
+   you probably need to highlight it and hit "Ctrl+c".)
 
-   You should then be able to paste into a terminal by either
-   right-clicking or hitting the "Enter" key.  (To "copy" text that is
-   *in* the terminal, just highlight it, and then you should be able
-   to right-click to paste; to "copy" text from *outside* the
-   terminal, you probably need to highlight it and hit "Ctrl+c".)
-
-#. To set the DISPLAY properly, copy+paste the following into the
-   terminal::
+#. Copy+paste::
 
      echo "export DISPLAY=:0.0" >> ~/.bashrc
      echo "setenv DISPLAY :0.0" >> ~/.cshrc
+     echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
+     echo "setenv NO_AT_BRIDGE 1" >> ~/.cshrc
+
+   **Purpose:** First, set DISPLAY properly, so you can open GUIs like
+   ``afni``, ``suma``, etc.  Then, avoid having some
+   very-non-necessary GTK warnings from programs.
+    
+#. Close (exit) Ubuntu terminal, so that changes are effected the next
+   time you open it.
+
 
 Install prerequisite: AFNI and  package dependencies
 ----------------------------------------------------
 
-#. | *For Ubuntu is 16.04 users,* follow the setup instructions
-     through "Make AFNI/SUMA profiles" here:
-   | :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
+0. Start a new Ubuntu session.  To check your version, copy+paste::
 
-   | *For Ubuntu is 18.04 users,* follow the setup instructions
-     through "Make AFNI/SUMA profiles" here:
-   | :ref:`Link to Ubuntu 18 setup instructions for AFNI <install_steps_linux_ubuntu18>`
+     lsb_release -a
 
-   (To see what version of Linux you have, you can type ``lsb_release
-   -a`` in a terminal.)
+#. For ... 
 
-   **... while noting:**
+   * | *... Ubuntu 16.04 users,* follow the setup instructions
+       through "Make AFNI/SUMA profiles" here:
+     | :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
 
-   * The *R* package installation part might be slow, on the order of
-     hours.  Meditation is often a good thing, anyways.
+   * | *... Ubuntu 18.04 users,* follow the setup instructions
+       through "Make AFNI/SUMA profiles" here:
+     | :ref:`Link to Ubuntu 18 setup instructions for AFNI <install_steps_linux_ubuntu18>`
 
-   * Be sure to include the optional ``gnome-terminal`` installation
-     in the first set of steps, and copy+paste this into the
-     terminal::
+   **Purpose:** Complete your life's ambition to have working AFNI on
+   your Windows computer (though, realize it is Linux that makes this
+   happen!).
 
-       echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
-       echo "setenv NO_AT_BRIDGE 1" >> ~/.cshrc
-   
-
-Useful setup tips (optional, but recommended)
+More setup tips
 ---------------------------------------------
 
-a. Install Ubuntu terminal fonts as described `HERE
+1. Install Ubuntu terminal fonts as described `HERE
    <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
 
-#. Follow these ``gnome-terminal`` steps:
+#. | The default profile "use colors from system theme" shows an
+     all-black terminal.  To fix this: 
+   | Go to the terminal's menu bar,
+   | Select the ``Edit`` tab, then ``Profile``, 
+   | Turn **off** "use colors ...", and just pick a scheme+palette
+     that you like.
 
-   * The default profile "use colors from system theme" shows an
-     all-black terminal.  To fix this: go to the terminal's menu bar,
-     select the ``Edit`` tab, then ``Profile``, turn **off** "use
-     colors ...", and just pick a scheme+palette that you like.
-
-   * In gnome-terminal, everything is standard and similar to other
-     linux implementations, and the middle button pastes whatever is
-     selected in the WSL terminal or other gnome-terminal.
-     Shift-Ctrl-c copies, and Shift-Ctrl-v also pastes.
+#. | **Note:**
+   | In gnome-terminal, things are similar to other Linux
+     implementations. The middle button pastes whatever is
+     highlighted in the WSL terminal or other gnome-terminal:
+     ``shift-ctrl-c`` copies, and ``shift-ctrl-v`` also pastes.
 
 .. 
     #. Like most Linux systems, some things have to be done with ``sudo``
@@ -161,8 +161,6 @@ Keep up-to-date (remember!)
 ---------------------------
 
 .. include:: substep_update.rst
-
-
 
 .. figure:: media/AFNI_on_Windows10_2ways.jpg
    :align: center
