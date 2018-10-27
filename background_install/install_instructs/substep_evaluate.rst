@@ -4,7 +4,7 @@
      afni_system_check.py -check_all
 
 #. **Read** the "Please Fix" section at the end.  If there are no
-   suggestions, then be rejoice!  Otherwise, **try** the suggestion(s)
+   suggestions, then rejoice!  Otherwise, **try** the suggestion(s)
    there.
 
 #. Open up the AFNI and SUMA GUIs, juuuust to make sure all is well::
