@@ -37,7 +37,8 @@ Install prerequisite packages
                              libcurl4-openssl-dev libxml2-dev  \
                              libssl-dev libgfortran3           \
                              gnome-terminal nautilus           \
-                             gnome-icon-theme-symbolic
+                             gnome-icon-theme-symbolic         \
+                             firefox
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we
    don't have to reinvent the wheel!).  This may take a little while

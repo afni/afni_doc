@@ -31,7 +31,7 @@ Install prerequisite packages
    
        sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
-                           xorg-x11-server-Xvfb
+                           xorg-x11-server-Xvfb firefox
        sudo yum update -y
    
    * *... CentOS/RHEL 7*, copy+paste::
@@ -39,7 +39,7 @@ Install prerequisite packages
        sudo yum install -y epel-release
        sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
-                           libpng12 xorg-x11-server-Xvfb
+                           libpng12 xorg-x11-server-Xvfb firefox
        sudo yum update -y
 
   **Purpose:** Installs a lot of packages that AFNI depends on (so we

@@ -35,7 +35,8 @@ Install prerequisite packages
                              libglu1-mesa-dev libglw1-mesa     \
                              libxm4 build-essential            \
                              gnome-terminal nautilus           \
-                             gnome-icon-theme-symbolic
+                             gnome-icon-theme-symbolic         \
+                             firefox
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we
    don't have to reinvent the wheel!).  This may take a little while
