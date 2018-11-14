@@ -17,6 +17,11 @@ Xerus) through **17.10** (Artful Aardvark).
 
 .. include:: substep_intro.rst
 
+#. To open a text file, you can type ``gedit FILENAME``.  For
+   example, to open the bash "rc" file::
+
+     gedit ~/.bashrc &
+
 Install prerequisite packages
 -----------------------------
 

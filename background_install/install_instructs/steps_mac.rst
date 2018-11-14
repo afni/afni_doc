@@ -13,11 +13,16 @@ What to do?
 
 These setup instructions are for **Mac OS versions 10.9+**.
 
- .. include:: substep_intro.rst
-
 .. note:: *If you are seeking the new App version of install
           instructions, please :ref:`click HERE
           <install_steps_mac_app>`.
+
+.. include:: substep_intro.rst
+
+#. To open a text file, you can type ``open -t FILENAME``.  For
+   example, to open the bash "rc" file::
+
+     open -t ~/.bashrc 
 
 Setup terminal
 --------------
@@ -158,6 +163,10 @@ Keep up-to-date (remember!)
 
 .. include:: substep_update.rst
 
+Enable more SUMA keypresses (recommended)
+----------------------------------------------------------
+
+.. include:: substep_mac_keyshortcuts.rst
 
 Install PyQt4, via JDK and fink (optional)
 ------------------------------------------

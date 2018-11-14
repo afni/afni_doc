@@ -17,6 +17,11 @@ These setup instructions are for Ubuntu Linux versions 15.10
 
 .. include:: substep_intro.rst
 
+#. To open a text file, you can type ``gedit FILENAME``.  For
+   example, to open the bash "rc" file::
+
+     gedit ~/.bashrc &
+
 Install prerequisite packages
 -----------------------------
 
