@@ -6,11 +6,11 @@
 
 #. Copy+paste::
 
-   brew install netpbm
+     brew install netpbm
 
 #. Copy+paste::
 
-  exit
+     exit
 
 **Purpose:** Install "netpbm", which has functionality for converting
 image formats (such as to PNG) and is used in several programs like
