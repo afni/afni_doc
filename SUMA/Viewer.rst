@@ -112,63 +112,67 @@ Quick Tour
 
 #. Rotating the surface
 
-   * :ref:`Button 1 drag<Button_1-Motion>`: keep it down while moving
-     the mouse left to right. This rotates the surface about the
-     screen's Y-axis (dotted green if :ref:`screen axes<F2>` are
-     displayed). Let go of button-1 (usually the left button).
+   Use :ref:`Button 1 drag<Button_1-Motion>`: keep it down while
+   moving the mouse left to right. This rotates the surface about the
+   screen's Y-axis (dotted green if :ref:`screen axes<F2>` are
+   displayed). Let go of button-1 (usually the left button).
    
-   * Repeat with up and down motion for rotation about X-axis and
-     motion in various directions for rotations mimicking those of a
-     trackball interface.
+   Repeat the left-click and drag, and move the mouse up and down in
+   order to rotate about the X-axis; and move the mouse in various
+   directions for rotations mimicking those of a trackball interface.
    
-   * Also try :ref:`up/down <U-D_arrows>`, :ref:`left/right
-     <L-R_arrows>` arrow keys.
+   Also try :ref:`up/down <U-D_arrows>`, :ref:`left/right
+   <L-R_arrows>` arrow keys.
 
-     * Arrow keys rotate by increments specified by the unix
-       environment variable
-       :ref:`SUMA_ArrowRotAngle<SUMA_ArrowRotAngle>` in degrees.
+   * Arrow keys rotate by increments specified by the unix environment
+     variable :ref:`SUMA_ArrowRotAngle<SUMA_ArrowRotAngle>` in
+     degrees.
       
-     * You can set SUMA environment variables in file ~/.sumarc. See
-       also option :ref:`-update_env<suma--update_env>` in *suma*.
+   * You can set SUMA environment variables in file ~/.sumarc. See
+     also option :ref:`-update_env<suma--update_env>` in *suma*.
 
-   .. _Prying:
+.. _Prying:
 
 #. Prying & Z rotating the hemispheres
 
-   * :ref:`Ctrl+button-1, drag<Ctrl+Button_1-Motion>`: Moving the
-     mouse horizontally while button 1 is pressed and ctrl is down
-     will pry hemispheres apart for better visualization. The prying
-     behavior is different for spherical and flattened
-     surfaces. Better try it than read about it. See also :ref:`F10
-     <F10>`
+   Use :ref:`Ctrl+button-1, drag<Ctrl+Button_1-Motion>`: move the
+   mouse horizontally while button 1 is pressed and ctrl is down will
+   pry hemispheres apart for better visualization. The prying behavior
+   is different for spherical and flattened surfaces. Better try it
+   than read about it. See also :ref:`F10 <F10>`
    
-   .. figure:: media/surfview_pry3.jpg
-      :align: center
-      :name: media/surfview_pry3.jpg
-      :target: ../_images/surfview_pry3.jpg
-      
-      :ref:`Prying anatomically correct surfaces<media/surfview_pry3.jpg>`
-      
-   .. figure:: media/surfview_pry3b.jpg
-      :align: center
-      :name: media/surfview_pry3b.jpg
-      :target: ../_images/surfview_pry3b.jpg
-      
-      :ref:`Prying flat surfces<media/surfview_pry3b.jpg>`
-      
-   .. container:: clearer
+   .. list-table:: 
+      :header-rows: 1
+      :widths: 40
 
-      .. image:: media/blank.jpg
+      * - Prying anatomically correct surfaces
+      * - .. image:: media/surfview_pry3.jpg
+             :width: 100%   
+             :align: center
 
-      
-      * :ref:`Ctrl+button-1 double click <Ctrl+Button_1-DoubleClick>`: Undo prying.
+   |
+
+   .. list-table:: 
+      :header-rows: 1
+      :widths: 40
+
+      * - Prying flat surfaces
+      * - .. image:: media/surfview_pry3b.jpg
+             :width: 100%   
+             :align: center
+
+      |
+
+   Use :ref:`Ctrl+button-1 double click <Ctrl+Button_1-DoubleClick>`:
+   undo prying.
    
-   * :ref:`Shift+button-1 drag<Shift+Button_1-Motion>`: Rotate
-     surfaces about screen's Z-axis. This option is useful for
-     positioning flat surfaces when displayed one at a time. In most
-     other circumstances, it leads to confusion.
+   Use :ref:`Shift+button-1 drag<Shift+Button_1-Motion>`: Rotate
+   surfaces about screen's Z-axis. This option is useful for
+   positioning flat surfaces when displayed one at a time. In most
+   other circumstances, it leads to confusion.
    
-      * :ref:`Shift+button 1 double click<Shift+Button_1-DoubleClick>`: Undo Z rotation
+   Use :ref:`Shift+button 1 double click<Shift+Button_1-DoubleClick>`:
+   Undo Z rotation.
       
 #. Translating surfaces
    
