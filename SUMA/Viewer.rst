@@ -27,7 +27,8 @@ with the following commands::
       suma  -spec ../SurfData/SUMA/std.DemoSubj_both.spec        \
             -sv DemoSubj_SurfVol_Alnd_Exp+orig 
 
-You should have *AFNI* up by now, and *SUMA* soon after, seeing the following pieces:
+You should have *AFNI* up by now, and *SUMA* soon after, seeing the
+following pieces:
 
 .. list-table:: 
    :header-rows: 1
@@ -54,7 +55,7 @@ Quick Tour
 #. **Talking to AFNI**
 
    Press the ``t`` in the ``suma`` window to talk to ``afni``.  This sends
-   anatomically correct surfaces to AFNI
+   anatomically correct surfaces to AFNI.
    
    You should be seeing surface contours atop the slices; the contours
    are the intersection of the surface with the slice.
