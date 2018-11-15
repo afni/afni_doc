@@ -27,105 +27,88 @@ with the following commands::
       suma  -spec ../SurfData/SUMA/std.DemoSubj_both.spec        \
             -sv DemoSubj_SurfVol_Alnd_Exp+orig 
 
+You should have *AFNI* up by now, and *SUMA* soon after, seeing the following pieces:
 
-You should have *AFNI* up by now, and *SUMA* soon after. 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 33 33 33
 
-.. figure:: media/surfview.0000.jpg
-   :align: right
-   :figwidth: 30%
-   :name: media/surfview.0000.jpg
-   
-   :ref:`SUMA viewer showing smoothed white matter surfaces<media/surfview.0000.jpg>`
-   
-.. figure:: media/surfview.0001.jpg
-   :align: left
-   :figwidth: 30%
-   :name: media/surfview.0001.jpg
-   
-   :ref:`AFNI slice view<media/surfview.0001.jpg>`
-   
-.. figure:: media/surfview.0002.jpg
-   :align: center
-   :figwidth: 30%
-   :target: ../_images/surfview.0002.jpg
-   :name: media/surfview.0002.jpg
-   
-   :ref:`AFNI Controller<media/surfview.0002.jpg>`
-   
-.. container:: clearer
-   
-    .. image:: media/blank.jpg
-   
-   
+   * - SUMA viewer showing smoothed white matter surfaces
+     - AFNI slice viewer
+     - AFNI Controller
+   * - .. image:: media/surfview.0000.jpg
+          :width: 100%   
+          :align: center
+     - .. image:: media/surfview.0001.jpg
+          :width: 100%   
+          :align: center
+     - .. image:: media/surfview.0002.jpg
+          :width: 100%   
+          :align: center
+
+|
    
 Quick Tour
 ----------
 
-#. Talking to AFNI
+#. **Talking to AFNI**
 
-   * Press :ref:`t <LC_t>` in the suma window to talk to *AFNI*
-      
-      * This sends anatomically correct surfaces to AFNI
+   Press the ``t`` in the ``suma`` window to talk to ``afni``.  This sends
+   anatomically correct surfaces to AFNI
    
-   * You should be seeing surface contours atop the slices
+   You should be seeing surface contours atop the slices; the contours
+   are the intersection of the surface with the slice.
    
-      * Contours are the intersection of the surface with the slice
-      
-         * You could also see boxes representing the nodes that are
-           within +/-1/2 slice from the center of the slice in view.
+   .. list-table:: 
+      :header-rows: 1
+      :widths: 40
 
-         * Colors and node box visibility can be changed to suit your
-           desires from the :guilabel:`Control Surface` button in
-           *AFNI*.
+      * - AFNI slice view with anatomically correct surfaces
+      * - .. image:: media/surfview.0003.jpg
+             :width: 100%   
+             :align: center
+         
+   You should also see boxes representing the nodes that are within
+   +/-1/2 slice from the center of the slice in view.  Colors and node
+   box visibility can be changed to suit your desires from the
+   ``Control Surface`` button in *AFNI*.
 
-         .. figure:: media/surfview.0003.jpg
-            :align: right
-            :figwidth: 40%
-            :target: ../_images/surfview.0003.jpg
-            :name: media/surfview.0003.jpg
-            
-            :ref:`AFNI slice view with anatomically correct surfaces' contours<media/surfview.0003.jpg>`
-            
-   * Navigate through the volume in *AFNI*
+#. **Navigating through the volume in AFNI**
    
-      * Make sure you have an excellent alignment between volume and
-        surface
+   Check to make sure you have an excellent alignment between volume
+   and surface.  Also make sure surface adequately represents areas of
+   the brain that are difficult to segment:
       
-      * Make sure surface adequately represents areas of the brain
-        that are difficult to segment
-      
-         * occipital cortex
+   * occipital cortex
          
-         * inferior frontal and inferior temporal regions
+   * inferior frontal and inferior temporal regions
          
-      * Surface may look good in *SUMA*, but may not match anatomy in
-        some places -- this is why you check surfaces in the AFNI
-        display.
-      
-      .. note:
-      
-      * The :term:`Surface Volume` and the surfaces must be in nearly
-        perfect alignment.
-      
-         * If you have an improper alignment, it should be addressed
-           here and now. This should not happen for FreeSurfer and
-           SureFit/Caret surfaces created in the standard fashion with
-           :ref:`@SUMA_Make_Spec_FS` or :ref:`@SUMA_Make_Spec_Caret`,
-           say. Problems might come up when you attempt to align data
-           across days with :ref:`@SUMA_AlignToExperiment`. See also
-           :ref:`Align_Surf_Vol<Align_Surf_Vol>`
+   The surface may **look** good in ``suma``, but it might not
+   actually match anatomy in some places -- this is why you check
+   surfaces in the AFNI display.
             
-         * Watch for error messages and warnings to come up in the
-           shell as all the surfaces are read in. These messages
-           should be examined once per subject since they do not
-           change unless the surface's geometry or topology is
-           changed.
+   The :term:`Surface Volume` and the surfaces must be in nearly
+   perfect alignment.
+      
+   A. If you have an improper alignment, it should be addressed here
+      and now. This should not happen for FreeSurfer and SureFit/Caret
+      surfaces created in the standard fashion with
+      :ref:`@SUMA_Make_Spec_FS` or :ref:`@SUMA_Make_Spec_Caret`,
+      say. Problems might come up when you attempt to align data
+      across days with :ref:`@SUMA_AlignToExperiment`. See also
+      :ref:`Align_Surf_Vol<Align_Surf_Vol>`
+            
+   #. Watch for error messages and warnings to come up in the shell as
+      all the surfaces are read in. These messages should be examined
+      once per subject since they do not change unless the surface's
+      geometry or topology is changed.
          
-         * Viewed without the volume underal, it is extremely
-           difficult to tell if surface models with no topological
-           defects accurately represent the cortical surface.
+   #. Viewed without the volume underal, it is extremely difficult to
+      tell if surface models with no topological defects accurately
+      represent the cortical surface.
          
-         
+   |
+
 #. Rotating the surface
 
    * :ref:`Button 1 drag<Button_1-Motion>`: keep it down while moving
