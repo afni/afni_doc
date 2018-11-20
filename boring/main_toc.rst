@@ -4,9 +4,9 @@
 Boring stuff
 #############
 
-This section mainly contains internal-focused documentation on writing
-help files, focusing on specific formatting for things like RST, and
-ZZZZZzzzzzzz.......
+This section mainly contains internally-focused documentation on
+writing help files, describing the specific formatting for things like
+RST, and ZZZZZzzzzzzz.......
 
 .. toctree::
    :maxdepth: 2
