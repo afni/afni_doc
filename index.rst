@@ -23,7 +23,8 @@ Welcome to AFNI's documentation!
    STATISTICS/main_toc
    template_atlas/main_toc
    tutorials/main_toc
-   installations/main_toc
+   demos/main_toc
+   boring/main_toc
    glossary
    references
    afni_home
