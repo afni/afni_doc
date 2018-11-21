@@ -23,4 +23,6 @@
    shell commands (e.g., `ls`, `cd`, `less`, etc.). It will *greatly*
    enhance your bootcamp experience-- we promise!
 
-
+#. **Pro tip:** If you will be attending a Bootcamp, you might want to
+   bring a mouse to use with your laptop. It will be easier to follow
+   the demos using a mouse than a trackpad.
