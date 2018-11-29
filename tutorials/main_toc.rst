@@ -17,3 +17,4 @@ Tutorials, Examples
    3dMVM_validator/main_toc
    auto_image/main_toc
    sound/afni_sound
+   rois_corr_vis/main_toc
