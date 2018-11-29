@@ -77,7 +77,7 @@ Unless otherwise stated, the binaries are for 64 bit systems.
      - Ubuntu 16.04-17.10
    * - `linux_openmp_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
      - Ubuntu (<16), Fedora, Red Hat, etc. 
-   * - `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_ 
+   * - `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_centos_7_64.tgz>`_ 
      - CentOS, Red Hat (RHEL 7)
 
 .. _afni_bin_mac:
