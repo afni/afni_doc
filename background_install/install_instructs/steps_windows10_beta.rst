@@ -1,7 +1,7 @@
 .. _install_steps_windows10_beta:
 
 
-old **Windows 10, "Bash on Ubuntu" (beta)**
+*old* **Windows 10: Bash on Ubuntu (beta)**
 ==============================================================================
 
 .. contents:: The essential system setup
