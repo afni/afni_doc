@@ -1,7 +1,7 @@
 :tocdepth: 2
 
 
-Code examples from publications
+Publication-based code examples
 ===============================
 
 Below is an archive of "larger" AFNI commands that have been used in
@@ -38,4 +38,5 @@ and hopefully these scripts further the discussion.
 
    fmri_brief
    fmri_detailed
+   afni_demos_fmri
 
