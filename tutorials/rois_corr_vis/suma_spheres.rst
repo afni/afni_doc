@@ -25,7 +25,7 @@ and shows how to:
 Survey of approaches
 --------------------
 
-Spherical objects can be rendered in 3 general ways in ``suma`` (plus
+Spherical objects can be rendered in 4 general ways in ``suma`` (plus
 some extra variants, noted in the script/examples).
 
 #. **NIDO: NeuroImaging Displayable Objects**
@@ -39,7 +39,7 @@ some extra variants, noted in the script/examples).
    <https://afni.nimh.nih.gov/afni/community/board/read.php?1,157722,157722#msg-157722>`_
    was for fun, but it does have a serious use - like yours.
 
-#. **Manufactured spherical surfaces**
+#. **Manufactured spherical surfaces (2 main kinds)**
 
    These are all clickable. That means clicking on a sphere identifies
    the node in some way. The coordinate can also be shared with the
@@ -86,7 +86,7 @@ some extra variants, noted in the script/examples).
    sphere. Show in suma with ``suma -vol myspheres+orig``. Render with
    ``suma`` or even with ``afni``'s Render plugin.
 
-#. *Bonus method:* **Graph nodes object**
+#. **Graph nodes object**
 
    SUMA can also display "graphs": essentially, nodes connected by
    edges.  The nodes themselves are spheres, and thus they also count
@@ -121,6 +121,11 @@ Files provided here include:
 * **sphere_coords.1D**
     a list of *(x, y, z)* coordinates that represent the centers of
     some spheres.
+
+* **ROI_i256.1D.cmap**
+    a "colormap", here a list of (R, G, B) color specifications.  This
+    one was made by hitting the "w" over the ROI_i256 colorbar in the
+    SUMA object controller.
 
 * **demo_suma_spheres.tcsh**
     a script file to run all the commands, making spheres and
@@ -520,6 +525,18 @@ anatomical) for the demo.
 
            suma -gdset graph_set_sphere.niml.dset \
                -vol ${templ_full} 
+
+       Pro-tips:
+       + Open the object controller (ctrl+s).
+       + Go to the 'Cl'=color dropdown menu in the "GDset Controls" on
+         the lefthand side, and select 'Grp' for coloration by "group"
+         (by default, all spheres are 'Yel'=yellow).
+       + Increase the radius of the spheres with the arrows by the
+         'Gn'=gain button.
+       + You can make the edge lines go away if you raise the
+         threshold by the color slider (>1, in this case); to still
+         see the spheres after this, select the square in the GDset
+         Controls by the 'U'=unconnected button.
 
    ++ -----------------------------------------------------------------
 
