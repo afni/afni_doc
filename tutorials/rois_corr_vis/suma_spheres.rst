@@ -86,6 +86,24 @@ some extra variants, noted in the script/examples).
    sphere. Show in suma with ``suma -vol myspheres+orig``. Render with
    ``suma`` or even with ``afni``'s Render plugin.
 
+#. *Bonus method:* **Graph nodes object**
+
+   SUMA can also display "graphs": essentially, nodes connected by
+   edges.  The nodes themselves are spheres, and thus they also count
+   as a method for displaying those geometrical forms.  The "bonus"
+   aspect of this approach is that the edges can provide additional
+   information/relationships among the spherical ROIs, such as
+   structural or functional properties (connections, correlation, FA
+   value, etc.).  This has been useful in displaying atlas
+   connections, for example in the D99 macaque atlas work (Reveley et
+   al., 2017).
+
+   *"Three-dimensional digital template atlas of the macaque brain"
+   Reveley, Gruslys, Ye, Samaha, Glen, Russ, Saad, Seth, Leopold,
+   Saleem, 2017. Cerebral Cortex, 27(9):4463-4477,
+   https://doi.org/10.1093/cercor/bhw248"*
+
+|
 
 Example Setup
 -------------
