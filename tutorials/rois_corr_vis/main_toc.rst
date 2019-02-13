@@ -16,3 +16,4 @@ will likely (hopefully) grow over time.
    :maxdepth: 2
 
    cat_netcorr.rst
+   suma_spheres.rst

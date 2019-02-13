@@ -46,7 +46,7 @@ Example Setup
 You can download the set of scripts and supplementary files for
 running this demo here:
 
-* :download:`afni_tutorial_rois_01.tgz media/afni_tutorial_rois_01.tgz`.
+* :download:`afni_tutorial_rois_01.tgz <media/afni_tutorial_rois_01.tgz>`
 
 The scripts for this demo are also shown one-by-one below, so one can
 read along with them.
