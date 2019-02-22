@@ -1,6 +1,6 @@
 .. _apqc_ex1:
 
-APQC example
+APQC-HTML navigation: example
 =========================================
 
 .. contents:: :local:
@@ -69,9 +69,10 @@ Menu (navigation) bar
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Menu bar
    * - .. image:: media/task00_navmenu.png
           :width: 100%
           :align: center
@@ -126,9 +127,10 @@ Quick hover help(s)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Hover example: "FORM:" button
    * - .. image:: media/form_help_hover.png
           :width: 100%
           :align: center
@@ -144,9 +146,10 @@ Main (long) help
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Help file in new tab (from "HELP" button)
    * - .. image:: media/help_scrn.png
           :width: 100%
           :align: center
@@ -157,12 +160,11 @@ will open up a longer, more descriptive help file in a separate tab.
 Top information
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Top of the page.
-
 .. list-table:: 
    :header-rows: 0
    :widths: 90
             
+   * - Top of the page
    * - .. image:: media/task01_Top.png
           :width: 100%
           :align: center
@@ -174,23 +176,23 @@ The top of the page contains the subject ID or label, as well as the
 pass along the real one will be coming soon.
 
 
-Block: vorig
+QC Block: **vorig**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Volumetric views of original data.
+**Volumetric views of original data.**
 
 \* Volumetric mages of data (EPI and anat) in original/native space.
 *Coming soon.*
 
-Block: ve2a
+QC Block: **ve2a**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Volumetric views of EPI-to-anatomical alignment.
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
-            
+
+   * - Volumetric views of EPI-to-anatomical alignment
    * - .. image:: media/task02_ve2a.png
           :width: 100%
           :align: center
@@ -200,15 +202,15 @@ Volumetric images of the alignment of the subject's anat
 Likely these will be shown in the template space, if using the
 ``tlrc`` block.
 
-Block: va2t
+QC Block: **va2t**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Volumetric views of anatomical-to-template alignment.
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
-            
+
+   * - Volumetric views of anatomical-to-template alignment
    * - .. image:: media/task03_va2t.png
           :width: 100%
           :align: center
@@ -217,22 +219,22 @@ Volumetric images of the alignment of the standard space template
 (underly/grayscale) and subject's anat (overlay/hot color edges)
 volumes.  
 
-Block: vstat
+QC Block: **vstat**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Volumetric views of statistics.
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
-            
+
+   * - Volumetric views of statistics
    * - .. image:: media/task04_vstat.png
           :width: 100%
           :align: center
 
 Volumetric images of (full) F-stat of an overall regression model.
-These are only created for task data sets, i.e., where GLTs or stimuli
-are specified.  
+These images are only created for task data sets, i.e., where GLTs or
+stimuli are specified (so *not* for resting state data).
 
 This block gives a general sense of the model specification.  One
 should check for large F-stats in brain regions related to the tasks
@@ -254,15 +256,14 @@ specific contrasts to be included here.  Unless that proves too
 difficult.
 
 
-Block: mot
+QC Block: **mot**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Motion.
-
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Motion-related plots: enorm estimates
    * - .. image:: media/task05a_mot_enormout.png
           :width: 100%
           :align: center
@@ -300,9 +301,10 @@ graph window.
 
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Motion-related plots: outlier estimates
    * - .. image:: media/task05b_mot_VR6.png
           :width: 100%
           :align: center
@@ -312,15 +314,14 @@ here.  The censoring isn't shown in these plots (though, again, if
 multiple runs are included, the background color oscillated between
 white and gray to show each).
 
-Block: regr
+QC Block: **regr**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Regression modeling.
-
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Regression modeling: combined stimulus plots
    * - .. image:: media/task06a_regr_combined.png
           :width: 100%
           :align: center
@@ -332,23 +333,29 @@ the stimulus convolved with a specific response/HRF.
 This might be useful to check against having oddly overlapping
 stimuli, duplicated stimulus files, incorrect units, etc.
 
+These images are only created for task data sets, i.e., where GLTs or
+stimuli are specified (so *not* for resting state data).
+
+
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Regression modeling: individual stimulus plots
    * - .. image:: media/task06b_regr_perstim.png
           :width: 100%
           :align: center
 
-Each individual regressor from the input stimulus is shown.  
+Each individual regressor from the input stimulus is shown.
 
 \* Labels per stimulus will be coming!  and maybe even censor counts
 per stimulus.
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Regression modeling: degree of freedom info
    * - .. image:: media/task06c_regr_dof.png
           :width: 100%
           :align: center
@@ -364,15 +371,14 @@ whether bandpassing is necessary in your study-- don't just do it
 because the cool kids are!  (Esp. if you have a low TR, you will
 reeeaaally use up degrees of freedom quickly.)
 
-Block: warn
+QC Block: **warn**
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
-Warnings.
 
 .. list-table:: 
    :header-rows: 0
    :widths: 90
             
+   * - Warnings from processing
    * - .. image:: media/task07_warns.png
           :width: 100%
           :align: center
@@ -387,23 +393,17 @@ all your data processing steps carefully, and have an idea of what
 problems might occur/look like.  But the warnings will try to help you
 find problems, too.
 
-Block: qsumm
+QC Block: **qsumm**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Quantitative summary values.
-
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Quantitative summary values
    * - .. image:: media/task08a_qsumm_basic.png
           :width: 100%
           :align: center
-
-.. list-table:: 
-   :header-rows: 0
-   :widths: 90
-            
    * - .. image:: media/task08b_qsumm_morebasic.png
           :width: 100%
           :align: center
@@ -417,18 +417,41 @@ How to: comment
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - Ctrl+click on QC button to open comment
    * - .. image:: media/comm_ex_A.png
           :width: 100%
           :align: center
 
+In addition to making a rating for a given QC block (or the FINAL
+evaluation), you can record comments about it.  To open a comment, hit
+ctrl+click the specific QC button.  Then you can type whatever you
+want (though, the assumption is you are not writing a Russian novel
+here, and also don't require fancy formatting). 
+
+You can either keep your comment (hit Enter at any point, or the green
+"keep+close" button), or clear it (hit Esc at any point, or the
+magenta "clear+close" button).
+
 .. list-table:: 
-   :header-rows: 0
+   :header-rows: 1
    :widths: 90
             
+   * - QC buttons with comments have quotation marks around rating, e.g., "?"
    * - .. image:: media/comm_ex_B.png
           :width: 100%
           :align: center
 
+You can see that a QC button has a comment, because the status symbol
+(+, X, ?) will be surrounded by quotation marks ("+", "X", "?"). 
+
+If you add a comment to an unrated QC button, it will automatically
+get a rating of "?".  You can alter the rating even when a comment is
+present.
+
+**A note about saving comments:** these are saved in the apqc*json
+file in the QC-directory.  As noted :ref:`here
+<tut_apqc_overview_saving>`, this process is subject to browser
+constraints.  Life is hard.
