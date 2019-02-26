@@ -299,6 +299,12 @@ exact number doesn't really matter.  NB: as a quirk of this, some of
 the highest outliers in the BC boxplots may not appear in the visible
 graph window.
 
+Note that the width of the censor lines is small but finite.  As the
+number of time points *N* increases and their separation on the x-axis
+decreases, it may be that the one censor line's width exceeds that
+interval.  So, visually, it might take up more than 1/*N*\th of the
+area of the plot; however, the reality of the situation should still
+be clear with the fraction of censored volumes.
 
 .. list-table:: 
    :header-rows: 1
@@ -331,7 +337,11 @@ censoring) and AC (after censoring) boxplots to the right.  These show
 the stimulus convolved with a specific response/HRF.
 
 This might be useful to check against having oddly overlapping
-stimuli, duplicated stimulus files, incorrect units, etc.
+stimuli, duplicated stimulus files, incorrect units, etc.  Also, if
+the median value changes a lot between the BC and AC boxplots, that
+would be one sign of having a particular stimulus greatly affected by
+the censoring (which might be problematic for the quality of that
+subject's data set).
 
 These images are only created for task data sets, i.e., where GLTs or
 stimuli are specified (so *not* for resting state data).
