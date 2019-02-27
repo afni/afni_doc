@@ -120,6 +120,9 @@ the element's ID?*
       * - 
         - **df**
         - (*text*) Summary of degrees of freedom (DF) usage
+      * - 
+        - **grayplot**
+        - (*image*) Grayplot ('-peelorder') of residuals dset
       * - **warns**
         -
         - Check: all warnings from processing 
@@ -144,9 +147,20 @@ the element's ID?*
 Command line examples to view HTML output
 --------------------------------------------
 
-The simplest way to use a command line to view the output is by
-directly using your browser and then either the absolute or relative
-path your QC-directory's ``index.html`` file, respectively::
+Firstly, when modern ``afni_proc.py`` finishes, it will show users the
+``@ss_review_basic`` output per usual, but then also (hopefully) note
+that the APQC HTML finished building successfully.  It will directly
+prompt you with a command to open+view that hot-off-the-press file,
+namely with something like::
+
+   afni_open -b sub-001.results/QC_sub-001/index.html
+
+*Boom!* The ``afni_open -b`` means that the following HTML file will
+be opened in your default browser.  
+
+You can also specify your own browser.  For example, using ``firefox``
+and utilizing either the absolute or relative path your QC-directory's
+``index.html`` file, respectively::
 
   firefox /data/cereal_study/sub-001/sub-001.results/QC_sub-001/index.html
 

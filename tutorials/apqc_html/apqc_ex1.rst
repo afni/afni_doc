@@ -381,6 +381,41 @@ whether bandpassing is necessary in your study-- don't just do it
 because the cool kids are!  (Esp. if you have a low TR, you will
 reeeaaally use up degrees of freedom quickly.)
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 90
+            
+   * - Regression modeling: grayplot of residuals
+   * - .. image:: media/task06d_regr_grayplot.png
+          :width: 100%
+          :align: center
+
+Grayplots of residuals: each row shows a grayscale version of a time
+series, and each column is one timepoint.  Only voxels within a brain
+mask are included in the plot.  Note that censored time points will
+appear as uniformly blank columns.  
+
+The colors are mapped as MAXVAL to white and -MAXVAL to black (recall:
+residuals *should* be roughly centered around zero), with a hopefully
+reasonable MAXVAL found from the distribution of time series values
+throughout the mask (gory details: take the max of the absolute value
+of each time series, and then take the 50th percentile of that set of
+values).  
+
+In what order are the voxels selected to fill rows?  Well, it's done
+in a way to preserve a bit of localness, so that neighboring rows
+should be neighboring voxels, usually.  See the "-peelorder" option in
+``3dGrayplot``).
+
+Grayplots are one way to look at a whole brain's worth of FMRI data
+and assess some aspects of modeling, motion, etc., for example as
+described `in this paper
+<https://www.ncbi.nlm.nih.gov/pubmed/27510328>`_.  Note that various
+researchers may have different opinions about interpreting the
+grayplots and what they mean.
+
+
+
 QC Block: **warn**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
