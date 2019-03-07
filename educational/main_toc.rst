@@ -7,6 +7,7 @@ Educational resources
    :maxdepth: 2
 
    bootcamp_recordings
+   handouts
    outside_lectures
    startup_tips
    all_afni_cbars

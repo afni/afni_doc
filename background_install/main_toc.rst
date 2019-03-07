@@ -1,9 +1,9 @@
 :tocdepth: 2
 
+.. _install_main:
+
 Installation and Background
 ===========================
-
-
 
 .. toctree::
    :maxdepth: 2
