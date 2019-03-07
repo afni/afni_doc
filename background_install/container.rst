@@ -2,9 +2,9 @@
 .. _install_container_build:
 
 
-************************
-**Containerized AFNI**
-************************
+*********************************
+**Work with Containerized AFNI**
+*********************************
 
 .. contents:: 
 
