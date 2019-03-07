@@ -3,7 +3,7 @@
 
 
 *******************************************
-**Installing AFNI on Administered Systems**
+**Install AFNI on Administered Systems**
 *******************************************
 
 These instructions are for those using administered systems.  Included

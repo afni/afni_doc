@@ -2,9 +2,8 @@
 .. _Bootcamping:
 
 ***********************
-**Basic Bootcamp Prep**
+**Prep for Bootcamp**
 ***********************
-
 
 #. **Get the most uptodate AFNI on your computer.**
 
