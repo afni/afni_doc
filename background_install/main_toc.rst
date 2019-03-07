@@ -10,7 +10,7 @@ Installation and Background
 
    install_instructs/index.rst
    install_admins/index.rst
-   install_container/index.rst
+   container.rst
    download_links.rst
    unix_tutorial/index.rst
    bootcamp_stuff.rst
