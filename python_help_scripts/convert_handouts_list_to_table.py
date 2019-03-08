@@ -68,11 +68,9 @@ def tableize_list( LL, title = '', hrows='' ):
     list_table = '''
 .. list-table:: {title}
    :header-rows: {Nhrows} 
-   :align: left
    :widths: 50
 
    {hrows}
-
 '''.format(title=title, Nhrows=Nhrows, hrows=hrows)
 
     NL = len(LL)
@@ -103,7 +101,6 @@ def tableize_list_twocol( LL, title = '', hrows='' ):
    :widths: 50 50
 
 {hrows}
-
 '''.format(title=title, Nhrows=Nhrows, hrows=hrows)
 
     NL = len(LL)
