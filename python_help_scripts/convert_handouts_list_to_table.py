@@ -97,7 +97,7 @@ def tableize_list_twocol( LL, title = '', hrows='' ):
     list_table = '''
 .. list-table:: {title}
    :header-rows: {Nhrows} 
-   :align: left
+   :align: left left
    :widths: 50 50
 
 {hrows}
