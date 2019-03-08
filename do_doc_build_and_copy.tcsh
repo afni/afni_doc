@@ -10,6 +10,10 @@ set DO_PHELP    = 0    # prob don't need to change with the opt below
 
 # ======================================================================
 
+# [PT: Mar 8, 2019] add in the afni_handouts processing
+
+# ======================================================================
+
 if ( $#argv == 0 ) goto SHOW_HELP
 
 set ac = 1
@@ -65,6 +69,11 @@ set here = $PWD
 set thedate = `date +%Y_%m_%d`
 set backup_dir = htmldoc.auto_backup.$thedate
 
+# for listing handouts
+set aho_dir  = /mnt/afni/pub/dist/edu/data/CD.expanded/afni_handouts/
+set aho_txt  = afni_handouts_list.txt # in educational/media/
+set aho_rst  = afni_handouts_list.rst # in educational/media/
+
 # =============================================================
 
 if ( "$DO_PHELP" == "0" ) then
@@ -107,6 +116,19 @@ if ( "$DO_BUILD" == "1" ) then
     python make_file_of_all_afni_cbars.py          \
         ../educational/media/cbars                 \
         ../educational/all_afni_cbars.rst
+
+    # [PT: Mar 8, 2019] added
+    if ( -e $aho_dir ) then
+        echo "++ List AFNI handouts"
+        \ls -1 ${aho_dir} > ../educational/media/${aho_txt}
+
+        python convert_handouts_list_to_table.py \
+            ../educational/media/${aho_txt}      \
+            ../educational/media/${aho_rst}
+    else
+        echo "** Could not find list during build **" \
+            > ../educational/media/${aho_rst}
+    endif
 
     cd ..
     # ---------------------------------
