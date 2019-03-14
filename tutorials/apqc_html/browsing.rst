@@ -222,6 +222,7 @@ scripts.
       foreach ii ( `seq 1 1 $#all_files` )
 
           set ff = ${all_files[$ii]}
+          echo "++ Opening: $ff"
 
           # Open the first HTML a new window, the rest in a new tab
           if ( $ii == 1 ) then
@@ -250,6 +251,7 @@ scripts.
       foreach ii ( `seq 1 1 $#all_files` )
 
           set ff = ${all_files[$ii]}
+          echo "++ Opening: $ff"
 
           # Open the first HTML a new window, the rest in a new tab
           if ( $ii == 1 ) then
@@ -259,6 +261,46 @@ scripts.
           endif
 
       end
+
+Closing browser tabs
+-----------------------------
+
+Because information can be saved for each tab/index.html file (e.g.,
+comments and ratings), there is a little bit of standard browser
+security in place so that changes might not get inadvertently lost.
+Sometimes, this might be helpful, while at other times, annoyanceful.
+We propose approaches to reduce the latter and increase convenience
+(hopefully).
+
+.. note:: NB: the suggestions provided here refer to using a modern
+          ``firefox`` browser (~63-5), where most of this has been
+          tested.  I don't know if this behavior changes much over
+          time or across browsers.  Please be aware of your own
+          browser's behavior and/or quirks in order to prevent loss of
+          work.
+
+If you open+view a QC HTML page and then try to close it, you will
+likely get this message (along with a couple buttons):
+  *This page is asking you to confirm that you want to leave - data
+  you have entered may not be saved.*
+
+As noted above, this feature is to prevent loss of any
+entered-but-not-saved information in the QC buttons of the page (at
+present, even if there is no information entered-- sorry!).  If you
+have a lot of tabs open, this can be a bit annoying, moving a mouse
+back and forth.
+
+However, in reality, you don't have to move your mouse around to
+verify that you want to close the tab.  That would be highly
+inefficient and unfortunate.  Instead, you can proceed as follows:
+
+* If you are clicking the 'x' on the tab to close it, just click that
+  again, and the tab should close.
+
+* If you are using a keyboard shortcut to close the tab (mine is
+  ``ctrl+w``), then just type that same shortcut again, and the tab
+  should close.
+
 
 Some comments on browsing
 -----------------------------
@@ -291,6 +333,8 @@ Or, one could get subjects 120-149, inclusively, with::
 
 And there are surely other such "tricks", too, but I don't want to rob
 you of the pleasure of finding them.
+
+.. _apqc_browsing_newtab: 
 
 Opening images in a new tab
 ----------------------------------
