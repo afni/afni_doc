@@ -216,7 +216,7 @@ scripts.
       #!/bin/tcsh
 
       # Construct a list of all subjects to view
-      set all_files = `ls sub*/*.results/QC_*/index.html`
+      set all_files = `\ls sub*/*.results/QC_*/index.html`
 
       # Loop over all the subjects in the list
       foreach ii ( `seq 1 1 $#all_files` )
@@ -245,7 +245,7 @@ scripts.
       #!/bin/tcsh
 
       # Construct a list of all subjects to view
-      set all_files = `ls sub*/*.results/QC_*/index.html`
+      set all_files = `\ls sub*/*.results/QC_*/index.html`
 
       # Loop over all the subjects in the list
       foreach ii ( `seq 1 1 $#all_files` )
