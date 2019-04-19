@@ -16,6 +16,9 @@
    using "``rm CD.tgz``".  If you are *really* confident, you can also
    deleted the CD/ directory in the present location.
 
+#. **!Pro tip!:** Bring a computer mouse to use at the Bootcamp. It
+   is muuuuch easier to follow the demos that way.
+
 #. Read+practice with the handy :ref:`Unix documentation/tutorial
    <U_misc_bg0>`.
 
@@ -23,6 +26,3 @@
    shell commands (e.g., `ls`, `cd`, `less`, etc.). It will *greatly*
    enhance your bootcamp experience-- we promise!
 
-#. **Pro tip:** If you will be attending a Bootcamp, you might want to
-   bring a mouse to use with your laptop. It will be easier to follow
-   the demos using a mouse than a trackpad.
