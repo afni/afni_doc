@@ -2,7 +2,7 @@
 .. _install_steps_mac_adminR:
 
 
-**Mac OS (admin'ed)**: *the regular user part*
+Mac OS (admin'ed): *the regular user part*
 ============================================
 
 .. contents:: :local:
