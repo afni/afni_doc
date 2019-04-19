@@ -7,8 +7,10 @@
   
      echo 'alias ls ls --color=auto' >> ~/.cshrc
      echo 'alias ll ls --color -l'   >> ~/.cshrc
+     echo 'alias ltr ls --color -ltr'   >> ~/.cshrc
      echo 'alias ls="ls --color"'    >> ~/.bashrc
      echo 'alias ll="ls --color -l"' >> ~/.bashrc
+     echo 'alias ltr="ls --color -ltr"' >> ~/.bashrc
 
    **Purpose:** The first commands set up ``tab`` autocompletion for
    ``tcsh`` (which should already be enabled for ``bash``, by

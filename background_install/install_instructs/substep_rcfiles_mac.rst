@@ -7,8 +7,10 @@ To improve your life when using the terminal, copy+paste these::
 
   echo 'alias ls ls -G'    >> ~/.cshrc
   echo 'alias ll ls -lG'   >> ~/.cshrc
+  echo 'alias ltr ls -lGtr'   >> ~/.cshrc
   echo 'alias ls="ls -G"'  >> ~/.bashrc
   echo 'alias ll="ls -lG"' >> ~/.bashrc
+  echo 'alias ltr="ls -lGtr"' >> ~/.bashrc
 
 **Purpose:** The first commands set up ``tab`` autocompletion for
 ``tcsh`` (which should already be enabled for ``bash`` users by
