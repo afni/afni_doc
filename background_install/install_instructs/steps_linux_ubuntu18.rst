@@ -91,7 +91,8 @@ Install R
        mkdir  $R_LIBS
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
-       sudo apt-get install -y r-base-dev r-cran-rmpi 
+       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu_18.04.tcsh
+       sudo tcsh @add_rcran_ubuntu_18.04.tcsh
 
    * ... a ``bash`` terminal, copy+paste::
    
@@ -99,19 +100,22 @@ Install R
        mkdir  $R_LIBS
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       sudo apt-get install -y r-base-dev r-cran-rmpi 
+       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu_18.04.tcsh
+       sudo tcsh @add_rcran_ubuntu_18.04.tcsh
 
    **Purpose:** Setup modern R from scratch. This relies on the
    environment variable ``$R_LIBS``, which specifies where to install
    the packages and where to read them from later (when R programs
-   run). 
+   run). The file obtained using curl adds a more uptodate set of R
+   libraries to the source list.
 
 #. Copy+paste::
      
      rPkgsInstall -pkgs ALL
 
    **Purpose:** Get specific R packages needed for AFNI programs.
-   This step might take a while to complete.
+   This step might take a while (of order an hour) to complete,
+   because R will compile the packages.  Sigh.
    
 .. ---------- HERE/BELOW: copy for all installs --------------
 
