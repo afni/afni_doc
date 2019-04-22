@@ -83,15 +83,9 @@ Install AFNI binaries
      cd
      curl -O https://afni.nimh.nih.gov/pub/dist/bin/macosx_10.7_local/@update.afni.binaries
 
-#. For ...
-
-   * *... OS X >= 10.12*, copy+paste::
+#. Copy+paste (this applies even if your OS version is <10.12)::
 
        tcsh @update.afni.binaries -defaults -package macos_10.12_local
-
-   * *... OS X < 10.12*, copy+paste::
-       
-       tcsh @update.afni.binaries -defaults -package macosx_10.7_local
 
    **Purpose:** download and unpack the current binaries into your
    ``$HOME`` directory; set the AFNI binary directory name to
