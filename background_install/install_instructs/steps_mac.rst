@@ -97,7 +97,7 @@ Install AFNI binaries
              ``-local_package`` with the location+name of the binary
              file, e.g.::
 
-               tcsh @update.afni.binaries -local_package macosx_10.7_local.tgz -do_extras
+               tcsh @update.afni.binaries -local_package macos_10.12_local.tgz -do_extras
 
 Reboot
 ------
