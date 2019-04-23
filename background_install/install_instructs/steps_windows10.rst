@@ -71,8 +71,59 @@ Install VcXsrv Windows X Server
 #. Close (exit) Ubuntu terminal, so that changes are effected the next
    time you open it.
 
+More setup tips for Ubuntu+Windows
+---------------------------------------------
 
-Install prerequisite: AFNI and  package dependencies
+1. Install Ubuntu terminal fonts as described `HERE
+   <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
+
+#. | The default profile "use colors from system theme" shows an
+     all-black terminal.  To fix this: 
+   | Go to the terminal's menu bar,
+   | Select the ``Edit`` tab, then ``Profile``, 
+   | Turn **off** "use colors ...", and just pick a scheme+palette
+     that you like.
+
+#. | **Note:**
+   | In gnome-terminal, things are similar to other Linux
+     implementations. The middle button pastes whatever is
+     highlighted in the WSL terminal or other gnome-terminal:
+     ``shift-ctrl-c`` copies, and ``shift-ctrl-v`` also pastes.
+
+#. You can "see" your Windows file system from the Ubuntu side, where
+   it appears as ``/mnt/c/``.  For example, if your Windows username
+   is USERNAME, then the following would copy a file called FILE.pdf
+   on your Windows Desktop to your current Ubuntu terminal location::
+
+     cp /mnt/c/Users/USERNAME/Desktop/FILE.pdf .
+
+#. To mount external devices (e.g., a USB) from the Ubuntu side.
+   Let's say your external device appears as the "G:" drive on Windows
+   when you plug it into a USB port.  You could mount that drive from
+   Ubuntu as follows::
+
+     sudo mkdir /mnt/g                # make a mount point location; 'g' is a convenient label here
+     sudo mount -t drvfs G: /mnt/g    # mount the external drive to it
+
+   If you had a file FILE.nii on the "G:" drive USB, you could now
+   copy it to your present location with::
+
+     cp /mnt/g/FILE.nii .
+
+   **To safely unmount the USB before unplugging it**, type::
+
+     sudo umount /mnt/g
+
+   *Bonus note:* you can mount/unmount network shares in a similar way::
+
+     sudo mkdir /mnt/share
+     sudo mount -t drvfs '\\server\share' /mnt/share
+
+     ...
+
+     sudo umount /mnt/share
+
+Install prerequisite: AFNI and package dependencies
 ----------------------------------------------------
 
 0. Start a new Ubuntu session.  To check your version, copy+paste::
@@ -92,47 +143,6 @@ Install prerequisite: AFNI and  package dependencies
    **Purpose:** Complete your life's ambition to have working AFNI on
    your Windows computer (though, realize it is Linux that makes this
    happen!).
-
-More setup tips
----------------------------------------------
-
-1. Install Ubuntu terminal fonts as described `HERE
-   <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
-
-#. | The default profile "use colors from system theme" shows an
-     all-black terminal.  To fix this: 
-   | Go to the terminal's menu bar,
-   | Select the ``Edit`` tab, then ``Profile``, 
-   | Turn **off** "use colors ...", and just pick a scheme+palette
-     that you like.
-
-#. | **Note:**
-   | In gnome-terminal, things are similar to other Linux
-     implementations. The middle button pastes whatever is
-     highlighted in the WSL terminal or other gnome-terminal:
-     ``shift-ctrl-c`` copies, and ``shift-ctrl-v`` also pastes.
-
-.. 
-    #. Like most Linux systems, some things have to be done with ``sudo``
-       permissions. The username and password may have nothing to do with
-       their Windows login. To reset the password for user
-       ``USER_X``, follow these instructions:
-
-       * From the default command window, type ``Super[windowskey]+X``,
-         then ``A``.  You can change the default user to root::
-
-           lxrun /setdefaultuser root
-
-       * Now BoUoW logs you in as root without asking password. To change
-         the user password::
-
-           passwd USER_X
-
-       * Change the default user back to your normal user in Windows
-         command prompt::
-
-           lxrun /setdefaultuser USER_X
-
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
