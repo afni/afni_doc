@@ -223,6 +223,7 @@ scripts.
 
           set ff = ${all_files[$ii]}
           echo "++ Opening: $ff"
+          sleep 0.1      # this helps *all* windows open properly
 
           # Open the first HTML a new window, the rest in a new tab
           if ( $ii == 1 ) then
@@ -252,6 +253,7 @@ scripts.
 
           set ff = ${all_files[$ii]}
           echo "++ Opening: $ff"
+          sleep 0.1      # this helps *all* windows open properly
 
           # Open the first HTML a new window, the rest in a new tab
           if ( $ii == 1 ) then
