@@ -11,4 +11,4 @@ Demo Material
    FATCAT_Demo/FATCAT_Demo
    SmallInstalls/DemoData
    TemplateSurfaces/TemplateSurfaces
-   StandardMeshes/StandardMeshes
+
