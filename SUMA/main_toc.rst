@@ -12,4 +12,5 @@ SUMA
    cover
    Viewer
    Controllers
+   StandardMeshes
    Code
