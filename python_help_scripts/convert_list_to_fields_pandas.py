@@ -84,11 +84,17 @@ def parse_lines(LL):
     '''
 
     N = len(LL)
-    list_group = [final_cols[0]]
-    list_grank = [final_cols[1]]
-    list_prog  = [final_cols[2]]
-    list_rank  = [final_cols[3]]
-    list_desc  = [final_cols[4]]
+    list_group = []
+    list_grank = []
+    list_prog  = []
+    list_rank  = []
+    list_desc  = []
+    
+    mmm_titles = [final_cols[0],
+                  final_cols[1],
+                  final_cols[2],
+                  final_cols[3],
+                  final_cols[4] ]
 
     for i in range(N):
         ltype = "empty"
@@ -120,7 +126,7 @@ def parse_lines(LL):
     lll = [list_group, list_grank, list_prog, list_rank, list_desc]
     mmm = map(list, zip(*lll))
 
-    return mmm
+    return mmm, mmm_titles
 
 
 # =================================================================
@@ -132,9 +138,9 @@ if __name__=="__main__":
     print("++ Command line:\n   {}".format(' '.join(sys.argv)))
     (ifile, ofile)  =  get_arg(sys.argv[1:])
 
-    all_lines  = au.read_text_file( ifile )
-    lll        = parse_lines( all_lines )
-    lll_hhh    = lll.pop(0)
+    all_lines    = au.read_text_file( ifile )
+    lll, lll_hhh = parse_lines( all_lines )
+    #lll_hhh      = lll.pop(0)
 
     # convert to data frame
     ddd        = pd.DataFrame(lll, columns=lll_hhh)
