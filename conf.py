@@ -84,13 +84,14 @@ master_doc = 'index'
 ##### !!!!!!!!!!!! subprocess!!
 # wafni = "/home/ptaylor/afni_src/linux_ubuntu_12_64/afni"
 # wafni = "/home/afniHQ/abin/afni"
-wafni = subprocess.check_output("which afni",
+wafni0 = subprocess.check_output("which afni",
                                 stderr=subprocess.STDOUT,
                                 shell=True)
-print("++ Path to AFNI_version.txt: \n\t{}".format(wafni))
+wafni = wafni0.decode("utf-8")[:-5] # need to decode bytes -> str
+print("++ Path to AFNI_version.txt: \n\t{}\n".format(wafni))
 
 # get the version number of AFNI
-fname_version = wafni[:-5]+'AFNI_version.txt'
+fname_version = wafni + 'AFNI_version.txt'
 fff = open(fname_version, 'r')
 x = fff.readlines()
 fff.close()
