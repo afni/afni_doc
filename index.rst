@@ -16,8 +16,6 @@ Welcome to AFNI's documentation!
    educational/main_toc
    programs/main_toc
    codex/main_toc
-   .. 
-      AFNI/main_toc
    SUMA/main_toc
    FATCAT/main_toc
    STATISTICS/main_toc
@@ -28,6 +26,10 @@ Welcome to AFNI's documentation!
    glossary
    references
    afni_home
+   
+.. someday add back in this:
+
+   AFNI/main_toc
 
 ==================
 Indices and tables

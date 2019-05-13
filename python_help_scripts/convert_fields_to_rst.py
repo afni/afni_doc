@@ -9,6 +9,14 @@ import pandas as pd
 
 # Each "GROUP" name line *must* start with "++" (no spaces beforehand)
 
+# ====================================================================
+#
+# [PT: May 13, 2019] In the desciptions, replace "*" with "\*" (e.g.,
+# in the string "outputs *.grid files"), so that the RST doesn't try
+# to interpret those chars as italics, because the would be unmatched!
+#
+# ====================================================================
+
 import afni_util as au
 
 import convert_list_to_fields_pandas as clfp
@@ -147,7 +155,10 @@ def parse_field_lines(LL):
                 list_grank.append(y[1].strip())
                 list_prog.append(y[2].strip())
                 list_rank.append(y[3].strip())
-                list_desc.append(y[4].strip())
+                desc = y[4].strip()
+                if desc.__contains__("*") :
+                    desc = desc.replace("*", "\*")
+                list_desc.append(desc)
 
     lll = [list_group, list_grank, list_prog, list_rank, list_desc]
     mmm = map(list, zip(*lll))

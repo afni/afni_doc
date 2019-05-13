@@ -27,9 +27,10 @@ will refer to the general, personal computer instructions :ref:`here
 .. toctree::
    :maxdepth: 3
 
-   steps_linux_admin
-   steps_linux_reg
    steps_mac_admin
    steps_mac_reg
 
 
+.. some day add these?              
+   steps_linux_admin
+   steps_linux_reg

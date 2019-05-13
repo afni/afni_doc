@@ -161,7 +161,7 @@ Quick Tour
              :width: 100%   
              :align: center
 
-      |
+   |
 
    Use :ref:`Ctrl+button-1 double click <Ctrl+Button_1-DoubleClick>`:
    undo prying.

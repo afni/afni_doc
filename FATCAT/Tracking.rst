@@ -455,8 +455,8 @@ after.
      attached to tracked outputs).
 
    * ``-logic {AND|OR}``: select whether the tracts output in the
-     *.tract file connect targets using AND- or OR-logic. NB: in
-     *either case, both INDI and PAIR map (volume) files are output.
+     \*.tract file connect targets using AND- or OR-logic. NB: in
+     either case, both INDI and PAIR map (volume) files are output.
 
    * ``-prefix OUT_PREF``: prefix for all output files, as described
      above. Additionally, a network number will be appended before the
@@ -537,7 +537,7 @@ Including extra volumes
 
 #. One might want to load extra volumes of information into
    ``3dTrackID`` for making extra connectivity matrices in the output
-   *.grid files. For example, one might want statistics performed on
+   \*.grid files. For example, one might want statistics performed on
    non-diffusion data such as T1 or PD values.
 
    * If using ``-dti_in DT_PREF``, one can give these files the same
@@ -763,7 +763,7 @@ analyses.
 Switching various features ON/OFF
 ---------------------------------
 
-* ``-do_trk_out`` : *do* output *.trk files, which might be useful in
+* ``-do_trk_out`` : *do* output \*.trk files, which might be useful in
   other, non-AFNI/SUMA programs.
 
 * ``-uncut_at_rois`` : by default, tracts connecting pairs of targets
@@ -797,7 +797,7 @@ Miscellaneous others
 * ``-nifti`` : output all volume files as ``*.nii.gz`` files.
 
 * ``-extra_tr_par`` : run three extra track parameter scalings for
-  each target pair, output in the *.grid file. The NT value of each
+  each target pair, output in the \*.grid file. The NT value of each
   connection is scaled in the following manners for each subsequent
   matrix label:
 
