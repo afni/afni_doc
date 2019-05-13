@@ -12,6 +12,11 @@ import afni_util as au
 
 ## [PT: Mar 22, 2018] Make the reference for each help in the "All
 ## Help" section be ".. _ahelp_PROGNAME"
+##
+## [PT: May 13, 2019] Get rid of vertical pipe chars "|", because
+## there were doc build warnings about unindented character...  Don't
+## think those were doing much there, anyways.
+
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
@@ -192,9 +197,9 @@ for afni_prog in prog_list:
 
     ## table of contents and a blank to remove the indentation for the
     ## next line
-    sphinx_out.write(".. contents:: :local:\n") # [PT: Aug 29, 2018]
+    sphinx_out.write(".. contents:: :local:\n\n") # [PT: Aug 29, 2018]
     #sphinx_out.write("    :depth: 4 \n\n")
-    sphinx_out.write("| \n\n")
+    #sphinx_out.write("| \n\n") # got warnings from |
 
     ## flag for the existence of codes
     has_codes = 0
@@ -265,9 +270,9 @@ for afni_prog in prog_list:
         sphinx_out.write((str("*") * len(afni_prog))+"\n\n")
 
         ## table of contents
-        sphinx_out.write(".. contents:: :local:\n") # [PT: Aug 29, 2018]
+        sphinx_out.write(".. contents:: :local:\n\n") # [PT: Aug 29, 2018]
         #sphinx_out.write("    :depth: 4 \n\n")
-        sphinx_out.write("| \n\n")
+        #sphinx_out.write("| \n\n") # got warnings from |
 
         ## set for code block for all
         sphinx_out.write(".. code-block:: none\n\n")
