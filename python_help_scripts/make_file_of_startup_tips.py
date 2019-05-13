@@ -58,7 +58,7 @@ def get_arg(aa):
     Narg = len(aa)
     
     if Narg == 0:
-        print help_string
+        print( help_string )
         sys.exit(0)
     elif Narg < NUM_ARGS:
         sys.exit("** ERROR: too few args!\n"
@@ -70,8 +70,8 @@ def get_arg(aa):
         ifile = aa[0]         # fname
         ofile = aa[1]         # output file name
 
-        print "++ Input file    :", ifile
-        print "++ Out file      :", ofile
+        print( "++ Input file    : {}".format( ifile ))
+        print( "++ Out file      : {}".format( ofile ))
 
     return ifile, ofile
 
@@ -88,7 +88,6 @@ def parse_all_lines(LL):
             START = 0
         else:
             if START:
-                #print i, ":", x
                 aa.append(x)
             elif x.__contains__("-------- AFNI Startup"):
                 START = 1
@@ -98,7 +97,6 @@ def parse_all_lines(LL):
                 continue
 
         if aa and not(START): # then we must have just finished one
-            #print aa
             tipcount+=1
             newtip = tip("", aa, tipcount)
             alltips.add_tip(newtip)
@@ -177,7 +175,7 @@ if __name__=="__main__":
 
     # --------------------- get input ------------------------
 
-    print "++ Command line:\n   ", ' '.join(sys.argv)
+    print( "++ Command line:\n   {}".format(' '.join(sys.argv) ))
     (ifile, ofile)  =  get_arg(sys.argv[1:])
 
     # put all recent helps into a file

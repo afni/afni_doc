@@ -87,7 +87,7 @@ master_doc = 'index'
 wafni = subprocess.check_output("which afni",
                                 stderr=subprocess.STDOUT,
                                 shell=True)
-print "++ Path to AFNI_version.txt: \n\t", wafni
+print("++ Path to AFNI_version.txt: \n\t{}".format(wafni))
 
 # get the version number of AFNI
 fname_version = wafni[:-5]+'AFNI_version.txt'

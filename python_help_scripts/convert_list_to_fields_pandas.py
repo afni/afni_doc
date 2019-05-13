@@ -51,7 +51,7 @@ def get_arg(aa):
     Narg = len(aa)
     
     if Narg == 0:
-        print help_string
+        print(help_string)
         sys.exit(0)
     elif Narg < NUM_ARGS:
         sys.exit("** ERROR: too few args!\n"
@@ -63,8 +63,8 @@ def get_arg(aa):
         ifile = aa[0]         # fname
         ofile = aa[1]         # output file name
 
-        print "++ Input file    :", ifile
-        print "++ Out file      :", ofile
+        print( "++ Input file    : {}".format( ifile ))
+        print( "++ Out file      : {}".format( ofile ))
 
     return ifile, ofile
 
@@ -117,8 +117,6 @@ def parse_lines(LL):
                     list_rank.append(this_rank)
                     list_desc.append(this_desc)
 
-        #print "%10s  %5d  %s   %s" % (ltype, len(x.strip()), x, this_desc)
-
     lll = [list_group, list_grank, list_prog, list_rank, list_desc]
     mmm = map(list, zip(*lll))
 
@@ -131,7 +129,7 @@ if __name__=="__main__":
 
     # --------------------- get input ------------------------
 
-    print "++ Command line:\n   ", ' '.join(sys.argv)
+    print("++ Command line:\n   {}".format(' '.join(sys.argv)))
     (ifile, ofile)  =  get_arg(sys.argv[1:])
 
     all_lines  = au.read_text_file( ifile )
