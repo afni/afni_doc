@@ -17,6 +17,9 @@
 # [PT: July 26, 2018]
 # + including hidden code block extensions: toggle code blocks shown/hidden
 #
+# [PT: May 13, 2019] updated to deal with subprocess returning 'bytes'
+# type stdout; that simply gets converted to string.
+#
 ###########################################################################
 
 import sys
@@ -84,14 +87,17 @@ master_doc = 'index'
 ##### !!!!!!!!!!!! subprocess!!
 # wafni = "/home/ptaylor/afni_src/linux_ubuntu_12_64/afni"
 # wafni = "/home/afniHQ/abin/afni"
-wafni0 = subprocess.check_output("which afni",
+wafni = subprocess.check_output("which afni",
                                 stderr=subprocess.STDOUT,
                                 shell=True)
-wafni = wafni0.decode("utf-8")[:-5] # need to decode bytes -> str
-print("++ Path to AFNI_version.txt: \n\t{}\n".format(wafni))
+# need to decode bytes -> str
+if type(wafni) == bytes :
+    wafni = wafni.decode("utf-8")
+    
+print("++ Path to AFNI_version.txt: \n\t{}".format(wafni[:-5]))
 
 # get the version number of AFNI
-fname_version = wafni + 'AFNI_version.txt'
+fname_version = wafni[:-5] + 'AFNI_version.txt'
 fff = open(fname_version, 'r')
 x = fff.readlines()
 fff.close()

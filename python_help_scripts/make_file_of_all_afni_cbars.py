@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# [PT: May 13, 2019] updated to deal with subprocess returning 'bytes'
+# type stdout; that simply gets converted to string.
+
 import numpy as np
 import sys as sys
 import os
@@ -219,6 +222,9 @@ if __name__=="__main__":
 
     process = subprocess.Popen(['ls', rdir], stdout=subprocess.PIPE)
     stdout, stderr = process.communicate()
+
+    if type(stdout) == bytes :
+        stdout = stdout.decode("utf-8")
 
     file_list = parse_stdout(stdout)
 
