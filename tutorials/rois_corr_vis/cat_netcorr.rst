@@ -74,7 +74,7 @@ Additional files provided here include:
 
 The ``do_00_setup_example.tcsh`` script will actually create the ROIs
 for this tutorial, so that we all have the same starter ROI masks
-(using the locations specified in the "00_list_\*.txt" file).
+(using the locations specified in the "00_list\*.txt" file).
 Additionally, this setup script makes a skull-stripped version of the
 anatomical volume, mainly for defining a focused region within which
 to select slices to view with ``@chauffeur_afni``.
@@ -774,9 +774,9 @@ JPG-ized.
    * - **WB_Z_ROI\*.jpg**
      - sets of images of the WB correlation maps of each ROI.  Each
        ROI has 3 images (axi, cor and sag viewplanes), and there is
-       also a "*_pbar.jpg" file of the colorbar used, and "*_pbar.txt"
-       file that records the colorbar min, max and (optional)
-       threshold value used.
+       also a "\*_pbar.jpg" file of the colorbar used, and
+       "\*_pbar.txt" file that records the colorbar min, max and
+       (optional) threshold value used.
 
 
 |

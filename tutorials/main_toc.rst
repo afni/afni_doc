@@ -11,6 +11,7 @@ Tutorials, Examples
    apqc_html/main_toc.rst
    fatcat_prep/main_toc.rst
    fatcat_demo/fatcat_demo.rst
+   StandardMeshes/StandardMeshes.rst
    WalnutBrain/WalnutBrain
    DrawingSurfaceROIs/DrawingROIs
    ClusterExplorer/main_toc

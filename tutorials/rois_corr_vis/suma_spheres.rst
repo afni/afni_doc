@@ -238,6 +238,7 @@ anatomical) for the demo.
    * - .. image:: media/suma_sphere/sphere_00_vol.png
           :width: 100%   
           :align: center   
+
 |
 
 
@@ -287,6 +288,7 @@ anatomical) for the demo.
    * - .. image:: media/suma_sphere/sphere_01_surf.png
           :width: 100%   
           :align: center   
+
 |
 
 
@@ -381,6 +383,7 @@ anatomical) for the demo.
    * - .. image:: media/suma_sphere/sphere_02_ico.png
           :width: 100%   
           :align: center   
+
 |
 
 
@@ -441,9 +444,8 @@ anatomical) for the demo.
 
    EOF
 
-
-
 |
+
 .. list-table:: 
    :header-rows: 1
    :widths: 80
@@ -452,6 +454,7 @@ anatomical) for the demo.
    * - .. image:: media/suma_sphere/sphere_03_nido.png
           :width: 100%   
           :align: center   
+
 |
 
 
