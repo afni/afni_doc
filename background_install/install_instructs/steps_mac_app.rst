@@ -10,7 +10,7 @@
 
 
 Welcome to the Jungle [#f1]_
----------------------------
+------------------------------
 
 The following is a set of scripts packaged as an *app*. It is designed to
 automate the AFNI installation steps. You should launch the script by double
@@ -39,7 +39,7 @@ on 10.10 to 10.14 with various hardware.
 please see* :ref:`HERE <install_steps_mac>`.
 
 Take the File and Run [#f2]_
----------------------------
+------------------------------
 
 * `Download macOS 10.7 or greater download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V2.zip>`_
 
@@ -72,6 +72,7 @@ Start Your Engines [#f3]_
     :align: center
 
 |
+
 ----
 
 |
@@ -97,8 +98,10 @@ Start Your Engines [#f3]_
     :align: center
 
 * If you see this error, you can allow access by going to:
-    * "System Preferences" -> "Security & Privacy" -> "Privacy" -> "Automation"
-    * Click the lock to make changes and check the box(es) under the "afni_macOS_install_BETA_V2" entry.
+    * "System Preferences" -> "Security & Privacy" -> "Privacy" ->
+      "Automation"
+    * Click the lock to make changes and check the box(es) under the
+      "afni_macOS_install_BETA_V2" entry.
     * Then run the installer again.
 
     .. image:: media/mac_app_V2_settings_privacy.png
@@ -119,7 +122,8 @@ Use your M-O-U-S-E!
         :width: 40%
         :align: center
 
-* You will see a text box that will show you the output from the terminal progress. (it may pop up behind your current window)
+* You will see a text box that will show you the output from the
+  terminal progress. (it may pop up behind your current window)
 
     .. image:: media/mac_app_V2_starting_text_box.png
         :width: 60%
@@ -156,9 +160,9 @@ Here are a few details of the choices that presented for installation.
 Command Line Tools for Xcode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The command line tools are mostly necessary for compiling some R packages from
-source (gcc etc.).  But that mostly happens behind the scenes so you won't
-have to deal directly with any of that.
+The command line tools are mostly necessary for compiling some R
+packages from source (gcc etc.).  But that mostly happens behind the
+scenes so you won't have to deal directly with any of that.
 
 The usual way of installing this is typing this in the terminal::
 
@@ -173,7 +177,8 @@ XQuartz
 
 This is desktop manager needed to run X11 programs, such as ``afni``.
 
-* During the install you may notice the xquartz installer drive briefly mount and unmount.
+* During the install you may notice the xquartz installer drive
+  briefly mount and unmount.
 
     .. image:: media/mac_app_V2_xquartz_dmg.png
         :width: 10%
@@ -186,9 +191,11 @@ This is desktop manager needed to run X11 programs, such as ``afni``.
 Homebrew 🍺
 ^^^^^^^^^^^
 
-No. Not beer, but a package manager for macOS.  It is used to install netpbm
-which has functionality for converting image formats (such as to PNG) and is
-used in several programs like ``@snapshot_volreg``, ``@chauffeur_afni`` and others.
+No. Not beer, but a package manager for macOS.  It is used to install
+netpbm which has functionality for converting image formats (such as
+to PNG) and is used in several programs like ``@snapshot_volreg``,
+``@chauffeur_afni`` and others.
+
 Also installs openmpi for multiprocessor support in R.
 
 * `See Homebrew main page. <https://brew.sh/>`_
@@ -198,13 +205,16 @@ Also installs openmpi for multiprocessor support in R.
 R ☠️
 ^^^^
 
-This is what is usual the catch phrase of pirates on the high seas. But here we
-are talking about the free software environment for statistical computing and
-graphics. afni needs this for several of the group analysis programs.
+This is what is usual the catch phrase of pirates on the high
+seas. But here we are talking about the free software environment for
+statistical computing and graphics. afni needs this for several of the
+group analysis programs.
 
-* The version installed with this app is version 3.5.2 (Eggshell Igloo) released on 2018-12-20.
+* The version installed with this app is version 3.5.2 (Eggshell
+  Igloo) released on 2018-12-20.
 
-* The CRAN mirror is https://cloud.r-project.org so it should automatically choose a mirror close to your geographical location.
+* The CRAN mirror is https://cloud.r-project.org so it should
+  automatically choose a mirror close to your geographical location.
 
 * `See R project main page. <https://www.r-project.org/>`_
 
@@ -218,13 +228,18 @@ functional MRI (FMRI) data. (taken from the about page...)
 
 A few thing are happening here.
 
-* Basically running ``@update.afni.binaries``.  It will default to installing in ``~/abin``, but you can choose your own favorite folder.
+* Basically running ``@update.afni.binaries``.  It will default to
+  installing in ``~/abin``, but you can choose your own favorite
+  folder.
 
     `@update.afni.binaries help page. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/@update.afni.binaries_sphx.html#ahelp-update-afni-binaries>`_
 
-* Updates your ``~/.cshrc``, ``~/.bashrc``, ``~/.bash_profile``, and other environments.
+* Updates your ``~/.cshrc``, ``~/.bashrc``, ``~/.bash_profile``, and
+  other environments.
 
-* Installs the R packages necessary for afni. First it checks to make sure you have R and Homebrew's openmpi installed. ``rPkgsInstall -pkgs ALL`` will fail without those...
+* Installs the R packages necessary for afni. First it checks to make
+  sure you have R and Homebrew's openmpi
+  installed. ``rPkgsInstall -pkgs ALL`` will fail without those...
 
     `rPkgsInstall help page. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/rPkgsInstall_sphx.html#ahelp-rpkgsinstall>`_
 
@@ -242,16 +257,18 @@ you will be presented with a dialog to let you view it before you procede.
         :width: 40%
         :align: center
 
-The afni_system_check output will have been saved to your desktop.
-It is named something obvious like "afni_system_check.20190208-145815.txt".
-Clicking "View" will open the file in your default text editor.
-This file may be useful for figuring out problems with the
-install, especially when posting to the message board.
+The afni_system_check output will have been saved to your desktop.  It
+is named something obvious like
+"afni_system_check.20190208-145815.txt".  Clicking "View" will open
+the file in your default text editor.  This file may be useful for
+figuring out problems with the install, especially when posting to the
+message board.
 
 * `afni_system_check.py help page. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/afni_system_check.py_sphx.html#ahelp-afni-system-check-py>`_
 
-.. note:: When you are finished with installation, you may want to open up the
-          AFNI and SUMA GUIs, juuuust to make sure all is well::
+.. note:: When you are finished with installation, you may want to
+          open up the AFNI and SUMA GUIs, juuuust to make sure all is
+          well::
 
             afni
             suma
@@ -301,8 +318,8 @@ This is needed if you want to run any of these programs:
 All Done
 ---------
 
-Upon completion of all installations, and barring any error, you should see a
-completion dialog.
+Upon completion of all installations, and barring any error, you
+should see a completion dialog.
 
     .. image:: media/mac_app_V2_complete.png
         :width: 40%

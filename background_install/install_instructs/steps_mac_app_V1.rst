@@ -1,5 +1,5 @@
 
-.. _install_steps_mac_app:
+.. _install_steps_mac_app_v1:
 
 
 **macOS**: *The App-based system setup*
@@ -10,7 +10,7 @@
    
 
 Welcome to the Jungle [#f1]_
----------------------------
+-----------------------------
 
 The following is a set of scripts packaged as an *app*. It is designed to
 automate the AFNI installation steps. You should launch the script by double
@@ -35,7 +35,7 @@ on 10.10 to 10.13 with various hardware.
 please see* :ref:`HERE <install_steps_mac>`.
 
 Take the File and Run [#f2]_
----------------------------
+-----------------------------
 
 * `Download OSX 10.7 to 10.11 Version <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_install_10.7_BETA.zip>`_
 * `Download macOS 10.12 or greater Version <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_install_10.12_BETA.zip>`_
@@ -91,7 +91,7 @@ Prepare for Bootcamp
 .. include:: substep_bootcamp.rst
 
 Evaluate setup/system (**important!**)
-----------------------------------
+--------------------------------------
 
 .. include:: substep_evaluate.rst
 

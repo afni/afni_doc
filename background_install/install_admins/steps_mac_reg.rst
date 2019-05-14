@@ -118,7 +118,7 @@ Prepare for Bootcamp
 .. include:: ../install_instructs/substep_bootcamp.rst
 
 Evaluate setup/system (**important!**)
-----------------------------------
+-----------------------------------------
 
 .. include:: ../install_instructs/substep_evaluate.rst
 

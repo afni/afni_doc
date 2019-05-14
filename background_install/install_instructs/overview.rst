@@ -6,9 +6,7 @@
 **Overview**
 ************************
 
-.. contents:: Indispensable reading
-
-   :local:
+.. contents:: :local:
 
 Preamble Ramble
 ---------------
@@ -76,6 +74,7 @@ independently.
 **Notes:**
 
 .. _tech_notes_PacMan:
+
 - For most Unix/Linux/Mac systems, **package managers** are used to
   facilitate the downloading and installation of most software from
   standard repositories.  Having a central authority performing this

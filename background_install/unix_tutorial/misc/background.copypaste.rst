@@ -1,9 +1,9 @@
 
 .. _U_misc_copypaste:
 
-******************
+************************************
 Copy and Paste with Terminals
-******************
+************************************
 
 It is often useful to copy+paste within and into terminals, for
 example when following the AFNI install instructions.  This helps
@@ -40,7 +40,7 @@ Linux Terminals (non-Windows)
 
 
 OS X Terminals ("Terminal" Application)
-----------------------------
+--------------------------------------------
 
 **Keyboard**
    :Copy: Highlight text with the mouse, and then type "Apple+c"
@@ -61,7 +61,7 @@ OS X Terminals ("Terminal" Application)
 
 
 OS X Terminals ("Xquartz" Application)
-----------------------------
+--------------------------------------------
 
 We just note that there is some similar copy+paste behavior with the
 "Terminal" terminals above, but that there are also differences;
