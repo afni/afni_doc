@@ -16,6 +16,10 @@ import afni_util as au
 ## [PT: May 13, 2019] Get rid of vertical pipe chars "|", because
 ## there were doc build warnings about unindented character...  Don't
 ## think those were doing much there, anyways.
+##
+## [PT: May 13, 2019] replace "*" with "\*" to get rid of non-italic
+## asterisks causing woe ("WARNING: Inline emphasis start-string
+## without end-string.")
 
 
 ## possible codes as characters
@@ -224,6 +228,10 @@ for afni_prog in prog_list:
             ## strip the current line
             cur_line = help_in[l].rstrip().lstrip()[0:-4]
 
+            # [PT: May 13, 2019] 
+            if cur_line.__contains__("*") :
+                cur_line = cur_line.replace("*", "\*")
+            
             ## give the appropriate header punctuation and the header
             ## line
             if code == '1':
@@ -286,6 +294,6 @@ for afni_prog in prog_list:
 
     ## reset code flag
     has_codes = 0
-
+    
 ## close the main_toc
 main_toc.close()

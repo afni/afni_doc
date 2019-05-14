@@ -157,7 +157,7 @@ Tuesday
 .. _class_recordings_wedn:
 
 Wednesday
-------
+------------
 
 .. list-table:: 
    :header-rows: 1
