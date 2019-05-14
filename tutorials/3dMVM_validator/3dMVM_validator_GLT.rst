@@ -28,6 +28,7 @@ When the Generals Talk. [#f14]_
     So make sure you are done with your model BEFORE adding any GLTs!!!
 
 |
+
 Level 42. [#f15]_
 +++++++++++++++++
 

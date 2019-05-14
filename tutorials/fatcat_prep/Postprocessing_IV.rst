@@ -13,7 +13,7 @@ Overview
 **under construction**
 
 Probabilistic tracking and **3dTrackID**
---------------------------------
+----------------------------------------------------------------
 
 **under construction**
 
@@ -92,7 +92,7 @@ since all volume files occupy the same space/grid...
           :align: center
 
 Visualizing matrices of structural properties and **fat_proc_connec_vis**
-------------------------------------------------------
+-------------------------------------------------------------------------------
 
 **under construction**
 

@@ -1,6 +1,6 @@
 :tocdepth: 2
 
-.. _tutorial_FATCAT_matplot_main:
+.. _tutorial_FATCAT_matplot:
 
 =====================================================
 **FATCAT Matrix Plot**

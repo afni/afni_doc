@@ -621,7 +621,7 @@ that has less empty space ("autoboxed" with a wee bit of padding).
 
 
 **Ex. 8**: view ROIs (here, cluster maps)
----------------------------------
+------------------------------------------------------------------
 
 Here we view the cluster map of the clusterized data. Each ROI is
 "labelled" in the data by having a different integer volume, and the

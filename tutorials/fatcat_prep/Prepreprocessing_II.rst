@@ -282,7 +282,7 @@ the PA (="both") images have fewer volumes here.
 .. _fp_filter_dwis:
 
 **fat_proc_filter_dwis**: apply selection filter to keep goodies
-------------------------------------------------------
+------------------------------------------------------------------
 
 Once the string of "good" values to keep in the data set has been made
 and stored in a simple text file, it can be applied to both a 4D DWI

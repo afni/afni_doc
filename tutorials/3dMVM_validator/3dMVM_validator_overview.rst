@@ -38,7 +38,7 @@ Briefly, here is what will happen when you run ``3dMVM_validator -dataTable my_d
 
 
 Ready, ready, ready, ready, ready to run. [#f2]_
------------------------------------------------
+------------------------------------------------
 
 #. Make sure AFNI and R are installed and configured correctly.
     `See installation

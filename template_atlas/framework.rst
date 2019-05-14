@@ -169,7 +169,7 @@ Re. **Spaces**
 
 
 Re. **Transformations**
----------------
+------------------------------
 
 #. *Transformation definition*
 

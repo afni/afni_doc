@@ -173,7 +173,7 @@ next file save.
 
 *Additionally, you will likely want to turn off the feature of your
 browser to automatically download files to a single place, such as
-*"Downloads"* or *"Telechargements".
+"Downloads" or "Telechargements".*
 
 Those are just some practical considerations and constraints at
 present, until browsers change.

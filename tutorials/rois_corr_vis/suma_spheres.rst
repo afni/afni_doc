@@ -555,5 +555,6 @@ anatomical) for the demo.
    * - .. image:: media/suma_sphere/sphere_04_graph.png
           :width: 100%   
           :align: center   
+
 |
 

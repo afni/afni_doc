@@ -87,7 +87,7 @@ the probability is assumed to be the value divided by 250.
 .. _tempatl_howto_add_hdr_info:
 
 Add the atlas-y-ness information to the dataset header
--------------------------------------------------
+---------------------------------------------------------
 
 The remaining steps have been incorporated into a single script to
 make this all easier. First, put all the custom atlases in a specific
@@ -258,7 +258,7 @@ definition file.
 .. _tempatl_howto_add_gui_env:
 
 Update AFNI environment list (for GUI functionality)
----------------------------------------------------
+-----------------------------------------------------
 
 Finally, for AFNI to use the atlas automatically, add the new atlas to
 AFNI environment list. If you only want to see the new atlas and no
@@ -321,7 +321,7 @@ existing AFNI_atlas_spaces.niml file for reference.
 .. _tempatl_howto_add_default_list:
 
 Add the template space to the environment variable
-------------------------------------------
+--------------------------------------------------
 
 Add the template space to the environment variable for the default
 list of spaces to include in the ``whereami`` and AFNI GUI

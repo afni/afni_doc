@@ -40,7 +40,7 @@ Briefly, here is what will happen when you run ``3dMVM_validator -dataTable my_d
 
 
 Ready, ready, ready, ready, ready to run. [#f2]_
------------------------------------------------
+------------------------------------------------
 
 #. Make sure AFNI and R are installed and configured correctly.
     `See installation
@@ -80,7 +80,7 @@ subj0075 Drug      remit    0.8   subj.0075.nii.gz
 ======== ========= ======== ===== ================
 
 Walking in your footsteps. [#f4]_
---------------------------------
+---------------------------------
 
 Start Up
 ++++++++
