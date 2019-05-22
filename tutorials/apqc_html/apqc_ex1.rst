@@ -438,6 +438,51 @@ all your data processing steps carefully, and have an idea of what
 problems might occur/look like.  But the warnings will try to help you
 find problems, too.
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 90
+            
+   * - Warnings from processing: left-right flip check
+   * - .. image:: media/task07b_warns.png
+          :width: 100%
+          :align: center
+
+Data can have funny (= not funny) things happen to it.  One example is
+that header information can be translated incorrectly, and a dset can
+pick up a flip of orienation; anterior-posterior changes can be easily
+noticed by eye, but left-right flips are muuuch more subtle and
+therefore troublesome.  AFNI's ``align_epi_anat.py`` can perform a
+check to see if a subject's EPI and anatomical have a relative
+left-right flip (NB: it can't detect an **absolute** difference, nor
+does it tell **which** one is flipped).
+
+Several data sets from public repositories (e.g., from Functional
+Connectome Project, OpenFMRI) have been found to have a left-right
+flip.  Researchers should always check their own data, esp. when it is
+this easy to do so!
+                  
+QC Block: **radcor**
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+@radial_correlate plots (per run, per block). 
+
+.. list-table:: 
+   :header-rows: 0
+   :widths: 90
+            
+   * - Warnings from processing
+   * - .. image:: media/task08_radcor.png
+          :width: 100%
+          :align: center
+
+These can show scanner coil artifacts, as well as large subject
+motion; both factors can lead to large areas of very high correlation,
+which would be highlighted here.
+
+Users can perform this check during several of the ``afni_proc.py``
+processing blocks.  See the ``-radial_correlate_blocks`` therein for
+more information.
+                  
 QC Block: **qsumm**
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -446,10 +491,10 @@ QC Block: **qsumm**
    :widths: 90
             
    * - Quantitative summary values
-   * - .. image:: media/task08a_qsumm_basic.png
+   * - .. image:: media/task09a_qsumm_basic.png
           :width: 100%
           :align: center
-   * - .. image:: media/task08b_qsumm_morebasic.png
+   * - .. image:: media/task09b_qsumm_morebasic.png
           :width: 100%
           :align: center
 
