@@ -216,7 +216,7 @@ QC Block: **va2t**
           :align: center
 
 Volumetric images of the alignment of the standard space template
-(underly/grayscale) and subject's anat (overlay/hot color edges)
+(underlay/grayscale) and subject's anat (overlay/hot color edges)
 volumes.  
 
 QC Block: **vstat**
