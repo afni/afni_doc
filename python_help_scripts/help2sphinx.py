@@ -20,7 +20,10 @@ import afni_util as au
 ## [PT: May 13, 2019] replace "*" with "\*" to get rid of non-italic
 ## asterisks causing woe ("WARNING: Inline emphasis start-string
 ## without end-string.")
-
+#
+## [PT: May 23, 2019] *put back* vertical pipe chars "|", because
+## they were useful afterall, just like the comment above them had said...
+##
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
@@ -203,7 +206,7 @@ for afni_prog in prog_list:
     ## next line
     sphinx_out.write(".. contents:: :local:\n\n") # [PT: Aug 29, 2018]
     #sphinx_out.write("    :depth: 4 \n\n")
-    #sphinx_out.write("| \n\n") # got warnings from |
+    sphinx_out.write("\n| \n\n") # got warnings from |
 
     ## flag for the existence of codes
     has_codes = 0
@@ -280,7 +283,7 @@ for afni_prog in prog_list:
         ## table of contents
         sphinx_out.write(".. contents:: :local:\n\n") # [PT: Aug 29, 2018]
         #sphinx_out.write("    :depth: 4 \n\n")
-        #sphinx_out.write("| \n\n") # got warnings from |
+        sphinx_out.write("\n| \n\n") # got warnings from |
 
         ## set for code block for all
         sphinx_out.write(".. code-block:: none\n\n")
