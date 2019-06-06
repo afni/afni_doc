@@ -36,7 +36,7 @@ Install prerequisite packages
      sudo apt-get install -y tcsh xfonts-base python-qt4       \
                              gsl-bin netpbm gnome-tweak-tool   \
                              libjpeg62 xvfb xterm vim curl     \
-                             gedit evince                      \
+                             gedit evince eog                  \
                              libglu1-mesa-dev libglw1-mesa     \
                              libxm4 build-essential            \
                              libcurl4-openssl-dev libxml2-dev  \

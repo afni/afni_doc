@@ -36,7 +36,7 @@ Install prerequisite packages
        sudo apt-get install -y tcsh libxp6 xfonts-base python-qt4       \
                                libmotif4 libmotif-dev motif-clients     \
                                gsl-bin netpbm xvfb gnome-tweak-tool     \
-                               libjpeg62 xterm gedit evince firefox
+                               libjpeg62 xterm gedit evince firefox eog
        sudo apt-get update
 
    * *... version 15.10*, copy+paste::
@@ -44,7 +44,7 @@ Install prerequisite packages
        sudo apt-get install -y tcsh xfonts-base python-qt4 gedit evince \
                                libmotif4 libmotif-dev motif-clients     \
                                gsl-bin netpbm xvfb gnome-tweak-tool 
-                               libjpeg62 firefox
+                               libjpeg62 firefox eog
        sudo apt-get update
        sudo ln -s /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0
        sudo dpkg -i http://mirrors.kernel.org/ubuntu/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb
