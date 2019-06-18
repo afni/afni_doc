@@ -8,6 +8,7 @@ Statistics
    :maxdepth: 2
 
    center
+   mvm_group
 
 |
 

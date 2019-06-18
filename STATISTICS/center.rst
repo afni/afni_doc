@@ -1,22 +1,26 @@
-.. _center:
+.. _stats_center:
 
 ****************************************
 **When and how to center a variable?**
 ****************************************
 
-.. _Major_points:
+.. _stats_center_major:
 
 
 Major points
 ------------
 
-* Centering is crucial for interpretation when group effects are of interest.
+* Centering is crucial for interpretation when group effects are of
+  interest.
 
-* Centering is not necessary if only the covariate effect is of interest.
+* Centering is not necessary if only the covariate effect is of
+  interest.
 
-* Centering (and sometimes standardization as well) could be important for the numerical schemes to converge.
+* Centering (and sometimes standardization as well) could be important
+  for the numerical schemes to converge.
 
-* Centering does not have to be at the mean, and can be any value within the range of the covariate values.
+* Centering does not have to be at the mean, and can be any value
+  within the range of the covariate values.
 
 * When multiple groups of subjects are involved, centering becomes
   more complicated. Sometimes overall centering makes sense. However,
