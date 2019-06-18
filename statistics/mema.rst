@@ -237,8 +237,9 @@ self-evident from there as shown below with user input underlined in
 bold face (Note: input files with sub-brick selector are allowed, but
 no quotes are needed around the square brackets. See example below):
 
-
-.. code-block:: none
+.. hidden-code-block:: none
+   :starthidden: False
+   :label: - show code y/n -
 
    > source("~/abin/3dMEMA.R")
    [1] "#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -342,7 +343,9 @@ on, to save all the input items in a pure text file with content like
 the following (don't include those interpretive words after the pound
 sign):
 
-.. code-block:: none
+.. hidden-code-block:: none
+   :starthidden: False
+   :label: - show code y/n -
 
    source("~/abin/3dMEMA.R")
    myOutput    # output file name (no view and appendix needed)
