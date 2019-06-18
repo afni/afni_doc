@@ -18,7 +18,7 @@ Welcome to AFNI's documentation!
    codex/main_toc
    SUMA/main_toc
    FATCAT/main_toc
-   STATISTICS/main_toc
+   statistics/main_toc
    template_atlas/main_toc
    tutorials/main_toc
    demos/main_toc
