@@ -33,9 +33,7 @@ R.W. (2013). Linear Mixed-Effects Modeling Approach to FMRI Group
 Analysis.  NeuroImage,
 http://dx.doi.org/10.1016/j.neuroimage.2013.01.047
 
-The :download:`Group Analysis
-<https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni24_GroupAna.pdf>`
-and its :download:`Hands-On
-<https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni25_GroupAna_HO.pdf>`
-slides from AFNI workshop are also good resources for various modeling
+The `Group Analysis slides <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni24_GroupAna.pdf>`_
+and its `Hands-On presentation <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni25_GroupAna_HO.pdf>`_
+from AFNI workshop are also good resources for various modeling
 approaches.
