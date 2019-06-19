@@ -1,0 +1,2 @@
+File	Sub-brick	Mean_-1  	Mean_1  	Mean_2  
+func_slim+orig[0]	0[Full_Fsta]	10.805717	69.336539	71.333655

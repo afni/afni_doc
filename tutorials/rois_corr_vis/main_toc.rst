@@ -15,5 +15,6 @@ will likely (hopefully) grow over time.
 .. toctree::
    :maxdepth: 2
 
-   cat_netcorr.rst
-   suma_spheres.rst
+   cat_netcorr
+   suma_spheres
+   afni11_roi_cmds
