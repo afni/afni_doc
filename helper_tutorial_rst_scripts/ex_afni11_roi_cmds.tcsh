@@ -104,7 +104,7 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Original ROI ||  Resampled ROI
     IMG_roi_orig.sag.png IMG_roi_resam.sag.png
-#:IMCAPTION: sagittal view of ROI on anat
+#:IMCAPTION: *Sagittal view of ROI on anat.*
 
 TEXTBLOCK
 
@@ -155,7 +155,7 @@ Excerpt of text file:
 
 #:IMAGE: 1dplot version ||  1dplot.py version
     IMG_epi_avg.jpg IMG_epi_avg_py.jpg
-#:IMCAPTION: viewing the 3dmaskave time series
+#:IMCAPTION: *Viewing the 3dmaskave time series.*
 
 TEXTBLOCK
 
@@ -301,7 +301,7 @@ TEXTBLOCK
     
 cat <<TEXTBLOCK
 
-#:IMAGE: Betas and ROI maps after clusterizing
+#:IMAGE: Beta values (top) and ROI maps (bottom) after clusterizing
     IMG_clust_dat.axi.png 
     IMG_clust_map.axi.png
 #:IMCAPTION: 

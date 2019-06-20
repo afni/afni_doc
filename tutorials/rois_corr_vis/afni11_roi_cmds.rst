@@ -122,7 +122,7 @@ preserve integer values.
    
 
 
-.. list-table:: 
+.. list-table:: *Sagittal view of ROI on anat.*
    :header-rows: 1
    :widths: 50 50 
 
@@ -182,7 +182,7 @@ Excerpt of text file:
    :language: none
 
 
-.. list-table:: 
+.. list-table:: *Viewing the 3dmaskave time series.*
    :header-rows: 1
    :widths: 50 50 
 
@@ -338,7 +338,7 @@ calculated, for example, by 3dClustSim or something.
    :header-rows: 1
    :widths: 100 
 
-   * - Betas and ROI maps after clusterizing
+   * - Beta values (top) and ROI maps (bottom) after clusterizing
    * - .. image:: media/afni11_roi_cmds/IMG_clust_dat.axi.png
           :width: 100%   
           :align: center
