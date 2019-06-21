@@ -115,7 +115,7 @@ Install R
      | and then click on the top/latest package to install.
 
 1. Click on this link:
-   https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.4.1.pkg
+   https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.5.3.pkg
 
    **Purpose:** Get a recent (but not the *most* recent) version of R.
 
