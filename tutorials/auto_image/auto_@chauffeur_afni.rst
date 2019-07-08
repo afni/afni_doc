@@ -35,7 +35,7 @@ AFNI's underlying "driving" capabilities and environment variables.
 The full list of these are provided in these fun documentation pages,
 provided for The Curious amongst you:
 
-* The `README.driver
+* `README.driver
   <https://afni.nimh.nih.gov/pub/dist/doc/program_help/README.driver.html>`_
 
 * `README.environment
