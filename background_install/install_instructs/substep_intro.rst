@@ -9,8 +9,8 @@
 
      echo $0
 
-#. **Don't** forget the system check in the "Evaluate" stage. Try
-   whatever the is recommended in its "Please Fix" section.
+#. **Do** the system check in the "Evaluate" stage. Try any
+   recommendations in its "Please Fix" section.
 
 #. If you run into any problems, please just ask a clear question on
    the `Message Board
