@@ -396,7 +396,8 @@ a bit more information than the standard application of the
            -thr_olay_p2stat 0.001                                    \
            -thr_olay_pside  bisided                                  \
            -cbar    Reds_and_Blues_Inv                               \
-           -alpha_par Quadratic                                      \
+           -olay_alpha  Yes                                          \
+           -olay_boxed  Yes                                          \
            -opacity 7                                                \
            -prefix     $odir/img0_${ibase}                           \
            -montx 1 -monty 1                                         \
@@ -458,13 +459,10 @@ a bit more information than the standard application of the
 
 |
 
-One could also leave out the ``-alpha_par Quadratic`` option above and
-select just the subject-specific part of the filename from ``$ibase``
-above, yielding something more like the following:
 
-If the ``-alpha_par Quadratic`` option were left out of the above
-``@chauffeur_afni`` calls, then the images would look more like the
-following.
+If the ``-olay_alpha Yes`` and ``-olay_boxed Yes`` options were left
+out of the above ``@chauffeur_afni`` calls, then the images would look
+more like the following:
 
 .. list-table:: 
    :header-rows: 1

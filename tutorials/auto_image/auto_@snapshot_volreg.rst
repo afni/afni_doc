@@ -94,19 +94,19 @@ olay is "edge-ified".
 
 | **Question:** Why is there an area of color in the leftmost axial view?
 | **(Likely) Answer:** Well, the edge of the FOV of that EPI data set
-happens to fall mainly in that slice place of the anat after
-alignment, so we see a lot of its boundary layer here.  This
-interpretation holds with seeing where the lowest olay edges occur in
-the sagittal+coronal slices.
+  happens to fall mainly in that slice place of the anat after
+  alignment, so we see a lot of its boundary layer here.  This
+  interpretation holds with seeing where the lowest olay edges occur in
+  the sagittal+coronal slices.
 
 | **Question:** Why are there color lines outside the brain?
 
 | **(Likely) Answer:** The EPI was not skullstripped, just automasked
-for visualization purposes; that process is approximate, and we might
-expect some stuff to appear still outside the brain, such as in the
-medial-sagittal slices where the sagittal sinus (hard to remove
-algorithmically!) might not have been removed, and/or around other
-boundary points.
+  for visualization purposes; that process is approximate, and we might
+  expect some stuff to appear still outside the brain, such as in the
+  medial-sagittal slices where the sagittal sinus (hard to remove
+  algorithmically!) might not have been removed, and/or around other
+  boundary points.
 
 
 |
