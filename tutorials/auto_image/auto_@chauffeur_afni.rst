@@ -10,7 +10,7 @@ Using @chauffeur_afni
 Introduction
 ============
 
-**Download script:** :download:`auto_@chauffeur_afni.tcsh <media/tut_auto_@chauffeur_afni/auto_@chauffeur_afni.tcsh>`
+**Download script:** :download:`tut_auto_@chauffeur_afni.tcsh <media/tut_auto_@chauffeur_afni/tut_auto_@chauffeur_afni.tcsh>`
 
 
 .. highlight:: Tcsh
