@@ -14,6 +14,14 @@ AFNI_data6/roi_demo):
      -prefix_rst ~/AFNI/afni_doc/tutorials/rois_corr_vis/afni11_roi_cmds.rst \
      -execute_script
 
+ @djunct_make_script_and_rst.py                                              \
+     -input          tut_auto_@chauffeur_afni_MARK.tcsh                      \
+     -reflink        tut_auto_@chauffeur_afni                                \
+     -prefix_script  auto_@chauffeur_afni.tcsh                               \
+     -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_@chauffeur_afni.rst \
+     -execute_script
+
+
 (If the images don't need to be changed, then it could be run without
 the '-execute_script', in order to just remake the text stuff.)
 
