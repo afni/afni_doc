@@ -1,7 +1,7 @@
 #!/bin/tcsh
 
 
-# Examples of things with ROIs: resampling and clusterizing
+# Using @chauffeur_afni
 
 
 # ==================== Examples, and how to run them =====================

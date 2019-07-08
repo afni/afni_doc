@@ -1,6 +1,6 @@
 #!/bin/tcsh
 
-#:TITLE: Examples of things with ROIs: resampling and clusterizing
+#:TITLE: Using @chauffeur_afni
 
 cat << TEXTINTRO
 

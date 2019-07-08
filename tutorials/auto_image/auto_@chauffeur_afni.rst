@@ -1,8 +1,8 @@
 .. _tut_auto_@chauffeur_afni:
 
-***********************************************************
-Examples of things with ROIs: resampling and clusterizing
-***********************************************************
+***********************
+Using @chauffeur_afni
+***********************
 
 
 .. contents:: :local:
