@@ -15,19 +15,19 @@ history, they are also available from this webpage!
 
 1. **To download** the handouts directory, do any of the following:
 
-   A. *(Fastest!)* Copy+paste to a terminal::
+   * *(Fastest!)* Copy+paste to a terminal::
 
-        afni_open -aw afni_handouts.tgz
+       afni_open -aw afni_handouts.tgz
 
-   #. Click this download link: `(current) AFNI handouts directory <https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz>`_
+   * Click this download link: `(current) AFNI handouts directory <https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz>`_
 
-   #. Copy+paste to a terminal::
+   * Copy+paste to a terminal::
 
-        curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz
+       curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz
 
-   #. Copy+paste to a terminal::
+   * Copy+paste to a terminal::
 
-        wget https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz
+       wget https://afni.nimh.nih.gov/pub/dist/edu/data/CD/afni_handouts.tgz
        
 #. **To open+unpack** the directory, copy+paste this to a terminal::
 
