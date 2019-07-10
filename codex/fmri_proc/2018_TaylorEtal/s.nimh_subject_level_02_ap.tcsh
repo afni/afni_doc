@@ -130,6 +130,11 @@ endif
 
 # ========================= Specify processing =========================
 
+# [PT: July 10, 2019] AP command amended, to have ${tempdir} provided
+#    to the '-out_dir ..' opt; allows actual use of scratch disk, if
+#    asked for above. No change in processing results, just speed of
+#    processing in some cases.  Thanks, Yoichi M!
+
 # FINALLY: the afni_proc.py command itself, which makes a single
 # subject processing script
 afni_proc.py                                                                \
