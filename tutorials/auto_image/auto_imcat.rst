@@ -365,8 +365,8 @@ the number of volumes in the 4D dset.
 
 .. _tut_auto_imcat_2:
 
-**Ex. 2**: Combine subbrick images of a 4D dset
-===============================================
+**Ex. 2**: Combine (stats) images from many subj
+================================================
 
 
 **Download script:** :download:`tut_auto_imcat_2.tcsh <media/auto_imcat/tut_auto_imcat_2.tcsh>`

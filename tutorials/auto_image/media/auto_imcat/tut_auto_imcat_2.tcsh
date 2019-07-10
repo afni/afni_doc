@@ -1,7 +1,7 @@
 #!/bin/tcsh
 
 
-# **Ex. 2**: Combine subbrick images of a 4D dset
+# **Ex. 2**: Combine (stats) images from many subj
 
 # AFNI tutorial: auto-image-making example using imcat (and
 #                @chauffeur_afni)
