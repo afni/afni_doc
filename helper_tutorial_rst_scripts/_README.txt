@@ -74,12 +74,12 @@ TEXTINTRO   : Plaintext section at top of RST.
               Usage
               -----
               cat << TEXTINTRO
-                  [stuff]
+                  ...stuff...
               TEXTINTRO
 
               cat << 'TEXTINTRO'
-                  [stuff with weird Unix chars, such as matched "`" on
-                   sep lines, treated as 'literal'.]
+                  ...stuff with weird Unix chars, such as matched "`" on
+                   sep lines, treated as 'literal'...
               'TEXTINTRO'
 
 TEXTBLOCK   : (Exact same as TEXTINTRO, but not first text block of RST.)
@@ -104,7 +104,7 @@ HIDE_ON     : Start of hidden code block in RST; normal code in script.
               Usage
               -----
               #:HIDE_ON:
-                  [code]
+                  ...code...
               #:HIDE_OFF:
 
 IMAGE       : Inside of TEXT{BLOCK,INTRO}; just for RST, table of images.
@@ -112,14 +112,16 @@ IMAGE       : Inside of TEXT{BLOCK,INTRO}; just for RST, table of images.
               Can include relative path; can use wildcards (internal globbing).
               Can have 'ragged' table, putting keyword 'NULL' for empty panel.
               Can include optional caption (one line).
+              Can include text, must be placed in pair of [[ square brackets]].
              
               Usage
               -----
-              #:IMAGE: [title 1]  ||  [optional other title]
-                  [IMAGE_1  IMAGE*2
+              #:IMAGE:  title 1   ||   optional other title 
+                  IMAGE_1  IMAGE*2
+                  [[ descriptive text]] 
                    NULL     dir/IMAGE_3 
-                   IMAGE_4          ]
-              #:IMCAPTION: [descriptive text, goes above table]
+                   IMAGE_4          
+              #:IMCAPTION: descriptive text, goes above table
 
 IMCAPTION   : Optional, see IMAGE env.
 
@@ -130,7 +132,7 @@ INCLUDE     : Inside of TEXT{BLOCK,INTRO}; just for RST, 'literalinclude' file.
 
               Usage
               -----
-              #:INCLUDE: [file name]
-                  :[rst opt]: none
+              #:INCLUDE: file_name
+                  :rst_opt: rst_opt_value
 
 
