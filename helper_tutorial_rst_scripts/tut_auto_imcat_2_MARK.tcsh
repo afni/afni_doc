@@ -1,6 +1,6 @@
 #!/bin/tcsh
 
-#:TITLE: **Ex. 2**: Combine subbrick images of a 4D dset
+#:TITLE: **Ex. 2**: Combine (stats) images from many subj
 
 cat << TEXTINTRO
 
