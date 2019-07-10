@@ -10,12 +10,6 @@ with separating lines, as well other features.  It combines quite
 usefully with ``@chauffeur_afni``, for example to concatenate similar
 images across a data set.
 
-TEXTINTRO
-
-#:SECTION: Examples, and how to run them
-
-cat << TEXTBLOCK
-
 We present some examples of auto-image making with ``imcat`` using
 data that should be available in (modern) AFNI binary distributions,
 the ``*_SSW.nii.gz`` template targets for ``@SSwarper``.  Each of
@@ -31,10 +25,9 @@ Each short script creates a subdirectory ("QC_imcat\*") for the both
 the individual, intermediate images and the final concatenated matrix
 of images.
 
-TEXTBLOCK
+TEXTINTRO
 
-
-#:SUBSECTION: **Ex. 0-A**: Define variables
+#:SECTION: **Ex. 0**: Combine images subject- and slice-wise
 
 cat << TEXTBLOCK
 
@@ -62,12 +55,12 @@ TEXTBLOCK
 # combo-tool for performing nonlinear registration and skull stripping
 # insieme).  Each of these dsets has multiple volumes (5).
 #
-# By changing the list of files given to "$istr", this can be directly
-# adapted to other cases.
+# By changing the list of files given to "$istr", this script can be
+# directly adapted to other cases.
 #
 # =====================================================================
 
-set here  = $PWD                        # where we run the code from
+set here  = $PWD                        # for path; trivial, could be changed
 
 set istr  = "SSW"                       # string for choosing NIFTI files
 set ilist = `\ls *${istr}.nii.gz`       # get list of NIFTIs to imagize
@@ -79,7 +72,7 @@ set odir  = ${here}/QC_imcat_00         # output dir for images
 \mkdir -p ${odir}                       # make output dir
 
 
-#:SUBSECTION: **Ex. 0-B**: @chauffeur_afni for individual images
+#:SUBSECTION: @chauffeur_afni to make individual images
 
 cat <<TEXTBLOCK
 
@@ -109,7 +102,7 @@ foreach ff ( $ilist )
 end
 
 
-#:SUBSECTION: **Ex. 0-C**: concatenate sliceviews for each subj
+#:SUBSECTION: Use imcat to concatenate sliceviews for each subj
 
 cat <<TEXTBLOCK
 
@@ -142,7 +135,7 @@ end
 
 cat <<TEXTBLOCK
 
-#:IMAGE: Ex. 0-C: Each subject & all sliceviews
+#:IMAGE: Combined sliceviews for each subject
     [[ HaskinsPeds_NL_template1.0_SSW: ]]
     QC_imcat_00/ALL_subj_HaskinsPeds_NL_template1.0_SSW.jpg
     [[ MNI152_2009_template_SSW: ]]
@@ -155,7 +148,7 @@ cat <<TEXTBLOCK
 TEXTBLOCK
 
 
-#:SUBSECTION: **Ex. 0-D**: concatenate subjs for each sliceview
+#:SUBSECTION: Use imcat to concatenate subjs for each sliceview
 
 cat << TEXTBLOCK
 
@@ -188,7 +181,7 @@ exit 0
 
 cat <<TEXTBLOCK
 
-#:IMAGE: Ex. 0-C: Each subject & all sliceviews
+#:IMAGE: Combined subjects for each sliceview
     [[ sagittal views: ]]
     QC_imcat_00/ALL_SSW_sview_sag.jpg
     [[ coronal views: ]]
