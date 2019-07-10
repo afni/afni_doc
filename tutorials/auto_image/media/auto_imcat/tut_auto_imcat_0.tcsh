@@ -43,7 +43,7 @@ set odir  = ${here}/QC_imcat_00         # output dir for images
 
 
 
-# -------------- @chauffeur_afni to make individual images ---------------
+# ------------ Use @chauffeur_afni to make individual images -------------
 
 
 set allbase = ()

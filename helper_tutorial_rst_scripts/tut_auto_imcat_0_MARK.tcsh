@@ -72,7 +72,7 @@ set odir  = ${here}/QC_imcat_00         # output dir for images
 \mkdir -p ${odir}                       # make output dir
 
 
-#:SUBSECTION: @chauffeur_afni to make individual images
+#:SUBSECTION: Use @chauffeur_afni to make individual images
 
 cat <<TEXTBLOCK
 

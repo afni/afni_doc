@@ -90,8 +90,8 @@ section.
    \mkdir -p ${odir}                       # make output dir
    
    
-@chauffeur_afni to make individual images
--------------------------------------------
+Use @chauffeur_afni to make individual images
+-----------------------------------------------
 
 Each ``@chauffeur_afni`` execution creates a set of sagittal, axial
 and coronal images; each image output by chauffeur here is an 8x1
