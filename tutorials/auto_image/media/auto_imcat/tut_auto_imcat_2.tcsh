@@ -3,7 +3,8 @@
 
 # **Ex. 2**: Combine (stats) images from many subj
 
-# AFNI tutorial: auto-image-making example using imcat (and
+
+# AFNI tutorial: auto-image-making example "2" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019

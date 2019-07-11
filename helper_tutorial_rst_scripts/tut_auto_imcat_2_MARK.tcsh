@@ -15,10 +15,13 @@ subthreshold voxels is hidden.  Or, we can use a more modern *alpha
 thresholding*, whereby subthreshold voxels are merely made
 increasingly transparent as their values are further below threshold.
 
+**Definitions at top of script:**
+
 TEXTINTRO
 
+#:HIDE_ON:
 
-# AFNI tutorial: auto-image-making example using imcat (and
+# AFNI tutorial: auto-image-making example "2" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019
@@ -51,6 +54,8 @@ set lcol  = ( 192 192 192 )               # RGB line color bt image panels
 set odir  = ${here}/QC_imcat_02           # output dir for images
 
 \mkdir -p ${odir}
+
+#:HIDE_OFF:
 
 #:SUBSECTION: Use @chauffeur_afni to make individual images
 

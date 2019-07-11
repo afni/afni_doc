@@ -49,13 +49,18 @@ Variables have been defined so that one should be able to adapt these
 scripts by changing the just file name(s) in the uppermost input
 section.
 
+**Definitions at top of script:**
 
 
-.. code-block:: Tcsh
+
+.. hidden-code-block:: Tcsh
+   :starthidden: True
+   :label: - show code y/n -
 
    #!/bin/tcsh
    
-   # AFNI tutorial: auto-image-making example using imcat (and
+   
+   # AFNI tutorial: auto-image-making example "0" using imcat (and
    #                @chauffeur_afni)
    #
    # + last update: July 10, 2019
@@ -88,7 +93,6 @@ section.
    set odir  = ${here}/QC_imcat_00         # output dir for images
    
    \mkdir -p ${odir}                       # make output dir
-   
    
 Use @chauffeur_afni to make individual images
 -----------------------------------------------
@@ -244,17 +248,22 @@ view, show the dset at the same (x, y, z) location.
  
 Make a set of sagittal, axial and coronal images; these will
 later be glued together.  Here, we are make a set of images per
-volume in a 4D data 
+volume in a 4D dset.
+
+**Definitions at top of script:**
 
 
 
 
 
-.. code-block:: Tcsh
+.. hidden-code-block:: Tcsh
+   :starthidden: True
+   :label: - show code y/n -
 
    #!/bin/tcsh
    
-   # AFNI tutorial: auto-image-making example using imcat (and
+   
+   # AFNI tutorial: auto-image-making example "1" using imcat (and
    #                @chauffeur_afni)
    #
    # + last update: July 10, 2019
@@ -383,15 +392,20 @@ subthreshold voxels is hidden.  Or, we can use a more modern *alpha
 thresholding*, whereby subthreshold voxels are merely made
 increasingly transparent as their values are further below threshold.
 
+**Definitions at top of script:**
 
 
 
 
-.. code-block:: Tcsh
+
+.. hidden-code-block:: Tcsh
+   :starthidden: True
+   :label: - show code y/n -
 
    #!/bin/tcsh
    
-   # AFNI tutorial: auto-image-making example using imcat (and
+   
+   # AFNI tutorial: auto-image-making example "2" using imcat (and
    #                @chauffeur_afni)
    #
    # + last update: July 10, 2019

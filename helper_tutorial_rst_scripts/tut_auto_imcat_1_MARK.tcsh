@@ -6,12 +6,15 @@ cat <<TEXTINTRO
  
 Make a set of sagittal, axial and coronal images; these will
 later be glued together.  Here, we are make a set of images per
-volume in a 4D data 
+volume in a 4D dset.
+
+**Definitions at top of script:**
 
 TEXTINTRO
 
+#:HIDE_ON:
 
-# AFNI tutorial: auto-image-making example using imcat (and
+# AFNI tutorial: auto-image-making example "1" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019
@@ -40,6 +43,8 @@ set lcol  = ( 0 204 0 )                 # RGB line color bt image panels
 set odir  = ${here}/QC_imcat_01         # output dir for images
 
 \mkdir -p ${odir}
+
+#:HIDE_OFF:
 
 #:SUBSECTION: Use @chauffeur_afni to make individual images
 

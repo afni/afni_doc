@@ -3,7 +3,8 @@
 
 # **Ex. 1**: Combine subbrick images of a 4D dset
 
-# AFNI tutorial: auto-image-making example using imcat (and
+
+# AFNI tutorial: auto-image-making example "1" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019

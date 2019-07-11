@@ -7,7 +7,8 @@
 # ========== **Ex. 0**: Combine images subject- and slice-wise ===========
 
 
-# AFNI tutorial: auto-image-making example using imcat (and
+
+# AFNI tutorial: auto-image-making example "0" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019
@@ -40,7 +41,6 @@ set lcol  = ( 255 255 255 )             # RGB line color bt image panels
 set odir  = ${here}/QC_imcat_00         # output dir for images
 
 \mkdir -p ${odir}                       # make output dir
-
 
 
 # ------------ Use @chauffeur_afni to make individual images -------------

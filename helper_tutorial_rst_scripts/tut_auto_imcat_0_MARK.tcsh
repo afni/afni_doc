@@ -35,9 +35,13 @@ Variables have been defined so that one should be able to adapt these
 scripts by changing the just file name(s) in the uppermost input
 section.
 
+**Definitions at top of script:**
+
 TEXTBLOCK
 
-# AFNI tutorial: auto-image-making example using imcat (and
+#:HIDE_ON:
+
+# AFNI tutorial: auto-image-making example "0" using imcat (and
 #                @chauffeur_afni)
 #
 # + last update: July 10, 2019
@@ -71,6 +75,7 @@ set odir  = ${here}/QC_imcat_00         # output dir for images
 
 \mkdir -p ${odir}                       # make output dir
 
+#:HIDE_OFF:
 
 #:SUBSECTION: Use @chauffeur_afni to make individual images
 
