@@ -65,7 +65,7 @@ stuff.)
 # ------------------ Guide to environs + keywords ---------------------------
 
 re. shebang : A shebang ('#!/bin/tcsh') is expected at the top of the MARK file.
-              Gets echoed into the output tcsh script.
+              Gets echoed into the top of the output tcsh script.
 
 re. code    : All text outside of special env or not on a keyword-flagged
               line is assumed to be CODE, which is executable.  It will be
