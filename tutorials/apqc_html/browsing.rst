@@ -206,6 +206,14 @@ to view them all together quickly. In particular, you might want to:
 This set of action items can be accomplished with the following
 scripts.
 
+.. warning:: When opening new tabs, some browsers might exhibit a
+             brief "flash", because an empty tab gets created and then
+             populated. Thus, using a script like the ones below to
+             open many tabs in quick succession could lead to a
+             flashing or strobe-like effect.  Anyone who might be
+             sensitive to such effects should take this into
+             consideration.
+
 #. **Ex. 1.**
 
    Jump to a particular QC block for all subjects.
