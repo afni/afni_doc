@@ -41,10 +41,11 @@ please see* :ref:`HERE <install_steps_mac>`.
 Take the File and Run [#f2]_
 ------------------------------
 
-* `Download macOS 10.7 or greater download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V2.zip>`_
+* `Download macOS 10.12 to 10.14 download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V2.zip>`_
 
-.. note:: This script will has been tested on various systems from to macOS 10.11
+.. note:: This script will has been tested on various systems from to macOS 10.12
              to 10.14. It should work down to 10.7, but it has not been tested.
+             This app WILL FAIL on 10.15!!!
 
 Start Your Engines [#f3]_
 --------------------------
