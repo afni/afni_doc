@@ -88,7 +88,6 @@ Install R
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu.tcsh
-       sudo tcsh @add_rcran_ubuntu.tcsh
 
    * ... a ``bash`` terminal, copy+paste::
    
@@ -97,13 +96,23 @@ Install R
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu.tcsh
+
+   (To check your shell type, copy+paste: ``echo $0``)
+
+   **Purpose:** Step 1 of setting up modern R from scratch. Set the
+   environment variable ``$R_LIBS`` to specify where to install+find
+   the packages.  The file obtained using ``curl`` contains
+   instructions to add a more uptodate set of R libraries to the
+   source list.
+
+#. Copy+paste::
+
        sudo tcsh @add_rcran_ubuntu.tcsh
 
-   **Purpose:** Setup modern R from scratch. This relies on the
-   environment variable ``$R_LIBS``, which specifies where to install
-   the packages and where to read them from later (when R programs
-   run).  The file obtained using ``curl`` contains instructions to
-   add a more uptodate set of R libraries to the source list.
+   **Purpose:** This script updates your package manager to be able to
+   get a modern version of R.  If you *don't* already have R on your
+   system, it will install it. If you *do* have R, it will stop and
+   ask if you want to remove it and update it, or not.
 
 #. Copy+paste::
      

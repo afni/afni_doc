@@ -2,7 +2,7 @@
 .. _install_steps_mac_app:
 
 
-**macOS**: *The App-based system setup*
+**macOS**: *The App-based system setup (0S 10.10-14)*
 ========================================
 
 .. contents:: The essential system setup
@@ -43,15 +43,18 @@ Take the File and Run [#f2]_
 
 * `Download macOS 10.12 to 10.14 download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V2.zip>`_
 
-.. note:: This script will has been tested on various systems from to macOS 10.12
-             to 10.14. It should work down to 10.7, but it has not been tested.
-             This app WILL FAIL on 10.15!!!
+.. note:: This script will has been tested on various systems from to
+          macOS 10.12 to 10.14. It should work down to 10.7, but it
+          has not been tested.  This app WILL FAIL on 10.15!!!
 
 Start Your Engines [#f3]_
 --------------------------
 
-* Download the file and extract the zip if it did not extract automatically in your Downloads folder.
-* If you double click the "afni_macOS_install_BETA_V2" icon, you may get a popup notification about an "unidentified developer" similar to this:
+* Download the file and extract the zip if it did not extract
+  automatically in your Downloads folder.
+* If you double click the "afni_macOS_install_BETA_V2" icon, you may
+  get a popup notification about an "unidentified developer" similar
+  to this:
 
     .. image:: media/mac_app_V2_first_dev_warning.png
         :width: 40%

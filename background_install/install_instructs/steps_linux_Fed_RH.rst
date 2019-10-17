@@ -105,6 +105,8 @@ Install R
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        . ~/.bashrc
 
+   (To check your shell type, copy+paste: ``echo $0``)
+
    **Purpose:** Setup modern R from scratch. This relies on the
    environment variable ``$R_LIBS``, to specify where to install the
    packages and where to read them from later (when R programs
