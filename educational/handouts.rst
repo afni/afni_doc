@@ -13,7 +13,8 @@ A lot of material about using the AFNI software toolbox are kept
 locked in the secret afni_handouts vaults.  Now, for the first time in
 history, they are also available from this webpage!  
 
-1. **To download** the handouts directory, do any of the following:
+1. **To download** the handouts directory, do **any one** of the
+   following:
 
    * *(Fastest!)* Copy+paste to a terminal::
 
