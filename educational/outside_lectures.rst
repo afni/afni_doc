@@ -21,20 +21,6 @@ policy or position of AFNI-Land.*
 
 |
 
-Other AFNI Bootcamp recordings
-==============================
-
-* **May, 2018 (MIT):** Here are some video recordings from an AFNI
-  Bootcamp at MIT in May/June, 2018:
-
-  `<https://cbmm.mit.edu/afni>`_
-
-  Thanks to the Center for Brains, Minds and Machines, and to
-  Frederico Azevedo and in particular, for hosting and organizing
-  it. Thanks also to Kris Brewer for coordinating the videos.
-
-|
-
 FMRIF Summer Course
 ===================
 
@@ -44,7 +30,8 @@ big into brain imaging.  In recent years they have organized and
 hosted a series of educational lectures during the summer involving a
 wide array of topics, including MRI and brain imaging (amongst many
 other interesting topics).  The latest set of their lectures are
-available here:
+available here (see panel at the left, for several years' worth of
+recorded talks):
 
 `<https://fmrif.nimh.nih.gov/public/fmri-course/index_html>`_
 
