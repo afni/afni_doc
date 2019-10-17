@@ -147,6 +147,11 @@ Niceify terminal (optional, but goood)
 #. Also, consider extending time for screen saver: ``System Settings``
    -> ``Brightness & Lock``, and set inactivity duration.
 
+Install extras (optional, but recommended for Bootcamp prep)
+---------------------------
+
+.. include:: substep_extra_packs.rst
+
 Keep up-to-date (remember!)
 ---------------------------
 

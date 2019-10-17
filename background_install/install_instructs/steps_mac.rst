@@ -152,6 +152,11 @@ Niceify terminal (optional, but goood)
 
 .. include:: substep_rcfiles_mac.rst
 
+Install extras (optional, but recommended for Bootcamp prep)
+---------------------------
+
+.. include:: substep_extra_packs.rst
+
 Keep up-to-date (remember!)
 ---------------------------
 
