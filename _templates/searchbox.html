@@ -1,17 +1,16 @@
 <!--
-<div>
-   <h3>{{ _('Quick search') }}</h3>
-   <script async src="https://cse.google.com/cse.js?cx=007649239105213158971:kgbokgid1fm"></script>
-  <gcse:search></gcse:search>
-</div> 
---> 
+    Input google search, via sphinx doc help:
+    https://www.sphinx-doc.org/en/master/faq.html?highlight=google%20search
 
+    This search is specifically just for within the HTML doc pages:
+    https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/*
+--> 
 
 <div>
    <h3>{{ _('Quick search') }}</h3>
    <script>
       (function() {
-         var cx = '007649239105213158971:kgbokgid1fm';
+         var cx = '007649239105213158971:bzabqvf3hhs';
          var gcse = document.createElement('script');
          gcse.type = 'text/javascript';
          gcse.async = true;
@@ -23,22 +22,3 @@
   <gcse:search></gcse:search>
 </div> 
 
-
-
-<!--
-<div>
-   <h3>{{ _('Quick search') }}</h3>
-   <script>
-      (function() {
-         var cx = '......';
-         var gcse = document.createElement('script');
-         gcse.type = 'text/javascript';
-         gcse.async = true;
-         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-         var s = document.getElementsByTagName('script')[0];
-         s.parentNode.insertBefore(gcse, s);
-      })();
-   </script>
-  <gcse:search></gcse:search>
-</div> 
---> 
