@@ -1,0 +1,44 @@
+<!--
+<div>
+   <h3>{{ _('Quick search') }}</h3>
+   <script async src="https://cse.google.com/cse.js?cx=007649239105213158971:kgbokgid1fm"></script>
+  <gcse:search></gcse:search>
+</div> 
+--> 
+
+
+<div>
+   <h3>{{ _('Quick search') }}</h3>
+   <script>
+      (function() {
+         var cx = '007649239105213158971:kgbokgid1fm';
+         var gcse = document.createElement('script');
+         gcse.type = 'text/javascript';
+         gcse.async = true;
+         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(gcse, s);
+      })();
+   </script>
+  <gcse:search></gcse:search>
+</div> 
+
+
+
+<!--
+<div>
+   <h3>{{ _('Quick search') }}</h3>
+   <script>
+      (function() {
+         var cx = '......';
+         var gcse = document.createElement('script');
+         gcse.type = 'text/javascript';
+         gcse.async = true;
+         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(gcse, s);
+      })();
+   </script>
+  <gcse:search></gcse:search>
+</div> 
+--> 
