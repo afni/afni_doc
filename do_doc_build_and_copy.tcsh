@@ -112,6 +112,11 @@ if ( "$DO_BUILD" == "1" ) then
         all_startup_tips.txt                       \
         ../educational/startup_tips.rst
 
+    echo "++ Make AFNI GUI readme tips RST"
+    python make_file_of_gui_readme_tips.py         \
+        all_gui_tips.txt                           \
+        ../educational/gui_readme_tips.rst
+
     echo "++ Make AFNI colorbars RST"
     python make_file_of_all_afni_cbars.py          \
         ../educational/media/cbars                 \
