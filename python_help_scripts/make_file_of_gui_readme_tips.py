@@ -34,7 +34,7 @@ text_title_desc = \
 Overview
 --------
 
-There are typically (at least) three ways of controlling behavior in
+There are typically (at least) four ways of controlling behavior in
 the AFNI GUI: 
 
 * clicking a button or menu item
@@ -43,6 +43,8 @@ the AFNI GUI:
 
 * providing command line options for the GUI to use as it opens
   (referred to as **driving** AFNI).
+
+* setting an environment variable (such as in your ``~/.afnirc`` file)
 
 And in some cases, left- and right-clicks do different things, as
 well!  Note that the SUMA GUI has the same trio of controllability
