@@ -1,7 +1,7 @@
 .. _edu_bcamp_2018_05_mit:
 
 
-**MIT Bootcamp (May, 2018)**
+MIT Bootcamp (May, 2018)
 ============================
 
 .. contents:: :local:

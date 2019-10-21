@@ -1,6 +1,6 @@
 .. _edu_bcamp_2017_10_nih:
 
-**NIH Bootcamp (Oct, 2017)**
+NIH Bootcamp (Oct, 2017)
 ================================
 
 .. contents:: :local:
