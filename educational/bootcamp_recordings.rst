@@ -2,8 +2,8 @@
 
 .. _edu_bcamp:
 
-AFNI Bootcamp Recordings
-========================
+**AFNI Bootcamp Recordings**
+=============================
 
 .. toctree::
    :maxdepth: 2
