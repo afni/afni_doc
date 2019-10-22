@@ -15,8 +15,11 @@ AUTHOR    = "PA Taylor (NIMH, NIH)"
 #
 #VERSION   = "1.0"; VER_DATE  = "Oct 21"
 #
-VERSION   = "1.1"; VER_DATE  = "Oct 21"
+#VERSION   = "1.1"; VER_DATE  = "Oct 21"
 # + [PT] fixed indentation stuff
+#
+VERSION   = "1.2"; VER_DATE  = "Oct 22"
+# + [PT] fix py23 compatability: str.expandtabs() works differently
 #
 # ------------------------------------------------------------------
 
@@ -187,7 +190,8 @@ def count_indent_space( x ):
     '''
 
     try:
-        y = x.expandtabs( tabsize=4 )
+        #y = x.expandtabs( tabsize=4 )  ## !!!doesn't work in py2!!!
+        y = x.replace('\t', ' '*4) 
         N  = len(y)
         ll = 0
 
@@ -269,6 +273,14 @@ def parse_all_lines(LL, skip_lines=8):
             # see if it carries on
             for j in range(1, N-i):
                 w  = LL[i+j]
+                print("TEST: "+w)
+                print("TEST2: ", is_line_continuation(w))
+                print("TEST3: ", is_empty(w))
+                print("TEST4: ", is_sec_title(w))
+                print("TEST5: ", is_sec_descrip(w))
+                print("TEST6: ", is_subtip_starter(w))
+                print("TEST7: ", w.__contains__(' = '))
+                print("TEST8: ", count_indent_space( w ))
                 if is_line_continuation(w) :
                     sec_descrip.append(w.strip())
                 else:
@@ -279,6 +291,7 @@ def parse_all_lines(LL, skip_lines=8):
                 i+= j-1
                 x  = LL[i]
                 xs = x.strip()
+            print("DONE: ", i, previous_indent)
 
         else:
             sec_tip = [ x ]
