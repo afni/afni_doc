@@ -117,6 +117,11 @@ if ( "$DO_BUILD" == "1" ) then
         all_gui_tips.txt                           \
         ../educational/gui_readme_tips.rst
 
+    echo "++ Make AFNI environment variable RST"
+    python make_file_of_readme_env.py              \
+        all_env_vars.txt                           \
+        ../educational/readme_env_vars.rst
+
     echo "++ Make AFNI colorbars RST"
     python make_file_of_all_afni_cbars.py          \
         ../educational/media/cbars                 \
