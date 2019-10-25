@@ -92,7 +92,7 @@ Install R
        mkdir  $R_LIBS
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
-       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu.tcsh
+       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu_18.04.tcsh
 
    * ... a ``bash`` terminal, copy+paste::
    
@@ -100,7 +100,7 @@ Install R
        mkdir  $R_LIBS
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu.tcsh
+       curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu_18.04.tcsh
 
    (To check your shell type, copy+paste: ``echo $0``)
 
