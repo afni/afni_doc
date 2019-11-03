@@ -41,7 +41,7 @@ Install prerequisite packages
                              libxm4 build-essential            \
                              gnome-terminal nautilus           \
                              gnome-icon-theme-symbolic         \
-                             firefox
+                             firefox xfonts-100dpi
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we
    don't have to reinvent the wheel!).  This may take a little while
