@@ -35,6 +35,14 @@ AFNI_data6/roi_demo):
      -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_imcat.rst         \
      -execute_script
 
+ # tutorial pages: FS prep (check_dset_for_fs.py, recon-all, @SUMA_Make_Spec_FS)
+ @djunct_make_script_and_rst.py                                              \
+     -input          tut_fs_fsprep_MARK.tcsh                                 \
+     -reflink        tut_fs_fsprep                                           \
+     -prefix_script  fs_fsprep.tcsh                                          \
+     -prefix_rst     ~/AFNI/afni_doc/tutorials/fs/fs_fsprep.rst
+
+
 
 (If the images don't need to be changed, then @djunct*py program could
 be run without the '-execute_script', in order to just remake the text
