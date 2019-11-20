@@ -91,7 +91,7 @@ FS.
 In this case, it turns out that the T1w volume has both non-isotropic
 voxels *and* non-even matrix dimensions.  We then fix both of these
 problems (``3dAllineate`` to resample, and ``3dZeropad`` to finalize
-the grid dimensions).  Finally, FS works its magic with ``recon-all`,
+the grid dimensions).  Finally, FS works its magic with ``recon-all``,
 and the results are brought back to AFNI/SUMA-land with
 ``@SUMA_Make_Spec_FS``:
 
