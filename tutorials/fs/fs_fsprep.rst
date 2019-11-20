@@ -2,9 +2,9 @@
 
 .. _tut_fs_fsprep:
 
-***********
-Using imcat
-***********
+*********************************
+How to use FS recon-all with AFNI
+*********************************
 
 
 .. contents:: :local:
@@ -14,6 +14,11 @@ Introduction
 
 **Download script:** :download:`fs_fsprep.tcsh <media/fs_fsprep/fs_fsprep.tcsh>`
 
+
+.. comment on creation of this script
+   This script was generated from running:
+     afni_doc/helper_tutorial_rst_scripts/tut_fs_fsprep_MARK.tcsh
+   as described in the _README.txt in that same directory.
 
 FreeSurfer (FS) provides a number of useful tools for brain imaging.
 In particular, the parcellation/segmentations and anatomical surfaces
@@ -31,7 +36,7 @@ their authors.  Here, we have been using FS ver 6.0.0.
 
 
 
-Input T1w dataset properties
+Check T1w dataset properties
 ==============================
 
 There are a number of properties that the T1w volume input to FS's
@@ -96,6 +101,7 @@ We can quickly take a look at the text file output:
 
 
 .. literalinclude:: media/fs_fsprep/check_fs.txt
+   :language: none
 
 The top part shows some of the dataset info and the parameters of
 testing, as well as the test-by-test results.  Note that by default,
@@ -122,10 +128,13 @@ specify sub-tests).
    
    # Check the output
    if ( $fs_check ) then
+   
        # Dset passes check
        echo "++ Good to go with FreeSurfer"
        set anat_for_fs = ${anat_orig}
+   
    else
+   
        # Dset fails check
        echo "** Shouldn't do FreeSurfer on this dset"
        echo "   Will check among properties for what has gone wrong and"
@@ -141,6 +150,7 @@ specify sub-tests).
    
        # use results of voxelsize check to resample, if necessary
        if ( $fs_check_vox ) then
+   
            3dAllineate                                                   \
                -1Dmatrix_apply  IDENTITY                                 \
                -mast_dxyz       1                                        \
@@ -158,6 +168,7 @@ specify sub-tests).
    
        # use results of matrix check zeropad, if necessary
        if ( $fs_check_mat ) then
+   
            3dZeropad                                                     \
                -pad2evens                                                \
                -prefix          ${pref}_01_ZP.nii                        \
@@ -218,8 +229,8 @@ There, that wasn't so bad, was it?  Here are your images:
 
 |
 
-Running FS's recon-all
-========================
+Run FS's recon-all
+====================
 
 Now that the dataset has been checked and fixed with
 ``check_dset_for_fs.py`` (and then checked again with images output by
@@ -256,8 +267,8 @@ the top of the output directory will be ``SD_ARG/SUBJID_ARG/``.
 
 The above command will run for a long while.
 
-Running AFNI's @SUMA_Make_Spec_FS
-===================================
+Run AFNI's @SUMA_Make_Spec_FS
+===============================
 
 
 When ``recon-all`` has finished, we can take that FS output and bring
@@ -281,15 +292,53 @@ surfaces.  Putting this all together, we have the following command:
        -fspath  ./FT
    
 
-Note that "FT" appears twice in different roles here: we are first
-specifying it as the subject ID (so that will determine some output
-file names), and then it just happens to be part of the path to the FS
-output directory.  This is not always the case.  
+The main output of running this command is directory that will here be
+called ``./FT/SUMA``.  Note that "FT" happens to appear twice in
+different roles here: we are first specifying it as the subject ID (so
+that will determine some output file names), and then it just happens
+to be part of the path to the FS output directory.  This is *not*
+always the case.  In general, the new subdirectory ``SUMA`` that will
+be wherever the ``-fspath ..`` directory is; using the example names
+of arguments to ``recon-all`` from the previous section, it would be
+in ``SD_ARG/SUBJID_ARG/SUMA``.
 
-The main output of running this command is all in a directory that
-will here be in ``./FT/SUMA`` (more generally, in a new subdirectory
-``SUMA`` that will be wherever the ``-fspath ..`` directory is).
-There are volumetric outputs of surfaces and parcellations, and more.
+The ``SUMA/`` directory contains volumetric outputs of segmentations
+and parcellations, surfaces of various sizes and geometry, and more.
+Several of these data sets are direct copies of FS output, but in
+NIFTI and other formats usable by AFNI.  Others are derived datasets
+that we have found to be useful, such as groupings of parcellated ROIs
+by tissue types.  Some of the content of the directory is:
+
+* **aparc+aseg_REN_\*.nii.gz**
+    A family of volumetric datasets from the "2000" atlas parcellation
+    used by FS.  These have been renumbered from the original FS
+    lookup-table values for colorbar convenience in AFNI; the
+    enumeration will still be consistent across subjects, and the same
+    string labels are attached in a labletable (i.e., the same number
+    and label goes with a given ROI, across all subjects).  For
+    convenience, subsets of ROIs grouped by tissue or type have also
+    been created (see the output of ``@SUMA_renumber_FS`` for more
+    details on these).
+
+    Recently, the ``*_REN_gmrois.nii.gz`` dset has been added, as a
+    subset of the GM ROIs defined by FS.  This dataset contains the
+    ROI-like regions of GM from the parcellation, and might be
+    particularly useful for tractography or network correlation.
+
+* **aparc.a2009s+aseg_REN_\*.nii.gz**
+    A family of volumetric datasets from the "2009" atlas parcellation
+    used by FS.  The same renumbering and grouping, as described in
+    for the "2000" atlas above, applies.
+
+* **fs_ap_wm.nii.gz**, **fs_ap_latvent.nii.gz**
+    Two volumetric datasets of masks that have been found useful for
+    ``afni_proc.py`` scripting, namely when applying tissue-based
+    regressors.  The first is comprised of the main WM regions defined
+    by FS, and the second is comprised of the lateral ventricles (see
+    the output of ``@SUMA_renumber_FS`` for more details on these).
+
+
+
 
 
 

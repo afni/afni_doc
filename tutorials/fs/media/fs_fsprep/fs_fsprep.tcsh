@@ -1,10 +1,10 @@
 #!/bin/tcsh
 
 
-# Using imcat
+# How to use FS recon-all with AFNI
 
 
-# ===================== Input T1w dataset properties =====================
+# ===================== Check T1w dataset properties =====================
 
 
 # Input T1w anatomical volume
@@ -23,10 +23,13 @@ set fs_check = `check_dset_for_fs.py -input ${anat_orig}`
 
 # Check the output
 if ( $fs_check ) then
+
     # Dset passes check
     echo "++ Good to go with FreeSurfer"
     set anat_for_fs = ${anat_orig}
+
 else
+
     # Dset fails check
     echo "** Shouldn't do FreeSurfer on this dset"
     echo "   Will check among properties for what has gone wrong and"
@@ -42,6 +45,7 @@ else
 
     # use results of voxelsize check to resample, if necessary
     if ( $fs_check_vox ) then
+
         3dAllineate                                                   \
             -1Dmatrix_apply  IDENTITY                                 \
             -mast_dxyz       1                                        \
@@ -59,6 +63,7 @@ else
 
     # use results of matrix check zeropad, if necessary
     if ( $fs_check_mat ) then
+
         3dZeropad                                                     \
             -pad2evens                                                \
             -prefix          ${pref}_01_ZP.nii                        \
@@ -82,7 +87,7 @@ endif
     -do_clean
 
 
-# ======================== Running FS's recon-all ========================
+# ========================== Run FS's recon-all ==========================
 
 
 echo "++ Ready to start FS"
@@ -96,7 +101,7 @@ recon-all                                                             \
     -i        ${anat_for_fs}
 
 
-# ================== Running AFNI's @SUMA_Make_Spec_FS ===================
+# ==================== Run AFNI's @SUMA_Make_Spec_FS =====================
 
 
 
