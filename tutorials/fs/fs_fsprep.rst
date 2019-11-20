@@ -36,8 +36,8 @@ their authors.  Here, we have been using FS ver 6.0.0.
 
 
 
-Check T1w dataset properties
-==============================
+How to check+fix T1w dataset for running FS
+=============================================
 
 There are a number of properties that the T1w volume input to FS's
 ``recon-all`` should have to ensure that the output datasets and
@@ -75,10 +75,25 @@ see a complete breakdown of the input properties, test thresholds
 (which can be controlled through additional options) and results of
 individual tests.
 
-Below we provide a basic example for testing a T1w dset for
-FS-ability.  The dataset referred to here is part of the AFNI Bootcamp
-data: ``AFNI_data6/FT_analysis/FT/FT_anat+orig.*`` ("FT" is a random,
+Below we provide a basic example (first compactly, then in gruesome
+detail) for first testing a T1w dset for FS-ability, then "fixing" it
+(if need be), and finally processing it.  The dataset referred to here
+is part of the AFNI Bootcamp data:
+``AFNI_data6/FT_analysis/FT/FT_anat+orig.*`` ("FT" is a random,
 two-letter ID for the subject: old school encoding.)
+
+Ex. A: start-to-finish
+========================
+
+This a compact example of going through the dataset check and running
+FS.
+
+In this case, it turns out that the T1w volume has both non-isotropic
+voxels *and* non-even matrix dimensions.  We then fix both of these
+problems (``3dAllineate`` to resample, and ``3dZeropad`` to finalize
+the grid dimensions).  Finally, FS works its magic with ``recon-all`,
+and the results are brought back to AFNI/SUMA-land with
+``@SUMA_Make_Spec_FS``:
 
 
 
@@ -86,6 +101,37 @@ two-letter ID for the subject: old school encoding.)
 
    #!/bin/tcsh
    
+   # note what is off, just to be aware
+   check_dset_for_fs.py -input FT_anat+orig -verb
+   
+   # resample to 1 mm^3 voxels, then pad to even numbers of voxels
+   3dAllineate -1Dmatrix_apply IDENTITY -mast_dxyz 1 -final wsinc5       \
+       -source FT_anat+orig -prefix FT_1mm.nii
+   3dZeropad -pad2evens -prefix FT_anat_FSprep.nii FT_1mm.nii
+   
+   # run FreeSurfer...
+   recon-all -all -subject FT -i FT_anat_FSprep.nii
+   # ... and import into SUMA-land
+   @SUMA_Make_Spec_FS -sid FT -NIFTI -fspath ./FT
+   
+   
+
+Note that ``recon-all`` will take a long time to run (many hours). 
+
+A bit more description of the outputs is provided below.
+
+Ex. B, 1: check dset
+======================
+
+We go through essentially the same steps as the "compact" Ex. A above,
+but describe more features/options/notes.  We also provide a
+scriptified (encryptified?) form of running these steps, which might
+be more generalizable.
+
+
+
+.. code-block:: Tcsh
+
    # Input T1w anatomical volume
    set anat_orig = FT_anat+orig.HEAD
    
@@ -229,8 +275,8 @@ There, that wasn't so bad, was it?  Here are your images:
 
 |
 
-Run FS's recon-all
-====================
+Ex. B, 2: Run FS's recon-all
+==============================
 
 Now that the dataset has been checked and fixed with
 ``check_dset_for_fs.py`` (and then checked again with images output by
@@ -267,9 +313,8 @@ the top of the output directory will be ``SD_ARG/SUBJID_ARG/``.
 
 The above command will run for a long while.
 
-Run AFNI's @SUMA_Make_Spec_FS
-===============================
-
+Ex. B, 3: Run AFNI's @SUMA_Make_Spec_FS
+=========================================
 
 When ``recon-all`` has finished, we can take that FS output and bring
 it into formats usable by AFNI and SUMA, such as NIFTI and GIFTI

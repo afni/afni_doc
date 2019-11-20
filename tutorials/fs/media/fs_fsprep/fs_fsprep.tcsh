@@ -4,7 +4,29 @@
 # How to use FS recon-all with AFNI
 
 
-# ===================== Check T1w dataset properties =====================
+# ============= How to check+fix T1w dataset for running FS ==============
+
+
+
+# ======================== Ex. A: start-to-finish ========================
+
+
+# note what is off, just to be aware
+check_dset_for_fs.py -input FT_anat+orig -verb
+
+# resample to 1 mm^3 voxels, then pad to even numbers of voxels
+3dAllineate -1Dmatrix_apply IDENTITY -mast_dxyz 1 -final wsinc5       \
+    -source FT_anat+orig -prefix FT_1mm.nii
+3dZeropad -pad2evens -prefix FT_anat_FSprep.nii FT_1mm.nii
+
+# run FreeSurfer...
+recon-all -all -subject FT -i FT_anat_FSprep.nii
+# ... and import into SUMA-land
+@SUMA_Make_Spec_FS -sid FT -NIFTI -fspath ./FT
+
+
+
+# ========================= Ex. B, 1: check dset =========================
 
 
 # Input T1w anatomical volume
@@ -87,7 +109,7 @@ endif
     -do_clean
 
 
-# ========================== Run FS's recon-all ==========================
+# ===================== Ex. B, 2: Run FS's recon-all =====================
 
 
 echo "++ Ready to start FS"
@@ -101,8 +123,7 @@ recon-all                                                             \
     -i        ${anat_for_fs}
 
 
-# ==================== Run AFNI's @SUMA_Make_Spec_FS =====================
-
+# =============== Ex. B, 3: Run AFNI's @SUMA_Make_Spec_FS ================
 
 
 # Convert FS recon-all output to AFNI/SUMA formats
