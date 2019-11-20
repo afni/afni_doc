@@ -185,7 +185,10 @@ else
     set fs_check_vox = `check_dset_for_fs.py -input ${input_dset} \
                             -is_vox_05mm_min -is_vox_1mm_max -is_vox_iso`
 
-    # use results of voxelsize check to resample, if necessary
+    # use results of voxelsize check to resample, if necessary; using
+    # the keyword "IDENTITY" as the matrix means that the data stays
+    # in place, and using "wsinc5" means that the interpolation should
+    # preserve edges/details well.
     if ( $fs_check_vox ) then
 
         3dAllineate                             \
