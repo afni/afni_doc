@@ -36,21 +36,25 @@ Voxelwise calcs, esp. stats and tests                        ::  5 :: 3dNormalit
 Get info/stats within ROIs                                   ::  5 :: whereami                            ::  5 :: Get atlas region name for coordinates
 Get info/stats within ROIs                                   ::  5 :: 3dROIstats                          ::  4 :: Calculate dataset values from multiple ROIs
 Get info/stats within ROIs                                   ::  5 :: 3dmaskave                           ::  4 :: Calculate dataset values averaged over a ROI
+Get info/stats within ROIs                                   ::  5 :: 3dmaskdump                          ::  4 :: Output all dataset values in a ROI
 Get info/stats within ROIs                                   ::  5 :: 3dBrickStat                         ::  4 :: Calculate percentile values within dsets
+Get info/stats within ROIs                                   ::  5 :: @measure_bb_thick                   ::  4 :: measure thickness using ball and box method
+Get info/stats within ROIs                                   ::  5 :: @measure_erosion_thick              ::  4 :: measure thickness using erosion method
+Get info/stats within ROIs                                   ::  5 :: @measure_in2out                     ::  4 :: measure thickness between in and out masks
+Get info/stats within ROIs                                   ::  5 :: @thickness_master                   ::  4 :: compare thickness measurement methods
 Get info/stats within ROIs                                   ::  5 :: 3dUndump                            ::  3 :: Create dataset from text (inverse of 3dmaskdump)
-Get info/stats within ROIs                                   ::  5 :: 3dmaskdump                          ::  1 :: Output all dataset values in a ROI
+Get info/stats within ROIs                                   ::  5 :: 3dfractionize                       ::  2 :: Resample a mask dataset to a different resolution
 Get info/stats within ROIs                                   ::  5 :: 3dMax                               ::  1 :: (obsolete -> use 3dBrickStat) 
 Get info/stats within ROIs                                   ::  5 :: 3dOverlap                           ::  1 :: Create mask that is overlap of nonzero voxels from multiple datasets
-Get info/stats within ROIs                                   ::  5 :: 3dfractionize                       ::  1 :: Resample a mask dataset to a different resolution
 Get info/stats within ROIs                                   ::  5 :: 3dTto1D                             ::  1 :: Collapse 4D data to 1D in various ways
 Get info/stats within ROIs                                   ::  5 :: @Atlasize                           ::  1 :: Make an atlas from a dataset and label text files
 Get info/stats within ROIs                                   ::  5 :: @MakeLabelTable                     ::  1 :: Assign labels to values       
 Get info/stats within ROIs                                   ::  5 :: AFNI_atlas_spaces.niml              ::  1 :: space, atlas, transformations definitions file
 Build FMRI pipelines                                         ::  5 :: afni_proc.py                        ::  5 :: Generate tcsh script for processing single subject FMRI data
 Build FMRI pipelines                                         ::  5 :: gen_ss_review_scripts.py            ::  4 :: Generate QC review scripts    
+Build FMRI pipelines                                         ::  5 :: gen_group_command.py                ::  3 :: Generate group analysis scripts
+Build FMRI pipelines                                         ::  5 :: uber_subject.py                     ::  2 :: Graphical interface to help set up an afni_proc.py command (probably just use -> afni_proc.py directly; uber_subject.py does not have full range of options that afni_proc.py has;  recommended to use afni_proc.py examples as a basis, instead)
 Build FMRI pipelines                                         ::  5 :: uber_proc.py                        ::  1 ::                               
-Build FMRI pipelines                                         ::  5 :: uber_subject.py                     ::  1 :: Graphical interface to help set up an afni_proc.py command
-Build FMRI pipelines                                         ::  5 :: gen_group_command.py                ::  1 :: Generate group analysis scripts
 Build FMRI pipelines                                         ::  5 :: afni_restproc.py                    ::  1 :: (obsolete -> use afni_proc.py)
 Align/register/warp/axialize spatially                       ::  5 :: 3dvolreg                            ::  5 :: Volumetric registration (rigid body in 3D, 6DOF linear)
 Align/register/warp/axialize spatially                       ::  5 :: align_epi_anat.py                   ::  5 :: Align 2 volumes (e.g. anat and EPI)
@@ -98,6 +102,9 @@ SUMA surface calculations, formats and viewing               ::  4 :: 3dVol2Surf
 SUMA surface calculations, formats and viewing               ::  4 :: DriveSuma                           ::  4 :: Send commands to SUMA program from script
 SUMA surface calculations, formats and viewing               ::  4 :: SurfaceMetrics                      ::  3 :: Provides information on surface mesh
 SUMA surface calculations, formats and viewing               ::  4 :: SurfMeasures                        ::  3 :: Compute various measurements for surface or pair of surfaces
+SUMA surface calculations, formats and viewing               ::  4 :: quickspec                           ::  3 :: Generate (basic) specification file for running suma
+SUMA surface calculations, formats and viewing               ::  4 :: @surf_to_vol_spackle                ::  3 :: Project values from surface to volume and fill holes
+SUMA surface calculations, formats and viewing               ::  4 :: @SUMA_Make_Spec_SF                  ::  2 :: Convert SureFit surfaces to SUMA spec files
 SUMA surface calculations, formats and viewing               ::  4 :: Surf2VolCoord                       ::  1 ::                               
 SUMA surface calculations, formats and viewing               ::  4 :: SurfClust                           ::  1 :: Find clusters on surfaces     
 SUMA surface calculations, formats and viewing               ::  4 :: SurfDist                            ::  1 :: Output shortest distance between two nodes on a surface (along surface or Euclidean)
@@ -116,7 +123,6 @@ SUMA surface calculations, formats and viewing               ::  4 :: suma_chang
 SUMA surface calculations, formats and viewing               ::  4 :: SUMA_glxdino                        ::  1 ::                               
 SUMA surface calculations, formats and viewing               ::  4 :: SUMA_paperplane                     ::  1 ::                               
 SUMA surface calculations, formats and viewing               ::  4 :: SUMA_pixmap2eps                     ::  1 ::                               
-SUMA surface calculations, formats and viewing               ::  4 :: quickspec                           ::  1 :: Generate (basic) specification file for running suma
 SUMA surface calculations, formats and viewing               ::  4 :: ROI2dataset                         ::  1 :: Convert ROI (e.g., after drawing) to SUMA-type dset
 SUMA surface calculations, formats and viewing               ::  4 :: 3dSurfMask                          ::  1 :: Generate volumetric mask for inside of surface
 SUMA surface calculations, formats and viewing               ::  4 :: ConvertDset                         ::  1 :: Converts a surface dataset from one format to another
@@ -125,10 +131,10 @@ SUMA surface calculations, formats and viewing               ::  4 :: CompareSur
 SUMA surface calculations, formats and viewing               ::  4 :: CreateIcosahedron                   ::  1 ::                               
 SUMA surface calculations, formats and viewing               ::  4 :: MapIcosahedron                      ::  1 :: Create new version of surface mesh using mesh of icosahedron
 SUMA surface calculations, formats and viewing               ::  4 :: @IsoMasks                           ::  1 ::                               
-SUMA surface calculations, formats and viewing               ::  4 :: @SUMA_Make_Spec_SF                  ::  1 :: Convert SureFit surfaces to SUMA spec files
 SUMA surface calculations, formats and viewing               ::  4 :: MakeColorMap                        ::  1 :: Make afni and suma colormaps  
 Mask/skull-strip/segment                                     ::  4 :: 3dAutomask                          ::  5 :: Generate a brain and skull-only mask
 Mask/skull-strip/segment                                     ::  4 :: 3dSkullStrip                        ::  5 :: Enhanced skull stripping      
+Mask/skull-strip/segment                                     ::  4 :: @SSwarper                           ::  5 :: Combines skull stripping with generating a warp to a nonlinear template space; directly combinable with afni_proc.py, too!
 Mask/skull-strip/segment                                     ::  4 :: 3dmask_tool                         ::  4 :: for combining/dilating/eroding/filling masks
 Mask/skull-strip/segment                                     ::  4 :: @NoisySkullStrip                    ::  3 :: Strips the skull of anatomical datasets with low SNR
 Mask/skull-strip/segment                                     ::  4 :: 3dSeg                               ::  3 :: Segment anatomical (t1w) volume into major brain tissue types
@@ -147,15 +153,15 @@ Make/edit/evaluate stimulus timing files                     ::  4 :: stimband  
 Edit dset headers                                            ::  4 :: 3dinfo                              ::  5 :: Print out information from the header
 Edit dset headers                                            ::  4 :: nifti_tool                          ::  5 :: Displays, modifies, copies nifti structures in datasets
 Edit dset headers                                            ::  4 :: 3drefit                             ::  4 :: Lets you change attributes in a dataset header
+Edit dset headers                                            ::  4 :: 3dCM                                ::  3 :: Estimate dset's center of mass, and allow recentering
+Edit dset headers                                            ::  4 :: 3dnewid                             ::  2 :: Assign a new ID code to a dataset (also, generate a random string for filenames); useful for scripting to get temporary filenames/directory names
 Edit dset headers                                            ::  4 :: 3dAttribute                         ::  1 :: Print out a single header attribute
 Edit dset headers                                            ::  4 :: 3dnvals                             ::  1 :: Print out the number of sub-bricks (3D volumes) in a dataset
-Edit dset headers                                            ::  4 :: 3dnewid                             ::  1 :: Assign a new ID code to a dataset (also, generate a random string for filenames)
 Edit dset headers                                            ::  4 :: 3dNotes                             ::  1 :: Lets you put text notes into a dataset header
 Edit dset headers                                            ::  4 :: plugin(Dataset NOTES)               ::  1 :: Interactive header notes editor
 Edit dset headers                                            ::  4 :: gifti_tool                          ::  1 :: Displays, modifies, copies nifti structures in datasets
 Edit dset headers                                            ::  4 :: cifti_tool                          ::  1 :: Displays, modifies, copies nifti structures in datasets
 Edit dset headers                                            ::  4 :: nifti1_tool                         ::  1 :: (how diff than nifti_tool???) 
-Edit dset headers                                            ::  4 :: 3dCM                                ::  1 :: Estimate dset's center of mass, and allow recentering
 Edit dset headers                                            ::  4 :: @AfniOrient2RAImap                  ::  1 :: Convert orientation code into signed code used in AFNI header
 Edit dset headers                                            ::  4 :: @AfniOrientSign                     ::  1 :: Convert orientation code into signed +/-1 code relative to RAI and permutations
 Edit dset headers                                            ::  4 :: @FromRAI                            ::  1 :: Convert RAI coordinates into another coordinate order
@@ -218,25 +224,26 @@ Resting state FMRI parameters                                ::  3 :: 3dReHo    
 Resting state FMRI parameters                                ::  3 :: 3dLombScargle                       ::  3 :: Calculate amp/pow spectrum (like FFT) along time axis with missing time points
 Resting state FMRI parameters                                ::  3 :: 3dAmpToRSFC                         ::  3 :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) from 3dLombScargle output
 Make/edit correlation matrices                               ::  3 :: 3dNetCorr                           ::  4 :: Calculate correlation matrix of a set of ROIs, as well as WB maps of each
+Make/edit correlation matrices                               ::  3 :: fat_mat_sel.py                      ::  3 :: Visualize functional correlation (*.netcc files) or tracted-WM property (*.grid file) matrices
 Make/edit correlation matrices                               ::  3 :: @ROI_Corr_Mat                       ::  1 :: Make an NxN ROI correlation matrix of N ROIs (consider 3dNetCorr instead)
-Make/edit correlation matrices                               ::  3 :: fat_mat_sel.py                      ::  1 :: Visualize functional correlation (*.netcc files) or tracted-WM property (*.grid file) matrices
 Make/edit correlation matrices                               ::  3 :: 3dErrtsCormat                       ::  1 :: Compute the correlation matrix for the residual (or error) time series in a dataset
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dresample                          ::  5 :: Rewrite dataset, possibly in new orientation, with new voxel size
-Make/edit ROIs and clusters, resample                        ::  3 :: 3dclust                             ::  5 :: Find clusters of voxels in a dataset and print out a table about the clusters
+Make/edit ROIs and clusters, resample                        ::  3 :: 3dClusterize                        ::  5 :: Find clusters of voxels in a dataset and print out a table about the clusters
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dmerge                             ::  4 :: Edit datasets (e.g., blur, cluster), and optionally combine them
-Make/edit ROIs and clusters, resample                        ::  3 :: 3dUndump                            ::  3 :: Create a 3D dataset from text data
+Make/edit ROIs and clusters, resample                        ::  3 :: 3dclust                             ::  3 :: Find+report about clusters in a dataset (see 3dClusterize for a newer program with newer options and easier syntax)
+Make/edit ROIs and clusters, resample                        ::  3 :: 3dUndump                            ::  3 :: Create a 3D dataset from text data; complements 3dmaskdump
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dROIMaker                          ::  3 :: Threshold and clusterize dataset, as well as inflate (esp. for tractography prep)
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dfractionize                       ::  2 :: Resample a mask to a different grid size
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dExtrema                           ::  1 :: Find local extrema within volumes
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dmaxima                            ::  1 :: Find local extrema within volumes
-Make/edit ROIs and clusters, resample                        ::  3 :: 3dClustCount                        ::  1 ::                               
-Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZeropad                           ::  3 :: Add zero slices around the edges of a dataset
+Make/edit ROIs and clusters, resample                        ::  3 :: 3dClustCount                        ::  1 :: Apply thresholds to dsets at various levels, and just count clusters of various sizes; used mainly for simulations.
+Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZeropad                           ::  4 :: Add zero slices around the edges of a dataset
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZcat                              ::  3 :: Assemble a 3D+time dataset from multiple input sub-bricks
+Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dAutobox                           ::  3 :: Automatically crop a dataset to remove empty space
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZcutup                            ::  3 :: Cut slices out of a dataset to make a 'thinner' dataset
+Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dXYZcat                            ::  3 :: Glue multiple sub-bricks together along the {x|y|z}-axis
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dbucket                            ::  1 :: Assemble a bucket dataset from multiple input sub-bricks3dTcat
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dTsplit4D                          ::  1 :: Convert a 3D+time dataset into multiple 3D single-brick files
-Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dAutobox                           ::  1 :: Automatically crop a dataset to remove empty space
-Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dXYZcat                            ::  1 :: Glue multiple sub-bricks together along the {x|y|z}-axis
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZregrid                           ::  1 :: Interpolate a dataset to a different slice thickness
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @chauffeur_afni                     ::  5 :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with imcat to form arrays of images)
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: imcat                               ::  5 :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
@@ -248,9 +255,9 @@ Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: plugout_dr
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @DriveAfni                          ::  2 :: Example script to drive afni GUI with class data
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @DriveSuma                          ::  2 :: Example script to drive suma with class data
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: HalloSuma                           ::  1 ::                               
-Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @djunct_calc_mont_dims.py           ::  1 :: Sub-functionality of @djunct_dwi_selector.bash
-Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @djunct_dwi_selector.bash           ::  1 :: Helper/intermediate function for fat_proc_select_vols
-Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @djunct_select_str.py               ::  1 :: Sub-functionality of @djunct_dwi_selector.bash
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: adjunct_calc_mont_dims.py           ::  1 :: Sub-functionality of @djunct_dwi_selector.tcsh
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @djunct_dwi_selector.tcsh           ::  1 :: Helper/intermediate function for fat_proc_select_vols
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: adjunct_select_str.py               ::  1 :: Sub-functionality of @djunct_dwi_selector.tcsh
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: plugout_ijk                         ::  1 ::                               
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: plugout_tt                          ::  1 ::                               
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: plugout_tta                         ::  1 ::                               
@@ -363,20 +370,20 @@ Miscellaneous file manipulations                             ::  2 :: @NoPound  
 Miscellaneous file manipulations                             ::  2 :: @np                                 ::  1 :: Generate new prefix given some base prefix
 MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mvm_prep.py                     ::  3 :: Combine *.grid/*.netcc files with subject data in CSV files; for fat_mvm* modeling
 MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mvm_review.py                   ::  3 :: (only beta)                   
+MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mvm_scripter.py                 ::  3 :: Read in a data table file (esp. from fat_mvm_prep.py) and build 3dMVM command
 MVM modelling of (correlational or structural) matrices      ::  2 :: fat_lat_csv.py                      ::  1 :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
 MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mat_sel.py                      ::  1 :: Plot matrices from 3dNetcorr (*.netcc) or 3dTrackID (*.grid) files
 MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mvm_gridconv.py                 ::  1 :: Convert ooold 3dTrackID output *.grid files; should be unnecessary now
-MVM modelling of (correlational or structural) matrices      ::  2 :: fat_mvm_scripter.py                 ::  1 :: Read in a data table file (esp. from fat_mvm_prep.py) and build 3dMVM command
-Generate model 1D time series                                ::  2 :: 3dDeconvolve                        ::  1 :: Generate hemodynamic responses for stimulus timing files
+Generate model 1D time series                                ::  2 :: 3dDeconvolve                        ::  3 :: Generate hemodynamic responses for stimulus timing files
 Generate model 1D time series                                ::  2 :: 1dBport                             ::  1 :: Generate columns of sines and cosines for bandpassing
 Generate model 1D time series                                ::  2 :: sqwave                              ::  1 :: Generate a square wave (a very old program)
 Generate model 1D time series                                ::  2 :: waver                               ::  1 :: Generate hemodynamic responses to stimulus time series
+Fourier related, time series/freq                            ::  2 :: 3dDFT                               ::  4 :: FFT along time axis           
 Fourier related, time series/freq                            ::  2 :: 3dLombScargle                       ::  3 :: Calculate amp/pow spectrum (like FFT) along time axis with missing time points
 Fourier related, time series/freq                            ::  2 :: 3dAmpToRSFC                         ::  3 :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) from 3dLombScargle output
 Fourier related, time series/freq                            ::  2 :: 3dBandpass                          ::  3 ::                               
 Fourier related, time series/freq                            ::  2 :: 3dRSFC                              ::  3 :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) for uncensored time series
 Fourier related, time series/freq                            ::  2 :: 3dFourier                           ::  1 ::                               
-Fourier related, time series/freq                            ::  2 :: 3dDFT                               ::  1 :: FFT along time axis           
 Fourier related, time series/freq                            ::  2 :: 3dFFT                               ::  1 :: FFT along spatial axis        
 Fourier related, time series/freq                            ::  2 :: 1dBandpass                          ::  1 ::                               
 Fourier related, time series/freq                            ::  2 :: 3dPeriodogram                       ::  1 ::                               
@@ -419,6 +426,7 @@ DICOM info and conversion                                    ::  2 :: mayo_analy
 DICOM info and conversion                                    ::  2 :: siemens_vision                      ::  1 :: Print information from a Siemens Vision .ima file
 DICOM info and conversion                                    ::  2 :: Dimon1                              ::  1 :: (obsolete -> use Dimon)       
 Copy/convert/manipulate dsets                                ::  2 :: 3dcopy                              ::  5 :: Copy a dataset to make new files
+Copy/convert/manipulate dsets                                ::  2 :: 3dThreetoRGB                        ::  3 :: Convert 3 scalar datasets to 1 RGB AFNI format dataset
 Copy/convert/manipulate dsets                                ::  2 :: 3dBRAIN_VOYAGERtoAFNI               ::  1 ::                               
 Copy/convert/manipulate dsets                                ::  2 :: 3dAFNIto3D                          ::  1 :: Read image files, write AFNI format datasets
 Copy/convert/manipulate dsets                                ::  2 :: 3dAFNItoANALYZE                     ::  1 :: Convert AFNI format dataset to ANALYZE format
@@ -429,7 +437,6 @@ Copy/convert/manipulate dsets                                ::  2 :: 3dAFNItoNI
 Copy/convert/manipulate dsets                                ::  2 :: 3dAFNItoRaw                         ::  1 ::                               
 Copy/convert/manipulate dsets                                ::  2 :: 3dANALYZEtoAFNI                     ::  1 :: (obsolete -> use 3dcopy or to3d)
 Copy/convert/manipulate dsets                                ::  2 :: 3dCRUISEtoAFNI                      ::  1 ::                               
-Copy/convert/manipulate dsets                                ::  2 :: 3dThreetoRGB                        ::  1 :: Convert 3 scalar datasets to 1 RGB AFNI format dataset
 Copy/convert/manipulate dsets                                ::  2 :: 3dPAR2AFNI.pl                       ::  1 :: (almost useless helpfile... obsolete???)
 Copy/convert/manipulate dsets                                ::  2 :: 3drename                            ::  1 :: Rename dataset files          
 Copy/convert/manipulate dsets                                ::  2 :: 3ddup                               ::  1 :: Make an 'empty' duplicate (warp-on-demand) of a dataset
@@ -437,10 +444,10 @@ Copy/convert/manipulate dsets                                ::  2 :: 3dTwotoCom
 Copy/convert/manipulate dsets                                ::  2 :: 3dEmpty                             ::  1 :: Create header file only for specified dimensions
 Copy/convert/manipulate dsets                                ::  2 :: 3dVecRGB_to_HSL                     ::  1 :: Convert RGB coloration to HSL values; typically intermed step in viewing prob. tracking results.
 Copy/convert/manipulate dsets                                ::  2 :: 3dMaskToASCII                       ::  1 ::                               
+Changing dset spatial structure                              ::  2 :: 3dresample                          ::  5 :: Rewrite dataset in new orientation, with new voxel size
+Changing dset spatial structure                              ::  2 :: fat_proc_axialize_anat              ::  4 :: Rotate brain to have standard viewing planes along slices
 Changing dset spatial structure                              ::  2 :: 3dLRflip                            ::  3 :: Flip dataset contents Left <-> Right
-Changing dset spatial structure                              ::  2 :: fat_proc_axialize_anat              ::  3 :: Rotate brain to have standard viewing planes along slices
 Changing dset spatial structure                              ::  2 :: 3daxialize                          ::  1 :: Rewrite dataset with slices in different direction
-Changing dset spatial structure                              ::  2 :: 3dresample                          ::  1 :: Rewrite dataset in new orientation, with new voxel size
 Change dset temporal structure                               ::  2 :: 3dUpsample                          ::  1 :: Upsample in time (to a shorter TR)
 Supplementary/open programs included in AFNI                 ::  1 :: cjpeg                               ::  1 :: Compress an image file to a JPEG file
 Supplementary/open programs included in AFNI                 ::  1 :: djpeg                               ::  1 :: Decompress a JPEG file to an image file
@@ -468,6 +475,7 @@ Miscellaneous utilities                                      ::  1 :: count     
 Miscellaneous utilities                                      ::  1 :: afni_history                        ::  4 :: Display a log of updates to AFNI code
 Miscellaneous utilities                                      ::  1 :: ccalc                               ::  3 :: A command line calculator (like 3dcalc)
 Miscellaneous utilities                                      ::  1 :: cdf                                 ::  3 :: Compute probabilities, thresholds for standard distributions
+Miscellaneous utilities                                      ::  1 :: @xyz_to_ijk                         ::  2 :: calculate (i, j, k) indices in a volume from (x, y, z) coordinates
 Miscellaneous utilities                                      ::  1 :: byteorder                           ::  1 :: Report the byteorder of the current CPU
 Unclassed                                                    ::  0 :: 1dAstrip                            ::  1 ::                               
 Unclassed                                                    ::  0 :: @1dDiffMag                          ::  1 ::                               
@@ -482,7 +490,6 @@ Unclassed                                                    ::  0 :: 2perm     
 Unclassed                                                    ::  0 :: 3dAcost                             ::  1 ::                               
 Unclassed                                                    ::  0 :: 3dbuc2fim                           ::  1 ::                               
 Unclassed                                                    ::  0 :: 3dClipLevel                         ::  1 ::                               
-Unclassed                                                    ::  0 :: 3dClustCount                        ::  1 ::                               
 Unclassed                                                    ::  0 :: 3dConformist                        ::  1 ::                               
 Unclassed                                                    ::  0 :: 3dDegreeCentrality                  ::  1 ::                               
 Unclassed                                                    ::  0 :: 3dECM                               ::  1 ::                               

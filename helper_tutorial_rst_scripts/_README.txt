@@ -1,14 +1,14 @@
 The *MARK.tcsh (= 'marked up') scripts in this directory can be run on
 their own (hopefully), but their main usage is to be converted into
 both RST (with accompanying images and text) and script files, using
-the @djunct_make_script_and_rst.py program.
+the adjunct_make_script_and_rst.py program.
 
-An example of running @djunct_make_script_and_rst to create the Sphinx
+An example of running adjunct_make_script_and_rst to create the Sphinx
 pages and everything in the right place is (NB: run the following from
 AFNI_data6/roi_demo):
 
  # tutorial pages: ROI demo (from afni11 in Bootcamp)
- @djunct_make_script_and_rst.py                                              \
+ adjunct_make_script_and_rst.py                                              \
      -input          ex_afni11_roi_cmds_MARK.tcsh                            \
      -reflink        afni11_roi_cmds                                         \
      -prefix_script  afni11_roi_cmds.tcsh                                    \
@@ -16,7 +16,7 @@ AFNI_data6/roi_demo):
      -execute_script
 
  # tutorial pages: @chauffeur_afni
- @djunct_make_script_and_rst.py                                              \
+ adjunct_make_script_and_rst.py                                              \
      -input          tut_auto_@chauffeur_afni_MARK.tcsh                      \
      -reflink        tut_auto_@chauffeur_afni                                \
      -prefix_script  auto_@chauffeur_afni.tcsh                               \
@@ -24,7 +24,7 @@ AFNI_data6/roi_demo):
      -execute_script
 
  # tutorial pages: imcat
- @djunct_make_script_and_rst.py                                              \
+ adjunct_make_script_and_rst.py                                              \
      -input          tut_auto_imcat_*_MARK.tcsh                              \
      -reflink        tut_auto_imcat_0                                        \
                      tut_auto_imcat_1                                        \
@@ -36,7 +36,7 @@ AFNI_data6/roi_demo):
      -execute_script
 
  # tutorial pages: FS prep (check_dset_for_fs.py, recon-all, @SUMA_Make_Spec_FS)
- @djunct_make_script_and_rst.py                                              \
+ adjunct_make_script_and_rst.py                                              \
      -input          tut_fs_fsprep_MARK.tcsh                                 \
      -reflink        tut_fs_fsprep                                           \
      -prefix_script  fs_fsprep.tcsh                                          \
@@ -44,7 +44,7 @@ AFNI_data6/roi_demo):
 
 
 
-(If the images don't need to be changed, then @djunct*py program could
+(If the images don't need to be changed, then adjunct*py program could
 be run without the '-execute_script', in order to just remake the text
 stuff.)
 

@@ -478,9 +478,9 @@
 5 :: @chauffeur_afni               :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with imcat to form arrays of images)
 5 :: imcat                        :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
 3 :: @djunct_4d_imager             :: Wrapper to combine environment+driving functionality to save image/movies files of 4D dataset
-1 :: @djunct_calc_mont_dims.py     :: Sub-functionality of @djunct_dwi_selector.bash
-1 :: @djunct_dwi_selector.bash     :: Helper/intermediate function for fat_proc_select_vols
-1 :: @djunct_select_str.py         :: Sub-functionality of @djunct_dwi_selector.bash
+1 :: adjunct_calc_mont_dims.py     :: Sub-functionality of @djunct_dwi_selector.tcsh
+1 :: @djunct_dwi_selector.tcsh     :: Helper/intermediate function for fat_proc_select_vols
+1 :: adjunct_select_str.py         :: Sub-functionality of @djunct_dwi_selector.tcsh
 3 :: plugout_drive                 :: Drive afni GUI from external program
 1 :: plugout_ijk
 1 :: plugout_tt

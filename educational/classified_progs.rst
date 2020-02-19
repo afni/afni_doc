@@ -967,14 +967,14 @@ Drive AFNI/SUMA, make images/snapshots/montages
      - :ref:`HalloSuma <ahelp_HalloSuma>`
      - 
    * - 1
-     - :ref:`@djunct_calc_mont_dims.py <ahelp_@djunct_calc_mont_dims.py>`
-     - Sub-functionality of @djunct_dwi_selector.bash
+     - :ref:`adjunct_calc_mont_dims.py <ahelp_adjunct_calc_mont_dims.py>`
+     - Sub-functionality of @djunct_dwi_selector.tcsh
    * - 1
-     - :ref:`@djunct_dwi_selector.bash <ahelp_@djunct_dwi_selector.bash>`
+     - :ref:`@djunct_dwi_selector.tcsh <ahelp_@djunct_dwi_selector.tcsh>`
      - Helper/intermediate function for fat_proc_select_vols
    * - 1
-     - :ref:`@djunct_select_str.py <ahelp_@djunct_select_str.py>`
-     - Sub-functionality of @djunct_dwi_selector.bash
+     - :ref:`adjunct_select_str.py <ahelp_adjunct_select_str.py>`
+     - Sub-functionality of @djunct_dwi_selector.tcsh
    * - 1
      - :ref:`plugout_ijk <ahelp_plugout_ijk>`
      - 
