@@ -14,14 +14,15 @@ TEXTINTRO
 
 #:HIDE_ON:
 
-# AFNI tutorial: auto-image-making example "1" using imcat (and
+# AFNI tutorial: auto-image-making example "1" using 2dcat (and
 #                @chauffeur_afni)
 #
-# + last update: July 10, 2019
+# + last update: Feb 21, 2020
+#   - name 'imcat' deprecated in favor of '2dcat'
 #
 ##########################################################################
 #
-# Here, the program imcat concatenates (= glue together) images made
+# Here, the program 2dcat concatenates (= glue together) images made
 # with @chauffeur_afni.
 #
 # Another example using one of the "*_SSW.nii.gz" reference templates
@@ -40,7 +41,7 @@ set nv    = `3dinfo -nv "${ivol}"`                  # number of vols
 set imax  = `3dinfo -nvi "${ivol}"`                 # max index
 
 set lcol  = ( 0 204 0 )                 # RGB line color bt image panels
-set odir  = ${here}/QC_imcat_01         # output dir for images
+set odir  = ${here}/QC_2dcat_01         # output dir for images
 
 \mkdir -p ${odir}
 
@@ -76,7 +77,7 @@ foreach ii ( `seq 0 1 ${imax}` )
         -do_clean
 end
 
-#:SUBSECTION: Use imcat to concatenate images
+#:SUBSECTION: Use 2dcat to concatenate images
 
 cat << TEXTBLOCK
 
@@ -88,7 +89,7 @@ the number of volumes in the 4D dset.
 TEXTBLOCK
 
 # concatenate 3 sliceviews, for as many volumes as are in the dset
-imcat                                                          \
+2dcat                                                          \
     -echo_edu                                                  \
     -gap 5                                                     \
     -gap_col ${lcol}                                             \
@@ -108,6 +109,6 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Ex. 1: Each subject & all sliceviews
     [[ MNI152_2009_template_SSW: ]]
-    QC_imcat_01/ALL_vol_MNI152_2009_template_SSW.jpg
+    QC_2dcat_01/ALL_vol_MNI152_2009_template_SSW.jpg
 
 TEXTBLOCK

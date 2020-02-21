@@ -1,16 +1,16 @@
 #!/bin/tcsh
 
-#:TITLE: Using imcat
+#:TITLE: Using 2dcat
 
 cat << TEXTINTRO
 
-``imcat`` is an "image concatenation" program.  This is a *very* useful
+``2dcat`` is an "image concatenation" program.  This is a *very* useful
 supplementary tool for glueing existing images together to make arrays
 with separating lines, as well other features.  It combines quite
 usefully with ``@chauffeur_afni``, for example to concatenate similar
 images across a data set.
 
-We present some examples of auto-image making with ``imcat`` using
+We present some examples of auto-image making with ``2dcat`` using
 data that should be available in (modern) AFNI binary distributions,
 the ``*_SSW.nii.gz`` template targets for ``@SSwarper``.  Each of
 these dsets has multiple bricks.  We provide examples: 
@@ -21,7 +21,7 @@ these dsets has multiple bricks.  We provide examples:
 
 and more.
 
-Each short script creates a subdirectory ("QC_imcat\*") for the both
+Each short script creates a subdirectory ("QC_2dcat\*") for the both
 the individual, intermediate images and the final concatenated matrix
 of images.
 
@@ -41,14 +41,15 @@ TEXTBLOCK
 
 #:HIDE_ON:
 
-# AFNI tutorial: auto-image-making example "0" using imcat (and
+# AFNI tutorial: auto-image-making example "0" using 2dcat (and
 #                @chauffeur_afni)
 #
-# + last update: July 10, 2019
+# + last update: Feb 21, 2020
+#   - name 'imcat' deprecated in favor of '2dcat'
 #
 ##########################################################################
 #
-# Here, the program imcat concatenates (= glue together) images made
+# Here, the program 2dcat concatenates (= glue together) images made
 # with @chauffeur_afni.
 #
 # This script is meant to be run in a directory containing the
@@ -71,7 +72,7 @@ set ilist = `\ls *${istr}.nii.gz`       # get list of NIFTIs to imagize
 set Ndset = $#ilist                     # number of dsets in list
 
 set lcol  = ( 255 255 255 )             # RGB line color bt image panels
-set odir  = ${here}/QC_imcat_00         # output dir for images
+set odir  = ${here}/QC_2dcat_00         # output dir for images
 
 \mkdir -p ${odir}                       # make output dir
 
@@ -107,11 +108,11 @@ foreach ff ( $ilist )
 end
 
 
-#:SUBSECTION: Use imcat to concatenate sliceviews for each subj
+#:SUBSECTION: Use 2dcat to concatenate sliceviews for each subj
 
 cat <<TEXTBLOCK
 
-First example of using ``imcat`` on a set of datasets: for each dset,
+First example of using ``2dcat`` on a set of datasets: for each dset,
 concatenate different slice views (sagittal, coronal and axial) of a
 single volume.
 
@@ -129,7 +130,7 @@ set lcol  = ( 66 184 254 )
 # order of contanenation will be that of globbing; could be specified
 # in different ways, too.
 foreach ff ( $allbase )
-    imcat                                                    \
+    2dcat                                                    \
         -gap     5                                            \
         -gap_col ${lcol}                                      \
         -nx 1                                                \
@@ -142,22 +143,22 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Combined sliceviews for each subject
     [[ HaskinsPeds_NL_template1.0_SSW: ]]
-    QC_imcat_00/ALL_subj_HaskinsPeds_NL_template1.0_SSW.jpg
+    QC_2dcat_00/ALL_subj_HaskinsPeds_NL_template1.0_SSW.jpg
     [[ MNI152_2009_template_SSW: ]]
-    QC_imcat_00/ALL_subj_MNI152_2009_template_SSW.jpg
+    QC_2dcat_00/ALL_subj_MNI152_2009_template_SSW.jpg
     [[ TT_N27_SSW: ]]
-    QC_imcat_00/ALL_subj_TT_N27_SSW.jpg
+    QC_2dcat_00/ALL_subj_TT_N27_SSW.jpg
 
 |
 
 TEXTBLOCK
 
 
-#:SUBSECTION: Use imcat to concatenate subjs for each sliceview
+#:SUBSECTION: Use 2dcat to concatenate subjs for each sliceview
 
 cat << TEXTBLOCK
 
-Second example of using ``imcat`` on a set of datasets: for each slice
+Second example of using ``2dcat`` on a set of datasets: for each slice
 view, show the dset at the same (x, y, z) location.
 
 TEXTBLOCK
@@ -167,7 +168,7 @@ set lcol  = ( 255 152 11 )
 
 # For each sliceview, concatenate images across all vols
 foreach ss ( "sag" "cor" "axi" )
-    imcat                                                     \
+    2dcat                                                     \
         -gap     5                                             \
         -gap_col ${lcol}                                       \
         -nx 1                                                 \
@@ -188,11 +189,11 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Combined subjects for each sliceview
     [[ sagittal views: ]]
-    QC_imcat_00/ALL_SSW_sview_sag.jpg
+    QC_2dcat_00/ALL_SSW_sview_sag.jpg
     [[ coronal views: ]]
-    QC_imcat_00/ALL_SSW_sview_cor.jpg
+    QC_2dcat_00/ALL_SSW_sview_cor.jpg
     [[ axial views: ]]
-    QC_imcat_00/ALL_SSW_sview_axi.jpg
+    QC_2dcat_00/ALL_SSW_sview_axi.jpg
 
 |
 

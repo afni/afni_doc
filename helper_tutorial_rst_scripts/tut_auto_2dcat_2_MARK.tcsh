@@ -21,10 +21,11 @@ TEXTINTRO
 
 #:HIDE_ON:
 
-# AFNI tutorial: auto-image-making example "2" using imcat (and
+# AFNI tutorial: auto-image-making example "2" using 2dcat (and
 #                @chauffeur_afni)
 #
-# + last update: July 10, 2019
+# + last update: Feb 21, 2020
+#   - name 'imcat' deprecated in favor of '2dcat'
 #
 ##########################################################################
 #
@@ -51,7 +52,7 @@ set imask  = "${idir}/mask+tlrc.HEAD"     # WB mask for this 'group'
 set ianat  = "${idir}/FT_anat+tlrc.HEAD"  # anat vol, use as ulay
 
 set lcol  = ( 192 192 192 )               # RGB line color bt image panels
-set odir  = ${here}/QC_imcat_02           # output dir for images
+set odir  = ${here}/QC_2dcat_02           # output dir for images
 
 \mkdir -p ${odir}
 
@@ -111,7 +112,7 @@ foreach ff ( ${ilist} )
 
 end
 
-#:SUBSECTION: Use imcat to concatenate images
+#:SUBSECTION: Use 2dcat to concatenate images
 
 cat << TEXTBLOCK
 
@@ -128,7 +129,7 @@ TEXTBLOCK
 
 foreach ss ( "sag" "cor" "axi" )
     # Combine alpha-thresholded images
-    imcat                                                    \
+    2dcat                                                    \
         -echo_edu                                            \
         -gap 5                                               \
         -gap_col ${lcol}                                       \
@@ -138,7 +139,7 @@ foreach ss ( "sag" "cor" "axi" )
         ${odir}/img0_alpha*${ss}*
 
     # Combine hard-thresholded images
-    imcat                                                    \
+    2dcat                                                    \
         -echo_edu                                            \
         -gap 5                                               \
         -gap_col ${lcol}                                       \
@@ -160,11 +161,11 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Ex. 2:  One stat slice across subjects: alpha+boxed thresholding
     [[ sagittal views: ]]
-    QC_imcat_02/ALL_alpha*_sag.jpg
+    QC_2dcat_02/ALL_alpha*_sag.jpg
     [[ coronal views: ]]
-    QC_imcat_02/ALL_alpha*_cor.jpg
+    QC_2dcat_02/ALL_alpha*_cor.jpg
     [[ axial views: ]]
-    QC_imcat_02/ALL_alpha*_axi.jpg
+    QC_2dcat_02/ALL_alpha*_axi.jpg
 
 |
 
@@ -174,11 +175,11 @@ cat <<TEXTBLOCK
 
 #:IMAGE: Ex. 2:  One stat slice across subjects: hard thresholding
     [[ sagittal views: ]]
-    QC_imcat_02/ALL_hthr*_sag.jpg
+    QC_2dcat_02/ALL_hthr*_sag.jpg
     [[ coronal views: ]]
-    QC_imcat_02/ALL_hthr*_cor.jpg
+    QC_2dcat_02/ALL_hthr*_cor.jpg
     [[ axial views: ]]
-    QC_imcat_02/ALL_hthr*_axi.jpg
+    QC_2dcat_02/ALL_hthr*_axi.jpg
 
 |
 

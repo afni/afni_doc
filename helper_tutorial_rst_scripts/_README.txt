@@ -23,16 +23,16 @@ AFNI_data6/roi_demo):
      -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_@chauffeur_afni.rst \
      -execute_script
 
- # tutorial pages: imcat
+ # tutorial pages: 2dcat (copy *SSW* vols into ~/AFNI_data6/group_results and run)
  adjunct_make_script_and_rst.py                                              \
-     -input          tut_auto_imcat_*_MARK.tcsh                              \
-     -reflink        tut_auto_imcat_0                                        \
-                     tut_auto_imcat_1                                        \
-                     tut_auto_imcat_2                                        \
-     -prefix_script  tut_auto_imcat_0.tcsh                                   \
-                     tut_auto_imcat_1.tcsh                                   \
-                     tut_auto_imcat_2.tcsh                                   \
-     -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_imcat.rst         \
+     -input          tut_auto_2dcat_*_MARK.tcsh                              \
+     -reflink        tut_auto_2dcat_0                                        \
+                     tut_auto_2dcat_1                                        \
+                     tut_auto_2dcat_2                                        \
+     -prefix_script  tut_auto_2dcat_0.tcsh                                   \
+                     tut_auto_2dcat_1.tcsh                                   \
+                     tut_auto_2dcat_2.tcsh                                   \
+     -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_2dcat.rst         \
      -execute_script
 
  # tutorial pages: FS prep (check_dset_for_fs.py, recon-all, @SUMA_Make_Spec_FS)

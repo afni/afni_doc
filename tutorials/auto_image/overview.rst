@@ -22,7 +22,7 @@ tools, such as:
 * :ref:`@djunct_4d_imager <tut_auto_@djunct_4d_imager>`
   (:ref:`-help <ahelp_@djunct_4d_imager>`)
 
-* :ref:`imcat <tut_auto_imcat>` (:ref:`-help <ahelp_imcat>`)
+* :ref:`2dcat <tut_auto_2dcat>` (:ref:`-help <ahelp_2dcat>`)
 
 These programs do many of the kinds of things you would do to look at
 datasets in the AFNI GUI (click buttons, turn on transparency, change

@@ -4,14 +4,15 @@
 # **Ex. 1**: Combine subbrick images of a 4D dset
 
 
-# AFNI tutorial: auto-image-making example "1" using imcat (and
+# AFNI tutorial: auto-image-making example "1" using 2dcat (and
 #                @chauffeur_afni)
 #
-# + last update: July 10, 2019
+# + last update: Feb 21, 2020
+#   - name 'imcat' deprecated in favor of '2dcat'
 #
 ##########################################################################
 #
-# Here, the program imcat concatenates (= glue together) images made
+# Here, the program 2dcat concatenates (= glue together) images made
 # with @chauffeur_afni.
 #
 # Another example using one of the "*_SSW.nii.gz" reference templates
@@ -30,7 +31,7 @@ set nv    = `3dinfo -nv "${ivol}"`                  # number of vols
 set imax  = `3dinfo -nvi "${ivol}"`                 # max index
 
 set lcol  = ( 0 204 0 )                 # RGB line color bt image panels
-set odir  = ${here}/QC_imcat_01         # output dir for images
+set odir  = ${here}/QC_2dcat_01         # output dir for images
 
 \mkdir -p ${odir}
 
@@ -67,11 +68,11 @@ foreach ii ( `seq 0 1 ${imax}` )
 end
 
 
-# ------------------- Use imcat to concatenate images --------------------
+# ------------------- Use 2dcat to concatenate images --------------------
 
 
 # concatenate 3 sliceviews, for as many volumes as are in the dset
-imcat                                                                 \
+2dcat                                                                 \
     -echo_edu                                                         \
     -gap 5                                                            \
     -gap_col ${lcol}                                                  \

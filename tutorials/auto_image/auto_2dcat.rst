@@ -1,9 +1,9 @@
 
 
-.. _tut_auto_imcat_0:
+.. _tut_auto_2dcat_0:
 
 ***********
-Using imcat
+Using 2dcat
 ***********
 
 
@@ -12,20 +12,20 @@ Using imcat
 Introduction
 ============
 
-**Download script tarball:** :download:`auto_imcat.tgz <media/auto_imcat/auto_imcat.tgz>`
+**Download script tarball:** :download:`auto_2dcat.tgz <media/auto_2dcat/auto_2dcat.tgz>`
 
-Open the tarball using ``tar -xf auto_imcat.tgz`` to get the following scripts in your directory: tut_auto_imcat_0.tcsh, tut_auto_imcat_1.tcsh, tut_auto_imcat_2.tcsh.
+Open the tarball using ``tar -xf auto_2dcat.tgz`` to get the following scripts in your directory: tut_auto_2dcat_0.tcsh, tut_auto_2dcat_1.tcsh, tut_auto_2dcat_2.tcsh.
 
-**Download script:** :download:`tut_auto_imcat_0.tcsh <media/auto_imcat/tut_auto_imcat_0.tcsh>`
+**Download script:** :download:`tut_auto_2dcat_0.tcsh <media/auto_2dcat/tut_auto_2dcat_0.tcsh>`
 
 
-``imcat`` is an "image concatenation" program.  This is a *very* useful
+``2dcat`` is an "image concatenation" program.  This is a *very* useful
 supplementary tool for glueing existing images together to make arrays
 with separating lines, as well other features.  It combines quite
 usefully with ``@chauffeur_afni``, for example to concatenate similar
 images across a data set.
 
-We present some examples of auto-image making with ``imcat`` using
+We present some examples of auto-image making with ``2dcat`` using
 data that should be available in (modern) AFNI binary distributions,
 the ``*_SSW.nii.gz`` template targets for ``@SSwarper``.  Each of
 these dsets has multiple bricks.  We provide examples: 
@@ -36,7 +36,7 @@ these dsets has multiple bricks.  We provide examples:
 
 and more.
 
-Each short script creates a subdirectory ("QC_imcat\*") for the both
+Each short script creates a subdirectory ("QC_2dcat\*") for the both
 the individual, intermediate images and the final concatenated matrix
 of images.
 
@@ -60,14 +60,15 @@ section.
    #!/bin/tcsh
    
    
-   # AFNI tutorial: auto-image-making example "0" using imcat (and
+   # AFNI tutorial: auto-image-making example "0" using 2dcat (and
    #                @chauffeur_afni)
    #
-   # + last update: July 10, 2019
+   # + last update: Feb 21, 2020
+   #   - name 'imcat' deprecated in favor of '2dcat'
    #
    ##########################################################################
    #
-   # Here, the program imcat concatenates (= glue together) images made
+   # Here, the program 2dcat concatenates (= glue together) images made
    # with @chauffeur_afni.
    #
    # This script is meant to be run in a directory containing the
@@ -90,7 +91,7 @@ section.
    set Ndset = $#ilist                     # number of dsets in list
    
    set lcol  = ( 255 255 255 )             # RGB line color bt image panels
-   set odir  = ${here}/QC_imcat_00         # output dir for images
+   set odir  = ${here}/QC_2dcat_00         # output dir for images
    
    \mkdir -p ${odir}                       # make output dir
    
@@ -125,10 +126,10 @@ montage.  These will later be glued together.
    end
    
    
-Use imcat to concatenate sliceviews for each subj
+Use 2dcat to concatenate sliceviews for each subj
 ---------------------------------------------------
 
-First example of using ``imcat`` on a set of datasets: for each dset,
+First example of using ``2dcat`` on a set of datasets: for each dset,
 concatenate different slice views (sagittal, coronal and axial) of a
 single volume.
 
@@ -148,7 +149,7 @@ just include the path to them in the glob at the top of the script
    # order of contanenation will be that of globbing; could be specified
    # in different ways, too.
    foreach ff ( $allbase )
-       imcat                                                             \
+       2dcat                                                             \
            -gap     5                                                    \
            -gap_col ${lcol}                                              \
            -nx 1                                                         \
@@ -165,24 +166,24 @@ just include the path to them in the glob at the top of the script
 
    * - Combined sliceviews for each subject
    * - HaskinsPeds_NL_template1.0_SSW:
-   * - .. image:: media/auto_imcat/ALL_subj_HaskinsPeds_NL_template1.0_SSW.jpg
+   * - .. image:: media/auto_2dcat/ALL_subj_HaskinsPeds_NL_template1.0_SSW.jpg
           :width: 100%   
           :align: center
    * - MNI152_2009_template_SSW:
-   * - .. image:: media/auto_imcat/ALL_subj_MNI152_2009_template_SSW.jpg
+   * - .. image:: media/auto_2dcat/ALL_subj_MNI152_2009_template_SSW.jpg
           :width: 100%   
           :align: center
    * - TT_N27_SSW:
-   * - .. image:: media/auto_imcat/ALL_subj_TT_N27_SSW.jpg
+   * - .. image:: media/auto_2dcat/ALL_subj_TT_N27_SSW.jpg
           :width: 100%   
           :align: center
 
 |
 
-Use imcat to concatenate subjs for each sliceview
+Use 2dcat to concatenate subjs for each sliceview
 ---------------------------------------------------
 
-Second example of using ``imcat`` on a set of datasets: for each slice
+Second example of using ``2dcat`` on a set of datasets: for each slice
 view, show the dset at the same (x, y, z) location.
 
 
@@ -194,7 +195,7 @@ view, show the dset at the same (x, y, z) location.
    
    # For each sliceview, concatenate images across all vols
    foreach ss ( "sag" "cor" "axi" )
-       imcat                                                             \
+       2dcat                                                             \
            -gap     5                                                    \
            -gap_col ${lcol}                                              \
            -nx 1                                                         \
@@ -219,15 +220,15 @@ view, show the dset at the same (x, y, z) location.
 
    * - Combined subjects for each sliceview
    * - sagittal views:
-   * - .. image:: media/auto_imcat/ALL_SSW_sview_sag.jpg
+   * - .. image:: media/auto_2dcat/ALL_SSW_sview_sag.jpg
           :width: 100%   
           :align: center
    * - coronal views:
-   * - .. image:: media/auto_imcat/ALL_SSW_sview_cor.jpg
+   * - .. image:: media/auto_2dcat/ALL_SSW_sview_cor.jpg
           :width: 100%   
           :align: center
    * - axial views:
-   * - .. image:: media/auto_imcat/ALL_SSW_sview_axi.jpg
+   * - .. image:: media/auto_2dcat/ALL_SSW_sview_axi.jpg
           :width: 100%   
           :align: center
 
@@ -237,13 +238,13 @@ view, show the dset at the same (x, y, z) location.
 
 
 
-.. _tut_auto_imcat_1:
+.. _tut_auto_2dcat_1:
 
 **Ex. 1**: Combine subbrick images of a 4D dset
 ===============================================
 
 
-**Download script:** :download:`tut_auto_imcat_1.tcsh <media/auto_imcat/tut_auto_imcat_1.tcsh>`
+**Download script:** :download:`tut_auto_2dcat_1.tcsh <media/auto_2dcat/tut_auto_2dcat_1.tcsh>`
 
  
 Make a set of sagittal, axial and coronal images; these will
@@ -263,14 +264,15 @@ volume in a 4D dset.
    #!/bin/tcsh
    
    
-   # AFNI tutorial: auto-image-making example "1" using imcat (and
+   # AFNI tutorial: auto-image-making example "1" using 2dcat (and
    #                @chauffeur_afni)
    #
-   # + last update: July 10, 2019
+   # + last update: Feb 21, 2020
+   #   - name 'imcat' deprecated in favor of '2dcat'
    #
    ##########################################################################
    #
-   # Here, the program imcat concatenates (= glue together) images made
+   # Here, the program 2dcat concatenates (= glue together) images made
    # with @chauffeur_afni.
    #
    # Another example using one of the "*_SSW.nii.gz" reference templates
@@ -289,7 +291,7 @@ volume in a 4D dset.
    set imax  = `3dinfo -nvi "${ivol}"`                 # max index
    
    set lcol  = ( 0 204 0 )                 # RGB line color bt image panels
-   set odir  = ${here}/QC_imcat_01         # output dir for images
+   set odir  = ${here}/QC_2dcat_01         # output dir for images
    
    \mkdir -p ${odir}
    
@@ -327,7 +329,7 @@ Use @chauffeur_afni to make individual images
            -do_clean
    end
    
-Use imcat to concatenate images
+Use 2dcat to concatenate images
 ---------------------------------
 
 Combine the individual images from above into a matrix of images.
@@ -340,7 +342,7 @@ the number of volumes in the 4D dset.
 .. code-block:: Tcsh
 
    # concatenate 3 sliceviews, for as many volumes as are in the dset
-   imcat                                                                 \
+   2dcat                                                                 \
        -echo_edu                                                         \
        -gap 5                                                            \
        -gap_col ${lcol}                                                  \
@@ -364,7 +366,7 @@ the number of volumes in the 4D dset.
 
    * - Ex. 1: Each subject & all sliceviews
    * - MNI152_2009_template_SSW:
-   * - .. image:: media/auto_imcat/ALL_vol_MNI152_2009_template_SSW.jpg
+   * - .. image:: media/auto_2dcat/ALL_vol_MNI152_2009_template_SSW.jpg
           :width: 100%   
           :align: center
 
@@ -372,13 +374,13 @@ the number of volumes in the 4D dset.
 
 
 
-.. _tut_auto_imcat_2:
+.. _tut_auto_2dcat_2:
 
 **Ex. 2**: Combine (stats) images from many subj
 ================================================
 
 
-**Download script:** :download:`tut_auto_imcat_2.tcsh <media/auto_imcat/tut_auto_imcat_2.tcsh>`
+**Download script:** :download:`tut_auto_2dcat_2.tcsh <media/auto_2dcat/tut_auto_2dcat_2.tcsh>`
 
 
 Here we present a nice way to make a summary of similar images across
@@ -405,10 +407,11 @@ increasingly transparent as their values are further below threshold.
    #!/bin/tcsh
    
    
-   # AFNI tutorial: auto-image-making example "2" using imcat (and
+   # AFNI tutorial: auto-image-making example "2" using 2dcat (and
    #                @chauffeur_afni)
    #
-   # + last update: July 10, 2019
+   # + last update: Feb 21, 2020
+   #   - name 'imcat' deprecated in favor of '2dcat'
    #
    ##########################################################################
    #
@@ -435,7 +438,7 @@ increasingly transparent as their values are further below threshold.
    set ianat  = "${idir}/FT_anat+tlrc.HEAD"  # anat vol, use as ulay
    
    set lcol  = ( 192 192 192 )               # RGB line color bt image panels
-   set odir  = ${here}/QC_imcat_02           # output dir for images
+   set odir  = ${here}/QC_2dcat_02           # output dir for images
    
    \mkdir -p ${odir}
    
@@ -497,7 +500,7 @@ Use @chauffeur_afni to make individual images
    
    end
    
-Use imcat to concatenate images
+Use 2dcat to concatenate images
 ---------------------------------
 
 Combine the individual images from above into a matrix of images.
@@ -515,7 +518,7 @@ done-- feel free to ask/discuss/recommend suggestions.
 
    foreach ss ( "sag" "cor" "axi" )
        # Combine alpha-thresholded images
-       imcat                                                             \
+       2dcat                                                             \
            -echo_edu                                                     \
            -gap 5                                                        \
            -gap_col ${lcol}                                              \
@@ -525,7 +528,7 @@ done-- feel free to ask/discuss/recommend suggestions.
            ${odir}/img0_alpha*${ss}*
    
        # Combine hard-thresholded images
-       imcat                                                             \
+       2dcat                                                             \
            -echo_edu                                                     \
            -gap 5                                                        \
            -gap_col ${lcol}                                              \
@@ -551,15 +554,15 @@ done-- feel free to ask/discuss/recommend suggestions.
 
    * - Ex. 2: One stat slice across subjects: alpha+boxed thresholding
    * - sagittal views:
-   * - .. image:: media/auto_imcat/ALL_alpha_REML_sview_sag.jpg
+   * - .. image:: media/auto_2dcat/ALL_alpha_REML_sview_sag.jpg
           :width: 100%   
           :align: center
    * - coronal views:
-   * - .. image:: media/auto_imcat/ALL_alpha_REML_sview_cor.jpg
+   * - .. image:: media/auto_2dcat/ALL_alpha_REML_sview_cor.jpg
           :width: 100%   
           :align: center
    * - axial views:
-   * - .. image:: media/auto_imcat/ALL_alpha_REML_sview_axi.jpg
+   * - .. image:: media/auto_2dcat/ALL_alpha_REML_sview_axi.jpg
           :width: 100%   
           :align: center
 
@@ -573,15 +576,15 @@ done-- feel free to ask/discuss/recommend suggestions.
 
    * - Ex. 2: One stat slice across subjects: hard thresholding
    * - sagittal views:
-   * - .. image:: media/auto_imcat/ALL_hthr_REML_sview_sag.jpg
+   * - .. image:: media/auto_2dcat/ALL_hthr_REML_sview_sag.jpg
           :width: 100%   
           :align: center
    * - coronal views:
-   * - .. image:: media/auto_imcat/ALL_hthr_REML_sview_cor.jpg
+   * - .. image:: media/auto_2dcat/ALL_hthr_REML_sview_cor.jpg
           :width: 100%   
           :align: center
    * - axial views:
-   * - .. image:: media/auto_imcat/ALL_hthr_REML_sview_axi.jpg
+   * - .. image:: media/auto_2dcat/ALL_hthr_REML_sview_axi.jpg
           :width: 100%   
           :align: center
 

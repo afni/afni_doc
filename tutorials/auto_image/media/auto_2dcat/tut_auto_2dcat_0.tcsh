@@ -1,21 +1,22 @@
 #!/bin/tcsh
 
 
-# Using imcat
+# Using 2dcat
 
 
 # ========== **Ex. 0**: Combine images subject- and slice-wise ===========
 
 
 
-# AFNI tutorial: auto-image-making example "0" using imcat (and
+# AFNI tutorial: auto-image-making example "0" using 2dcat (and
 #                @chauffeur_afni)
 #
-# + last update: July 10, 2019
+# + last update: Feb 21, 2020
+#   - name 'imcat' deprecated in favor of '2dcat'
 #
 ##########################################################################
 #
-# Here, the program imcat concatenates (= glue together) images made
+# Here, the program 2dcat concatenates (= glue together) images made
 # with @chauffeur_afni.
 #
 # This script is meant to be run in a directory containing the
@@ -38,7 +39,7 @@ set ilist = `\ls *${istr}.nii.gz`       # get list of NIFTIs to imagize
 set Ndset = $#ilist                     # number of dsets in list
 
 set lcol  = ( 255 255 255 )             # RGB line color bt image panels
-set odir  = ${here}/QC_imcat_00         # output dir for images
+set odir  = ${here}/QC_2dcat_00         # output dir for images
 
 \mkdir -p ${odir}                       # make output dir
 
@@ -67,7 +68,7 @@ end
 
 
 
-# ---------- Use imcat to concatenate sliceviews for each subj -----------
+# ---------- Use 2dcat to concatenate sliceviews for each subj -----------
 
 
 # Just the "gap color" between glued-together images
@@ -77,7 +78,7 @@ set lcol  = ( 66 184 254 )
 # order of contanenation will be that of globbing; could be specified
 # in different ways, too.
 foreach ff ( $allbase )
-    imcat                                                             \
+    2dcat                                                             \
         -gap     5                                                    \
         -gap_col ${lcol}                                              \
         -nx 1                                                         \
@@ -87,7 +88,7 @@ foreach ff ( $allbase )
 end
 
 
-# ---------- Use imcat to concatenate subjs for each sliceview -----------
+# ---------- Use 2dcat to concatenate subjs for each sliceview -----------
 
 
 # Just the "gap color" between glued-together images
@@ -95,7 +96,7 @@ set lcol  = ( 255 152 11 )
 
 # For each sliceview, concatenate images across all vols
 foreach ss ( "sag" "cor" "axi" )
-    imcat                                                             \
+    2dcat                                                             \
         -gap     5                                                    \
         -gap_col ${lcol}                                              \
         -nx 1                                                         \
