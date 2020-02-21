@@ -20,3 +20,4 @@ Tutorials, Examples
    sound/afni_sound
    rois_corr_vis/main_toc
    fs/main_toc
+   refacer/main_toc

@@ -42,6 +42,13 @@ AFNI_data6/roi_demo):
      -prefix_script  fs_fsprep.tcsh                                          \
      -prefix_rst     ~/AFNI/afni_doc/tutorials/fs/fs_fsprep.rst
 
+ # tutorial pages: reface/defae dsets
+ adjunct_make_script_and_rst.py                                              \
+     -input          tut_auto_@afni_refacer_run_MARK.tcsh                    \
+     -reflink        tut_auto_@afni_refacer_run                              \
+     -prefix_script  refacer_run.tcsh                                        \
+     -prefix_rst     ~/AFNI/afni_doc/tutorials/refacer/refacer_run.rst       \
+     -execute_script
 
 
 (If the images don't need to be changed, then adjunct*py program could
