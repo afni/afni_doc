@@ -142,6 +142,8 @@ TEXTBLOCK
 
 #:SUBSECTION: Example 2: Reface mode
 
+cat << TEXTBLOCK
+
 This command is nearly the same as the above, except for the "mode"
 chosen, and the fact that the ``-prefix ..`` argument here specifies
 the full output name of the file.
