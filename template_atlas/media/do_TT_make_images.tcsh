@@ -47,7 +47,7 @@ foreach ff ( $allfile )
         set rgb = ( 204 0 153 )
     endif
 
-    imcat \
+    2dcat \
         -echo_edu \
         -gap 5 \
         -gap_col $rgb \

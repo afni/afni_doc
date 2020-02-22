@@ -48,7 +48,7 @@ foreach ff ( $allfile )
     endif
 
     # should still be ordered correctly when expanded...
-    imcat                            \
+    2dcat                            \
         -echo_edu                    \
         -gap 5                       \
         -gap_col $rgb                \
