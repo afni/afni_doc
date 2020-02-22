@@ -938,9 +938,9 @@ Drive AFNI/SUMA, make images/snapshots/montages
 
    * - 5
      - :ref:`@chauffeur_afni <ahelp_@chauffeur_afni>`
-     - Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with imcat to form arrays of images)
+     - Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with 2dcat to form arrays of images)
    * - 5
-     - :ref:`imcat <ahelp_imcat>`
+     - :ref:`2dcat <ahelp_2dcat>`
      - Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
    * - 5
      - :ref:`@snapshot_volreg <ahelp_@snapshot_volreg>`
@@ -999,6 +999,9 @@ Drive AFNI/SUMA, make images/snapshots/montages
    * - 1
      - :ref:`@AfniEnv <ahelp_@AfniEnv>`
      - Get and set AFNI environment variables
+   * - 1
+     - :ref:`imcat <ahelp_imcat>`
+     - (deprecated name -> use new name 2dcat)
 
 
 Deal with 1D time series

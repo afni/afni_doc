@@ -19,11 +19,11 @@ case), and "::" demarking things.
 
 Making the RST file is a 2-step process:
 
-    convert_list_to_fields_pandas.py         \
+    python convert_list_to_fields_pandas.py         \
        list_AFNI_PROGS_classed.txt           \
        list_STYLED_NEW.txt
 
-    convert_fields_to_rst.py                 \
+    python convert_fields_to_rst.py                 \
        list_STYLED_NEW.txt                   \
        ../educational/classified_progs.rst
 

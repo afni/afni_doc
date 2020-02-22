@@ -245,8 +245,8 @@ Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dXYZcat  
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dbucket                            ::  1 :: Assemble a bucket dataset from multiple input sub-bricks3dTcat
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dTsplit4D                          ::  1 :: Convert a 3D+time dataset into multiple 3D single-brick files
 Edit dsets: concatenate, split, add/remove slices            ::  3 :: 3dZregrid                           ::  1 :: Interpolate a dataset to a different slice thickness
-Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @chauffeur_afni                     ::  5 :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with imcat to form arrays of images)
-Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: imcat                               ::  5 :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @chauffeur_afni                     ::  5 :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with 2dcat to form arrays of images)
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: 2dcat                               ::  5 :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @snapshot_volreg                    ::  5 :: Drive AFNI to save QC images of EPI-anatomical alignment
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: DriveSuma                           ::  4 :: Drive suma from external program
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @Quiet_Talkers                      ::  3 :: Close all network talking afni and suma instances (often used at end of "talking" scripts)
@@ -266,6 +266,7 @@ Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @CommandGl
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: prompt_popup                        ::  1 :: Popup a dialog box with a message and buttons
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: prompt_user                         ::  1 :: (obsolete -> use prompt_popup)
 Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: @AfniEnv                            ::  1 :: Get and set AFNI environment variables
+Drive AFNI/SUMA, make images/snapshots/montages              ::  3 :: imcat                               ::  1 :: (deprecated name -> use new name 2dcat)
 Deal with 1D time series                                     ::  3 :: 1d_tool.py                          ::  4 :: Perform various manipulations of 1D data
 Deal with 1D time series                                     ::  3 :: 1dplot                              ::  4 :: Graph values from columns in a file
 Deal with 1D time series                                     ::  3 :: 1dtranspose                         ::  3 :: Transpose 1D files (interchange rows and columns)

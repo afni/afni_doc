@@ -475,8 +475,8 @@
 1 :: HalloSuma
 2 :: @DriveSuma                    :: Example script to drive suma with class data
 3 :: @Quiet_Talkers                :: Close all network talking afni and suma instances (often used at end of "talking" scripts)
-5 :: @chauffeur_afni               :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with imcat to form arrays of images)
-5 :: imcat                        :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
+5 :: @chauffeur_afni               :: Wrapper to combine environment+driving functionality to save image files of 3D dataset (nice in conjunction with 2dcat to form arrays of images)
+5 :: 2dcat                        :: Very useful program for making grids of images and things (nice in conjunction with @chauffeur_afni or generally driving AFNI)
 3 :: @djunct_4d_imager             :: Wrapper to combine environment+driving functionality to save image/movies files of 4D dataset
 1 :: adjunct_calc_mont_dims.py     :: Sub-functionality of @djunct_dwi_selector.tcsh
 1 :: @djunct_dwi_selector.tcsh     :: Helper/intermediate function for fat_proc_select_vols
@@ -491,6 +491,7 @@
 1 :: prompt_popup                 :: Popup a dialog box with a message and buttons
 1 :: prompt_user                 :: (obsolete -> use prompt_popup)
 1 :: @AfniEnv                       :: Get and set AFNI environment variables
+1 :: imcat                        :: (deprecated name -> use new name 2dcat)
 
 
 ++ 2 :: Download/install demos
