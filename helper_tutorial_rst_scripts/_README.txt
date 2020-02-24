@@ -36,6 +36,8 @@ AFNI_data6/roi_demo):
      -execute_script
 
  # tutorial pages: FS prep (check_dset_for_fs.py, recon-all, @SUMA_Make_Spec_FS)
+ # NB: some additional files are in subdir here 'for_fs_prep', namely the
+ # movie*.gif and ex*.tcsh files.
  adjunct_make_script_and_rst.py                                              \
      -input          tut_fs_fsprep_MARK.tcsh                                 \
      -reflink        tut_fs_fsprep                                           \
