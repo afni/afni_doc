@@ -47,6 +47,8 @@ AFNI_data6/roi_demo):
      -execute_script
 
  # tutorial pages: reface/defae dsets
+ # NB: some additional files are in subdir here 'for_refacer', namely the
+ # SUMA images showing original+refaced dsets
  adjunct_make_script_and_rst.py                                              \
      -input          tut_auto_@afni_refacer_run_MARK.tcsh                    \
      -reflink        tut_auto_@afni_refacer_run                              \
