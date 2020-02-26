@@ -16,6 +16,14 @@ However, we have noticed that some basic dataset properties can affect
 the output results is surprising ways: namely, FS outputs won't align
 well with FS inputs, and some internal structures may appear odd.
 
+It appears that there can be something like a 1/2 voxel shift between
+the input and output volumes (perhaps due to nearest neighbor
+interpolation), depending on the input grid.  This can result in a
+slight misalignment of the anatomical parcellation with the *input*
+volume (though it should align well with the T1 *output*), and/or
+distort measurements of depth/thickness/volume across a surface.
+Images of the "before" and "after" datasets show this behavior, below.
+
 Here we describe a few considerations for preparing to use FS's
 ``recon-all``, and in particular a helpful program in AFNI to
 check+adjust the properties of your anatomical before running FS
@@ -70,15 +78,19 @@ for various dset properties.  Descriptions are given as follows: each
 of the 3 matrix (mat) dimensions can be even (E) or odd (O); voxels
 (vox) can be isotropic (iso) or anisotropic (aniso), and be of various sizes.
 
+|
+
 #:IMAGE:  Case 3, "bad": mat=EEE, vox=aniso (1x0.94x0.94mm)  || Case 4, "bad": mat=EEO, vox=aniso (1x0.94x0.94mm)
     movie_anat_03_eee_aniso.gif movie_anat_00_eeo_aniso.gif
+
+|
 
 #:IMAGE:  Case 5, "bad": mat=EEE, vox=iso (0.90mm)  || Case 6, "bad": mat=OOE, vox=iso (1mm)
     movie_anat_06_eee_iso09.gif movie_anat_13_ooe_iso1.gif
 
 Our initial expectation would be that all of the inputs above would
 yield the same output---particularly for something like
-adding/removing a row of zeros at the ede of a large matrix of
+adding/removing a row of zeros at the edge of a large matrix of
 data---perhaps with simple blurring differences from regridding.
 However, empirically, we can see that this is not so.  In the cases
 2-6 above, the differences go beyond mere smoothing to nontrivial (and
@@ -234,7 +246,7 @@ set pref       = ${pref}
     -mast_dxyz       1                  \
     -final           wsinc5             \
     -source          ${input_dset}      \
-    -prefix          ${pref}_00_ISO.nii
+    -prefix          ${pref}_ISO.nii
 
 cat << TEXTBLOCK
 
@@ -245,15 +257,10 @@ TEXTBLOCK
 
 3dZeropad                               \
     -pad2evens                          \
-    -prefix          ${pref}_01_ZP.nii  \
+    -prefix          ${pref}_ZP.nii  \
     ${input_dset}
 
 cat << TEXTBLOCK
-
-.. note:: In a real case of processing, we would probably perform the
-          zeropadding on the resampled data itself. But you don't have
-          to really worry about such technicalities, because the
-          ``check_dset_for_fs.py`` will take care of that for you!
 
 TEXTBLOCK
 

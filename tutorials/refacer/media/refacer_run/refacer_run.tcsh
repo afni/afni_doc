@@ -4,11 +4,11 @@
 # Using @afni_refacer_run
 
 
-# ==================== Examples, and how to run them =====================
+# ----------------------- A note on examples below -----------------------
 
 
 
-# --------------------- Example 1: All modes at once ---------------------
+# ===================== Example 1: All modes at once =====================
 
 
 # AFNI tutorial: refacing/defacing anatomical volumes in AFNI
@@ -32,7 +32,7 @@
     -prefix anat
 
 
-# ------------------------ Example 2: Reface mode ------------------------
+# ======================== Example 2: Reface mode ========================
 
 
 # Example 2: simple refacing (only)
@@ -44,6 +44,6 @@
     -prefix anat_reface.nii.gz
 
 
-# -------------------- Example 3: Note on other modes --------------------
+# ==================== Example 3: Note on other modes ====================
 
 

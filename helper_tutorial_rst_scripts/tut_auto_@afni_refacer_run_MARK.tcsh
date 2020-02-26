@@ -13,7 +13,16 @@ to apply.  The header information of the output volume can also be
 anonymized.  As an additional convenience, QC images are automatically
 created for quick visual validation of results.
 
-It can be used to view either:
+For a SUMA view of what we are talking about, consider the following
+anatomical dataset, before (left) and after (right) refacing:
+
+#:IMAGE: original anatomical dset || refaced anatomical dset
+    img_suma_anat_orig.jpg img_suma_anat_reface.jpg
+
+|
+
+
+This program can be used in any of the following modes:
 
 * **deface**: create a copy of the input dataset with zeros in the
   face and ears region.
@@ -38,7 +47,7 @@ comparison.
 
 TEXTINTRO
 
-#:SECTION: Examples, and how to run them
+#:SUBSECTION: A note on examples below
 
 cat << TEXTBLOCK
 
@@ -57,7 +66,7 @@ called ``*_QC/`` that is created.
 
 TEXTBLOCK
 
-#:SUBSECTION: Example 1: All modes at once
+#:SECTION: Example 1: All modes at once
 
 cat << TEXTBLOCK
 
@@ -140,7 +149,7 @@ the prefix given, they would each be created in a subdirectory called
 
 TEXTBLOCK
 
-#:SUBSECTION: Example 2: Reface mode
+#:SECTION: Example 2: Reface mode
 
 cat << TEXTBLOCK
 
@@ -182,7 +191,7 @@ images to quickly show the behavior of the program.
 
 TEXTBLOCK
 
-#:SUBSECTION: Example 3: Note on other modes
+#:SECTION: Example 3: Note on other modes
 
 cat <<TEXTBLOCK
 

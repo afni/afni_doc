@@ -27,6 +27,14 @@ However, we have noticed that some basic dataset properties can affect
 the output results is surprising ways: namely, FS outputs won't align
 well with FS inputs, and some internal structures may appear odd.
 
+It appears that there can be something like a 1/2 voxel shift between
+the input and output volumes (perhaps due to nearest neighbor
+interpolation), depending on the input grid.  This can result in a
+slight misalignment of the anatomical parcellation with the *input*
+volume (though it should align well with the T1 *output*), and/or
+distort measurements of depth/thickness/volume across a surface.
+Images of the "before" and "after" datasets show this behavior, below.
+
 Here we describe a few considerations for preparing to use FS's
 ``recon-all``, and in particular a helpful program in AFNI to
 check+adjust the properties of your anatomical before running FS
@@ -87,6 +95,8 @@ output "SurfVol" (or "brain") dataset:
           :width: 100%   
           :align: center
 
+|
+
 
 .. list-table:: 
    :header-rows: 1
@@ -100,6 +110,8 @@ output "SurfVol" (or "brain") dataset:
      - .. image:: media/fs_fsprep/movie_anat_00_eeo_aniso.gif
           :width: 100%   
           :align: center
+
+|
 
 
 .. list-table:: 
@@ -117,7 +129,7 @@ output "SurfVol" (or "brain") dataset:
 
 Our initial expectation would be that all of the inputs above would
 yield the same output---particularly for something like
-adding/removing a row of zeros at the ede of a large matrix of
+adding/removing a row of zeros at the edge of a large matrix of
 data---perhaps with simple blurring differences from regridding.
 However, empirically, we can see that this is not so.  In the cases
 2-6 above, the differences go beyond mere smoothing to nontrivial (and
@@ -271,7 +283,7 @@ Here is an example of resampling to isotropic voxel size, using the
        -mast_dxyz       1                                                \
        -final           wsinc5                                           \
        -source          ${input_dset}                                    \
-       -prefix          ${pref}_00_ISO.nii
+       -prefix          ${pref}_ISO.nii
    
 
 And here is an example of zeropadding the dataset to have matrix
@@ -283,14 +295,9 @@ dimensions that are all even:
 
    3dZeropad                                                             \
        -pad2evens                                                        \
-       -prefix          ${pref}_01_ZP.nii                                \
+       -prefix          ${pref}_ZP.nii                                   \
        ${input_dset}
    
-
-.. note:: In a real case of processing, we would probably perform the
-          zeropadding on the resampled data itself. But you don't have
-          to really worry about such technicalities, because the
-          ``check_dset_for_fs.py`` will take care of that for you!
 
 Start-to-finish FS example
 ============================

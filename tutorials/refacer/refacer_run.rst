@@ -24,7 +24,27 @@ to apply.  The header information of the output volume can also be
 anonymized.  As an additional convenience, QC images are automatically
 created for quick visual validation of results.
 
-It can be used to view either:
+For a SUMA view of what we are talking about, consider the following
+anatomical dataset, before (left) and after (right) refacing:
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - original anatomical dset
+     - refaced anatomical dset
+   * - .. image:: media/refacer_run/img_suma_anat_orig.jpg
+          :width: 100%   
+          :align: center
+     - .. image:: media/refacer_run/img_suma_anat_reface.jpg
+          :width: 100%   
+          :align: center
+
+|
+
+
+This program can be used in any of the following modes:
 
 * **deface**: create a copy of the input dataset with zeros in the
   face and ears region.
@@ -49,8 +69,8 @@ comparison.
 
 
 
-Examples, and how to run them
-===============================
+A note on examples below
+--------------------------
 
 For the ``@afni_refacer_run`` examples below, we use data of the
 ``AFNI_data6/afni/`` directory of the freely available AFNI Bootcamp
@@ -66,7 +86,7 @@ the directory. The images themselves are put into a subdirectory
 called ``*_QC/`` that is created. 
 
 Example 1: All modes at once
-------------------------------
+==============================
 
 This program runs with very few options: basically, in input file, and
 output name/prefix, and one "mode" that specifies whether you want to
@@ -222,7 +242,7 @@ the prefix given, they would each be created in a subdirectory called
 |
 
 Example 2: Reface mode
-------------------------
+========================
 
 This command is nearly the same as the above, except for the "mode"
 chosen, and the fact that the ``-prefix ..`` argument here specifies
@@ -288,7 +308,7 @@ images to quickly show the behavior of the program.
      -
 
 Example 3: Note on other modes
---------------------------------
+================================
 
 The other modes, ``-mode_deface`` and ``-mode_reface_plus`` operate in
 the exact same way as the preceding example, just with the varied

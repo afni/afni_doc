@@ -41,11 +41,11 @@ set pref       = ${pref}
     -mast_dxyz       1                                                \
     -final           wsinc5                                           \
     -source          ${input_dset}                                    \
-    -prefix          ${pref}_00_ISO.nii
+    -prefix          ${pref}_ISO.nii
 
 3dZeropad                                                             \
     -pad2evens                                                        \
-    -prefix          ${pref}_01_ZP.nii                                \
+    -prefix          ${pref}_ZP.nii                                   \
     ${input_dset}
 
 
