@@ -128,6 +128,23 @@ Install R
    This step might take a while (of order an hour) to complete,
    because R will compile the packages.  Sigh.
    
+#. If you are using Windows Subsystem Linux (WSL), and/or if your
+   'brms' package fails to install (as checked in the "Evaluation"
+   step below), then consider to copy+paste::
+
+     sudo add-apt-repository -y "ppa:marutter/rrutter3.5"
+     sudo add-apt-repository -y "ppa:marutter/c2d4u3.5"
+
+     sudo apt update
+
+     sudo apt install -y r-cran-rstan r-cran-shinystan r-cran-brms
+
+   **Purpose:** Add a couple new repos from which to pull packages,
+   and then get the desired R packages; these steps come mainly from
+   `this helpful website
+   <https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux>`_.
+
+
 .. ---------- HERE/BELOW: copy for all installs --------------
 
 Make AFNI/SUMA profiles
