@@ -12,10 +12,6 @@
 
 
 
-# ============== Examples of surface measure output changes ==============
-
-
-
 # =============== Description: AFNI's check_dset_for_fs.py ===============
 
 
