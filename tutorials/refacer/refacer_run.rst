@@ -25,7 +25,9 @@ anonymized.  As an additional convenience, QC images are automatically
 created for quick visual validation of results.
 
 For a SUMA view of what we are talking about, consider the following
-anatomical dataset, before (left) and after (right) refacing:
+anatomical dataset, shown in original state (top-left) and after
+refacing (top-right), defacing (bottom-left) and reface-plusing
+(bottom-right):
 
 
 .. list-table:: 
@@ -43,6 +45,19 @@ anatomical dataset, before (left) and after (right) refacing:
 
 |
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - defaced anatomical dset
+     - reface_plused anatomical dset
+   * - .. image:: media/refacer_run/img_suma_anat_deface.jpg
+          :width: 100%   
+          :align: center
+     - .. image:: media/refacer_run/img_suma_anat_reface_plus.jpg
+          :width: 100%   
+          :align: center
 
 This program can be used in any of the following modes:
 
