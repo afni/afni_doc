@@ -76,6 +76,9 @@ don't know if the above properties apply in this case (particularly
 the voxel isotropicity), so please consult FS help pages for more
 detail in such cases.
 
+Examples of volumetric output changes
+=======================================
+
 What happens if one or more of the above properties are not met?  Here
 we display several examples in movie form: each panel alternates
 continuously between the T1w dset input to ``recon-all`` and its
@@ -134,6 +137,157 @@ data---perhaps with simple blurring differences from regridding.
 However, empirically, we can see that this is not so.  In the cases
 2-6 above, the differences go beyond mere smoothing to nontrivial (and
 often inhomogenous) structural changes.
+
+Examples of surface measure output changes
+============================================
+
+One can also look at differences in properties measured on the surface
+meshes.  Cortical thickness is a popular metric to compare across
+groups.  Here, we look at the differences in the output thickness
+measures for the same dataset cases as above; we also look at the
+effect of having volumes of different sizes that still meet the
+criteria above (i.e., matrices of all even dimensions, but different
+numbers of slices).
+
+
+.. list-table:: Cortical thickness measures on the surface. Descriptions and "case" numbers match the preceding images. In the "Case 1, good" image, cortical thickness values are displayed in range of FS min=0 and max=5 mm. In the remaining images, **differences** in cortical thickness from Case 1 are shown as "good - bad" dset thickness values in a range [-3, 3] mm (thresholded at 0.33 mm).
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 1, "good": mat=EEE, vox=iso (1mm). Thickness values (original).
+   * - .. image:: media/fs_fsprep/tval_anat_01_eee_iso1.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tval_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 2, "bad": mat=EEO, vox=iso (1mm). Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_02_eeo_iso1.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 3, "bad": mat=EEE, vox=aniso (1x0.94x0.94mm). Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_03_eee_aniso.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 4, "bad": mat=EEO, vox=aniso (1x0.94x0.94mm). Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_00_eeo_aniso.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 5, "bad": mat=EEE, vox=iso (0.90mm). Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_06_eee_iso09.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 6, "bad": mat=OOE, vox=iso (1mm). Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_13_ooe_iso1.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+That is, there are many patches throughout the cortex in each case
+where the differences from the "Case 1, good" input are greater than 1
+mm.  Note that thickness differences noted in group studies are often
+of the sizes shown in the overlay (or even smaller).
+
+Finally, we have even noticed that among datasets that have all even
+matrix dimensions and 1mm isotropic voxels, there can be variations in
+thickness measures (though the volumetric images don't show noticeable
+differences).  Consider the following cases (cortical thickness
+differences are represented in the same way as above):
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 7, "good" + 2 L-slices. Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_10_eee_iso1_b.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+|
+
+Case 8, "good" + 2 L-slices + 2 R-slices. Thickness differences.
+    tdiff_anat_11_eee_iso1_c.png            
+    tdiff_cbar_full.png
+
+|
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Case 9, "good" + 2 L-slices + 2 A-slices. Thickness differences.
+   * - .. image:: media/fs_fsprep/tdiff_anat_12_eee_iso1_d.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/fs_fsprep/tdiff_cbar_full.png
+          :width: 100%   
+          :align: center
+
+
+Thus, when zeropadding a dataset isotropically (as in Case 9), there
+were no differences in thickness measures.  However, zeropadding only
+one side of the box resulted in noticeable differences throughout the
+surface.
+
 
 Description: AFNI's check_dset_for_fs.py
 ==========================================
