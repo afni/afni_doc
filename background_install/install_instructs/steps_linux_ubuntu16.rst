@@ -34,6 +34,7 @@ Install prerequisite packages
      sudo apt-get update
 
      sudo apt-get install -y tcsh xfonts-base python-qt4       \
+                             python-matplotlib                 \
                              gsl-bin netpbm gnome-tweak-tool   \
                              libjpeg62 xvfb xterm vim curl     \
                              gedit evince eog                  \

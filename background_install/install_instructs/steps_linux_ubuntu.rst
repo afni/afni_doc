@@ -34,6 +34,7 @@ Install prerequisite packages
    * *... versions 15.04 and earlier*, copy+paste::
    
        sudo apt-get install -y tcsh libxp6 xfonts-base python-qt4       \
+                               python-matplotlib                        \
                                libmotif4 libmotif-dev motif-clients     \
                                gsl-bin netpbm xvfb gnome-tweak-tool     \
                                libjpeg62 xterm gedit evince firefox eog \
@@ -43,6 +44,7 @@ Install prerequisite packages
    * *... version 15.10*, copy+paste::
    
        sudo apt-get install -y tcsh xfonts-base python-qt4 gedit evince \
+                               python-matplotlib                        \
                                libmotif4 libmotif-dev motif-clients     \
                                gsl-bin netpbm xvfb gnome-tweak-tool     \
                                libjpeg62 firefox eog xfonts-100dpi
