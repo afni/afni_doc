@@ -3,7 +3,7 @@
 import numpy as np
 import sys as sys
 
-import afni_util as au
+from afnipy import afni_util as au
 
 THIS_PROG = 'convert_handouts_list_to_table.py'
 NUM_ARGS  = 2                          # two input args needed

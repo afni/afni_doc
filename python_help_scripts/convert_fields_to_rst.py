@@ -17,7 +17,7 @@ import pandas as pd
 #
 # ====================================================================
 
-import afni_util as au
+from afnipy import afni_util as au
 
 import convert_list_to_fields_pandas as clfp
 

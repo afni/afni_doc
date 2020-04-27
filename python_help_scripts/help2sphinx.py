@@ -8,7 +8,7 @@
 import sys, os, glob, subprocess, csv, re, shutil, argparse, signal, textwrap
 
 # requires PYTHONPATH to directory of AFNI binaries
-import afni_util as au
+from afnipy import afni_util as au
 
 ## [PT: Mar 22, 2018] Make the reference for each help in the "All
 ## Help" section be ".. _ahelp_PROGNAME"

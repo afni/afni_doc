@@ -4,7 +4,7 @@ import numpy as np
 import sys as sys
 import os
 
-import afni_util as au
+from afnipy import afni_util as au
 
 THIS_PROG = 'make_file_of_gui_tips.py'
 NUM_ARGS  = 2                          # two input args needed

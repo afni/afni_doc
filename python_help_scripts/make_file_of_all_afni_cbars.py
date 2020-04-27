@@ -8,7 +8,7 @@ import sys as sys
 import os
 import subprocess
 
-import afni_util as au
+from afnipy import afni_util as au
 
 THIS_PROG = 'make_file_of_all_afni_cbars.py'
 NUM_ARGS  = 2                          # two input args needed

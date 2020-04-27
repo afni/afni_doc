@@ -9,7 +9,7 @@ import pandas as pd
 
 # Each "GROUP" name line *must* start with "++" (no spaces beforehand)
 
-import afni_util as au
+from afnipy import afni_util as au
 
 THIS_PROG = 'convert_list_to_fields_pandas.py'
 NUM_ARGS  = 2                          # two input args needed
