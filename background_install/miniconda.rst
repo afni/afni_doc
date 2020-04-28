@@ -68,25 +68,25 @@ Download+install miniconda
 1. **Click here and select installer to download (e.g., to home
    directory):**
 
-   * `Linux <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`_
+   * `Linux installers <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`_
 
-   * `Mac <https://docs.conda.io/en/latest/miniconda.html#macosx-installers>`_
+   * `Mac installers <https://docs.conda.io/en/latest/miniconda.html#macosx-installers>`_
 
    **Note on selection:** Most computers now are 64-bit, and selecting
    the "Python 3.7" version makes sense (you can still use it to set
    up Python 2.* environments on your system).  For Macs, I used the
-   bash script version, just because it is more similar to what is
-   done on Linux.
+   bash script version (rather than pkg), just because the former is
+   more similar to what is done on Linux.
 
 2. **Run the downloaded installer script:**
 
    Type ``bash SCRIPT_NAME``, such as:
 
-   * Linux::
+   * *For Linux*::
        
        bash Miniconda3-latest-Linux-x86_64.sh
 
-   * Mac::
+   * *For Mac*::
        
        bash Miniconda3-latest-MacOSX-x86_64.sh
 
@@ -110,19 +110,20 @@ Download+install miniconda
    every prompt (though you can optionally turn that off, which I do).
 
    You can also source the ``~/.*rc`` file for your shell, which
-   should update your current terminal.  You can type ``echo $0`` to
-   see the name of your shell, and then either:
+   should update your current terminal.  (To know what type of shell
+   you are using, you can type ``echo $0``.) 
    
-   * *for bash*::
+   * *For bash*::
 
        source ~/.bashrc
 
-   * *for tcsh*::
+   * *For tcsh*::
 
        source ~/.cshrc
 
-   You should see the same "(base)" string stuck before your terminal
-   now.  Typing ``conda -V`` should show you your version number.
+   You should see a string "(base)" string stuck before your terminal
+   prompt now.  Typing ``conda -V`` should also show you your version
+   number.
 
    
 Sidenote
@@ -130,8 +131,8 @@ Sidenote
 
 What has Conda done to **initialize** things in the terminal?  It has
 stuck some commands into your shell's startup file; in my
-``~/.bashrc`` file (because I use a ``bash`` shell in my terminal), I
-can now see the following text::
+``~/.bashrc`` file (because I use ``bash`` shell), I can now see the
+following text::
 
   
     # >>> conda initialize >>>
@@ -149,26 +150,28 @@ can now see the following text::
     unset __conda_setup
     # <<< conda initialize <<<
 
-\.\.\. where ``USERNAME`` is my username.  If you chose to install
-miniconda in a different location than your home directory, then the
-paths shown would be different.  Note that conda/miniconda gets setup
-with path names hardwired into its files, so you will **not** just be
-able to move your "miniconda3" directory and update these path
-locations later and have it work.
+\.\.\. where ``USERNAME`` is replaced with my actual username.  If you
+chose to install miniconda in a different location than your home
+directory, then the paths shown would be different.  
+
+Note that conda/miniconda gets setup with path names hardwired into
+its files, so you will **not** just be able to move your "miniconda3"
+directory and update these path locations later and still have it
+work.
 
 
 Disable conda prompt string (opt)
 ---------------------------------
 
-I **do** want to have a conda environment up and running by default in
-every terminal (so I have my Python available directly), but I
-**don't** like having "(base)" pushing my prompt all the time.  If you
-want to turn it off, then you can just run::
+I **do** want to have a conda environment up and running in each new
+terminal by default (so that Python is immediately available), but I
+**don't** like having "(base)" appearing before my prompt all the
+time.  To turn it off, you can just run::
   
   conda config --set changeps1 False
 
 and then in each new terminal, you won't have that appear anymore.
-(And to make your existing terminal recognize this change, source your
+(To make your existing terminal recognize this change, source your
 shell's ``~/.*rc`` file, e.g. ``source ~/.bashrc`` or ``source
 ~/.cshrc``.)
 
@@ -180,14 +183,14 @@ always run::
 Making basic conda environments
 ---------------------------------
 
-To see what conda environments are available on your computer, you can
-type::
+To see what conda environments are currently available on your
+computer, you can type::
 
   conda env list
 
 The name of all available environments will appear in the first
-column, as well as thei location in the second.  The environment which
-is currently loaded will have an asterisk ``\*`` after its name.
+column, as well as their locations in the second.  The environment
+which is currently loaded will have an asterisk ``*`` after its name.
 
 To create a new environment, at its simplest you can specify a Python
 version and a set of modules to install, such as::
@@ -197,9 +200,9 @@ version and a set of modules to install, such as::
         python=3.7                \
         matplotlib numpy
 
-Where the new environment's name will be "py37_afni_tiny"; I called it
-this because that is basically about the minimal set of modules that
-would go along with AFNI (and even those aren't used very much).
+where the new environment's name will be "py37_afni_tiny"; I called it
+this because that is basically the minimal set of modules used within
+AFNI (and even those aren't used very often).
 
 To make a similar setup for Python 2.7 (no earlier versions of Python
 should be used), one could run::
@@ -218,7 +221,7 @@ available environments::
    py27_afni_tiny           /home/USERNAME/miniconda3/envs/py27_afni_tiny
    py37_afni_tiny           /home/USERNAME/miniconda3/envs/py37_afni_tiny
 
-To turn off an Conda environment, you can run::
+To turn off a Conda environment, you can run::
 
   conda deactivate
 
@@ -227,8 +230,8 @@ NAME``, such as::
 
     conda activate py27_afni_tiny
 
-To see what modules are installed in your active environment, and
-their version numbers you can run::
+To see what modules are installed in your active environment (and
+their version numbers) you can run::
 
    conda list
 
@@ -310,10 +313,10 @@ Specify my default environment in the terminal
 ----------------------------------------------
 
 From the Conda initialization, the "base" environment is the default
-one running in any new terminal.  Now that we have other envs that we
-have made, we can choose to specify one of those.  To do so, I just
-include the following line in my shell's ``~/.*rc`` file *after* the
-"conda initialize" lines:  ``source activate NAME``.
+one running in any new terminal.  We might prefer to make one of our
+newly made environments the default.  To do so, I will include a line
+``source activate NAME`` in my shell's ``~/.*rc`` file somewhere
+*after* the "conda initialize" lines.
 
 Thus, since I am running "bash" shell, I have the following line in my
 ``~/.bashrc`` \file::
@@ -325,10 +328,10 @@ Making conda environments, more generally
 -----------------------------------------
 
 The environment builder works a bit like a package manager, where it
-can get a lot of common modules from a central repository, but if you
-want more specialized ones, you might have to add from another place.
-To add new repositories to pull from, you "add a channel" to your
-Conda setup.
+can get a lot of common modules from a default, central repository,
+but if you want more specialized ones, you might have to add from
+another place.  To add new repositories to pull from, you **add a
+channel** to your Conda setup.
 
 Let's say you want to add the Sphinx module with cloud-theme support
 (I doubt you will, but just as an example). If you try::
@@ -339,7 +342,7 @@ Let's say you want to add the Sphinx module with cloud-theme support
       matplotlib numpy            \
       sphinx cloud_sptheme
 
-You will likely get the following message::
+You will likely get the following message:
 
 .. hidden-code-block:: None
    :starthidden: False
@@ -379,22 +382,22 @@ modules, I would run::
 
   conda config --add channels conda-forge
 
-\.\.\. and then re-running my failed ``conda create ..`` command above
-results in success this time.
+Then, I can retry my ``conda create ..`` command above, which should
+result in success this time.
 
-**Thus, if you try to build an environment with a module and get told
-it can't be found, you can search for it amongst available channels,
-add that channel to your Conda setup, and include it.**
+**Thus, if you try to build an environment and get told that some
+desired module can't be found, you can search for it amongst available
+channels, add that channel to your Conda setup, and try again.**
 
 Setting up Conda (quick)
 ==========================
 
 1. **Download and install**
 
-   At prompts, I mostly typing "yes" and/or accepting default options;
-   see verbose description above).  
+   At ensuing prompts, I mostly type "yes" and/or accept default
+   options; see verbose description above.
 
-   * *For Linux, tcsh terminal*::
+   * *For Linux and tcsh*::
 
        set script_file = Miniconda3-latest-Linux-x86_64.sh
        curl -O https://repo.anaconda.com/miniconda/${script_file}
@@ -404,7 +407,7 @@ Setting up Conda (quick)
 
        source ~/.cshrc
 
-   * *For Linux, bash terminal*::
+   * *For Linux and bash*::
 
        script_file=Miniconda3-latest-Linux-x86_64.sh
        curl -O https://repo.anaconda.com/miniconda/${script_file}
@@ -414,7 +417,7 @@ Setting up Conda (quick)
 
        source ~/.bashrc
 
-   * *For Mac, tcsh terminal*::
+   * *For Mac and tcsh*::
 
        set script_file = Miniconda3-latest-MacOSX-x86_64.sh
        curl -O https://repo.anaconda.com/miniconda/${script_file}
@@ -424,7 +427,7 @@ Setting up Conda (quick)
 
        source ~/.cshrc
 
-   * *For Mac, bash terminal*::
+   * *For Mac and bash*::
 
        script_file=Miniconda3-latest-MacOSX-x86_64.sh
        curl -O https://repo.anaconda.com/miniconda/${script_file}
@@ -466,10 +469,12 @@ Setting up Conda (quick)
 
 #. **Activate an env by default**
 
-   Activate the specific environment in your ``~/.*rc`` file; open up
-   the text file and edit it, or, e.g.:
+   Specify the env to activate in your ``~/.*rc`` file. 
 
-   
+   Open up the ``~/.bashrc`` or ``~/.cshrc`` text file and put
+   ``source activate NAME`` **after** the conda-initialization lines
+   in that file, or, e.g. copy+paste:
+
    * *For tcsh*::
 
        echo "" >> ~/.cshrc
@@ -482,12 +487,9 @@ Setting up Conda (quick)
        echo "source activate py37_afni_tiny" >> ~/.bashrc
        echo "" >> ~/.bashrc
 
-   Make sure that line is **after** the conda-initialization lines in
-   that file.
-
 #. **Quicktasks with Conda**
 
-   List modules (starred one is active)::
+   List modules (starred/asterisked one is active)::
 
      conda env list
 
@@ -515,19 +517,19 @@ Environments documentation
 Cloning
 -------
 
-One concept with Conda is **cloning environments**: if I can Conda
-setup on my laptop with a certain set of modules, each with a certain
-version number, then I can "clone" it and give you that exact recipe
-to setup a duplicate environment on your computer.  This is a nice
-concept for reproducibility (sometimes using different version numbers
-of modules can affect your output results).
+One concept with Conda is **cloning environments**: if I can setup a
+Conda environment on my laptop with a certain set of modules, each
+with a certain version number, then I can "clone" it and use that
+exact recipe to setup a duplicate environment on a different computer.
+This is a nice concept for reproducibility (as sometimes using
+different version numbers of modules can affect outputs/results).
 
 `More on cloning and building identical conda envs can be read
 <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#cloning-an-environment>`_.
 
-Note that in practice, truly duplicating environments is actually
-pretty tough.  Getting very close might be good enough for most
-purposes, though, in practice.
+Note that in practice, truly duplicating environments exactly is
+actually pretty tough.  Getting very close might be good enough for
+most purposes, though, in practice.
 
 Conda Cheatsheet
 ----------------
@@ -538,15 +540,17 @@ It's here: `the conda cheatsheet <https://docs.conda.io/projects/conda/en/4.6.0/
 A note on making envs and choosing modules
 ===========================================
 
-What modules to install is entirely up to you.  AFNI-land at the
-moment has pretty minimal Python requirements. In fact, the AFNI set
-of recommended modules might simply fit inside those requirements that
-you have for other software/uses.  
+It is entirely up to you, Dear User, what modules you install and how
+you organize your environments (and if you even *choose* to use
+Conda).  At the moment AFNI-land has pretty minimal Python
+requirements. In fact, the AFNI set of recommended modules might
+simply fit inside those requirements that you have for other
+software/uses, and you might not need to do anything new.
 
-We certainly don't anticipate or desire a person to set up just an one
-environment for running AFNI, then another for running some other
-software, and then another for another project... While that is
+We certainly don't anticipate or desire a person to set up one
+specific environment for running AFNI, then another for running some
+other software, and then another for another project... While that is
 possible, it seems annoying and inefficient.  And unnecessary.  So,
-hopefully, you can set up one (or maybe two, because of the Python-2.7
-and Python-3.* split) environments, and not have to switch too much.
+hopefully, you can set up one environments (or maybe two, because of
+the Python-2.7 and Python-3.* split), and not have to switch too much.
 
