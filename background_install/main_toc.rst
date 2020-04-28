@@ -14,3 +14,4 @@ Installation and Background
    download_links.rst
    unix_tutorial/index.rst
    bootcamp_stuff.rst
+   miniconda.rst
