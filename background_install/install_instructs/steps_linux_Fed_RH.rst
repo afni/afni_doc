@@ -9,6 +9,8 @@
 .. contents:: The essential system setup
    :local:
 
+.. highlight:: None
+
 What to do?
 -----------
 
@@ -55,34 +57,42 @@ Install AFNI binaries
 
 1. For ...
 
-   * *... Fedora*, copy+paste::
+   * *... installing binaries from online on Fedora*, copy+paste::
 
        cd
-       curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_ubuntu_16_64/@update.afni.binaries
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
        tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
 
-   * *... CentOS/RHEL 7*, copy+paste::
+   * *... installing binaries from online on CentOS/RHEL 7*, copy+paste::
 
        cd
-       curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_ubuntu_16_64/@update.afni.binaries
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
        tcsh @update.afni.binaries -package linux_centos_7_64 -do_extras
+
+   * *... (alternative) installing already-downloaded binaries,*
+     you can use ``-local_package ..`` (replace "PATH_TO_FILE" with
+     the actual path; also, if ``@update.afni.binaries`` has also been
+     downloaded, you can skip the ``curl ..`` command), ...:
+
+     * *... on Fedora*, copy+paste::
+
+         cd
+         curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+         tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
+ 
+     * *... on CentOS/RHEL 7*, copy+paste::
+
+         cd
+         curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+         tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_centos_7_64.tgz -do_extras
 
 
    **Purpose:** Download and unpack the current binaries in your
-   ``$HOME`` directory (and yes, that ``@update*`` program works even,
-   even though the link has "ubuntu" in it); set the AFNI binary
-   directory name to ``$HOME/abin/``; and add that location to the
-   ``$PATH`` in both ``~/.cshrc`` and ``~/.bashrc``.
+   ``$HOME`` directory; set the AFNI binary directory name to
+   ``$HOME/abin/``; and add that location to the ``$PATH`` in both
+   ``~/.cshrc`` and ``~/.bashrc``.
 
-   .. note:: If the binary package has already been downloaded
-          somewhere, instead of the above you can use
-          ``-local_package`` with the location+name of the binary
-          file, e.g.::
-
-            tcsh @update.afni.binaries -local_package linux_openmp_64.tgz -do_extras
-
-#. Note if there is a copy+paste message in your terminal as the
-   previous command finished. If so, follow it (so cryptic...).
+.. include:: substep_profiles.rst
 
 Install R
 ---------
@@ -121,6 +131,11 @@ Install R
    step might take a while to complete.
      
 .. ---------- HERE/BELOW: copy for all installs --------------
+
+Setup Python (opt)
+---------------------------------
+
+.. include:: substep_miniconda.rst
 
 Make AFNI/SUMA profiles
 -----------------------

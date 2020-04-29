@@ -7,6 +7,8 @@
 .. contents:: The essential system setup
    :local:
 
+.. highlight:: None
+
 What to do?
 -----------
 
@@ -146,11 +148,10 @@ Install prerequisite: AFNI and package dependencies
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
+Setup Python (opt)
+---------------------------------
 
-Make AFNI/SUMA profiles
------------------------
-
-.. include:: substep_profiles.rst
+.. include:: substep_miniconda.rst
 
 Prepare for Bootcamp
 --------------------

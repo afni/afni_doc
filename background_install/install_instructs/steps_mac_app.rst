@@ -156,6 +156,11 @@ Use your M-O-U-S-E!
           created in your home directory. It will be deleted when
           you quit. If not, it is safe to delete. ::
 
+Setup Python (opt)
+---------------------------------
+
+.. include:: substep_miniconda.rst
+
 Don't let the fear install [#f4]_
 ---------------------------------
 

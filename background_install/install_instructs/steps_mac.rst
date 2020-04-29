@@ -8,6 +8,8 @@
 .. contents:: The essential system setup
    :local:
 
+.. highlight:: None
+
 What to do?
 -----------
 
@@ -78,26 +80,30 @@ Install Xcode and XQuartz
 Install AFNI binaries
 ---------------------
 
-1. Copy+paste::
+1. For ...:
 
-     cd
-     curl -O https://afni.nimh.nih.gov/pub/dist/bin/macosx_10.7_local/@update.afni.binaries
+   * *... (default) installing the binaries from online*, copy+paste::
 
-#. Copy+paste (this applies even if your OS version is <10.12)::
+       cd
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+       tcsh @update.afni.binaries -package macos_10.12_local -do_extras
 
-       tcsh @update.afni.binaries -defaults -package macos_10.12_local
+   * *... (alternative) installing already-downloaded binaries,* you
+     can use ``-local_package ..`` (replace "PATH_TO_FILE" with the
+     actual path; also, if ``@update.afni.binaries`` has also been
+     downloaded, you can skip the ``curl ..`` command), copy+paste::
 
-   **Purpose:** download and unpack the current binaries into your
+       cd
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+       tcsh @update.afni.binaries -local_package PATH_TO_FILE/macos_10.12_local.tgz -do_extras
+
+   **Purpose:** Download and unpack the current binaries in your
    ``$HOME`` directory; set the AFNI binary directory name to
    ``$HOME/abin/``; and add that location to the ``$PATH`` in both
    ``~/.cshrc`` and ``~/.bashrc``.
 
-   .. note:: If the binary package has already been downloaded
-             somewhere, instead of the above you can use
-             ``-local_package`` with the location+name of the binary
-             file, e.g.::
+.. include:: substep_profiles.rst
 
-               tcsh @update.afni.binaries -local_package macos_10.12_local.tgz -do_extras
 
 Reboot
 ------
@@ -132,10 +138,10 @@ Install Netpbm
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
-Make AFNI/SUMA profiles
------------------------
+Setup Python (opt)
+---------------------------------
 
-.. include:: substep_profiles.rst
+.. include:: substep_miniconda.rst
 
 Prepare for Bootcamp
 ------------------------------------

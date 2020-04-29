@@ -9,6 +9,8 @@
 .. contents:: The essential system setup
    :local:
 
+.. highlight:: None
+
 What to do?
 -----------
 
@@ -61,24 +63,30 @@ Install prerequisite packages
 Install AFNI binaries
 ---------------------
 
-1. Copy+paste::
+1. For ...:
 
-     cd
-     curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_ubuntu_16_64/@update.afni.binaries
-     tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
+   * *... (default) installing the binaries from online*, copy+paste::
+
+       cd
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+       tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
+
+   * *... (alternative) installing already-downloaded binaries,* you
+     can use ``-local_package ..`` (replace "PATH_TO_FILE" with the
+     actual path; also, if ``@update.afni.binaries`` has also been
+     downloaded, you can skip the ``curl ..`` command), copy+paste::
+
+       cd
+       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+       tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
 
    **Purpose:** Download and unpack the current binaries in your
-   ``$HOME`` directory (and yes, that ``@update*`` program works even,
-   even though the link has "ubuntu_16" in it); set the AFNI binary
-   directory name to ``$HOME/abin/``; and add that location to the
-   ``$PATH`` in both ``~/.cshrc`` and ``~/.bashrc``.
+   ``$HOME`` directory; set the AFNI binary directory name to
+   ``$HOME/abin/``; and add that location to the ``$PATH`` in both
+   ``~/.cshrc`` and ``~/.bashrc``.
 
-   .. note:: If the binary package has already been downloaded
-             somewhere, instead of the above you can use
-             ``-local_package`` with the location+name of the binary
-             file, e.g.::
+.. include:: substep_profiles.rst
 
-               tcsh @update.afni.binaries -local_package linux_openmp_64.tgz -do_extras
 
 Install R
 ---------
@@ -127,10 +135,10 @@ Install R
    
 .. ---------- HERE/BELOW: copy for all installs --------------
 
-Make AFNI/SUMA profiles
------------------------
+Setup Python (opt)
+---------------------------------
 
-.. include:: substep_profiles.rst
+.. include:: substep_miniconda.rst
 
 Prepare for Bootcamp
 ------------------------------------

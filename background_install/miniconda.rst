@@ -46,6 +46,8 @@ We will use the specific installation form of Conda called
 "Miniconda", because it starts of being light-weight, and you can then
 add whatever you need.
 
+.. _install_miniconda_verbose:
+
 Set up Conda (verbose)
 ==========================
 
@@ -396,6 +398,8 @@ result in success this time.
 **Thus, if you try to build an environment and get told that some
 desired module can't be found, you can search for it amongst available
 channels, add that channel to your Conda setup, and try again.**
+
+.. _install_miniconda_quick:
 
 Set up Conda (quick)
 ==========================
