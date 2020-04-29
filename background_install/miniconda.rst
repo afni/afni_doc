@@ -46,7 +46,7 @@ We will use the specific installation form of Conda called
 "Miniconda", because it starts of being light-weight, and you can then
 add whatever you need.
 
-Setting up Conda (verbose)
+Set up Conda (verbose)
 ==========================
 
 Whether you are using Linux---either directly or through the Windows
@@ -125,6 +125,8 @@ Download+install miniconda
    prompt now.  Typing ``conda -V`` should also show you your version
    number.
 
+   **Note:** your conda version should be at least 4.6.
+
    
 Sidenote
 --------
@@ -180,7 +182,7 @@ always run::
   
   conda config --set changeps1 True
 
-Making basic conda environments
+Make basic conda environments
 ---------------------------------
 
 To see what conda environments are currently available on your
@@ -309,22 +311,28 @@ you might have slightly different things):
 So, in this environment, I could run a program that imports
 matplotlib, whereas in the "base" environment, I couldn't.
 
-Specify my default environment in the terminal
-----------------------------------------------
+Specify default environment for the terminal
+-----------------------------------------------
 
 From the Conda initialization, the "base" environment is the default
 one running in any new terminal.  We might prefer to make one of our
 newly made environments the default.  To do so, I will include a line
-``source activate NAME`` in my shell's ``~/.*rc`` file somewhere
+``conda activate NAME`` in my shell's ``~/.*rc`` file somewhere
 *after* the "conda initialize" lines.
 
 Thus, since I am running "bash" shell, I have the following line in my
 ``~/.bashrc`` \file::
 
-  source activate py37_afni_tiny
+  conda activate py37_afni_tiny
+
+Once you source that ``~/.*rc`` file again or open a new terminal, you
+should see that specific environment loaded (look for the asterisked
+env in the output of ``conda env list``).  If it *didn't* work,
+please check that your conda version is at least 4.6 (via ``conda
+-V``).
 
 
-Making conda environments, more generally
+Make conda environments, more generally
 -----------------------------------------
 
 The environment builder works a bit like a package manager, where it
@@ -389,7 +397,7 @@ result in success this time.
 desired module can't be found, you can search for it amongst available
 channels, add that channel to your Conda setup, and try again.**
 
-Setting up Conda (quick)
+Set up Conda (quick)
 ==========================
 
 1. **Download and install**
@@ -472,20 +480,23 @@ Setting up Conda (quick)
    Specify the env to activate in your ``~/.*rc`` file. 
 
    Open up the ``~/.bashrc`` or ``~/.cshrc`` text file and put
-   ``source activate NAME`` **after** the conda-initialization lines
+   ``conda activate NAME`` **after** the conda-initialization lines
    in that file, or, e.g. copy+paste:
 
    * *For tcsh*::
 
        echo "" >> ~/.cshrc
-       echo "source activate py37_afni_tiny" >> ~/.cshrc
+       echo "conda activate py37_afni_tiny" >> ~/.cshrc
        echo "" >> ~/.cshrc
 
    * *For bash*::
 
        echo "" >> ~/.bashrc
-       echo "source activate py37_afni_tiny" >> ~/.bashrc
+       echo "conda activate py37_afni_tiny" >> ~/.bashrc
        echo "" >> ~/.bashrc
+
+   **Note:** This assumes your conda version (``conda -V``) is at
+   least 4.6.
 
 #. **Quicktasks with Conda**
 
@@ -531,8 +542,8 @@ Note that in practice, truly duplicating environments exactly is
 actually pretty tough.  Getting very close might be good enough for
 most purposes, though, in practice.
 
-Conda Cheatsheet
-----------------
+View Conda Cheatsheet
+----------------------
 
 It's here: `the conda cheatsheet <https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>`_.
 
