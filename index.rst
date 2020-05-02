@@ -20,6 +20,7 @@ Welcome to AFNI's documentation!
    FATCAT/main_toc
    statistics/main_toc
    template_atlas/main_toc
+   nonhuman/main_toc
    tutorials/main_toc
    demos/main_toc
    boring/main_toc
