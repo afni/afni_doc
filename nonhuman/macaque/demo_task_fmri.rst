@@ -21,10 +21,10 @@ collected during a visual stimulus with four stimulus classes related
 to specific faces and objects shown to the subject.  
 
 The processing scripts include calculating nonlinear alignment between
-the subject's anatomical (using AFNI's ``@animal_warper``) and the NMT
-template.  Additionally, a full single subject processing pipeline is
-constructed with ``afni_proc.py``, including an HRF appropriate for
-this EPI data that had been collected with MION.
+the subject's anatomical (using AFNI's ``@animal_warper``) and the
+stereotaxic NMT template.  Additionally, a full single subject
+processing pipeline is constructed with ``afni_proc.py``, including an
+HRF appropriate for this EPI data that had been collected with MION.
 
 These scripts are meant to providing and example and starting point of
 task processing.  Many features can (and, in general, will) be
@@ -63,7 +63,7 @@ The demo contains one subject's initial data:
 * a set of stimulus timing files; these have already been adjusted for
   the TR removal that will be performed during processing
 
-* reference template and atlas: here, the stereotaxis NMT and the D99
+* reference template and atlas: here, the stereotaxic NMT and the D99
   template in that space
 
 Processing: nonlinear alignment with @animal_warper 
@@ -72,7 +72,7 @@ Processing: nonlinear alignment with @animal_warper
 Some processed datasets are also included.  In particular, AFNI's
 ``@animal_warper`` script was run on the anatomical dataset to perform
 both skullstripping and nonlinear alignment to template space (here,
-the stereotaxis NMT atlas).  This has been performed with the included
+the stereotaxic NMT atlas).  This has been performed with the included
 ``s00*.tcsh`` script.  Some of the functionality and output of this
 step can be seen in the automatically generated QC images:
 
