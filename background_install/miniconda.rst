@@ -313,6 +313,17 @@ you might have slightly different things):
 So, in this environment, I could run a program that imports
 matplotlib, whereas in the "base" environment, I couldn't.
 
+To add a module to an existing environment, you can use the following
+syntax::
+
+  conda install -n <env_name> <package>
+
+So, for example example, you could add the scipy module to one of the
+above environments with::
+
+  conda install -n py27_afni_tiny scipy
+
+
 Specify default environment for the terminal
 -----------------------------------------------
 
@@ -333,6 +344,13 @@ env in the output of ``conda env list``).  If it *didn't* work,
 please check that your conda version is at least 4.6 (via ``conda
 -V``).
 
+If you do choose to automatically activate your own env like this,
+then you might also want to run this in a terminal::
+
+  conda config --set auto_activate_base false
+
+so that conda doesn't pre-load the "base" environment unnecessarily
+(taking a bit of time).
 
 Make conda environments, more generally
 -----------------------------------------
@@ -471,13 +489,19 @@ Set up Conda (quick)
 
       conda create -y                 \
             -n py37_afni_tiny         \
-              python=3.7              \
-              matplotlib numpy
+            python=3.7                \
+            matplotlib numpy
 
       conda create -y                 \
-             -n py27_afni_tiny        \
-             python=2.7               \
-             matplotlib numpy 
+            -n py27_afni_tiny         \
+            python=2.7                \
+            matplotlib numpy 
+
+#. **Add to an existing environment**
+
+   ::
+
+      conda install -n py27_afni_tiny scipy
 
 #. **Activate an env by default**
 
@@ -501,6 +525,14 @@ Set up Conda (quick)
 
    **Note:** This assumes your conda version (``conda -V``) is at
    least 4.6.
+
+   If you do automatically activate your own env, then you might also
+   want to do this::
+
+     conda config --set auto_activate_base false
+
+   so that conda doesn't pre-load the "base" environment unnecessarily
+   (taking a bit of time).
 
 #. **Quicktasks with Conda**
 
