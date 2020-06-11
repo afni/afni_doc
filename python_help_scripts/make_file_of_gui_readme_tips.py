@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# python3 status: compatible
+
 import numpy as np
 import sys as sys
 import os
@@ -18,8 +20,11 @@ AUTHOR    = "PA Taylor (NIMH, NIH)"
 #VERSION   = "1.1"; VER_DATE  = "Oct 21"
 # + [PT] fixed indentation stuff
 #
-VERSION   = "1.2"; VER_DATE  = "Oct 22"
+#VERSION   = "1.2"; VER_DATE  = "Oct 22"
 # + [PT] fix py23 compatability: str.expandtabs() works differently
+#
+VERSION   = "1.21"; VER_DATE  = "Oct 22"
+# + [PT] comment out TEST lines
 #
 # ------------------------------------------------------------------
 
@@ -273,14 +278,14 @@ def parse_all_lines(LL, skip_lines=8):
             # see if it carries on
             for j in range(1, N-i):
                 w  = LL[i+j]
-                print("TEST: "+w)
-                print("TEST2: ", is_line_continuation(w))
-                print("TEST3: ", is_empty(w))
-                print("TEST4: ", is_sec_title(w))
-                print("TEST5: ", is_sec_descrip(w))
-                print("TEST6: ", is_subtip_starter(w))
-                print("TEST7: ", w.__contains__(' = '))
-                print("TEST8: ", count_indent_space( w ))
+                #print("TEST: "+w)
+                #print("TEST2: ", is_line_continuation(w))
+                #print("TEST3: ", is_empty(w))
+                #print("TEST4: ", is_sec_title(w))
+                #print("TEST5: ", is_sec_descrip(w))
+                #print("TEST6: ", is_subtip_starter(w))
+                #print("TEST7: ", w.__contains__(' = '))
+                #print("TEST8: ", count_indent_space( w ))
                 if is_line_continuation(w) :
                     sec_descrip.append(w.strip())
                 else:
