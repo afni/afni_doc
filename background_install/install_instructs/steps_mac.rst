@@ -116,14 +116,11 @@ shell, and path updates.
 Install R
 ---------
 
-.. comment out old
-  a. | Click on this link: https://cran.r-project.org/bin/macosx
-     | and then click on the top/latest package to install.
-
 1. Click on this link:
-   https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.5.3.pkg
+   https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.6.3.nn.pkg
 
-   **Purpose:** Get a recent (but not the *most* recent) version of R.
+   **Purpose:** Get R-3.6.3 (a recent, but not the *most* recent,
+    version of R).
 
 #. Copy+paste::
 
