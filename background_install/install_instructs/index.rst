@@ -13,6 +13,7 @@
    steps_linux_ubuntu
    steps_linux_ubuntu16
    steps_linux_ubuntu18
+   steps_linux_ubuntu20
    steps_linux_Fed_RH
    steps_mac
    steps_mac_app
