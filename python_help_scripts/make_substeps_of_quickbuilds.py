@@ -126,7 +126,7 @@ def parse_data_file_top(H, lspace=3):
     out = []
     # skip "Quick" line
     for ii in [nstart+1, nstart+3]:
-        out.append(lpad + "* *..." + H[ii][1:].strip()[:-1] + '*::\n')
+        out.append(lpad + "* *... " + H[ii][1:].strip()[:-1] + '*::\n')
         out.append(lpad + "  " + "   " + H[ii+1][1:].strip() + '\n')
 
     return out
