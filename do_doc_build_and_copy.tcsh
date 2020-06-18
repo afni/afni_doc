@@ -93,6 +93,10 @@ if ( "$DO_BUILD" == "1" ) then
     # ------------- python stuff --------------------
     cd python_help_scripts
 
+    echo "++ Make quickbuild_instructs"
+    set dir_instructs = "../background_install/install_instructs"
+    python make_substeps_of_quickbuilds.py ${dir_instructs}
+
     echo "++ Make list of All Program Helps"
     set dir_allhelp = "../programs"
     mkdir -p ${dir_allhelp}

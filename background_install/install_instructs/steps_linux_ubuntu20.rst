@@ -185,3 +185,8 @@ Keep up-to-date (remember!)
 
 .. include:: substep_update.rst
 
+Quick setup (condensed instructs)
+----------------------------------
+
+.. include:: substep_quickbuild_linux_ubuntu_20_64.rst
+
