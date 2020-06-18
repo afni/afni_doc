@@ -5,8 +5,6 @@
 **Linux, Ubuntu 20.04**
 ===================================================================
 
-**IN PROGRESS**
-
 .. contents:: The essential system setup
    :local:
 
