@@ -205,12 +205,12 @@ if __name__=="__main__":
     otext+= '\n\n'
 
     otext+= '''This is a briefer form of the above setup instructions.\n'''
-    otext+= '''It does include downloading the Bootcamp data and running\n'''
+    otext+= '''It includes downloading the Bootcamp data and running\n'''
     otext+= '''the system check (so don't forget to check that!).\n'''
 
     otext+= '\n\n'
 
-    otext+= '''In this case, there are 3 scripts to run.\n'''
+    otext+= '''There are 3 scripts to run.\n'''
     otext+= '''To download them, copy+paste:'''
     otext+= '\n\n'
 
@@ -221,7 +221,8 @@ if __name__=="__main__":
     otext+= '   ' + '\n   '.join(list_curl)
     otext+= '\n\n'
 
-    otext+= "Now, you can run each of the following."
+    otext+= "Then run each of them, as described below.\n"
+    otext+= "(Each creates a log file, for checking and/or asking questions.)\n"
     otext+= '\n\n'
 
     lspace = 3
@@ -242,6 +243,7 @@ if __name__=="__main__":
         jstr  = lpad + '   '
         otext+= '   ' + jstr.join(list_data[ii])
         otext+= '\n\n'
+        otext+= lpad + '|\n'
 
     write_out_quickbuild_substep(odir + '/' + oname_sys + '.rst', 
                                  otext)
