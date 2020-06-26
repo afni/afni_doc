@@ -318,10 +318,20 @@ syntax::
 
   conda install -n <env_name> <package>
 
-So, for example example, you could add the scipy module to one of the
-above environments with::
+\.\.\. so, for example example, you could add the scipy module to one
+of the above environments with::
 
   conda install -n py27_afni_tiny scipy
+
+To update a module or package in a currently active environment, you
+can use::
+
+  conda update <package>
+
+\.\.\. for example,::
+
+  conda update matplotlib
+
 
 
 Specify default environment for the terminal
@@ -551,6 +561,10 @@ Set up Conda (quick)
    See module+version list in current env::
 
      conda list
+
+   Update a package in the current environment::
+
+     conda update PACKAGE
 
 
 Fancier things with Conda
