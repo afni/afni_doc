@@ -2,7 +2,7 @@
 .. _install_steps_mac_app:
 
 
-**macOS**: *The App-based system setup (0S 10.10-14)*
+**macOS**: *The App-based system setup (10.13-15)*
 ========================================
 
 .. contents:: The essential system setup
@@ -28,12 +28,12 @@ install shiny packages.
 
 If a package is already installed, you may be asked if you want to reinstall it.
 But you can skip it if you like.
-This script will also setup your ~/.cshrc, ~/.bashrc, and ~/.bash_profile.
+This script will also setup your ~/.cshrc, ~/.bashrc, ~/.bash_profile, and ~/.zshrc.
 It will add the appropriate entries to your paths specified there.
 After completion, you should restart your computer just in case.
 
 This is a **BETA** script, so your feedback is welcome. We have tested the app
-on 10.10 to 10.14 with various hardware.
+on 10.13 to 10.15 with various hardware.
 
 *If you are seeking the non-App version of install instructions,
 please see* :ref:`HERE <install_steps_mac>`.
@@ -41,18 +41,16 @@ please see* :ref:`HERE <install_steps_mac>`.
 Take the File and Run [#f2]_
 ------------------------------
 
-* `Download macOS 10.12 to 10.14 download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V2.zip>`_
+* `Download macOS 10.13 to 10.15 download <https://afni.nimh.nih.gov/pub/dist/bin/misc/afni_macOS_Install_BETA_V3.zip>`_
 
-.. note:: This script will has been tested on various systems from to
-          macOS 10.12 to 10.14. It should work down to 10.7, but it
-          has not been tested.  This app WILL FAIL on 10.15!!!
+.. note:: On macOS 10.15 there may be additional dialog boxes to approve.
 
 Start Your Engines [#f3]_
 --------------------------
 
 * Download the file and extract the zip if it did not extract
   automatically in your Downloads folder.
-* If you double click the "afni_macOS_install_BETA_V2" icon, you may
+* If you double click the "afni_macOS_install_BETA_V3" icon, you may
   get a popup notification about an "unidentified developer" similar
   to this:
 
@@ -156,10 +154,6 @@ Use your M-O-U-S-E!
           created in your home directory. It will be deleted when
           you quit. If not, it is safe to delete. ::
 
-Setup Python (opt)
----------------------------------
-
-.. include:: substep_miniconda.rst
 
 Don't let the fear install [#f4]_
 ---------------------------------
@@ -219,8 +213,8 @@ seas. But here we are talking about the free software environment for
 statistical computing and graphics. afni needs this for several of the
 group analysis programs.
 
-* The version installed with this app is version 3.5.2 (Eggshell
-  Igloo) released on 2018-12-20.
+* The version installed with this app is version 3.6.3 (Holding the Windsock)
+  released on 2020-02-29.
 
 * The CRAN mirror is https://cloud.r-project.org so it should
   automatically choose a mirror close to your geographical location.
@@ -228,6 +222,7 @@ group analysis programs.
 * `See R project main page. <https://www.r-project.org/>`_
 
 ----
+
 
 AFNI
 ^^^^
@@ -243,12 +238,12 @@ A few thing are happening here.
 
     `@update.afni.binaries help page. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/@update.afni.binaries_sphx.html#ahelp-update-afni-binaries>`_
 
-* Updates your ``~/.cshrc``, ``~/.bashrc``, ``~/.bash_profile``, and
-  other environments.
+* Updates your ``~/.cshrc``, ``~/.bashrc``, ``~/.bash_profile``, ``~/.zshrc``,
+  and other environments.
 
 * Installs the R packages necessary for afni. First it checks to make
   sure you have R and Homebrew's openmpi
-  installed. ``rPkgsInstall -pkgs ALL`` will fail without those...
+  installed. ``rPkgsInstall -pkgs ALL`` may fail without those...
 
     `rPkgsInstall help page. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/rPkgsInstall_sphx.html#ahelp-rpkgsinstall>`_
 
@@ -341,6 +336,11 @@ Then you can review the text or quit the app.
         :align: center
 
 ------------
+
+Setup Python (opt)
+---------------------------------
+
+.. include:: substep_miniconda.rst
 
 
 Keep up-to-date (remember!)
