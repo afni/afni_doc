@@ -24,6 +24,7 @@ Welcome to AFNI's documentation!
    tutorials/main_toc
    demos/main_toc
    boring/main_toc
+   contributors/main_toc
    glossary
    references
    afni_home
