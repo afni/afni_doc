@@ -14,4 +14,5 @@
    demo_task_fmri
    demo_rest_fmri
    template_nmtv2
+   atlas_charm
    template_nmtv1

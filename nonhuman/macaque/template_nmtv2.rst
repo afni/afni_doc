@@ -17,9 +17,10 @@ segmentations.
 
 The NMT v2 is the most current version of this dataset.
 
-*Please see also the accompanying CHARM (Cortical Hierarchy Atlas of
-the Rhesus Macaque.*
-!!!! add link 
+| Be sure to also check out the accompanying *CHARM (Cortical
+  Hierarchy Atlas of the Rhesus Macaque)*, described here: 
+| :ref:`nh_macaque_atlas_charm`.
+
 
 Contents
 ^^^^^^^^^^^^^^^^^^^
