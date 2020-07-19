@@ -167,9 +167,10 @@ Example images
 here:* :download:`do_view_nmt_v2.0_sym.tcsh
 <media/nmt_v2.0/do_view_nmt_v2.0_sym.tcsh>`
 
+.. _nh_macaque_template_nmtv2_sym_dl:
 
-Download symmetric datasets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Download symmetric NMT v2 datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can download and unpack the **symmetric variant/form** of the NMT
 v2 in any of the following ways:
@@ -188,8 +189,10 @@ v2 in any of the following ways:
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 
-Download asymmetric datasets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _nh_macaque_template_nmtv2_asym_dl:
+
+Download asymmetric NMT v2 datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can download and unpack the **asymmetric variant/form** of the NMT
 v2 in any of the following ways:

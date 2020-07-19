@@ -31,22 +31,20 @@ Download
 
 The CHARM is distributed within set of the NMT v2 data. 
 
-To download and unpack the datasts to your present working directory,
-copy+paste ...
+To download and unpack the datasts to your present working directory
+see instructions:
 
-* ... this for the *symmetric* variant::
+* \.\.\. here for the **symmetric** form:
+  :ref:`nh_macaque_template_nmtv2_sym_dl`
 
-    @Install_NMT -nmt_ver 2.0 -sym sym
-
-* ... this for the *asymmetric* variant::
-
-    @Install_NMT -nmt_ver 2.0 -sym asym
+* \.\.\. here for the **asymmetric** form:
+  :ref:`nh_macaque_template_nmtv2_asym_dl`
 
 
 Citation/questions
 ^^^^^^^^^^^^^^^^^^^
 
-If you make use of the NMT v2 template or accompanying data in your
+If you make use of the CHARM or accompanying NMT v2 data in your
 research, please cite:
 
    Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
