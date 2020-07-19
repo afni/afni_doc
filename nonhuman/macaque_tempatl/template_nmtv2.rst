@@ -118,19 +118,98 @@ in the "low-res" and "full-head" directories):
 
 |
 
-Download
+Example images
 ^^^^^^^^^^^^^^^^^^^
 
-To download and unpack the datasts to your present working directory,
-copy+paste ...
+.. list-table::
+   :header-rows: 1
+   :widths: 100 
 
-* ... this for the *symmetric* variant::
+   * - Full NMT with brainmask
+   * - .. image:: media/nmt_v2.0/img_nmt2.0sym_brainmask.axi.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0sym_brainmask.cor.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0sym_brainmask.sag.png
+
+|
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Skull-stripped NMT with 5-tissue segmentation
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_segmentation.axi.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_segmentation.cor.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_segmentation.sag.png
+
+|
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Skull-stripped NMT with the CHARM (level 2)
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL2.axi.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL2.cor.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL2.sag.png
+
+|
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Skull-stripped NMT with the CHARM (level 5)
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL5.axi.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL5.cor.png
+   * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL5.sag.png
+
+*The script used to make these images with ``@chauffeur_afni`` is
+here:* :download:`do_view_nmt_v2.0_sym.tcsh
+<media/nmt_v2.0/do_view_nmt_v2.0_sym.tcsh>`
+
+
+Download symmetric datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can download and unpack the **symmetric variant/form** of the NMT
+v2 in any of the following ways:
+
+* *(the AFNI way)* **copy+paste**::
 
     @Install_NMT -nmt_ver 2.0 -sym sym
 
-* ... this for the *asymmetric* variant::
+* *(the plain Linux-y terminal way)* **copy+paste**::
+
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz
+    tar -xvf NMT_v2.0_sym.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
+
+Download asymmetric datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can download and unpack the **asymmetric variant/form** of the NMT
+v2 in any of the following ways:
+
+* *(the AFNI way)* **copy+paste**::
 
     @Install_NMT -nmt_ver 2.0 -sym asym
+
+* *(the Linux-y terminal way)* **copy+paste**::
+
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz
+    tar -xvf NMT_v2.0_asym.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
+
+
+
 
 
 Citation/questions

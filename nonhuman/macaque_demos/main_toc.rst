@@ -1,9 +1,9 @@
 :tocdepth: 2
 
-.. _nh_macaque:
+.. _nh_macaque_demos:
 
 =====================================================
-**Macaque-related features**
+**Macaque Demos**
 =====================================================
 
 *Time flies like an arrow; fruit flies like a banana.* --Groucho Marx
@@ -13,6 +13,3 @@
 
    demo_task_fmri
    demo_rest_fmri
-   template_nmtv2
-   atlas_charm
-   template_nmtv1

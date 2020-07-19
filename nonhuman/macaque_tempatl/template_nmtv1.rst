@@ -94,15 +94,63 @@ Contents
        regions
 
 
+Example images
+^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 100 
+
+   * - Full NMT with brainmask
+   * - .. image:: media/nmt_v1.3/img_nmt1.3_brainmask.axi.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3_brainmask.cor.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3_brainmask.sag.png
+
+|
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Skull-stripped NMT with 4-tissue segmentation
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_segmentation.axi.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_segmentation.cor.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_segmentation.sag.png
+
+|
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Skull-stripped NMT with D99 atlas
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_d99atlas.axi.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_d99atlas.cor.png
+   * - .. image:: media/nmt_v1.3/img_nmt1.3ss_d99atlas.sag.png
+
+
+*The script used to make these images with ``@chauffeur_afni`` is
+here:* :download:`do_view_nmt_v1.3.tcsh
+<media/nmt_v1.3/do_view_nmt_v1.3.tcsh>`
 
 Download
 ^^^^^^^^^^^^^^^^^^^
 
-To download and unpack the datasts to your present working directory,
-copy+paste::
+You can download and unpack the datasets in any of the following ways:
+
+* *(the AFNI way)* **copy+paste**::
 
   @Install_NMT -nmt_ver 1.3
 
+* *(the plain Linux-y terminal way)* **copy+paste**::
+
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz
+    tar -xvf NMT_v1.3.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
 
 
 Citation/questions
@@ -131,25 +179,86 @@ research, please cite:
 NMT v1.2
 ------------------------
 
+Contents
+^^^^^^^^^^^^^^^^^^^
+
+
+The following volumetric, surface and supplementary datasets are
+available as part of the download, but at present we would recommend
+using one of the more modern versions of the NMT for most
+applications.
+
+.. list-table:: NMT v1.2 list of contents
+   :widths: 33 33 33 
+   :header-rows: 0
+   :stub-columns: 0
+
+   * - atlases/                                         
+     - blood_vasculature.gii                            
+     - cerebellum.gii                                   
+   * - index.html                                       
+     - lh.GM.gii                                        
+     - lh.GM.inflated.surf.gii                          
+   * - lh.mid.gii                                       
+     - lh.mid.inflated.surf.gii                         
+     - lh.WM.gii                                        
+   * - lh.WM.inflated.surf.gii                          
+     - NMT_blood_vasculature_mask.nii.gz                
+     - NMT_both.spec                                    
+   * - NMT_brainmask.nii.gz                             
+     - NMT_cerebellum_mask.nii.gz                       
+     - NMT.fullhead.nii.gz                              
+   * - NMT_GM_cortical_mask.nii.gz                      
+     - NMT.nii.gz                                       
+     - NMT_olfactory_bulb_mask.nii.gz                   
+   * - NMT_segmentation_4class.nii.gz                   
+     - NMT_segmentation_CSF.nii.gz                      
+     - NMT_segmentation_GM.gz                           
+   * - NMT_segmentation_WM.gz                           
+     - NMT_SS.nii.gz                                    
+     - NMT_subject_align.csh                            
+   * - NMT_subject_morph                                
+     - NMT_subject_process                              
+     - README.md                                        
+   * - rh.GM.gii                                        
+     - rh.GM.inflated.surf.gii                          
+     - rh.mid.gii                                       
+   * - rh.mid.inflated.surf.gii                         
+     - rh.WM.gii                                        
+     - rh.WM.inflated.surf.gii                          
+   * - volumetric_transformations/                      
+     - 
+     - 
 
 .. list-table:: 
    :header-rows: 1
    :widths: 100 
 
-   * - A SUMA view of the NMT v1.2.
-   * - .. image:: media/nmt/v1/nmt_v1_afnisuma.png
+   * - A SUMA view of some of the data in the NMT v1.2
+   * - .. image:: media/nmt_v1.2/nmt_v1_afnisuma.png
           :width: 70%   
           :align: center
 
-
+|
 
 Download
 ^^^^^^^^^^^^^^^^^^^
 
-To download and unpack the datasts to your present working directory,
-copy+paste::
+You can download and unpack the datasets in any of the following ways:
+
+* *(the AFNI way)* **copy+paste**::
 
   @Install_NMT -nmt_ver 1.2
+
+* *(the plain Linux-y terminal way)* **copy+paste**::
+
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz
+    tar -xvf NMT_v1.2.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
 
 
 Citation/questions

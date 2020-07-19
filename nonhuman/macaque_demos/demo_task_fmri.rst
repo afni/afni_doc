@@ -1,14 +1,14 @@
 .. _nh_macaque_taskfmri:
 
 
-**Task FMRI processing: the MACAQUE_DEMO**
+Task FMRI processing: the MACAQUE_DEMO
 ==========================================
 
 .. contents:: :local:
 
 .. highlight:: None
 
-Overview
+**Overview**
 ------------------------
 
 Welcome to the homepage of the demo for processing task FMRI macaque
@@ -33,8 +33,8 @@ your study.
 Thanks go to Adam Messinger, Ben Jung and Jakob Seidlitz for both the
 accompanying macaque data set and many processing suggestions/advice.
 
-Download the MACAQUE_DEMO
----------------------------
+**Download the MACAQUE_DEMO**
+------------------------------
 
 To get the demo, copy+paste::
 
@@ -45,7 +45,7 @@ command is run.
 
 There is a README.txt describing the contents.
 
-Demo contents
+**Demo contents**
 ------------------------
 
 Input datasets
@@ -79,7 +79,7 @@ step can be seen in the automatically generated QC images:
    :widths: 100 
 
    * - Alignment check: warped anatomical overlaying reference base edges
-   * - .. image:: media/demo_qc/qc_00_e_temp+wrpd_inp.sag.png
+   * - .. image:: media/tbfmri_qc/qc_00_e_temp+wrpd_inp.sag.png
           :width: 100%   
           :align: center
 
@@ -88,7 +88,7 @@ step can be seen in the automatically generated QC images:
    :widths: 100 
 
    * - Skullstripping check: native space anatomical underlaying brain mask
-   * - .. image:: media/demo_qc/qc_02_orig_inp+mask.sag.png
+   * - .. image:: media/tbfmri_qc/qc_02_orig_inp+mask.sag.png
           :width: 100%   
           :align: center
 
@@ -97,7 +97,7 @@ step can be seen in the automatically generated QC images:
    :widths: 100 
 
    * - Atlas ROIs mapped to native space 
-   * - .. image:: media/demo_qc/qc_03_ee_orig_inp+wrpd_atlas.sag.png
+   * - .. image:: media/tbfmri_qc/qc_03_ee_orig_inp+wrpd_atlas.sag.png
           :width: 100%   
           :align: center
 
@@ -107,7 +107,7 @@ step can be seen in the automatically generated QC images:
 
    * - SUMA view of ROI parcellation in native space (some ROIs have
        been made nearly transparent to show show inner regions)
-   * - .. image:: media/demo_qc/d99.gif
+   * - .. image:: media/tbfmri_qc/d99.gif
           :width: 80%   
           :align: center
 
@@ -136,10 +136,10 @@ included, but their automatically generated QC HTML files are.
 
    * - QC blocks: anat-to-template and stat modeling (full F-stat)
      - QC block: motion and outliers
-   * - .. image:: media/demo_qc/apqc_va2t_vstat.png
+   * - .. image:: media/tbfmri_qc/apqc_va2t_vstat.png
           :width: 100%   
           :align: center
-     - .. image:: media/demo_qc/apqc_mot.png
+     - .. image:: media/tbfmri_qc/apqc_mot.png
           :width: 100%   
           :align: center
 
@@ -149,10 +149,10 @@ included, but their automatically generated QC HTML files are.
 
    * - QC block: warnings (collinearity, censoring, etc.)
      - QC block: regression (ideal response, DF counts, etc.)
-   * - .. image:: media/demo_qc/apqc_warns.png
+   * - .. image:: media/tbfmri_qc/apqc_warns.png
           :width: 100%   
           :align: center
-     - .. image:: media/demo_qc/apqc_regr.png
+     - .. image:: media/tbfmri_qc/apqc_regr.png
           :width: 100%   
           :align: center
 
