@@ -48,7 +48,7 @@ our fading memory...):
    * - Larry Frank
      - Carol Froehlich  
      - Daniel Glen
-   * - Javier Gonzalez-Castillo
+   * - Javier Gonzalez- Castillo
      - Yaroslav Halchenko
      - Rich Hammett
    * - Michael Hanke
@@ -56,45 +56,46 @@ our fading memory...):
      - Vincent Hradil
    * - Shruti Japee
      - Mark Jenkinson
-     - Hans Johnson
-   * - Ben Jung
+     - Andrzej Jesmanowicz
+   * - Hans Johnson
+     - Ben Jung
      - Jakub Kaczmarzyk
-     - Greg Kiar
-   * - Jay Brian Kummer
+   * - Greg Kiar
+     - Jay Brian Kummer
      - Prantik Kundu
-     - Rayus Kuplicki
-   * - Stephen LaConte
+   * - Rayus Kuplicki
+     - Stephen LaConte
      - Peter Lauro
-     - John Lee
-   * - Jonathan Lisinksi
+   * - John Lee
+     - Jonathan Lisinksi
      - Ross Markello
-     - Chris Markiewicz
-   * - Peter Molfese
+   * - Chris Markiewicz
+     - Peter Molfese
      - Julia Molony
-     - Kevin Murphy      
-   * - Dylan Nielson
+   * - Kevin Murphy      
+     - Dylan Nielson
      - Paul Novak
-     - Nikolaas Oosterhof
-   * - Brian Pittman
+   * - Nikolaas Oosterhof
+     - Brian Pittman
      - Dillon Plunkett
-     - Justin Rajendra
-   * - Rick Reynolds
+   * - Justin Rajendra
+     - Rick Reynolds
      - Vinai Roopchansingh
-     - Chris Rorden
-   * - Tom Ross
+   * - Chris Rorden
+     - Tom Ross
      - Ziad Saad
-     - Isaac Schwabacher
-   * - Fred Tam
+   * - Isaac Schwabacher
+     - Fred Tam
      - Paul Taylor
-     - Raoquiong Tong
-   * - Giovanni Torres
+   * - Raoquiong Tong
+     - Giovanni Torres
      - Robert Vincent
-     - Andrej Vovk
-   * - Doug Ward
+   * - Andrej Vovk
+     - Doug Ward
      - David Warren
-     - Joshua Zosky
-
-
+   * - Joshua Zosky
+     - 
+     - 
 
 
 
@@ -165,3 +166,6 @@ our fading memory...):
    * - 
      - 
      - 
+   * -
+     -
+     -
