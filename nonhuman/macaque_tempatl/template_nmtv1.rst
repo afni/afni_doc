@@ -18,6 +18,11 @@ segmentations.
 **Please note that there is a newer version of this template.** See
 this page: :ref:`nh_macaque_template_nmtv2`.
 
+.. note:: NMT v1.* and NMT v2 are **not** compatible.  They do not
+          overlay, and they define different spaces.  Please see Jung
+          et al. (2020) for more details about their different
+          properties.
+
 
 NMT v1.3
 ------------------------

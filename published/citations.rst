@@ -4,6 +4,13 @@
 **Citations**
 ==========================================
 
+.. contents:: :local:
+
+.. highlight:: None
+
+Methods
+--------
+
 If you use AFNI in your work, please cite:
 
 * | Cox RW. AFNI: software for analysis and visualization of functional
@@ -327,3 +334,8 @@ cite:
     Neurosci Methods. 264:47-56. doi:
     10.1016/j.jneumeth.2016.03.001. PMID: 26945974
   | `<https://github.com/rordenlab/dcm2niix>`_
+
+
+Data projects
+-------------
+

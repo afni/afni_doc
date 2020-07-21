@@ -11,15 +11,15 @@
 Overview
 ------------------------
 
-Here we present the NIMH Macaque Template (NMT), version 1.2 and 1.3.
-This is a group template from 31 macaques with surfaces and GM/WM/CSF
-segmentations.
+Here we present the NIMH Macaque Template (NMT), version 2.0. This is
+a group template from 31 macaques with surfaces and a 5-class tissue
+segmentation.
 
 The NMT v2 is the most current version of this dataset.
 
-| Be sure to also check out the accompanying *CHARM (Cortical
-  Hierarchy Atlas of the Rhesus Macaque)*, described here: 
-| :ref:`nh_macaque_atlas_charm`.
+Be sure to also check out the accompanying *CHARM (Cortical Hierarchy
+Atlas of the Rhesus Macaque)* dataset, described
+:ref:`here<nh_macaque_atlas_charm>`.
 
 
 Contents
@@ -50,10 +50,6 @@ here:
 
    * - NMT v2 contents
      - Description
-   * - **CustomAtlases.niml**
-     - atlas description text file for AFNI
-   * - **NMT_changelog.txt**
-     - text file of changes and updates to the distributed datasets
    * - **NMT_v2.0_sym/**
      - directory of the "standard" NMT files (i.e., standard spatial
        resolution of 0.25 mm iso voxels and brain-focused FOV)
@@ -61,12 +57,6 @@ here:
      - directory of the "low-res" NMT files (0.5 mm iso voxels; lower
        spatial resolution but still useful, if not preferred, for some
        analysis cases like in standard FMRI processing)
-   * - **NMT_v2.0_sym_env.csh**
-     - script to set AFNI environment variables for AFNI to use
-       atlases and make AFNI more monkey friendly.  **Note:** running
-       this script will change your default atlases for ``whereami``
-       functionality, so if you also do human studies, be aware that
-       you might have to change some environment settings again later.
    * - **NMT_v2.0_sym_fh/**
      - directory of the "full head" NMT files (i.e., 0.25 mm iso
        voxels but a larger FOV, more non-brain material), which may be
@@ -74,6 +64,16 @@ here:
    * - **NMT_v2.0_sym_surfaces/**
      - directory of GIFTI surfaces of many of the tissue/segmentation
        regions
+   * - **CustomAtlases.niml**
+     - atlas description text file for AFNI
+   * - **NMT_changelog.txt**
+     - text file of changes and updates to the distributed datasets
+   * - **NMT_v2.0_sym_env.csh**
+     - script to set AFNI environment variables for AFNI to use
+       atlases and make AFNI more monkey friendly.  **Note:** running
+       this script will change your default atlases for ``whereami``
+       functionality, so if you also do human studies, be aware that
+       you might have to change some environment settings again later.
    * - **supplemental_CHARM/**
      - directory of tables of CHARM ROI index/label definitions and more
    * - **supplemental_D99/**
@@ -221,14 +221,14 @@ Citation/questions
 If you make use of the NMT v2 template or accompanying data in your
 research, please cite:
 
+   Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
+   (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
+   Atlas."  NeuroImage, submitted.
+
    Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
    Ungerleider L, Messinger A (2018). "A Population MRI Brain Template
    and Analysis Tools for the Macaque." NeuroImage 170: 121–31.
    `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
-
-   Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
-   (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
-   Atlas."  NeuroImage, submitted.
 
 | For questions, comments and/or suggestions, contact:
 | **Adam.Messinger@nih.gov**
