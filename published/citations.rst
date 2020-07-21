@@ -91,13 +91,20 @@ please cite:
     7(3):152-171. doi: 10.1089/brain.2016.0475.
   | `<https://pubmed.ncbi.nlm.nih.gov/28398812/>`_
 
-
 If you use the ETAC clustering method in your work, please cite:
 
 * | Cox RW (2017).  Equitable Thresholding and Clustering: A Novel
     Method for Functional Magnetic Resonance Imaging Clustering in AFNI.
     9(7):529-538.  doi: 10.1089/brain.2019.0666.
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
+
+If you want to know about spatial smoothness estimation and resampling
+stability in AFNI, have a gander at:
+
+* | Cox RW, Taylor PA (2017). Stability of spatial smoothness and
+    cluster-size threshold estimates in FMRI using
+    AFNI. https://arxiv.org/abs/1709.07471
+  | `<https://arxiv.org/abs/1709.07471>`_
 
 Papers discussing global signal regression (GSR), and several reasons
 why not to do it:
