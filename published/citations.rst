@@ -260,6 +260,18 @@ If you use DBSproc (for Deep Brain Stimulation processing), please cite:
     Mapp. 37(1):422-433. doi:10.1002/hbm.23039
   | `<https://pubmed.ncbi.nlm.nih.gov/26523416/>`_
 
+If you use ALICE (Automatic Localization of Intra-Cranial Electrodes;
+an interface for the alignment of datasets, clustering and ordering of
+electrodes for ECOG and SEEG and reprojection to the brain surface
+using CT and MRI imaging), please cite:
+
+* | Branco MP, Gaglianese A, Glen DR, Hermes D, Saad ZS, Petridou N,
+    Ramsey NF (2018). ALICE: a tool for automatic localization of
+    intra-cranial electrodes for clinical and high-density
+    grids. J. Neurosci. Methods 301, 43–51.  doi:
+    10.1016/j.jneumeth.2017.10.022
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5952625/>`_
+
 If you use ``dcm2niix_afni`` in your processing, which is a copy of
 the program ``dcm2niix`` kindly contributed by Chris Rorden, please
 cite:
@@ -275,38 +287,6 @@ cite:
 Meta-methodology and validations
 ---------------------------------
 
-For papers discussing global signal regression (GSR), and several
-reasons why not to do it (note: there are many other papers by other
-groups that show this as well...), please check out/reference:
-
-* | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
-    Trouble at Rest: How Correlation Patterns and Group Differences
-    Become Distorted After Global Signal Regression.  Brain
-    Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
-  | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
-
-* | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
-    Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
-    Brain Connectivity, 3(4):339-352.  10.1089/brain.2013.0156
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
-
-* | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
-    ZS (2013).  Effective preprocessing procedures virtually eliminate
-    distance-dependent motion artifacts in resting state FMRI.  Journal
-    of Applied Mathematics: art.no. 935154.
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886863/>`_
-
-* | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
-    perils of global signal regression for group comparisons: A case
-    study of Autism Spectrum Disorders.
-    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.  2013.00356
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
-
-* | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
-    Fractionation of Social Brain Circuits in Autism Spectrum Disorders.
-    Brain, 135: 2711-2725.
-  | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
-
 If you want to note the good performance of AFNI's time series
 autocorrelation modeling compared with other software, you might
 consider citing:
@@ -316,6 +296,25 @@ consider citing:
     Nature Communications
     10, 1220. doi.org/10.1038/s41467-019-09230-w
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
+
+If you want to note the good performance of AFNI's defacing/refacing
+tool, you can check out those OHBM-2020 poster that found it the
+overall best among currently available tools:
+
+* | Theyers A, Arnott SR, Zamyadi M, O'Reilly M, Bartha R, Symons S,
+    MacQueen G, Hassel S, Lerch JP, Anagnostou E, Strother SC
+    (2020). Comparison of MRI Defacing Software Across Multiple
+    Cohorts.  Presented at the Organization for Human Brain
+    Mapping, 2020.
+
+If you want to note the good performance of AFNI's volume registration
+for motion correction, you might consider:
+
+* | Oakes TR, Johnstone T, Ores Walsh KS, Greischar LL, Alexander AL,
+    Fox AS, Davidson RJ (2005). Comparison of fMRI motion correction
+    software tools. Neuroimage. 28(3):529-543. 
+    doi:10.1016/j.neuroimage.2005.05.058
+  | `<https://pubmed.ncbi.nlm.nih.gov/16099178/>`_
 
 If you want to know about spatial smoothness estimation and resampling
 stability in AFNI, have a gander at:
@@ -355,6 +354,38 @@ days...), then please check out:
   | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
 
 
+For papers discussing global signal regression (GSR), and several
+reasons why not to do it (note: there are many other papers by other
+groups that show this as well...), please check out/reference:
+
+* | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
+    Trouble at Rest: How Correlation Patterns and Group Differences
+    Become Distorted After Global Signal Regression.  Brain
+    Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
+  | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
+
+* | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
+    Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
+    Brain Connectivity, 3(4):339-352.  10.1089/brain.2013.0156
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
+
+* | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
+    ZS (2013).  Effective preprocessing procedures virtually eliminate
+    distance-dependent motion artifacts in resting state FMRI.  Journal
+    of Applied Mathematics: art.no. 935154.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886863/>`_
+
+* | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
+    perils of global signal regression for group comparisons: A case
+    study of Autism Spectrum Disorders.
+    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.  2013.00356
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
+
+* | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
+    Fractionation of Social Brain Circuits in Autism Spectrum Disorders.
+    Brain, 135: 2711-2725.
+  | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
+
 |
 
 Data projects
@@ -368,7 +399,10 @@ For technical reference for the NIFTI data format, please cite:
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
 
-Marmoset dataset, for mapping white matter pathways:
+*Marmoset atlas v2.* This project provides some of the highest
+resolution nonhuman primate MRI templates and atlas for gray and white
+matter with multi-modal MRI imaging at 0.150 mm, 0.060 mm, 0.080 mm
+and 0.050 mm spatial resolution:
 
 * | Liu C, Ye FQ, Newman JD, Szczupak D, Tian X, Yen CC, Majka P, Glen
     D, Rosa MGP, Leopold DA, Silva AC (2020). A resource for the
@@ -376,7 +410,9 @@ Marmoset dataset, for mapping white matter pathways:
     brain. Nat Neurosci 23(2):271-280. doi: 10.1038/s41593-019-0575-0.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007400/>`_
 
-Marmoset dataset, an atlas: 
+*Marmoset atlas V1 (NIH Marmoset).* This atlas introduces a
+high-resolution template and atlas for cortical gray matter at
+0.150 mm (see also the marmoset atlas v2, above):
 
 * | Liu C, Ye FQ, Yen CC, Newman JD, Glen D, Leopold DA, Silva AC. A
     digital 3D atlas of the marmoset brain based on multi-modal MRI
@@ -384,7 +420,9 @@ Marmoset dataset, an atlas:
     10.1016/j.neuroimage.2017.12.004. 
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5856608/>`_
 
-Macaque, atlas:
+*D99 atlas.* Based on the Saleem macaque atlas, this project
+introduces a high resolution digital MRI template together with new
+meticulous delineations of macaque cortical regions:
 
 * | Reveley C, Gruslys A, Ye FQ, Glen D, Samaha J, E Russ B, Saad Z, K
     Seth A, Leopold DA, Saleem KS (2017). Three-Dimensional Digital
@@ -392,7 +430,9 @@ Macaque, atlas:
     1;27(9):4463-4477. doi: 10.1093/cercor/bhw248. 
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075609/>`_
 
-Macaque, population template (NMT v1; see below for NMT v2):
+*NMT V1 Macaque brain group template.* Using the data from 31
+macaques, this template provides a high resolution group template for
+macaques at 0.250 mm (this is NMT v1; see below for NMT v2):
 
 * | Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
     Ungerleider L, Messinger A (2018). A Population MRI Brain
@@ -400,7 +440,10 @@ Macaque, population template (NMT v1; see below for NMT v2):
     121–31. doi: 10.1016/j.neuroimage.2017.04.063.
   | `<https://pubmed.ncbi.nlm.nih.gov/28461058/>`_
 
-Macaque, population template (NMT v2) and hierarchical atlas (CHARM):
+*NMT V2 Macaque brain group template and hierarchical cortical atlas.*
+This project introduces version the macaque template NMT v2 using a
+stererotaxic (ear-bar-zero) reference frame and a hierarchical atlas
+(CHARM) for structural region labels:
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
     (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
