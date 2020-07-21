@@ -116,7 +116,7 @@ If you use the ``MBA`` program for matrix-based analysis, please cite:
   | `<https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.24686>`_
 
 If you use the Bayesian Multilevel (BML) modeling approach with the
-    ``RBA`` program, please cite:
+``RBA`` program, please cite:
 
 * | Chen G, Xiao Y, Taylor PA, Rajendra JK, Riggins T, Geng F, Redcay
     E, Cox RW (2019). Handling Multiplicity in Neuroimaging Through
@@ -163,41 +163,11 @@ stability in AFNI, have a gander at:
     AFNI. https://arxiv.org/abs/1709.07471
   | `<https://arxiv.org/abs/1709.07471>`_
 
-Papers discussing global signal regression (GSR), and several reasons
-why not to do it (note: there are many other papers by other groups
-that show this as well...):
-
-* | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
-    Trouble at Rest: How Correlation Patterns and Group Differences
-    Become Distorted After Global Signal Regression.  Brain
-    Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
-  | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
-
-* | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
-    Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
-    Brain Connectivity, 3(4):339-352.  10.1089/brain.2013.0156
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
-
-* | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
-    ZS (2013).  Effective preprocessing procedures virtually eliminate
-    distance-dependent motion artifacts in resting state FMRI.  Journal
-    of Applied Mathematics: art.no. 935154.
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886863/>`_
-
-* | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
-    perils of global signal regression for group comparisons: A case
-    study of Autism Spectrum Disorders.
-    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.  2013.00356
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
-
-* | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
-    Fractionation of Social Brain Circuits in Autism Spectrum Disorders.
-    Brain, 135: 2711-2725.
-  | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
-
-
 If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
-FATCAT paper:
+FATCAT paper (and if you use the TORTOISE package for accompanying
+processing, such as DIFFPREP, DR_BUDDI, etc., then please refer to
+`the bottom of their homepage <https://tortoise.nibib.nih.gov/>`_ for
+appropriate citations for those specific tools):
 
 * | Taylor PA, Saad ZS (2013). FATCAT: (An Efficient) Functional And
     Tractographic Connectivity Analysis Toolbox. Brain Connect. 3,
@@ -274,6 +244,46 @@ and even *highly probably* informative), please cite:
     number e0185552. doi: 10.1371/journal.pone.0185552
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
 
+If you use DBSproc (for Deep Brain Stimulation processing), please cite:
+
+* | Lauro PM, Vanegas-Arroyave N, Huang L, Taylor PA, Zaghloul KA,
+    Lungu C, Saad ZS, Horovitz SG (2016). DBSproc: An open source
+    process for DBS electrode localization and tractographic
+    analysis. Hum Brain
+    Mapp. 37(1):422-433. doi:10.1002/hbm.23039
+  | `<https://pubmed.ncbi.nlm.nih.gov/26523416/>`_
+
+For papers discussing global signal regression (GSR), and several
+reasons why not to do it (note: there are many other papers by other
+groups that show this as well...), please check out/reference:
+
+* | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
+    Trouble at Rest: How Correlation Patterns and Group Differences
+    Become Distorted After Global Signal Regression.  Brain
+    Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
+  | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
+
+* | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
+    Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
+    Brain Connectivity, 3(4):339-352.  10.1089/brain.2013.0156
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
+
+* | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
+    ZS (2013).  Effective preprocessing procedures virtually eliminate
+    distance-dependent motion artifacts in resting state FMRI.  Journal
+    of Applied Mathematics: art.no. 935154.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886863/>`_
+
+* | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
+    perils of global signal regression for group comparisons: A case
+    study of Autism Spectrum Disorders.
+    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.  2013.00356
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
+
+* | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
+    Fractionation of Social Brain Circuits in Autism Spectrum Disorders.
+    Brain, 135: 2711-2725.
+  | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
 For technical reference for the NIFTI data format, please cite:
 
