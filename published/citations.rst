@@ -53,34 +53,6 @@ If you use the realtime functionality from AFNI, please cite:
     1014-1018.
   | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
 
-If you want to note the good performance of AFNI's time series
-autocorrelation modeling compared with other software, you might
-consider citing:
-
-* | Olszowy W, Aston J, Rua C, Williams GB (2019).  Accurate
-    autocorrelation modeling substantially improves fMRI reliability
-    Nature Communications
-    10, 1220. doi.org/10.1038/s41467-019-09230-w
-  | `<https://www.nature.com/articles/s41467-019-09230-w>`_
-
-If you use proper statistical testing in your work (two-sided testing
-in most cases, or one-sided testing where clearly applicable), you
-might consider citing:  
-
-* | Chen G, Cox RW, Glen DR, Rajendra JK, Reynolds RC, Taylor PA
-    (2019).  A tail of two sides: Artificially doubled false positive
-    rates in neuroimaging due to the sidedness choice with t-tests.  Human
-    Brain Mapping 40:1037-1043.
-  | `<https://pubmed.ncbi.nlm.nih.gov/30265768/>`_
-
-If you display effect estimates (rather than just stats), and/or if
-you scale your data in a voxelwise manner, you might consider citing:
-
-* | Chen G, Taylor PA, Cox RW (2017). Is the statistic value all we
-    should care about in neuroimaging?
-    Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
-  | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
-
 If you use either the local Pearson correlation (lpc) or local Pearson
 absolute (lpa) cost function in your alignment (e.g., with
 ``3dAllineate``, ``align_epi_anat.py``, ``afni_proc.py``, ``3dQwarp``,
@@ -141,6 +113,15 @@ If you use ICC methods within AFNI (e.g., via ``3dICC``), please cite:
     Mapp. 2018;39(3):1187-1206. doi:10.1002/hbm.23909
   | `<https://pubmed.ncbi.nlm.nih.gov/29218829/>`_
 
+If you use ``1dSVAR`` (Structured Vector AutoRegression)
+
+* | Chen G, Glen DR, Saad ZS, Paul Hamilton J, Thomason ME, Gotlib IH,
+    Cox RW (2011). Vector autoregression, structural equation
+    modeling, and their synthesis in neuroimaging data
+    analysis. Comput Biol Med 41(12):1142-55. doi:
+    10.1016/j.compbiomed.2011.09.004.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3223325/>`_
+
 If you use clustering approaches such as 3dClustSim, ``3dttest++
 -Clustsim``, and/or the mixed ACF smoothness estimation in your work,
 please cite:
@@ -161,14 +142,6 @@ If you use the ETAC clustering method in your work, please cite:
     Method for Functional Magnetic Resonance Imaging Clustering in AFNI.
     9(7):529-538.  doi: 10.1089/brain.2019.0666.
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
-
-If you want to know about spatial smoothness estimation and resampling
-stability in AFNI, have a gander at:
-
-* | Cox RW, Taylor PA (2017). Stability of spatial smoothness and
-    cluster-size threshold estimates in FMRI using
-    AFNI. https://arxiv.org/abs/1709.07471
-  | `<https://arxiv.org/abs/1709.07471>`_
 
 If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
 FATCAT paper (and if you use the TORTOISE package for accompanying
@@ -220,17 +193,6 @@ with 3dTrackID, please cite (as well as the main FATCAT paper, above):
     7(9): e43415. 
   | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
 
-For work checking out different methods of diffusion/DWI acquisition
-and correction, such as prospective motion correction and the TORTOISE
-toolbox, particularly in the case where subjects move (kids these
-days...), then please check out:
-
-* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
-    Meintjes E (2016). Assessing the performance of different DTI
-    motion correction strategies in the presence of EPI distortion
-    correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
-  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
-
 If you use the left-right flip checking for consistency in your data
 (and you should!), please cite:
 
@@ -257,7 +219,7 @@ the following (if relevant):
     Results'. bioRxiv 308643; doi:10.1101/308643
   | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
 
-If using ANATICOR to de-noise FMRI datasets (e.g., in
+If you use ANATICOR to de-noise FMRI datasets (e.g., in
 ``afni_proc.py``), please cite:
 
 * | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
@@ -284,6 +246,21 @@ If you use DBSproc (for Deep Brain Stimulation processing), please cite:
     analysis. Hum Brain
     Mapp. 37(1):422-433. doi:10.1002/hbm.23039
   | `<https://pubmed.ncbi.nlm.nih.gov/26523416/>`_
+
+If you use ``dcm2niix_afni`` in your processing, which is a copy of
+the program ``dcm2niix`` kindly contributed by Chris Rorden, please
+cite:
+
+* | Li X, Morgan PS, Ashburner J, Smith J, Rorden C (2016). The first
+    step for neuroimaging data analysis: DICOM to NIfTI conversion. J
+    Neurosci Methods. 264:47-56. doi:
+    10.1016/j.jneumeth.2016.03.001. PMID: 26945974
+  | `<https://github.com/rordenlab/dcm2niix>`_
+
+|
+
+Meta-methodology and validations
+---------------------------------
 
 For papers discussing global signal regression (GSR), and several
 reasons why not to do it (note: there are many other papers by other
@@ -317,6 +294,59 @@ groups that show this as well...), please check out/reference:
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
+If you want to note the good performance of AFNI's time series
+autocorrelation modeling compared with other software, you might
+consider citing:
+
+* | Olszowy W, Aston J, Rua C, Williams GB (2019).  Accurate
+    autocorrelation modeling substantially improves fMRI reliability
+    Nature Communications
+    10, 1220. doi.org/10.1038/s41467-019-09230-w
+  | `<https://www.nature.com/articles/s41467-019-09230-w>`_
+
+If you want to know about spatial smoothness estimation and resampling
+stability in AFNI, have a gander at:
+
+* | Cox RW, Taylor PA (2017). Stability of spatial smoothness and
+    cluster-size threshold estimates in FMRI using
+    AFNI. https://arxiv.org/abs/1709.07471
+  | `<https://arxiv.org/abs/1709.07471>`_
+
+If you use proper statistical testing in your work (two-sided testing
+in most cases, or one-sided testing where clearly applicable), you
+might consider citing:  
+
+* | Chen G, Cox RW, Glen DR, Rajendra JK, Reynolds RC, Taylor PA
+    (2019).  A tail of two sides: Artificially doubled false positive
+    rates in neuroimaging due to the sidedness choice with t-tests.  Human
+    Brain Mapping 40:1037-1043.
+  | `<https://pubmed.ncbi.nlm.nih.gov/30265768/>`_
+
+If you display effect estimates (rather than just stats), and/or if
+you scale your data in a voxelwise manner, you might consider citing:
+
+* | Chen G, Taylor PA, Cox RW (2017). Is the statistic value all we
+    should care about in neuroimaging?
+    Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
+  | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
+
+For work checking out different methods of diffusion/DWI acquisition
+and correction, such as prospective motion correction and the TORTOISE
+toolbox, particularly in the case where subjects move (kids these
+days...), then please check out:
+
+* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
+    Meintjes E (2016). Assessing the performance of different DTI
+    motion correction strategies in the presence of EPI distortion
+    correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
+  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
+
+
+|
+
+Data projects
+-------------
+
 For technical reference for the NIFTI data format, please cite:
 
 * | Cox RW, Ashburner J, Breman H, Fissell K, Haselgrove C, Holmes CJ,
@@ -325,17 +355,40 @@ For technical reference for the NIFTI data format, please cite:
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
 
-If you use ``dcm2niix_afni`` in your processing, which is a copy of
-the program ``dcm2niix`` kindly contributed by Chris Rorden, please
-cite:
+Marmoset dataset, for mapping white matter pathways:
 
-* | Li X, Morgan PS, Ashburner J, Smith J, Rorden C (2016). The first
-    step for neuroimaging data analysis: DICOM to NIfTI conversion. J
-    Neurosci Methods. 264:47-56. doi:
-    10.1016/j.jneumeth.2016.03.001. PMID: 26945974
-  | `<https://github.com/rordenlab/dcm2niix>`_
+* | Liu C, Ye FQ, Newman JD, Szczupak D, Tian X, Yen CC, Majka P, Glen
+    D, Rosa MGP, Leopold DA, Silva AC (2020). A resource for the
+    detailed 3D mapping of white matter pathways in the marmoset
+    brain. Nat Neurosci 23(2):271-280. doi: 10.1038/s41593-019-0575-0.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007400/>`_
 
+Marmoset dataset, an atlas: 
 
-Data projects
--------------
+* | Liu C, Ye FQ, Yen CC, Newman JD, Glen D, Leopold DA, Silva AC. A
+    digital 3D atlas of the marmoset brain based on multi-modal MRI
+    (2018). Neuroimage. 169:106-116. doi:
+    10.1016/j.neuroimage.2017.12.004. 
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5856608/>`_
 
+Macaque, atlas:
+
+* | Reveley C, Gruslys A, Ye FQ, Glen D, Samaha J, E Russ B, Saad Z, K
+    Seth A, Leopold DA, Saleem KS (2017). Three-Dimensional Digital
+    Template Atlas of the Macaque Brain. Cereb Cortex. 2017 Sep
+    1;27(9):4463-4477. doi: 10.1093/cercor/bhw248. 
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075609/>`_
+
+Macaque, population template (NMT v1; see below for NMT v2):
+
+* | Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
+    Ungerleider L, Messinger A (2018). A Population MRI Brain
+    Template and Analysis Tools for the Macaque. NeuroImage 170:
+    121–31. doi: 10.1016/j.neuroimage.2017.04.063.
+  | `<https://pubmed.ncbi.nlm.nih.gov/28461058/>`_
+
+Macaque, population template (NMT v2) and hierarchical atlas (CHARM):
+
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
+    (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
+    Atlas. NeuroImage, submitted.
