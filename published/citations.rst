@@ -11,6 +11,10 @@ If you use AFNI in your work, please cite:
     Res 29(3):162-173. doi:10.1006/cbmr.1996.0014
   | `<https://pubmed.ncbi.nlm.nih.gov/8812068/>`_
 
+* | RW Cox, JS Hyde (1997). Software tools for analysis and
+    visualization of FMRI Data.  NMR in Biomedicine, 10: 171-178.
+  | `<https://pubmed.ncbi.nlm.nih.gov/9430344/>`_
+
 If you use SUMA in your work for surface calculations and/or
 visualizations, please cite:
 
@@ -26,6 +30,21 @@ visualizations, please cite:
 * | Saad ZS, Reynolds RC (2012). SUMA. Neuroimage 62,
     768–773. doi.org/10.1016/j.neuroimage.2011.09.016
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3260385/>`_
+
+If you use standard meshes within your surface/SUMA analysis, please
+cite:
+
+* | Argall BD, Saad ZS, Beauchamp MS (2006). Simplified intersubject
+    averaging on the cortical surface using SUMA.  Human Brain Mapping
+    27: 14-27.
+  | `<https://pubmed.ncbi.nlm.nih.gov/16035046/>`_
+
+If you use the realtime functionality from AFNI, please cite:
+
+* | Cox RW, Jesmanowicz A (1999). Real-time 3D image registration for
+    functional MRI.  Magnetic Resonance in Medicine, 42:
+    1014-1018.
+  | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
 
 If you want to note the good performance of AFNI's time series
 autocorrelation modeling compared with other software, you might
@@ -55,14 +74,25 @@ you scale your data in a voxelwise manner, you might consider citing:
     Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
   | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
 
-If you use 3dLME in your work, please cite:
+If you use either the local Pearson correlation (lpc) or local Pearson
+absolute (lpa) cost function in your alignment (e.g., with
+``3dAllineate``, ``align_epi_anat.py``, ``afni_proc.py``, ``3dQwarp``,
+``@SSwarper``, ``@animal_warper``, etc.), please cite:
+
+* | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
+    new method for improving functional-to-structural MRI alignment
+    using local Pearson correlation. Neuroimage 44
+    839–848. 10.1016/j.neuroimage.2008.09.037
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
+
+If you use ``3dLME`` in your work, please cite:
 
 * | Chen G, Saad ZS, Britton JC, Pine DS, Cox RW (2013). Linear
     mixed-effects modeling approach to FMRI group analysis.  NeuroImage,
     73: 176-190.
   | `<https://pubmed.ncbi.nlm.nih.gov/23376789/>`_
 
-If you use 3dMVM in your work, please cite:
+If you use ``3dMVM`` in your work, please cite:
 
 * | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
     Applications of multivariate modeling to neuroimaging group
@@ -188,8 +218,7 @@ please cite:
     the 19th Annual Meeting of the Organization for Human Brain Mapping.
   | `<https://afni.nimh.nih.gov/pub/dist/HBM2013/Cox_Poster_HBM2013.pdf>`_
 
-
-For several choices of FMRI processing with afni_proc.py, please cite
+For several choices of FMRI processing with ``afni_proc.py``, please cite
 the following (if relevant):
 
 * | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
@@ -198,5 +227,10 @@ the following (if relevant):
     Results'. bioRxiv 308643; doi:10.1101/308643
   | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
 
+For technical reference for the NIFTI data format, please cite:
 
-
+* | Cox RW, Ashburner J, Breman H, Fissell K, Haselgrove C, Holmes CJ,
+    Lancaster JL, Rex DE, Smith SM, Woodward JB, Strother SC (2004). A
+    (sort of) new image data format standard: NiFTI-1. Presented at
+    the 10th Annual Meeting of the Organization for Human Brain
+    Mapping.
