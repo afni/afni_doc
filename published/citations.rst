@@ -175,7 +175,28 @@ appropriate citations for those specific tools):
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
 
 If you use the FAT-MVM approach to group analysis (combining FATCAT
-and 3dMVM), mini-probabilistic tracking and/or SUMA tract
+and 3dMVM), please cite (as well as the main FATCAT paper, above):
+
+* | Taylor PA, Jacobson SW, van der Kouwe A, Molteno CD, Chen G,
+    Wintermark P, Alhamud A, Jacobson JL, Meintjes EM (2015). A
+    DTI-based tractography study of effects on brain structure
+    associated with prenatal alcohol exposure in newborns. Hum Brain
+    Mapp. 36(1):170-186. doi:10.1002/hbm.22620
+  | `<https://pubmed.ncbi.nlm.nih.gov/25182535/>`_
+
+* | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
+    Applications of multivariate modeling to neuroimaging group
+    analysis: A comprehensive alternative to univariate general linear
+    model.  NeuroImage 99:571-588.
+  | `<https://pubmed.ncbi.nlm.nih.gov/24954281/>`_
+
+* | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
+    Multimodal Interactive Connectivity Visualization and
+    Analysis. Brain Connect. 6,
+    109–121. doi.org/10.1089/brain.2015.0363
+  | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
+
+If you use mini-probabilistic tracking and/or SUMA tract
 visualization, please cite (as well as the main FATCAT paper, above):
 
 * | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
@@ -184,13 +205,6 @@ visualization, please cite (as well as the main FATCAT paper, above):
     109–121. doi.org/10.1089/brain.2015.0363
   | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
 
-* | *(also, specifically for the 3dMVM part)*
-  | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
-    Applications of multivariate modeling to neuroimaging group
-    analysis: A comprehensive alternative to univariate general linear
-    model.  NeuroImage 99:571-588.
-  | `<https://pubmed.ncbi.nlm.nih.gov/24954281/>`_
-
 If you use probabilistic or deterministic tractography in your work
 with 3dTrackID, please cite (as well as the main FATCAT paper, above):
 
@@ -198,6 +212,17 @@ with 3dTrackID, please cite (as well as the main FATCAT paper, above):
     Tractography by including Diagonal Tract Propagation. PLoS ONE
     7(9): e43415. 
   | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
+
+For work checking out different methods of diffusion/DWI acquisition
+and correction, such as prospective motion correction and the TORTOISE
+toolbox, particularly in the case where subjects move (kids these
+days...), then please check out:
+
+* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
+    Meintjes E (2016). Assessing the performance of different DTI
+    motion correction strategies in the presence of EPI distortion
+    correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
+  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
 
 If you use the left-right flip checking for consistency in your data
 (and you should!), please cite:
