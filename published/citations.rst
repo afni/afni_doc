@@ -292,3 +292,13 @@ For technical reference for the NIFTI data format, please cite:
     (sort of) new image data format standard: NiFTI-1. Presented at
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
+
+If you use ``dcm2niix_afni`` in your processing, which is a copy of
+the program ``dcm2niix`` kindly contributed by Chris Rorden, please
+cite:
+
+* | Li X, Morgan PS, Ashburner J, Smith J, Rorden C (2016). The first
+    step for neuroimaging data analysis: DICOM to NIfTI conversion. J
+    Neurosci Methods. 264:47-56. doi:
+    10.1016/j.jneumeth.2016.03.001. PMID: 26945974
+  | `<https://github.com/rordenlab/dcm2niix>`_
