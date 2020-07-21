@@ -210,6 +210,19 @@ please cite:
     the 19th Annual Meeting of the Organization for Human Brain Mapping.
   | `<https://afni.nimh.nih.gov/pub/dist/HBM2013/Cox_Poster_HBM2013.pdf>`_
 
+If you use ``@animal_warper`` (esp. for alignment in animal studies),
+please cite:
+
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
+    (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
+    Atlas. NeuroImage, submitted.
+
+* | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
+    new method for improving functional-to-structural MRI alignment
+    using local Pearson correlation. Neuroimage 44
+    839–848. 10.1016/j.neuroimage.2008.09.037
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
+
 For several choices of FMRI processing with ``afni_proc.py``, please cite
 the following (if relevant):
 
