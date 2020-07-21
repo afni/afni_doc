@@ -100,12 +100,39 @@ If you use ``3dMVM`` in your work, please cite:
     model.  NeuroImage 99:571-588.
   | `<https://pubmed.ncbi.nlm.nih.gov/24954281/>`_
 
-If you use 3dMEMA in your work, please cite:
+If you use ``3dMEMA`` in your work, please cite:
 
 * | Chen G, Saad ZS, Nath AR, Beauchamp MS, Cox RW (2012).
     FMRI Group Analysis Combining Effect Estimates and Their Variances.
     Neuroimage, 60: 747-765.
   | `<https://pubmed.ncbi.nlm.nih.gov/22245637/>`_
+
+If you use the ``MBA`` program for matrix-based analysis, please cite:
+
+* | Chen G, Burkner P-C, Taylor PA, Li Z, Yin L, Glen DR, Kinnison J,
+    Cox RW, Pessoa L (2019). An Integrative Approach to Matrix-Based
+    Analyses in Neuroimaging. Human Brain Mapping (in press)
+    doi:10.1101/459545
+  | `<https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.24686>`_
+
+If you use the Bayesian Multilevel (BML) modeling approach with the
+    ``RBA`` program, please cite:
+
+* | Chen G, Xiao Y, Taylor PA, Rajendra JK, Riggins T, Geng F, Redcay
+    E, Cox RW (2019). Handling Multiplicity in Neuroimaging Through
+    Bayesian Lenses with Multilevel
+    Modeling. Neuroinformatics. 17(4):515-545.
+    doi:10.1007/s12021-018-9409-6
+  | `<https://pubmed.ncbi.nlm.nih.gov/30649677/>`_
+
+If you use ICC methods within AFNI (e.g., via ``3dICC``), please cite:
+
+* | Chen G, Taylor PA, Haller SP, Kircanski K, Stoddard J, Pine DS,
+    Leibenluft E, Brotman MA, Cox RW (2018). Intraclass correlation:
+    Improved modeling approaches and applications for
+    neuroimaging. Hum Brain
+    Mapp. 2018;39(3):1187-1206. doi:10.1002/hbm.23909
+  | `<https://pubmed.ncbi.nlm.nih.gov/29218829/>`_
 
 If you use clustering approaches such as 3dClustSim, ``3dttest++
 -Clustsim``, and/or the mixed ACF smoothness estimation in your work,
@@ -137,7 +164,8 @@ stability in AFNI, have a gander at:
   | `<https://arxiv.org/abs/1709.07471>`_
 
 Papers discussing global signal regression (GSR), and several reasons
-why not to do it:
+why not to do it (note: there are many other papers by other groups
+that show this as well...):
 
 * | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
     Trouble at Rest: How Correlation Patterns and Group Differences
@@ -226,6 +254,26 @@ the following (if relevant):
     on 'Exploring the Impact of Analysis Software on Task fMRI
     Results'. bioRxiv 308643; doi:10.1101/308643
   | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
+
+If using ANATICOR to de-noise FMRI datasets (e.g., in
+``afni_proc.py``), please cite:
+
+* | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
+    correlation in resting state FMRI, with artifact detection and
+    removal. Neuroimage. 2010;52(2):571-582. 
+    doi:10.1016/j.neuroimage.2010.04.246
+  | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
+
+If you use InstaCorr to investigate your data (it is *definitely* fun
+and even *highly probably* informative), please cite:
+
+* | Song S, Bokkers RPH, Edwardson MA , Brown T, Shah S, Cox RW, Saad
+    ZS, Reynolds RC, Glen DR, Cohen LG, Latour LL (2017).  Temporal
+    similarity perfusion mapping: A standardized and model-free method
+    for detecting perfusion deficits in stroke.  PLoS ONE 12, Article
+    number e0185552. doi: 10.1371/journal.pone.0185552
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
+
 
 For technical reference for the NIFTI data format, please cite:
 
