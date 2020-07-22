@@ -8,8 +8,12 @@
 
 .. highlight:: None
 
-Methods
---------
+If you make use of AFNI and its tools in your work, we ask that you
+please cite the main paper and any accompanying items as appropriate.
+
+
+Methods: General
+----------------
 
 If you use AFNI in your work, please cite:
 
@@ -53,16 +57,58 @@ If you use the realtime functionality from AFNI, please cite:
     1014-1018.
   | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
 
-If you use either the local Pearson correlation (lpc) or local Pearson
-absolute (lpa) cost function in your alignment (e.g., with
-``3dAllineate``, ``align_epi_anat.py``, ``afni_proc.py``, ``3dQwarp``,
-``@SSwarper``, ``@animal_warper``, etc.), please cite:
+If you use the left-right flip checking for consistency in your data
+(and you should!), please cite:
 
-* | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
-    new method for improving functional-to-structural MRI alignment
-    using local Pearson correlation. Neuroimage 44
-    839–848. 10.1016/j.neuroimage.2008.09.037
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
+* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
+    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
+    Data: An Efficient and Robust Method to Check MRI Dataset
+    Consistency Using AFNI. Front. Neuroinformatics 14. 
+    doi.org/10.3389/fninf.2020.00018
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
+
+For several choices of FMRI processing with ``afni_proc.py``, please cite
+the following (if relevant):
+
+* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
+    (2018).  FMRI processing with AFNI: Some comments and corrections
+    on 'Exploring the Impact of Analysis Software on Task fMRI
+    Results'. bioRxiv 308643; doi:10.1101/308643
+  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
+
+If you use ANATICOR to de-noise FMRI datasets (e.g., in
+``afni_proc.py``), please cite:
+
+* | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
+    correlation in resting state FMRI, with artifact detection and
+    removal. Neuroimage. 2010;52(2):571-582. 
+    doi:10.1016/j.neuroimage.2010.04.246
+  | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
+
+If you use InstaCorr to investigate your data (it is *definitely* fun
+and even *highly probably* informative), please cite:
+
+* | Song S, Bokkers RPH, Edwardson MA , Brown T, Shah S, Cox RW, Saad
+    ZS, Reynolds RC, Glen DR, Cohen LG, Latour LL (2017).  Temporal
+    similarity perfusion mapping: A standardized and model-free method
+    for detecting perfusion deficits in stroke.  PLoS ONE 12, Article
+    number e0185552. doi: 10.1371/journal.pone.0185552
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
+
+If you use ``dcm2niix_afni`` in your processing, which is a copy of
+the program ``dcm2niix`` kindly contributed by Chris Rorden, please
+cite:
+
+* | Li X, Morgan PS, Ashburner J, Smith J, Rorden C (2016). The first
+    step for neuroimaging data analysis: DICOM to NIfTI conversion. J
+    Neurosci Methods. 264:47-56. doi:
+    10.1016/j.jneumeth.2016.03.001. PMID: 26945974
+  | `<https://github.com/rordenlab/dcm2niix>`_
+
+|
+
+Methods: Group analysis, stats and clustering
+---------------------------------------------
 
 If you use ``3dLME`` in your work, please cite:
 
@@ -143,16 +189,6 @@ If you use the ETAC clustering method in your work, please cite:
     9(7):529-538.  doi: 10.1089/brain.2019.0666.
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
 
-If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
-FATCAT paper (and if you use the TORTOISE package for accompanying
-processing, such as DIFFPREP, DR_BUDDI, etc., then please refer to
-`the bottom of their homepage <https://tortoise.nibib.nih.gov/>`_ for
-appropriate citations for those specific tools):
-
-* | Taylor PA, Saad ZS (2013). FATCAT: (An Efficient) Functional And
-    Tractographic Connectivity Analysis Toolbox. Brain Connect. 3,
-    523–535. doi.org/10.1089/brain.2013.0154
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
 
 If you use the FAT-MVM approach to group analysis (combining FATCAT
 and 3dMVM), please cite (as well as the main FATCAT paper, above):
@@ -176,32 +212,21 @@ and 3dMVM), please cite (as well as the main FATCAT paper, above):
     109–121. doi.org/10.1089/brain.2015.0363
   | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
 
-If you use mini-probabilistic tracking and/or SUMA tract
-visualization, please cite (as well as the main FATCAT paper, above):
+|
 
-* | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
-    Multimodal Interactive Connectivity Visualization and
-    Analysis. Brain Connect. 6,
-    109–121. doi.org/10.1089/brain.2015.0363
-  | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
+Methods: Alignment 
+--------------------
 
-If you use probabilistic or deterministic tractography in your work
-with 3dTrackID, please cite (as well as the main FATCAT paper, above):
+If you use either the local Pearson correlation (lpc) or local Pearson
+absolute (lpa) cost function in your alignment (e.g., with
+``3dAllineate``, ``align_epi_anat.py``, ``afni_proc.py``, ``3dQwarp``,
+``@SSwarper``, ``@animal_warper``, etc.), please cite:
 
-* | Taylor PA, Cho K-H, Lin C-P, Biswal BB (2012). Improving DTI
-    Tractography by including Diagonal Tract Propagation. PLoS ONE
-    7(9): e43415. 
-  | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
-
-If you use the left-right flip checking for consistency in your data
-(and you should!), please cite:
-
-* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
-    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
-    Data: An Efficient and Robust Method to Check MRI Dataset
-    Consistency Using AFNI. Front. Neuroinformatics 14. 
-    doi.org/10.3389/fninf.2020.00018
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
+* | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
+    new method for improving functional-to-structural MRI alignment
+    using local Pearson correlation. Neuroimage 44
+    839–848. 10.1016/j.neuroimage.2008.09.037
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
 If you use nonlinear warping in AFNI, in particular ``3dQwarp``,
 please cite:
@@ -223,33 +248,43 @@ please cite:
     839–848. 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
-For several choices of FMRI processing with ``afni_proc.py``, please cite
-the following (if relevant):
+|
 
-* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
-    (2018).  FMRI processing with AFNI: Some comments and corrections
-    on 'Exploring the Impact of Analysis Software on Task fMRI
-    Results'. bioRxiv 308643; doi:10.1101/308643
-  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
+Methods: Diffusion, DWI, DTI and HARDI
+--------------------------------------
 
-If you use ANATICOR to de-noise FMRI datasets (e.g., in
-``afni_proc.py``), please cite:
+If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
+FATCAT paper (and if you use the TORTOISE package for accompanying
+processing, such as DIFFPREP, DR_BUDDI, etc., then please refer to
+`the bottom of their homepage <https://tortoise.nibib.nih.gov/>`_ for
+appropriate citations for those specific tools):
 
-* | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
-    correlation in resting state FMRI, with artifact detection and
-    removal. Neuroimage. 2010;52(2):571-582. 
-    doi:10.1016/j.neuroimage.2010.04.246
-  | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
+* | Taylor PA, Saad ZS (2013). FATCAT: (An Efficient) Functional And
+    Tractographic Connectivity Analysis Toolbox. Brain Connect. 3,
+    523–535. doi.org/10.1089/brain.2013.0154
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
 
-If you use InstaCorr to investigate your data (it is *definitely* fun
-and even *highly probably* informative), please cite:
+If you use mini-probabilistic tracking and/or SUMA tract
+visualization, please cite (as well as the main FATCAT paper, above):
 
-* | Song S, Bokkers RPH, Edwardson MA , Brown T, Shah S, Cox RW, Saad
-    ZS, Reynolds RC, Glen DR, Cohen LG, Latour LL (2017).  Temporal
-    similarity perfusion mapping: A standardized and model-free method
-    for detecting perfusion deficits in stroke.  PLoS ONE 12, Article
-    number e0185552. doi: 10.1371/journal.pone.0185552
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
+* | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
+    Multimodal Interactive Connectivity Visualization and
+    Analysis. Brain Connect. 6,
+    109–121. doi.org/10.1089/brain.2015.0363
+  | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
+
+If you use probabilistic or deterministic tractography in your work
+with 3dTrackID, please cite (as well as the main FATCAT paper, above):
+
+* | Taylor PA, Cho K-H, Lin C-P, Biswal BB (2012). Improving DTI
+    Tractography by including Diagonal Tract Propagation. PLoS ONE
+    7(9): e43415. 
+  | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
+
+|
+
+Methods: Additional applications
+----------------------------------
 
 If you use DBSproc (for Deep Brain Stimulation processing), please cite:
 
@@ -271,16 +306,6 @@ using CT and MRI imaging), please cite:
     grids. J. Neurosci. Methods 301, 43–51.  doi:
     10.1016/j.jneumeth.2017.10.022
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5952625/>`_
-
-If you use ``dcm2niix_afni`` in your processing, which is a copy of
-the program ``dcm2niix`` kindly contributed by Chris Rorden, please
-cite:
-
-* | Li X, Morgan PS, Ashburner J, Smith J, Rorden C (2016). The first
-    step for neuroimaging data analysis: DICOM to NIfTI conversion. J
-    Neurosci Methods. 264:47-56. doi:
-    10.1016/j.jneumeth.2016.03.001. PMID: 26945974
-  | `<https://github.com/rordenlab/dcm2niix>`_
 
 |
 
