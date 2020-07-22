@@ -451,8 +451,8 @@ meticulous delineations of macaque cortical regions:
 
 * | Reveley C, Gruslys A, Ye FQ, Glen D, Samaha J, E Russ B, Saad Z, K
     Seth A, Leopold DA, Saleem KS (2017). Three-Dimensional Digital
-    Template Atlas of the Macaque Brain. Cereb Cortex. 2017 Sep
-    1;27(9):4463-4477. doi: 10.1093/cercor/bhw248. 
+    Template Atlas of the Macaque Brain. Cereb Cortex
+    27(9):4463-4477. doi: 10.1093/cercor/bhw248.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075609/>`_
 
 *NMT V1 Macaque brain group template.* Using the data from 31

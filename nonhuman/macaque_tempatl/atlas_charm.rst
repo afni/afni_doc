@@ -30,24 +30,43 @@ Here we present the Cortical Hierarchy Atlas of the Rhesus Macaque
 Contents
 ^^^^^^^^^^^^^^^^^^^
 
-The CHARM parcellates the macaque cortex at six spatial scales.  This
-allows the researcher to choose the appropriate level of investigation
-for their study design and data.  
+The CHARM parcellates the macaque cortex at six spatial scales. The
+finest level is based on the D99 atlas, while the broadest level forms
+four cortical lobes. Between these levels, regions are progressively
+grouped to form increasingly large composite structures. This allows
+the researcher to choose the appropriate scale of investigation for
+their study design and data.
 
-The CHARM is distributed as a single data set with six sub-volumes.
-Note that for the purpose of using AFNI sub-brick selectors, CHARM
-Level 1 is volume ``"[0]"`` and Level 6 is volume ``"[5]"``, because
-AFNI (like Python and C) use zero-base counting.
+.. list-table:: Example of the CHARM hierarchical structure
+   :header-rows: 1
+   :widths: 100 
 
-As a wise person once said, templates and atlases go together like
-peanut butter and jelly.  It really doesn't make sense to consider and
-atlas without acknowledging/using the underlaying space defined by its
-associated template.  That is why the CHARM is distributed with its
-definitive template, the NMT v2.  The NMT v2 has several forms and
-variants (based on symmetry/asymmetry, FOV and voxel size), and for
-each of these there is an accompanying CHARM.
+   * - Tree diagram showing successively finer parcellation of the
+       inferior temporal cortex (from Jung et al., 2020)
+   * - .. image:: media/charm/CHARM_Level_Flow_Orinoco.png
 
-|
+The CHARM is distributed as a single data set with six
+sub-volumes. Note that for the purpose of using AFNI sub-brick
+selectors, CHARM Level 1 is volume ``"[0]"`` and Level 6 is volume
+``"[5]"``, because AFNI (like Python and C) use zero-base counting.
+
+The CHARM is distributed with the NMT v2. The NMT v2 has several forms
+and variants (based on symmetry/asymmetry, FOV and voxel size), and
+for each of these there is an accompanying CHARM.
+
+Note that the NMT download also includes a CSV table file of the ROI
+labels, hierarchically organized.  This can be viewed as a simple text
+file or within any spreadsheet software, such as shown in the
+following image.
+
+.. list-table:: Snippet of the CHARM hierarchical data table
+   :header-rows: 1
+   :widths: 100 
+
+   * - Part of the CHARM ROI organizational table text file included
+       in NMT download
+   * - .. image:: media/charm/img_charm_csvtable.png
+
 
 Example images
 ^^^^^^^^^^^^^^^^^^^
@@ -130,10 +149,10 @@ form/variant of the NMT, there is a matching CHARM dataset, as well.
 
 To download and unpack the datasets, please see the instructions\.\.\.
 
-* \.\.\. *here* for the **symmetric** form:
+* \.\.\. here for the **symmetric** form:
   :ref:`nh_macaque_template_nmtv2_sym_dl`
 
-* \.\.\. *here* for the **asymmetric** form:
+* \.\.\. here for the **asymmetric** form:
   :ref:`nh_macaque_template_nmtv2_asym_dl`
 
 
@@ -147,13 +166,15 @@ research, please cite:
    (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
    Atlas."  NeuroImage, submitted.
 
-   Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
-   Ungerleider L, Messinger A (2018). "A Population MRI Brain Template
-   and Analysis Tools for the Macaque." NeuroImage 170: 121–31.
-   `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
+   | Reveley C, Gruslys A, Ye FQ, Glen D, Samaha J, E Russ B, Saad Z, K
+     Seth A, Leopold DA, Saleem KS (2017). Three-Dimensional Digital
+     Template Atlas of the Macaque Brain. Cereb Cortex 27(9):4463-4477. 
+     doi: 10.1093/cercor/bhw248.
+   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075609/>`_
 
 
 | For questions, comments and/or suggestions, contact:
 | **Adam.Messinger@nih.gov**
 | **benjamin.jung@nih.gov**
 | **glend@mail.nih.gov**.
+ 
