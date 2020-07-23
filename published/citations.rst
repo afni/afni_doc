@@ -17,9 +17,9 @@ Methods: General
 
 If you use AFNI in your work, please cite:
 
-* | Cox RW. AFNI: software for analysis and visualization of functional
-    magnetic resonance neuroimages. Comput Biomed
-    Res 29(3):162-173. doi:10.1006/cbmr.1996.0014
+* | Cox RW (1996). AFNI: software for analysis and visualization of
+    functional magnetic resonance neuroimages. Comput Biomed Res
+    29(3):162-173. doi:10.1006/cbmr.1996.0014 
   | `<https://pubmed.ncbi.nlm.nih.gov/8812068/>`_
 
 * | RW Cox, JS Hyde (1997). Software tools for analysis and
