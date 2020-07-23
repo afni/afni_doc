@@ -105,12 +105,11 @@ cite:
     10.1016/j.jneumeth.2016.03.001. PMID: 26945974
   | `<https://github.com/rordenlab/dcm2niix>`_
 
-|
 
 Methods: Group analysis, stats and clustering
 ---------------------------------------------
 
-If you use ``3dLME`` in your work, please cite:
+If you use ``3dLME`` or ``3dLMEr`` in your work, please cite:
 
 * | Chen G, Saad ZS, Britton JC, Pine DS, Cox RW (2013). Linear
     mixed-effects modeling approach to FMRI group analysis.  NeuroImage,
@@ -145,9 +144,8 @@ If you use the Bayesian Multilevel (BML) modeling approach with the
 
 * | Chen G, Xiao Y, Taylor PA, Rajendra JK, Riggins T, Geng F, Redcay
     E, Cox RW (2019). Handling Multiplicity in Neuroimaging Through
-    Bayesian Lenses with Multilevel
-    Modeling. Neuroinformatics. 17(4):515-545.
-    doi:10.1007/s12021-018-9409-6
+    Bayesian Lenses with Multilevel Modeling. Neuroinformatics. 
+    17(4):515-545. doi:10.1007/s12021-018-9409-6
   | `<https://pubmed.ncbi.nlm.nih.gov/30649677/>`_
 
 If you use ICC methods within AFNI (e.g., via ``3dICC``), please cite:
@@ -158,6 +156,34 @@ If you use ICC methods within AFNI (e.g., via ``3dICC``), please cite:
     neuroimaging. Hum Brain
     Mapp. 2018;39(3):1187-1206. doi:10.1002/hbm.23909
   | `<https://pubmed.ncbi.nlm.nih.gov/29218829/>`_
+
+If you use ``3dISC`` for inter-subject correlation, please cite:
+
+* | Chen G, Taylor PA, Shin YW, Reynolds RC, Cox RW (2017). Untangling
+    the Relatedness among Correlations, Part II: Inter-Subject Correlation
+    Group Analysis through Linear Mixed-Effects Modeling. Neuroimage
+    147:825-840. doi: 10.1016/j.neuroimage.2016.08.029
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5303634/>`_
+
+For an LME- and ROI-based approach to ISC (inter-subject correlation)
+and naturalistic FMRI, you might want to check out:
+
+* | Chen G, PA Taylor, Qu X, Molfese PJ, Bandettini PA, Cox RW, Finn ES
+    (2020). Untangling the Relatedness among Correlations, Part III:
+    Inter-Subject Correlation Analysis through Bayesian Multilevel
+    Modeling for Naturalistic Scanning. NeuroImage 216:116474. 
+    doi:10.1016/j.neuroimage.2019.116474
+  | `<https://pubmed.ncbi.nlm.nih.gov/31884057/>`_
+
+For a nonparametric (voxelwise) approach to ISC (inter-subject
+correlation) and naturalistic FMRI, you might want to check out:
+
+* | Chen GC, Shin Y-W, Taylor PA,q Glen DR, Reynolds RC, Israel RB, Cox RW
+    (2016). Untangling the Relatedness among Correlations, Part I:
+    Nonparametric Approaches to Inter-Subject Correlation Analysis at the
+    Group Level. Neuroimage 142:248-259. 
+    doi:10.1016/j.neuroimage.2016.05.023
+  | `<https://pubmed.ncbi.nlm.nih.gov/27195792/>`_
 
 If you use ``1dSVAR`` (Structured Vector AutoRegression)
 
@@ -189,7 +215,6 @@ If you use the ETAC clustering method in your work, please cite:
     9(7):529-538.  doi: 10.1089/brain.2019.0666.
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
 
-
 If you use the FAT-MVM approach to group analysis (combining FATCAT
 and 3dMVM), please cite (as well as the main FATCAT paper, above):
 
@@ -212,7 +237,6 @@ and 3dMVM), please cite (as well as the main FATCAT paper, above):
     109–121. doi.org/10.1089/brain.2015.0363
   | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
 
-|
 
 Methods: Alignment 
 --------------------
@@ -248,7 +272,6 @@ please cite:
     839–848. 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
-|
 
 Methods: Diffusion, DWI, DTI and HARDI
 --------------------------------------
@@ -281,7 +304,6 @@ with 3dTrackID, please cite (as well as the main FATCAT paper, above):
     7(9): e43415. 
   | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
 
-|
 
 Methods: Additional applications
 ----------------------------------
@@ -307,7 +329,6 @@ using CT and MRI imaging), please cite:
     10.1016/j.jneumeth.2017.10.022
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5952625/>`_
 
-|
 
 Meta-methodology and validations
 ---------------------------------
@@ -367,6 +388,16 @@ you scale your data in a voxelwise manner, you might consider citing:
     Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
   | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
 
+If you are curious about how to deal with multiplicity issues in your
+statistical analysis of MRI, consider this discussion of neighborhood
+leverage with a Bayesian multilevel (BML) approach:
+
+* | Chen G, Taylor PA, Cox RW, Pessoa L. Fighting or embracing
+    multiplicity in neuroimaging? neighborhood leverage versus global
+    calibration. Neuroimage. 2020;206:116320. 
+    doi:10.1016/j.neuroimage.2019.116320
+  | `<https://pubmed.ncbi.nlm.nih.gov/31698079/>`_
+
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
 toolbox, particularly in the case where subjects move (kids these
@@ -377,7 +408,6 @@ days...), then please check out:
     motion correction strategies in the presence of EPI distortion
     correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
   | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
-
 
 For papers discussing global signal regression (GSR), and several
 reasons why not to do it (note: there are many other papers by other
@@ -411,7 +441,6 @@ groups that show this as well...), please check out/reference:
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
-|
 
 Data projects
 -------------
