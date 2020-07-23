@@ -535,7 +535,7 @@ and 0.050 mm spatial resolution:
     brain. Nat Neurosci 23(2):271-280. doi: 10.1038/s41593-019-0575-0.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007400/>`_
 
-*Marmoset atlas V1 (NIH Marmoset).* This atlas introduces a
+*Marmoset atlas v1: NIH Marmoset.* This atlas introduces a
 high-resolution template and atlas for cortical gray matter at
 0.150 mm (see also the marmoset atlas v2, above):
 
@@ -555,7 +555,7 @@ meticulous delineations of macaque cortical regions:
     27(9):4463-4477. doi: 10.1093/cercor/bhw248.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075609/>`_
 
-*NMT V1 Macaque brain group template.* Using the data from 31
+*NMT v1: Macaque brain group template.* Using the data from 31
 macaques, this template provides a high resolution group template for
 macaques at 0.250 mm (this is NMT v1; see below for NMT v2):
 
@@ -565,7 +565,7 @@ macaques at 0.250 mm (this is NMT v1; see below for NMT v2):
     121–31. doi: 10.1016/j.neuroimage.2017.04.063.
   | `<https://pubmed.ncbi.nlm.nih.gov/28461058/>`_
 
-*NMT V2 Macaque brain group template and hierarchical cortical atlas.*
+*NMT v2: Macaque brain group template and hierarchical cortical atlas.*
 This project introduces version the macaque template NMT v2 using a
 stererotaxic (ear-bar-zero) reference frame and a hierarchical atlas
 (CHARM) for structural region labels:
