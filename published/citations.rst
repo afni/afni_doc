@@ -95,6 +95,21 @@ and even *highly probably* informative), please cite:
     number e0185552. doi: 10.1371/journal.pone.0185552
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
 
+If you use ``3ddelay``, please cite:
+
+* | Saad ZS, Ropella KM, Cox RW, DeYoe EA (2001). Analysis and use of
+    FMRI response delays. Hum Brain Mapp 13(2):74-93. 
+    doi:10.1002/hbm.1026
+  | `<https://pubmed.ncbi.nlm.nih.gov/11346887/>`_
+
+If you use ``3dSeg`` for segmentation, please cite:
+
+* | Vovk A, Cox RW, Stare J, Suput D, Saad ZS (2011).  Segmentation
+    Priors From Local Image Properties: Without Using Bias Field
+    Correction, Location-based Templates, or Registration.
+    Neuroimage 55:142-152.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3031751/>`_
+
 If you use ``dcm2niix_afni`` in your processing, which is a copy of
 the program ``dcm2niix`` kindly contributed by Chris Rorden, please
 cite:
@@ -329,6 +344,41 @@ using CT and MRI imaging), please cite:
     10.1016/j.jneumeth.2017.10.022
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5952625/>`_
 
+If you use the AFNI-engaged approach for modeling dynamic contrast
+enhanced (DCE) MRI for analysis of brain tumors, please cite:
+
+* | Sarin H, Kanevsky AS, Fung SH, Butman JA, Cox RW, Glen D, Reynolds
+    R, Auh S (2009). Metabolically stable bradykinin B2 receptor
+    agonists enhance transvascular drug delivery into malignant brain
+    tumors by increasing drug half-life. J Transl
+    Med 7:33. doi:10.1186/1479-5876-7-33
+  | `<https://pubmed.ncbi.nlm.nih.gov/19439100/>`_
+
+If you use this numerical method for measuring symmetry in brain FMRI
+data, please site:
+
+* | Jo HJ, Saad ZS, Gotts SJ, Martin A, Cox RW (2012). Quantifying
+    agreement between anatomical and functional interhemispheric
+    correspondences in the resting brain. PLoS One 7:e48847. 
+    doi: 10.1371/journal.pone.0048847
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3493608/>`_
+
+\.\.\. and if you are still curious about symmetry in the brain, check
+out this paper for methodology:
+
+* | Gotts SJ, Jo HJ, Wallace GL, Saad ZS, Cox RW, Martin A (2013). Two
+    distinct forms of functional lateralization in the human brain. Proc
+    Natl Acad Sci USA. 110(36):E3435-E3444. doi:10.1073/pnas.1302581110
+  | `<https://pubmed.ncbi.nlm.nih.gov/23959883/>`_
+
+If you are curious about using multiecho FMRI, please see:
+
+* | Kundu P, Brenowitz ND, Voon V, Worbe Y, Vertes PE, Inati SJ, Saad
+    ZS, Bandettini PA, Bullmore ET (2013). Integrated strategy for
+    improving functional connectivity mapping using multiecho
+    fMRI. Proc Natl Acad Sci
+    USA. 110(40):16187-16192. doi:10.1073/pnas.1301725110
+  | `<https://pubmed.ncbi.nlm.nih.gov/24038744/>`_
 
 Meta-methodology and validations
 ---------------------------------
@@ -421,7 +471,7 @@ groups that show this as well...), please check out/reference:
 
 * | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
     Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
-    Brain Connectivity, 3(4):339-352.  10.1089/brain.2013.0156
+    Brain Connectivity, 3(4):339-352. doi: 10.1089/brain.2013.0156
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
 
 * | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
@@ -433,7 +483,7 @@ groups that show this as well...), please check out/reference:
 * | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
     perils of global signal regression for group comparisons: A case
     study of Autism Spectrum Disorders.
-    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.  2013.00356
+    Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.2013.00356
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
 
 * | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
@@ -441,6 +491,27 @@ groups that show this as well...), please check out/reference:
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
+If you want to learn about AFNI+SUMA results on the FIAC dataset,
+please see:
+
+* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
+    PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
+    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+
+If you want to know more about AFNI and its development and
+underpinnings, please see:
+
+* | Cox RW (2012). AFNI: what a long strange trip it's been.
+    NeuroImage 62:747-765. doi: 10.1016/j.neuroimage.2011.08.056
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3246532/>`_
+
+If you want to know more about SUMA and its development and
+underpinnings, please see the pithily titled:
+
+* | Saad ZS, Reynolds RC (2012). SUMA.
+    NeuroImage 62:768-773. doi: 10.1016/j.neuroimage.2011.09.016
+  | `<https://pubmed.ncbi.nlm.nih.gov/21945692/>`_
 
 Data projects
 -------------
