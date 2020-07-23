@@ -164,8 +164,8 @@ Example images
    * - .. image:: media/nmt_v2.0/img_nmt2.0symss_charmL5.sag.png
 
 *The script used to make these images with ``@chauffeur_afni`` is
-here:* :download:`do_view_nmt_v2.0_sym.tcsh
-<media/nmt_v2.0/do_view_nmt_v2.0_sym.tcsh>`
+available here:* :download:`do_view_nmt_v2.0_sym.tcsh
+<media/nmt_v2.0/do_view_nmt_v2.0_sym.tcsh>`.
 
 .. _nh_macaque_template_nmtv2_sym_dl:
 

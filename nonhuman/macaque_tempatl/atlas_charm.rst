@@ -139,7 +139,9 @@ and accompanying CHARM.
    * - .. image:: media/charm/img_nmt2.0symss_charmL6.cor.png
    * - .. image:: media/charm/img_nmt2.0symss_charmL6.sag.png
 
-|
+*The script used to make these images with ``@chauffeur_afni`` is
+available here:* :download:`do_view_charm.tcsh
+<media/charm/do_view_charm.tcsh>`.
 
 Download
 ^^^^^^^^^^^^^^^^^^^
