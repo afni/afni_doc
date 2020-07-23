@@ -110,6 +110,15 @@ If you use ``3dSeg`` for segmentation, please cite:
     Neuroimage 55:142-152.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3031751/>`_
 
+If you use ``3dReHo``, ``3dNetCorr``, ``3dRSFC``, ``3dLombScargle``
+(yes, really a program), ``3dAmpToRSFC``, ``3dSpaceTimeCorr``, and/or
+``3dSliceNDice``, please cite:
+
+* | Taylor PA, Saad ZS (2013). FATCAT: (An Efficient) Functional And
+    Tractographic Connectivity Analysis Toolbox. Brain Connect. 3,
+    523–535. doi.org/10.1089/brain.2013.0154
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
+
 If you use ``dcm2niix_afni`` in your processing, which is a copy of
 the program ``dcm2niix`` kindly contributed by Chris Rorden, please
 cite:
@@ -292,15 +301,20 @@ Methods: Diffusion, DWI, DTI and HARDI
 --------------------------------------
 
 If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
-FATCAT paper (and if you use the TORTOISE package for accompanying
-processing, such as DIFFPREP, DR_BUDDI, etc., then please refer to
-`the bottom of their homepage <https://tortoise.nibib.nih.gov/>`_ for
-appropriate citations for those specific tools):
+FATCAT paper:
 
 * | Taylor PA, Saad ZS (2013). FATCAT: (An Efficient) Functional And
     Tractographic Connectivity Analysis Toolbox. Brain Connect. 3,
     523–535. doi.org/10.1089/brain.2013.0154
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
+
+\.\.\. and if you use the TORTOISE package for accompanying
+diffusion-based processing (such as DIFFPREP, DR_BUDDI, etc.), then
+please:
+
+* refer to `the bottom of the TORTOISE homepage
+  <https://tortoise.nibib.nih.gov/>`_ for appropriate citations for
+  those specific tools
 
 If you use mini-probabilistic tracking and/or SUMA tract
 visualization, please cite (as well as the main FATCAT paper, above):
