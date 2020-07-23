@@ -189,8 +189,8 @@ If you use ``3dISC`` for inter-subject correlation, please cite:
     147:825-840. doi: 10.1016/j.neuroimage.2016.08.029
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5303634/>`_
 
-For an LME- and ROI-based approach to ISC (inter-subject correlation)
-and naturalistic FMRI, you might want to check out:
+For an ROI-based approach through Bayesian multilevel (BML) modeling
+to ISC (inter-subject correlation) and naturalistic FMRI
 
 * | Chen G, PA Taylor, Qu X, Molfese PJ, Bandettini PA, Cox RW, Finn ES
     (2020). Untangling the Relatedness among Correlations, Part III:
@@ -454,7 +454,8 @@ you scale your data in a voxelwise manner, you might consider citing:
 
 If you are curious about how to deal with multiplicity issues in your
 statistical analysis of MRI, consider this discussion of neighborhood
-leverage with a Bayesian multilevel (BML) approach:
+leverage (*new!*) vs global calibration (*old!*) with a Bayesian
+multilevel (BML) approach:
 
 * | Chen G, Taylor PA, Cox RW, Pessoa L. Fighting or embracing
     multiplicity in neuroimaging? neighborhood leverage versus global
