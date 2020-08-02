@@ -133,14 +133,16 @@ cite:
 Methods: Group analysis, stats and clustering
 ---------------------------------------------
 
-If you use ``3dLME`` or ``3dLMEr`` in your work, please cite:
+If you use either of the linear mixed effects (LME) modeling programs
+``3dLME`` or ``3dLMEr`` in your work, please cite:
 
 * | Chen G, Saad ZS, Britton JC, Pine DS, Cox RW (2013). Linear
     mixed-effects modeling approach to FMRI group analysis.  NeuroImage,
     73: 176-190.
   | `<https://pubmed.ncbi.nlm.nih.gov/23376789/>`_
 
-If you use ``3dMVM`` in your work, please cite:
+If you use multivariate modeling (MVM) program ``3dMVM`` in your work,
+please cite:
 
 * | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
     Applications of multivariate modeling to neuroimaging group
@@ -148,14 +150,16 @@ If you use ``3dMVM`` in your work, please cite:
     model.  NeuroImage 99:571-588.
   | `<https://pubmed.ncbi.nlm.nih.gov/24954281/>`_
 
-If you use ``3dMEMA`` in your work, please cite:
+If you use the mixed effects meta analysis (MEMA) program ``3dMEMA``
+in your work, please cite:
 
 * | Chen G, Saad ZS, Nath AR, Beauchamp MS, Cox RW (2012).
     FMRI Group Analysis Combining Effect Estimates and Their Variances.
     Neuroimage, 60: 747-765.
   | `<https://pubmed.ncbi.nlm.nih.gov/22245637/>`_
 
-If you use the ``MBA`` program for matrix-based analysis, please cite:
+If you use the Bayesian multilevel (BML) modeling approach for
+matrix-based analysis with the ``MBA`` program, please cite:
 
 * | Chen G, Burkner P-C, Taylor PA, Li Z, Yin L, Glen DR, Kinnison J,
     Cox RW, Pessoa L (2019). An Integrative Approach to Matrix-Based
@@ -163,8 +167,8 @@ If you use the ``MBA`` program for matrix-based analysis, please cite:
     doi:10.1101/459545
   | `<https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.24686>`_
 
-If you use the Bayesian Multilevel (BML) modeling approach with the
-``RBA`` program, please cite:
+If you use the Bayesian Multilevel (BML) modeling approach for
+region-based analysis with the ``RBA`` program, please cite:
 
 * | Chen G, Xiao Y, Taylor PA, Rajendra JK, Riggins T, Geng F, Redcay
     E, Cox RW (2019). Handling Multiplicity in Neuroimaging Through
@@ -172,7 +176,8 @@ If you use the Bayesian Multilevel (BML) modeling approach with the
     17(4):515-545. doi:10.1007/s12021-018-9409-6
   | `<https://pubmed.ncbi.nlm.nih.gov/30649677/>`_
 
-If you use ICC methods within AFNI (e.g., via ``3dICC``), please cite:
+If you use IntraClass Correlatin (ICC) methods within AFNI via
+``3dICC``, please cite:
 
 * | Chen G, Taylor PA, Haller SP, Kircanski K, Stoddard J, Pine DS,
     Leibenluft E, Brotman MA, Cox RW (2018). Intraclass correlation:
@@ -219,8 +224,8 @@ If you use ``1dSVAR`` (Structured Vector AutoRegression)
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3223325/>`_
 
 If you use clustering approaches such as 3dClustSim, ``3dttest++
--Clustsim``, and/or the mixed ACF smoothness estimation in your work,
-please cite:
+-Clustsim``, and/or the mixed autocorrelation function (ACF)
+smoothness estimation in your work, please cite:
 
 * | Cox RW, Chen G, Glen DR, Reynolds RC, Taylor PA (2017). fMRI
     clustering and false-positive rates. Proc Natl Acad Sci
@@ -232,7 +237,8 @@ please cite:
     7(3):152-171. doi: 10.1089/brain.2016.0475.
   | `<https://pubmed.ncbi.nlm.nih.gov/28398812/>`_
 
-If you use the ETAC clustering method in your work, please cite:
+If you use the equitable thresholding and clustering (ETAC) method in
+your work, please cite:
 
 * | Cox RW (2017).  Equitable Thresholding and Clustering: A Novel
     Method for Functional Magnetic Resonance Imaging Clustering in AFNI.
@@ -240,7 +246,8 @@ If you use the ETAC clustering method in your work, please cite:
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
 
 If you use the FAT-MVM approach to group analysis (combining FATCAT
-and 3dMVM), please cite (as well as the main FATCAT paper, above):
+and multivariate modeling with ``3dMVM``), please cite (as well as the
+main FATCAT paper, above):
 
 * | Taylor PA, Jacobson SW, van der Kouwe A, Molteno CD, Chen G,
     Wintermark P, Alhamud A, Jacobson JL, Meintjes EM (2015). A
@@ -326,7 +333,8 @@ visualization, please cite (as well as the main FATCAT paper, above):
   | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
 
 If you use probabilistic or deterministic tractography in your work
-with 3dTrackID, please cite (as well as the main FATCAT paper, above):
+with ``3dTrackID``, please cite (as well as the main FATCAT paper,
+above):
 
 * | Taylor PA, Cho K-H, Lin C-P, Biswal BB (2012). Improving DTI
     Tractography by including Diagonal Tract Propagation. PLoS ONE
@@ -337,7 +345,8 @@ with 3dTrackID, please cite (as well as the main FATCAT paper, above):
 Methods: Additional applications
 ----------------------------------
 
-If you use DBSproc (for Deep Brain Stimulation processing), please cite:
+If you use DBSproc (for Deep Brain Stimulation processing), please
+cite:
 
 * | Lauro PM, Vanegas-Arroyave N, Huang L, Taylor PA, Zaghloul KA,
     Lungu C, Saad ZS, Horovitz SG (2016). DBSproc: An open source
@@ -385,7 +394,7 @@ out this paper for methodology:
     Natl Acad Sci USA. 110(36):E3435-E3444. doi:10.1073/pnas.1302581110
   | `<https://pubmed.ncbi.nlm.nih.gov/23959883/>`_
 
-If you are curious about using multiecho FMRI, please see:
+If you are curious about using multiecho/MEICA FMRI, please see:
 
 * | Kundu P, Brenowitz ND, Voon V, Worbe Y, Vertes PE, Inati SJ, Saad
     ZS, Bandettini PA, Bullmore ET (2013). Integrated strategy for
@@ -408,8 +417,8 @@ consider citing:
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
 
 If you want to note the good performance of AFNI's defacing/refacing
-tool, you can check out those OHBM-2020 poster that found it the
-overall best among currently available tools:
+tool ``@afni_refacer_run``, you can check out those OHBM-2020 poster
+that found it the overall best among currently available tools:
 
 * | Theyers A, Arnott SR, Zamyadi M, O'Reilly M, Bartha R, Symons S,
     MacQueen G, Hassel S, Lerch JP, Anagnostou E, Strother SC
@@ -418,7 +427,7 @@ overall best among currently available tools:
     Mapping, 2020.
 
 If you want to note the good performance of AFNI's volume registration
-for motion correction, you might consider:
+for motion correction with ``3dvolreg``, you might consider:
 
 * | Oakes TR, Johnstone T, Ores Walsh KS, Greischar LL, Alexander AL,
     Fox AS, Davidson RJ (2005). Comparison of fMRI motion correction
@@ -580,11 +589,32 @@ macaques at 0.250 mm (this is NMT v1; see below for NMT v2):
     121–31. doi: 10.1016/j.neuroimage.2017.04.063.
   | `<https://pubmed.ncbi.nlm.nih.gov/28461058/>`_
 
-*NMT v2: Macaque brain group template and hierarchical cortical atlas.*
-This project introduces version the macaque template NMT v2 using a
-stererotaxic (ear-bar-zero) reference frame and a hierarchical atlas
-(CHARM) for structural region labels:
+*NMT v2: Macaque brain group template and hierarchical cortical
+atlas.* This project introduces version the macaque template NMT v2
+using a stererotaxic (ear-bar-zero) reference frame and a hierarchical
+atlas (CHARM) for structural region labels (and see these pages for
+more information about the related :ref:`templates and atlases
+<nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
+<nh_macaque_demos>`):
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
     (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
     Atlas. NeuroImage, submitted.
+
+*PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
+platform for nonhuman primate (NHP) neuroimaging, including AFNI tools
+(such as ``@animal_warper`` and ``afni_proc.py`` applied to macaque
+datasets; see al Jung et al., 2020, above, and these pages for more
+information about the related :ref:`templates and atlases
+<nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
+<nh_macaque_demos>`):
+
+* | Messinger A, Sirmpilatze N, Heuer K, Loh K, Mars R, Sein J, Xu T,
+    Glen D, Jung B, Seidlitz J, Taylor P, Toro R, Garza-Villareal E,
+    Sponheim C, Wang X, Benn A, Cagna B, Dadarwal R, Evrard H,
+    Garcia-Saldivar P, Giavasis S, Hartig R, Lepage C, Liu C, Majka P,
+    Merchant H, Milham M, Rosa M, Tasserie J, Uhrig L, Margulies D,
+    Klink PC (2020).  A collaborative resource platform for non-human
+    primate neuroimaging. bioRxiv 2020.07.31.230185; doi:
+    10.1101/2020.07.31.230185` 
+  | `<https://doi.org/10.1101/2020.07.31.230185>`_
