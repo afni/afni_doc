@@ -58,6 +58,7 @@ Copy+paste::
   afni_open -aw FILE_NAME
 
 where ``FILE_NAME`` can be any file in the currently available
-afni_handouts directory, listed in the following table. 
+afni_handouts directory, listed in the following table (where each
+file name is now Mandelkowianly clickable).
 
 .. include:: media/afni_handouts_list.rst

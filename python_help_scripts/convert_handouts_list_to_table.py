@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
+# [PT: Aug 5, 2020] Update so that in the list of handouts, each
+# filename is not just a passive item, but instead a clickable link to
+# the file itself.  Thanks for the idea, Hendrik!
+
 import numpy as np
-import sys as sys
+import sys   as sys
 
 from afnipy import afni_util as au
 
@@ -9,10 +13,14 @@ THIS_PROG = 'convert_handouts_list_to_table.py'
 NUM_ARGS  = 2                          # two input args needed
 OUT_FNAME = ''
 
+# public-facing weblink of the afni_handouts directory 
+WWW_AHO = "https://afni.nimh.nih.gov/pub/"
+WWW_AHO+= "dist/edu/data/CD.expanded/afni_handouts/"
+
 # ===================================================================
 
-VERSION   = "1.0"
-VER_DATE  = "Mar 8, 2019"
+VERSION   = "1.1"
+VER_DATE  = "Aug 5, 2020"
 AUTHOR    = "PA Taylor (NIMH, NIH)"
 
 help_string = '''
@@ -113,12 +121,15 @@ def tableize_list_twocol( LL, title = '', hrows='' ):
 
     for i in range(NLhalf):
         xx = AA[i].strip()
-        list_table+= '   * - ' + xx
+        # instead of using just file name 'xx', 'yy' will be an
+        # active+clickable link.
+        yy = "`"+xx+" <"+WWW_AHO+xx+">`_"
+        list_table+= '   * - ' + yy
         list_table+= '\n'
 
         if i < BBL :
             xx = BB[i].strip()
-            list_table+= '     - ' + xx
+            list_table+= '     - ' + yy
         else:
             list_table+= '     - '
         list_table+= '\n'
