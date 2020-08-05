@@ -483,6 +483,8 @@ days...), then please check out:
     correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
   | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
 
+.. _pub_cit_noooo_gsr:
+
 For papers discussing global signal regression (GSR), and several
 reasons why not to do it (note: there are many other papers by other
 groups that show this as well...), please check out/reference:

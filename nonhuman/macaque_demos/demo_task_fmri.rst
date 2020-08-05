@@ -68,11 +68,11 @@ Processing: nonlinear alignment with @animal_warper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some processed datasets are also included.  In particular, AFNI's
-``@animal_warper`` script was run on the anatomical dataset to perform
+``@animal_warper`` command was run on the anatomical dataset to perform
 both skullstripping and nonlinear alignment to template space (here,
-the stereotaxic NMT atlas).  This has been performed with the included
-``s00*.tcsh`` script.  Some of the functionality and output of this
-step can be seen in the automatically generated QC images:
+the stereotaxic NMT template).  This has been performed with the
+included ``s00*.tcsh`` script.  Some of the functionality and output
+of this step can be seen in the automatically generated QC images:
 
 .. list-table:: 
    :header-rows: 1
@@ -112,7 +112,7 @@ step can be seen in the automatically generated QC images:
           :align: center
 
 
-Outputs from this step are included as inputs for ``afni_proc.py``
+Outputs from this step are included as inputs for ``afni_proc.py``.
 
 
 |
