@@ -129,6 +129,7 @@ def tableize_list_twocol( LL, title = '', hrows='' ):
 
         if i < BBL :
             xx = BB[i].strip()
+            yy = "`"+xx+" <"+WWW_AHO+xx+">`_"
             list_table+= '     - ' + yy
         else:
             list_table+= '     - '
