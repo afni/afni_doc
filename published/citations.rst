@@ -280,7 +280,7 @@ absolute (lpa) cost function in your alignment (e.g., with
 * | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
     new method for improving functional-to-structural MRI alignment
     using local Pearson correlation. Neuroimage 44
-    839–848. 10.1016/j.neuroimage.2008.09.037
+    839–848. doi: 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
 If you use nonlinear warping in AFNI, in particular ``3dQwarp``,
@@ -293,14 +293,15 @@ please cite:
 If you use ``@animal_warper`` (esp. for alignment in animal studies),
 please cite:
 
-* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
-    (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
-    Atlas. NeuroImage, submitted.
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
+    Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
+    Hierarchical Atlas. doi: 10.1101/2020.08.05.237818
+  | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
 * | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
     new method for improving functional-to-structural MRI alignment
     using local Pearson correlation. Neuroimage 44
-    839–848. 10.1016/j.neuroimage.2008.09.037
+    839–848. doi: 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
 
@@ -599,9 +600,10 @@ more information about the related :ref:`templates and atlases
 <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 <nh_macaque_demos>`):
 
-* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
-    (2020). A Comprehensive Macaque FMRI Pipeline and Hierarchical
-    Atlas. NeuroImage, submitted.
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
+    Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
+    Hierarchical Atlas. doi: 10.1101/2020.08.05.237818
+  | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
 *PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
 platform for nonhuman primate (NHP) neuroimaging, including AFNI tools
