@@ -176,7 +176,7 @@ region-based analysis with the ``RBA`` program, please cite:
     17(4):515-545. doi:10.1007/s12021-018-9409-6
   | `<https://pubmed.ncbi.nlm.nih.gov/30649677/>`_
 
-If you use IntraClass Correlatin (ICC) methods within AFNI via
+If you use IntraClass Correlation (ICC) methods within AFNI via
 ``3dICC``, please cite:
 
 * | Chen G, Taylor PA, Haller SP, Kircanski K, Stoddard J, Pine DS,
