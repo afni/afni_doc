@@ -1,8 +1,8 @@
 .. _stats_mvm_group:
 
-******************************************************
-**Multivariate modeling approach for group analysis**
-******************************************************
+************************************************************
+**Multivariate modeling (MVM) approach for group analysis**
+************************************************************
 
 .. contents:: :local:
 

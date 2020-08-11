@@ -1,7 +1,7 @@
 .. _stats_lme_model:
 
 ******************************************************
-**Linear Mixed-Effects Modeling**
+**Linear Mixed-Effects (LME) Modeling**
 ******************************************************
 
 .. contents:: :local:

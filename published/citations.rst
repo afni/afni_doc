@@ -548,6 +548,22 @@ For technical reference for the NIFTI data format, please cite:
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
 
+*India Brain Template (IBT).* We present a series of five age-specific
+brain templates and accompanying atlases (IBTAs), spanning an age
+range of 6-60 years.  These templates and atlases were created from a
+large number of subjects (total n=466), spanning a large number of
+different Indian states and and acquired at multiple 3T MRI sites,
+using a new  AFNI tool called ``make_template_dask.py``:
+
+* | Holla B, Taylor PA, Glen DR, Lee JA, Vaidya N, Mehta UM,
+    Venkatasubramanian G, Pal P, Saini J, Rao NP, Ahuja C, Kuriyan R,
+    Krishna M, Basu D, Kalyanram K, Chakrabarti A, Orfanos DP, Barker
+    GJ, Cox RW, Schumann G, Bharath RD, Benegal V (2020).  A series of
+    five population-specific Indian brain templates and atlases
+    spanning ages 6 to 60 years.  bioRxiv 2020.05.08.077172;
+    doi:10.1101/2020.05.08.077172
+  | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
+
 *Marmoset atlas v2.* This project provides some of the highest
 resolution nonhuman primate MRI templates and atlas for gray and white
 matter with multi-modal MRI imaging at 0.150 mm, 0.060 mm, 0.080 mm
@@ -616,5 +632,5 @@ information about the related :ref:`templates and atlases
     Merchant H, Milham M, Rosa M, Tasserie J, Uhrig L, Margulies D,
     Klink PC (2020).  A collaborative resource platform for non-human
     primate neuroimaging. bioRxiv 2020.07.31.230185; doi:
-    10.1101/2020.07.31.230185` 
+    10.1101/2020.07.31.230185 
   | `<https://doi.org/10.1101/2020.07.31.230185>`_
