@@ -599,6 +599,7 @@
 1 :: lib_afni1D.py
 1 :: afni_util.py
 1 :: 3dToyProg
+1 :: run_afni_tests.py
 
 
 ++ 0 :: Unclassed
