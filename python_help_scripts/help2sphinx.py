@@ -5,7 +5,7 @@
 ## parse help outputs to make sphinx pages
 
 ## system libraries
-import sys, os, glob, subprocess, csv, re, shutil, argparse, signal, textwrap
+import sys, os, glob, subprocess, csv, re, shutil, argparse, signal, textwrap, subprocess
 
 # requires PYTHONPATH to directory of AFNI binaries
 from afnipy import afni_util as au
@@ -116,6 +116,10 @@ optional.add_argument('-prog',
                       type=str,
                       default="nothing",
                       help="Single AFNI program to sphinxify. (For testing only. Will break main_toc.)")
+optional.add_argument('-cmd',
+                      type=str,
+                      default=None,
+                      help="Command to execute to coax the help out of a tool (if the default -help does not work).")
 parser.add_argument('-help',action='help',help='Show this help.')
 
 
@@ -168,9 +172,15 @@ for afni_prog in prog_list:
         continue
 
     ## read in the help file
-    stat,help_in = au.exec_tcsh_command(afni_prog+' -help',
-                                     lines=1,
-                                     noblank=0)
+    if args.cmd:
+        help_in = (subprocess.check_output(args.cmd,shell=True)
+            .decode('utf-8')
+            .splitlines()
+            )
+    else:
+        stat,help_in = au.exec_tcsh_command(afni_prog+' -help',
+                                         lines=1,
+                                         noblank=0)
 
     ## check to see if there was a help
     if len(help_in) < 1:
