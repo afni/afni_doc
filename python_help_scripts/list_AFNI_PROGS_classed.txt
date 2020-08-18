@@ -31,6 +31,7 @@
 1 :: 3dLocalstat         :: Compute some local statistics in a neighborhood around each voxel
 1 :: 3dLocalACF          :: Compute mixed model ACF parameters in a neighborhood around each voxel
 1 :: 3dLocalPV           :: Compute the 'principal vector' from a time series dataset, in a neighborhood around each voxel
+2 :: 3dPVmap             :: Compute the first 2 principal vectors (component time series) of a 3D+time dataset, then output a dataset measuring the R^2 of the input dataset with the 2D subspace spanned by these 2 vectors. The same algorithm is used in the 3dGrayplot program to order the voxels to cluster similar time series together, for visualization.
 1 :: 3dLocalSVD          :: Compute the SVD from a time series dataset, in a neighborhood around each voxel
 1 :: 3dLocalHistog       :: Compute the count of how many times each unique value occurs, in a neighborhood around each voxel
 1 :: 3dTto1D             :: Collapse 4D data to 1D in various ways
@@ -63,7 +64,8 @@
 1 :: 1dCorrelate          :: Calculate correlation coefficients between 1D columns, with confidence intervals
 1 :: 1deval               :: 1D calculator (like 3dcalc for 1D files)
 4 :: 1d_tool.py           :: Perform various manipulations of 1D data
-4 :: 1dplot               :: Graph values from columns in a file
+4 :: 1dplot               :: Plot/graph values from columns in a file
+4 :: 1dplot.py            :: Like 1dplot, but more modern Python-based viewing (more options; requires Python-matplotlib)
 1 :: 1dcat                :: Catenate 1D files horizontally (use system program cat for vertical combining)
 1 :: 1dgrayplot           :: Show values from columns in a file as bands of gray levels
 3 :: 1dtranspose          :: Transpose 1D files (interchange rows and columns)
@@ -143,7 +145,7 @@
 1 :: auto_warp.py             :: wrapper for nonlinear warping with 3dQwarp
 1 :: @auto_tlrc               :: Automatic transformation of dataset to match Talairach template (rigid/12dof???)
 3 :: @Align_Centers           :: Align the center of a dataset to another
-1 :: afni_proc.py             :: Can wrap many registration operations
+4 :: afni_proc.py             :: Can wrap many registration operations
 1 :: 3dWarp                   :: Non-rigid transformation of 3D coordinates
 1 :: 3dWarpDrive              :: Volumetric registration, includes warping (12DOF, linear affine); prob use 3dAllineate or align_epi_anat.py (???)
 3 :: @AddEdge                 :: Show two or more datasets with edges for alignment visualization
@@ -151,8 +153,8 @@
 1 :: @auto_align               :: (obsolete -> use align_epi_anat.py)        
 4 :: fat_proc_align_anat_pair  :: Align a T1w dset to a T2w dset, esp. as part of DWI processing and if incorporating FreeSurfer after
 4 :: fat_proc_axialize_anat   :: Attempt to align major viewing planes of anatomical with FOV, based on WB alignment to a reference vol
-1 :: @SSwarper                :: Skull-stripping program that uses a reference anatomical
-1 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
+5 :: @SSwarper                :: Skull-stripping program that uses a reference anatomical
+4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 1 :: @SUMA_AlignToExperiment  :: Align volume from FreeSurfer analysis to a different session's anatomical volume in order to warp surfaces similarly
 5 :: 3dQwarp                :: Align two datasets using nonlinear warping (relatedly, see @SSwarper, auto_warp.py, @toMNI_Qwarpar)
 1 :: 3dNwarpAdjust            :: Adjust a collection of nonlinear warps for template building (@toMNI_Qwarpar)
@@ -166,7 +168,7 @@
 1 :: 3drotate                :: Rigid body rotation of dataset in 3D
 1 :: 3dAnatNudge              :: (obsolete -> use align_epi_anat.py); try to align EPI and structural volumes automatically
 5 :: 3dAllineate             :: Cross-modality affine volume registration
-1 :: cat_matvec              :: Utility for combining linear affine transformation matrices (e.g., from 3dAllineate)
+3 :: cat_matvec              :: Utility for combining linear affine transformation matrices (e.g., from 3dAllineate)
 1 :: adwarp                  :: Transform dataset using warp from dataset header
 1 :: Vecwarp                 :: Transform 3-vectors using warp from dataset header
 1 :: 2dImReg                 :: Slice-by-slice registration (rigid body in 2D)
@@ -177,16 +179,20 @@
 1 :: @toMNI_Qwarpar          :: Make a group template - iterative nonlinear alignment
 1 :: uber_align_test.py      :: GUI for affine alignment with align_epi_anat.py
 1 :: unWarpEPI.py            :: Blip-up/down unwarping nonlinear alignment
-1 :: @Shift_Volume            :: Move origin of dataset by specified amount or shift between MNI and MNI_ANAT
+1 :: @Shift_Volume           :: Move origin of dataset by specified amount or shift between MNI and MNI_ANAT
+2 :: 3dCompareAffine         :: Measure the "distance" between 2 different affine spatial transformation matrices, for potential use in testing alignment software tools run in different environments
+2 :: 1dApar2Mat              :: Compute an affine spatial transformation matrix from the set of parameters output by '3dAllineate -1Dparam_save ...'. This code can be used to modify the matrix by altering the physically relevant parameters (e.g., scalings, shifts, rotations, shears), and could be combined with program cat_matvec, for example.
+3 :: epi_b0_correct.py       :: Performs B0 distortion correction along the phase encode (PE) direction, using an acquired frequency (phase) image; originally written by Vinai Roopchansingh
 
 
-++ 3 :: Update AFNI, install software (not demos)
+++ 3 :: Update AFNI, install software, check setup/info (not demos)
 1 :: @UpdateAfni                  :: (obsolete -> use @update.afni.binaries)
 5 :: @update.afni.binaries       :: Update current AFNI binaries
 4 :: rPkgsInstall                 :: Get+install all necessary R packages
 5 :: afni_system_check.py        :: Evaluate present setup
 1 :: @get.afni.version             :: Download an archived version of AFNI source code using github
 1 :: afni_vcheck                   :: Check if update needed (compare present and available version numbers)
+3 :: afni_check_omp          :: Returns one value, the number of OMP_NUM_THREADS set (for programs able to use multiple CPUs with OpenMP)
 
 
 ++ 2 :: Copy/convert/manipulate dsets
@@ -194,8 +200,6 @@
 1 :: 3dBRAIN_VOYAGERtoAFNI
 1 :: 3dAFNIto3D             :: Read image files, write AFNI format datasets
 1 :: 3dAFNItoANALYZE        :: Convert AFNI format dataset to ANALYZE format
-1 :: 3dAFNItoMINC           :: Convert AFNI format dataset to MINC format
-1 :: 3dMINCtoAFNI           :: Convert MINC format dataset to AFNI format
 1 :: 3dAFNItoNIFTI
 1 :: 3dAFNItoNIML
 1 :: 3dAFNItoRaw
@@ -296,7 +300,9 @@
 3 :: gen_group_command.py      :: Generate group analysis scripts
 4 :: gen_ss_review_scripts.py  :: Generate QC review scripts
 1 :: afni_restproc.py          :: (obsolete -> use afni_proc.py)
-
+2 :: apqc_make_tcsh.py         :: Program used by afni_proc.py to build QC HTML (this builds script to generate images+text)
+2 :: apqc_make_html.py         :: Program used by afni_proc.py to build QC HTML (this builds HTML pieces made by apqc_make_tcsh.py)
+4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
 
 ++ 4 :: SUMA surface calculations, formats and viewing
 1 :: Surf2VolCoord
@@ -341,7 +347,8 @@
 ++ 3 :: Make/edit correlation matrices
 1 :: @ROI_Corr_Mat           :: Make an NxN ROI correlation matrix of N ROIs (consider 3dNetCorr instead)
 4 :: 3dNetCorr               :: Calculate correlation matrix of a set of ROIs, as well as WB maps of each
-3 :: fat_mat_sel.py           :: Visualize functional correlation (*.netcc files) or tracted-WM property (*.grid file) matrices
+1 :: fat_mat_sel.py           :: (obsolete -> use fat_mat2d_plot.py)
+3 :: fat_mat2d_plot.py        :: Visualize functional correlation (*.netcc files) or tracted-WM property (*.grid file) matrices
 1 :: 3dErrtsCormat            :: Compute the correlation matrix for the residual (or error) time series in a dataset
 
 
@@ -357,6 +364,8 @@
 1 :: plugin(Gyrus Finder)    :: Interactively segment gray and white matter
 1 :: 3dClipLevel             :: Find value to threshold off outside-the-brain voxels
 3 :: 3dSeg                   :: Segment anatomical (t1w) volume into major brain tissue types
+4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
+4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 
 
 ++ 2 :: Dset histograms
@@ -447,11 +456,15 @@
 5 :: @GradFlipTest       :: Test what 'flip', if any, is necessary for gradients in a DWI set
 1 :: 1dDW_Grad_o_Mat          :: (obsolete -> use 1dDW_Grad_o_Mat++)
 5 :: 1dDW_Grad_o_Mat++    :: Perform calculations and conversions of DWI gradients and matrices
+3 :: 3dZipperZapper        :: Try to see if volumes (particularly DWI volumes) have dropout or severe motion; mostly stable, but somewhat in beta
+3 :: fat_proc_connec_vis   :: View volumetric output (WM connections/segments) from tractography, esp. the "3dTrackID -dump_rois .." output.
+2 :: convert_cdiflist_to_grads.py :: Convert of GE cdiflist to a more usable form (gradient file + file of b-values);  
 
 
 ++ 2 :: MVM modelling of (correlational or structural) matrices
 1 :: fat_lat_csv.py        :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
-1 :: fat_mat_sel.py        :: Plot matrices from 3dNetcorr (*.netcc) or 3dTrackID (*.grid) files
+1 :: fat_mat_sel.py           :: (obsolete -> use fat_mat2d_plot.py)
+3 :: fat_mat2d_plot.py        :: Plot matrices from 3dNetcorr (*.netcc) or 3dTrackID (*.grid) files
 1 :: fat_mvm_gridconv.py   :: Convert ooold 3dTrackID output *.grid files; should be unnecessary now
 3 :: fat_mvm_prep.py       :: Combine *.grid/*.netcc files with subject data in CSV files; for fat_mvm* modeling
 3 :: fat_mvm_review.py      :: (only beta)
@@ -498,6 +511,7 @@
 
 
 ++ 2 :: Download/install demos
+3 :: @Install_IBT_DATASETS          :: Install India Brain Templates (IBTs) and atlases (IBTAs), reference volumes across most of human life span for Indian population studies
 1 :: @Install_3dPFM_Demo
 1 :: @Install_AfniRetinoDemo
 1 :: @Install_ClustScat_Demo
@@ -511,6 +525,9 @@
 1 :: @Install_NIH_Marmoset          :: Install NIH Marmoset atlas and template
 1 :: @Install_RSFMRI_Motion_Group_Demo
 1 :: @Install_TSrestMovieDemo
+3 :: @Install_MACAQUE_DEMO          :: Install processing examples for task-based FMRI of macaque data, using @animal_warper and afni_proc.py (1 subject)
+3 :: @Install_MACAQUE_DEMO_REST     :: Install processing examples for resting state FMRI of macaque data, using @animal_warper and afni_proc.py (6 subjects)
+3 :: @Install_NMT                   :: Install NIMH Macaque Template (NMT) datasets (ver=2 is most recent) and CHARM and D99 atlases; can get both symmetric and asymmetric variants.
 
 
 ++ 3 :: Convert surfaces from other software
@@ -527,7 +544,8 @@
 
 
 ++ 3 :: Edit dsets: concatenate, split, add/remove slices
-1 :: 3dbucket          :: Assemble a bucket dataset from multiple input sub-bricks3dTcat
+1 :: 3dbucket          :: Assemble a bucket dataset from multiple input sub-bricks
+4 :: 3dTcat            :: Concatenate sub-bricks from input datasets into one big 3D+time dataset
 4 :: 3dZeropad         :: Add zero slices around the edges of a dataset
 1 :: 3dTsplit4D        :: Convert a 3D+time dataset into multiple 3D single-brick files
 3 :: 3dZcat            :: Assemble a 3D+time dataset from multiple input sub-bricks
@@ -564,7 +582,8 @@
 ++ 3 :: Convert statistics and p-values
 4 :: ccalc               :: A command line calculator (like 3dcalc)
 4 :: cdf                 :: Compute probabilities, thresholds for standard distributions
-4 :: p2dsetstat          :: Convert a p-value to a stat, using parameters stored in a dset header
+4 :: p2dsetstat          :: Convert a p-value to a stat, using parameters stored in a dset header (complement of dsetstat2p)
+3 :: dsetstat2p          :: Convert a stat to a p-value, using parameters stored in a dset header (complement of p2dsetstat)
 
 ++ 1 :: Miscellaneous utilities
 3 :: ccalc               :: A command line calculator (like 3dcalc)
@@ -573,7 +592,8 @@
 4 :: afni_history        :: Display a log of updates to AFNI code
 5 :: apsearch            :: Simple+approx string searching; used in atlases and helps
 1 :: byteorder           :: Report the byteorder of the current CPU
-2 :: @xyz_to_ijk         :: calculate (i, j, k) indices in a volume from (x, y, z) coordinates
+2 :: @xyz_to_ijk         :: Calculate (i, j, k) indices in a volume from (x, y, z) coordinates
+1 :: 1dsound             :: Create an audio file from a 1D file (= columns of numbers in ASCII format); fun but not very useful
 
 ++ 1 :: Miscellaneous visualization tools
 3 :: aiv                  :: AFNI Image Viewer program
@@ -599,9 +619,26 @@
 
 ++ 1 :: Supplemental/underlying programs (no desc needed)
 1 :: @global_parse   
-1 :: lib_afni1D.py
 1 :: afni_util.py
 1 :: 3dToyProg
+1 :: @djunct_4d_slices_to_3d_vol
+1 :: @djunct_anonymize
+1 :: @djunct_edgy_align_check
+1 :: @djunct_glue_imgs_vert
+1 :: @djunct_json_value.py
+1 :: @djunct_modal_smoothing_with_rep
+1 :: @djunct_montage_coordinator
+1 :: @djunct_slice_space
+1 :: @djunct_ssw_intermed_edge_imgs
+1 :: @djunct_vol_3slice_select
+1 :: adjunct_simplify_cost.py
+1 :: adjunct_combine_str.py
+1 :: adjunct_is_label.py
+1 :: adjunct_make_script_and_rst.py
+1 :: @suma_acknowledge
+1 :: @afni_refacer_make_master
+1 :: @afni_refacer_make_master_addendum
+1 :: @afni_refacer_make_onebigA12
 
 
 ++ 0 :: Unclassed
@@ -632,6 +669,7 @@
 1 :: 3dnoise
 1 :: 3dnvals
 1 :: 3dPFM
+1 :: 3dMEPFM
 1 :: 3dPolyfit
 1 :: 3dproject
 1 :: 3dretroicor
@@ -782,3 +820,7 @@
 1 :: Signatures.R
 1 :: smooth.R
 1 :: SpharmReco
+
+++ 0 :: Retired (no longer in the build)
+1 :: 3dAFNItoMINC           :: Convert AFNI format dataset to MINC format
+1 :: 3dMINCtoAFNI           :: Convert MINC format dataset to AFNI format
