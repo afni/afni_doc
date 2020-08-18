@@ -27,3 +27,18 @@ Making the RST file is a 2-step process:
        list_STYLED_NEW.txt                   \
        ../educational/classified_progs.rst
 
+# ----------------------------------------------------------------------
+
+The simple script 'do_compare_classified_and_curr_bins.tcsh' exists
+just to be run separately from time to time as a way of checking how
+if new programs are in the binary distribution that should be
+classified.  It also helps point out programs that might be classified
+but are no longer distributed.
+
+To run, no arguments are needed (though the location of the Classified
+text file list might need to be updated on a given computer):
+
+   tcsh do_compare_classified_and_curr_bins.tcsh
+
+It just produces a couple text files listing differences between
+current binary items and current classified items.
