@@ -74,6 +74,7 @@ Align/register/warp/axialize spatially                       ::  5 :: 3dWarpDriv
 Align/register/warp/axialize spatially                       ::  5 :: @align_partial_oblique              ::  1 :: Align (non-oblique) full- and partial-coverage T1w datasets; consider 3dQwarp instead.
 Align/register/warp/axialize spatially                       ::  5 :: @auto_align                         ::  1 :: (obsolete -> use align_epi_anat.py)
 Align/register/warp/axialize spatially                       ::  5 :: @SSwarper                           ::  1 :: Skull-stripping program that uses a reference anatomical
+Align/register/warp/axialize spatially                       ::  5 :: @animal_warper                      ::  1 :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 Align/register/warp/axialize spatially                       ::  5 :: @SUMA_AlignToExperiment             ::  1 :: Align volume from FreeSurfer analysis to a different session's anatomical volume in order to warp surfaces similarly
 Align/register/warp/axialize spatially                       ::  5 :: 3dNwarpAdjust                       ::  1 :: Adjust a collection of nonlinear warps for template building (@toMNI_Qwarpar)
 Align/register/warp/axialize spatially                       ::  5 :: 3dNwarpCalc                         ::  1 :: Carry out calculations on nonlinear warps
@@ -233,7 +234,10 @@ Make/edit ROIs and clusters, resample                        ::  3 :: 3dmerge   
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dclust                             ::  3 :: Find+report about clusters in a dataset (see 3dClusterize for a newer program with newer options and easier syntax)
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dUndump                            ::  3 :: Create a 3D dataset from text data; complements 3dmaskdump
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dROIMaker                          ::  3 :: Threshold and clusterize dataset, as well as inflate (esp. for tractography prep)
+Make/edit ROIs and clusters, resample                        ::  3 :: 3dExchange                          ::  3 :: Exchange values from one set of indices with another set
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dfractionize                       ::  2 :: Resample a mask to a different grid size
+Make/edit ROIs and clusters, resample                        ::  3 :: @ROI_modal_grow                     ::  2 :: Dilate regions iteratively by most common value within a neighborhod
+Make/edit ROIs and clusters, resample                        ::  3 :: @ROI_decluster                      ::  2 :: Remove small separate parts of region
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dExtrema                           ::  1 :: Find local extrema within volumes
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dmaxima                            ::  1 :: Find local extrema within volumes
 Make/edit ROIs and clusters, resample                        ::  3 :: 3dClustCount                        ::  1 :: Apply thresholds to dsets at various levels, and just count clusters of various sizes; used mainly for simulations.

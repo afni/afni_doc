@@ -15,7 +15,9 @@
 1 :: 3dExtrema           :: Find local extrema within volumes
 1 :: 3dmaxima            :: Find local extrema within volumes
 1 :: 3dClustCount        :: Apply thresholds to dsets at various levels, and just count clusters of various sizes; used mainly for simulations.
-
+3 :: 3dExchange          :: Exchange values from one set of indices with another set
+2 :: @ROI_modal_grow     :: Dilate regions iteratively by most common value within a neighborhod 
+2 :: @ROI_decluster      :: Remove small separate parts of region
 
 ++ 3 :: Simple dset calcs (-> make new dsets)
 5 :: 3dcalc              :: Voxel-by-voxel general purpose calculator
@@ -150,6 +152,7 @@
 4 :: fat_proc_align_anat_pair  :: Align a T1w dset to a T2w dset, esp. as part of DWI processing and if incorporating FreeSurfer after
 4 :: fat_proc_axialize_anat   :: Attempt to align major viewing planes of anatomical with FOV, based on WB alignment to a reference vol
 1 :: @SSwarper                :: Skull-stripping program that uses a reference anatomical
+1 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 1 :: @SUMA_AlignToExperiment  :: Align volume from FreeSurfer analysis to a different session's anatomical volume in order to warp surfaces similarly
 5 :: 3dQwarp                :: Align two datasets using nonlinear warping (relatedly, see @SSwarper, auto_warp.py, @toMNI_Qwarpar)
 1 :: 3dNwarpAdjust            :: Adjust a collection of nonlinear warps for template building (@toMNI_Qwarpar)
