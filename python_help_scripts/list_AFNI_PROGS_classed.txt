@@ -38,6 +38,11 @@
 1 :: 3dmatcalc           :: Applies matrix to datasets
 1 :: 3dmatmult           :: Multiply datasets as matrices
 
+++ 3 :: Region-wise group analysis
+3 :: MBA                 :: Matrix-Based Analysis.  MBA is for population-level analysis with matrix (e.g., correlation) data from each subject as input. Partial pooling is adopted through Bayesian multilevel (BML) modeling
+5 :: RBA                 :: Region-Based Analysis. RBA performs Bayesian multilevel (BML) modeling for a list of predefined ROIs. Instead of controlling for multiple testing in conventional population-level analysis, RBA borrows and calibrates the information across regions (see also BayesianGroupAna.py)
+5 :: BayesianGroupAna.py :: The Python version of RBA, for Bayesian multilevel (BML) modeling for a list of predefined ROIs (see also RBA)
+
 
 ++ 4 :: Compute various numbers from datasets
 3 :: 3dBrickStat         :: Simple statistics (max, min, mean) for scripts
@@ -107,6 +112,8 @@
 ++ 5 :: Voxelwise calcs, esp. stats and tests
 4 :: 3dMean                 :: Compute the average of a number of datasets
 5 :: 3dttest++               :: Compute voxelwise t-tests (and GLMs) across collection of datasets (see 3dMEMA for generalizing to include within-subjects variance in model)
+4 :: 3dICC                  :: Compute voxelwise IntraClass correlation (ICC) values. ICC computations are performed with one of the three types: ICC(1, 1), ICC(2,1) and ICC(3,1). Input can be either effect estimates only or effect estimates plus their t-statistics.
+4 :: 3dISC                  :: Compute voxelwise InterSubject Correlation (ISC).  ISCs are assessed for naturalistic data at the population through linear mixed-effects (LME) modeling.
 3 :: 3dGroupInCorr          :: With a group of dsets, calc voxelwise t-tests on group of corr maps wherever user clicks
 1 :: 3dSetupGroupInCorr     :: Preliminary program to run when using 3dGroupInCorr
 1 :: 3dClustSim             :: 3Monte Carlo simulation for multiple comparison correction
@@ -118,7 +125,8 @@
 1 :: 3dTfilter              :: Apply a linear filter to each voxel time series (archaic)
 1 :: 3dTsort                :: Sort each voxel’s time series in various ways
 5 :: 3dMVM                  :: Group-analysis program that performs traditional ANOVA- and ANCOVA style computations, and multivariate modeling
-5 :: 3dLME                  :: Group-analysis program that performs linear mixed-effects (LME) modeling analysis
+5 :: 3dLME                  :: Group-analysis program that performs linear mixed-effects (LME) modeling analysis (and see 3dLMEr)
+5 :: 3dLMEr                 :: Voxelwise Linear Mixed-Effects (LME) modeling. The linear mixed-effects modeling approach implemented in 3dLMEr is for population-level analysis, and is much more flexible than 3dLME. 
 5 :: 3dMEMA                 :: Group-analysis program that performs Mixed Effects Meta Analysis, modeling both within- and across-subjects variability
 1 :: 3dRank
 1 :: 3dRankizer
@@ -193,7 +201,7 @@
 1 :: @get.afni.version             :: Download an archived version of AFNI source code using github
 1 :: afni_vcheck                   :: Check if update needed (compare present and available version numbers)
 3 :: afni_check_omp          :: Returns one value, the number of OMP_NUM_THREADS set (for programs able to use multiple CPUs with OpenMP)
-
+4 :: @afni_R_package_install   :: Install the R packages required by some AFNI programs from the Linux terminal (see also rPkgsInstall).
 
 ++ 2 :: Copy/convert/manipulate dsets
 5 :: 3dcopy                 :: Copy a dataset to make new files
