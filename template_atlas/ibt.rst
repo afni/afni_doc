@@ -212,8 +212,8 @@ research, please cite:
    Krishna M, Basu D, Kalyanram K, Chakrabarti A, Orfanos DP, Barker
    GJ, Cox RW, Schumann G, Bharath RD, Benegal V (2020).  A series of
    five population-specific Indian brain templates and atlases
-   spanning ages 6 to 60 years.  bioRxiv 2020.05.08.077172;
-   doi:10.1101/2020.05.08.077172
+   spanning ages 6 to 60 years.  Hum Brain Mapp *(accepted)*.
+ | `<https://doi.org/10.1002/hbm.25182>`_
  | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
 
 

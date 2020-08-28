@@ -221,14 +221,15 @@ Citation/questions
 If you make use of the NMT v2 template or accompanying data in your
 research, please cite:
 
-   Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
-   (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
-   Atlas."  NeuroImage, submitted.
+   | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
+     (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
+     Atlas."  NeuroImage, submitted.
+   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
-   Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
-   Ungerleider L, Messinger A (2018). "A Population MRI Brain Template
-   and Analysis Tools for the Macaque." NeuroImage 170: 121–31.
-   `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
+   | Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
+     Ungerleider L, Messinger A (2018). "A Population MRI Brain Template
+     and Analysis Tools for the Macaque." NeuroImage 170: 121–31.
+   | `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
 
 | For questions, comments and/or suggestions, contact:
 | **Adam.Messinger@nih.gov**
