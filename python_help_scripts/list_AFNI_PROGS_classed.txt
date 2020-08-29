@@ -119,7 +119,9 @@
 3 :: 3dTcorr1D              :: Correlation coefficient between 3D+time dataset and 1D time series
 1 :: 3dTcorrelate           :: Compute correlation between two 3D+time datasets
 3 :: 3dTcorrMap             :: Compute average correlation of every voxel with every other
-1 :: 3dTfitter              :: Fit a linear model to each voxel time series, with various methods (L1, L2, LASSO)
+3 :: 3dTfitter              :: Fit a linear model to each voxel time series, with various methods (L1, L2, LASSO)
+3 :: 3dPFM                  :: Deconvolution analysis of fMRI voxel time series with L1 norm methods (LASSO, Dantzig Selector), akin to 3dTfitter but using a different procedure and algorithms
+3 :: 3dMEPFM                :: Deconvolution analysis of multi-echo fMRI voxel time series with L1 norm methods (LASSO), akin to 3dPFM
 1 :: 3dTfilter              :: Apply a linear filter to each voxel time series (archaic)
 1 :: 3dTsort                :: Sort each voxel’s time series in various ways
 5 :: 3dMVM                  :: Group-analysis program that performs traditional ANOVA- and ANCOVA style computations, and multivariate modeling
@@ -149,7 +151,7 @@
 1 :: auto_warp.py             :: wrapper for nonlinear warping with 3dQwarp
 1 :: @auto_tlrc               :: Automatic transformation of dataset to match Talairach template (rigid/12dof???)
 3 :: @Align_Centers           :: Align the center of a dataset to another
-4 :: afni_proc.py             :: Can wrap many registration operations
+4 :: afni_proc.py             :: Can wrap many registration operations (in addition to/as part of its FMRI processing pipeline generation)
 1 :: 3dWarp                   :: Non-rigid transformation of 3D coordinates
 1 :: 3dWarpDrive              :: Volumetric registration, includes warping (12DOF, linear affine); prob use 3dAllineate or align_epi_anat.py (???)
 3 :: @AddEdge                 :: Show two or more datasets with edges for alignment visualization
@@ -283,7 +285,7 @@
 ++ 5 :: Build FMRI pipelines
 1 :: uber_proc.py 
 2 :: uber_subject.py           :: Graphical interface to help set up an afni_proc.py command (probably just use -> afni_proc.py directly; uber_subject.py does not have full range of options that afni_proc.py has;  recommended to use afni_proc.py examples as a basis, instead)
-5 :: afni_proc.py            :: Generate tcsh script for processing single subject FMRI data
+5 :: afni_proc.py            :: Generate tcsh script for full processing (including QC) of single subject FMRI data--- it might just be your new best friend
 3 :: gen_group_command.py      :: Generate group analysis scripts
 4 :: gen_ss_review_scripts.py  :: Generate QC review scripts
 2 :: apqc_make_tcsh.py         :: Program used by afni_proc.py to build QC HTML (this builds script to generate images+text)
@@ -351,7 +353,7 @@
 1 :: 3dClipLevel             :: Find value to threshold off outside-the-brain voxels
 3 :: 3dSeg                   :: Segment anatomical (t1w) volume into major brain tissue types
 4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
-4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
+4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains (and directly combinable with afni_proc.py)
 
 
 ++ 2 :: Dset histograms
@@ -500,7 +502,7 @@
 4 :: @Install_FATCAT_DEMO2          :: Install newer FATCAT Demo for DTI processing with fat_proc programs (and including TORTOISE and FreeSurfer processing)
 3 :: @Install_FATMVM_DEMO          :: Install FATCAT+MVM statistical modeling demo, multivariate modeling in conjuction with tractography (also applies to correlation matrices such as from 3dNetCorr)
 1 :: @Install_InstaCorr_Demo        :: Install demo data for InstaCorr, instant correlation
-1 :: @Install_MEICA_Demo
+1 :: @Install_MEICA_Demo            :: Install the demo archive for P Kundu's MEICA denoising tools
 1 :: @Install_NIH_Marmoset          :: Install NIH Marmoset atlas and template
 1 :: @Install_RSFMRI_Motion_Group_Demo
 1 :: @Install_TSrestMovieDemo
@@ -541,6 +543,14 @@
 1 :: make_stim_times.py       :: Convert 0/1 stim file format to stim times format
 1 :: RSFgen                 :: (obsolete -> use make_random_timing.py)
 1 :: stimband
+
+
+++ 2 :: Interact with multi-echo data
+5 :: afni_proc.py       :: Generate FMRI processing pipelines, including for multi-echo FMRI data; can use several methods for combining echoes, such as optimally combined (via @compute_OC_weights) and tedana.py, as well as others
+2 :: @compute_OC_weights :: Compute optimally combined weights dataset
+1 :: meica.py             ::
+3 :: 3dMEPFM                :: Deconvolution analysis of multi-echo fMRI voxel time series with L1 norm methods (LASSO), akin to 3dPFM
+1 :: @Install_MEICA_Demo   :: Install the demo archive for P Kundu's MEICA denoising tools
 
 
 ++ 2 :: Miscellaneous file manipulations 
@@ -644,8 +654,6 @@
 1 :: 3dMSE
 1 :: 3dMultiThresh
 1 :: 3dnvals
-1 :: 3dPFM
-1 :: 3dMEPFM
 1 :: 3dPolyfit
 1 :: 3dretroicor
 1 :: 3dSignatures
@@ -712,7 +720,6 @@
 1 :: inspec
 1 :: @make_plug_diff
 1 :: make_pq_script.py
-1 :: meica.py
 1 :: module_test_lib.py
 1 :: mycat
 1 :: myget
