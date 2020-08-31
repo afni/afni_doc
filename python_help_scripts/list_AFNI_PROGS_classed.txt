@@ -184,7 +184,7 @@
 1 :: unWarpEPI.py            :: Blip-up/down unwarping nonlinear alignment
 1 :: @Shift_Volume           :: Move origin of dataset by specified amount or shift between MNI and MNI_ANAT
 2 :: 3dCompareAffine         :: Measure the "distance" between 2 different affine spatial transformation matrices, for potential use in testing alignment software tools run in different environments
-2 :: 1dApar2Mat              :: Compute an affine spatial transformation matrix from the set of parameters output by '3dAllineate -1Dparam_save ...'. This code can be used to modify the matrix by altering the physically relevant parameters (e.g., scalings, shifts, rotations, shears), and could be combined with program cat_matvec, for example.
+2 :: 1dApar2mat              :: Compute an affine spatial transformation matrix from the set of parameters output by '3dAllineate -1Dparam_save ...'. This code can be used to modify the matrix by altering the physically relevant parameters (e.g., scalings, shifts, rotations, shears), and could be combined with program cat_matvec, for example.
 3 :: epi_b0_correct.py       :: Performs B0 distortion correction along the phase encode (PE) direction, using an acquired frequency (phase) image; originally written by Vinai Roopchansingh
 
 
