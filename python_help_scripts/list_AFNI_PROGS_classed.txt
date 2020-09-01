@@ -143,6 +143,7 @@
 1 :: 3dRegAna               :: Voxel-wise linear regression analyses
 1 :: 3dPval              :: Convert each statistical value in a dataset (e.g., t-statistic) to a p-value
 1 :: 3dNormalityTest     :: Tests the input values at each voxel for normality, using the Anderson-Darling method
+2 :: 3dSpaceTimeCorr     :: Calculate the following for 2 dsets on the same grid: for each voxel in grid, calculate correlation map in each dset, and then correlate those spatial maps; store that correlation value at that location.  A way to look at similarity of correlation across, say, resting state datasets, perhaps.
 
 
 ++ 5 :: Align/register/warp/axialize spatially
@@ -430,7 +431,6 @@
 5 :: fat_proc_decmap             :: Make a directionally-encoded color map of DTI data.
 5 :: fat_proc_dwi_to_dt          :: Wrapper to estimate DT and parameters, and align datasets.
 5 :: fat_proc_filter_dwis       :: Graphical interface to help user select out bad volumes (esp. from DWI dataset)
-5 :: fat_proc_grad_plot         :: In progress...
 5 :: fat_proc_imit2w_from_t1w   :: Invert a T1w dataset to imitate a T2w-type contrast dset (as a backup ref for DWI processing with TORTOISE)
 5 :: fat_proc_map_to_dti        :: Wrapper to bring data (esp. FS surfaces and parcels) into DTI space
 5 :: fat_proc_select_vols       :: Select out good valumes in a DWI dataset + associated text files
@@ -446,12 +446,10 @@
 
 
 ++ 2 :: MVM modelling of (correlational or structural) matrices
-1 :: fat_lat_csv.py        :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
 1 :: fat_mat_sel.py           :: (obsolete -> use fat_mat2d_plot.py)
 3 :: fat_mat2d_plot.py        :: Plot matrices from 3dNetcorr (*.netcc) or 3dTrackID (*.grid) files
 1 :: fat_mvm_gridconv.py   :: Convert ooold 3dTrackID output *.grid files; should be unnecessary now
 3 :: fat_mvm_prep.py       :: Combine *.grid/*.netcc files with subject data in CSV files; for fat_mvm* modeling
-3 :: fat_mvm_review.py      :: (only beta)
 3 :: fat_mvm_scripter.py    :: Read in a data table file (esp. from fat_mvm_prep.py) and build 3dMVM command
 
 
@@ -548,7 +546,7 @@
 ++ 2 :: Interact with multi-echo data
 5 :: afni_proc.py       :: Generate FMRI processing pipelines, including for multi-echo FMRI data; can use several methods for combining echoes, such as optimally combined (via @compute_OC_weights) and tedana.py, as well as others
 2 :: @compute_OC_weights :: Compute optimally combined weights dataset
-1 :: meica.py             ::
+1 :: meica.py             :: P Kundu's MEICA denoising tools
 3 :: 3dMEPFM                :: Deconvolution analysis of multi-echo fMRI voxel time series with L1 norm methods (LASSO), akin to 3dPFM
 1 :: @Install_MEICA_Demo   :: Install the demo archive for P Kundu's MEICA denoising tools
 
@@ -603,6 +601,7 @@
 3 :: 3dReHo              :: Calculate ReHo (Kendall's coefficient of concordance) for time series
 3 :: 3dLombScargle       :: Calculate amp/pow spectrum (like FFT) along time axis with missing time points
 3 :: 3dAmpToRSFC         :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) from 3dLombScargle output
+2 :: 3dSpaceTimeCorr     :: Calculate the following for 2 dsets on the same grid: for each voxel in grid, calculate correlation map in each dset, and then correlate those spatial maps; store that correlation value at that location.  A way to look at similarity of correlation across, say, resting state datasets, perhaps.
 
 
 ++ 1 :: Supplemental/underlying programs (no desc needed)
@@ -657,7 +656,6 @@
 1 :: 3dPolyfit
 1 :: 3dretroicor
 1 :: 3dSignatures
-1 :: 3dSpaceTimeCorr
 1 :: 3dSpatNorm
 1 :: 3dStatClust
 1 :: 3dsvm
@@ -839,3 +837,6 @@
 1 :: sqwave                 :: Generate a square wave (a very old program)
 1 :: Xphace                 :: 
 1 :: FD2                    :: 
+1 :: fat_lat_csv.py        :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
+1 :: fat_mvm_review.py      :: (only beta)
+1 :: fat_proc_grad_plot     :: (to be) replaced by newer version
