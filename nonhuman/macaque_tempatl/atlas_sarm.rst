@@ -22,7 +22,7 @@ Here we present the Subcortical Atlas of the Rhesus Macaque
 
 
 Contents
-^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 Digitized anatomical atlases are crucial for examining brain structure 
 and the functional networks identified by magnetic resonance imaging 
@@ -53,7 +53,7 @@ following image.
 
 
 Example images
-^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 The following images were made using the symmetric NMT v2 template (with
 “standard” spatial resolution = 0.25 mm, and FOV for the SARM atlas) and 
@@ -128,7 +128,7 @@ available here:* :download:`do_view_sarm.tcsh
 <media/sarm/do_view_sarm.tcsh>`.
 
 Download
-^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 The SARM is distributed as part of the NMT v2 download. For each
 form/variant of the NMT, there is a matching SARM dataset, as well.
@@ -143,7 +143,7 @@ To download and unpack the datasets, please see the instructions\.\.\.
 
 
 Citation/questions
-^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 If you make use of the SARM in your research, please cite:
 

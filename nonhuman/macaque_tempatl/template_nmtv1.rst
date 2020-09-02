@@ -174,9 +174,9 @@ research, please cite:
    Atlas."  NeuroImage, submitted.
 
 | For questions, comments and/or suggestions, contact:
-| **Adam.Messinger@nih.gov**
-| **benjamin.jung@nih.gov**
-| **glend@mail.nih.gov**.
+| **Adam.Messinger @ nih.gov**
+| **benjamin.jung @ nih.gov**
+| **glend @ mail.nih.gov**
 
 |
 
