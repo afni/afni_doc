@@ -232,6 +232,6 @@ research, please cite:
    | `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
 
 | For questions, comments and/or suggestions, contact:
-| **Adam.Messinger@nih.gov**
-| **benjamin.jung@nih.gov**
-| **glend@mail.nih.gov**.
+| **Adam.Messinger @ nih.gov**
+| **benjamin.jung @ nih.gov**
+| **glend @ mail.nih.gov**

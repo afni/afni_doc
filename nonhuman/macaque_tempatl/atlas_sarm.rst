@@ -63,7 +63,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 1)
+   * - NMT underlay with the SARM (level 1) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL1.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL1.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL1.sag.png
@@ -74,7 +74,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 2)
+   * - NMT underlay with the SARM (level 2) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL2.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL2.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL2.sag.png
@@ -85,7 +85,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 3)
+   * - NMT underlay with the SARM (level 3) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL3.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL3.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL3.sag.png
@@ -96,7 +96,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 4)
+   * - NMT underlay with the SARM (level 4) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL4.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL4.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL4.sag.png
@@ -107,7 +107,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 5)
+   * - NMT underlay with the SARM (level 5) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL5.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL5.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL5.sag.png
@@ -118,7 +118,7 @@ accompanying SARM.
    :header-rows: 1
    :widths: 100 
 
-   * - Skull-stripped NMT with the SARM (level 6)
+   * - NMT underlay with the SARM (level 6) overlaid
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL6.axi.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL6.cor.png
    * - .. image:: media/sarm/img_nmt2.0symss_sarmL6.sag.png
@@ -155,5 +155,5 @@ For questions, comments and/or suggestions, contact:
 | **henry.evrard @ tuebingen.mpg.de**
 | **renee.hartig @ tuebingen.mpg.de**
 | **adam.messinger @ nih.gov**
-| **glend @ mail.nih.gov**.
+| **glend @ mail.nih.gov**
 
