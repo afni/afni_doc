@@ -170,7 +170,7 @@ available here:* :download:`do_view_nmt_v2.0_sym.tcsh
 .. _nh_macaque_template_nmtv2_sym_dl:
 
 Download symmetric NMT v2 datasets
------------------------------------^^^^^^^^^^^^^^^
+-----------------------------------
 
 You can download and unpack the **symmetric variant/form** of the NMT
 v2 in any of the following ways:
@@ -192,7 +192,7 @@ v2 in any of the following ways:
 .. _nh_macaque_template_nmtv2_asym_dl:
 
 Download asymmetric NMT v2 datasets
------------------------------------^^^^^^^^^^^^^^^^
+-----------------------------------
 
 You can download and unpack the **asymmetric variant/form** of the NMT
 v2 in any of the following ways:
