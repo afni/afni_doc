@@ -147,8 +147,8 @@ Citation/questions
 
 If you make use of the SARM in your research, please cite:
 Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G, Garza-Villarreal EA, 
-Messinger A, Evrard C (2020). “SSubcortical Atlas of the Rhesus Macaque 
-SARM) for Magnetic Resonance Imaging.” NeuroImage, submitted.
+Messinger A, Evrard C (2020). “Subcortical Atlas of the Rhesus Macaque 
+(SARM) for Magnetic Resonance Imaging.” NeuroImage, submitted.
 For questions, comments and/or suggestions, contact:
 
 | For questions, comments and/or suggestions, contact:
