@@ -28,7 +28,7 @@ Here we present the Cortical Hierarchy Atlas of the Rhesus Macaque
 
 
 Contents
-^^^^^^^^^^^^^^^^^^^
+------------------
 
 The CHARM parcellates the macaque cortex at six spatial scales. The
 finest level is based on the D99 atlas, while the broadest level forms
@@ -69,7 +69,7 @@ following image.
 
 
 Example images
-^^^^^^^^^^^^^^^^^^^
+------------------
 
 The following images were made using the symmetric NMT v2 template
 (with "standard" spatial resolution = 0.25 mm, and FOV = brain volume)
@@ -144,7 +144,7 @@ available here:* :download:`do_view_charm.tcsh
 <media/charm/do_view_charm.tcsh>`.
 
 Download
-^^^^^^^^^^^^^^^^^^^
+------------------
 
 The CHARM is distributed as part of the NMT v2 download. For each
 form/variant of the NMT, there is a matching CHARM dataset, as well.
@@ -159,7 +159,7 @@ To download and unpack the datasets, please see the instructions\.\.\.
 
 
 Citation/questions
-^^^^^^^^^^^^^^^^^^^
+------------------
 
 If you make use of the CHARM and/or accompanying NMT v2 data in your
 research, please cite:
@@ -177,7 +177,7 @@ research, please cite:
 
 
 | For questions, comments and/or suggestions, contact:
-| **Adam.Messinger@nih.gov**
-| **benjamin.jung@nih.gov**
-| **glend@mail.nih.gov**.
+| **Adam.Messinger @ nih.gov**
+| **benjamin.jung @ nih.gov**
+| **glend @ mail.nih.gov**.
  

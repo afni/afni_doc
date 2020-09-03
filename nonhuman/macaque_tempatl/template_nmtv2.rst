@@ -23,7 +23,7 @@ Atlas of the Rhesus Macaque)* dataset, described
 
 
 Contents
-^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 There are both symmetric and asymmetric "variants" for the NMT v2. 
 
@@ -119,7 +119,7 @@ in the "low-res" and "full-head" directories):
 |
 
 Example images
-^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. list-table::
    :header-rows: 1
@@ -170,7 +170,7 @@ available here:* :download:`do_view_nmt_v2.0_sym.tcsh
 .. _nh_macaque_template_nmtv2_sym_dl:
 
 Download symmetric NMT v2 datasets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 You can download and unpack the **symmetric variant/form** of the NMT
 v2 in any of the following ways:
@@ -192,7 +192,7 @@ v2 in any of the following ways:
 .. _nh_macaque_template_nmtv2_asym_dl:
 
 Download asymmetric NMT v2 datasets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 You can download and unpack the **asymmetric variant/form** of the NMT
 v2 in any of the following ways:
@@ -216,7 +216,7 @@ v2 in any of the following ways:
 
 
 Citation/questions
-^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 If you make use of the NMT v2 template or accompanying data in your
 research, please cite:
@@ -232,6 +232,6 @@ research, please cite:
    | `<https://doi.org/10.1016/j.neuroimage.2017.04.063>`_.
 
 | For questions, comments and/or suggestions, contact:
-| **Adam.Messinger@nih.gov**
-| **benjamin.jung@nih.gov**
-| **glend@mail.nih.gov**.
+| **Adam.Messinger @ nih.gov**
+| **benjamin.jung @ nih.gov**
+| **glend @ mail.nih.gov**
