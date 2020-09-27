@@ -488,7 +488,8 @@ days...), then please check out:
 
 For papers discussing global signal regression (GSR), and several
 reasons why not to do it (note: there are many other papers by other
-groups that show this as well...), please check out/reference:
+groups that show this as well...), as well as the proposal to use GCOR
+as an alternative, please check out/reference:
 
 * | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
     Trouble at Rest: How Correlation Patterns and Group Differences
@@ -496,7 +497,8 @@ groups that show this as well...), please check out/reference:
     Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
   | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
 
-* | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
+* | **Comment:** this is the "GCOR" (global correlation) parameter paper:
+  | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
     Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
     Brain Connectivity, 3(4):339-352. doi: 10.1089/brain.2013.0156
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
