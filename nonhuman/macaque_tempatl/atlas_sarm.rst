@@ -130,17 +130,40 @@ available here:* :download:`do_view_sarm.tcsh
 Download
 ----------------------------------
 
-The SARM is distributed as part of the NMT v2 download. For each
-form/variant of the NMT, there is a matching SARM dataset, as well.
+The SARM is distributed as part of the NMT v2 download using @Install_NMT
+(See the instructions for the NMT installation below).
 
-To download and unpack the datasets, please see the instructions\.\.\.
+The SARM atlas is available only in the symmetric NMT space.
+
+To download and unpack the datasets together with the NMT template and atlases,
+please see these instructions\.\.\.
 
 * \.\.\. here for the **symmetric** form:
   :ref:`nh_macaque_template_nmtv2_sym_dl`
 
-* \.\.\. here for the **asymmetric** form:
-  :ref:`nh_macaque_template_nmtv2_asym_dl`
+You may download the SARM datasets separately, from the AFNI website
+using the links below.
+* *(the plain Linux-y terminal way)* **copy+paste**::
 
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/SARM/SARM.tgz
+    tar -xvf SARM.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/SARM/SARM.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
+
+AFNI environment variables
+----------------------------------
+
+The @Install_NMT script automatically adds AFNI environment variables to use
+the SARM atlas, but these can beThese variables can be configured in your .afnirc
+file in your home directory to take advantage of the SARM atlas for "whereami",
+"Show atlas colors" and "Go to atlas location" in the AFNI GUI:
+
+| AFNI_SUPP_ATLAS_DIR = directory_where_you_have_installed_atlas/SARM
+| AFNI_ATLAS_COLORS = SARM
+| AFNI_WHEREAMI_DEC_PLACES = 2
 
 Citation/questions
 ----------------------------------
@@ -149,6 +172,7 @@ If you make use of the SARM in your research, please cite:
 Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G, Garza-Villarreal EA, 
 Messinger A, Evrard C (2020). “Subcortical Atlas of the Rhesus Macaque 
 (SARM) for Magnetic Resonance Imaging.” NeuroImage, submitted.
+Prepress link: `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1>`
 
 For questions, comments and/or suggestions, contact:
 
