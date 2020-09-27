@@ -164,9 +164,9 @@ Citation/questions
 If you make use of the CHARM and/or accompanying NMT v2 data in your
 research, please cite:
 
-   | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
-     (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
-     Atlas."  NeuroImage, submitted.
+   | Jung, B., Taylor, P.A., Seidlitz, J., Sponheim, C., Perkins P.,
+     Ungerleider, L.G., Glen, D., Messinger, A. (2020)  "A comprehensive
+     macaque fMRI pipeline and hierarchical atlas." NeuroImage, submitted.
    | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
    | Reveley C, Gruslys A, Ye FQ, Glen D, Samaha J, E Russ B, Saad Z, K
