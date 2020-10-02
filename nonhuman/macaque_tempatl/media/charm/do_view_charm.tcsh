@@ -2,6 +2,12 @@
 
 # make images of some of the NMT v2 sym ("standard") data
 
+# Example of running, in this case from the from the afni_doc tree
+# (~/afni_doc/nonhuman/macaque_tempatl/media/charm):
+#
+#    tcsh do_view_charm.tcsh ~/PROJECTS/nmt/NMT_v2.0_sym/NMT_v2.0_sym .
+
+
 set data_dir = $1          # input dir, where the data is
 set img_dir  = $2          # output dir, for images to go
 
