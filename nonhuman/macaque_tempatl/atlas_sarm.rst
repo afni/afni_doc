@@ -168,13 +168,13 @@ file in your home directory to take advantage of the SARM atlas for "whereami",
 Citation/questions
 ----------------------------------
 
-If you make use of the SARM in your research, please cite:
-Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G, Garza-Villarreal EA, 
-Messinger A, Evrard C (2020). “Subcortical Atlas of the Rhesus Macaque 
-(SARM) for Magnetic Resonance Imaging.” NeuroImage, submitted.
-Prepress link: `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1>`
+If you make use of the SARM in your research, please cite: 
 
-For questions, comments and/or suggestions, contact:
+  | Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G,
+    Garza-Villarreal EA, Messinger A, Evrard C (2020). "Subcortical
+    Atlas of the Rhesus Macaque (SARM) for Magnetic Resonance
+    Imaging." NeuroImage, submitted.
+  | `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1>`_
 
 | For questions, comments and/or suggestions, contact:
 | **henry.evrard @ tuebingen.mpg.de**
