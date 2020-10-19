@@ -176,6 +176,15 @@ region-based analysis with the ``RBA`` program, please cite:
     17(4):515-545. doi:10.1007/s12021-018-9409-6
   | `<https://pubmed.ncbi.nlm.nih.gov/30649677/>`_
 
+If you adopt the trial-level modeling approach at the subject level
+followed by multilevel modeling (Bayesian, of course) at the
+population level, please cite:
+ 
+* | Chen G, Padmala S, Chen Y, Taylor PA, Cox RW, Pessoa L (2020). To
+    pool or not to pool: Can we ignore cross-trial variability in
+    FMRI?  NeuroImage (in press).
+  | `<https://www.biorxiv.org/content/10.1101/2020.05.19.102111v1>`_
+ 
 If you use IntraClass Correlation (ICC) methods within AFNI via
 ``3dICC``, please cite:
 
