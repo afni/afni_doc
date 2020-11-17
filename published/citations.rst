@@ -180,9 +180,10 @@ If you adopt the trial-level modeling approach at the subject level
 followed by multilevel modeling (Bayesian, of course) at the
 population level, please cite:
  
-* | Chen G, Padmala S, Chen Y, Taylor PA, Cox RW, Pessoa L (2020). To
+* | Chen G, Padmala S, Chen Y, Taylor PA, Cox RW, Pessoa L (2021). To
     pool or not to pool: Can we ignore cross-trial variability in
-    FMRI?  NeuroImage (in press).
+    FMRI?  NeuroImage 225:117496.
+  | `<https://doi.org/10.1016/j.neuroimage.2020.117496>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.05.19.102111v1>`_
  
 If you use IntraClass Correlation (ICC) methods within AFNI via
@@ -574,8 +575,8 @@ using a new  AFNI tool called ``make_template_dask.py``:
     Krishna M, Basu D, Kalyanram K, Chakrabarti A, Orfanos DP, Barker
     GJ, Cox RW, Schumann G, Bharath RD, Benegal V (2020).  A series of
     five population-specific Indian brain templates and atlases
-    spanning ages 6 to 60 years.  Hum Brain Mapp *(accepted)*.
-  | `<https://doi.org/10.1002/hbm.25182>`_
+    spanning ages 6 to 60 years.  Hum Brain Mapp 41(18):5164-5175.
+  | `<https://onlinelibrary.wiley.com/doi/10.1002/hbm.25182>`_
   | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
 
 *Marmoset atlas v2.* This project provides some of the highest
