@@ -56,22 +56,22 @@ AFNI project using the CMake build system. This build system offers
 several advantages some of which are:
 
 -   Parallel builds can be performed greatly accelerating build time (at
-    > least an order of magnitude if you have the CPUs)
+     least an order of magnitude if you have the CPUs)
 
 -   One build to rule them all... it configures itself for Linux or Mac
-    > systems so you don't have to tweak it for your specific system.
-    > This works for Clang, icc,gcc (the latter most frequently used)
+     systems so you don't have to tweak it for your specific system.
+     This works for Clang, icc,gcc (the latter most frequently used)
 
 -   Dependency management: as part of the previous point, you can detect
-    > and build against dependencies on your system. Alternatively you
-    > can specify CMake options to directly download, build, and install
-    > dependencies from source
+     and build against dependencies on your system. Alternatively you
+     can specify CMake options to directly download, build, and install
+     dependencies from source
 
 -   Shared object linking: CMake manages shared object linking (linking
-    > against .so or .dylib files) in a robust way. Depending on whether
-    > you have a build directory or have installed the software, the
-    > rpath of all binaries is set appropriately to link against all
-    > dependencies.
+     against .so or .dylib files) in a robust way. Depending on whether
+     you have a build directory or have installed the software, the
+     rpath of all binaries is set appropriately to link against all
+     dependencies.
 
  
 
