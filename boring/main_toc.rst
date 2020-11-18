@@ -13,4 +13,5 @@ RST, and ZZZZZzzzzzzz.......
 
    ContributeDocs/ContributeDocs
    Coding/Writing_Help
+   BuildingWithCMake/build_docs
 

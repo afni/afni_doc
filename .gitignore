@@ -7,3 +7,4 @@ programs/programs.rst
 SUMA/media/*Cont.auto.*jpg
 SUMA/auto_inc/*.inc
 .DS_Store
+boring/BuildingWithCMake/build_docs.rst

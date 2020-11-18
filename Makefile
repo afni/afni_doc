@@ -19,6 +19,14 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
+# pandoc required for some dev docs written in Markdown
+ifeq ($(shell which pandoc >/dev/null 2>&1; echo $$?), 1)
+$(error The pandoc command was not found. Make sure you have it installed.)
+endif
+
+# List dev docs required
+DEVDOCS = boring/BuildingWithCMake/build_docs.rst
+
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
 
 help:
@@ -49,7 +57,7 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-html:
+html: $(DEVDOCS)
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -175,3 +183,7 @@ pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+
+
+boring/BuildingWithCMake/build_docs.rst: boring/BuildingWithCMake/build_docs.md
+	pandoc boring/BuildingWithCMake/build_docs.md -o boring/BuildingWithCMake/build_docs.rst

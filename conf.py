@@ -62,6 +62,7 @@ extensions = [
     'sphinx.ext.todo',
     'cloud_sptheme.ext.table_styling',
     'sphinxcontrib.programoutput',
+    'sphinx.ext.doctest',
     'hidden_code_block'
 ]
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
