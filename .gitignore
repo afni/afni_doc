@@ -7,3 +7,10 @@ programs/programs.rst
 SUMA/media/*Cont.auto.*jpg
 SUMA/auto_inc/*.inc
 .DS_Store
+___build.log
+__pycache__
+programs
+python_help_scripts/test
+.R.Rout
+testoutput
+autogen*
