@@ -23,7 +23,7 @@ Welcome to AFNI's documentation!
    nonhuman/main_toc
    tutorials/main_toc
    demos/main_toc
-   boring/main_toc
+   devdocs/main_toc
    published/main_toc
    contributors/main_toc
    glossary

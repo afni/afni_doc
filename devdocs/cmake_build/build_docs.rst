@@ -1,4 +1,4 @@
-.. _boring_cmake:
+.. _devdocs_cmake:
 
 Cmake for AFNI - making AFNI is a piece of C(m)ake
 ==================================================
@@ -33,7 +33,7 @@ several advantages some of which are:
    dependencies.
 
 
-.. _boring_cmake_quickstart:
+.. _devdocs_cmake_quickstart:
 
 Quickstart
 ----------
@@ -61,7 +61,7 @@ build system <boring_cmake_ninja>`__.
 For a more comprehensive overview see the `Section: Basic approach to
 building and installing <boring_cmake_basic_approach>`__.
 
-.. _boring_cmake_install_dev:
+.. _devdocs_cmake_install_dev:
 
 Installation of development dependencies
 ----------------------------------------
@@ -101,7 +101,7 @@ testing: `github.com/afni/.circleci/config.yml
 `github.com/afni/.docker/afni_dev_base.dockerfile
 <https://github.com/afni/afni/blob/master/.docker/afni_dev_base.dockerfile>`__
 
-.. _boring_cmake_basic_approach:
+.. _devdocs_cmake_basic_approach:
 
 Basic approach to building and installing
 -----------------------------------------
@@ -110,7 +110,7 @@ Cmake detects all of the details of your system and then generate a
 build system (for example it will write Make files) that can
 subsequently be executed.
 
-.. _boring_cmake_config:
+.. _devdocs_cmake_config:
 
 Configuring cmake
 ~~~~~~~~~~~~~~~~~
@@ -121,7 +121,7 @@ checking that required compiler properties and other dependencies are
 acceptable on the system. The most common errors at this point would be
 that you do not have a dependency installed.
 
-.. _boring_cmake_gen:
+.. _devdocs_cmake_gen:
 
 Generating a build system
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,7 +131,7 @@ to generate a build system. This consists of writing a set of build
 files (for example Make files) to the build directory that will execute
 on the current host.
 
-.. _boring_cmake_exec:
+.. _devdocs_cmake_exec:
 
 Executing a build
 ~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ typing something like
 
    ./targets_built/afni
 
-.. _boring_cmake_ninja:
+.. _devdocs_cmake_ninja:
 
 The ninja build system
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -175,7 +175,7 @@ can be fixed using the -j flag to tell ninja to set the number of
 threads used for the build. The optimal number of threads to use can
 be figured out through experimentation.
 
-.. _boring_cmake_install:
+.. _devdocs_cmake_install:
 
 Installation
 ~~~~~~~~~~~~
@@ -198,7 +198,7 @@ Using **tcsh**:
    setenv DESTDIR local_install_dir
    make install
 
-.. _boring_cmake_use:
+.. _devdocs_cmake_use:
 
 Using an installation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -222,7 +222,7 @@ are not available following a build but they are available after an
 install). If you observe any behavior that deviates from a standard AFNI
 install please raise an issue on github.
 
-.. _boring_cmake_mod_targ:
+.. _devdocs_cmake_mod_targ:
 
 Modifying targets in the cmake build
 ------------------------------------
@@ -230,7 +230,7 @@ Modifying targets in the cmake build
 This section is for when you have added a new software tool and you wish
 to incorporate it into the cmake build.
 
-.. _boring_cmake_add_targ:
+.. _devdocs_cmake_add_targ:
 
 Adding new targets
 ------------------
@@ -264,7 +264,7 @@ Once you have correctly added a new target you will have to consider
 updating the list of expected targets (see `Section: List of expected
 targets <boring_cmake_other_det_targs>`__)
 
-.. _boring_cmake_link_targ:
+.. _devdocs_cmake_link_targ:
 
 Linking against targets
 -----------------------
@@ -293,7 +293,7 @@ could consider using:
 
    target_link_libraries(B PUBLIC A)
 
-.. _boring_cmake_link_ext:
+.. _devdocs_cmake_link_ext:
 
 Linking against external software
 ---------------------------------
@@ -337,7 +337,7 @@ avoided are:
 - Not adding the appropriate code to find the dependency before you
   use it.
 
-.. _boring_cmake_repr_targ:
+.. _devdocs_cmake_repr_targ:
 
 Representing targets as variables (bad)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -354,7 +354,7 @@ your part-- or the variable doesn't exist they expand to nothing, you
 link incorrectly, you have a slightly confusing error in linking
 (missing symbol) or a missing header when you try to include it.
 
-.. _boring_cmake_no_find:
+.. _devdocs_cmake_no_find:
 
 Not using a find module for dependencies (bad)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,12 +377,12 @@ advantage of the convenient encapsulation of all of the details that
 are handled under the hood by the metadata associated with cmakes
 targets.
 
-.. _boring_cmake_other:
+.. _devdocs_cmake_other:
 
 Other details
 -------------
 
-.. _boring_cmake_other_troubshoot:
+.. _devdocs_cmake_other_troubshoot:
 
 Troubleshooting missing dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -412,7 +412,7 @@ main issue would be that some software is in fact installed on the
 system but it is not detected. This is would be a bug in the cmake
 system and should be fixed.
 
-.. _boring_cmake_other_det_targs:
+.. _devdocs_cmake_other_det_targs:
 
 Details of the expected targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -443,7 +443,7 @@ that of category 2 and an error occurs if the two lists do not match. 3
 is compared to 1 and a report of the differences are detailed in the
 cmake output to help determine divergence in the two build systems.
 
-.. _boring_cmake_other_run_test:
+.. _devdocs_cmake_other_run_test:
 
 Running tests
 ^^^^^^^^^^^^^^
@@ -479,7 +479,7 @@ from a full AFNI installation (as in tcsh, R, and python executables are
 installed into bin but they do not get copied into the build output
 directory).
 
-.. _boring_cmake_other_refs:
+.. _devdocs_cmake_other_refs:
 
 Essential references
 ^^^^^^^^^^^^^^^^^^^^
@@ -503,7 +503,7 @@ Testing documentation is `at this link
 <https://docs.google.com/document/d/1j8DxfA215sxC77Spcn_Ap0Xd8QYY3CBFCeL6jkxA-RU/edit>`__.
 
 
-.. _boring_cmake_other_ex:
+.. _devdocs_cmake_other_ex:
 
 Examples
 ^^^^^^^^^^
