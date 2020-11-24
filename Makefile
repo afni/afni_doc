@@ -62,7 +62,10 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-html: $(DEVDOCS)
+html_with_devdocs: $(DEVDOCS) html
+	@echo success
+
+html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
