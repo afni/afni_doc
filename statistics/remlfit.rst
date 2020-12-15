@@ -121,22 +121,22 @@ method. I used a study which had already been run with
 
   .. code-block:: none
 
-     3dDeconvolve
-       -input pb01.sub-10697.r01.tshift+orig.HEAD 
-       -censor censor_sub-10697_combined_2.1D
-       -polort 4 -num_stimts 8
-       -stim_times 1 stimuli/pamenc.times.CONTROL.txt 'BLOCK(2)'
-         -stim_label 1 CONTROL 
-       -stim_times 2 stimuli/pamenc.times.TASK.txt 'BLOCK(4)'
-         -stim_label 2 TASK
-       -stim_file 3 'motion_demean.1D[0]' -stim_base 3 -stim_label 3 roll 
-       -stim_file 4 'motion_demean.1D[1]' -stim_base 4 -stim_label 4 pitch
-       -stim_file 5 'motion_demean.1D[2]' -stim_base 5 -stim_label 5 yaw
-       -stim_file 6 'motion_demean.1D[3]' -stim_base 6 -stim_label 6 dS
-       -stim_file 7 'motion_demean.1D[4]' -stim_base 7 -stim_label 7 dL
-       -stim_file 8 'motion_demean.1D[5]' -stim_base 8 -stim_label 8 dP
-       -x1D XQ.xmat.1D
-       -x1D_regcensored XQ.regcensor.xmat.1D
+     3dDeconvolve                                                            \
+       -input pb01.sub-10697.r01.tshift+orig.HEAD                            \
+       -censor censor_sub-10697_combined_2.1D                                \
+       -polort 4 -num_stimts 8                                               \
+       -stim_times 1 stimuli/pamenc.times.CONTROL.txt 'BLOCK(2)'             \
+         -stim_label 1 CONTROL                                               \
+       -stim_times 2 stimuli/pamenc.times.TASK.txt 'BLOCK(4)'                \
+         -stim_label 2 TASK                                                  \
+       -stim_file 3 'motion_demean.1D[0]' -stim_base 3 -stim_label 3 roll    \
+       -stim_file 4 'motion_demean.1D[1]' -stim_base 4 -stim_label 4 pitch   \
+       -stim_file 5 'motion_demean.1D[2]' -stim_base 5 -stim_label 5 yaw     \
+       -stim_file 6 'motion_demean.1D[3]' -stim_base 6 -stim_label 6 dS      \
+       -stim_file 7 'motion_demean.1D[4]' -stim_base 7 -stim_label 7 dL      \
+       -stim_file 8 'motion_demean.1D[5]' -stim_base 8 -stim_label 8 dP      \
+       -x1D XQ.xmat.1D                                                       \
+       -x1D_regcensored XQ.regcensor.xmat.1D                                 \
        -x1D_stop
 
   The two bolded lines output the two ``*.xmat.1D`` files for input to
@@ -147,18 +147,18 @@ method. I used a study which had already been run with
 
   .. code-block:: none
 
-     3dREMLfit
-       -matrix XQ.xmat.1D
-       -input pb01.sub-10697.r01.tshift+orig.HEAD 
-       -fout -tout -verb -Grid 5
-       -Rbuck QQstats.sub-10697_REML
-       -Rvar QQstats.sub-10697_REMLvar 
+     3dREMLfit                                                              \
+       -matrix XQ.xmat.1D                                                   \
+       -input pb01.sub-10697.r01.tshift+orig.HEAD                           \
+       -fout -tout -verb -Grid 5                                            \
+       -Rbuck QQstats.sub-10697_REML                                        \
+       -Rvar QQstats.sub-10697_REMLvar
 
-     3dREMLfit
-       -matrix XQ.regcensor.xmat.1D
-       -input pb01.sub-10697.r01.tshift+orig.HEAD 
-       -fout -tout -verb -Grid 5
-       -Rbuck QQRstats.sub-10697_REML
+     3dREMLfit                                                              \
+       -matrix XQ.regcensor.xmat.1D                                         \
+       -input pb01.sub-10697.r01.tshift+orig.HEAD                           \
+       -fout -tout -verb -Grid 5                                            \
+       -Rbuck QQRstats.sub-10697_REML                                       \
        -Rvar QQRstats.sub-10697_REMLvar
 
   \.\.\. and then the stats datasets from the two runs can be compared
