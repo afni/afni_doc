@@ -192,7 +192,16 @@ voxel-level statistics are calculated. **Question answered:**
 
 In looking at the results from Script 2, I saw something peculiar:
 
-  **insert image here**
+.. list-table:: 
+   :header-rows: 1
+   :width: 60%
+
+   * - Structure in the :math:`\lambda` parameter (sagittal image)
+   * - .. image:: media/remlfit_lambda_sg.png
+          :width: 100%
+          :align: center
+   * - *Output from* ``3dREMLfit``
+
 
 This is an image of the :math:`\lambda` parameter = correlation at
 lag=1 from the *ARMA(1,1)* model. A little thought shows that this is
@@ -219,7 +228,7 @@ Conclusion: `The Rabbit Hole Has No Bottom
 <https://en.wikipedia.org/wiki/Red_Queen%27s_race>`_.
 
 
-Attributes in the 3dREMLFIT *.xmat.1D format
+Attributes in the 3dREMLFIT \*.xmat.1D format
 ============================================
 
 Attributes are stored in an XML-ish header before the actual matrix
@@ -575,7 +584,7 @@ starts at 0, not 1, as `decreed by the Almighty
   * I don't even recall why I put this stuff in here (for Rick
     Reynolds, maybe?).
 
-* ``CommandLine = "3dDeconvolve -input ......"\n 
+* ``CommandLine = "3dDeconvolve -input ......"``
 
   * [OPTIONAL]
 
