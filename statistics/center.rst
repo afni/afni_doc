@@ -1,14 +1,18 @@
+:tocdepth: 2
+
 .. _stats_center:
 
 ****************************************
 **When and how to center a variable?**
 ****************************************
 
+.. contents:: :local:
+
 .. _stats_center_major:
 
 
 Major points
-------------
+============
 
 * Centering is crucial for interpretation when group effects are of
   interest.
@@ -49,7 +53,7 @@ Major points
   properly considered.
 
 Usage clarifications of "covariate"
------------------------------------
+====================================
 
 There are three usages of the word covariate commonly seen in the
 literature, and they cause some unnecessary confusions. Originally the
@@ -69,7 +73,7 @@ contrast to its qualitative counterpart, factor) instead of covariate
 to avoid confusion.
 
 Purpose of modeling a quantitative covariate
---------------------------------------------
+============================================
 
 Ideally all samples, trials or subjects, in an FMRI experiment are
 drawn from a completely randomized pool in terms of BOLD response,

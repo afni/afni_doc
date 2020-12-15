@@ -7,7 +7,7 @@
 .. contents:: :local:
 
 Introduction
-------------
+============
 
 Program ``3dLME`` in the AFNI suite is a program that runs FMRI group
 analysis with a linear mixed-effects modeling approach. One simple

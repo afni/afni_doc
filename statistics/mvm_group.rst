@@ -7,7 +7,7 @@
 .. contents:: :local:
 
 Introduction
-------------
+============
 
 Program ``3dMVM`` in the AFNI suite is a program that runs FMRI group
 analysis with a multivariate modeling approach that can handle
@@ -18,7 +18,7 @@ serious issues that have been plaguing some implementations in the
 field (e.g. GLM, flexible factorial design) for a long time.
 
 Why another group analysis program?
-------------------------------------
+====================================
 
 It seems that there are quite a few group analysis programs already in
 the AFNI suite: ``3dttest++``, ``3dMEMA``, ``3dANOVAx``, ``GroupAna``,
@@ -54,7 +54,7 @@ https://afni.nimh.nih.gov/pub/dist/HBM2014/Chen_in_press.pdf
 
 
 How is 3dMVM compared to 3dANOVAx?
-------------------------------------
+====================================
 
 **Advantages of 3dANOVAx:**
 
@@ -94,7 +94,7 @@ concerned about sphericity violation whose correction usually
 decreases the original t-statistics.
 
 How is 3dMVM compared to GroupAna?
---------------------------------------
+======================================
 
 **Advantages of GroupAna:**
 
@@ -133,7 +133,7 @@ I guess ``GroupAna`` can pretty much retire now into history? Unless
 you're too fond of it...
 
 How is 3dMVM compared to 3dLME?
-------------------------------------
+====================================
 
 ``3dMVM`` was written to relieve some of the burden from ``3dLME`` so
 that the latter would be only used for some really sophisticated
@@ -153,7 +153,7 @@ scenarios (not exhaustive here):
 
 
 3dMVM usage
-------------
+============
 
 ``3dMVM`` has the standard AFNI-style interface, and most of the usage
 information can be found at the terminal::

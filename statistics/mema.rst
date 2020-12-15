@@ -7,7 +7,7 @@
 .. contents:: :local:
 
 Theoretical background
--------------------------
+=========================
 
 The conventional approach for FMRI group analysis is to take
 regression coefficients (typically referred to as beta values) and run
@@ -56,7 +56,7 @@ Their Variances. NeuroImage 60, 747-765.
 (:ref:`pubmed link <https://www.ncbi.nlm.nih.gov/pubmed/22245637>`)
 
 MEMA Modeling
-----------------
+================
 
 ``3dMEMA`` handles the following model types:
 
@@ -168,7 +168,7 @@ The usage of 3dMEMA can be found at the terminal::
   3dMEMA -help | less
   
 How to use 3dMEMA to handle multiple groups
--------------------------------------------------
+=================================================
 
 Suppose at group level we have three categorical variables (factors):
 one within-subject factor condition with two levels, positive (pos)
@@ -228,7 +228,7 @@ line in the ``3dMEMA`` script::
 
 
 Running 3dMEMA inside R
----------------------------
+===========================
 
 Alternatively ``3dMEMA`` works in a procedural or streamlined fashion
 with a string of information about modeling parameters, input files
@@ -419,7 +419,7 @@ To quit R, type
 (or hit letter "d" while holding down CTRL key on UNIX-based systems).
 
 Acknowledgements
---------------------
+====================
                 
 I'd like to thank Jarrod Hadfield for directing my attention to meta
 analysis, Wolfgang Viechtbauer for theoretical consultation and

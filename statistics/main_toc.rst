@@ -8,6 +8,7 @@ Statistics
    :maxdepth: 2
 
    center
+   remlfit
    mvm_group
    lme_model
    mema
