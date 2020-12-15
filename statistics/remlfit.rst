@@ -139,8 +139,9 @@ method. I used a study which had already been run with
        -x1D_regcensored XQ.regcensor.xmat.1D                                 \
        -x1D_stop
 
-  The two bolded lines output the two ``*.xmat.1D`` files for input to
-  ``3dREMLfit`` (row-censored and column-augmented).
+  The ``-x1D ..`` and ``-x1D_regcensored ..`` options lead to outputting
+  the two ``*.xmat.1D`` files for input to ``3dREMLfit`` (row-censored
+  and column-augmented).
 
 * Script 2: run ``3dREMLfit`` twice, using the two matrix files, on
   the time-shifted input data:
