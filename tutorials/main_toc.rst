@@ -8,6 +8,7 @@ Tutorials, Examples
    :maxdepth: 2
 
    SelfGuidedScripts
+   gui/main_toc
    apqc_html/main_toc.rst
    fatcat_prep/main_toc.rst
    fatcat_demo/fatcat_demo.rst
