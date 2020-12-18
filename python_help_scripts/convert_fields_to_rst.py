@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys as sys
-import pandas as pd
 
 # in the original file input, "++" and "::" are special-- doooon't use
 # them except as separators/markers!
@@ -12,13 +11,11 @@ import pandas as pd
 #
 # [PT: May 13, 2019] In the desciptions, replace "*" with "\*" (e.g.,
 # in the string "outputs *.grid files"), so that the RST doesn't try
-# to interpret those chars as italics, because the would be unmatched!
+# to interpret those chars as italics, because they would be unmatched!
 #
 # ====================================================================
 
 from afnipy import afni_util as au
-
-import convert_list_to_fields_pandas as clfp
 
 
 THIS_PROG = 'convert_fields_to_rst.py'
