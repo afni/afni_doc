@@ -4,9 +4,18 @@
 #  ~/.afni/data directory of whomever is building this stuff!!!:
 #  ptaylor@Eomer:~/.afni/data $ ls
 #  samples  suma_demo  suma_MNI_N27  suma_TT_N27  
-#  ptaylor@Eomer:~/.afni/data $ ls samples/
-#  o.NETS_OR_000.niml.dset  o.NETS_OR_000.niml.tract
 #
+#  for 'samples' dir, copy from AFNI_demos/FATCAT_DEMO/DTI/ the
+#  following two files (after running Do_00*.tcsh in the demo):
+#    o.NETS_OR_000.niml.dset  
+#    o.NETS_OR_000.niml.tract
+#
+#  for 'suma_demo' dir, run:  
+#    afni_open -aw suma_demo.tgz
+#
+#  for 'suma_MNI*' and 'suma_TT*' dirs, download+unpack:
+#    https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI_N27.tgz
+#    https://afni.nimh.nih.gov/pub/dist/tgz/suma_TT_N27.tgz
 
 @global_parse `basename $0` "$*" ; if ($status) exit 0
 
