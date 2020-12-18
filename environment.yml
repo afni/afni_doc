@@ -1,0 +1,15 @@
+name: sphinxdocs
+channels:
+  - conda-forge
+dependencies:
+  - cloud_sptheme
+  - pandoc
+  - pbr
+  - pip
+  - python
+  - sphinx
+  - sphinx-argparse
+  - sphinxcontrib-fulltoc
+  - tcsh
+  - pip:
+    - sphinxcontrib-programoutput

@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+TESTSDIR      =
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -19,7 +20,14 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
+# List dev docs required
+DEVDOCS = devdocs/running_tests_suite/autogen_run_afni_tests.rst \
+	devdocs/running_tests_suite/autogen_testing_examples.rst  \
+	devdocs/running_tests_suite/autogen_basic_setup_and_motivation.rst
+
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub \
+	latex latexpdf text man changes linkcheck doctest gettext \
+	devdocs/running_tests_suite/autogen_run_afni_tests.rst
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -48,6 +56,9 @@ help:
 
 clean:
 	rm -rf $(BUILDDIR)/*
+
+html_with_devdocs: $(DEVDOCS) html
+	@echo success
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -175,3 +186,20 @@ pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+
+# phony target, will always run
+devdocs/running_tests_suite/autogen_run_afni_tests.rst:
+	echo run_afni_test.py command info > devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo ================================================== >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo .. argparse:: >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo \\t:filename: $(TESTSDIR)/afni_test_utils/minimal_funcs_for_run_tests_cli.py >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo \\t:func: get_parser >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+	echo \\t:prog: run_afni_tests.py >> devdocs/running_tests_suite/autogen_run_afni_tests.rst
+
+
+devdocs/running_tests_suite/autogen_basic_setup_and_motivation.rst: $(TESTSDIR)/README.rst
+	cp $(TESTSDIR)/README.rst devdocs/running_tests_suite/autogen_basic_setup_and_motivation.rst
+
+devdocs/running_tests_suite/autogen_testing_examples.rst: $(TESTSDIR)/afni_test_utils/run_tests_examples.py
+	bash -c '$(TESTSDIR)/run_afni_tests.py examples -v | pandoc - -o devdocs/running_tests_suite/autogen_testing_examples.rst'

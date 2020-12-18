@@ -34,8 +34,8 @@ import cloud_sptheme as csp
 # $ sudo pip install pbr
 # $ sudo pip install sphinxcontrib-fulltoc
 # $ sudo pip install sphinxcontrib.programoutput
-
-
+# $ sudo pip install sphinx-argparse
+# $ sudo apt install pandoc
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -62,6 +62,8 @@ extensions = [
     'sphinx.ext.todo',
     'cloud_sptheme.ext.table_styling',
     'sphinxcontrib.programoutput',
+    'sphinx.ext.doctest',
+    'sphinxarg.ext',
     'hidden_code_block'
 ]
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
