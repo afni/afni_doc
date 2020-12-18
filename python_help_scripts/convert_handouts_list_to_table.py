@@ -4,7 +4,6 @@
 # filename is not just a passive item, but instead a clickable link to
 # the file itself.  Thanks for the idea, Hendrik!
 
-import numpy as np
 import sys   as sys
 
 from afnipy import afni_util as au

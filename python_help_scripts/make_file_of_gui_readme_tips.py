@@ -2,7 +2,6 @@
 
 # python3 status: compatible
 
-import numpy as np
 import sys as sys
 import os
 

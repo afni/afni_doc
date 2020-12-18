@@ -3,7 +3,6 @@
 # [PT: May 13, 2019] updated to deal with subprocess returning 'bytes'
 # type stdout; that simply gets converted to string.
 
-import numpy as np
 import sys as sys
 import os
 import subprocess
