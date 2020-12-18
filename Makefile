@@ -20,11 +20,6 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-# pandoc required for some dev docs written in Markdown
-ifeq ($(shell which pandoc >/dev/null 2>&1; echo $$?), 1)
-$(error The pandoc command was not found. Make sure you have it installed.)
-endif
-
 # List dev docs required
 DEVDOCS = devdocs/running_tests_suite/autogen_run_afni_tests.rst \
 	devdocs/running_tests_suite/autogen_testing_examples.rst  \
