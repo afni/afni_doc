@@ -178,8 +178,7 @@ matrix-based analysis with the ``MBA`` program, please cite:
 
 * | Chen G, Burkner P-C, Taylor PA, Li Z, Yin L, Glen DR, Kinnison J,
     Cox RW, Pessoa L (2019). An Integrative Approach to Matrix-Based
-    Analyses in Neuroimaging. Human Brain Mapping (in press)
-    doi:10.1101/459545
+    Analyses in Neuroimaging. Human Brain Mapping, 40(14):4072-4090.
   | `<https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.24686>`_
 
 If you use the Bayesian Multilevel (BML) modeling approach for
@@ -669,6 +668,6 @@ information about the related :ref:`templates and atlases
     Garcia-Saldivar P, Giavasis S, Hartig R, Lepage C, Liu C, Majka P,
     Merchant H, Milham M, Rosa M, Tasserie J, Uhrig L, Margulies D,
     Klink PC (2020).  A collaborative resource platform for non-human
-    primate neuroimaging. bioRxiv 2020.07.31.230185; doi:
-    10.1101/2020.07.31.230185 
+    primate neuroimaging. Neuroimage, 226(1):117519.
   | `<https://doi.org/10.1101/2020.07.31.230185>`_
+  | `<https://www.sciencedirect.com/science/article/pii/S1053811920310041>`_
