@@ -7,6 +7,8 @@ Cmake for AFNI - making AFNI is a piece of C(m)ake
 
 .. highlight:: None
 
+Notes by J Lee.
+
 Overview
 ---------
 
