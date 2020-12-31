@@ -317,8 +317,8 @@ reference that was input into TORTOISE.
        one is more useful.
    * - **dwi_mask.nii.gz**
      - volumetric NIFTI file, 3D; mask made by (here) automasking
-       dwi_anat.nii.gz.  Applied to DT and parameter files
-       (dt_\*.nii.gz).
+       ``dwi_anat.nii.gz``.  Applied to DT and parameter files
+       (``dt_*.nii.gz``).
    * - **dt_\*.nii.gz**
      - volumetric NIFTI files from ``3dDWItoDT`` being run with fancy
        options mentioned :ref:`HERE <fp_postproc_dwitodt>` and

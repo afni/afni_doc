@@ -11,9 +11,8 @@
 If you make use of AFNI and its tools in your work, we ask that you
 please cite the main paper and any accompanying items as appropriate.
 
-
-Methods: General
-----------------
+AFNI software package
+---------------------
 
 If you use AFNI in your work, please cite:
 
@@ -26,29 +25,9 @@ If you use AFNI in your work, please cite:
     visualization of FMRI Data.  NMR in Biomedicine, 10: 171-178.
   | `<https://pubmed.ncbi.nlm.nih.gov/9430344/>`_
 
-If you use SUMA in your work for surface calculations and/or
-visualizations, please cite:
 
-* | Saad ZS, Reynolds RC, Argall B, Japee S, Cox RW (2004). SUMA: an
-    interface for surface-based intra- and inter-subject analysis with
-    AFNI, in: 2004 2nd IEEE International Symposium on Biomedical
-    Imaging: Nano to Macro (IEEE Cat No. 04EX821). Presented at the
-    2004 2nd IEEE International Symposium on Biomedical Imaging: Nano
-    to Macro (IEEE Cat No. 04EX821), pp. 1510-1513
-    Vol. 2. doi.org/10.1109/ISBI.2004.1398837
-  | `<https://ieeexplore.ieee.org/document/1398837>`_
-
-* | Saad ZS, Reynolds RC (2012). SUMA. Neuroimage 62,
-    768–773. doi.org/10.1016/j.neuroimage.2011.09.016
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3260385/>`_
-
-If you use standard meshes within your surface/SUMA analysis, please
-cite:
-
-* | Argall BD, Saad ZS, Beauchamp MS (2006). Simplified intersubject
-    averaging on the cortical surface using SUMA.  Human Brain Mapping
-    27: 14-27.
-  | `<https://pubmed.ncbi.nlm.nih.gov/16035046/>`_
+Methods: General functionality
+-------------------------------
 
 If you use the realtime functionality from AFNI, please cite:
 
@@ -67,8 +46,8 @@ If you use the left-right flip checking for consistency in your data
     doi.org/10.3389/fninf.2020.00018
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
 
-For several choices of FMRI processing with ``afni_proc.py``, please cite
-the following (if relevant):
+For several choices of FMRI processing with ``afni_proc.py``, please
+check out (and cite, as relevant) the following:
 
 * | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
     (2018).  FMRI processing with AFNI: Some comments and corrections
@@ -128,6 +107,42 @@ cite:
     Neurosci Methods. 264:47-56. doi:
     10.1016/j.jneumeth.2016.03.001. PMID: 26945974
   | `<https://github.com/rordenlab/dcm2niix>`_
+
+
+Methods: SUMA
+--------------
+
+If you use SUMA in your work, such as for surface calculations and/or
+visualizations, please cite:
+
+* | Saad ZS, Reynolds RC, Argall B, Japee S, Cox RW (2004). SUMA: an
+    interface for surface-based intra- and inter-subject analysis with
+    AFNI, in: 2004 2nd IEEE International Symposium on Biomedical
+    Imaging: Nano to Macro (IEEE Cat No. 04EX821). Presented at the
+    2004 2nd IEEE International Symposium on Biomedical Imaging: Nano
+    to Macro (IEEE Cat No. 04EX821), pp. 1510-1513
+    Vol. 2. doi.org/10.1109/ISBI.2004.1398837
+  | `<https://ieeexplore.ieee.org/document/1398837>`_
+
+* | Saad ZS, Reynolds RC (2012). SUMA. Neuroimage 62,
+    768–773. doi.org/10.1016/j.neuroimage.2011.09.016
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3260385/>`_
+
+If you use standard meshes within your surface/SUMA analysis, please
+cite:
+
+* | Argall BD, Saad ZS, Beauchamp MS (2006). Simplified intersubject
+    averaging on the cortical surface using SUMA.  Human Brain Mapping
+    27: 14-27.
+  | `<https://pubmed.ncbi.nlm.nih.gov/16035046/>`_
+
+If you want to learn about AFNI+SUMA results on the FIAC dataset,
+please see:
+
+* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
+    PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
+    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
 
 
 Methods: Group analysis, stats and clustering
@@ -335,7 +350,8 @@ please:
   those specific tools
 
 If you use mini-probabilistic tracking and/or SUMA tract
-visualization, please cite (as well as the main FATCAT paper, above):
+visualization, please cite (as well as the main FATCAT and SUMA
+papers, above):
 
 * | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
     Multimodal Interactive Connectivity Visualization and
@@ -414,8 +430,9 @@ If you are curious about using multiecho/MEICA FMRI, please see:
     USA. 110(40):16187-16192. doi:10.1073/pnas.1301725110
   | `<https://pubmed.ncbi.nlm.nih.gov/24038744/>`_
 
-Meta-methodology and validations
----------------------------------
+
+Meta-methodology, commentary and validations
+---------------------------------------------
 
 If you want to note the good performance of AFNI's time series
 autocorrelation modeling compared with other software, you might
@@ -436,6 +453,7 @@ that found it the overall best among currently available tools:
     (2020). Comparison of MRI Defacing Software Across Multiple
     Cohorts.  Presented at the Organization for Human Brain
     Mapping, 2020.
+  | `<https://cdn-akamai.6connex.com/645/1827//OHBM2020Poster_15919688426481638.pdf>`_
 
 If you want to note the good performance of AFNI's volume registration
 for motion correction with ``3dvolreg``, you might consider:
@@ -552,16 +570,20 @@ underpinnings, please see the pithily titled:
     NeuroImage 62:768-773. doi: 10.1016/j.neuroimage.2011.09.016
   | `<https://pubmed.ncbi.nlm.nih.gov/21945692/>`_
 
-Data projects
--------------
 
-For technical reference for the NIFTI data format, please cite:
+Data projects and datasets
+--------------------------
+
+For technical reference for the NIFTI data format, you can cite:
 
 * | Cox RW, Ashburner J, Breman H, Fissell K, Haselgrove C, Holmes CJ,
     Lancaster JL, Rex DE, Smith SM, Woodward JB, Strother SC (2004). A
     (sort of) new image data format standard: NiFTI-1. Presented at
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
+  | The poster: `<https://nifti.nimh.nih.gov/nifti-1/documentation/hbm_nifti_2004.pdf>`_
+  | NIFTI web docs, such as they are: `<https://nifti.nimh.nih.gov/>`_
+  | NIFTI-1 page: `<https://nifti.nimh.nih.gov/nifti-1>`_
 
 *India Brain Template (IBT).* We present a series of five age-specific
 brain templates and accompanying atlases (IBTAs), spanning an age
