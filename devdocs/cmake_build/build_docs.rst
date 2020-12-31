@@ -19,7 +19,7 @@ several advantages some of which are:
 
 -  One build to rule them all… it configures itself for Linux or Mac
    systems so you don't have to tweak it for your specific system. This
-   works for Clang, icc,gcc (the latter most frequently used)
+   works for Clang, icc, gcc (the latter most frequently used)
 
 -  Dependency management: as part of the previous point, you can detect
    and build against dependencies on your system. Alternatively you can
@@ -55,7 +55,7 @@ the source tree until installation.
 
 N.B. For a faster build you can instead use the ninja build system set
 the environment variable CMAKE_GENERATOR to "Ninja" and substitute the
-make command above for "ninja" (cmake v>3.14). But see\ `Section: Ninja
+make command above for "ninja" (cmake v>3.14). But see `Section: Ninja
 build system <boring_cmake_ninja>`__.
 
 For a more comprehensive overview see the `Section: Basic approach to
@@ -440,7 +440,7 @@ project:
 
 During the cmake build the contents of the category 3 is compared with
 that of category 2 and an error occurs if the two lists do not match. 3
-is compared to 1 and a report of the differences are detailed in the
+is compared to 1, and a report of the differences are detailed in the
 cmake output to help determine divergence in the two build systems.
 
 .. _devdocs_cmake_other_run_test:

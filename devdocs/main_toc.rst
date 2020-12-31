@@ -4,7 +4,7 @@
 Developer Documentation
 #############
 
-Building, testing, contributing... get it here while its hot.
+Building, testing, contributing... get it here while it's hot.
 
 .. toctree::
    :maxdepth: 2
