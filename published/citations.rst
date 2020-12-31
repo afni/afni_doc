@@ -505,7 +505,7 @@ as an alternative, please check out/reference:
     Trouble at Rest: How Correlation Patterns and Group Differences
     Become Distorted After Global Signal Regression.  Brain
     Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
-  | `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/`_
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/>`_
 
 * | **Comment:** this is the "GCOR" (global correlation) parameter paper:
   | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).

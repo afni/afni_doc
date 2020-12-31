@@ -1,8 +1,8 @@
 :tocdepth: 2
 
-#############
+#######################################
 Developer Documentation
-#############
+#######################################
 
 Building, testing, contributing... get it here while it's hot.
 

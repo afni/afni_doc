@@ -13,13 +13,17 @@
     :depth: 2
 
 Ready, ready, ready, ready, ready to run. [#f1]_
------------------------------------------------
+------------------------------------------------
 
 #. Make sure AFNI and R are installed and configured correctly.
     `See installation
     <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html>`_.
-#. Run ``@afni_R_package_install -shiny -circos`` to install necessary R libraries.
-#. Process some data with `FATCAT <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/main_toc.html>`_ or `3dNetcorr <https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dNetCorr.html>`_.
+#. Run ``@afni_R_package_install -shiny -circos`` to install necessary
+   R libraries.
+#. Process some data with `FATCAT
+   <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/main_toc.html>`_
+   or `3dNetcorr
+   <https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dNetCorr.html>`_.
 #. Put the output .grid or .netcc datasets in some folder.
 
 Gotta get up to get down. [#f2]_
@@ -41,7 +45,8 @@ they are in the following format:
 * The row and column names must begin with a letter.
 * The first cell (upper left) must be empty.
 * The data needs to be saved as a tab or comma separated file.
-* The file extension needs to be one of the following: csv, tsv, dat, or 1d.
+* The file extension needs to be one of the following: csv, tsv, dat,
+  or 1d.
 * There can be NO other header information or comments.
 
 So it should look like this:
@@ -58,16 +63,17 @@ So it should look like this:
 | roi4 | 0.4  | 0.6  | 0.7  | 1.0  |
 +------+------+------+------+------+
 
-The *statistic* selector will default to "none" because there is no information
-as to what the data represents.
+The *statistic* selector will default to "none" because there is no
+information as to what the data represents.
 
 Walking in your footsteps. [#f3]_
---------------------------------
+----------------------------------
 
 Dataset Selector
 ++++++++++++++++
 
-.. topic:: All valid datasets in the chosen folder are listed in this drop down selector:
+.. topic:: All valid datasets in the chosen folder are listed in this
+           drop down selector:
 
     .. figure:: media/FATCAT_matplot_file_picker_edit.png
         :width: 80%
@@ -80,7 +86,8 @@ Dataset Selector
 Statistic Selector
 ++++++++++++++++++
 
-.. topic:: All statistics in the selected dataset are listed in this drop down selector:
+.. topic:: All statistics in the selected dataset are listed in this
+           drop down selector:
 
     .. figure:: media/FATCAT_matplot_stat_picker.png
         :width: 80%

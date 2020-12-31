@@ -229,7 +229,7 @@ Conclusion: `The Rabbit Hole Has No Bottom
 
 
 Attributes in the 3dREMLFIT \*.xmat.1D format
-============================================
+=============================================
 
 Attributes are stored in an XML-ish header before the actual matrix
 numbers.  Attributes are of the form ``name = "quoted string"`` - the
