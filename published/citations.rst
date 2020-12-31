@@ -438,7 +438,7 @@ autocorrelation modeling compared with other software, you might
 consider citing:
 
 * | Olszowy W, Aston J, Rua C, Williams GB (2019).  Accurate
-    autocorrelation modeling substantially improves fMRI reliability
+    autocorrelation modeling substantially improves fMRI reliability.
     Nature Communications
     10, 1220. doi.org/10.1038/s41467-019-09230-w
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
