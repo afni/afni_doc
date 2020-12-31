@@ -510,7 +510,8 @@ Examples
 
 Sorted somewhat by order of frequency it is required:
 
-#. Adding targets whose .h files do not match the name of the .c files:
+#. Adding targets whose .h files do not match the name of the ``*.c``
+   files:
 
    https://github.com/afni/afni/blob/a823c647f491cfd2ad9bbf91c2d2fa99e49f0ee1/src/niml/CMakeLists.txt#L28
 
@@ -577,7 +578,7 @@ Sorted somewhat by order of frequency it is required:
 
    https://github.com/afni/afni/blob/23d6f34b4d67efced8c6ca0f5ec4febc9e34ecda/src/CMakeLists_plugins.txt#L1
 
-#. Treating .c files as similar to header files in that they are
+#. Treating ``*.c`` files as similar to header files in that they are
    included and dependent targets should also be able to include them:
 
    https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/CMakeLists_binaries.txt#L392
