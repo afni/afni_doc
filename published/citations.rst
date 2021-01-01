@@ -570,26 +570,15 @@ underpinnings, please see the pithily titled:
   | `<https://pubmed.ncbi.nlm.nih.gov/21945692/>`_
 
 
-Data projects and datasets
---------------------------
-
-For technical reference for the NIFTI data format, you can cite:
-
-* | Cox RW, Ashburner J, Breman H, Fissell K, Haselgrove C, Holmes CJ,
-    Lancaster JL, Rex DE, Smith SM, Woodward JB, Strother SC (2004). A
-    (sort of) new image data format standard: NiFTI-1. Presented at
-    the 10th Annual Meeting of the Organization for Human Brain
-    Mapping.
-  | The poster: `<https://nifti.nimh.nih.gov/nifti-1/documentation/hbm_nifti_2004.pdf>`_
-  | NIFTI web docs, such as they are: `<https://nifti.nimh.nih.gov/>`_
-  | NIFTI-1 page: `<https://nifti.nimh.nih.gov/nifti-1>`_
+Data projects: human templates and atlases
+----------------------------------------------
 
 *India Brain Template (IBT).* We present a series of five age-specific
 brain templates and accompanying atlases (IBTAs), spanning an age
 range of 6-60 years.  These templates and atlases were created from a
 large number of subjects (total n=466), spanning a large number of
 different Indian states and and acquired at multiple 3T MRI sites,
-using a new  AFNI tool called ``make_template_dask.py``:
+using a new AFNI tool called ``make_template_dask.py``:
 
 * | Holla B, Taylor PA, Glen DR, Lee JA, Vaidya N, Mehta UM,
     Venkatasubramanian G, Pal P, Saini J, Rao NP, Ahuja C, Kuriyan R,
@@ -599,6 +588,23 @@ using a new  AFNI tool called ``make_template_dask.py``:
     spanning ages 6 to 60 years.  Hum Brain Mapp 41(18):5164-5175.
   | `<https://onlinelibrary.wiley.com/doi/10.1002/hbm.25182>`_
   | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
+
+*Haskins pediatric atlas.* The Haskins pediatric templates and atlases
+ were generated with nonlinear methods using structural MRI from 72
+ children (age range 7-14 years, median 10 years), allowing for a
+ detailed template with corresponding parcellations of labeled atlas
+ regions. The accuracy of these templates and atlases was assessed
+ using multiple metrics of deformation distance and overlap:
+
+* | Molfese PJ, Glen D, Mesite L, Cox RW, Hoeft F, Frost SJ, Mencl WE,
+    Pugh KR, Bandettini PA (2020). The Haskins pediatric atlas: a
+    magnetic-resonance-imaging-based pediatric template and
+    atlas. Pediatric Radiology *(in press)*. DOI:
+    10.1007/s00247-020-04875-y.
+  | `<https://link.springer.com/article/10.1007%2Fs00247-020-04875-y>`_
+
+Data projects: animal templates and atlases
+----------------------------------------------
 
 *Marmoset atlas v2.* This project provides some of the highest
 resolution nonhuman primate MRI templates and atlas for gray and white
@@ -641,18 +647,29 @@ macaques at 0.250 mm (this is NMT v1; see below for NMT v2):
     121–31. doi: 10.1016/j.neuroimage.2017.04.063.
   | `<https://pubmed.ncbi.nlm.nih.gov/28461058/>`_
 
-*NMT v2: Macaque brain group template and hierarchical cortical
-atlas.* This project introduces version the macaque template NMT v2
-using a stererotaxic (ear-bar-zero) reference frame and a hierarchical
-atlas (CHARM) for structural region labels (and see these pages for
-more information about the related :ref:`templates and atlases
-<nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
+*NMT v2 and CHARM: Macaque brain group template and hierarchical
+cortical atlas.* This project introduces version the macaque template
+NMT v2 using a stererotaxic (ear-bar-zero) reference frame and a
+hierarchical atlas (CHARM) for structural region labels (and see these
+pages for more information about the related :ref:`templates and
+atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 <nh_macaque_demos>`):
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
     Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
     Hierarchical Atlas. doi: 10.1101/2020.08.05.237818
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
+
+*SARM: Hierarchical subcortical atlas.* Subcortical Atlas of the
+Rhesus Macaque (SARM) for structural region labels (and see these
+pages for more information about the related :ref:`atlas and related
+template <nh_macaque_tempatl>`:
+
+* | Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G,
+    Garza-Villareal EA, Messinger A, Evrard HC (2020).  Subcortical
+    Atlas of the Rhesus Macaque (SARM) for Magnetic Resonance Imaging
+    doi: 10.1101/2020.09.16.300053.
+  | `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1.full>`_
 
 *PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
 platform for nonhuman primate (NHP) neuroimaging, including AFNI tools
@@ -671,3 +688,17 @@ information about the related :ref:`templates and atlases
     primate neuroimaging. Neuroimage, 226(1):117519.
   | `<https://doi.org/10.1101/2020.07.31.230185>`_
   | `<https://www.sciencedirect.com/science/article/pii/S1053811920310041>`_
+
+Data projects: NIFTI format
+------------------------------
+
+For technical reference for the NIFTI data format, you can cite:
+
+* | Cox RW, Ashburner J, Breman H, Fissell K, Haselgrove C, Holmes CJ,
+    Lancaster JL, Rex DE, Smith SM, Woodward JB, Strother SC (2004). A
+    (sort of) new image data format standard: NiFTI-1. Presented at
+    the 10th Annual Meeting of the Organization for Human Brain
+    Mapping.
+  | The poster: `<https://nifti.nimh.nih.gov/nifti-1/documentation/hbm_nifti_2004.pdf>`_
+  | NIFTI web docs, such as they are: `<https://nifti.nimh.nih.gov/>`_
+  | NIFTI-1 page: `<https://nifti.nimh.nih.gov/nifti-1>`_
