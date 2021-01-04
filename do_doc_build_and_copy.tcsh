@@ -173,19 +173,23 @@ if ( "$DO_BUILD" == "1" ) then
 
     if ( $DO_DEVDOCS ) then
         echo "++ Build Sphinx html with devdocs"
+        echo "   ... from: $PWD"
 
         # need this env running for devdocs
         conda activate afni_dev
 
         # the Makefile has TESTSDIR set for here
-        \mkdir _tmp_git
+        \mkdir -p _tmp_git
         cd _tmp_git
         git clone https://github.com/afni/afni.git
         cd -
 
+        echo "++ ... now do the 'make' with devdocs"
         make html_with_devdocs
 
-        \rm -rf _tmp_git
+        echo "++ ... done with make, just deactivating conda env."
+
+        #\rm -rf _tmp_git
 
         conda deactivate
 
