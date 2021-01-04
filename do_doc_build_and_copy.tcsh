@@ -7,11 +7,15 @@ set gen_all_opts = () #( "-phelp" )
 set DO_BUILD    = 0
 set DO_PUSH     = 0
 set DO_PHELP    = 0    # prob don't need to change with the opt below
+set DO_DEVDOCS  = 0    # [PT: Jan 4, 2020] specific env deps
 
 # ======================================================================
 
 # [PT: Mar 8, 2019] add in the afni_handouts processing
-
+# [PT: Jan 4, 2020] add in the option to do J Lee's devdocs building
+#                   -> mostly just set to run on 'safni' because of TESTSDIR
+#                      def in Makefile
+ 
 # ======================================================================
 
 if ( $#argv == 0 ) goto SHOW_HELP
@@ -29,6 +33,9 @@ while ( $ac <= $#argv )
 
     else if ( "$argv[$ac]" == "-push" ) then
         set DO_PUSH = 1
+
+    else if ( "$argv[$ac]" == "-devdocs" ) then
+        set DO_DEVDOCS = 1
 
     else if ( "$argv[$ac]" == "-gen_all_afni" ) then
         set gen_all_opts = ( $gen_all_opts "-afni" )
@@ -85,6 +92,23 @@ endif
 if ( "$DO_BUILD" == "1" ) then
 
     echo "++ Do documentation build!"
+
+    # preliminary checks to make sure some things have been installed
+    if ( $DO_DEVDOCS ) then
+
+        set env_list = `conda env list | grep afni_dev`
+        if ( $status ) then
+            echo "** Failure to find 'afni_dev' with 'conda env list'/"
+            echo "   Please make sure you have the environment set up."
+            exit 1
+        endif
+
+        set testdir_make = `grep TESTSDIR Makefile`
+        echo "++ Checking that TESTSDIR is set in Makefile (just printing):"
+        echo "   ${testdir_make}"
+        echo "++ NB: this is probably just set (hard-wired!) to run on safni."
+
+    endif
 
     ### Make preliminary stuff from helpfiles: will open both AFNI and
     ### SUMA this way
@@ -147,8 +171,28 @@ if ( "$DO_BUILD" == "1" ) then
     cd ..
     # ---------------------------------
 
-    echo "++ Build Sphinx html"
-    make html
+    if ( $DO_DEVDOCS ) then
+        echo "++ Build Sphinx html with devdocs"
+
+        # need this env running for devdocs
+        conda activate afni_dev
+
+        # the Makefile has TESTSDIR set for here
+        \mkdir _tmp_git
+        cd _tmp_git
+        git clone https://github.com/afni/afni.git
+        cd -
+
+        make html_with_devdocs
+
+        \rm -rf _tmp_git
+
+        conda deactivate
+
+    else
+        echo "++ Build regular Sphinx html"
+        make html
+    endif
 
 endif
 
