@@ -15,6 +15,11 @@ set DO_DEVDOCS  = 0    # [PT: Jan 4, 2020] specific env deps
 # [PT: Jan 4, 2020] add in the option to do J Lee's devdocs building
 #                   -> mostly just set to run on 'safni' because of TESTSDIR
 #                      def in Makefile
+# [PT: Jan 5, 2020] now using local tempdir of afni clone as part of devdocs
+#                   make, to be buildable anywhere with the same command
+#                   -> added in J Lee's pip uninstall/install fix for
+#                      denoting the run_test_utils dir.
+ 
  
 # ======================================================================
 
@@ -178,10 +183,21 @@ if ( "$DO_BUILD" == "1" ) then
         # need this env running for devdocs
         conda activate afni_dev
 
-        # the Makefile has TESTSDIR set for here
+        # the afni_dev env specifies one specific dir for getting the
+        # afni_test_utils module.  First use pip to *undo* that
+        # specification here, then specify that new location (from tmp
+        # dir)
+        ### *if* we move to using a static git repo for afni, then we
+        ### could build the afni_dev env there, and we wouldn't need
+        ### these pips.
+        pip uninstall afni_test_utils
+        pip install -e _tmp_git/afni/tests
+
+        # the Makefile has TESTSDIR set for here ("--depth 1" for
+        # speed/size of clone)
         \mkdir -p _tmp_git
         cd _tmp_git
-        git clone https://github.com/afni/afni.git
+        git clone --depth 1 https://github.com/afni/afni.git
         cd -
 
         echo "++ ... now do the 'make' with devdocs"
@@ -189,7 +205,7 @@ if ( "$DO_BUILD" == "1" ) then
 
         echo "++ ... done with make, just deactivating conda env."
 
-        #\rm -rf _tmp_git
+        \rm -rf _tmp_git
 
         conda deactivate
 
