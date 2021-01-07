@@ -9,9 +9,10 @@ Tutorials, Examples
 
    SelfGuidedScripts
    gui/main_toc
-   apqc_html/main_toc.rst
-   fatcat_prep/main_toc.rst
-   fatcat_demo/fatcat_demo.rst
+   afni_gen/main_toc
+   apqc_html/main_toc
+   fatcat_prep/main_toc
+   fatcat_demo/fatcat_demo
    WalnutBrain/WalnutBrain
    DrawingSurfaceROIs/DrawingROIs
    ClusterExplorer/main_toc
