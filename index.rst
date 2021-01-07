@@ -27,7 +27,6 @@ Welcome to AFNI's documentation!
    published/main_toc
    contributors/main_toc
    glossary
-   references
    afni_home
    
 .. someday add back in this:

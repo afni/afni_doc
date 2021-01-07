@@ -1,15 +1,18 @@
 :tocdepth: 2
 
-Papers and citations
-========================
+References, papers and citations
+=================================
 
 
 .. toctree::
    :maxdepth: 2
 
-   posters
    citations
-   
+
+.. to add :
+
+   posters
+
 |
 
 |
