@@ -2,9 +2,9 @@
 
 .. _tut_afni_gen_files_gen:
 
-*************************************
-Common Options for most AFNI Progams
-*************************************
+******************************************
+Using volumetric (and other) files in AFNI
+******************************************
 
 .. contents:: :local:
 
@@ -243,3 +243,93 @@ a temporary dataset::
     in from disk, locked into memory (marked as un-purge-able in AFNI),
     and then the files are deleted from ``/tmp``. You cannot use sub-brick
     selectors or other modifiers on such datasets.
+
+Make a volume of arbitary dimensions
+=============================================
+
+There is special functionality in ``3dcalc`` to generate a dset of
+arbitrary dimensions that contains random numbers (from the uniform
+distribution in the range [-1,1]).  This is useful for testing
+purposes, and you can change the random numbers into other things, as
+well, fairly directly.
+
+If you want to make a :math:`3\times7\times5` volume with 46 time
+points, then run::
+
+  3dcalc -a jRandomDataset:3,7,5,46 -expr 'a' -prefix test_00.nii.gz
+
+What properties does it have?  Check out ``3dinfo`` on it:
+
+.. hidden-code-block:: none
+   :label: - show header y/n -
+
+   ++ 3dinfo: AFNI version=AFNI_20.3.03 (Dec 21 2020) [64-bit]
+
+   Dataset File:    /home/ptaylor/afni_doc/tutorials/afni_gen/test_00.nii.gz
+   Identifier Code: AFN_ykCWh2fr3mL7f-B5d8DtHg  Creation Date: Thu Jan  7 16:18:06 2021
+   Template Space:  ORIG
+   Dataset Type:    Echo Planar (-epan)
+   Byte Order:      LSB_FIRST {assumed} [this CPU native = LSB_FIRST]
+   Storage Mode:    NIFTI
+   Storage Space:   19,320 (19 thousand) bytes
+   Geometry String: "MATRIX(1,0,0,0,0,1,0,0,0,0,1,0):3,7,5"
+   Data Axes Tilt:  Plumb
+   Data Axes Orientation:
+     first  (x) = Right-to-Left
+     second (y) = Anterior-to-Posterior
+     third  (z) = Inferior-to-Superior   [-orient RAI]
+   R-to-L extent:     0.000     -to-     2.000 [L] -step-     1.000 mm [  3 voxels]
+   A-to-P extent:     0.000     -to-     6.000 [P] -step-     1.000 mm [  7 voxels]
+   I-to-S extent:     0.000     -to-     4.000 [S] -step-     1.000 mm [  5 voxels]
+   Number of time steps = 46  Time step = 1.00000none  Origin = 0.00000none
+     -- At sub-brick #0 '?' datum type is float:    -0.984937 to      0.998833
+     -- At sub-brick #1 '?' datum type is float:    -0.988655 to      0.993098
+     -- At sub-brick #2 '?' datum type is float:    -0.998977 to      0.993811
+   ** For info on all 46 sub-bricks, use '3dinfo -verb' **
+
+   ----- HISTORY -----
+   [ptaylor@porthos: Thu Jan  7 16:18:06 2021] {AFNI_20.3.03:linux_ubuntu_16_64} 3dcalc -a jRandomDataset:3,7,5,46 -expr a -prefix test_00.nii.gz
+
+Notice that the header has has lots of "default" properties that you
+would have to set elsewhere, like TR, voxel size, origin, extent,
+etc. to be meaningful (if you cared about those).  These could then be
+changed or set with ``3drefit``, say. It will have RAI (= DICOM) dset
+orientation by default.
+
+If you wanted to make such a dset of constant values (say,
+approx. :math:`pi`), then you could run::
+
+  3dcalc -a jRandomDataset:3,7,5,46 -expr '3.14' -prefix test_01.nii.gz
+
+\.\.\. and even from the ``3dinfo`` on that, you will see the ranges
+of each brick are [3.14, 3.14].
+
+If you only want a 3D volume, just make the time dimension 1::
+
+  3dcalc -a jRandomDataset:3,7,5,1 -expr '3.14' -prefix test_02.nii.gz
+
+The smallest spatial dimension the dset can have is
+:math:`2\times2\times1`.  That is, it must be at least a "plane" of
+some kind.
+
+If you have an existing dset and you want to make a copy of the same
+size (with matching header info), you could use ``3dcalc``\ 's random
+functions.  Consider making a copy of anat+orig.HEAD that is pure
+Gaussian noise of mean=0 and stdev=3::
+
+  3dcalc -a anat+orig.HEAD -expr 'gran(0,3)' -prefix test_04.nii.gz
+
+If you wanted this noise added into the input dset, then you could
+run::
+
+  3dcalc -a anat+orig.HEAD -expr 'a+gran(0,3)' -prefix test_05.nii.gz
+
+See ``3dcalc``\ 's help for more random distributions.
+
+If you want to make a new dset with a size related to an existing
+dset, such as adding or subtracting a few slices, then consider using
+``3dZeropad``.  As the program's name implies, it can add slices to a
+dset in various ways (by side, symmetrically, evening out...), but
+when using negative values of arguments it can also *remove* slices.
+Most of the header info should still match the input dset (except for
+matrix size, obviously), which can be convenient.
