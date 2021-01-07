@@ -15,9 +15,9 @@ text_label = ".. _edu_env_vars:"
 text_title_desc = \
 '''
 
-**********************************
-**List of all AFNI env variables**
-**********************************
+******************************************
+**List of all AFNI environment variables**
+******************************************
 
 .. contents:: :local:
 
