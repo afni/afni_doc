@@ -1,7 +1,7 @@
 .. _pubcit_citations:
 
 
-**Citations**
+**Citations and references**
 ==========================================
 
 .. contents:: :local:
