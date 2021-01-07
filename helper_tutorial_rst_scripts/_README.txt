@@ -36,10 +36,7 @@ AFNI_data6/roi_demo):
      -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_2dcat.rst         \
      -execute_script
 
- # tutorial pages: FS prep (check_dset_for_fs.py, recon-all, @SUMA_Make_Spec_FS)
- # NB: some additional files are in subdir here 'for_fs_prep', namely the
- # ex*.tcsh files; these should just be copied into location
- # where FT_anat+orig.* dsets are, before this command is run
+ # tutorial pages: FS prep (3dcopy, recon-all, @SUMA_Make_Spec_FS)
  adjunct_make_script_and_rst.py                                              \
      -input          tut_fs_fsprep_MARK.tcsh                                 \
      -reflink        tut_fs_fsprep                                           \
