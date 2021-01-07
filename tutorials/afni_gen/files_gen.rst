@@ -35,7 +35,8 @@ datasets are described below.
 
 They all use special characters such as ``$``, ``( ... )``, ``[...]``,
 and ``<...>``.  Within a given set of brackets (and we discuss what
-each kind does, below), you can specify: 
+each kind does, below), you can specify **selector strings** with the
+following syntaxes:
 
 * comma-separated lists: ``0,10,15``, ``0,2,4,1,3,5``, etc.
 
@@ -53,6 +54,10 @@ counting, such as is used in the C and Python programming languages
 last volume", using the ``$`` character (though you might have to
 include the ``\`` as an escape character in some contexts, see below).
 Thus, ``0..$`` runs from beginning to end.
+
+.. note:: You can also use comma-separated lists of brick labels
+          within sub-brick selectors ``[...]`` and ROI labels within
+          the sub-range selectors ``<...>``, discussed more below.
 
 Many shells interpret the brackets in ways antithetical to AFNI, so
 you will have to escape these characters on the command line. This can
@@ -131,12 +136,30 @@ Using::
 will reverse the order of the sub-bricks. (It is hard to conceive of
 an application for such an ability, but AFNI gives it to you anyway.)
 
-NB: Datasets using sub-brick/sub-range selectors are treated as:
+Instead of the indices, you can also use a list of sub-brick labels
+within these selectors to pick out specific volumes.  Consider the
+func_slim+orig statistic dset in the Bootcamp data directory
+``AFNI_data6/afni/``.  If we wanted to make a new dset of just one
+particular coefficient and statistic pair, we could do the following::
+
+  3dcalc                                               \
+      -a func_slim+orig.'[Vrel#0_Coef,Vrel#0_Tstat]'   \
+      -expr 'a'                                        \
+      -prefix dset_stats_Vrel.nii
+
+The new dset has just 2 volumes, but note that the supplementary
+statistic information stays with the ``*Tstat`` brick.  In general,
+when there are sub-brick labels present (e.g., for statistic dsets),
+it seems wise to use those within the sub-brick selectors, for
+clarity.  (Of course, using indices is still perfectly fine!)
+
+On a technical note, datasets using sub-brick/sub-range selectors are
+treated as:
 
 * 3D+time, if the dataset is 3D+time and more than 1 brick is chosen
 
 * Otherwise, as bucket datasets (-abuc or -fbuc) (in particular, fico,
-  fitt, etc datasets are converted to fbuc!)
+  fitt, etc. datasets are converted to fbuc!)
 
 
 Sub-range selection: ``<..>``
