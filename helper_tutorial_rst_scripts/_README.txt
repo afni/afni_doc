@@ -43,7 +43,7 @@ AFNI_data6/roi_demo):
      -prefix_script  fs_fsprep.tcsh                                          \
      -prefix_rst     ~/AFNI/afni_doc/tutorials/fs/fs_fsprep.rst    
 
- # tutorial pages: reface/defae dsets
+ # tutorial pages: reface/deface dsets
  # NB: some additional files are in subdir here 'for_refacer', namely the
  # SUMA images showing original+refaced dsets
  adjunct_make_script_and_rst.py                                              \

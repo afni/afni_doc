@@ -10,7 +10,7 @@
 # 0) Copy data to NIFTI format (if necessary):
 3dcopy FT_anat+orig.HEAD FT_anat_cp.nii.gz
 
-# 1) Run FreeSurfer.
+# 1) Run FreeSurfer, basic example A.
 recon-all                                                             \
     -all                                                              \
     -sd      .                                                        \
@@ -23,6 +23,10 @@ recon-all                                                             \
     -NIFTI                                                            \
     -sid    FT                                                        \
     -fspath ./FT
+
+
+# ================= Run recon-all faster: ``-parallel`` ==================
+
 
 
 # ================== A note of filenames/paths with FS ===================

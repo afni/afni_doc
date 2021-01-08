@@ -15,6 +15,8 @@ Introduction
 **Download script:** :download:`fs_fsprep.tcsh <media/fs_fsprep/fs_fsprep.tcsh>`
 
 
+.. highlight:: Tcsh
+
 .. comment on creation of this script
    This script was generated from running:
      afni_doc/helper_tutorial_rst_scripts/tut_fs_fsprep_MARK.tcsh
@@ -53,7 +55,7 @@ generate standard surfaces and other niceties, we run AFNI's
    # 0) Copy data to NIFTI format (if necessary):
    3dcopy FT_anat+orig.HEAD FT_anat_cp.nii.gz
    
-   # 1) Run FreeSurfer.
+   # 1) Run FreeSurfer, basic example A.
    recon-all                                                             \
        -all                                                              \
        -sd      .                                                        \
@@ -69,7 +71,67 @@ generate standard surfaces and other niceties, we run AFNI's
    
 
 And that is all.  Note that ``recon-all`` will take a long time to run
-(several hours).
+(several hours).  There are some ways to speed it up a bit using its
+internal parallelization, which you can read about in the next section.
+
+.. _tut_fs_fsprep_par:
+
+Run recon-all faster: ``-parallel``
+=====================================
+
+From the `FS documentation
+<https://surfer.nmr.mgh.harvard.edu/fswiki/ReleaseNotes>`_, there has
+been internal parallelization with parts of ``recon-all`` since v5.3,
+using OpenMP (which is also what several AFNI programs use for
+parallelization speedup).  You can/should read more about the details
+from the FS documentation, but we describe using it here.
+
+At least in the most recent version FS (v7.\*), you can add a
+``-parallel`` option flag at the end of your ``recon-all`` command to
+take advantage of a default amount of 4 CPUs.  So, going from the
+first example, you could run::
+
+    # example B: using default parallelization
+    recon-all                                  \
+        -all                                   \
+        -sd      .                             \
+        -subjid  FT                            \
+        -i       FT_anat_cp.nii.gz             \
+        -parallel
+
+Additionally, you should have further control by adding an option
+``-openmp ..``, whose single argument is the number of CPUs for OpenMP
+to use.  Theoretically, this can be more than 4, if you have the
+computing power available. So, you could try::
+
+    # example C: using parallelization with 8 CPUs
+    recon-all                                  \
+        -all                                   \
+        -sd      .                             \
+        -subjid  FT                            \
+        -i       FT_anat_cp.nii.gz             \
+        -parallel                              \
+        -openmp 8
+
+As an anecdote, I ran each of the above ``recon-all`` cases on the
+NIH's Biowulf cluster, for the same Bootcamp dataset described above.
+In the parallel cases, I actually had 8 CPUs available for both (I
+requested 8 CPUs from the cluster, and running ``afni_check_omp`` in
+the terminal indeed returned the value of 8).  The ``recon-all``
+timing results were as follows:
+
+* **Ex A:** 9.181 hours  
+
+* **Ex B:** 5.120 hours  
+
+* **Ex C:** 5.093 hours  
+
+So, using the ``-parallel`` option **does** seem to help significantly
+speed things up (by about a factor of 2, here).  I did **not** get
+further benefit by trying to increase the number of threads by also
+including the ``-openmp ..`` option---I am not sure why. If you are
+able to get further runtime improvement somehow, please let us know
+how!
 
 A note of filenames/paths with FS
 ===================================
