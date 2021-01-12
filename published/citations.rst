@@ -1,8 +1,9 @@
 .. _pubcit_citations:
 
-
+*****************************
 **Citations and references**
-==========================================
+*****************************
+
 
 .. contents:: :local:
 
@@ -12,7 +13,7 @@ If you make use of AFNI and its tools in your work, we ask that you
 please cite the main paper and any accompanying items as appropriate.
 
 AFNI software package
----------------------
+=====================
 
 If you use AFNI in your work, please cite:
 
@@ -27,7 +28,7 @@ If you use AFNI in your work, please cite:
 
 
 Methods: General functionality
--------------------------------
+===============================
 
 If you use the realtime functionality from AFNI, please cite:
 
@@ -110,7 +111,7 @@ cite:
 
 
 Methods: SUMA
---------------
+==============
 
 If you use SUMA in your work, such as for surface calculations and/or
 visualizations, please cite:
@@ -146,7 +147,7 @@ please see:
 
 
 Methods: Group analysis, stats and clustering
----------------------------------------------
+=============================================
 
 If you use either of the linear mixed effects (LME) modeling programs
 ``3dLME`` or ``3dLMEr`` in your work, please cite:
@@ -294,7 +295,7 @@ main FATCAT paper, above):
 
 
 Methods: Alignment 
---------------------
+====================
 
 If you use either the local Pearson correlation (lpc) or local Pearson
 absolute (lpa) cost function in your alignment (e.g., with
@@ -330,7 +331,7 @@ please cite:
 
 
 Methods: Diffusion, DWI, DTI and HARDI
---------------------------------------
+======================================
 
 If you use the diffusion/DWI/DTI tools in AFNI, please cite the main
 FATCAT paper:
@@ -369,7 +370,7 @@ above):
 
 
 Methods: Additional applications
-----------------------------------
+==================================
 
 If you use DBSproc (for Deep Brain Stimulation processing), please
 cite:
@@ -431,7 +432,7 @@ If you are curious about using multiecho/MEICA FMRI, please see:
 
 
 Meta-methodology, commentary and validations
----------------------------------------------
+=============================================
 
 If you want to note the good performance of AFNI's time series
 autocorrelation modeling compared with other software, you might
@@ -511,7 +512,18 @@ days...), then please check out:
     correction. Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
   | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
 
+If you want to learn about AFNI+SUMA results on the FIAC dataset,
+please see:
+
+* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
+    PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
+    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+
 .. _pub_cit_noooo_gsr:
+
+Re. Global signal regression (noooo...)
+----------------------------------------
 
 For papers discussing global signal regression (GSR), and several
 reasons why not to do it (note: there are many other papers by other
@@ -547,13 +559,9 @@ as an alternative, please check out/reference:
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
-If you want to learn about AFNI+SUMA results on the FIAC dataset,
-please see:
 
-* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
-    PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
-    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+Code history
+-------------
 
 If you want to know more about AFNI and its development and
 underpinnings, please see:
@@ -570,8 +578,9 @@ underpinnings, please see the pithily titled:
   | `<https://pubmed.ncbi.nlm.nih.gov/21945692/>`_
 
 
+
 Data projects: human templates and atlases
-----------------------------------------------
+==============================================
 
 *India Brain Template (IBT).* We present a series of five age-specific
 brain templates and accompanying atlases (IBTAs), spanning an age
@@ -604,7 +613,7 @@ using a new AFNI tool called ``make_template_dask.py``:
   | `<https://link.springer.com/article/10.1007%2Fs00247-020-04875-y>`_
 
 Data projects: animal templates and atlases
-----------------------------------------------
+==============================================
 
 *Marmoset atlas v2.* This project provides some of the highest
 resolution nonhuman primate MRI templates and atlas for gray and white
@@ -690,7 +699,7 @@ information about the related :ref:`templates and atlases
   | `<https://www.sciencedirect.com/science/article/pii/S1053811920310041>`_
 
 Data projects: NIFTI format
-------------------------------
+==============================
 
 For technical reference for the NIFTI data format, you can cite:
 
