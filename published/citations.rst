@@ -608,18 +608,18 @@ using a new AFNI tool called ``make_template_dask.py``:
   | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
 
 *Haskins pediatric atlas.* The Haskins pediatric templates and atlases
- were generated with nonlinear methods using structural MRI from 72
- children (age range 7-14 years, median 10 years), allowing for a
- detailed template with corresponding parcellations of labeled atlas
- regions. The accuracy of these templates and atlases was assessed
- using multiple metrics of deformation distance and overlap:
+were generated with nonlinear methods using structural MRI from 72
+children (age range 7-14 years, median 10 years), allowing for a
+detailed template with corresponding parcellations of labeled atlas
+regions. The accuracy of these templates and atlases was assessed
+using multiple metrics of deformation distance and overlap:
 
 * | Molfese PJ, Glen D, Mesite L, Cox RW, Hoeft F, Frost SJ, Mencl WE,
     Pugh KR, Bandettini PA (2020). The Haskins pediatric atlas: a
     magnetic-resonance-imaging-based pediatric template and
     atlas. Pediatric Radiology *(in press)*. DOI:
     10.1007/s00247-020-04875-y.
-  | `<https://link.springer.com/article/10.1007%2Fs00247-020-04875-y>`_
+  | `<https://pubmed.ncbi.nlm.nih.gov/33211184/>`_
 
 Data projects: animal templates and atlases
 ==============================================
