@@ -109,6 +109,60 @@ cite:
     10.1016/j.jneumeth.2016.03.001. PMID: 26945974
   | `<https://github.com/rordenlab/dcm2niix>`_
 
+If you use ``3dPFM`` for "paradigm free mapping" to identify brief
+BOLD events (order of sec) in fMRI time series without prior knowledge
+of their timing, please cite:
+
+* | Caballero-Gaudes C, Petridou N, Dryden IL, Bai L, Francis ST,
+    Gowland PA (2011).  Detection and characterization of single-trial
+    fMRI bold responses: Paradigm free mapping. Hum Brain Mapp,
+    32(9):1400-18.
+  | `<http://dx.doi.org/10.1002/hbm.21116>`_
+
+* | Caballero-Gaudes C, Petridou N, Francis ST, Dryden IL, Gowland PA
+    (2013).  Paradigm Free Mapping with Sparse Regression
+    Automatically detects Single-Trial Functional Magnetic Resonance
+    Imaging Blood Oxygenation Level Dependent Responses.  Hum Brain
+    Mapp 34(3):501-18.  
+  | `<http://dx.doi.org/10.1002/hbm.21452>`_
+
+* | **Comment:** this is specifically for applying PFM to resting state 
+    data:
+  | Petridou N, Caballero-Gaudes C, Dryden IL, Francis ST Gowland PA
+    (2013). Periods of rest in fMRI contain individual spontaneous
+    events which are related to slowly fluctuating spontaneous
+    activity. Hum Brain Mapp 34(6):1319-29.
+  | `<http://dx.doi.org/10.1002/hbm.21513>`_
+
+If you use ``3dMEPFM`` for multi-echo "paradigm free mapping", please cite:
+
+* | Caballero-Gaudes C, Moia S, Panwar P, Bandettini PA,
+    Gonzalez-Castillo J (2019).A deconvolution algorithm for
+    multi-echo functional MRI: Multi-echo Sparse Paradigm Free
+    Mapping.  NeuroImage 202:116081.
+  | `<https://pubmed.ncbi.nlm.nih.gov/31419613/>`_
+
+If you are interested in using population receptive fields (pRFs) in
+your analysis (e.g., via ``3dNLfim``), please check out tools for
+their analysis in AFNI here:
+
+* | Silson EH, Reynolds RC, Kravitz DJ, Baker CI (2018).
+    Differential Sampling of Visual Space in Ventral and Dorsal Early
+    Visual Cortex. J Neurosci 38:2294–2303.
+  | `<https://www.jneurosci.org/content/38/9/2294>`_
+
+* | Silson EH, Chan AW, Reynolds RC, Kravitz DJ, Baker CI (2015). A
+    retinotopic basis for the division of high-level scene processing
+    between lateral and ventral human occipitotemporal cortex. J
+    Neurosci 35:11921–11935.
+  | `<https://europepmc.org/article/pmc/pmc4549403>`_
+
+* | Silson EH, Groen II, Kravitz DJ, Baker CI (2016) Evaluating the
+    correspondence between face-, scene-, and object-selectivity and
+    retinotopic organization within lateral occipitotemporal cortex. J
+    Vis 16(6):14, 1–21.
+  | `<https://pubmed.ncbi.nlm.nih.gov/27105060/>`_
+
 
 Methods: SUMA
 ==============
