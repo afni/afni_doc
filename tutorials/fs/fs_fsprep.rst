@@ -178,8 +178,8 @@ example.  But since we get paid by the word, we thought we would
 describe such things in more explicit and general and technical and
 detailed detail here.
 
-General tcsh script for FS+SUMA
----------------------------------
+A general tcsh script for FS+SUMA
+===================================
 
 Putting this altogether, if we were writing a script to combine
 running ``recon-all`` and ``@SUMA_Make_Spec_FS``, the following is
@@ -250,57 +250,6 @@ converted NIFTI/GIFTI files to carry on with would be in
 The above could be translated to a ``bash`` script, just changing the
 syntax in lines with ``setenv`` and ``set``, as well as the way
 ``tee``\ ing is done.
-
-Running FS on NIH's Biowulf cluster
-=====================================
-
-For those of us using NIH's Biowulf cluster, there a couple things to
-know about loading modules in a script, esp. if you are using
-FreeSurfer. 
-
-#. Here is a have a handy general reference page for the FreeSurfer
-   module on Biowulf: `<https://hpc.nih.gov/apps/freesurfer.html>`_.
-
-#. If **all three** of the following are true for your use
-   usage case:
-
-   * your terminal shell is ``bash`` (i.e., if ``echo $0`` shows
-     something with "bash" in it)
-
-   * your script is ``tcsh`` or ``csh`` (i.e., the shebang at the top is
-     ``#!/bin/tcsh`` or ``#!/usr/bin/env tcsh`` or similar)
-
-   * your script loads one or more modules (i.e., it contains ``module
-     load ...``)
-
-   \.\.\. then you **need** to include the following line in your script
-   prior to loading the module(s)::
-
-     source /etc/profile.d/modules.csh
-
-   The need for this is described more in the **Using modules in
-   scripts** section `here <https://hpc.nih.gov/apps/modules.html>`_.
-
-#. If you are using FreeSurfer, then you also need to source the
-   magical setup file for the particular shell.  For a ``tcsh``
-   script, you do that by including the following line *after* you
-   load the module::
-
-     source $FREESURFER_HOME/SetUpFreeSurfer.csh
-
-   \.\.\. where ``$FREESURFER_HOME`` should be a known variable within
-   the shell once you have loaded the FreeSurfer module, so you don't
-   need to worry about defining it yourself.
-
-**Thus,** when I have a ``tcsh`` script to run FreeSurfer and AFNI
-(and yes, I do use ``bash`` as my login shell), I include the
-following lines at the very top (just after the shebang)::
-
-  source /etc/profile.d/modules.csh
-  module load afni freesurfer
-  source $FREESURFER_HOME/SetUpFreeSurfer.csh
-
-And you can, too!
 
 A note on @SUMA_Make_Spec_FS outputs
 ======================================
