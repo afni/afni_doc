@@ -253,7 +253,7 @@ Here is the script:
 
    #!/bin/tcsh
    
-   ###  Run this comand with something like
+   ###  Run this command with something like
    #
    #   sbatch                                                            \
    #      --partition=norm                                               \

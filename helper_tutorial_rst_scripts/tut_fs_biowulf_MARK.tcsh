@@ -249,7 +249,7 @@ Here is the script:
 
 TEXTBLOCK
 
-###  Run this comand with something like
+###  Run this command with something like
 #
 #   sbatch                       \
 #      --partition=norm          \
