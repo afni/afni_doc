@@ -163,6 +163,18 @@ their analysis in AFNI here:
     Vis 16(6):14, 1–21.
   | `<https://pubmed.ncbi.nlm.nih.gov/27105060/>`_
 
+If you use the program ``PTA`` for profile-tracking analysis (PTA) to
+estimate nonlinear trajectories, trends or profiles through smoothing
+splines; or, if you use ``3dMSS`` for multilevel smoothing splines at
+the population-level, please cite:
+
+* | Chen G, Nash TA, Reding KM, Kohn PD, Wei S-M, Gregory MD,
+    Eisenberg DP, Cox RW, Berman KF, Kippenhan JS (2020). Beyond
+    linearity in neuroimaging: Capturing nonlinear relationships with
+    application to longitudinal studies. doi:
+    https://doi.org/10.1101/2020.11.01.363838
+  | `<https://www.biorxiv.org/content/10.1101/2020.11.01.363838v2>`_
+
 
 Methods: SUMA
 ==============
