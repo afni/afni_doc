@@ -2,6 +2,12 @@
 
 .. _devdocs_openp:
 
+.. comment:
+
+   these notes were originally poster here online:
+
+   https://afni.nimh.nih.gov/pub/dist/doc/misc/OpenMP.html
+
 ****************************************
 **Elementary OpenMP in AFNI**
 ****************************************
