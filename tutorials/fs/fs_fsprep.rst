@@ -302,5 +302,53 @@ content of the directory is:
 
     |
     
+Minor note on FS setup
+========================
+
+By default, after you have set up FreeSurfer, every time you open a
+new terminal or source one of your ``~/.*rc`` files, you will get some
+text about your FS setup displayed in the terminal.  This comes from
+the FS setup script that is run each time, and looks something like::
+
+  -------- freesurfer-linux-centos7_x86_64-7.1.1-20200723-8b40551 --------
+  Setting up environment for FreeSurfer/FS-FAST (and FSL)
+  FREESURFER_HOME   /usr/local/freesurfer
+  FSFAST_HOME       /usr/local/freesurfer/fsfast
+  FSF_OUTPUT_FORMAT nii.gz
+  SUBJECTS_DIR      /usr/local/freesurfer/subjects
+  MNI_DIR           /usr/local/freesurfer/mni
+
+The exact text varies based on your OS, version of FS, location of the
+binaries, etc.
+
+Anyways, if you would like to *disable* the display of that text
+message, you can do the following:
+
+* For ``bash`` shell users, put the following into your ``~/.bashrc``
+  file:
+
+  .. code-block:: bash
+
+     export FS_FREESURFERENV_NO_OUTPUT="OFF"
+
+  \.\.\. **above** the ``source $FREESURFER_HOME/SetUpFreeSurfer.sh``
+  line.
+
+* For ``tcsh`` shell users, put the following into your ``~/.cshrc``
+  file:
+
+  .. code-block:: tcsh
+
+     setenv FS_FREESURFERENV_NO_OUTPUT "OFF"
+  
+  \.\.\. **above** the ``source $FREESURFER_HOME/SetUpFreeSurfer.csh``
+  line.
+
+If you open a new terminal, you should **not** see the setup info
+text, but you *should* still be able to run FS programs fine.
+
+This is, of course, entirely optional.
+
+
 
 

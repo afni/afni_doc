@@ -40,3 +40,7 @@ recon-all                                                             \
 # ================= A note on @SUMA_Make_Spec_FS outputs =================
 
 
+
+# ======================== Minor note on FS setup ========================
+
+
