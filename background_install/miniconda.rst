@@ -214,7 +214,8 @@ should be used), one could run::
    conda create -y                 \
          -n py27_afni_tiny         \
          python=2.7                \
-         matplotlib numpy 
+         matplotlib numpy          \
+         pillow ipython
 
 Now, if I type ``conda list env``, I will see a list of all my
 available environments::
@@ -246,68 +247,92 @@ you might have slightly different things):
    :starthidden: True
    :label: - show list output y/n -
 
-   # packages in environment at /home/testuser/miniconda3/envs/py27_afni_tiny:
+   # packages in environment at /home/ptaylor/miniconda3/envs/py27_afni_tiny:
    #
    # Name                    Version                   Build  Channel
-   _libgcc_mutex             0.1                        main  
-   backports                 1.0                        py_2  
-   backports.functools_lru_cache 1.6.1                      py_0  
-   backports_abc             0.5                      py27_0  
-   blas                      1.0                         mkl  
-   ca-certificates           2020.1.1                      0  
-   certifi                   2019.11.28               py27_0  
-   cycler                    0.10.0                   py27_0  
-   dbus                      1.13.12              h746ee38_0  
-   expat                     2.2.6                he6710b0_0  
-   fontconfig                2.13.0               h9420a91_0  
-   freetype                  2.9.1                h8a8886c_1  
-   functools32               3.2.3.2                  py27_1  
-   futures                   3.3.0                    py27_0  
-   glib                      2.63.1               h5a9c865_0  
-   gst-plugins-base          1.14.0               hbbd80ab_1  
-   gstreamer                 1.14.0               hb453b48_1  
-   icu                       58.2                 he6710b0_3  
-   intel-openmp              2020.0                      166  
-   jpeg                      9b                   h024ee3a_2  
-   kiwisolver                1.1.0            py27he6710b0_0  
-   libedit                   3.1.20181209         hc058e9b_0  
-   libffi                    3.2.1                hd88cf55_4  
-   libgcc-ng                 9.1.0                hdf63c60_0  
-   libgfortran-ng            7.3.0                hdf63c60_0  
-   libpng                    1.6.37               hbc83047_0  
-   libstdcxx-ng              9.1.0                hdf63c60_0  
-   libuuid                   1.0.3                h1bed415_2  
-   libxcb                    1.13                 h1bed415_1  
-   libxml2                   2.9.9                hea5a465_1  
-   matplotlib                2.2.3            py27hb69df0a_0  
-   mkl                       2020.0                      166  
-   mkl-service               2.3.0            py27he904b0f_0  
-   mkl_fft                   1.0.15           py27ha843d7b_0  
-   mkl_random                1.1.0            py27hd6b4f25_0  
-   ncurses                   6.2                  he6710b0_0  
-   numpy                     1.16.6           py27hbc911f0_0  
-   numpy-base                1.16.6           py27hde5b4d6_0  
-   openssl                   1.1.1g               h7b6447c_0  
-   pcre                      8.43                 he6710b0_0  
-   pip                       19.3.1                   py27_0  
-   pyparsing                 2.4.6                      py_0  
-   pyqt                      5.9.2            py27h05f1152_2  
-   python                    2.7.18               h02575d3_0  
-   python-dateutil           2.8.1                      py_0  
-   pytz                      2019.3                     py_0  
-   qt                        5.9.7                h5867ecd_1  
-   readline                  8.0                  h7b6447c_0  
-   setuptools                44.0.0                   py27_0  
-   singledispatch            3.4.0.3                  py27_0  
-   sip                       4.19.8           py27hf484d3e_0  
-   six                       1.13.0                   py27_0  
-   sqlite                    3.31.1               h62c20be_1  
-   subprocess32              3.5.4            py27h7b6447c_0  
-   tk                        8.6.8                hbc83047_0  
-   tornado                   5.1.1            py27h7b6447c_0  
-   wheel                     0.33.6                   py27_0  
-   xz                        5.2.5                h7b6447c_0  
-   zlib                      1.2.11               h7b6447c_3  
+   backports                 1.0                        py_2    anaconda
+   backports.functools_lru_cache 1.6.1                      py_0    anaconda
+   backports.shutil_get_terminal_size 1.0.0                    py27_2    anaconda
+   backports_abc             0.5                        py_1    anaconda
+   blas                      1.0                         mkl    anaconda
+   ca-certificates           2020.10.14                    0    anaconda
+   certifi                   2019.11.28               py27_0    anaconda
+   cycler                    0.10.0                   py27_0    anaconda
+   dbus                      1.13.18              hb2f20db_0    anaconda
+   decorator                 4.4.2                      py_0    anaconda
+   enum34                    1.1.6                    py27_1    anaconda
+   expat                     2.2.10               he6710b0_2    anaconda
+   fontconfig                2.13.0               h9420a91_0    anaconda
+   freetype                  2.10.4               h5ab3b9f_0    anaconda
+   functools32               3.2.3.2                  py27_1    anaconda
+   futures                   3.3.0                    py27_0    anaconda
+   glib                      2.56.2               hd408876_0    anaconda
+   gst-plugins-base          1.14.0               hbbd80ab_1    anaconda
+   gstreamer                 1.14.0               hb453b48_1    anaconda
+   icu                       58.2                 he6710b0_3    anaconda
+   intel-openmp              2020.2                      254    anaconda
+   ipython                   5.8.0                    py27_1    conda-forge
+   ipython_genutils          0.2.0                    py27_0    anaconda
+   jpeg                      9d                   h36c2ea0_0    conda-forge
+   kiwisolver                1.1.0            py27he6710b0_0    anaconda
+   libblas                   3.9.0           1_h6e990d7_netlib    conda-forge
+   libcblas                  3.9.0           3_h893e4fe_netlib    conda-forge
+   libedit                   3.1.20191231         h14c3975_1    anaconda
+   libffi                    3.3                  he6710b0_2    anaconda
+   libgcc-ng                 9.1.0                hdf63c60_0    anaconda
+   libgfortran-ng            7.5.0               h14aa051_18    conda-forge
+   libgfortran4              7.5.0               h14aa051_18    conda-forge
+   liblapack                 3.9.0           3_h893e4fe_netlib    conda-forge
+   libpng                    1.6.37               hbc83047_0    anaconda
+   libstdcxx-ng              9.1.0                hdf63c60_0    anaconda
+   libtiff                   4.1.0                h2733197_1    anaconda
+   libuuid                   1.0.3                h1bed415_2    anaconda
+   libxcb                    1.14                 h7b6447c_0    anaconda
+   libxml2                   2.9.10               hb55368b_3    anaconda
+   lz4-c                     1.9.2                heb0550a_3    anaconda
+   matplotlib                2.2.3            py27hb69df0a_0    anaconda
+   mkl                       2019.4                      243    anaconda
+   mkl-service               2.3.0            py27he904b0f_0    anaconda
+   mkl_fft                   1.0.15           py27ha843d7b_0    anaconda
+   mkl_random                1.1.0            py27hd6b4f25_0    anaconda
+   ncurses                   6.2                  he6710b0_1    anaconda
+   numpy                     1.16.6           py27hbc911f0_0    anaconda
+   numpy-base                1.16.6           py27hde5b4d6_0    anaconda
+   olefile                   0.46                     py27_0    anaconda
+   openssl                   1.1.1h               h7b6447c_0    anaconda
+   pathlib2                  2.3.5                    py27_0    anaconda
+   pcre                      8.44                 he6710b0_0    anaconda
+   pexpect                   4.8.0              pyh9f0ad1d_2    conda-forge
+   pickleshare               0.7.5                    py27_0    anaconda
+   pillow                    6.2.1            py27hd70f55b_1    conda-forge
+   pip                       19.3.1                   py27_0    anaconda
+   prompt_toolkit            1.0.15                     py_1    conda-forge
+   ptyprocess                0.6.0                    py27_0    anaconda
+   pygments                  2.3.1                    py27_0    anaconda
+   pyparsing                 2.4.7                      py_0    anaconda
+   pyqt                      5.9.2            py27h22d08a2_1    anaconda
+   python                    2.7.18               h15b4118_1    anaconda
+   python-dateutil           2.8.1                      py_0    anaconda
+   pytz                      2020.1                     py_0    anaconda
+   qt                        5.9.7                h5867ecd_1    anaconda
+   readline                  8.0                  h7b6447c_0    anaconda
+   scandir                   1.10.0           py27h7b6447c_0    anaconda
+   scipy                     1.2.1            py27h921218d_2    conda-forge
+   setuptools                44.0.0                   py27_0    anaconda
+   simplegeneric             0.8.1                    py27_2    anaconda
+   singledispatch            3.4.0.3                 py_1001    anaconda
+   sip                       4.19.13          py27he6710b0_0    anaconda
+   six                       1.15.0                     py_0    anaconda
+   sqlite                    3.33.0               h62c20be_0    anaconda
+   subprocess32              3.5.4            py27h7b6447c_0    anaconda
+   tk                        8.6.10               hbc83047_0    anaconda
+   tornado                   5.1.1            py27h7b6447c_0    anaconda
+   traitlets                 4.3.3                    py27_0    anaconda
+   wcwidth                   0.2.5                      py_0    anaconda
+   wheel                     0.35.1                     py_0    anaconda
+   xz                        5.2.5                h7b6447c_0    anaconda
+   zlib                      1.2.11               h7b6447c_3    anaconda
+   zstd                      1.4.4                h0b5b093_3    anaconda
 
 
 So, in this environment, I could run a program that imports
@@ -505,7 +530,8 @@ Set up Conda (quick)
       conda create -y                 \
             -n py27_afni_tiny         \
             python=2.7                \
-            matplotlib numpy 
+            matplotlib numpy          \
+            pillow ipython
 
 #. **Add to an existing environment**
 
