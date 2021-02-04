@@ -41,10 +41,11 @@ the anatomical in ``AFNI_data6/FT_analysis/FT/``).
 
 First, we copy the dset to be in NIFTI format (if it isn't already)
 using ``3dcopy``.  Then we run FS's ``recon-all`` to estimate
-surfaces, tissue maps and specific anatomical parcellations.  To bring
-that output into standard NIFTI and GIFTI format, as well as to
-generate standard surfaces and other niceties, we run AFNI's
-``@SUMA_Make_Spec_FS``:
+surfaces, tissue maps and specific anatomical parcellations (and in
+this example we assume that the data came from a 3T scanner-- hence
+the use of the ``-3T`` flag).  To bring that output into standard
+NIFTI and GIFTI format, as well as to generate standard surfaces and
+other niceties, we run AFNI's ``@SUMA_Make_Spec_FS``:
 
 
 
@@ -58,6 +59,7 @@ generate standard surfaces and other niceties, we run AFNI's
    # 1) Run FreeSurfer, basic example A.
    recon-all                                                             \
        -all                                                              \
+       -3T                                                               \
        -sd      .                                                        \
        -subjid  FT                                                       \
        -i       FT_anat_cp.nii.gz
@@ -73,6 +75,17 @@ generate standard surfaces and other niceties, we run AFNI's
 And that is all.  Note that ``recon-all`` will take a long time to run
 (several hours).  There are some ways to speed it up a bit using its
 internal parallelization, which you can read about in the next section.
+
+| There are a fair number of other options/flags that you could consider
+  using with ``recon-all``.  We are not so familiar with them, but a
+  full list for investigating is here:
+| `<https://surfer.nmr.mgh.harvard.edu/fswiki/OtherUsefulFlags>`_
+
+| Also, if you have data with isotropic, high-resolution voxels
+  (voxels with equal edge lengths, each :math:`<1~{\rm mm}`), then you will
+  likely have to use additional considerations.  For information on
+  these, read here:
+| `<https://surfer.nmr.mgh.harvard.edu/fswiki/SubmillimeterRecon>`_
 
 .. _tut_fs_fsprep_par:
 
@@ -94,6 +107,7 @@ first example, you could run::
     # example B: using default parallelization
     recon-all                                  \
         -all                                   \
+        -3T                                    \
         -sd      .                             \
         -subjid  FT                            \
         -i       FT_anat_cp.nii.gz             \
@@ -107,6 +121,7 @@ computing power available. So, you could try::
     # example C: using parallelization with 8 CPUs
     recon-all                                  \
         -all                                   \
+        -3T                                    \
         -sd      .                             \
         -subjid  FT                            \
         -i       FT_anat_cp.nii.gz             \
@@ -152,6 +167,7 @@ Consider the following command:
 
    recon-all                                  \
        -all                                   \
+       -3T                                    \
        -sd      AAA                           \
        -subjid  BBB                           \
        -i       DSET.nii.gz
@@ -216,6 +232,7 @@ depends on your system):
 
    time recon-all                                                \
        -all                                                      \
+       -3T                                                       \
        -sd      ${dir_fs}                                        \
        -subjid  ${subj}                                          \
        -i       ${dset}                                          \

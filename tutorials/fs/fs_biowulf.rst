@@ -123,18 +123,22 @@ be our subject ID or something.
 
 The way we typically include this in a script is to do the following:
 
-* define a directory we want to output to within our real directory
+* Define a directory we want to output to within our real directory
   structure.
 
-* Then check if the variable ``$SLURM_JOBID`` exists, which will be
-  true if we have submitted our job to the slurm system with
-  ``sbatch`` or ``slurm``
+* Then check if we have asked for+been allocated space on the scratch
+  disk for temporary I/O, by asking if a directory
+  ``/lscratch/$SLURM_JOBID`` exists.  This will be true if we have
+  submitted our job to the slurm system with ``sbatch`` or ``slurm``
+  with a particular ``--gres=lscratch:VALUE`` option, where ``VALUE``
+  should be replaced with amount of desired disk space, in units of
+  GB.
 
-  * if it does exist, we can make use of a temporary directory on
-    scratch, and then later copy everything back (more efficient when
-    we have large jobs that read/write a lot of data)
+  * If the directory does exist, we can write our outputs there first,
+    and then later copy everything back (more efficient when we have
+    large jobs that read/write a lot of data)
 
-  * if it does *not* exist, we will output to our desired location
+  * If it does *not* exist, we will just output to our desired location
     directly (the less efficient way, likely, for larger work)
 
 The chunk of code to do this could look like:
@@ -145,16 +149,26 @@ The chunk of code to do this could look like:
    set dir_fs = ./group_analysis_dir
 
    # Set temporary output directory; then requires using something like
-   # this on the swarm command line: --sbatch '--gres=lscratch:50'.
+   # this on the swarm command line: --sbatch '--gres=lscratch:10'.
    # These variables used again *after* the main commands, if running
    # on Biowulf.
-   if( $?SLURM_JOBID ) then
+   if ( -d /lscratch/$SLURM_JOBID ) then
      set tempdir = /lscratch/$SLURM_JOBID/${subj}
      set usetemp = 1
    else
      set tempdir = ${dir_fs}
      set usetemp = 0
    endif
+
+.. note:: Just checking if ``$SLURM_JOBID`` is defined is *not* a good
+          enough condition here.  Starting a ``sinteractive`` or
+          ``spersist`` node is actually a slurm job itself, so the
+          ``$SLURM_JOBID`` variable will be defined even then, and
+          that doesn't mean we have space allocated on the scratch
+          disk.  Though, we *could* start the session with a
+          ``--gres=lscratch:VALUE`` option, and in that case make use
+          of temporary scratch disk space then.
+
 
 Then, after we have done our work, we can see if we need to copy
 everything back.  If we don't, all our data should be in the right
@@ -307,6 +321,7 @@ Here is the script:
    
    time recon-all                                                        \
        -all                                                              \
+       -3T                                                               \
        -sd      ${tempdir}                                               \
        -subjid  ${subj}                                                  \
        -i       ${dset}                                                  \

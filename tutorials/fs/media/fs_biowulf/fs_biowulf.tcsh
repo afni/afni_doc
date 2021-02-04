@@ -73,6 +73,7 @@ echo "++ Should be using this many threads: ${nomp}"                  \
 
 time recon-all                                                        \
     -all                                                              \
+    -3T                                                               \
     -sd      ${tempdir}                                               \
     -subjid  ${subj}                                                  \
     -i       ${dset}                                                  \

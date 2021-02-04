@@ -13,6 +13,7 @@
 # 1) Run FreeSurfer, basic example A.
 recon-all                                                             \
     -all                                                              \
+    -3T                                                               \
     -sd      .                                                        \
     -subjid  FT                                                       \
     -i       FT_anat_cp.nii.gz
