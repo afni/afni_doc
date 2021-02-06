@@ -51,8 +51,8 @@ endif
 # this on the swarm command line: --sbatch '--gres=lscratch:50'.
 # These variables used again *after* the main commands, if running
 # on Biowulf.
-if( $?SLURM_JOBID ) then
-  set tempdir = /lscratch/$SLURM_JOBID/${subj}
+if ( -d /lscratch/$SLURM_JOBID ) then
+  set tempdir = /lscratch/$SLURM_JOBID
   set usetemp = 1
 else
   set tempdir = ${dir_fs}
@@ -120,7 +120,7 @@ if( $usetemp && -d ${tempdir} ) then
     echo "++ Copy from: ${tempdir}" 
     echo "          to: ${dir_fs}"
     \mkdir -p ${dir_fs}
-    \cp -pr ${tempdir}/* ${dir_fs}/.
+    \cp -pr ${tempdir}/${subj} ${dir_fs}/.
 endif
 
 # ----------------------------------------------------------------------
