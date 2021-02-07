@@ -199,10 +199,13 @@ using the scratch disk as a temporary dir), or just with ``tcsh ..``
 We control the allocated memory, number of CPUs, and scratch disk
 space when we submit the job with ``sbatch``.  Here, I intend to use
 the ``-parallel`` option in ``recon-all``, so I will allocate 4 CPUs
-to use.  In the script, the ``if ( $?SLURM_CPUS_PER_TASK ) ...``
-conditional can then set our ``OMP_NUM_THREADS`` value to match this;
-if we weren't using ``sbatch`` to submit the job, this variable simply
-wouldn't exist, and no harm is done.
+to use (though note that the program can sometimes crash using this
+option; see the end of :ref:`this section of the notes
+<tut_fs_fsprep_par>` for more on the error/crash).  In the script, the
+``if ( $?SLURM_CPUS_PER_TASK ) ...`` conditional can then set our
+``OMP_NUM_THREADS`` value to match this; if we weren't using
+``sbatch`` to submit the job, this variable simply wouldn't exist, and
+no harm is done.
 
 We put a comment in the top of the script for one way to run this
 script with ``sbatch``.  At present, the "norm" partition nodes seem

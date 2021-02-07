@@ -148,6 +148,16 @@ including the ``-openmp ..`` option---I am not sure why. If you are
 able to get further runtime improvement somehow, please let us know
 how!
 
+**(!) However, please also note:** I had several ``recon-all`` runs
+fail when using this ``-parallel`` option.  From searching online,
+apparently this is a known issue that can occur.  In my case, the
+specific failure that occurred was this message::
+
+  Cannot find rh.white.H
+
+So, if this pops up while you are using the ``-parallel`` option, try
+removing it and rerunning your job.
+
 A note of filenames/paths with FS
 ===================================
 
