@@ -1,6 +1,6 @@
 
 
-.. _tut_auto_@chauffeur_afni:
+.. _auto_@chauffeur_afni:
 
 *********************
 Using @chauffeur_afni
@@ -12,7 +12,7 @@ Using @chauffeur_afni
 Introduction
 ============
 
-**Download script:** :download:`tut_auto_@chauffeur_afni.tcsh <media/auto_@chauffeur_afni/tut_auto_@chauffeur_afni.tcsh>`
+**Download script:** :download:`auto_@chauffeur_afni.tcsh <media/auto_@chauffeur_afni/auto_@chauffeur_afni.tcsh>`
 
 
 .. comment:
@@ -205,6 +205,23 @@ view-planes that are created per command execution.
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 0
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca000_anat.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca000_anat.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca000_anat.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 1**: 3D anatomical volume
@@ -237,6 +254,23 @@ example the central image is placed at the location (x, y, z) = (0, 0,
        -do_clean
    
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 1
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca001_anat.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca001_anat.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca001_anat.sag.png
+          :width: 100%   
+          :align: center
+     -
 
 |
 
@@ -275,6 +309,23 @@ results. The olay color comes from the max of the default colorbar
    
    
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 2
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.sag.png
+          :width: 100%   
+          :align: center
+     -
 
 |
 
@@ -334,6 +385,23 @@ agnostic to the dset's orientation like RAI, LPI, SRA, etc.).
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 3
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 4**: threshold stats voxelwise, view effects, II
@@ -378,6 +446,23 @@ Quite similar to the above command and output, with a couple changes:
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 4
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 5**: threshold stats voxelwise, view effects, III
@@ -417,6 +502,23 @@ suprathreshold locations nicely.
        -do_clean
    
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 5
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.sag.png
+          :width: 100%   
+          :align: center
+     -
 
 |
 
@@ -473,6 +575,23 @@ similar to the preceding.
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 6
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 7**: threshold stats voxelwise + clusterize, view effects, II
@@ -519,6 +638,23 @@ has less empty space ("autoboxed" with a wee bit of padding).
        -do_clean
    
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 7
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.sag.png
+          :width: 100%   
+          :align: center
+     -
 
 |
 
@@ -571,6 +707,23 @@ things to consider.
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 8
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 9**: check alignment with edge view
@@ -620,6 +773,23 @@ rightfully given up detailed reading by this point in the webpage).
    
 
 
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 9
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.sag.png
+          :width: 100%   
+          :align: center
+     -
+
 |
 
 **Ex. 10**: 4D mode
@@ -661,6 +831,21 @@ which [n]th volume we are viewing in the time series, starting with
        -do_clean
    
 
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100 
+
+   * - Example 10
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.sag.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.axi.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.cor.png
+          :width: 100%   
+          :align: center
 
 |
 
