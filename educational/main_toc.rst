@@ -14,3 +14,4 @@ Educational resources
    startup_tips
    all_afni_cbars
    classified_progs
+   shell_and_script
