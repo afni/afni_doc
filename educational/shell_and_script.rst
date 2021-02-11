@@ -83,9 +83,10 @@ the start.
 After this line, you can put whatever commands you want for your
 devious purposes.  For *most* considerations, spacing and indentation
 does not matter within the script (of course, we will mention some
-exceptions below).  However, it is a good idea to indent your code
-consistently, to help yourself or other people see where loops and
-conditionals end.  
+exceptions below; for example, when setting a variable one *needs*
+spaces around the assignment operator ``=``).  However, it is a good
+idea to indent your code consistently, to help yourself or other
+people see where loops and conditionals end.
 
 To run or execute the script, you can type::
 
@@ -139,6 +140,7 @@ assume that if you read the page from top to bottom (as you surely
 will, right?) then topics should be sensical.
 
 Here we go---*le deluge*:
+
 
 Check if a variable exists
 ----------------------------
@@ -503,3 +505,131 @@ Consider these examples::
    0     # it is not true that: either 7 or 3 is a factor of 100
 
 See the help ``man bc`` for more information.
+
+Display blocks of text with ``cat << EOF ... EOF``
+---------------------------------------------------
+
+You can ``echo`` or ``printf`` text line by line, which is often good
+enough.  But what if you have a *block* of text?  You could just have
+several ``echo`` commands::
+
+  echo "# Program author:  A. Lovelace"
+  echo "# Program version: G"
+  echo "# Program date:    Aug 1, 1843"
+  echo "" 
+  echo ""
+  echo "# Comment on line 1 ..."
+  echo ""
+
+This quickly becomes unwieldy.  A better way to go is to use the
+following syntax of the ``cat`` program (no silly, feline puns allowed
+here, unless the are about *fat*\ cats)::
+
+  cat << EOF
+  # Program author:  A. Lovelace
+  # Program version: G
+  # Program date:    Aug 1, 1843
+
+
+  # Comment on line 1 ...
+
+  EOF
+
+Three things to note:  
+
+* Spacing and empty line within the blocks are preserved, both at the
+  start of lines and within lines.
+
+* The ``EOF`` is just a commonly used syntax, and you could use
+  another string there.  However, don't use something that might occur
+  at the start of a line in that block of text.
+
+* This is a case where spacing **does** matter.  The closing string
+  ``EOF`` must occur at the start of the line.  It cannot be indented.
+  Otherwise, the shell interpreter won't find the closing of the block.
+
+You can include variables that have been defined outside the block in
+the block, just by referring to them as usual::
+
+  set N = 25
+
+  cat << EOF
+
+     echo "The value of N is: ${N}"
+
+  EOF
+
+You can redirect the block into a text file, as well.  This might be
+useful if you are creating a script.  This is done as follows::
+
+  set N = 25
+
+  cat << EOF >> SOME_FILE
+
+     echo "The value of N is: ${N}"
+
+  EOF
+
+This puts the three lines of text that appear in the block into
+``SOME_FILE``; this was done in "append" mode, so the text file
+just gets longer if text were there previously.  Changing ``>>
+SOME_FILE`` to ``> SOME_FILE`` puts the operation in
+"overwrite" mode, instead.
+
+You can even define (or set) new variables inside the block of text.
+This might occur if you are generating a script file in this way, for
+example.  However, you will have to "escape" the usage of any of these
+variables within the text block.  Consider the following::
+
+  set N = 25
+
+  cat << EOF > SOME_OTHER_FILE
+
+     echo "The value of N is: ${N}"
+
+     set Nsq = N * N
+
+     The value of Nsq is: \${Nsq}
+
+
+  EOF
+
+After this, ``SOME_OTHER_FILE`` looks like the following::
+
+   echo "The value of N is: 25"
+
+   set Nsq = N * N
+
+   The value of Nsq is: ${Nsq}
+
+If we hadn't put a backslash ``\`` before the *usage* (not definition)
+of ``$Nsq``, then we would have gotten an error.  Note that we only
+did this with the variable set *inside* the block (``$Nsq``), not the
+one set *outside* it (``$N``), because it was already evaluated before
+getting to the block.
+
+A final note: if you are going to dump in a shebang, you do *not* need
+to escape the exclamation point in it.  Thus, the following would be
+correct::
+
+  set N = 25
+
+  cat << EOF > SOME_LAST_FILE.tcsh
+  #!/bin/tcsh
+
+  echo "The value of N is: ${N}"
+
+  set Nsq = N * N
+
+  The value of Nsq is: \${Nsq}
+
+  EOF
+
+However, if you were using ``echo`` to dump a shebang into a file, you
+*would* need to escape the exclamation point::
+
+  echo "#!/bin/tcsh"   > BAD_SCRIPT.tcsh
+
+  echo "#\!/bin/tcsh"  > GOOD_SCRIPT.tcsh
+
+You can verify this in each case.
