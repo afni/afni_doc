@@ -407,7 +407,7 @@ Let's say you want to add the Sphinx module with cloud-theme support
 
 You will likely get the following message:
 
-.. hidden-code-block:: None
+.. hidden-code-block:: none
    :starthidden: False
    :label: - show text output y/n -
 
