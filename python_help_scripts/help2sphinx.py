@@ -24,6 +24,9 @@ from afnipy import afni_util as au
 ## [PT: May 23, 2019] *put back* vertical pipe chars "|", because
 ## they were useful afterall, just like the comment above them had said...
 ##
+## [PT: Feb 15, 2021] Put ":orphan:" at top of files so we don't get
+## annoying warning about not being included in toctree
+##
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
@@ -272,6 +275,10 @@ for afni_prog in prog_list:
 
         ## open file for writing
         sphinx_out = open(out_file,"w")
+
+        ## this suppresses maketime warning: <<.. isn't include in any
+        ## toctree>>
+        sphinx_out.write(":orphan:\n\n")  
 
         ## table of contents and a blank to remove the indentation for
         ## the next line
