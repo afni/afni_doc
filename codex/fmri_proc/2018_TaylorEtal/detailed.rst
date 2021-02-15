@@ -1,3 +1,4 @@
+:orphan:
 
 .. pub title
 .. include:: fmri_proc/2018_TaylorEtal/all_data.rst

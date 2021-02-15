@@ -1,3 +1,4 @@
+:orphan:
 
 .. pub title
 .. include:: all_data.rst

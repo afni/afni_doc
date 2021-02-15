@@ -1,3 +1,4 @@
+:orphan:
 
 .. pub title
 .. include:: fmri_proc/2018_ChenEtal/all_data.rst
