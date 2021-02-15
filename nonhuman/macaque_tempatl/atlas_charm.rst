@@ -13,7 +13,7 @@ can't resist charm.* --Audrey Tautou
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 Overview
 ------------------------

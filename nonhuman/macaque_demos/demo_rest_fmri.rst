@@ -6,7 +6,7 @@ Rest FMRI processing: the MACAQUE_DEMO_REST
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 **Overview**
 ------------------------

@@ -5,7 +5,7 @@ Cmake for AFNI - making AFNI is a piece of C(m)ake
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 Notes by J Lee.
 

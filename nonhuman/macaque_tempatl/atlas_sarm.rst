@@ -7,7 +7,7 @@
    
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 Overview
 ------------------------

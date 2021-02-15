@@ -6,7 +6,7 @@ Task FMRI processing: the MACAQUE_DEMO
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 **Overview**
 ------------------------

@@ -7,7 +7,7 @@
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 If you make use of AFNI and its tools in your work, we ask that you
 please cite the main paper and any accompanying items as appropriate.

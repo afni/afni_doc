@@ -7,7 +7,7 @@
 .. contents:: The essential system setup
    :local:
 
-.. highlight:: None
+.. highlight:: none
 
 What to do?
 -----------

@@ -6,7 +6,7 @@
 
 .. contents:: :local:
 
-.. highlight:: None
+.. highlight:: none
 
 AFNI benefits from all sorts of contributions by users at NIH and
 around the globe.  
