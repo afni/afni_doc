@@ -101,7 +101,7 @@
 1 :: 3dTto1D                 :: Collapse 4D data to 1D in various ways
 1 :: @Atlasize               :: Make an atlas from a dataset and label text files
 1 :: @MakeLabelTable         :: Assign labels to values
-1 :: AFNI_atlas_spaces.niml  :: space, atlas, transformations definitions file
+-1 :: AFNI_atlas_spaces.niml  :: space, atlas, transformations definitions file
 4 :: @measure_bb_thick       :: measure thickness using ball and box method
 4 :: @measure_erosion_thick  :: measure thickness using erosion method
 4 :: @measure_in2out         :: measure thickness between in and out masks
@@ -170,7 +170,7 @@
 1 :: 3dNwarpFuncs             :: Compute various voxelwise information about a nonlinear warp (e.g., Jacobian)
 1 :: 3dNwarpXYZ               :: Apply a nonlinear warp to a set of (x,y,z) triples
 1 :: 3dTagalign              :: Align datasets by matching manually placed 'tags'
-1 :: plugin(Edit Tagset)     :: Place 'tags' in a dataset interactively
+-1 :: plugin(Edit Tagset)     :: Place 'tags' in a dataset interactively
 1 :: 3drotate                :: Rigid body rotation of dataset in 3D
 5 :: 3dAllineate             :: Cross-modality affine volume registration
 3 :: cat_matvec              :: Utility for combining linear affine transformation matrices (e.g., from 3dAllineate)
@@ -224,9 +224,9 @@
 3 :: dicom_hinfo       :: Print out selected information from a number of DICOM headers
 1 :: dicom_to_raw      :: For extracting only the binary image data from a DICOM file
 1 :: @move.to.series.dirs  :: Partition DICOM images into run directectories
-1 :: Imon              :: (obs - use Dimon); Read GE realtime EPI files as they are created
+-1 :: Imon              :: (obs - use Dimon); Read GE realtime EPI files as they are created
 1 :: rtfeedme          :: Dissect one dataset, sends images to AFNI realtime plugin
-1 :: plugin(RT Options)  :: Control options for AFNI realtime image input
+-1 :: plugin(RT Options)  :: Control options for AFNI realtime image input
 2 :: from3d            :: Write dataset slices into image files
 1 :: dicom_hdr         :: Print information from a DICOM file
 
@@ -260,9 +260,9 @@
 1 :: 3dAutoTcorrelate   :: Correlate each voxel with every other voxel
 1 :: 3dpc               :: Principal component analysis
 1 :: 3dSynthesize      :: Compute 3d+time dataset from partial model
-1 :: plugin(Deconvolution)   :: Interactive deconvolution
+-1 :: plugin(Deconvolution)   :: Interactive deconvolution
 1 :: 3ddelay            :: Single regressor linear analysis with time shifting
-1 :: plugins(Nlfit and Nlerr)  :: Interactive nonlinear regression
+-1 :: plugins(Nlfit and Nlerr)  :: Interactive nonlinear regression
 1 :: 3dfim+               :: Linear regression (obsolete -> use 3dDeconvolve)
 1 :: 1dNLfit            :: Fit a general model to a vector of data
 
@@ -343,14 +343,14 @@
 
 ++ 4 :: Mask/skull-strip/segment
 5 :: 3dAutomask              :: Generate a brain and skull-only mask
-1 :: plugin(Draw Dataset)    :: Manually draw ROI mask datasets
+-1 :: plugin(Draw Dataset)    :: Manually draw ROI mask datasets
 3 :: @NoisySkullStrip        :: Strips the skull of anatomical datasets with low SNR
 1 :: 3dinfill                :: Edit masks by filling in holes
 4 :: 3dmask_tool             :: for combining/dilating/eroding/filling masks
 1 :: 3dIntracranial          :: Strip off outside-the-brain voxels
 5 :: 3dSkullStrip            :: Enhanced skull stripping
 5 :: @SSwarper               :: Combines skull stripping with generating a warp to a nonlinear template space; directly combinable with afni_proc.py, too!
-1 :: plugin(Gyrus Finder)    :: Interactively segment gray and white matter
+-1 :: plugin(Gyrus Finder)    :: Interactively segment gray and white matter
 1 :: 3dClipLevel             :: Find value to threshold off outside-the-brain voxels
 3 :: 3dSeg                   :: Segment anatomical (t1w) volume into major brain tissue types
 4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
@@ -360,8 +360,8 @@
 ++ 2 :: Dset histograms
 1 :: 3dAnhist                :: Create and plot histogram of dataset, print peaks
 1 :: 3dhistog                :: Create histogram of dataset to a file
-1 :: plugin(Histogram)       :: Interactively graphs histogram of a dataset (or ROI)
-1 :: plugin(ScatterPlot)     :: Interactively graphs 1 sub-brick vs. another (or ROI)
+-1 :: plugin(Histogram)       :: Interactively graphs histogram of a dataset (or ROI)
+-1 :: plugin(ScatterPlot)     :: Interactively graphs 1 sub-brick vs. another (or ROI)
 3 :: 3dHist                  :: Compute histograms using functions for generating priors
 
 
@@ -372,7 +372,7 @@
 2 :: 3dnewid                 :: Assign a new ID code to a dataset (also, generate a random string for filenames); useful for scripting to get temporary filenames/directory names
 4 :: 3drefit                 :: Lets you change attributes in a dataset header
 1 :: 3dNotes                  :: Lets you put text notes into a dataset header
-1 :: plugin(Dataset NOTES)   :: Interactive header notes editor
+-1 :: plugin(Dataset NOTES)   :: Interactive header notes editor
 5 :: nifti_tool             :: Displays, modifies, copies nifti structures in datasets
 1 :: gifti_tool               :: Displays, modifies, copies nifti structures in datasets
 1 :: cifti_tool               :: Displays, modifies, copies nifti structures in datasets
@@ -583,8 +583,8 @@
 
 ++ 1 :: Miscellaneous visualization tools
 3 :: aiv                  :: AFNI Image Viewer program
-1 :: plugin(Render[new])  :: Interactive volume rendering
-1 :: plugin(Dataset#N)    :: Graph extra dataset time series in AFNI graph viewer
+-1 :: plugin(Render[new])  :: Interactive volume rendering
+-1 :: plugin(Dataset#N)    :: Graph extra dataset time series in AFNI graph viewer
 1 :: afni_open            :: Open various AFNI/SUMA files (*.xmat, *.pdf, etc.)
 3 :: 3dGrayplot           :: Take a 3D+time dataset and make a summary 2D image for data quality review
 
@@ -592,7 +592,7 @@
 ++ 1 :: Supplementary/open programs included in AFNI
 1 :: cjpeg                :: Compress an image file to a JPEG file
 1 :: djpeg                :: Decompress a JPEG file to an image file
-1 :: mpeg_encode          :: Convert sequence of images into MPEG movie
+-1 :: mpeg_encode          :: Convert sequence of images into MPEG movie
 1 :: whirlgif             :: Concatenate series of GIFs into a single one
 
 
@@ -606,7 +606,6 @@
 
 ++ 1 :: Supplemental/underlying programs (no desc needed)
 1 :: @global_parse   
-1 :: afni_util.py
 1 :: 3dToyProg
 1 :: @djunct_4d_slices_to_3d_vol
 1 :: @djunct_anonymize
@@ -676,8 +675,6 @@
 1 :: @clip_volume
 1 :: ConvexHull
 1 :: @DeblankFileNames
-1 :: demo.fixed.niml.do
-1 :: demo.mobile.niml.do
 1 :: @demo_prompt
 1 :: @DO.examples
 1 :: eg_main_chrono.py
@@ -694,12 +691,6 @@
 1 :: @float_fix
 1 :: float_scan
 1 :: gen_epi_review.py
-1 :: GLTsymtest
-1 :: gui_uber_align_test.py
-1 :: gui_uber_skel.py
-1 :: gui_uber_subj.py
-1 :: gui_uber_ttest.py
-1 :: gui_xmat.py
 1 :: @help.AFNI
 1 :: help_format
 1 :: im2niml
@@ -718,21 +709,18 @@
 1 :: inspec
 1 :: @make_plug_diff
 1 :: make_pq_script.py
-1 :: module_test_lib.py
 1 :: mycat
 1 :: myget
 1 :: neuro_deconvolve.py
 1 :: nicat
 1 :: niccc
-1 :: nifti1_test
 1 :: niml_feedme
 1 :: niprobe
 1 :: nsize
-1 :: option_list.py
 1 :: @Purify_1D
 1 :: python_module_test.py
-1 :: qdelaunay
-1 :: qhull
+-1 :: qdelaunay
+-1 :: qhull
 1 :: quotize
 1 :: rbox
 1 :: read_matlab_files.py
@@ -758,7 +746,6 @@
 1 :: tokens
 1 :: uber_skel.py
 1 :: uber_ttest.py
-1 :: ui_xmat.py
 1 :: uniq_images
 1 :: @VolCenter
 1 :: xmat_tool.py
@@ -769,74 +756,74 @@
 1 :: @RetinoProc
 
 ++ 0 :: R programs (in R; called by others)
-1 :: 1dGC.R
-1 :: 1dRplot
-1 :: 1dRplot.R
-1 :: 1dSVAR.R
-1 :: 3dGC.R
-1 :: 3dICA.R
-1 :: 3dICC.R
-1 :: 3dKS.R
-1 :: 3dMEMA.R
-1 :: 3dPFM.R
-1 :: 3dRowFillin
-1 :: 3dRprogDemo
-1 :: 3dRprogDemo.R
-1 :: 3dSignatures.R
-1 :: AFNI_Batch_R
-1 :: AFNIplot.R
-1 :: afni_run_R
-1 :: ExamineXmat.R
-1 :: FIRdesign
-1 :: Level2.R
-1 :: @R_funclist
-1 :: Signatures.R
-1 :: smooth.R
+0 :: 1dGC.R
+0 :: 1dRplot
+0 :: 1dRplot.R
+0 :: 1dSVAR.R
+0 :: 3dGC.R
+0 :: 3dICA.R
+0 :: 3dICC.R
+0 :: 3dKS.R
+0 :: 3dMEMA.R
+0 :: 3dPFM.R
+0 :: 3dRowFillin
+0 :: 3dRprogDemo
+0 :: 3dRprogDemo.R
+0 :: 3dSignatures.R
+0 :: AFNI_Batch_R
+0 :: AFNIplot.R
+0 :: afni_run_R
+0 :: ExamineXmat.R
+0 :: FIRdesign
+0 :: Level2.R
+0 :: @R_funclist
+0 :: Signatures.R
+0 :: smooth.R
 
 ++ 0 :: Retired (no longer in the build)
-1 :: 3dAFNItoMINC           :: Convert AFNI format dataset to MINC format (MINC now extinct)
-1 :: 3dMINCtoAFNI           :: Convert MINC format dataset to AFNI format (MINC now extinct)
-1 :: AlphaSim               :: (obsolete -> used 3dClustSim)
-1 :: 3dFWHM                 :: (obsolete -> use 3dFWHMx)
-1 :: 3dMax                  :: (obsolete -> use 3dBrickStat)
-1 :: @auto_align            :: (obsolete -> use align_epi_anat.py or 3dAllineate)
-1 :: @UpdateAfni            :: (obsolete -> use @update.afni.binaries)
-1 :: 3dANALYZEtoAFNI        :: (obsolete -> use 3dcopy or to3d)
-1 :: Dimon1                 :: (obsolete -> use Dimon)
-1 :: 3dCountSpikes          :: (obsolete -> use 3dToutcount)
-1 :: 3dfim                  :: (obsolete -> use 3dDeconvolve)
-1 :: 3dUniformize           :: (obsolete -> use 3dUnifize)
-1 :: @DTI_studio_reposition :: (probably obsolete)
-1 :: @make_stim_file        :: (obsolete -> use timing_tool.py)
-1 :: 3dICC_REML.R           :: (obsolete -> use 3dICC)
-1 :: 3dAOV.R                :: (obsolete -> use 3dMVM)
-1 :: lpc_align.py           :: (obsolete -> use align_epi_anat.py or 3dAllineate)
-1 :: afni_restproc.py       :: (obsolete -> use afni_proc.py)
-1 :: @snapshot_volreg3      :: (obsolete -> use @snapshot_volreg)
-1 :: 1dDW_Grad_o_Mat        :: (obsolete -> use 1dDW_Grad_o_Mat++)
-1 :: 3dProbTrackID          :: (obsolete -> use 3dTrackID)
-1 :: 3dFourier              :: (obsolete -> use 3dBandpass)
-1 :: 3dttest                :: (obsolete -> use 3dttest++; for "3dttest -base .." functionality, use "3dttest++ -singletonA ..")
-1 :: 3dAnatNudge            :: (obsolete -> use align_epi_anat.py, 3dAllineate or Nudge plugin)
-1 :: 3ddup                  :: (obsolete -> use 3dcopy or something else to make new dset)
-1 :: 3dDeconvolve_f         :: (obsolete -> use 3dDeconvolve)
-1 :: DoPerRoi.py            :: 
-1 :: 3dbuc2fim              :: 
-1 :: 3dnoise                :: 
-1 :: 3dproject              :: 
-1 :: 3dWavelets             :: 
-1 :: abut                   :: Create zero-filled slices to put into dataset gaps
-1 :: ent16                  :: 
-1 :: ftosh                  :: 
-1 :: ge_header              :: Print information from a GE I. file
-1 :: Ifile                  :: Read GE realtime EPI files and runs to3d
-1 :: check_dset_for_fs.py   :: not needed
-1 :: mayo_analyze           :: Print information from an ANALYZE .hdr file
-1 :: mritopgm               :: 
-1 :: siemens_vision         :: Print information from a Siemens Vision .ima file
-1 :: sqwave                 :: Generate a square wave (a very old program)
-1 :: Xphace                 :: 
-1 :: FD2                    :: 
-1 :: fat_lat_csv.py        :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
-1 :: fat_mvm_review.py      :: (only beta)
-1 :: fat_proc_grad_plot     :: (to be) replaced by newer version
+0 :: 3dAFNItoMINC           :: Convert AFNI format dataset to MINC format (MINC now extinct)
+0 :: 3dMINCtoAFNI           :: Convert MINC format dataset to AFNI format (MINC now extinct)
+0 :: AlphaSim               :: (obsolete -> used 3dClustSim)
+0 :: 3dFWHM                 :: (obsolete -> use 3dFWHMx)
+0 :: 3dMax                  :: (obsolete -> use 3dBrickStat)
+0 :: @auto_align            :: (obsolete -> use align_epi_anat.py or 3dAllineate)
+0 :: @UpdateAfni            :: (obsolete -> use @update.afni.binaries)
+0 :: 3dANALYZEtoAFNI        :: (obsolete -> use 3dcopy or to3d)
+0 :: Dimon1                 :: (obsolete -> use Dimon)
+0 :: 3dCountSpikes          :: (obsolete -> use 3dToutcount)
+0 :: 3dfim                  :: (obsolete -> use 3dDeconvolve)
+0 :: 3dUniformize           :: (obsolete -> use 3dUnifize)
+0 :: @DTI_studio_reposition :: (probably obsolete)
+0 :: @make_stim_file        :: (obsolete -> use timing_tool.py)
+0 :: 3dICC_REML.R           :: (obsolete -> use 3dICC)
+0 :: 3dAOV.R                :: (obsolete -> use 3dMVM)
+0 :: lpc_align.py           :: (obsolete -> use align_epi_anat.py or 3dAllineate)
+0 :: afni_restproc.py       :: (obsolete -> use afni_proc.py)
+0 :: @snapshot_volreg3      :: (obsolete -> use @snapshot_volreg)
+0 :: 1dDW_Grad_o_Mat        :: (obsolete -> use 1dDW_Grad_o_Mat++)
+0 :: 3dProbTrackID          :: (obsolete -> use 3dTrackID)
+0 :: 3dFourier              :: (obsolete -> use 3dBandpass)
+0 :: 3dttest                :: (obsolete -> use 3dttest++; for "3dttest -base .." functionality, use "3dttest++ -singletonA ..")
+0 :: 3dAnatNudge            :: (obsolete -> use align_epi_anat.py, 3dAllineate or Nudge plugin)
+0 :: 3ddup                  :: (obsolete -> use 3dcopy or something else to make new dset)
+0 :: 3dDeconvolve_f         :: (obsolete -> use 3dDeconvolve)
+0 :: DoPerRoi.py            :: 
+0 :: 3dbuc2fim              :: 
+0 :: 3dnoise                :: 
+0 :: 3dproject              :: 
+0 :: 3dWavelets             :: 
+0 :: abut                   :: Create zero-filled slices to put into dataset gaps
+0 :: ent16                  :: 
+0 :: ftosh                  :: 
+0 :: ge_header              :: Print information from a GE I. file
+0 :: Ifile                  :: Read GE realtime EPI files and runs to3d
+0 :: check_dset_for_fs.py   :: not needed
+0 :: mayo_analyze           :: Print information from an ANALYZE .hdr file
+0 :: mritopgm               :: 
+0 :: siemens_vision         :: Print information from a Siemens Vision .ima file
+0 :: sqwave                 :: Generate a square wave (a very old program)
+0 :: Xphace                 :: 
+0 :: FD2                    :: 
+0 :: fat_lat_csv.py        :: Make latent variables for CSV file data using factor analysis; esp for fat_mvm* usage
+0 :: fat_mvm_review.py      :: (only beta)
+0 :: fat_proc_grad_plot     :: (to be) replaced by newer version

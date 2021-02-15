@@ -73,6 +73,7 @@ table_head = \
 .. list-table:: 
    :header-rows: 0
    :widths: 5 20 70
+   :width: 100
 
 '''
 
@@ -174,8 +175,15 @@ def write_out_edu_rst(ofile, lll):
         if x[0] != grp:
             grp = x[0]
             fff.write(table_head % (grp))
-        fff.write("   * - %s\n" % (x[3]))
-        fff.write("     - :ref:`%s <ahelp_%s>`\n" % (x[2], x[2]))
+        
+        # [PT: Feb 15, 2021] account for unincluded progs or "progs"
+        # without help files; use ranks of 0 or <0 to denote that no
+        # help should be linked to
+        fff.write("   * - %s\n" % (str(abs(int(x[3])))))
+        if int(x[3]) > 0 :
+            fff.write("     - :ref:`%s <ahelp_%s>`\n" % (x[2], x[2]))
+        else:
+            fff.write("     - %s\n" % (x[2]))
         fff.write("     - %s\n" % (x[4]))
 
 
