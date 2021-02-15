@@ -243,7 +243,7 @@ their version numbers) you can run::
 \.\.\. which, in the current "py27_afni_tiny" would be as follows (and
 you might have slightly different things):
 
-.. hidden-code-block:: None
+.. hidden-code-block:: none
    :starthidden: True
    :label: - show list output y/n -
 

@@ -35,7 +35,7 @@ Takes %d arguments:
 # =================================================================
 
 def make_hidden_code_block_header( starthidden='True', 
-                                   hcb_format='None',
+                                   hcb_format='none',
                                    label='- show script y/n -',
                                    nempty=2,
                                    lspace=3):
@@ -56,7 +56,7 @@ def make_hidden_code_block_header( starthidden='True',
 
     return lpad + jstr.join(hcb_list)
 
-def make_code_block_header( cb_format='None',
+def make_code_block_header( cb_format='none',
                             nempty=2):
     """
     Make a code-block in RST;  a couple params get entered.
