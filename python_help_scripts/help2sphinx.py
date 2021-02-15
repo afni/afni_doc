@@ -199,6 +199,8 @@ for afni_prog in prog_list:
     out_file = OutFolder+afni_prog+"_sphx.rst"
     sphinx_out = open(out_file,"w")
 
+    sphinx_out.write(":orphan:\n\n")
+
     ## main header as the prog name
     sphinx_out.write(".. _ahelp_"+afni_prog+":\n\n")
     sphinx_out.write((str("*") * len(afni_prog))+"\n")
