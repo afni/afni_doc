@@ -157,7 +157,7 @@ Prepare for Bootcamp
 
 
 Evaluate setup/system (**important!**)
------------------------------------
+----------------------------------------
 
 .. include:: substep_evaluate.rst
 
@@ -174,7 +174,7 @@ Niceify terminal (optional, but goood)
    -> ``Brightness & Lock``, and set inactivity duration.
 
 Install extras (optional, but recommended for Bootcamp prep)
----------------------------
+-----------------------------------------------------------------
 
 .. include:: substep_extra_packs.rst
 
