@@ -117,6 +117,9 @@ Some further, convenient features:
 
       tcsh SCRIPTNAME |& tee LOGNAME
 
+  You can also use this feature *within* a script, to send the
+  terminal output of a particular program to a text file.
+
   **NB:** I can't stress enough how useful this feature is! You should
   *always, always, always* use it.  You're welcome.
 
@@ -155,7 +158,15 @@ and ``0`` if it hasn't.  For example, I suspect this will return
 This can be useful to check if variable name is free or not.  It
 can also be useful in scripting in an if condition: if a variable
 has been defined, then use that value; otherwise, define your own
-value.
+value.  For example::
+
+  if ( $?CALL_ME_ISHMAEL ) then
+      echo "++ CALL_ME_ISHMAEL is already set to: $CALL_ME_ISHMAEL"
+  else
+      set CALL_ME_ISHMAEL = "Moby_01"
+      echo "+* CALL_ME_ISHMAEL was undefined; it is now: $CALL_ME_ISHMAEL"
+  endif
+  
 
 Variables storing arrays
 --------------------------
@@ -295,7 +306,7 @@ commas in the actual output, just a list of numbers)::
 
   seq STOP               # out: 1, 2, 3, ..., STOP
   seq START STOP         # out: START, START+1, START+2, ..., STOP
-  set START STEP STOP    # out: START, START+1*STEP, START+2*STEP, ..., STOP
+  seq START STEP STOP    # out: START, START+1*STEP, START+2*STEP, ..., STOP
 
 Note that the default ``START`` is 1, and ``STOP`` is included in
 the interval (unlike, say, typical Python syntax of boundaries).
