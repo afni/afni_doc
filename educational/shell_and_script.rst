@@ -99,7 +99,8 @@ it exit the first time a command in it fails::
 
   tcsh -e SCRIPTNAME
 
-You can run a tcsh script in this way from *any* shell variety. 
+You can run a tcsh script in this way from *any* shell variety (tcsh,
+zsh, bash, etc.).
 
 Some further, convenient features:
 
@@ -125,9 +126,10 @@ Some further, convenient features:
 
 * If you want to keep track of the amount of time something runs, you
   can start the command line with the Unix program ``time``.
-  Consider and of the following::
+  Consider either of the following::
 
     time tcsh SCRIPTNAME
+
     time tcsh SCRIPTNAME |& tee LOGNAME
 
   etc.
