@@ -2,9 +2,9 @@
 .. _install_container_build:
 
 
-*********************************
-**Work with Containerized AFNI**
-*********************************
+*******************************************
+**Work with Docker/Containerized AFNI**
+*******************************************
 
 .. contents:: 
 
@@ -39,6 +39,7 @@ Neurodocker
 Please also check out **Neurodocker** for examples of commands to
 build Dockerfiles and Singularity with AFNI (*thanks, Jakub!*):
 
-`https://github.com/kaczmarj/neurodocker <https://github.com/kaczmarj/neurodocker>`_
+`https://github.com/ReproNim/neurodocker
+<https://github.com/ReproNim/neurodocker>`_
 
 
