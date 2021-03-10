@@ -24,7 +24,8 @@ usage. Many of the features presented are available in all shells
 purely for ``tcsh`` shell---that just tends to be the shell we prefer
 for our own scripting (mainly for readability).  But in such cases,
 there might be equivalent features in ``bash`` or ``zsh`` to seek out
-utilize, and learning about them here can be useful.  
+utilize, and learning about them here can be useful.  Some sections
+describe both general shell functionality and tcsh-specific items.
 
 If you have further suggestions or examples, please let us know and we
 can add to the stash.
@@ -36,9 +37,16 @@ might be:
 
 * `<https://docstore.mik.ua/orelly/linux/lnut/ch08_09.htm>`_
 
+The numbers in this section are not purposeful, and they might change
+over time.  In general, we try to accummulate features downwards in
+the listing: that is, some commands get used together, but we try to
+assume that if you read the page from top to bottom (as you surely
+will, right?) then topics should be sensical.
 
-Checking your shell
-====================
+Here we go---*le deluge*\.\.\.
+
+Know your shell type
+=====================
 
 To find out what kind of shell you have, type::
 
@@ -63,7 +71,7 @@ for making/using variables, etc.  When you are done, you can type::
 
 \.\.\. and leave that shell.
 
-Making and running a shell script
+Make and run a shell script
 ==================================
 
 To make a ``tcsh`` script, open a text file and make the first line
@@ -135,20 +143,9 @@ Some further, convenient features:
   etc.
 
 
-Shell utility and program features
+
+Check if a variable exists (tcsh)
 ==================================
-
-The numbers in this section are not purposeful, and they might change
-over time.  In general, we try to accummulate features downwards in
-the listing: that is, some commands get used together, but we try to
-assume that if you read the page from top to bottom (as you surely
-will, right?) then topics should be sensical.
-
-Here we go---*le deluge*:
-
-
-Check if a variable exists
-----------------------------
 
 To find out if a particular variable has been defined, use ``?`` as
 ``$?NAME`` or ``${?NAME}``.  The shell will return ``1`` if it has,
@@ -170,8 +167,8 @@ value.  For example::
   endif
   
 
-Variables storing arrays
---------------------------
+Store array in a variable (tcsh)
+==================================
 
 Shell variables can hold multiple values, acting as arrays.
 Consider::
@@ -206,8 +203,9 @@ respectively, will be used::
   echo ${arr[6-]}     # out: zeta eta theta iota
   echo ${arr[-]}      # out: alpha beta gamma delta epsilon zeta eta theta iota
 
-Extract parts of filenames and/or paths
-----------------------------------------
+
+Extract parts of filenames and/or paths (tcsh)
+===============================================
 
 There are common conventions on many operating systems: 
 
@@ -274,8 +272,8 @@ removed. The shell can't read our minds (yet!), so always check the
 outputs as you go. 
 
 
-Finding paths of programs
----------------------------  
+Finding paths of programs (shell/tcsh)
+=========================================
 
 Get the full path for a program in your $PATH::
 
@@ -296,8 +294,8 @@ containing it::
      echo ${loc_abin}                # ex out: /home/mgandhi/abin
 
 
-Make uniformly spaced numbers
---------------------------------
+Make uniformly spaced numbers (shell/tcsh)
+===========================================
 
 Generate uniformly-spaced numbers with the ``seq`` command.  This
 program requires either 1, 2 or 3 arguments after.  
@@ -331,6 +329,21 @@ It can be useful to make a counter or iterator in a loop::
       echo "++ The counter is:  ${ii}"
   end
 
+.. hidden-code-block:: none
+   :starthidden: True
+   :label: - show output y/n -
+
+   ++ The counter is:  1
+   ++ The counter is:  2
+   ++ The counter is:  3
+   ++ The counter is:  4
+   ++ The counter is:  5
+   ++ The counter is:  6
+   ++ The counter is:  7
+   ++ The counter is:  8
+   ++ The counter is:  9
+   ++ The counter is:  10
+
 This can also combine usefully with arrays and using ``#`` to get
 the number of elements in it.  Consider::
 
@@ -340,9 +353,20 @@ the number of elements in it.  Consider::
       echo "++ The [$ii]th value is:  ${aaa[$ii]}"
   end
 
+.. hidden-code-block:: none
+   :starthidden: True
+   :label: - show output y/n -
 
-String-formatting with ``printf``
-----------------------------------
+   ++ The [1]th value is:  omega
+   ++ The [2]th value is:  psi
+   ++ The [3]th value is:  chi
+   ++ The [4]th value is:  phi
+   ++ The [5]th value is:  upsilon
+   ++ The [6]th value is:  tau
+
+
+String-formatting with ``printf`` (shell/tcsh)
+===============================================
 
 The string formatting syntax is quite to that of C programs in
 print statements (of which Python borrows most for its own
@@ -350,15 +374,15 @@ str.format() method).  You print a string, ``printf "...."``, and
 for each value you want to insert into a string, you a percent
 symbol and then a descriptor of the type:
 
-* "%d" : integer-valued numbers
+* ``%d`` : integer-valued numbers
 
-* "%f" : floating point numbers
+* ``%f`` : floating point numbers
 
-* "%g" : scientific notation (``1.23e+15``, ``4.56e-12``, etc.)
+* ``%g`` : scientific notation (``1.23e+15``, ``4.56e-12``, etc.)
 
-* "%G" : scientific notation (``1.23E+15``, ``4.56E-12``, etc.)
+* ``%G`` : scientific notation (``1.23E+15``, ``4.56E-12``, etc.)
 
-* "%s" : strings
+* ``%s`` : strings
 
 After listing your string with spaces created for values, you
 specify the values to be inserted in the same order.  So, consider
@@ -367,14 +391,26 @@ the following::
   printf "%d %f %s" 10 100.1 banana   # out: 10 100.100000 banana
 
 
-You can control lots of features for each entry.  We demonstrate
-some of these for the "float" type, but relevant features apply to
-all other types::
+You can control lots of features for each entry.  We demonstrate some
+of these for the "float" type, but relevant features apply to all
+other types (the vertical line characters have no special meaning;
+they are just there to show the boundaries around the space created
+for the inserted value)::
 
-  printf "%10f" 15.1     # (all) make 10 empty spaces, and put the value inside
-  printf "%-10f" 15.1    # (all) as above, and left justify the value inside
-  printf "%-10.3f" 15.1  # (fl) as above, and specify 3 decimal places
-  printf "%10.5d" 15     # (int) make 10 empty spaces, zeropad the number to 5 spaces, and put the value inside
+  printf "|%12f|"    15.1     
+  printf "|%-12f|"   15.1    
+  printf "|%-12.3f|" 15.1  
+  printf "|%12.5d|"  15     
+
+.. hidden-code-block:: none
+   :starthidden: True
+   :label: - show output y/n -
+
+   |   15.100000|    # (all) make 10 empty spaces, and put the value inside
+   |15.100000   |    # (all) as above, and left justify the value inside
+   |15.100      |    # (flt) as above, and specify 3 decimal places
+   |       00015|    # (int) make 10 empty spaces, zeropad the number 
+                     #       to 5 spaces, and put the value inside
 
 Note that ``printf`` does *not* put a newline character ``\n`` at
 the end of a line (``echo`` does), so you would have to do that
@@ -395,9 +431,24 @@ for a filename::
      printf "++ The [%3d ]th filename is:  %s\n" ${ii} ${fname}
   end
 
+.. hidden-code-block:: none
+   :starthidden: True
+   :label: - show output y/n -
 
-Simple math operations in ``tcsh``
---------------------------------------
+   ++ The [  1 ]th filename is:  name_001.txt
+   ++ The [  2 ]th filename is:  name_002.txt
+   ++ The [  3 ]th filename is:  name_003.txt
+   ++ The [  4 ]th filename is:  name_004.txt
+   ++ The [  5 ]th filename is:  name_005.txt
+   ++ The [  6 ]th filename is:  name_006.txt
+   ++ The [  7 ]th filename is:  name_007.txt
+   ++ The [  8 ]th filename is:  name_008.txt
+   ++ The [  9 ]th filename is:  name_009.txt
+   ++ The [ 10 ]th filename is:  name_010.txt
+
+
+Simple math operations (tcsh)
+=========================================
 
 You can do simple math operations like adding, subtracting,
 multiplying and dividing integers with the ``@``
@@ -409,7 +460,7 @@ functionality. Consider::
   @  dd = 10 / 5
   @  ee = 10 / 3
 
-\.\.\. and echoing the outputs produces::
+\.\.\. and echoing the outputs produces, respectively::
 
   15
   5
@@ -425,7 +476,8 @@ incrementing in place::
   @   vv+= 1 
   echo $vv
 
-\.\.\. which outputs 2.  One can also ``-=``, ``*=`` and ``/=``. 
+\.\.\. which outputs ``2``.  One can also use ``-=``, ``*=`` and
+``/=``.
 
 This is useful, for example counting things in a loop::
 
@@ -446,8 +498,8 @@ But for more complicated expressions or those involving decimals
 operation, below.
 
    
-More general math operations, via ``bc`` 
---------------------------------------------------
+More general math operations, via ``bc`` (shell)
+=================================================
 
 *Go, Eagles!*
 
@@ -471,12 +523,13 @@ the following::
   0
   .66666
 
-Note how even using decimals did nothing, without the scale being
-set.  Note also how the scale *truncates* the output, not
-*rounding* it: we would expect the last value to be ``.66667``,
+Note how even using decimal points did nothing to change output type
+(like they might in some programming languages), *without* the
+``scale`` being set.  Note also how the scale *truncates* the output,
+not *rounding* it: we would expect the last value to be ``.66667``,
 typically.
 
-You can save the output directly by using the fun backticks:
+You can save the output directly by using the fun backticks::
 
   set output1 = `echo "10. / 15" | bc`
   set output2 = `echo "scale = 5; 10. / 15" | bc`
@@ -489,11 +542,21 @@ following usual math rules.  You can use variables inside the
 expression. Some examples::
 
   set  mm = 18
-  echo "5 % 3" | bc                     # calc remainder; out:  2
-  echo "${mm} % 3" | bc                 # calc remainder; out:  0
-  echo "2^5" | bc                       # calc power; out: 32
-  echo "scale = 4 ; (3.14^5) + 2" | bc  # calc power; out: 307.2447
-  echo "scale = 3 ; sqrt( 35 )" | bc    # calc sq root; out: 5.916
+  echo "5 % 3" | bc                       # calc remainder
+  echo "${mm} % 3" | bc                   # calc remainder
+  echo "2^5" | bc                         # calc power
+  echo "scale = 4 ; (3.14^5) + 2" | bc    # calc power
+  echo "scale = 3 ; sqrt( 35 )" | bc      # calc sq root
+
+.. hidden-code-block:: none
+   :starthidden: True
+   :label: - show output y/n -
+
+   2                     
+   0                     
+   32                    
+   307.2447              
+   5.916
 
 You can also have comparative expressions, checking for equality
 ``==``, inequality ``!=``, greater than ``>``, less than or equal
@@ -512,15 +575,15 @@ Consider these examples::
 
 \.\.\. outputs::
 
-   1     # 50 is less than 100
-   1     # 50 is less than 100 AND 100 is less than 200
-   1     # 10-squared is equal to 100
-   0     # it is not true that: either 7 or 3 is a factor of 100
+   1               # 50 is less than 100
+   1               # 50 is less than 100 AND 100 is less than 200
+   1               # 10-squared is equal to 100
+   0               # it is not true that: either 7 or 3 is a factor of 100
 
 See the help ``man bc`` for more information.
 
 Display blocks of text with ``cat << EOF ... EOF``
----------------------------------------------------
+====================================================
 
 You can ``echo`` or ``printf`` text line by line, which is often good
 enough.  But what if you have a *block* of text?  You could just have
