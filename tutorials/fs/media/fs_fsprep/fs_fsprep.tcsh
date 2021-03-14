@@ -30,6 +30,18 @@ recon-all                                                             \
 
 
 
+# --------------------- Anecdote 1: on Linux desktop ---------------------
+
+
+
+# -------------------- Anecdote 2: on Biowulf cluster --------------------
+
+
+
+# ---------------- Anecdote 3: caveats with ``-parallel`` ----------------
+
+
+
 # ================== A note of filenames/paths with FS ===================
 
 

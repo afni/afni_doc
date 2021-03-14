@@ -128,9 +128,37 @@ computing power available. So, you could try::
         -parallel                              \
         -openmp 8
 
-As an anecdote, I ran each of the above ``recon-all`` cases on the
-NIH's Biowulf cluster, for the same Bootcamp dataset described above.
-In the parallel cases, I actually had 8 CPUs available for both (I
+.. _tut_fsprep_anec_desk:
+
+Anecdote 1: on Linux desktop
+------------------------------
+
+As an anecdote (each of these is a single implementation, not the
+result of averaging a set of them), I ran each of the above
+``recon-all`` cases on my desktop for the same Bootcamp dataset
+described above.  This desktop is a modern Ubuntu 20.04 Linux machine
+with 20 cores (\#humblebrag).  In each case, I had 16 threads
+available (I had set ``setenv OMP_NUM_THREADS 16`` in my tcsh script).
+The ``recon-all`` timing results were as follows:
+
+* **Ex A:**  3.751 hours  
+
+* **Ex B:**  2.160 hours  
+
+* **Ex C:**  1.944 hours  
+
+So, using the ``-parallel`` option **does** seem to help speed things
+up noticeably (by a bit under a factor of 2, here).  Using the
+``-openmp 8`` on top of this did not seem to matter much.
+
+.. _tut_fsprep_anec_bio:
+
+Anecdote 2: on Biowulf cluster
+--------------------------------
+
+As another anecdote, I ran each of the above ``recon-all`` cases on
+the NIH's Biowulf cluster, for the same Bootcamp dataset described
+above.  In the parallel cases, I actually had 8 CPUs available (I
 requested 8 CPUs from the cluster, and running ``afni_check_omp`` in
 the terminal indeed returned the value of 8).  The ``recon-all``
 timing results were as follows:
@@ -148,15 +176,26 @@ including the ``-openmp ..`` option---I am not sure why. If you are
 able to get further runtime improvement somehow, please let us know
 how!
 
-**(!) However, please also note:** I had several ``recon-all`` runs
-fail when using this ``-parallel`` option.  From searching online,
-apparently this is a known issue that can occur.  In my case, the
-specific failure that occurred was this message::
+.. _tut_fsprep_anec_caveat:
+
+Anecdote 3: caveats with ``-parallel``
+----------------------------------------
+
+*However,* please also note: when processing a group of several
+hundred anatomical volumes on the cluster, I had several ``recon-all``
+runs fail when using the ``-parallel`` option.  The specific failure
+that occurred was this message::
 
   Cannot find rh.white.H
 
+From searching online, apparently this is a known issue that can
+occur, related to something with the inner workings of the
+parallelization.  I had the same error occur even when running on my
+desktop once.
+
 So, if this pops up while you are using the ``-parallel`` option, try
-removing it and rerunning your job.
+removing it and rerunning your job.  (I had no subsequent failures on
+the cluster once I had done this.)
 
 A note of filenames/paths with FS
 ===================================
