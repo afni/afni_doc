@@ -151,6 +151,11 @@ So, using the ``-parallel`` option **does** seem to help speed things
 up noticeably (by a bit under a factor of 2, here).  Using the
 ``-openmp 8`` on top of this did not seem to matter much.
 
+And note: I also ran Ex. A above with ``setenv OMP_NUM_THREADS 1``,
+and the runtime was a very similar 3.754 hours.  So, if you are *not*
+using ``-parallel``, you might as well just use a single thread---you
+don't get any speedup from OpenMP without that option being used.
+
 .. _tut_fsprep_anec_bio:
 
 Anecdote 2: on Biowulf cluster
