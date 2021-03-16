@@ -8,6 +8,7 @@ Statistics
    :maxdepth: 2
 
    center
+   deconvolve
    nlfim
    remlfit
    anova

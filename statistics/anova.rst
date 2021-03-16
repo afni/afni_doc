@@ -6,7 +6,8 @@
 
 .. contents:: :local:
 
-*These are notes by B. Douglas Ward, written in the Good Ol' Days.*
+*These are notes by B. Douglas Ward, written in the Good Ol' Days, and
+subsequently updated by Gang Chen.*
 
 Abstract
 ===========
@@ -25,7 +26,9 @@ Purpose
 ---------
 
 Program ``3dANOVA`` was developed to perform single-factor analysis of
-variance on collections of 3-dimensional data sets, voxel by voxel.
+variance on collections of 3-dimensional data sets, voxel by voxel. As
+an extended program to 3dttest for two-sample t-test, 3dANOVA is
+usually used to test the effect of a condition across multiple groups.
 Through the command line inputs, the user specifies which data sets
 are to be used in the analysis, and to which factor level they belong.
 Various output options are available, including the F-test for
@@ -42,5 +45,5 @@ type dataset.
 
 | For continued enjoyment of this topic, please see the complete
   document here:
-| `3dANOVA.pdf
-  <https://afni.nimh.nih.gov/pub/dist/doc/manual/3dANOVA.pdf>`_
+| `ANOVAm.pdf
+  <https://afni.nimh.nih.gov/pub/dist/doc/manual/ANOVAm.pdf>`_
