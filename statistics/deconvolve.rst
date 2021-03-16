@@ -1,4 +1,4 @@
-.. _stats_anova:
+.. _stats_decon:
 
 ******************************************************
 **Deconvolution Analysis of FMRI Time Series Data**

@@ -1,4 +1,4 @@
-.. _stats_anova:
+.. _stats_fdr:
 
 ******************************************************
 **False Discovery Rate (FDR)**

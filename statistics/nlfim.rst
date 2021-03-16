@@ -1,4 +1,4 @@
-.. _stats_anova:
+.. _stats_nlfim:
 
 *********************************************************************
 **Nonlinear Regression Analysis of FMRI Time Series Data (NLfim)**

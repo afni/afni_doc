@@ -16,6 +16,7 @@ Statistics
    lme_model
    mema
    fdr
+   nonparametric
    
 |
 
