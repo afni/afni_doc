@@ -8,10 +8,13 @@ Statistics
    :maxdepth: 2
 
    center
+   nlfim
    remlfit
+   anova
    mvm_group
    lme_model
    mema
+   fdr
    
 |
 
