@@ -9,3 +9,4 @@
 
    fs_fsprep
    fs_biowulf
+   fs_makespec
