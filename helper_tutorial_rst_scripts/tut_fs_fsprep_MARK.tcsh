@@ -334,51 +334,18 @@ TEXTBLOCK
 
 cat << TEXTBLOCK
 
-
 The final ``SUMA/`` directory contains: volumetric outputs of
 segmentations and parcellations, surfaces of various sizes and
 geometry, and more.  Several of these data sets are direct copies of
 FS output, but in NIFTI and other formats usable by AFNI.  We also
 generate standardized surfaces, which are *very* useful for group
-analysis, and you can read more  about that here:
+analysis, and you can read more about that here:
 `<https://pubmed.ncbi.nlm.nih.gov/16035046/>`_
 
 We also derive some other datasets that we have found to be useful,
-such as groupings of parcellated ROIs by tissue types.  Some of the
-content of the directory is:
-
-* **aparc+aseg_REN_\*.nii.gz**
-    A family of volumetric datasets from the "2000" atlas parcellation
-    used by FS.  These have been renumbered from the original FS
-    lookup-table values for colorbar convenience in AFNI; the
-    enumeration will still be consistent across subjects, and the same
-    string labels are attached in a labletable (i.e., the same number
-    and label goes with a given ROI, across all subjects).  For
-    convenience, subsets of ROIs grouped by tissue or type have also
-    been created (see the output of ``@SUMA_renumber_FS`` for more
-    details on these).
-
-    Recently, the ``*_REN_gmrois.nii.gz`` dset has been added, as a
-    subset of the GM ROIs defined by FS.  This dataset contains the
-    ROI-like regions of GM from the parcellation, and might be
-    particularly useful for tractography or network correlation.
-
-    |
-
-* **aparc.a2009s+aseg_REN_\*.nii.gz**
-    A family of volumetric datasets from the "2009" atlas parcellation
-    used by FS.  The same renumbering and grouping, as described 
-    for the "2000" atlases and ROI maps above, applies.
-    
-    |
-
-* **fs_ap_wm.nii.gz**, **fs_ap_latvent.nii.gz**
-    Two volumetric datasets of masks that have been found useful for
-    ``afni_proc.py`` scripting, namely when applying tissue-based
-    regressors.  The first is comprised of the main WM regions defined
-    by FS, and the second is comprised of the lateral ventricles 
-    
-    For more details, see the output of ``@SUMA_renumber_FS``.
+such as groupings of parcellated ROIs by tissue types.  These helpful
+datasets, stats files and QC images are :ref:`now described in detail
+here <tut_fs_makespec>`.
 
     |
     

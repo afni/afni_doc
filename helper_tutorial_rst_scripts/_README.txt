@@ -50,6 +50,13 @@ AFNI_data6/roi_demo):
      -prefix_script  fs_biowulf.tcsh                                         \
      -prefix_rst     ~/AFNI/afni_doc/tutorials/fs/fs_biowulf.rst    
 
+ # tutorial pages: @SUMA_Make_Spec_FS (extra output files)
+ adjunct_make_script_and_rst.py                                              \
+     -input          tut_fs_makespec_MARK.tcsh                               \
+     -reflink        tut_fs_makespec                                         \
+     -prefix_script  fs_makespec.tcsh                                        \
+     -prefix_rst     ~/AFNI/afni_doc/tutorials/fs/fs_makespec.rst    
+
  # tutorial pages: reface/deface dsets
  # NB: some additional files are in subdir here 'for_refacer', namely the
  # SUMA images showing original+refaced dsets
