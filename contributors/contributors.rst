@@ -65,37 +65,37 @@ our fading memory...):
      - Prantik Kundu
    * - Rayus Kuplicki
      - Stephen LaConte
-     - Peter Lauro
-   * - John Lee
-     - Jonathan Lisinksi
-     - Ross Markello
-   * - Chris Markiewicz
-     - Peter Molfese
-     - Julia Molony
-   * - Kevin Murphy      
-     - Dylan Nielson
-     - Paul Novak
-   * - Nikolaas Oosterhof
-     - Brian Pittman
-     - Dillon Plunkett
-   * - Justin Rajendra
-     - Rick Reynolds
-     - Vinai Roopchansingh
-   * - Chris Rorden
-     - Tom Ross
-     - Ziad Saad
-   * - Isaac Schwabacher
-     - Fred Tam
-     - Paul Taylor
-   * - Raoquiong Tong
-     - Giovanni Torres
-     - Robert Vincent
-   * - Andrej Vovk
-     - Doug Ward
-     - David Warren
-   * - Joshua Zosky
-     - 
-     - 
+     - Peter Lauren
+   * - Peter Lauro              
+     - John Lee                 
+     - Jonathan Lisinksi        
+   * - Ross Markello            
+     - Chris Markiewicz         
+     - Peter Molfese            
+   * - Julia Molony             
+     - Kevin Murphy             
+     - Yamuna Narayana Swamy
+   * - Dylan Nielson            
+     - Paul Novak               
+     - Nikolaas Oosterhof       
+   * - Brian Pittman            
+     - Dillon Plunkett          
+     - Justin Rajendra          
+   * - Rick Reynolds            
+     - Vinai Roopchansingh      
+     - Chris Rorden             
+   * - Tom Ross                 
+     - Ziad Saad                
+     - Isaac Schwabacher        
+   * - Fred Tam                 
+     - Paul Taylor              
+     - Raoquiong Tong           
+   * - Giovanni Torres          
+     - Robert Vincent           
+     - Andrej Vovk              
+   * - Doug Ward                
+     - David Warren             
+     - Joshua Zosky             
 
 
 
