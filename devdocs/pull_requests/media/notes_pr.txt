@@ -1,0 +1,113 @@
+
+# clone a repo that you will make a PR to
+$ git clone https://github.com/afni/afni.git
+Cloning into 'afni'...
+remote: Enumerating objects: 127676, done.
+remote: Counting objects: 100% (1813/1813), done.
+remote: Compressing objects: 100% (575/575), done.
+remote: Total 127676 (delta 1229), reused 1793 (delta 1215), pack-reused 125863
+Receiving objects: 100% (127676/127676), 124.41 MiB | 8.70 MiB/s, done.
+Resolving deltas: 100% (97681/97681), done.
+
+
+# make a new branch
+$ cd afni/
+$ git checkout -b test_ramus
+Switched to a new branch 'test_ramus'
+
+
+# to see what branch you are in (and current one has asterisk):
+$ git branch
+  master
+* test_ramus
+
+# make a change in your branch
+[do something: add a new file; change an existing one; etc.]
+$ cd src/scripts_install/
+... new file
+$ cp ~/SurfLayers .   
+... change an existing file 
+$ emacs ../python_scripts/scripts/1dplot.py 
+
+
+# to see how many changes you have made that can be committed:
+$ git status
+On branch test_ramus
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../python_scripts/scripts/1dplot.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	SurfLayers
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+# Note how the new file is untracked---we haven't *add*ed it to git
+# yet, so let's do that
+$ git add SurfLayers 
+
+# ... not text output, but check git status: now we have changes to
+#  commit and add
+$ git status
+On branch test_ramus
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   SurfLayers
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../python_scripts/scripts/1dplot.py
+
+
+
+
+
+# commit *a*ll those changes, with a descriptive *m*essage (hence, '-am')
+$ git commit -am "SurfLayers: new prog;  1dplot.py: new opt '-solve_the_brain'"
+[test_ramus f3ee33a5a] SurfLayers: new prog;  1dplot.py: new opt '-solve_the_brain'
+ 2 files changed, 574 insertions(+), 1 deletion(-)
+ create mode 100755 src/scripts_install/SurfLayers
+
+# can check git status---our work has been committed on local repo, so no
+# changes apparent:
+$ git status
+On branch test_ramus
+nothing to commit, working tree clean
+
+... BUT we have to still make the remote repo know
+
+
+# push to this branch in the remote location; 
+# the remote should be 'origin' (can check with 'git remote')
+$ git push origin test_ramus
+Username for 'https://github.com': mrneont
+Password for 'https://mrneont@github.com': 
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 5.97 KiB | 5.97 MiB/s, done.
+Total 8 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+remote: 
+remote: Create a pull request for 'test_ramus' on GitHub by visiting:
+remote:      https://github.com/afni/afni/pull/new/test_ramus
+remote: 
+To https://github.com/afni/afni.git
+ * [new branch]          test_ramus -> test_ramus
+
+
+# now, our branch in the remote location is updated.  Now, we can make
+# a pull request to merge these changes into the main/master branch
+# -> to do this step, let's go to the web interface
+
+
+# so we navigate to this place in the browser (and you probably need to be
+# logged in to your git account):
+  https://github.com/afni/afni
+# ... and you will even see that it has been recognized that our
+  branch has changes in it and we are prompted to make a pull request: [img]
+
