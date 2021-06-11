@@ -779,8 +779,8 @@ above manners (below, we use ``tr``, but the ``:gas`` route works
 equivalently).  One difficulty occurs if the filenames contains
 spaces.  Consider a directory that contains 3 screenshots, named
 ``Screenshot 1.png``, ``Screenshot 2.png`` and ``Screenshot 3.png``.
-If we make a variable to store their list of names, then loop over
-that list to make new names with the annoying space replaced, such as
+If we make a variable to store their array of names, then loop over
+that array to make new names with the annoying space replaced, such as
 here::
 
   set all_files = ( Screen*png )
@@ -804,7 +804,7 @@ That is, the spaces were used to split each filename into two strings
 before we even got there (that is, the quotes around each name are not
 passed along to keep the element as a single entity), and so we
 couldn't do what we wanted.  Enclosing the ``${all_files}`` variable
-in quotes in the for-loop line won't work: that will lead to the list
+in quotes in the for-loop line won't work: that will lead to the array
 of separate items being treated like a single, giant string. However,
 we can ask the shell to put a quote around each word, so that those
 are not separated within the loop by putting ``:q`` as a modifier::
@@ -823,7 +823,7 @@ are not separated within the loop by putting ``:q`` as a modifier::
   Screenshot 3.png -> Screenshot_3.png
 
 Another way around this is to do the following: don't make a separate
-list that will get interpreted again.  Directly loop over the
+array that will get interpreted again.  Directly loop over the
 filenames::
 
   foreach iname ( Screen*png )
@@ -831,4 +831,13 @@ filenames::
       echo "${iname} -> ${oname}"
   end
 
-That makes the same 3 renamings as immediately above.  
+That makes the same 3 renamings as immediately above.  Finally, one
+could iterate over the number of elements in the array::
+
+  set all_files = ( Screen*png )
+
+  foreach ii ( `seq 1 1 ${#all_files}` )
+      set iname = "${all_files[$ii]"
+      set oname = `echo "${iname}" | tr ' ' '_'`
+      echo "${iname} -> ${oname}"
+  end
