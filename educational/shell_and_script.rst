@@ -709,3 +709,126 @@ However, if you were using ``echo`` to dump a shebang into a file, you
   echo "#\!/bin/tcsh"  > GOOD_SCRIPT.tcsh
 
 You can verify this in each case.
+
+
+Replace chars in strings (e.g., rename files)
+========================================================
+
+Systematic renaming of files can be useful, such as replacing one set
+of characters with another.  There can be some gotchas with this
+(e.g., a shell "list" of file spaces might get interpreted as a longer
+list of partial filenames, each original item split at the space).  We
+examine a couple.  But typically I start programming these kinds of
+things by just displaying the old and new names, rather than replacing
+each, to be sure I have things correct.  I can always add a copy or
+move afterwards, once I have the names I want in each variable.
+
+There are a couple replacement options: within ``tcsh``, you can use
+the ``:gas/AAA/BBB/`` syntax to replace "AAA" within a variable with
+"BBB". For example::
+
+  set iname  = "This is some exAAAmple for chAAAraaacter replAcement"
+  set oname1 = "${iname:gas/AAA/BBB/}"
+  
+  echo "++ OLD: ${iname}"
+  echo "++ NEW: ${oname1}"
+
+This produces::
+
+  ++ OLD: This is some exAAAmple for chAAAraaacter replAcement
+  ++ NEW: This is some exBBBmple for chBBBraaacter replAcement
+
+Note the case sensitivity in replacement of an entire string.
+
+To remove a string, one just replaces with an empty string::
+
+  set iname  = "This is some exAAAmple for chAAAraaacter replAcement"
+  set oname2 = "${iname:gas/AAA//}"
+  
+  echo "++ OLD: ${iname}"
+  echo "++ NEW: ${oname2}"
+
+\.\.\. producing::
+
+  ++ OLD: This is some exAAAmple for chAAAraaacter replAcement
+  ++ NEW: This is some exmple for chraaacter replAcement
+
+There is also the "translate" program ``tr`` on most Linux or Mac
+systems.  You can use this in different ways, but piping the display
+of a string through it is a fairly convenient ones for scripts.  The
+following matches ``${oname1}`` above::
+
+  set oname3 = `echo "${iname}" | tr 'AAA' 'BBB'`
+
+One could replace spaces using either, for example with an
+underscore::
+
+  set oname4 = "${iname:gas/ /_/}"
+  set oname5 = `echo "${iname}" | tr ' ' '_'`
+
+  echo "${oname4}"
+  echo "${oname5}"
+
+\.\.\. equivalently producing::
+
+  This_is_some_exAAAmple_for_chAAAraaacter_replAcement
+  This_is_some_exAAAmple_for_chAAAraaacter_replAcement
+
+We could loop over a set of strings and replace each one in any of the
+above manners (below, we use ``tr``, but the ``:gas`` route works
+equivalently).  One difficulty occurs if the filenames contains
+spaces.  Consider a directory that contains 3 screenshots, named
+``Screenshot 1.png``, ``Screenshot 2.png`` and ``Screenshot 3.png``.
+If we make a variable to store their list of names, then loop over
+that list to make new names with the annoying space replaced, such as
+here::
+
+  set all_files = ( Screen*png )
+  
+  foreach iname ( ${all_files} )
+      set oname = `echo "${iname}" | tr ' ' '_'`
+      echo "${iname} -> ${oname}"
+  end
+
+\.\.\. we don't get 3 lines output (one for each filename, which we
+might expect), but instead get::
+
+  Screenshot -> Screenshot
+  1.png -> 1.png
+  Screenshot -> Screenshot
+  2.png -> 2.png
+  Screenshot -> Screenshot
+  3.png -> 3.png
+
+That is, the spaces were used to split each filename into two strings
+before we even got there (that is, the quotes around each name are not
+passed along to keep the element as a single entity), and so we
+couldn't do what we wanted.  Enclosing the ``${all_files}`` variable
+in quotes in the for-loop line won't work: that will lead to the list
+of separate items being treated like a single, giant string. However,
+we can ask the shell to put a quote around each word, so that those
+are not separated within the loop by putting ``:q`` as a modifier::
+
+  set all_files = ( Screen*png )
+  
+  foreach iname ( ${all_files:q} )
+      set oname = `echo "${iname}" | tr ' ' '_'`
+      echo "${iname} -> ${oname}"
+  end
+
+\.\.\. producing the desired::
+
+  Screenshot 1.png -> Screenshot_1.png
+  Screenshot 2.png -> Screenshot_2.png
+  Screenshot 3.png -> Screenshot_3.png
+
+Another way around this is to do the following: don't make a separate
+list that will get interpreted again.  Directly loop over the
+filenames::
+
+  foreach iname ( Screen*png )
+      set oname = `echo "${iname}" | tr ' ' '_'`
+      echo "${iname} -> ${oname}"
+  end
+
+That makes the same 3 renamings as immediately above.  
