@@ -1,8 +1,8 @@
 .. _devdocs_pr_pr_ex:
 
-*****************************************
-Make a pull request to the **afni** repo
-*****************************************
+***********************************************
+Make a pull request to the **afni** repository
+***********************************************
 
 .. contents:: :local:
 
@@ -46,8 +46,8 @@ But if worse comes to worst, you can move/remove your fork or branch,
 make a new one, and start afresh.  While this might take a lot of
 time, you won't be doing anything bad to other people's code.  As part
 of this, we note that it is *very* useful to keep a backup of your
-changes outside of the git repo.  That way, if things go awry, you
-shouldn't lose all your hard work.
+changes outside of the git repository (repo).  That way, if things go
+awry, you shouldn't lose all your hard work.
 
 ``git`` syntax *is* challenging, and it takes a while to get
 comfortable with it.  So, we might suggest just using ``git`` in
@@ -65,9 +65,9 @@ computer, substitute in your own username in such cases.
 ``git`` commands can be run anywhere within your local git repo.
 Commands that refer to specific files can include paths.
 
-#. **Fork the repo.** Go to the AFNI source code github page `here
-   <https://github.com/afni/afni>`_ and click on the "Fork" button in
-   the upper right hand corner:
+#. | **Fork the repo.** Go to the AFNI source code github page:
+   | `<https://github.com/afni/afni>`_ 
+   | and click on the "Fork" button in the upper right hand corner:
 
    .. list-table:: 
       :header-rows: 0
@@ -313,14 +313,22 @@ Commands that refer to specific files can include paths.
              :width: 90%   
              :align: center
 
-   This can be things like: an explanation of why you are making this
-   PR, descriptiion about the specific code changes (what programs
-   added/changed and why/how), pinging someone to take a look at your
-   PR (start typing ``@``, and you should get a menu of possible names
-   to complete), etc.  All of these are good things, particularly if
-   you are making this PR out of the blue.  This may be the start of a
-   discussion, possibly leading to further changes in your branch
-   before accepting the PR.
+   *Note:* the buttons below "Open a pull request" describe where your
+   pull request is coming from (here, the "head repository" and
+   "compare") and where it is requesting to be pull to (here, "base
+   repository" and "base"). The default base repository for the PR is
+   AFNI's, and the default branch is master.  So ``afni/afni:master``
+   is the ``repo:branch`` that your changes would be pulled into, if
+   that is what you want.
+
+   The comment can be things like: an explanation of why you are
+   making this PR, descriptiion about the specific code changes (what
+   programs added/changed and why/how), pinging someone to take a look
+   at your PR (start typing ``@``, and you should get a menu of
+   possible names to complete), etc.  All of these are good things,
+   particularly if you are making this PR out of the blue.  This may
+   be the start of a discussion, possibly leading to further changes
+   in your branch before accepting the PR.
    
    After filling in some comment, hit the big, green "Create pull
    request" button:
@@ -361,8 +369,10 @@ Commands that refer to specific files can include paths.
 
 |
 
-Lo stesso, alla breve
-======================
+The quick version: Make a PR
+=================================
+
+*Lo stesso, alla breve.*
 
 Fork: 
 
