@@ -53,7 +53,6 @@ shouldn't lose all your hard work.
 comfortable with it.  So, we might suggest just using ``git`` in
 whatever form is the best way possible to help your work flow.  
 
-|
 
 How to make a pull request 
 ===========================
