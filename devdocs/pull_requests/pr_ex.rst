@@ -315,7 +315,7 @@ Commands that refer to specific files can include paths.
 
    *Note:* the buttons below "Open a pull request" describe where your
    pull request is coming from (here, the "head repository" and
-   "compare") and where it is requesting to be pull to (here, "base
+   "compare") and where it is requesting to be pulled to (here, "base
    repository" and "base"). The default base repository for the PR is
    AFNI's, and the default branch is master.  So ``afni/afni:master``
    is the ``repo:branch`` that your changes would be pulled into, if
