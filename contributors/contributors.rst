@@ -91,12 +91,14 @@ our fading memory...):
      - Paul Taylor              
      - Raoquiong Tong           
    * - Giovanni Torres          
-     - Robert Vincent           
-     - Andrej Vovk              
-   * - Doug Ward                
-     - David Warren             
-     - Joshua Zosky             
-
+     - Sam Torrisi
+     - Robert Vincent            
+   * - Andrej Vovk               
+     - Doug Ward                 
+     - David Warren              
+   * - Joshua Zosky              
+     -
+     -
 
 
 
