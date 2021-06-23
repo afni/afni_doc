@@ -29,9 +29,9 @@ At present, you can have up to 6 planes, each of which is mobile
 Clipping plane cheatsheet
 =========================
 
-Enter/exit clipping plane mode with Shift-Ctrl-c.  The first time one
-enters this mode, 1 clipping plane appears.  While in clipping plane
-mode is active, a "C" appears in the SUMA viewer panel.
+Enter/exit clipping plane mode with ``Ctrl+Shift+c``.  The first time
+one enters this mode, 1 clipping plane appears.  While in clipping
+plane mode is active, a "C" appears in the SUMA viewer panel.
 
 There can be up to 6 clipping planes. They are numbered [1-6], and
 each has a unique color (in order):
@@ -58,6 +58,9 @@ Below:
   A **selected** plane can be controlled with the action keys
   (scroll/translate, rotate, flip, etc.).
 
+  On a Mac, you would likely replace the **Alt** keystroke with
+  **Cmd** or **Opt**.
+
 .. list-table:: 
    :header-rows: 1
    :align: center
@@ -65,7 +68,7 @@ Below:
 
    * - Key/mouse
      - Functionality
-   * - **Shift-Ctrl-c**
+   * - **Ctrl+Shift+c**
      - Toggle in and out of clipping plane mode
    * - **[1-6]**
      - Toggle the numbered clipping plane on/off
@@ -80,19 +83,19 @@ Below:
    * - **Shift+c**
      - Toggle view of all active clipping planes on/off (active
        clipping remain active)
-   * - **Alt/Cmd/Opt+[1-6]**
+   * - **Alt+[1-6]**
      - Select a clipping plane, after which it can be flipped,
        rotated, scrolled/translated, etc.
-   * - **Alt/Cmd/Opt+[scroll-wheel]**
+   * - **Alt+[scroll-wheel]**
      - Translate a clipping plane along the normal (i.e.,
        perpendicular to plane face)
    * - **s**
      - Scroll clipping plane "inwards"
    * - **Shift+s**
      - Scroll clipping plane "outwards"
-   * - **Alt/Cmd/Opt+[up/down arrow]**
+   * - **Alt+[up/down arrow]**
      - Rotate clipping plane around one axis
-   * - **Alt/Cmd/Opt+[left/right arrow]**
+   * - **Alt+[left/right arrow]**
      - Rotate clipping plane around its another axis
    * - **+**            
      - Double the current scroll/rotation stepsize; can be used
