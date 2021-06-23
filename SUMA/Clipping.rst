@@ -61,45 +61,99 @@ Below:
 .. list-table:: 
    :header-rows: 1
    :align: center
-   :widths: 20 80
+   :widths: 25 85
 
    * - Key/mouse
      - Functionality
-   * - ``Shift-Ctrl-c``
+   * - **Shift-Ctrl-c**
      - Toggle in and out of clipping plane mode
-   * - ``[1-6]``
+   * - **[1-6]**
      - Toggle the numbered clipping plane on/off
-   * - ``7``
+   * - **7**
      - Toggle all active clipping planes on or off
-   * - ``0``
+   * - **0**
      - Reset all clipping planes (to basic starting state)
-   * - ``n``
+   * - **n**
      - Successively add a new clipping plane (up to number 6)
-   * - ``Ctrl-f``
+   * - **Ctrl+f**
      - Flip the clipping direction of selected plane
-   * - ``Shift+c``
+   * - **Shift+c**
      - Toggle view of all active clipping planes on/off (active
        clipping remain active)
-   * - ``Alt/Cmd/Opt-[1-6]``
+   * - **Alt/Cmd/Opt+[1-6]**
      - Select a clipping plane, after which it can be flipped,
        rotated, scrolled/translated, etc.
-   * - ``Alt/Cmd/Opt+[scroll-wheel]``
+   * - **Alt/Cmd/Opt+[scroll-wheel]**
      - Translate a clipping plane along the normal (i.e.,
        perpendicular to plane face)
-   * - ``s``
+   * - **s**
      - Scroll clipping plane "inwards"
-   * - ``Shift-s``
+   * - **Shift+s**
      - Scroll clipping plane "outwards"
-   * - ``Alt/Cmd/Opt+[up/down arrow]``
+   * - **Alt/Cmd/Opt+[up/down arrow]**
      - Rotate clipping plane around one axis
-   * - ``Alt/Cmd/Opt+[left/right arrow]``
+   * - **Alt/Cmd/Opt+[left/right arrow]**
      - Rotate clipping plane around its another axis
-   * - ``+``            
+   * - **+**            
      - Double the current scroll/rotation stepsize; can be used
        repeatedly to increase further.
-   * - ``-``
+   * - **-**
      - Halve the current scroll/rotation stepsize; can be used
        repeatedly to decrease further.
-   * - ``=``
+   * - **=**
      - Reset the current scroll/rotation stepsize (current defaults: 1
        mm scroll, 1 deg rotation).
+
+|
+
+.. comment
+
+
+    .. list-table:: 
+       :header-rows: 1
+       :align: center
+       :widths: 20 80
+
+       * - Key/mouse
+         - Functionality
+       * - ``Shift-Ctrl-c``
+         - Toggle in and out of clipping plane mode
+       * - ``[1-6]``
+         - Toggle the numbered clipping plane on/off
+       * - ``7``
+         - Toggle all active clipping planes on or off
+       * - ``0``
+         - Reset all clipping planes (to basic starting state)
+       * - ``n``
+         - Successively add a new clipping plane (up to number 6)
+       * - ``Ctrl-f``
+         - Flip the clipping direction of selected plane
+       * - ``Shift+c``
+         - Toggle view of all active clipping planes on/off (active
+           clipping remain active)
+       * - ``Alt/Cmd/Opt-[1-6]``
+         - Select a clipping plane, after which it can be flipped,
+           rotated, scrolled/translated, etc.
+       * - ``Alt/Cmd/Opt+[scroll-wheel]``
+         - Translate a clipping plane along the normal (i.e.,
+           perpendicular to plane face)
+       * - ``s``
+         - Scroll clipping plane "inwards"
+       * - ``Shift-s``
+         - Scroll clipping plane "outwards"
+       * - ``Alt/Cmd/Opt+[up/down arrow]``
+         - Rotate clipping plane around one axis
+       * - ``Alt/Cmd/Opt+[left/right arrow]``
+         - Rotate clipping plane around its another axis
+       * - ``+``            
+         - Double the current scroll/rotation stepsize; can be used
+           repeatedly to increase further.
+       * - ``-``
+         - Halve the current scroll/rotation stepsize; can be used
+           repeatedly to decrease further.
+       * - ``=``
+         - Reset the current scroll/rotation stepsize (current defaults: 1
+           mm scroll, 1 deg rotation).
+
+
+   
