@@ -86,7 +86,7 @@ Below:
    * - **Alt+[1-6]**
      - Select a clipping plane, after which it can be flipped,
        rotated, scrolled/translated, etc.
-   * - **Alt+[scroll-wheel]**
+   * - **Alt+[scroll wheel]**
      - Translate a clipping plane along the normal (i.e.,
        perpendicular to plane face)
    * - **s**
@@ -119,7 +119,7 @@ Below:
 
        * - Key/mouse
          - Functionality
-       * - ``Shift-Ctrl-c``
+       * - ``Ctrl+Shift+c``
          - Toggle in and out of clipping plane mode
        * - ``[1-6]``
          - Toggle the numbered clipping plane on/off
@@ -137,7 +137,7 @@ Below:
        * - ``Alt/Cmd/Opt-[1-6]``
          - Select a clipping plane, after which it can be flipped,
            rotated, scrolled/translated, etc.
-       * - ``Alt/Cmd/Opt+[scroll-wheel]``
+       * - ``Alt/Cmd/Opt+[scroll wheel]``
          - Translate a clipping plane along the normal (i.e.,
            perpendicular to plane face)
        * - ``s``
