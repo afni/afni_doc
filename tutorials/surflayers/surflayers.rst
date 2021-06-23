@@ -37,7 +37,7 @@ within the directory from which it is run.  There is a descriptive
 This demo makes use of and presents several new (at the time) features
 within AFNI and SUMA.  Firstly, these scripts utilize the
 ``SurfLayers`` and ``quickspecSL`` programs, to estimate intermediate
-surface layers.  Secondly, they utilize the **Clipping plane mode**
+surface layers.  Secondly, they utilize the **clipping plane mode**
 within SUMA, whereby one can focus on subregions within the viewer and
 investigate nested surface layers.
 
@@ -47,6 +47,11 @@ the purposes of these new tools (and of AFNI in general): *to keep
 users close to their data, to understand it better.* The GUIs also
 "talk" to one another, sending information back and forth in realtime,
 so you can really explore your data in fun and informative ways.
+
+| For suggestions on applying SUMA's "Clipping plane" functionality,
+  please see this part of the documentation: 
+| :ref:`suma_clipping`
+| \.\.\. which contains a useful cheatsheet of keystrokes.
 
 
 Scripts 1 and 2: basic MRI surface

@@ -12,5 +12,6 @@ SUMA
    cover
    Viewer
    Controllers
+   Clipping
    StandardMeshes
    Code
