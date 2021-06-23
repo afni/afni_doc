@@ -58,6 +58,16 @@ Below:
   A **selected** plane can be controlled with the action keys
   (scroll/translate, rotate, flip, etc.).
 
+  The **normal** of a plane is a direction perpendicular its
+  face. Scrolling/translation is motion along either the "inner" or
+  "outer" normal direction.  The "outer" normal is side of the plane
+  that is originally clipping.
+
+  The **rotation** of a plane moves it around one of the coordinate
+  axes.  Each plane can rotate around two axes. If the plane's normal
+  is originally parallel to the *y* \-axis, then it can rotate around
+  either the *x*\ - or *z*\ -axis.
+
   On a Mac, you would likely replace the **Alt** keystroke with
   **Cmd** or **Opt**.
 
@@ -86,17 +96,18 @@ Below:
    * - **Alt+[1-6]**
      - Select a clipping plane, after which it can be flipped,
        rotated, scrolled/translated, etc.
-   * - **Alt+[scroll wheel]**
-     - Translate a clipping plane along the normal (i.e.,
-       perpendicular to plane face)
-   * - **s**
-     - Scroll clipping plane "inwards"
-   * - **Shift+s**
-     - Scroll clipping plane "outwards"
    * - **Alt+[up/down arrow]**
-     - Rotate clipping plane around one axis
+     - Rotate a selected clipping plane around one axis (perpendicular
+       to its normal)
    * - **Alt+[left/right arrow]**
-     - Rotate clipping plane around its another axis
+     - Rotate a selected clipping plane around another axis
+       (perpendicular to its normal)
+   * - **Alt+[scroll wheel]**
+     - Translate a selected clipping plane along its normal 
+   * - **s**
+     - Scroll/translate a selected clipping plane "inwards"
+   * - **Shift+s**
+     - Scroll/translate a selected clipping plane "outwards"
    * - **+**            
      - Double the current scroll/rotation stepsize; can be used
        repeatedly to increase further.
