@@ -21,7 +21,7 @@ focus on just part of the data, or to look at nested layers.  In these
 cases (and others), it can be useful to have **clipping planes**:
 these are geometrically flat planes that clip away data on one side.
 At present, you can have up to 6 planes, each of which is mobile
-(translatable or rotatable, as well as flippable).
+(translate, rotate, flip, etc.).
 
 | One particularly useful application of clipping planes is here:
 | :ref:`tut_surflayers`
@@ -49,27 +49,27 @@ or keypresses.
 
 Below:
 
-  **[1-6]** means one of the clipping plane numbers, in range [1, 6].
+  *[1-6]* means one of the clipping plane numbers, in range [1, 6].
 
-  An **active** clipping plane is clipping (whether visible or not),
-  while an **inactive** plane is not clipping (whether visible or
+  An *active* clipping plane is clipping (whether visible or not),
+  while an *inactive* plane is not clipping (whether visible or
   not).
 
-  A **selected** plane can be controlled with the action keys
-  (scroll/translate, rotate, flip, etc.).
+  A *selected* plane can be controlled with the action keys
+  (scroll/translate, rotate, flip/invert, etc.).
 
-  The **normal** of a plane is a direction perpendicular its
+  The *normal* of a plane is a direction perpendicular its
   face. Scrolling/translation is motion along either the "inner" or
   "outer" normal direction.  The "outer" normal is side of the plane
   that is originally clipping.
 
-  The **rotation** of a plane moves it around one of the coordinate
+  The *rotation* of a plane moves it around one of the coordinate
   axes.  Each plane can rotate around two axes. If the plane's normal
-  is originally parallel to the *y* \-axis, then it can rotate around
-  either the *x*\ - or *z*\ -axis.
+  is originally parallel to the y-axis, then it can rotate around
+  either the x- or z-axis.
 
-  On a Mac, you would likely replace the **Alt** keystroke with
-  **Cmd** or **Opt**.
+  On a Mac, you would likely replace the ``Alt`` keystroke with
+  ``Cmd`` or ``Opt``.
 
 .. list-table:: 
    :header-rows: 1
@@ -89,7 +89,7 @@ Below:
    * - **n**
      - Successively add a new clipping plane (up to number 6)
    * - **Ctrl+f**
-     - Flip the clipping direction of selected plane
+     - Flip/invert the clipping direction of selected plane
    * - **Shift+c**
      - Toggle view of all active clipping planes on/off (active
        clipping remain active)
