@@ -32,9 +32,9 @@ text_label = ".. _edu_gui_tips:"
 text_title_desc = \
 '''
 
-*****************************
-**List of all AFNI GUI tips**
-*****************************
+****************************************************
+**List of all AFNI GUI tips and keyboard shortcuts**
+****************************************************
 
 .. contents:: :local:
 
