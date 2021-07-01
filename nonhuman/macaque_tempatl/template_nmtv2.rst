@@ -78,8 +78,6 @@ here:
      - directory of tables of CHARM ROI index/label definitions and more
    * - **supplemental_D99/**
      - directory of a table of D99 ROI index/label definitions
-   * - **supplemental_Paxinos/**
-     - directory of a table of Paxinos ROI index/label definitions
 
 |
 
@@ -108,8 +106,6 @@ in the "low-res" and "full-head" directories):
      - tissue segmentation of the whole brain
    * - **NMT_v2.0_sym_SS.nii.gz**
      - the NMT itself, skullstripped, not stirred
-   * - **Paxinos_atlas_in_NMT_v2.0_sym.nii.gz**
-     - Paxinos atlas in NMT v2 space
    * - **supplemental_CHARM/**
      - the CHARM atlas levels as individual volumetric files
    * - **supplemental_masks/**
