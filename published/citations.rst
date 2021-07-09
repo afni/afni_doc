@@ -171,8 +171,8 @@ the population-level, please cite:
 * | Chen G, Nash TA, Reding KM, Kohn PD, Wei S-M, Gregory MD,
     Eisenberg DP, Cox RW, Berman KF, Kippenhan JS (2020). Beyond
     linearity in neuroimaging: Capturing nonlinear relationships with
-    application to longitudinal studies. doi:
-    https://doi.org/10.1101/2020.11.01.363838
+    application to longitudinal studies.  NeuroImage 233:117891.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33667672/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.11.01.363838v2>`_
 
 
@@ -274,7 +274,7 @@ If you perform test-rest reliability analysis with the ``TRR`` program
     Beyond the intraclass correlation: A hierarchical modeling
     approach to test-retest assessment.  bioRxiv
     https://doi.org/10.1101/2021.01.04.425305
-  | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v1>`_
+  | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v2>`_
     
 If you use IntraClass Correlation (ICC) methods within AFNI via
 ``3dICC``, please cite:
@@ -282,8 +282,8 @@ If you use IntraClass Correlation (ICC) methods within AFNI via
 * | Chen G, Taylor PA, Haller SP, Kircanski K, Stoddard J, Pine DS,
     Leibenluft E, Brotman MA, Cox RW (2018). Intraclass correlation:
     Improved modeling approaches and applications for
-    neuroimaging. Hum Brain
-    Mapp. 2018;39(3):1187-1206. doi:10.1002/hbm.23909
+    neuroimaging. Hum Brain Mapp. 2018;39(3):1187-1206. 
+  | `<https://doi.org/10.1002/hbm.23909>`_
   | `<https://pubmed.ncbi.nlm.nih.gov/29218829/>`_
 
 If you use ``3dISC`` for inter-subject correlation, please cite:
@@ -291,7 +291,8 @@ If you use ``3dISC`` for inter-subject correlation, please cite:
 * | Chen G, Taylor PA, Shin YW, Reynolds RC, Cox RW (2017). Untangling
     the Relatedness among Correlations, Part II: Inter-Subject Correlation
     Group Analysis through Linear Mixed-Effects Modeling. Neuroimage
-    147:825-840. doi: 10.1016/j.neuroimage.2016.08.029
+    147:825-840. 
+  | `<https://doi.org/10.1016/j.neuroimage.2016.08.029>`_
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5303634/>`_
 
 For an ROI-based approach through Bayesian multilevel (BML) modeling
@@ -395,7 +396,8 @@ please cite:
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
     Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
-    Hierarchical Atlas. doi: 10.1101/2020.08.05.237818
+    Hierarchical Atlas. NeuroImage 235:117997.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
 * | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
@@ -741,8 +743,10 @@ atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
     Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
-    Hierarchical Atlas. doi: 10.1101/2020.08.05.237818
+    Hierarchical Atlas. NeuroImage 235:117997.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
+
 
 *SARM: Hierarchical subcortical atlas.* Subcortical Atlas of the
 Rhesus Macaque (SARM) for structural region labels (and see these
@@ -751,8 +755,9 @@ template <nh_macaque_tempatl>`:
 
 * | Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G,
     Garza-Villareal EA, Messinger A, Evrard HC (2020).  Subcortical
-    Atlas of the Rhesus Macaque (SARM) for Magnetic Resonance Imaging
-    doi: 10.1101/2020.09.16.300053.
+    Atlas of the Rhesus Macaque (SARM) for neuroimaging. NeuroImage
+    235:117996.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33794360/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1.full>`_
 
 *PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
@@ -769,9 +774,9 @@ information about the related :ref:`templates and atlases
     Garcia-Saldivar P, Giavasis S, Hartig R, Lepage C, Liu C, Majka P,
     Merchant H, Milham M, Rosa M, Tasserie J, Uhrig L, Margulies D,
     Klink PC (2020).  A collaborative resource platform for non-human
-    primate neuroimaging. Neuroimage, 226(1):117519.
-  | `<https://doi.org/10.1101/2020.07.31.230185>`_
-  | `<https://www.sciencedirect.com/science/article/pii/S1053811920310041>`_
+    primate neuroimaging. Neuroimage, 226:117519.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33227425/>`_
+  | `<https://doi.org/10.1016/j.neuroimage.2020.117519>`_
 
 Data projects: NIFTI format
 ==============================
