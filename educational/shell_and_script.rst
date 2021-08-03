@@ -184,7 +184,7 @@ You can select the whole array by providing its name::
   echo $arr
 
 You can select individual elements, which are indexed starting with
-``1``, up to the number of elements:
+``1``, up to the number of elements::
 
   echo $arr[1]
   echo ${arr[3]}
