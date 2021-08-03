@@ -116,10 +116,9 @@ to run using ``sbatch``, by including an option like
 ``--gres=lscratch:10``. This would give me a 10GB directory on the
 scratch disk, in the toplevel directory called
 ``/lscratch/$SLURM_JOBID``, where ``$SLURM_JOBID`` is provided by the
-job allocation system.  Reading/writing in this upper level directory
-would *also* be slow, so we would allocate a subdirectory based on
-this, say ``/lscratch/$SLURM_JOBID/SUBJ_ID``, where ``SUBJ_ID`` would
-be our subject ID or something.
+job allocation system.  We can write data here or make a subdirectory
+to write into, for example ``/lscratch/$SLURM_JOBID/SUBJ_ID``, where
+``SUBJ_ID`` would be the subject ID.
 
 The way we typically include this in a script is to do the following:
 
