@@ -37,6 +37,9 @@ import cloud_sptheme as csp
 # $ sudo pip install sphinx-argparse
 # $ sudo apt install pandoc
 
+def setup(app):
+    app.add_stylesheet('style.css')
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -176,6 +179,10 @@ html_theme = "cloud"
 # CLOUD: [optional] set some of the options listed above...
 # Many of the following are listed here:
 # /usr/local/lib/python2.7/dist-packages/cloud_sptheme/themes/cloud/theme.conf
+### Note for the main text font ('bodyfont'): rather than using
+### 'bodyfont' in this dictionary, the main text font should be
+### controlled in _static/style.css and the *.ttf files there,
+### specifying the body->font-family there
 html_theme_options = { 
     "stickysidebar": "true",
     "collapsiblesidebar": "true",
