@@ -7,13 +7,100 @@ div.document {
 }
 */
 
+
+/* disable unnecessary paragraph spacing in local TOCs */
+div.topic p {
+    display: block !important;
+    margin: 0px !important;
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+
+/*
+body {
+  font-family: PT Sans, Roboto, Helvetica, sans-serif;
+}
+*/
+
+/* FONT: PT Sans */
+
+@font-face {
+    font-family: "local_PT_sans";
+    src: url("./PTS55F.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "local_PT_sans";
+    src: url("./PTS75F.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "local_PT_sans";
+    src: url("./PTS56F.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "local_PT_sans";
+    src: url("./PTS76F.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* FONT: Open Sans */
+
+@font-face {
+    font-family: "local_OpenSans";
+    src: url("./OpenSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "local_OpenSans";
+    src: url("./OpenSans-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "local_OpenSans";
+    src: url("./OpenSans-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "local_OpenSans";
+    src: url("./OpenSans-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* THIS entry controls which font-family above is chosen */
+
+body {
+    font-family: "local_PT_sans";
+}
+
+
+
+
 .centered {
     text-align: center;
 }
 
+/*
 body {
   font-family: PT Sans, Roboto, Helvetica, sans-serif;
 }
+*/
 
 div.body p,
 div.body li,
