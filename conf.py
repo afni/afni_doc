@@ -38,7 +38,9 @@ import cloud_sptheme as csp
 # $ sudo apt install pandoc
 
 def setup(app):
-    app.add_stylesheet('style.css')
+    app.add_css_file('style.css')
+    ### apparently, the following is now deprecated: 
+    #app.add_stylesheet('style.css')
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
