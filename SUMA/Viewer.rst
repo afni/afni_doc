@@ -1,10 +1,12 @@
 .. _viewer:
 
-.. highlight:: tcsh
-
 ***************
 **SUMA Viewer**
 ***************
+
+.. contents:: :local:
+
+.. highlight:: tcsh
 
 .. _Surface_Viewing:
 

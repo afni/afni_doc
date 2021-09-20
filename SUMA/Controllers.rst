@@ -4,6 +4,13 @@
 **SUMA Controllers**
 ********************
 
+.. contents:: :local:
+
+.. highlight:: tcsh
+
+Overview
+========
+
 GUI controllers make up three groups:
 
 * :ref:`SUMA Controller<SumaCont>` To control aspects common to all

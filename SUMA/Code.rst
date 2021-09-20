@@ -4,6 +4,10 @@
 **SUMA Programming Notes**
 **************************
 
+.. contents:: :local:
+
+.. highlight:: tcsh
+
 A pitiful set of tips to trick you into venturing down the SUMA code maze.
 
 .. _Displayable_Objects_Code:
