@@ -1,12 +1,57 @@
-/* body {
-    background-color: black;
-    color: white;
-}
-div.document {
-    background-color: black;
-}
+
+/* For reference, a file like this under the sphinx/cloud_sptheme tree
+   seems to contain many defaults that get reset/controlled further here:
+      cloud_sptheme/themes/cloud/static/cloud.css_t
 */
 
+
+
+/* There doesn't seem to be a way to have "compact" or "simple" lists
+   in the cloud_theme sphinx, even though there should be a "compact"
+   or "simple" class.  I don't know why.
+
+   From this discussion:
+   https://github.com/sphinx-doc/sphinx/issues/7838
+   ... the following combination made all lists compact; might go back
+   to make a class to provide control for this, but that the moment
+   the vertical spacing rules in lists are hard to predict.  So
+   uniformly compact seems preferable.
+
+   These can be uncommented if not desired at some point; or perhaps
+   made to work with a certain class (might have to use 'hlist' with
+   one column, and then specify the class there.  Or something.
+
+   This supercedes other things done to remove unwanted vertical
+   spacing (like in TOC), but we leave those "on" in case we want to
+   change them later.
+*/
+li > p:first-child {
+    margin: 0;
+}
+li > p:last-child {
+    margin: 0;
+}
+div.admonition dl {
+    margin-bottom: 0;
+}
+/* needed to supplement the above, if we have line blocks with "|" */
+.line-block {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    border: 0px !important;
+}
+/* needed to supplement the above, if we have nested lists*/
+.simple {
+    /*display: block !important;*/
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    border: 0px !important;
+    /*padding: 0px !important;*/
+}
+
+.centered {
+    text-align: center;
+}
 
 /* disable unnecessary paragraph spacing in local TOCs */
 div.topic p {
@@ -89,22 +134,25 @@ body {
     font-family: "local_PT_sans";
 }
 
-
-
-
-.centered {
-    text-align: center;
-}
-
-/*
-body {
-  font-family: PT Sans, Roboto, Helvetica, sans-serif;
-}
-*/
+/* other things, managing, perhaps */
 
 div.body p,
 div.body li,
 div.body dd,
 table.docutils .justify-align {
     text-align:left;
+}
+
+.rst-content .highlight>pre {
+    line-height: 1.4;
+}
+
+/* Control the font of inline links a bit
+*/
+
+.std-ref{
+    text-decoration: underline;
+    /* font-style: italic;
+    font-weight: bold; */
+    /*color: blue; */
 }
