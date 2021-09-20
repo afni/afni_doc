@@ -1,10 +1,12 @@
 .. _Code:
 
+
 **************************
 **SUMA Programming Notes**
 **************************
 
 .. contents:: :local:
+   :depth: 2
 
 .. highlight:: tcsh
 

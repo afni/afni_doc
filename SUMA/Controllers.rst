@@ -5,6 +5,7 @@
 ********************
 
 .. contents:: :local:
+   :depth: 2
 
 .. highlight:: tcsh
 
