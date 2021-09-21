@@ -29,13 +29,19 @@ import subprocess
 
 # CLOUD: import Cloud
 import cloud_sptheme as csp
-# requires (for me, using 'sudo'):  
-# $ sudo pip install cloud_sptheme
-# $ sudo pip install pbr
-# $ sudo pip install sphinxcontrib-fulltoc
-# $ sudo pip install sphinxcontrib.programoutput
-# $ sudo pip install sphinx-argparse
-# $ sudo apt install pandoc
+
+### In the old days, one uesd to have to install each of these with a
+### package manager/pip:
+# $ pip install cloud_sptheme
+# $ pip install pbr
+# $ pip install sphinxcontrib-fulltoc
+# $ pip install sphinxcontrib.programoutput
+# $ pip install sphinx-argparse
+# $ apt install pandoc
+### BUT nowadays, one should be able to use the included
+### environment.yml file and create a conda env with all necessary
+### dependencies (assuming you have AFNI binaries installed and ready
+### to run)
 
 def setup(app):
     app.add_css_file('style.css')
