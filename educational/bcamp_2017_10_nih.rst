@@ -204,13 +204,13 @@ Wednesday
        3dANOVAx, 3dMVM, 3dLME;
        a few hands-on group analysis examples
    * - `Advanced Regression++, pt1 (Cox)
-       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day2/Advanced_Regression_RW_Pt1.mp4>`_
+       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day3/Advanced_Regression_RW_Pt1.mp4>`_
      - `afni07_advanced.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni07_advanced.pdf>`_, `afni_proc.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni_proc.pdf>`_
      - Regression features in AFNI and afni_proc.py
    * - `Advanced Regression++, pt2 (Cox)
-       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day2/Advanced_Regression_RW_Pt2.mp4>`_
+       <https://afni.nimh.nih.gov/pub/dist/edu/class_lectures/2017-10-NIH/Day3/Advanced_Regression_RW_Pt2.mp4>`_
      - `afni07_advanced.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni07_advanced.pdf>`_, `afni_proc.pdf
        <https://afni.nimh.nih.gov/pub/dist/edu/latest/afni_handouts/afni_proc.pdf>`_
