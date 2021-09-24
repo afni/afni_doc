@@ -29,10 +29,18 @@ lot easier now.  Yippee.
 Install Linux
 -----------------------------------
 
-1. | Click here to install WSL, selecting "Ubuntu" as your desired flavor
-     of Linux:
-   | `https://docs.microsoft.com/en-us/windows/wsl/install-win10
-     <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
+1. | Click here to install **WSL 1** (*noooot WSL 2*), and probably
+     select "Ubuntu 20.04" as your desired flavor of Linux:
+   | `https://docs.microsoft.com/en-us/windows/wsl/install-manual
+     <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_
+
+
+.. older: this guides people to WSL 2, which is not very good at the moment
+
+   1. | Click here to install WSL, selecting "Ubuntu" as your desired flavor
+        of Linux:
+      | `https://docs.microsoft.com/en-us/windows/wsl/install-win10
+        <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 
 .. _install_windows_VcXsrv:
 
@@ -76,11 +84,13 @@ Install VcXsrv Windows X Server
 More setup tips for Ubuntu+Windows
 ---------------------------------------------
 
-1. Install Ubuntu terminal fonts as described `HERE
+1. Install Ubuntu terminal fonts as described `under "Bonus: Install
+   the Ubuntu Font for a True Ubuntu Experience" on this page (waaay
+   down)
    <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
 
 #. | The default profile "use colors from system theme" shows an
-     all-black terminal.  To fix this: 
+     all-black terminal.  To adjust this to something nicer: 
    | Go to the terminal's menu bar,
    | Select the ``Edit`` tab, then ``Profile``, 
    | Turn **off** "use colors ...", and just pick a scheme+palette
@@ -91,6 +101,9 @@ More setup tips for Ubuntu+Windows
      implementations. The middle button pastes whatever is
      highlighted in the WSL terminal or other gnome-terminal:
      ``shift-ctrl-c`` copies, and ``shift-ctrl-v`` also pastes.
+
+Transferring data between Ubuntu and Windows 
+---------------------------------------------
 
 #. You can "see" your Windows file system from the Ubuntu side, where
    it appears as ``/mnt/c/``.  For example, if your Windows username
@@ -134,13 +147,17 @@ Install prerequisite: AFNI and package dependencies
 
 #. For ... 
 
-   * | *... Ubuntu 16.04 users,* follow the setup instructions
+   * | *... Ubuntu 20.04 users,* follow the setup instructions
        through "Make AFNI/SUMA profiles" here:
-     | :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
+     | :ref:`Link to Ubuntu 20 setup instructions for AFNI <install_steps_linux_ubuntu20>`
 
    * | *... Ubuntu 18.04 users,* follow the setup instructions
        through "Make AFNI/SUMA profiles" here:
      | :ref:`Link to Ubuntu 18 setup instructions for AFNI <install_steps_linux_ubuntu18>`
+
+   * | *... Ubuntu 16.04 users,* follow the setup instructions
+       through "Make AFNI/SUMA profiles" here:
+     | :ref:`Link to Ubuntu 16 setup instructions for AFNI <install_steps_linux_ubuntu16>`
 
    **Purpose:** Complete your life's ambition to have working AFNI on
    your Windows computer (though, realize it is Linux that makes this

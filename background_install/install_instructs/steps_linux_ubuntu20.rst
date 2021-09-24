@@ -31,7 +31,15 @@ Install prerequisite packages
 
      sudo add-apt-repository universe
 
-#. Copy+paste::
+     sudo add-apt-repository -y "ppa:marutter/rrutter4.0"
+
+     sudo add-apt-repository -y "ppa:marutter/c2d4u3.5"
+
+   **Purpose:** Being able to get dependencies from the latter two
+   repositories is necessary for installing the ``brms`` R-package
+   installation.
+
+#. Copy+paste each::
 
      sudo apt-get update
 
@@ -48,7 +56,20 @@ Install prerequisite packages
                              gnome-terminal nautilus           \
                              gnome-icon-theme-symbolic         \
                              firefox xfonts-100dpi             \
-                             r-base-dev
+                             r-base-dev libgfortran4           \
+                             libgdal-dev libopenblas-dev       \
+                             libnode-dev libudunits2-dev       \
+                             libgfortran4
+
+   .. nb:
+
+      The following are all just for brms, along with the *marutter*
+      repo additions:
+
+      libgfortran4                      \
+      libgdal-dev libopenblas-dev       \
+      libnode-dev libudunits2-dev       \
+      libgfortran4
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we
    don't have to reinvent the wheel!).  This may take a little while
@@ -124,7 +145,13 @@ Install R
    **Purpose:** Get specific R packages needed for AFNI programs.
    This step might take a while (of order an hour) to complete,
    because R will compile the packages.  Sigh.
-   
+
+#. If ``brms`` did not install from above, Copy+paste::
+
+     cd
+     echo "install.packages(c('Rcpp','brms'), dependencies = TRUE, INSTALL_opts = '--no-lock')" > tmp.R
+     R CMD BATCH tmp.R
+
 .. older ubuntu 18.04 note --- test on ubuntu 20.04
     #. If you are using Windows Subsystem Linux (WSL), and/or if your
        'brms' package fails to install (as checked in the "Evaluation"
