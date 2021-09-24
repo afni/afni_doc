@@ -148,9 +148,7 @@ Install R
 
 #. If ``brms`` did not install from above, Copy+paste::
 
-     cd
-     echo "install.packages(c('Rcpp','brms'), dependencies = TRUE, INSTALL_opts = '--no-lock')" > tmp.R
-     R CMD BATCH tmp.R
+     Rscript -e "install.packages(c('Rcpp','brms'), dependencies = TRUE, INSTALL_opts = '--no-lock')"
 
 .. older ubuntu 18.04 note --- test on ubuntu 20.04
     #. If you are using Windows Subsystem Linux (WSL), and/or if your
