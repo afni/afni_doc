@@ -56,7 +56,7 @@ Install prerequisite packages
                              gnome-terminal nautilus           \
                              gnome-icon-theme-symbolic         \
                              firefox xfonts-100dpi             \
-                             r-base-dev libgfortran4           \
+                             r-base-dev                        \
                              libgdal-dev libopenblas-dev       \
                              libnode-dev libudunits2-dev       \
                              libgfortran4
