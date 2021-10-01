@@ -1,9 +1,8 @@
 
 .. _install_steps_mac:
 
-
-**Mac OS**
-========================================
+**Mac OS, 10.9-15** *(via commandline)*
+===============================================
 
 .. contents:: The essential system setup
    :local:
@@ -13,11 +12,11 @@
 What to do?
 -----------
 
-These setup instructions are for **Mac OS versions 10.9+**.
+These setup instructions are for **Mac OS versions 10.9-15**.
 
 .. note:: *If you are seeking the new App version of install
-          instructions, *and have a Mac OS version <=10.14* (not
-          10.15!), please :ref:`click HERE <install_steps_mac_app>`.
+          instructions, *and have a Mac OS version 10.13-15*, please
+          :ref:`click HERE <install_steps_mac_app>`.
 
 .. include:: substep_intro.rst
 

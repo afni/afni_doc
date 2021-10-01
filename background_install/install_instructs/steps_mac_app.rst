@@ -2,8 +2,8 @@
 .. _install_steps_mac_app:
 
 
-**macOS**: *The App-based system setup (10.13-15)*
-========================================
+**Mac OS, 10.13-15** *(via App)*
+=============================================================
 
 .. contents:: The essential system setup
    :local:
@@ -12,11 +12,14 @@
 Welcome to the Jungle [#f1]_
 ------------------------------
 
-The following is a set of scripts packaged as an *app*. It is designed to
-automate the AFNI installation steps. You should launch the script by double
-clicking the icon like a regular program.
+The following is a set of scripts packaged as an App. It is designed
+to automate the AFNI installation steps. You should launch the script
+by double clicking the icon like a regular program.  We have tested
+the app on **OS 10.13 to 10.15** with various hardware.
 
-This app will download and install the recommended versions of the following:
+
+This app will download and install the recommended versions of the
+following:
  1. Xcode Command Line Tools
  #. Xquartz
  #. Homebrew
@@ -26,17 +29,15 @@ This app will download and install the recommended versions of the following:
 It can also run the afni_system_check, download class / bootcamp data, and
 install shiny packages.
 
-If a package is already installed, you may be asked if you want to reinstall it.
-But you can skip it if you like.
-This script will also setup your ~/.cshrc, ~/.bashrc, ~/.bash_profile, and ~/.zshrc.
-It will add the appropriate entries to your paths specified there.
-After completion, you should restart your computer just in case.
+If a package is already installed, you may be asked if you want to
+reinstall it.  But you can skip it if you like.  This script will also
+setup your ``~/.cshrc``, ``~/.bashrc``, ``~/.bash_profile``, and
+``~/.zshrc``.  It will add the appropriate entries to your paths
+specified there.  After completion, you should restart your computer
+just in case.
 
-This is a **BETA** script, so your feedback is welcome. We have tested the app
-on 10.13 to 10.15 with various hardware.
-
-*If you are seeking the non-App version of install instructions,
-please see* :ref:`HERE <install_steps_mac>`.
+*If you are seeking the non-App version of install instructions (i.e.,
+via command line), please see* :ref:`HERE <install_steps_mac>`.
 
 Take the File and Run [#f2]_
 ------------------------------
