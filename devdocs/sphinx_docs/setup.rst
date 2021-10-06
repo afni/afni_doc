@@ -1,6 +1,6 @@
 .. _sphinx_docs_setup:
 
-.. highlight:: Tcsh
+.. highlight:: none
 
 ********************************
 Setup for building sphinx
@@ -95,8 +95,8 @@ Make Sphinx documentation on local OS
 Useful links
 ===================
 
-There are several useful webpages for information about building Sphinx
-documentation.
+Here are some useful resources for various aspects of building the
+docs with Sphinx.
 
 | The AFNI documentation repository is open source and publicly
   available here: 

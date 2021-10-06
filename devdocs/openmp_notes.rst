@@ -9,7 +9,7 @@
    https://afni.nimh.nih.gov/pub/dist/doc/misc/OpenMP.html
 
 ****************************************
-**Elementary OpenMP in AFNI**
+Elementary OpenMP in AFNI
 ****************************************
 
 .. highlight:: c
