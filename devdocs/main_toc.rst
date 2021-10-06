@@ -13,7 +13,7 @@ Building, testing, contributing... get it here while it's hot.
    openmp_notes
    running_tests_suite/main_toc
    cmake_build/build_docs
-   build_sphinx/main_toc
+   sphinx_docs/main_toc
    ContributeDocs/ContributeDocs
    Coding/Writing_Help
 
