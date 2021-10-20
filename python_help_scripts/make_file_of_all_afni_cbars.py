@@ -55,7 +55,7 @@ We might add more over time.
 
 '''
 
-table_head = \
+table_head_256 = \
 '''
 
 %s
@@ -67,6 +67,35 @@ table_head = \
 
 '''
 
+table_head_gt256 = \
+'''
+
+%s
+======================================================================
+
+Sometimes one wants to use a colorbar that has more than 256 colors in
+it.  This might occur when overlaying an atlas with a loooot of ROIs,
+or one with with laaaarge ROI values.
+
+To correctly load a colorbar with more than (the default) 256 colors,
+you must start the AFNI GUI using the ``-XXXnpane ..`` option,
+providing the appropriate number of colors available in the colorbar
+(which is typically knowable from the name).  For example, you could
+use the following to load the **ROI_glasbey_512** colorbar, which has
+512 colors:
+
+.. code-block:: none
+
+   afni -XXXnpane 512
+
+Below is a list of current colorbars in AFNI that contain more than
+256 colors.
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 15 8 36 
+
+'''
 
 # ===================================================================
 
@@ -128,7 +157,7 @@ def parse_stdout(SS):
 
     return allpngs
 
-def write_out_edu_rst(ofile, lll, relpath=""):
+def write_out_edu_rst_256(ofile, lll, relpath=""):
 
     fff = open(ofile, 'w')
     lll.sort(key=MakeLowerCase, reverse=True)
@@ -136,15 +165,15 @@ def write_out_edu_rst(ofile, lll, relpath=""):
     fff.write(text_label)
     fff.write(text_title_desc)
 
-    grp = "Colorbars and example images"
-    p1 = "media/cbars/"
-    p2 = "media/cbars/IMGS_tt_cbar_"
+    grp = "Colorbars (<=256 colors) and example images"
+    p1  = "media/cbars/"
+    p2  = "media/cbars/IMGS_tt_cbar_"
 
-    fff.write(table_head % (grp))
+    fff.write(table_head_256 % (grp))
     fff.write("   * - Name\n" )
     fff.write("     - Cbar\n" )
-    fff.write("     - opacity=9, anatomical [1,256]\n" )
-    fff.write("     - opacity=4, ROIs [1,256]\n" )
+    fff.write("     - opacity=9, anatomical [0, 98%ile]\n" )
+    fff.write("     - opacity=5, ROIs [0, 256]\n" )
 
     for x in lll:
         
@@ -161,9 +190,47 @@ def write_out_edu_rst(ofile, lll, relpath=""):
         fff.write("          :align: center\n")
         fff.write("     - .. image:: %s\n" % (my_brain2))
         fff.write("          :align: center\n")
+        fff.write("\n")
+        fff.write("\n")
 
     fff.close()
 
+# [PT: Oct 20, 2021] updated to include these colorbars for >256
+# colors
+def write_out_edu_rst_gt256(ofile, lll, relpath=""):
+
+    fff = open(ofile, 'a')
+    lll.sort(key=MakeLowerCase, reverse=True)
+    # Top level header stuff and description
+    ###fff.write(text_label)
+    ###fff.write(text_title_desc)
+
+    grp = "Colorbars (>256 colors) and example images"
+    p1  = "media/cbars/"
+    p2  = "media/cbars/IMGS_tt_cbar_"
+ 
+    fff.write(table_head_gt256 % (grp))
+    fff.write("   * - Name\n" )
+    fff.write("     - Cbar\n" )
+    fff.write("     - opacity=5, ROIs [0, Nroi]\n" )
+
+    for x in lll:
+        
+        my_name   = x[:-4]
+        my_cbar   = "media/cbars/CBARS_XXXnpane/"+x
+        my_brain2 = "media/cbars/IMGS_XXXnpane/xx_cbar_"+my_name+".axi.png"
+
+        fff.write("   * - %s\n" % (x[:-4]))
+        fff.write("     - .. image:: %s\n" % (my_cbar))
+        fff.write("          :height: 3in\n")
+        fff.write("          :align: center\n")
+        fff.write("     - .. image:: %s\n" % (my_brain2))
+        fff.write("          :height: 3in\n")
+        fff.write("          :align: center\n")
+        fff.write("\n")
+        fff.write("\n")
+
+    fff.close()
 
 def check_for_webaddr(sss):
 
@@ -217,8 +284,11 @@ if __name__=="__main__":
     (rdir, ofile)  =  get_arg(sys.argv[1:])
 
     # need relative paths, internally
+    ### [PT: Oct 20, 2021] ... but actually, rel_rdir isn't used
+    ### within the functions it is input, oddly
     rel_rdir = rdir.replace("../educational/", "")
 
+    # list contents of media/cbars/
     process = subprocess.Popen(['ls', rdir], stdout=subprocess.PIPE)
     stdout, stderr = process.communicate()
 
@@ -227,6 +297,19 @@ if __name__=="__main__":
 
     file_list = parse_stdout(stdout)
 
-    write_out_edu_rst(ofile, file_list, rel_rdir)
+    write_out_edu_rst_256(ofile, file_list, rel_rdir)
+
+    # list contents of media/cbars/CBARS_XXXnpane
+    process2 = subprocess.Popen(['ls', rdir+'/CBARS_XXXnpane'], 
+                               stdout=subprocess.PIPE)
+    stdout2, stderr2 = process2.communicate()
+
+    if type(stdout2) == bytes :
+        stdout2 = stdout2.decode("utf-8")
+
+    file_list2 = parse_stdout(stdout2)
+
+    write_out_edu_rst_gt256(ofile, file_list2, rel_rdir)
+
 
     print("++ Done writing all colorbars rst!")
