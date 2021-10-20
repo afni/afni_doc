@@ -545,8 +545,8 @@ If you want to know about spatial smoothness estimation and resampling
 stability in AFNI, have a gander at:
 
 * | Cox RW, Taylor PA (2017). Stability of spatial smoothness and
-    cluster-size threshold estimates in FMRI using
-    AFNI. https://arxiv.org/abs/1709.07471
+    cluster-size threshold estimates in FMRI using AFNI.
+    arXiv:1709.07471 [stat.AP]
   | `<https://arxiv.org/abs/1709.07471>`_
 
 If you use proper statistical testing in your work (two-sided testing
@@ -577,6 +577,27 @@ multilevel (BML) approach:
     calibration. Neuroimage. 2020;206:116320. 
     doi:10.1016/j.neuroimage.2019.116320
   | `<https://pubmed.ncbi.nlm.nih.gov/31698079/>`_
+
+Trial sample size is important in experimental design, too (not just
+subject sample size)!  Here we investigate the crucial role of trials
+in neuroimaging from the perspectives of statistical efficiency and
+condition-level generalizability:
+
+* | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Taylor PA, Haller
+    SP. Hyperbolic trade-off: the importance of balancing trial and
+    subject sample sizes in neuroimaging. *(submitted)*.
+  | `<https://www.biorxiv.org/content/10.1101/2021.07.15.452548v1.full>`_
+
+In this commentary, we suggest: 1) adopting a modeling approach
+through accurately mapping the data hierarchy; 2) incorporating the
+spatial information across the brain; and 3) avoiding information
+over-reduction in result reporting:
+
+* | Chen G, Taylor PA, Stoddard J, Cox RW, Bandettini PA, Pessoa L.
+    Sources of information waste in neuroimaging: mishandling
+    structures, thinking dichotomously, and over-reducing
+    data. *(submitted)*.
+  | `<https://www.biorxiv.org/content/10.1101/2021.05.09.443246v2.full>`_
 
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
