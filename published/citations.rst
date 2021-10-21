@@ -271,10 +271,9 @@ If you perform test-rest reliability analysis with the ``TRR`` program
 (or ``3dLMEr -TRR ..``), please cite:
 
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Haller SP (2021).
-    Beyond the intraclass correlation: A hierarchical modeling
-    approach to test-retest assessment.  bioRxiv
-    https://doi.org/10.1101/2021.01.04.425305
-  | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v2>`_
+    Trial and error: a hierarchical modeling approach to test-retest
+    assessment. bioRxiv 2021.01.04.425305 (and accepted in NeuroImage).
+  | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v3>`_
     
 If you use IntraClass Correlation (ICC) methods within AFNI via
 ``3dICC``, please cite:
