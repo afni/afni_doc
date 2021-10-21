@@ -63,14 +63,6 @@ provided for The Curious amongst you:
     of the image-generating capability of HTML QC output of
     ``afni_proc.py``, too.
 
-**Usage note:**
-    Each example below includes a ``-do_clean`` option.  This means
-    that a working directory of copied/intermediate data is deleted.
-    As of July 8, 2019, it is default behavior to remove that
-    directory, so that option is not longer needed.  
-
-    Now, if you want to *keep* the temporary directory, on invokes
-    ``-no_clean``.
 
 
 
@@ -116,7 +108,7 @@ where the data is sitting, dset names, etc.:
    
    # AFNI tutorial: series of examples of automatic image-making in AFNI.
    #
-   # + last update: July 8, 2019
+   # + last update: Oct 21, 2021
    #
    ##########################################################################
    
@@ -126,61 +118,22 @@ where the data is sitting, dset names, etc.:
    #
    # ----------------------------------------------------------------------
    
-   # anatomical volumes: some present already, and some derived here
-   set vol_anat     = anat+orig                              # anatomical vol
-   set pre_anat     = `3dinfo -prefix_noext "${vol_anat}"`   # vol prefix
-   set pre_tut      = _tut                                   # new dset prefix
-   set vol_anat_s   = strip+orig                             # anat. no skull
-   set pre_anat_s   = `3dinfo -prefix_noext "${vol_anat_s}"` # vol prefix
-   set pre_anat_m   = anat_mask                              # vol prefix
-   set vol_anat_m   = ${pre_tut}_${pre_anat_m}.nii.gz        # anat. ss + msk
-   set pre_anat_su  = anat_ss_uni                            # vol prefix
-   set vol_anat_su  = ${pre_tut}_${pre_anat_su}.nii.gz       # anat. unifized
-   set pre_anat_sub = anat_ss_uni_box                        # vol prefix
-   set vol_anat_sub = ${pre_tut}_${pre_anat_sub}.nii.gz      # anat. uni + box
-   
-   # stat/model output vol
-   set vol_stat     = func_slim+orig                         # model results
-   set pre_stat     = `3dinfo -prefix_noext "${vol_stat}"`   # vol prefix
-   
-   # EPI volumes: some present already, others derived here
-   set vol_epi      = epi_r1+orig                            # EPI vol, 4D
-   set pre_epi      = `3dinfo -prefix_noext "${vol_epi}"`    # vol prefix
-   set pre_epi_e    = epi_edge0                              # vol prefix
-   set vol_epi_e    = ${pre_tut}_${pre_epi_e}.nii.gz         # EPI edgey [0]
-   set pre_epi_p    = epi_part                               # vol prefix
-   set vol_epi_p    = ${pre_tut}_${pre_epi_p}.nii.gz         # part of EPI
-   
-   # selecting coef/stat bricks and labels
-   set ind_coef   = 3                                        # effect estimate
-   set ind_stat   = 4                                        # stat of ee
-   set lab_coef   = `3dinfo -label "${vol_stat}[${ind_coef}]"` # str label of ee
-   set lab_stat   = `3dinfo -label "${vol_stat}[${ind_stat}]"` # str label of stat
-   set lab_statf  = "${lab_stat:gas/#/_/}"                   # str: no '#'
-   set lab_coeff  = "${lab_coef:gas/#/_/}"                   # str: no '#'
-   
-   set stat_map   = ${pre_tut}_${pre_stat}_map.nii.gz        # cluster map 
-   set stat_ee    = ${pre_tut}_${pre_stat}_EE.nii.gz         # effect est, clust
-   set stat_rep   = ${pre_tut}_${pre_stat}_report.txt        # cluster text rep
-   
-   # info for thresholding/clustering
-   set pthr       = 0.001                                    # voxelwise thresh
-   set tail_type  = "bisided"                                # {1,2,bi}sided
-   
-   # --------------------------------------------------------------------------
-   
-   
    # make output dir for all images
    \mkdir -p QC
    
    
-**Ex. 0**: 3D anatomical volume
----------------------------------
+   
+   
+   
+   
+   
+**Ex. 0**: Simple underlay viewing
+====================================
 
-Simply view the anatomical volume as an underlay by itself.  Might be
-useful to check for artifact, coverage, etc.  The full crosshair grid
-shows where slices are taken from, and might be useful for seeing the
-relative alignment/axialization of the brain.
+Simply view the (non-skullstripped) anatomical volume as an underlay
+by itself.  Might be useful to check for artifact, coverage, etc.  The
+full crosshair grid shows where slices are taken from, and might be
+useful for seeing the relative alignment/axialization of the brain.
 
 Unless specified otherwise, the ulay black/white mapping is to 0%/98%
 of voxels in the whole volume. The AFNI GUI uses 2%/98% of slicewise
@@ -193,15 +146,14 @@ view-planes that are created per command execution.
 
 .. code-block:: Tcsh
 
-   set opref = QC/ca000_${pre_anat}
+   set opref = QC/ca000_anat_def
    
    @chauffeur_afni                                                       \
-       -ulay    ${vol_anat}                                              \
-       -prefix  ${opref}                                                 \
+       -ulay         anat+orig.HEAD                                      \
+       -prefix       ${opref}                                            \
+       -set_xhairs   MULTI                                               \
        -montx 3 -monty 3                                                 \
-       -set_xhairs MULTI                                                 \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4  
    
 
 
@@ -211,21 +163,21 @@ view-planes that are created per command execution.
 
    * - Example 0
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca000_anat.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca000_anat_def.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca000_anat.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca000_anat_def.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca000_anat.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca000_anat_def.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 1**: 3D anatomical volume
----------------------------------
+**Ex. 1**: Moving/selecting view slices
+=========================================
 
 By default, the image slices are set as follows: if there are N total
 images in the montage, place N along each axis spaced as evenly as
@@ -234,24 +186,23 @@ possible (as done in the previous example).
 However, users can specify either the (x, y, z) or (i, j, k) location
 of the central slice, as well as spacing between each of the N slices
 (the "delta" number of rows/columns between image slices).  In this
-example the central image is placed at the location (x, y, z) = (0, 0,
-0), and different slice spacing is specified along different axes.
+example the central image is placed at the location (x, y, z) = (-10 4
+3), and different slice spacing is specified along different axes.
 
 
 
 .. code-block:: Tcsh
 
-   set opref = QC/ca001_${pre_anat}
+   set opref = QC/ca001_anat_mv_slices
    
    @chauffeur_afni                                                       \
-       -ulay    ${vol_anat}                                              \
-       -prefix  ${opref}                                                 \
+       -ulay           anat+orig.HEAD                                    \
+       -prefix         ${opref}                                          \
+       -set_dicom_xyz  -20 4 3                                           \
+       -delta_slices   5 15 10                                           \
+       -set_xhairs     MULTI                                             \
        -montx 3 -monty 3                                                 \
-       -set_dicom_xyz 0 0 0                                              \
-       -delta_slices  5 15 10                                            \
-       -set_xhairs MULTI                                                 \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4 
    
 
 
@@ -261,52 +212,52 @@ example the central image is placed at the location (x, y, z) = (0, 0,
 
    * - Example 1
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca001_anat.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca001_anat_mv_slices.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca001_anat.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca001_anat_mv_slices.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca001_anat.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca001_anat_mv_slices.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 2**: 3D anatomical volume, olay mask
---------------------------------------------
+**Ex. 2**: Underlay and overlay viewing (mask example)
+========================================================
 
 (Going back to evenly spread slices...) Add an overlay with some
 transparency to the previous anatomical-- here, a binary mask of the
 skullstripped volume to check the quality of the skullstripping
 results. The olay color comes from the max of the default colorbar
-('Plasma').  The crosshairs have been turned off.
+('Plasma').  
+
+The crosshairs have also been turned off.
 
 
 
 .. code-block:: Tcsh
 
    # binarize the skullstripped anatomical, if not already done
-   if ( ! -e ${vol_anat_m} ) then
+   if ( ! -e anat_mask.nii.gz ) then
        3dcalc                                                            \
-           -a ${vol_anat_s}                                              \
-           -expr 'step(a)'                                               \
-           -prefix ${vol_anat_m}
+           -a       strip+orig.HEAD                                      \
+           -expr    'step(a)'                                            \
+           -prefix  anat_mask.nii.gz
    endif
    
-   set opref = QC/ca002_${pre_anat_m}
+   set opref = QC/ca002_anat_w_mask
    
    @chauffeur_afni                                                       \
-       -ulay    ${vol_anat}                                              \
-       -olay    ${vol_anat_m}                                            \
-       -opacity 4                                                        \
-       -prefix  ${opref}                                                 \
+       -ulay         anat+orig.HEAD                                      \
+       -olay         anat_mask.nii.gz                                    \
+       -opacity      4                                                   \
+       -prefix       ${opref}                                            \
+       -set_xhairs   OFF                                                 \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
-   
+       -label_mode 1 -label_size 4    
    
 
 
@@ -316,21 +267,106 @@ results. The olay color comes from the max of the default colorbar
 
    * - Example 2
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_w_mask.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca002_anat_w_mask.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_mask.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca002_anat_w_mask.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 3**: threshold stats voxelwise, view effects
-----------------------------------------------------
+**Ex. 3**: Focus box to select view slices
+============================================
+
+Sometimes there is lots of empty space in a FOV; so just viewing the
+default, even spread of slices can leave lots of wasted empty space
+such as here:
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca003a_anat_w_space
+   
+   @chauffeur_afni                                                       \
+       -ulay         strip+orig.HEAD                                     \
+       -prefix       ${opref}                                            \
+       -set_xhairs   MULTI                                               \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4 
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 3a
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca003a_anat_w_space.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca003a_anat_w_space.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca003a_anat_w_space.sag.png
+          :width: 100%   
+          :align: center
+     -
+
+|
+
+To avoid this without needed to autobox a dset or anything, we can use
+a dset or keyword to focus the slices within which viewing occurs, and
+then have the program make the evenly spaced montage within that
+restricted view.
+
+In the following case, we use a keyword to use the underlay as a
+reference, which will be internally autoboxed before viewing (and this
+can be done when an overlay is present, or using the overlay, or using
+a totally different dataset).  This is often extremely useful if there
+is a lot of empty space:
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca003b_anat_w_space
+   
+   @chauffeur_afni                                                       \
+       -ulay              strip+orig.HEAD                                \
+       -box_focus_slices  AMASK_FOCUS_ULAY                               \
+       -prefix            ${opref}                                       \
+       -set_xhairs        MULTI                                          \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 3b
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca003b_anat_w_space.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca003b_anat_w_space.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca003b_anat_w_space.sag.png
+          :width: 100%   
+          :align: center
+     -
+
+**Ex. 4**: Overlay beta coefs and threshold with stats
+========================================================
 
 Pretty standard "vanilla mode" of seeing thresholded statistic results
 of (task) FMRI modeling.  In AFNI we strongly recommend viewing the
@@ -341,14 +377,14 @@ might be a reasonable max/upper response value for this FMRI data that
 has been scaled to meaningful BOLD %signal change units; the colorbar
 is just the one that is default in AFNI GUI. 
 
-Here, the underlay is just the skullstripped anatomical volume.  Note
-that there is a lot of empty space: this might be a reason to use the
-``-delta_slices ..`` option from above.  Another option would be
-to "autobox" the ulay volume, as shown below.
-
 The threshold appropriate for this statistic was generated by
 specifying a p-value, and then using the program ``p2dsetstat`` to
 read the header info for that volume and do the p-to-stat conversion.
+In this example, we have to know that the coefficient of interest is
+the ``[1]`` volume, and its stat is the ``[2]`` volume (later we can
+use labels, instead).
+
+Here, the underlay is just the skullstripped anatomical volume.
 
 Note that the slice location is shown in each panel (in a manner
 agnostic to the dset's orientation like RAI, LPI, SRA, etc.).
@@ -360,28 +396,28 @@ agnostic to the dset's orientation like RAI, LPI, SRA, etc.).
    # determine voxelwise stat threshold, using p-to-statistic
    # calculation
    set sthr = `p2dsetstat                                                \
-                   -inset "${vol_stat}[${ind_stat}]"                     \
-                   -pval $pthr                                           \
-                   -$tail_type                                           \
+                   -inset   "func_slim+orig.HEAD [2]"                    \
+                   -pval    0.001                                        \
+                   -bisided                                              \
                    -quiet`
    
-   echo "++ The p-value ${pthr} was convert to a stat value of: ${sthr}."
+   echo "++ The p-value 0.001 was convert to a stat value of: ${sthr}."
    
-   set opref = QC/ca003_${pre_stat}_${lab_coeff}
+   set opref = QC/ca004a_Vrel_coef_stat
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_s}                                              \
-       -olay  ${vol_stat}                                                \
-       -func_range 3                                                     \
-       -cbar Spectrum:red_to_blue                                        \
-       -thr_olay ${sthr}                                                 \
-       -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-       -opacity 5                                                        \
-       -prefix  ${opref}                                                 \
+       -ulay             strip+orig.HEAD                                 \
+       -olay             func_slim+orig.HEAD                             \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -func_range       3                                               \
+       -cbar             Spectrum:red_to_blue                            \
+       -thr_olay         ${sthr}                                         \
+       -set_subbricks    -1 1 2                                          \
+       -opacity          5                                               \
+       -prefix           ${opref}                                        \
+       -set_xhairs       OFF                                             \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4  
    
 
 
@@ -389,60 +425,51 @@ agnostic to the dset's orientation like RAI, LPI, SRA, etc.).
    :header-rows: 1
    :widths: 50 50 
 
-   * - Example 3
+   * - Example 4a
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca004a_Vrel_coef_stat.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca004a_Vrel_coef_stat.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca003_func_slim_Arel_0_Coef.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca004a_Vrel_coef_stat.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 4**: threshold stats voxelwise, view effects, II
---------------------------------------------------------
 
-Quite similar to the above command and output, with a couple changes:
 
-* the colorbar has been changed, to one that shows pos and neg effects
-  separately
 
-* the ulay range has been specified in a way to make it darker-- this
-  might be useful to allow more olay colors to stick out; in
-  particular, yellows/light colors don't get lost in a white/light
-  ulay coloration.
+
+
+Now, let's do that, just a little more conveniently with
+``@chauffeur_afni``: use subbrick labels to refer to things (in
+``-set_subbricks ..``), and have the p-to-stat conversion happen
+internally (with ``-thr_olay_p2stat``).
 
 
 
 .. code-block:: Tcsh
 
-   # Make a nicer looking underlay: unifized and skullstripped
-   # anatomical
-   if ( ! -e $vol_anat_su ) then
-       3dUnifize -GM -prefix $vol_anat_su -input $vol_anat_s
-   endif
-   
-   set opref = QC/ca004_${pre_stat}_${lab_coeff}
+   set opref = QC/ca004b_Vrel_coef_stat
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_su}                                             \
-       -olay  ${vol_stat}                                                \
-       -cbar Reds_and_Blues_Inv                                          \
-       -ulay_range 0% 150%                                               \
-       -func_range 3                                                     \
-       -thr_olay ${sthr}                                                 \
-       -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-       -opacity 5                                                        \
-       -prefix  ${opref}                                                 \
+       -ulay             strip+orig.HEAD                                 \
+       -olay             func_slim+orig.HEAD                             \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -func_range       3                                               \
+       -cbar             Spectrum:red_to_blue                            \
+       -thr_olay_p2stat  0.001                                           \
+       -thr_olay_pside   bisided                                         \
+       -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+       -opacity          5                                               \
+       -prefix           ${opref}                                        \
+       -set_xhairs       OFF                                             \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4    
    
 
 
@@ -450,56 +477,118 @@ Quite similar to the above command and output, with a couple changes:
    :header-rows: 1
    :widths: 50 50 
 
-   * - Example 4
+   * - Example 4b
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca004b_Vrel_coef_stat.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca004b_Vrel_coef_stat.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca004_func_slim_Arel_0_Coef.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca004b_Vrel_coef_stat.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 5**: threshold stats voxelwise, view effects, III
----------------------------------------------------------
+
+
+
+
+
+
+Finally, we can also tweak the colorbar for a bit of more clear
+positive/negative affect separation (with ``-cbar ..``).  
+
+Additionally, we might darken the underlay a bit by scaling its
+brightness now, to make the overlay "pop" a little more visually (with
+``-ulay_range ..``).
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca004c_Vrel_coef_stat
+   
+   @chauffeur_afni                                                       \
+       -ulay             strip+orig.HEAD                                 \
+       -ulay_range       0% 130%                                         \
+       -olay             func_slim+orig.HEAD                             \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -func_range       3                                               \
+       -cbar             Reds_and_Blues_Inv                              \
+       -thr_olay_p2stat  0.001                                           \
+       -thr_olay_pside   bisided                                         \
+       -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+       -opacity          5                                               \
+       -prefix           ${opref}                                        \
+       -set_xhairs       OFF                                             \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4  
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 4c
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca004c_Vrel_coef_stat.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca004c_Vrel_coef_stat.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca004c_Vrel_coef_stat.sag.png
+          :width: 100%   
+          :align: center
+     -
+
+|
+
+**Ex. 5**: Overlay beta coefs and threshold *translucently* with stats
+========================================================================
 
 Another take on thresholding: one without being so strict, and showing
 more of the data.  For example, it might be quite informative to still
 see some of the "near misses" in the data.  
 
 One can soften the ON/OFF binarization of thresholding, by decreasing
-the "alpha" level (or opacity) of sub-threshold voxels in a continuous
-manner: either quadratically (used here) or linearly (less steep
-decline in visibility).  The black outline still highlights the
-suprathreshold locations nicely.
+the "alpha" level---or opacity---of sub-threshold voxels in a
+continuous manner (``-olay_alpha ..``): either quadratically (used
+here) or linearly (less steep decline in visibility).  To still mostly
+highlight the suprathreshold voxels, we can add a black-lined box
+around them (with ``-olay_boxed Yes``).
+
+**This is a really nice way to view modeling information, and is
+utilized often in the QC HTML created by** ``afni_proc.py`` (see
+:ref:`here <tut_apqc_help>`.
 
 
 
 .. code-block:: Tcsh
 
-   set opref = QC/ca005_${pre_stat}_${lab_coeff}_alpha
+   set opref = QC/ca005a_Vrel_coef_stat
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_su}                                             \
-       -olay  ${vol_stat}                                                \
-       -cbar Reds_and_Blues_Inv                                          \
-       -ulay_range 0% 150%                                               \
-       -func_range 3                                                     \
-       -thr_olay   ${sthr}                                               \
-       -olay_alpha Yes                                                   \
-       -olay_boxed Yes                                                   \
-       -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-       -opacity 5                                                        \
-       -prefix  ${opref}                                                 \
+       -ulay             strip+orig.HEAD                                 \
+       -ulay_range       0% 130%                                         \
+       -olay             func_slim+orig.HEAD                             \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -func_range       3                                               \
+       -cbar             Reds_and_Blues_Inv                              \
+       -thr_olay_p2stat  0.001                                           \
+       -thr_olay_pside   bisided                                         \
+       -olay_alpha       Yes                                             \
+       -olay_boxed       Yes                                             \
+       -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+       -opacity          5                                               \
+       -prefix           ${opref}                                        \
+       -set_xhairs       OFF                                             \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4   
    
 
 
@@ -507,23 +596,21 @@ suprathreshold locations nicely.
    :header-rows: 1
    :widths: 50 50 
 
-   * - Example 5
+   * - Example 5a
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca005a_Vrel_coef_stat.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca005a_Vrel_coef_stat.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca005_func_slim_Arel_0_Coef_alpha.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca005a_Vrel_coef_stat.sag.png
           :width: 100%   
           :align: center
      -
 
-|
-
-**Ex. 6**: threshold stats voxelwise + clusterize, view effects
------------------------------------------------------------------
+**Ex. 6**: Overlay beta coefs, threshold with stats and clusterize
+====================================================================
 
 The previous examples were just thresholded voxelwise. This used
 ``3dClusterize`` to add in cluster-volume thresholding to this;
@@ -533,13 +620,15 @@ sorted by size) produced by the dual thresholding.  The clustersize of
 200 voxels was just chosen arbitrarily (but could be calculated for
 real data with ``3dClustSim``, for example).
 
-Comment on ``3dClusterize`` usage: if you have a mask in the
-header of the stats file, then you can add an opt "-mask_from_hdr" to
-this command to read it directly from the header, similar to usage in
-the GUI.
+**Comment on ``3dClusterize`` usage:** in most cases, you will have a
+mask to apply to the data being clustered, to either use in the
+command, or perhaps having already applied it to an intermediate
+version of the data.  If you have a mask in the header of the stats
+file, then you can add an opt "-mask_from_hdr" to this command to read
+it directly from the header, similar to usage in the GUI.
 
-The rest of the visualization aspects of the EE volume here are pretty
-similar to the preceding.
+The rest of the visualization aspects of the coefficient (beta, or
+effect estimate) volume here are pretty similar to the preceding.
 
 
 
@@ -548,30 +637,30 @@ similar to the preceding.
    3dClusterize                                                          \
        -overwrite                                                        \
        -echo_edu                                                         \
-       -inset   ${vol_stat}                                              \
-       -ithr    ${ind_stat}                                              \
-       -idat    ${ind_coef}                                              \
-       -${tail_type}  "p=$pthr"                                          \
+       -inset          func_slim+orig.HEAD                               \
+       -ithr           "Vrel#0_Tstat"                                    \
+       -idat           "Vrel#0_Coef"                                     \
+       -bisided        "p=0.001"                                         \
        -NN             1                                                 \
        -clust_nvox     200                                               \
-       -pref_map       ${stat_map}                                       \
-       -pref_dat       ${stat_ee}                                        \
-     > ${stat_rep}
+       -pref_map       clust_Vrel_map.nii.gz                             \
+       -pref_dat       clust_Vrel_coef.nii.gz                            \
+     >  clust_Vrel_report.1D
    
-   set opref = QC/ca006_${pre_stat}
+   set opref = QC/ca006a_Vrel
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_su}                                             \
-       -olay  ${stat_ee}                                                 \
-       -cbar Reds_and_Blues_Inv                                          \
-       -ulay_range 0% 150%                                               \
-       -func_range 3                                                     \
-       -opacity    5                                                     \
-       -prefix     ${opref}                                              \
+       -ulay              strip+orig.HEAD                                \
+       -box_focus_slices  AMASK_FOCUS_ULAY                               \
+       -olay              clust_Vrel_coef.nii.gz                         \
+       -cbar              Reds_and_Blues_Inv                             \
+       -ulay_range        0% 130%                                        \
+       -func_range        3                                              \
+       -opacity           5                                              \
+       -prefix            ${opref}                                       \
+       -set_xhairs        OFF                                            \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4       
    
 
 
@@ -579,131 +668,50 @@ similar to the preceding.
    :header-rows: 1
    :widths: 50 50 
 
-   * - Example 6
+   * - Example 6a
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca006a_Vrel.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca006a_Vrel.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca006_func_slim.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca006a_Vrel.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 7**: threshold stats voxelwise + clusterize, view effects, II
----------------------------------------------------------------------
 
-Same olay as above, but just autobox the ulay for a smaller FOV that
-has less empty space ("autoboxed" with a wee bit of padding).
-
-
-
-.. code-block:: Tcsh
-
-   # Save space: autobox
-   if ( ! -e ${vol_anat_sub} ) then
-       3dAutobox -prefix ${vol_anat_sub} -npad 7 -input ${vol_anat_su}
-   endif
-   
-   3dClusterize                                                          \
-       -overwrite                                                        \
-       -echo_edu                                                         \
-       -inset   ${vol_stat}                                              \
-       -ithr    ${ind_stat}                                              \
-       -idat    ${ind_coef}                                              \
-       -${tail_type}  "p=$pthr"                                          \
-       -NN             1                                                 \
-       -clust_nvox     200                                               \
-       -pref_map       ${stat_map}                                       \
-       -pref_dat       ${stat_ee}                                        \
-     > ${stat_rep}
-   
-   set opref = QC/ca007_${pre_stat}
-   
-   @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_sub}                                            \
-       -olay  ${stat_ee}                                                 \
-       -cbar Reds_and_Blues_Inv                                          \
-       -ulay_range 0% 150%                                               \
-       -func_range 3                                                     \
-       -opacity    5                                                     \
-       -prefix     ${opref}                                              \
-       -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
-   
-
-
-.. list-table:: 
-   :header-rows: 1
-   :widths: 50 50 
-
-   * - Example 7
-     -  
-   * - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.axi.png
-          :width: 100%   
-          :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.cor.png
-          :width: 100%   
-          :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca007_func_slim.sag.png
-          :width: 100%   
-          :align: center
-     -
-
-|
-
-**Ex. 8**: view ROIs (here, cluster maps)
--------------------------------------------
 
 Here we view the cluster map of the clusterized data. Each ROI is
 "labelled" in the data by having a different integer volume, and the
 colorbar used now could accommodate the visualization of up to 64
 clusters (there are other integer-appropriate colorbars that go up
-higher).
-
-Oh, and the background color of zero-valued ulay voxels can be
-changed, along with the labelcolor.  
-
-The resolution at which the images are saved is controlled by the
-"blowup factor".  By default, the resampling mode of the dsets is just
-NN, so that datasets aren't blurred, and as the olay is resampled to
-match the ulay resolution the results are not distorted or smoothed
-artificially (and integers would stay integers).  This also has a bit
-of interaction with how the labels look.  Larger blow-up factors might
-not affect how the brain images appear, but they will affect how the
-labels look: higher blowup factors leading to finer labels (which may
-be harder to read on some screens, depending on settings/programs,
-though on paper they would look nicer).  Larger blowup factors might
-be necessary for making images to submit as journal figures.  Lots of
-things to consider.
+higher).  Note how we set ``-pbar_posonly`` to have the colorbar start
+at 0, and we set the upper value of the func range with ``-func_range
+64``, so there is one color per integer value.
 
 
 
 .. code-block:: Tcsh
 
-   set opref = QC/ca008_${pre_stat}
+   set opref = QC/ca006b_Vrel
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_sub}                                            \
-       -olay  ${stat_map}                                                \
-       -ulay_range 0% 150%                                               \
-       -cbar ROI_i64                                                     \
+       -ulay              strip+orig.HEAD                                \
+       -box_focus_slices  AMASK_FOCUS_ULAY                               \
+       -olay              clust_Vrel_map.nii.gz                          \
+       -ulay_range        0% 130%                                        \
+       -cbar              ROI_i64                                        \
+       -func_range        64                                             \
        -pbar_posonly                                                     \
-       -opacity     6                                                    \
-       -zerocolor   white                                                \
-       -label_color "blue"                                               \
-       -blowup      1                                                    \
-       -prefix      ${opref}                                             \
+       -opacity           6                                              \
+       -prefix            ${opref}                                       \
+       -set_xhairs        OFF                                            \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 -label_size 4   
    
 
 
@@ -711,23 +719,101 @@ things to consider.
    :header-rows: 1
    :widths: 50 50 
 
-   * - Example 8
+   * - Example 6b
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca006b_Vrel.axi.png
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca006b_Vrel.cor.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca008_func_slim.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca006b_Vrel.sag.png
+          :width: 100%   
+          :align: center
+     -
+
+**Ex. 7**: Overlay beta coefs, threshold+clusterize *translucently*
+=====================================================================
+
+Following on from the previous couple of examples, we can actually
+apply thresholding (by statistics) *and* clusterizing with translucent
+thresholding, using the alpha+boxed methodology from above. **This can
+be a very useful way to highlight some results, while showing more
+results of modeling.**
+
+Therefore:
+
+* voxels that are both above voxelwise threshold and in a
+  suprathreshold cluster will be opaque (or at max opacity) and boxed;
+
+* voxels that are above voxelwise threshold but *not* in a large
+  enough cluster will be just slightly translucent and *not* boxed;
+
+* voxels that are below voxelwise threshold (and couldn't even be in a
+  cluster) will have the usual transparency increasing with their
+  decreasing values.
+
+So, there is a lot happening here. The "trick" with getting this
+functionality to work properly is knowing what parameters need to go
+where.  *Which is why we have examples like this!* But you might also
+want to check out the `@chauffeur_afni help
+<https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/%40chauffeur_afni_sphx.html#clusterize-capabilities-with-alpha-boxed>`_.
+See how we use ``-set_subbricks ..``, ``-clusterize ..``,
+``-thr_olay_p2stat ..`` and ``-thr_olay_pside ..`` here (and notice
+our input for ``-olay ..`` is the coefficient+stats dset again, like
+we put into ``3dClusterize`` above):
+
+
+
+
+.. code-block:: Tcsh
+
+   #  clust_Vrel_report.1D
+   
+   set opref = QC/ca007a_Vrel
+   
+   @chauffeur_afni                                                       \
+       -ulay              strip+orig.HEAD                                \
+       -box_focus_slices  AMASK_FOCUS_ULAY                               \
+       -olay              func_slim+orig.HEAD                            \
+       -cbar              Reds_and_Blues_Inv                             \
+       -ulay_range        0% 130%                                        \
+       -func_range        3                                              \
+       -set_subbricks     -1 "Vrel#0_Coef"  "Vrel#0_Tstat"               \
+       -clusterize        "-NN 1 -clust_nvox 200"                        \
+       -thr_olay_p2stat   0.001                                          \
+       -thr_olay_pside    bisided                                        \
+       -olay_alpha        Yes                                            \
+       -olay_boxed        Yes                                            \
+       -opacity           5                                              \
+       -prefix            ${opref}                                       \
+       -set_xhairs        OFF                                            \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4       
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 7a
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca007a_Vrel.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca007a_Vrel.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca007a_Vrel.sag.png
           :width: 100%   
           :align: center
      -
 
 |
 
-**Ex. 9**: check alignment with edge view
--------------------------------------------
+**Ex. 8**: Check alignment with edge view
+===========================================
 
 Check out the alignment between two volumes by making and "edge-ified"
 version of one and overlaying it on the other.  This is *quite* useful
@@ -737,6 +823,12 @@ in many occasions.  (Note that this is also the purpose of
 
 Users can then check the alignment of pertinent things: tissue
 boundaries, matching structures, etc.  
+
+To estimate the edges, we have a particular wrapper, called
+``@djunct_edgy_align_check``.  Note that this is mostly an
+internally-used convenience script in the ``afni_proc.py`` QC, so it
+is subject to change (but historically that has just meant adding in
+more chauffeur options).
 
 Note that in the present case the EPI **hadn't** been aligned to the
 anatomical yet, so we might not expect great alignment in the present
@@ -748,28 +840,37 @@ tricks that one can play to enhance the features of the EPI for such
 viewing, but that is a larger sidenote (and most readers have likely
 rightfully given up detailed reading by this point in the webpage).
 
+Because of the general unreliableness of EPI edges, we tend to overlay
+the anatomical edges; since the underlay typically determines the
+grid, and we don't want to lose the higher-res info of the anatomical,
+we invoke the ``-use_olay_grid ..`` option.  Some of the inferior
+slices look oddly empty of underlay, but that is because this EPI
+indeed does not extend that far down.
+
+**NB:** Since we are edgifying the overlay, we don't specify the
+box-focus dataset by using the ``AMASK_FOCUS_OLAY`` option, because
+the autoboxing will go awry from the edgification; so we specify the
+dataset explicitly.  
+
+**NB:** This wrapper makes JPG images, by default.
+
 
 
 .. code-block:: Tcsh
 
-   if ( ! -e ${vol_epi_e} ) then
-        3dedge3 -prefix ${vol_epi_e} -input ${vol_epi}'[0]'
-   endif
+   set opref = QC/ca008_edgy
    
-   set opref = QC/ca009_${pre_stat}
-   
-   @chauffeur_afni                                                       \
-       -ulay  ${vol_anat_sub}                                            \
-       -olay  ${vol_epi_e}                                               \
-       -ulay_range 0% 150%                                               \
-       -func_range_perc 25                                               \
-       -cbar     "red_monochrome"                                        \
-       -opacity  6                                                       \
-       -prefix   ${opref}                                                \
+   @djunct_edgy_align_check                                              \
+       -ulay              epi_r1+orig.HEAD"[0]"                          \
+       -box_focus_slices  strip+orig.HEAD                                \
+       -olay              strip+orig.HEAD                                \
+       -use_olay_grid     NN                                             \
+       -ulay_range_nz     "2%" "98%"                                     \
+       -prefix            ${opref}                                       \
        -montx 3 -monty 3                                                 \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -label_mode 1 
+   
+   
    
 
 
@@ -779,13 +880,13 @@ rightfully given up detailed reading by this point in the webpage).
 
    * - Example 9
      -  
-   * - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca008_edgy.axi.jpg
           :width: 100%   
           :align: center
-     - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.cor.png
+     - .. image:: media/auto_@chauffeur_afni/ca008_edgy.cor.jpg
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca009_func_slim.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca008_edgy.sag.jpg
           :width: 100%   
           :align: center
      -
@@ -793,7 +894,7 @@ rightfully given up detailed reading by this point in the webpage).
 |
 
 **Ex. 10**: 4D mode
----------------------
+=====================
 
 This program can also look at one slice across time, using the
 ``-mode_4D``\ flag-- in the present example, looking at one slice
@@ -809,26 +910,26 @@ space; instead, we use the ``-image_label_ijk`` option to specify
 which [n]th volume we are viewing in the time series, starting with
 [0]. 
 
+**NB:** because this time series is pretty long, we just selected the
+first 17 volumes of it for display, using subbrick selectors.  The
+program will automatically "guess" something like an appropriate
+dimensionality for the matrix of images.  Weird numbers (primes!!!)
+might get left with blank spaces, which is fine.
+
 
 
 .. code-block:: Tcsh
 
-   # just taking a subset of the time series for this example
-   if ( ! -e ${vol_epi_p} ) then
-        3dcalc -a ${vol_epi}'[0..16]' -expr 'a' -prefix ${vol_epi_p}
-   endif
-   
-   set opref = QC/ca010_${pre_epi_p}
+   set opref = QC/ca010_epi_4D
    
    @chauffeur_afni                                                       \
-       -ulay  ${vol_epi_p}                                               \
        -mode_4D                                                          \
        -image_label_ijk                                                  \
-       -prefix  ${opref}                                                 \
-       -blowup  4                                                        \
-       -set_xhairs OFF                                                   \
-       -label_mode 1 -label_size 3                                       \
-       -do_clean
+       -ulay          epi_r1+orig.HEAD'[0..16]'                          \
+       -prefix        ${opref}                                           \
+       -blowup        4                                                  \
+       -set_xhairs    OFF                                                \
+       -label_mode 1 -label_size 4     
    
 
 
@@ -837,13 +938,160 @@ which [n]th volume we are viewing in the time series, starting with
    :widths: 100 
 
    * - Example 10
-   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.sag.png
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_4D.sag.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.axi.png
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_4D.axi.png
           :width: 100%   
           :align: center
-   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_part.cor.png
+   * - .. image:: media/auto_@chauffeur_afni/ca010_epi_4D.cor.png
+          :width: 100%   
+          :align: center
+
+|
+
+**Ex. 11**: Other examples of functionality
+=============================================
+
+The AFNI GUI can display data in **lots** of ways.  And this wrapper
+program therefore has **lots** of options.  Here we mention just a
+couple.
+
+* When using an overlay, you can output the colorbar with
+  ``-pbar_saveim ..``.  A text file with values describing the range
+  will also be output (same name prefix as the cbar image).  You can
+  add comments to this text file, such as what the ranges mean, with
+  ``-pbar_comm_range ..`` (this is mainly used by the ``afni_proc.py``
+  QC generation, but now you know).
+
+* The background color is controlled with ``-zerocolor ..``.
+
+* The label text color is controlled with ``-label_color ..``.
+
+* The resolution at which the images are saved is controlled by the
+  "blowup factor", which can be controlled with the ``-blowup ..``
+  option.  Larger blowup factors might not affect how the brain
+  images appear, but they will affect how the labels look: higher
+  blowup factors leading to finer labels (which may be harder to read
+  on some screens, depending on settings/programs, though on paper
+  they would look nicer).  Larger blowup factors might be necessary
+  for making images to submit as journal figures. 
+
+* You can turn the *underlay* volume into edges with ``-edgy_ulay``.
+
+* You can crop images along any of the three viewing planes, e.g.,
+  ``-crop_axi_x CAX1 CAX2`` will crop an axial image to be between
+  voxels CAX1 and CAX2 along the x-axis (inclusive).
+
+* You don't *have* to output all 3 viewplanes simultaneously.  You can
+  turn off outputting, say, the coronal one with ``-no_cor``.
+
+* You can control montage features like adding a gap between images,
+  and then putting some color between image panels wtih ``-montgap
+  ..`` and ``-montcolor ..``, respectively.
+
+* There are *lots* of colorbars to choose from in AFNI; see :ref:`here
+  <edu_afni_cbars>`.
+
+\.\.\. and more.
+
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca011a_Vrel_coef_stat
+   
+   @chauffeur_afni                                                       \
+       -ulay             strip+orig.HEAD                                 \
+       -olay             func_slim+orig.HEAD                             \
+       -ulay_range       0% 130%                                         \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -func_range       3                                               \
+       -cbar             GoogleTurbo                                     \
+       -thr_olay_p2stat  0.001                                           \
+       -thr_olay_pside   bisided                                         \
+       -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+       -opacity          7                                               \
+       -prefix           ${opref}                                        \
+       -pbar_saveim      ${opref}                                        \
+       -zerocolor        white                                           \
+       -label_color      blue                                            \
+       -set_xhairs       OFF                                             \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4    
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 11a
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca011a_Vrel_coef_stat.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca011a_Vrel_coef_stat.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca011a_Vrel_coef_stat.sag.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca011a_Vrel_coef_stat.jpg
+          :width: 100%   
+          :align: center
+
+|
+
+And here is surely a useful example.  Well, at least it shows using a
+specific number of colorblocks for a colorbar, with intervals for each
+bar specified by the user.
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca011b_Vrel_coef_stat
+   
+   @chauffeur_afni                                                       \
+       -ulay             anat+orig.HEAD                                  \
+       -olay             anat+orig.HEAD                                  \
+       -box_focus_slices AMASK_FOCUS_ULAY                                \
+       -pbar_posonly                                                     \
+       -ulay_range       0% 130%                                         \
+       -edgy_ulay                                                        \
+       -func_range       1000                                            \
+       -cbar_ncolors 6                                                   \
+       -cbar_topval ""                                                   \
+       -cbar "1000=yellow 800=cyan 600=rbgyr20_10 400=rbgyr20_08 200=rbgyr20_05 100=hotpink 0=none" \
+       -opacity          9                                               \
+       -prefix           ${opref}                                        \
+       -pbar_saveim      ${opref}                                        \
+       -zerocolor        white                                           \
+       -label_color      blue                                            \
+       -set_xhairs       OFF                                             \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4    
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 11b
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca011b_Vrel_coef_stat.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca011b_Vrel_coef_stat.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca011b_Vrel_coef_stat.sag.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca011b_Vrel_coef_stat.jpg
           :width: 100%   
           :align: center
 

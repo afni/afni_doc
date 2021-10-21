@@ -9,7 +9,7 @@
 
 # AFNI tutorial: series of examples of automatic image-making in AFNI.
 #
-# + last update: July 8, 2019
+# + last update: Oct 21, 2021
 #
 ##########################################################################
 
@@ -19,323 +19,332 @@
 #
 # ----------------------------------------------------------------------
 
-# anatomical volumes: some present already, and some derived here
-set vol_anat     = anat+orig                              # anatomical vol
-set pre_anat     = `3dinfo -prefix_noext "${vol_anat}"`   # vol prefix
-set pre_tut      = _tut                                   # new dset prefix
-set vol_anat_s   = strip+orig                             # anat. no skull
-set pre_anat_s   = `3dinfo -prefix_noext "${vol_anat_s}"` # vol prefix
-set pre_anat_m   = anat_mask                              # vol prefix
-set vol_anat_m   = ${pre_tut}_${pre_anat_m}.nii.gz        # anat. ss + msk
-set pre_anat_su  = anat_ss_uni                            # vol prefix
-set vol_anat_su  = ${pre_tut}_${pre_anat_su}.nii.gz       # anat. unifized
-set pre_anat_sub = anat_ss_uni_box                        # vol prefix
-set vol_anat_sub = ${pre_tut}_${pre_anat_sub}.nii.gz      # anat. uni + box
-
-# stat/model output vol
-set vol_stat     = func_slim+orig                         # model results
-set pre_stat     = `3dinfo -prefix_noext "${vol_stat}"`   # vol prefix
-
-# EPI volumes: some present already, others derived here
-set vol_epi      = epi_r1+orig                            # EPI vol, 4D
-set pre_epi      = `3dinfo -prefix_noext "${vol_epi}"`    # vol prefix
-set pre_epi_e    = epi_edge0                              # vol prefix
-set vol_epi_e    = ${pre_tut}_${pre_epi_e}.nii.gz         # EPI edgey [0]
-set pre_epi_p    = epi_part                               # vol prefix
-set vol_epi_p    = ${pre_tut}_${pre_epi_p}.nii.gz         # part of EPI
-
-# selecting coef/stat bricks and labels
-set ind_coef   = 3                                        # effect estimate
-set ind_stat   = 4                                        # stat of ee
-set lab_coef   = `3dinfo -label "${vol_stat}[${ind_coef}]"` # str label of ee
-set lab_stat   = `3dinfo -label "${vol_stat}[${ind_stat}]"` # str label of stat
-set lab_statf  = "${lab_stat:gas/#/_/}"                   # str: no '#'
-set lab_coeff  = "${lab_coef:gas/#/_/}"                   # str: no '#'
-
-set stat_map   = ${pre_tut}_${pre_stat}_map.nii.gz        # cluster map 
-set stat_ee    = ${pre_tut}_${pre_stat}_EE.nii.gz         # effect est, clust
-set stat_rep   = ${pre_tut}_${pre_stat}_report.txt        # cluster text rep
-
-# info for thresholding/clustering
-set pthr       = 0.001                                    # voxelwise thresh
-set tail_type  = "bisided"                                # {1,2,bi}sided
-
-# --------------------------------------------------------------------------
-
-
 # make output dir for all images
 \mkdir -p QC
 
 
 
-# ------------------- **Ex. 0**: 3D anatomical volume --------------------
 
 
-set opref = QC/ca000_${pre_anat}
-
-@chauffeur_afni                                                       \
-    -ulay    ${vol_anat}                                              \
-    -prefix  ${opref}                                                 \
-    -montx 3 -monty 3                                                 \
-    -set_xhairs MULTI                                                 \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
 
 
-# ------------------- **Ex. 1**: 3D anatomical volume --------------------
+
+# ================== **Ex. 0**: Simple underlay viewing ==================
 
 
-set opref = QC/ca001_${pre_anat}
+set opref = QC/ca000_anat_def
 
 @chauffeur_afni                                                       \
-    -ulay    ${vol_anat}                                              \
-    -prefix  ${opref}                                                 \
+    -ulay         anat+orig.HEAD                                      \
+    -prefix       ${opref}                                            \
+    -set_xhairs   MULTI                                               \
     -montx 3 -monty 3                                                 \
-    -set_dicom_xyz 0 0 0                                              \
-    -delta_slices  5 15 10                                            \
-    -set_xhairs MULTI                                                 \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4  
 
 
-# -------------- **Ex. 2**: 3D anatomical volume, olay mask --------------
+# =============== **Ex. 1**: Moving/selecting view slices ================
+
+
+set opref = QC/ca001_anat_mv_slices
+
+@chauffeur_afni                                                       \
+    -ulay           anat+orig.HEAD                                    \
+    -prefix         ${opref}                                          \
+    -set_dicom_xyz  -20 4 3                                           \
+    -delta_slices   5 15 10                                           \
+    -set_xhairs     MULTI                                             \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4 
+
+
+# ======== **Ex. 2**: Underlay and overlay viewing (mask example) ========
 
 
 # binarize the skullstripped anatomical, if not already done
-if ( ! -e ${vol_anat_m} ) then
+if ( ! -e anat_mask.nii.gz ) then
     3dcalc                                                            \
-        -a ${vol_anat_s}                                              \
-        -expr 'step(a)'                                               \
-        -prefix ${vol_anat_m}
+        -a       strip+orig.HEAD                                      \
+        -expr    'step(a)'                                            \
+        -prefix  anat_mask.nii.gz
 endif
 
-set opref = QC/ca002_${pre_anat_m}
+set opref = QC/ca002_anat_w_mask
 
 @chauffeur_afni                                                       \
-    -ulay    ${vol_anat}                                              \
-    -olay    ${vol_anat_m}                                            \
-    -opacity 4                                                        \
-    -prefix  ${opref}                                                 \
+    -ulay         anat+orig.HEAD                                      \
+    -olay         anat_mask.nii.gz                                    \
+    -opacity      4                                                   \
+    -prefix       ${opref}                                            \
+    -set_xhairs   OFF                                                 \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4    
 
 
+# ============== **Ex. 3**: Focus box to select view slices ==============
 
-# ---------- **Ex. 3**: threshold stats voxelwise, view effects ----------
+
+set opref = QC/ca003a_anat_w_space
+
+@chauffeur_afni                                                       \
+    -ulay         strip+orig.HEAD                                     \
+    -prefix       ${opref}                                            \
+    -set_xhairs   MULTI                                               \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4 
+
+set opref = QC/ca003b_anat_w_space
+
+@chauffeur_afni                                                       \
+    -ulay              strip+orig.HEAD                                \
+    -box_focus_slices  AMASK_FOCUS_ULAY                               \
+    -prefix            ${opref}                                       \
+    -set_xhairs        MULTI                                          \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4
+
+
+# ======== **Ex. 4**: Overlay beta coefs and threshold with stats ========
 
 
 # determine voxelwise stat threshold, using p-to-statistic
 # calculation
 set sthr = `p2dsetstat                                                \
-                -inset "${vol_stat}[${ind_stat}]"                     \
-                -pval $pthr                                           \
-                -$tail_type                                           \
+                -inset   "func_slim+orig.HEAD [2]"                    \
+                -pval    0.001                                        \
+                -bisided                                              \
                 -quiet`
 
-echo "++ The p-value ${pthr} was convert to a stat value of: ${sthr}."
+echo "++ The p-value 0.001 was convert to a stat value of: ${sthr}."
 
-set opref = QC/ca003_${pre_stat}_${lab_coeff}
-
-@chauffeur_afni                                                       \
-    -ulay  ${vol_anat_s}                                              \
-    -olay  ${vol_stat}                                                \
-    -func_range 3                                                     \
-    -cbar Spectrum:red_to_blue                                        \
-    -thr_olay ${sthr}                                                 \
-    -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-    -opacity 5                                                        \
-    -prefix  ${opref}                                                 \
-    -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
-
-
-# -------- **Ex. 4**: threshold stats voxelwise, view effects, II --------
-
-
-# Make a nicer looking underlay: unifized and skullstripped
-# anatomical
-if ( ! -e $vol_anat_su ) then
-    3dUnifize -GM -prefix $vol_anat_su -input $vol_anat_s
-endif
-
-set opref = QC/ca004_${pre_stat}_${lab_coeff}
+set opref = QC/ca004a_Vrel_coef_stat
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_anat_su}                                             \
-    -olay  ${vol_stat}                                                \
-    -cbar Reds_and_Blues_Inv                                          \
-    -ulay_range 0% 150%                                               \
-    -func_range 3                                                     \
-    -thr_olay ${sthr}                                                 \
-    -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-    -opacity 5                                                        \
-    -prefix  ${opref}                                                 \
+    -ulay             strip+orig.HEAD                                 \
+    -olay             func_slim+orig.HEAD                             \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -func_range       3                                               \
+    -cbar             Spectrum:red_to_blue                            \
+    -thr_olay         ${sthr}                                         \
+    -set_subbricks    -1 1 2                                          \
+    -opacity          5                                               \
+    -prefix           ${opref}                                        \
+    -set_xhairs       OFF                                             \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4  
 
-
-# ------- **Ex. 5**: threshold stats voxelwise, view effects, III --------
-
-
-set opref = QC/ca005_${pre_stat}_${lab_coeff}_alpha
+set opref = QC/ca004b_Vrel_coef_stat
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_anat_su}                                             \
-    -olay  ${vol_stat}                                                \
-    -cbar Reds_and_Blues_Inv                                          \
-    -ulay_range 0% 150%                                               \
-    -func_range 3                                                     \
-    -thr_olay   ${sthr}                                               \
-    -olay_alpha Yes                                                   \
-    -olay_boxed Yes                                                   \
-    -set_subbricks -1 ${ind_coef} ${ind_stat}                         \
-    -opacity 5                                                        \
-    -prefix  ${opref}                                                 \
+    -ulay             strip+orig.HEAD                                 \
+    -olay             func_slim+orig.HEAD                             \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -func_range       3                                               \
+    -cbar             Spectrum:red_to_blue                            \
+    -thr_olay_p2stat  0.001                                           \
+    -thr_olay_pside   bisided                                         \
+    -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+    -opacity          5                                               \
+    -prefix           ${opref}                                        \
+    -set_xhairs       OFF                                             \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4    
+
+set opref = QC/ca004c_Vrel_coef_stat
+
+@chauffeur_afni                                                       \
+    -ulay             strip+orig.HEAD                                 \
+    -ulay_range       0% 130%                                         \
+    -olay             func_slim+orig.HEAD                             \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -func_range       3                                               \
+    -cbar             Reds_and_Blues_Inv                              \
+    -thr_olay_p2stat  0.001                                           \
+    -thr_olay_pside   bisided                                         \
+    -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+    -opacity          5                                               \
+    -prefix           ${opref}                                        \
+    -set_xhairs       OFF                                             \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4  
 
 
-# --- **Ex. 6**: threshold stats voxelwise + clusterize, view effects ----
+#  **Ex. 5**: Overlay beta coefs and threshold *translucently* with stats 
+
+
+set opref = QC/ca005a_Vrel_coef_stat
+
+@chauffeur_afni                                                       \
+    -ulay             strip+orig.HEAD                                 \
+    -ulay_range       0% 130%                                         \
+    -olay             func_slim+orig.HEAD                             \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -func_range       3                                               \
+    -cbar             Reds_and_Blues_Inv                              \
+    -thr_olay_p2stat  0.001                                           \
+    -thr_olay_pside   bisided                                         \
+    -olay_alpha       Yes                                             \
+    -olay_boxed       Yes                                             \
+    -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+    -opacity          5                                               \
+    -prefix           ${opref}                                        \
+    -set_xhairs       OFF                                             \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4   
+
+
+# == **Ex. 6**: Overlay beta coefs, threshold with stats and clusterize ==
 
 
 3dClusterize                                                          \
     -overwrite                                                        \
     -echo_edu                                                         \
-    -inset   ${vol_stat}                                              \
-    -ithr    ${ind_stat}                                              \
-    -idat    ${ind_coef}                                              \
-    -${tail_type}  "p=$pthr"                                          \
+    -inset          func_slim+orig.HEAD                               \
+    -ithr           "Vrel#0_Tstat"                                    \
+    -idat           "Vrel#0_Coef"                                     \
+    -bisided        "p=0.001"                                         \
     -NN             1                                                 \
     -clust_nvox     200                                               \
-    -pref_map       ${stat_map}                                       \
-    -pref_dat       ${stat_ee}                                        \
-  > ${stat_rep}
+    -pref_map       clust_Vrel_map.nii.gz                             \
+    -pref_dat       clust_Vrel_coef.nii.gz                            \
+  >  clust_Vrel_report.1D
 
-set opref = QC/ca006_${pre_stat}
+set opref = QC/ca006a_Vrel
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_anat_su}                                             \
-    -olay  ${stat_ee}                                                 \
-    -cbar Reds_and_Blues_Inv                                          \
-    -ulay_range 0% 150%                                               \
-    -func_range 3                                                     \
-    -opacity    5                                                     \
-    -prefix     ${opref}                                              \
+    -ulay              strip+orig.HEAD                                \
+    -box_focus_slices  AMASK_FOCUS_ULAY                               \
+    -olay              clust_Vrel_coef.nii.gz                         \
+    -cbar              Reds_and_Blues_Inv                             \
+    -ulay_range        0% 130%                                        \
+    -func_range        3                                              \
+    -opacity           5                                              \
+    -prefix            ${opref}                                       \
+    -set_xhairs        OFF                                            \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4       
 
-
-# - **Ex. 7**: threshold stats voxelwise + clusterize, view effects, II --
-
-
-# Save space: autobox
-if ( ! -e ${vol_anat_sub} ) then
-    3dAutobox -prefix ${vol_anat_sub} -npad 7 -input ${vol_anat_su}
-endif
-
-3dClusterize                                                          \
-    -overwrite                                                        \
-    -echo_edu                                                         \
-    -inset   ${vol_stat}                                              \
-    -ithr    ${ind_stat}                                              \
-    -idat    ${ind_coef}                                              \
-    -${tail_type}  "p=$pthr"                                          \
-    -NN             1                                                 \
-    -clust_nvox     200                                               \
-    -pref_map       ${stat_map}                                       \
-    -pref_dat       ${stat_ee}                                        \
-  > ${stat_rep}
-
-set opref = QC/ca007_${pre_stat}
+set opref = QC/ca006b_Vrel
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_anat_sub}                                            \
-    -olay  ${stat_ee}                                                 \
-    -cbar Reds_and_Blues_Inv                                          \
-    -ulay_range 0% 150%                                               \
-    -func_range 3                                                     \
-    -opacity    5                                                     \
-    -prefix     ${opref}                                              \
-    -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
-
-
-# -------------- **Ex. 8**: view ROIs (here, cluster maps) ---------------
-
-
-set opref = QC/ca008_${pre_stat}
-
-@chauffeur_afni                                                       \
-    -ulay  ${vol_anat_sub}                                            \
-    -olay  ${stat_map}                                                \
-    -ulay_range 0% 150%                                               \
-    -cbar ROI_i64                                                     \
+    -ulay              strip+orig.HEAD                                \
+    -box_focus_slices  AMASK_FOCUS_ULAY                               \
+    -olay              clust_Vrel_map.nii.gz                          \
+    -ulay_range        0% 130%                                        \
+    -cbar              ROI_i64                                        \
+    -func_range        64                                             \
     -pbar_posonly                                                     \
-    -opacity     6                                                    \
-    -zerocolor   white                                                \
-    -label_color "blue"                                               \
-    -blowup      1                                                    \
-    -prefix      ${opref}                                             \
+    -opacity           6                                              \
+    -prefix            ${opref}                                       \
+    -set_xhairs        OFF                                            \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4   
 
 
-# -------------- **Ex. 9**: check alignment with edge view ---------------
+# = **Ex. 7**: Overlay beta coefs, threshold+clusterize *translucently* ==
 
 
-if ( ! -e ${vol_epi_e} ) then
-     3dedge3 -prefix ${vol_epi_e} -input ${vol_epi}'[0]'
-endif
+#  clust_Vrel_report.1D
 
-set opref = QC/ca009_${pre_stat}
+set opref = QC/ca007a_Vrel
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_anat_sub}                                            \
-    -olay  ${vol_epi_e}                                               \
-    -ulay_range 0% 150%                                               \
-    -func_range_perc 25                                               \
-    -cbar     "red_monochrome"                                        \
-    -opacity  6                                                       \
-    -prefix   ${opref}                                                \
+    -ulay              strip+orig.HEAD                                \
+    -box_focus_slices  AMASK_FOCUS_ULAY                               \
+    -olay              func_slim+orig.HEAD                            \
+    -cbar              Reds_and_Blues_Inv                             \
+    -ulay_range        0% 130%                                        \
+    -func_range        3                                              \
+    -set_subbricks     -1 "Vrel#0_Coef"  "Vrel#0_Tstat"               \
+    -clusterize        "-NN 1 -clust_nvox 200"                        \
+    -thr_olay_p2stat   0.001                                          \
+    -thr_olay_pside    bisided                                        \
+    -olay_alpha        Yes                                            \
+    -olay_boxed        Yes                                            \
+    -opacity           5                                              \
+    -prefix            ${opref}                                       \
+    -set_xhairs        OFF                                            \
     -montx 3 -monty 3                                                 \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -label_mode 1 -label_size 4       
 
 
-# ------------------------- **Ex. 10**: 4D mode --------------------------
+# ============== **Ex. 8**: Check alignment with edge view ===============
 
 
-# just taking a subset of the time series for this example
-if ( ! -e ${vol_epi_p} ) then
-     3dcalc -a ${vol_epi}'[0..16]' -expr 'a' -prefix ${vol_epi_p}
-endif
+set opref = QC/ca008_edgy
 
-set opref = QC/ca010_${pre_epi_p}
+@djunct_edgy_align_check                                              \
+    -ulay              epi_r1+orig.HEAD"[0]"                          \
+    -box_focus_slices  strip+orig.HEAD                                \
+    -olay              strip+orig.HEAD                                \
+    -use_olay_grid     NN                                             \
+    -ulay_range_nz     "2%" "98%"                                     \
+    -prefix            ${opref}                                       \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 
+
+
+
+
+# ========================= **Ex. 10**: 4D mode ==========================
+
+
+set opref = QC/ca010_epi_4D
 
 @chauffeur_afni                                                       \
-    -ulay  ${vol_epi_p}                                               \
     -mode_4D                                                          \
     -image_label_ijk                                                  \
-    -prefix  ${opref}                                                 \
-    -blowup  4                                                        \
-    -set_xhairs OFF                                                   \
-    -label_mode 1 -label_size 3                                       \
-    -do_clean
+    -ulay          epi_r1+orig.HEAD'[0..16]'                          \
+    -prefix        ${opref}                                           \
+    -blowup        4                                                  \
+    -set_xhairs    OFF                                                \
+    -label_mode 1 -label_size 4     
+
+
+# ============= **Ex. 11**: Other examples of functionality ==============
+
+
+set opref = QC/ca011a_Vrel_coef_stat
+
+@chauffeur_afni                                                       \
+    -ulay             strip+orig.HEAD                                 \
+    -olay             func_slim+orig.HEAD                             \
+    -ulay_range       0% 130%                                         \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -func_range       3                                               \
+    -cbar             GoogleTurbo                                     \
+    -thr_olay_p2stat  0.001                                           \
+    -thr_olay_pside   bisided                                         \
+    -set_subbricks    -1 "Vrel#0_Coef" "Vrel#0_Tstat"                 \
+    -opacity          7                                               \
+    -prefix           ${opref}                                        \
+    -pbar_saveim      ${opref}                                        \
+    -zerocolor        white                                           \
+    -label_color      blue                                            \
+    -set_xhairs       OFF                                             \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4    
+
+set opref = QC/ca011b_Vrel_coef_stat
+
+@chauffeur_afni                                                       \
+    -ulay             anat+orig.HEAD                                  \
+    -olay             anat+orig.HEAD                                  \
+    -box_focus_slices AMASK_FOCUS_ULAY                                \
+    -pbar_posonly                                                     \
+    -ulay_range       0% 130%                                         \
+    -edgy_ulay                                                        \
+    -func_range       1000                                            \
+    -cbar_ncolors 6                                                   \
+    -cbar_topval ""                                                   \
+    -cbar "1000=yellow 800=cyan 600=rbgyr20_10 400=rbgyr20_08 200=rbgyr20_05 100=hotpink 0=none" \
+    -opacity          9                                               \
+    -prefix           ${opref}                                        \
+    -pbar_saveim      ${opref}                                        \
+    -zerocolor        white                                           \
+    -label_color      blue                                            \
+    -set_xhairs       OFF                                             \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4    
 
 
 # =========================== Troubleshooting ============================
