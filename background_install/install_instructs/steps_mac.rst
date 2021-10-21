@@ -1,7 +1,7 @@
 
 .. _install_steps_mac:
 
-**Mac OS, 10.9-15** *(via commandline)*
+**Mac OS, 10.9-15** *(via command line)*
 ===============================================
 
 .. contents:: The essential system setup
