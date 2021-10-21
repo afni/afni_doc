@@ -39,7 +39,7 @@ We might add more over time.
 .. list-table:: Reference images, shown as ulays: the dsets viewed as
                 overlay/underlays below to exemplify colorbar
                 properties in a couple different scenarios. The 
-                range of voxel values in each case is [1, 256].
+                range of nonzero voxel values in the ROI case is [1, 256].
    :header-rows: 1
    :align: center
    :widths: 35 35
@@ -87,6 +87,14 @@ use the following to load the **ROI_glasbey_512** colorbar, which has
 .. code-block:: none
 
    afni -XXXnpane 512
+
+When using ``@chauffeur_afni`` to make images/montages/movies (see
+examples :ref:`here <auto_@chauffeur_afni>`), you also use that
+option, e.g.,:
+
+.. code-block:: none
+
+   @chauffeur_afni -XXXnpane 512 ...
 
 Below is a list of current colorbars in AFNI that contain more than
 256 colors.
@@ -170,10 +178,14 @@ def write_out_edu_rst_256(ofile, lll, relpath=""):
     p2  = "media/cbars/IMGS_tt_cbar_"
 
     fff.write(table_head_256 % (grp))
-    fff.write("   * - Name\n" )
+    fff.write("   * - Cbar name\n" )
     fff.write("     - Cbar\n" )
-    fff.write("     - opacity=9, anatomical [0, 98%ile]\n" )
-    fff.write("     - opacity=5, ROIs [0, 256]\n" )
+    fff.write("     - anatomical (opacity=9)\n" )
+    fff.write("     - ROIs (opacity=5)\n" )
+    fff.write("   * - \n" )
+    fff.write("     - \n" )
+    fff.write("     - cbar range: [0, 98%ile]\n" )
+    fff.write("     - cbar range: [0, 256]\n" )
 
     for x in lll:
         
@@ -210,9 +222,12 @@ def write_out_edu_rst_gt256(ofile, lll, relpath=""):
     p2  = "media/cbars/IMGS_tt_cbar_"
  
     fff.write(table_head_gt256 % (grp))
-    fff.write("   * - Name\n" )
+    fff.write("   * - Cbar name\n" )
     fff.write("     - Cbar\n" )
-    fff.write("     - opacity=5, ROIs [0, Nroi]\n" )
+    fff.write("     - ROIs (opacity=9)\n" )
+    fff.write("   * - \n" )
+    fff.write("     - \n" )
+    fff.write("     - cbar range: [0, Nroi]\n" )
 
     for x in lll:
         

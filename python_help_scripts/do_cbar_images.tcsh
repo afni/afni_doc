@@ -153,6 +153,7 @@ foreach nn ( `seq 1 1 ${Nnroi_gt256}` )
         -expr "${tot}-(${d1}*j+i)" \
         -prefix ${dset}
 
+
     set ulay  = ${dset}
     set olay  = ${dset}
     set oimgp = xx_cbar
@@ -172,13 +173,17 @@ foreach nn ( `seq 1 1 ${Nnroi_gt256}` )
         -opacity        "${opac}"                              \
         -cbar           "${cbar}"                              \
         -pbar_saveim    "${obar}"                              \
-        -blowup         4                                      \
+        -blowup         8                                      \
         -montx 1 -monty 1                                      \
         -no_cor                                                \
         -no_sag                                                \
         -set_subbricks     0 0 0                               \
         -set_xhairs        OFF                                 \
         -label_mode 0
+
+    # use imagemagick to scale image up, so hopefully Sphinx doesn't
+    # make it blurry (ugh)
+    convert "${oname}.axi.png" -scale 400% "${oname}.axi.png"
 
     # to have vertical cbar, and convert to png: uses ImageMagick
     convert "${obar}.jpg" -rotate -90 -quality 100 "${obar}.png"
@@ -191,7 +196,7 @@ end
 if ( 1 ) then
     \rm ${tpref2}*
 endif
-exit
+
 # ------------------------------------------------------------------------
 # "normal" cbars for ROIs with Nroi <= 256 (and templates/continuous dsets)
 
