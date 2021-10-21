@@ -578,9 +578,10 @@ multilevel (BML) approach:
     doi:10.1016/j.neuroimage.2019.116320
   | `<https://pubmed.ncbi.nlm.nih.gov/31698079/>`_
 
-Trial sample size is important in experimental design, too (not just
-subject sample size)!  Here we investigate the crucial role of trials
-in neuroimaging from the perspectives of statistical efficiency and
+We illustrate that the trial sample size in experimental design is
+almost as important as subject sample size, in terms of statistical
+efficiency.  Here we investigate the crucial role of trial number in
+neuroimaging from the perspectives of both statistical efficiency and
 condition-level generalizability:
 
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Taylor PA, Haller
