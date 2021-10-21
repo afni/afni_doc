@@ -1,7 +1,10 @@
 
-1. Copy+paste::
+0. Copy+paste::
 
      bash
+
+1. Copy+paste::
+
      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
 
 #. Copy+paste::
