@@ -25,7 +25,7 @@
 5 :: 3dTstat             :: Various statistics of multi-brick datasets, voxel-by-voxel
 4 :: 3dMean              :: Average datasets together, voxel-by-voxel, for each timept
 1 :: 3dWinsor            :: Nonlinear order statistics filter for spatial smoothing
-4 :: 3danisosmooth       :: Edge preserving filter for spatial smoothing
+4 :: 3danisosmooth       :: Smooth a dataset using an anisotropic technique to preferentially preserve edges (e.g., to clean up structural images)
 1 :: 3dLocalstat         :: Find simple statistical values for neighborhoods around each voxel
 1 :: 3dLocalBistat       :: Compute various bivariate statistics for neighborhoods around each voxel
 1 :: 3dLocalstat         :: Compute some local statistics in a neighborhood around each voxel
@@ -54,7 +54,7 @@
 
 
 ++ 1 :: Simulate/generate dsets
-1 :: 3dTSgen              :: Generate 3D+time dataset from 1D model and noise
+1 :: 3dTSgen              :: Generate 3D+time dataset from 1D model and noise; the time series for each voxel is generated according to a user specified signal+noise model.
 1 :: 3dClustSim           :: Simulate datasets and estimate statistical power
 1 :: slow_surf_clustsim.py  :: Like 3dClustSim, but for surface data.
 1 :: quick.alpha.vals.py   :: Companion to slow_surf_clustsim.py
@@ -85,7 +85,7 @@
 5 :: 3dmerge              :: Process (e.g., blur) and optionally combine datasets
 1 :: 3dBlurInMask         :: Blur a dataset, but only inside a mask (or masks)
 1 :: 3dBlurToFWHM         :: Blur a dataset to a given level of smoothness (for inter-site studies)
-1 :: 3danisosmooth        :: Anisotropic blurring of a dataset (e.g., to clean up structural images)
+1 :: 3danisosmooth        :: Smooth a dataset using an anisotropic technique to preferentially preserve edges (e.g., to clean up structural images)
 1 :: 3dMedianFilter       :: Smooth a 3D volume using a median filter
 
 
@@ -217,8 +217,8 @@
 
 
 ++ 2 :: DICOM info and conversion
-5 :: Dimon           :: Read DICOM files on disk or as they are created
-5 :: dcm2niix_afni   :: Primary choice for converting DCM files of DWI dsets (and possibly FMRI)
+5 :: Dimon           :: Read DICOM files on disk or as they are created (i.e., can monitor real-time acquisition of DICOM image files)
+5 :: dcm2niix_afni   :: Another choice for converting DCM files (particularly useful for DWI dsets, often)
 2 :: to3d              :: Read image files, write AFNI format datasets (not usually directly used)
 1 :: dicom_hdr         :: Print out information from one DICOM header
 3 :: dicom_hinfo       :: Print out selected information from a number of DICOM headers
@@ -358,7 +358,7 @@
 
 
 ++ 2 :: Dset histograms
-1 :: 3dAnhist                :: Create and plot histogram of dataset, print peaks
+1 :: 3dAnhist                :: Create and plot histogram of dataset, print peaks (output is a list of peaks in the histogram, to stdout)
 1 :: 3dhistog                :: Create histogram of dataset to a file
 -1 :: plugin(Histogram)       :: Interactively graphs histogram of a dataset (or ROI)
 -1 :: plugin(ScatterPlot)     :: Interactively graphs 1 sub-brick vs. another (or ROI)
@@ -410,8 +410,8 @@
 
 
 ++ 3 :: Volume editing/image processing
-4 :: 3dedge3                :: Calculate edges in 3D
-4 :: 3danisosmooth          :: Smooth a dataset using an anisotropic technique to preserve edges
+4 :: 3dedge3                :: Calculate edges in 3D, using "Optimal edge detection using recursive filtering"
+4 :: 3danisosmooth          :: Smooth a dataset using an anisotropic technique to preferentially preserve edges (e.g., to clean up structural images)
 4 :: 3dUnifize              :: Correct T1-weighted dataset for non-uniform histogram
 2 :: 3dSharpen              :: 3D sharpening filter applied to a dataset (to clean up a template)
 
@@ -582,15 +582,15 @@
 1 :: 1dsound             :: Create an audio file from a 1D file (= columns of numbers in ASCII format); fun but not very useful
 
 ++ 1 :: Miscellaneous visualization tools
-3 :: aiv                  :: AFNI Image Viewer program
+3 :: aiv                  :: AFNI Image Viewer program; shows 2D images from the command line in an AFNI-like image viewer, and can also read images in NIML format
 -1 :: plugin(Render[new])  :: Interactive volume rendering
 -1 :: plugin(Dataset#N)    :: Graph extra dataset time series in AFNI graph viewer
 1 :: afni_open            :: Open various AFNI/SUMA files (*.xmat, *.pdf, etc.)
-3 :: 3dGrayplot           :: Take a 3D+time dataset and make a summary 2D image for data quality review
+3 :: 3dGrayplot           :: Take a 3D+time dataset and make a summary 2D image for data quality review; can organize and scale in different ways
 
 
 ++ 1 :: Supplementary/open programs included in AFNI
-1 :: cjpeg                :: Compress an image file to a JPEG file
+1 :: cjpeg                :: Compress an image file to a JPEG file, with various control options for type upsampling/downsampling, etc.
 1 :: djpeg                :: Decompress a JPEG file to an image file
 -1 :: mpeg_encode          :: Convert sequence of images into MPEG movie
 1 :: whirlgif             :: Concatenate series of GIFs into a single one
@@ -755,7 +755,7 @@
 1 :: @ANATICOR
 1 :: @RetinoProc
 
-++ 0 :: R programs (in R; called by others)
+++ 0 :: R programs (written in R; called by other programss)
 0 :: 1dGC.R
 0 :: 1dRplot
 0 :: 1dRplot.R
