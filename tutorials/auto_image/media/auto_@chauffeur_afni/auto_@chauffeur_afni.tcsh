@@ -243,8 +243,6 @@ set opref = QC/ca006b_Vrel
 # = **Ex. 7**: Overlay beta coefs, threshold+clusterize *translucently* ==
 
 
-#  clust_Vrel_report.1D
-
 set opref = QC/ca007a_Vrel
 
 @chauffeur_afni                                                       \
@@ -256,6 +254,27 @@ set opref = QC/ca007a_Vrel
     -func_range        3                                              \
     -set_subbricks     -1 "Vrel#0_Coef"  "Vrel#0_Tstat"               \
     -clusterize        "-NN 1 -clust_nvox 200"                        \
+    -thr_olay_p2stat   0.001                                          \
+    -thr_olay_pside    bisided                                        \
+    -olay_alpha        Yes                                            \
+    -olay_boxed        Yes                                            \
+    -opacity           5                                              \
+    -prefix            ${opref}                                       \
+    -set_xhairs        OFF                                            \
+    -montx 3 -monty 3                                                 \
+    -label_mode 1 -label_size 4       
+
+set opref = QC/ca007b_Vrel_mskd
+
+@chauffeur_afni                                                       \
+    -ulay              strip+orig.HEAD                                \
+    -box_focus_slices  AMASK_FOCUS_ULAY                               \
+    -olay              func_slim+orig.HEAD                            \
+    -cbar              Reds_and_Blues_Inv                             \
+    -ulay_range        0% 130%                                        \
+    -func_range        3                                              \
+    -set_subbricks     -1 "Vrel#0_Coef"  "Vrel#0_Tstat"               \
+    -clusterize        "-NN 1 -clust_nvox 200 -mask mask.auto.nii.gz" \
     -thr_olay_p2stat   0.001                                          \
     -thr_olay_pside    bisided                                        \
     -olay_alpha        Yes                                            \

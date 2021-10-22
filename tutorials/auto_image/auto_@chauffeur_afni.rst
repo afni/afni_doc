@@ -96,10 +96,15 @@ between/among in a separate browser tab (e.g., middle mouse click on
 it), and then move between tabs (e.g., ``Ctrl + Tab`` and ``Ctrl
 + Shift + Tab``).
 
-**Variable definitions**: The following are relevant variables for the
-below commands (``tcsh`` syntax), such as defining the directory
-where the data is sitting, dset names, etc.:
- 
+**Top of script**: The following commands use almost no variable
+syntax---in fact, just the output prefix ``${opref}`` in each case.
+The displayed syntax for setting this variable is ``tcsh``, but you
+could adjust any of these to be another shell if you wish.  For
+example, in ``bash`` or ``zsh``, the first variable setting would be
+``opref=QC/ca000_anat_def``.  The only other overhead that the script
+does is making the output directory, which is done with ``\mkdir -p
+QC`` (shell independent).
+
 
 
 .. code-block:: Tcsh
@@ -564,7 +569,7 @@ around them (with ``-olay_boxed Yes``).
 
 **This is a really nice way to view modeling information, and is
 utilized often in the QC HTML created by** ``afni_proc.py`` (see
-:ref:`here <tut_apqc_help>`.
+:ref:`here <tut_apqc_help>`).
 
 
 
@@ -763,13 +768,13 @@ See how we use ``-set_subbricks ..``, ``-clusterize ..``,
 our input for ``-olay ..`` is the coefficient+stats dset again, like
 we put into ``3dClusterize`` above):
 
+**NB:** the cluster report text file is also output,
+``${opref}_clust_rep.txt``.
 
 
 
 .. code-block:: Tcsh
 
-   #  clust_Vrel_report.1D
-   
    set opref = QC/ca007a_Vrel
    
    @chauffeur_afni                                                       \
@@ -811,6 +816,67 @@ we put into ``3dClusterize`` above):
      -
 
 |
+
+As noted just above, one typically uses a mask when clusterizing
+(because the cluster size threshold would likely have come from
+looking at the spatial smoothness of noise just within the brain, not
+within the entire FOV).  That mask can also be included in the
+commands clusterizing; conveniently, the final images will still show
+data from the entire FOV, and the boxed voxels will only be within the
+mask. 
+
+The only change from the previous command here is including a ``-mask
+..`` option in the chauffeur's ``-clusterize ..`` option, as follows.
+Note how the larger clusters that stuck outside the brainmask above
+now show the mask's boundary line---this is particularly apparent in
+the posterior part of the brain/FOV.
+
+
+
+.. code-block:: Tcsh
+
+   set opref = QC/ca007b_Vrel_mskd
+   
+   @chauffeur_afni                                                       \
+       -ulay              strip+orig.HEAD                                \
+       -box_focus_slices  AMASK_FOCUS_ULAY                               \
+       -olay              func_slim+orig.HEAD                            \
+       -cbar              Reds_and_Blues_Inv                             \
+       -ulay_range        0% 130%                                        \
+       -func_range        3                                              \
+       -set_subbricks     -1 "Vrel#0_Coef"  "Vrel#0_Tstat"               \
+       -clusterize        "-NN 1 -clust_nvox 200 -mask mask.auto.nii.gz" \
+       -thr_olay_p2stat   0.001                                          \
+       -thr_olay_pside    bisided                                        \
+       -olay_alpha        Yes                                            \
+       -olay_boxed        Yes                                            \
+       -opacity           5                                              \
+       -prefix            ${opref}                                       \
+       -set_xhairs        OFF                                            \
+       -montx 3 -monty 3                                                 \
+       -label_mode 1 -label_size 4       
+   
+
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50 
+
+   * - Example 7b
+     -  
+   * - .. image:: media/auto_@chauffeur_afni/ca007b_Vrel_mskd.axi.png
+          :width: 100%   
+          :align: center
+     - .. image:: media/auto_@chauffeur_afni/ca007b_Vrel_mskd.cor.png
+          :width: 100%   
+          :align: center
+   * - .. image:: media/auto_@chauffeur_afni/ca007b_Vrel_mskd.sag.png
+          :width: 100%   
+          :align: center
+     -
+
+|
+
 
 **Ex. 8**: Check alignment with edge view
 ===========================================
