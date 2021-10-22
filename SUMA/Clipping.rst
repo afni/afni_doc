@@ -94,7 +94,7 @@ Below:
    * - **Shift+c**
      - Toggle view of all active clipping planes on/off (active
        clipping remain active)
-   * - **Alt+[1-6]**
+   * - **Ctrl+[1-6]**
      - Select a clipping plane, after which it can be flipped,
        rotated, scrolled/translated, etc.
    * - **Alt+[up/down arrow]**
@@ -146,7 +146,7 @@ Below:
        * - ``Shift+c``
          - Toggle view of all active clipping planes on/off (active
            clipping remain active)
-       * - ``Alt/Cmd/Opt-[1-6]``
+       * - ``Ctrl+[1-6]``
          - Select a clipping plane, after which it can be flipped,
            rotated, scrolled/translated, etc.
        * - ``Alt/Cmd/Opt+[scroll wheel]``
