@@ -87,8 +87,6 @@ Below:
      - Toggle all active clipping planes on or off
    * - **0**
      - Reset all clipping planes (to basic starting state)
-   * - **n**
-     - Successively add a new clipping plane (up to number 6)
    * - **Ctrl+f**
      - Flip/invert the clipping direction of selected plane
    * - **Shift+c**
@@ -139,8 +137,6 @@ Below:
          - Toggle all active clipping planes on or off
        * - ``0``
          - Reset all clipping planes (to basic starting state)
-       * - ``n``
-         - Successively add a new clipping plane (up to number 6)
        * - ``Ctrl-f``
          - Flip the clipping direction of selected plane
        * - ``Shift+c``
