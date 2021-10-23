@@ -48,11 +48,8 @@ command is run.
 There is a ``README.txt`` describing the contents and how to execute
 the scripts.
 
-**Demo contents**
-------------------------
-
-Input datasets
-^^^^^^^^^^^^^^
+**Demo datasets:** Provided inputs
+--------------------------------------
 
 The demo contains one subject's initial data:
 
@@ -67,8 +64,8 @@ The demo contains one subject's initial data:
 * reference template and atlas: here, the stereotaxic NMT and the D99
   template in that space
 
-Processing: nonlinear alignment with @animal_warper
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Proc:** nonlinear alignment with @animal_warper
+--------------------------------------------------------
 
 All demo scripts are distributed in a directory called ``scripts/``.
 See the ``README.txt`` in the main demo directory for dsecriptions of
@@ -125,8 +122,8 @@ Outputs from this step are included as inputs for ``afni_proc.py``.
 
 |
 
-Processing: full single subject preprocessing with afni_proc.py 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Proc:** FMRI preprocessing with afni_proc.py 
+--------------------------------------------------------
 
 A full preprocessing script for the subject, including motion
 correction and regression modeling, is generated using
@@ -167,7 +164,7 @@ included, but their automatically generated QC HTML files are.
 |
 
 Additional reading
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 For more information about ``@animal_warper``, please see:
 
