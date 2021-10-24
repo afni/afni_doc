@@ -470,8 +470,8 @@ using CT and MRI imaging), please cite:
     10.1016/j.jneumeth.2017.10.022
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5952625/>`_
 
-If you use the AFNI-engaged approach for modeling dynamic contrast
-enhanced (DCE) MRI for analysis of brain tumors, please cite:
+A method using AFNI to model dynamic contrast enhanced (DCE) MRI for
+analysis of brain tumors:
 
 * | Sarin H, Kanevsky AS, Fung SH, Butman JA, Cox RW, Glen D, Reynolds
     R, Auh S (2009). Metabolically stable bradykinin B2 receptor
@@ -480,8 +480,7 @@ enhanced (DCE) MRI for analysis of brain tumors, please cite:
     Med 7:33. doi:10.1186/1479-5876-7-33
   | `<https://pubmed.ncbi.nlm.nih.gov/19439100/>`_
 
-If you use this numerical method for measuring symmetry in brain FMRI
-data, please site:
+A numerical method for measuring symmetry in brain FMRI data:
 
 * | Jo HJ, Saad ZS, Gotts SJ, Martin A, Cox RW (2012). Quantifying
     agreement between anatomical and functional interhemispheric
