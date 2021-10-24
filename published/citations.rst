@@ -577,6 +577,15 @@ multilevel (BML) approach:
     doi:10.1016/j.neuroimage.2019.116320
   | `<https://pubmed.ncbi.nlm.nih.gov/31698079/>`_
 
+If you would like an overview of many methods for denoising BOLD FMRI
+data (including phase-based and multi-echo FMRI approaches), as well
+as practical recommendations for preprocessing pipelines, consider:
+
+* | Caballero-Gaudes C, Reynolds RC (2017).  Methods for cleaning the
+    BOLD fMRI signal. Neuroimage 154:128-149. 
+    doi: 10.1016/j.neuroimage.2016.12.018
+  | `<https://pubmed.ncbi.nlm.nih.gov/27956209/>`_
+
 We illustrate that the trial sample size in experimental design is
 almost as important as subject sample size, in terms of statistical
 efficiency.  Here we investigate the crucial role of trial number in
@@ -657,6 +666,10 @@ as an alternative, please check out/reference:
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
 
+* | Caballero-Gaudes C, Reynolds RC (2017).  Methods for cleaning the
+    BOLD fMRI signal. Neuroimage 154:128-149. 
+    doi: 10.1016/j.neuroimage.2016.12.018
+  | `<https://pubmed.ncbi.nlm.nih.gov/27956209/>`_
 
 Code history
 -------------
