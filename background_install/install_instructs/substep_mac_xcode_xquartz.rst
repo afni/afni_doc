@@ -8,8 +8,10 @@
 
    * | *... OS X >= 10.11*, click on this link: 
      | http://www.xquartz.org 
-     | and then click on the "Quick Download" DMG, and 
-       follow instructions to install.
+
+     | Then click on the "Quick Download" DMG, and follow the
+       instructions to install.
+     | 
 
    * *... OS X 10.9 and 10.10*, copy+paste::
 
