@@ -15,7 +15,15 @@ system setup for *administered* Mac OS versions **10.9+**.  Root
 privilege **is not** required.
 
 These are accompanied by :ref:`instructions for administrators
-<install_steps_mac_adminA>`, which need to be performed first.
+<install_steps_mac_adminA>`, **which need to be performed before the
+commands listed here.**
+
+**Do** the system check in the "Evaluate" stage. Try any
+recommendations in its "Please Fix" section.
+
+If you run into any problems, please just ask a clear question on the
+`Message Board <https://afni.nimh.nih.gov/afni/community/board/>`_.
+
 
 
 Check shell
@@ -34,76 +42,30 @@ it typically requires admin privileges on a Mac to do so).
 Setup terminal
 --------------
 
-Copy+paste the following into a terminal::
+.. include:: ../install_instructs/substep_mac_setup_term.rst
 
-  defaults write org.macosforge.xquartz.X11 wm_ffm -bool true
-  defaults write org.x.X11 wm_ffm -bool true
-  defaults write com.apple.Terminal FocusFollowsMouse -string YES
-
-**Purpose:** This sets the policy where "focus follows mouse", so
-that it is not necessary to first click on a new window (to select
-it) before subsequent clicks are applied to that window.  These
-commands set the policy for the 3 applications that this might
-apply to.
 
 Install AFNI binaries
 ---------------------
 
-a. Copy+paste the following::
+.. include:: ../install_instructs/substep_mac_abin.rst
 
-     cd
-     curl -O https://afni.nimh.nih.gov/pub/dist/bin/macosx_10.7_local/@update.afni.binaries
+Set default AFNI+SUMA environment variables
+--------------------------------------------
 
-#. Then,
+.. include:: ../install_instructs/substep_profiles.rst
 
-   *  *For OS X >= 10.12*, copy+paste::
+Setup Mac environment variables
+-----------------------------------
 
-        tcsh @update.afni.binaries -defaults -package macos_10.12_local
-
-   *  *For OS X < 10.12*, copy+paste::
-
-        tcsh @update.afni.binaries -defaults -package macosx_10.7_local
-
-**Purpose:** download and unpack the current binaries into your
-``$HOME`` directory; set the AFNI binary directory name to
-``$HOME/abin/``; and add that location to the ``$PATH`` in both
-``~/.cshrc`` and ``~/.bashrc``.
-
-.. note:: If the AFNI binary package has already been downloaded
-          already (say, to save time/bandwidth), one can use
-          ``-local_package``, followed by the location+name of the
-          binary file, e.g. the third line in the above command could
-          be::
-
-            tcsh @update.afni.binaries -local_package macosx_10.7_local.tgz -do_extras
-
-Setup environment variables
----------------------------
-
-Copy+paste the following::
-
-  touch ~/.cshrc
-  echo 'if ( $?DYLD_LIBRARY_PATH ) then' >> ~/.cshrc
-  echo '  setenv DYLD_LIBRARY_PATH ${DYLD_LIBRARY_PATH}:/opt/X11/lib/flat_namespace' >> ~/.cshrc
-  echo 'else' >> ~/.cshrc
-  echo '  setenv DYLD_LIBRARY_PATH /opt/X11/lib/flat_namespace' >> ~/.cshrc
-  echo 'endif' >> ~/.cshrc
-
-
-  touch ~/.bashrc
-  echo 'export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:/opt/X11/lib/flat_namespace' >> ~/.bashrc
-
-**Purpose:** This adjusts the library format variable for XQuartz
-in both ``tcsh`` and ``bash``.  Sigh.
+.. include:: ../install_instructs/substep_mac_env.rst
 
 
 Reboot
 ------
 
-Please logout and log back into your system.
+.. include:: ../install_instructs/substep_mac_reboot.rst
 
-**Purpose:** This deals with system updates, any change in login
-shell, and path updates.
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
@@ -133,6 +95,21 @@ Keep up-to-date (remember!)
 .. include:: ../install_instructs/substep_update.rst
 
 |
+
+
+Enable more SUMA keypresses (recommended)
+----------------------------------------------------------
+
+.. include:: ../install_instructs/substep_mac_keyshortcuts.rst
+
+
+
+
+
+
+
+
+
 
 .. comment out
 

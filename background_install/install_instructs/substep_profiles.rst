@@ -1,5 +1,5 @@
 
-2. Copy+paste::
+#. Copy+paste::
 
      cp $HOME/abin/AFNI.afnirc $HOME/.afnirc
      suma -update_env
