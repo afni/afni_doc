@@ -42,7 +42,7 @@ their study design and data.
    :widths: 100 
 
    * - Tree diagram showing successively finer parcellation of the
-       inferior temporal cortex (from Jung et al., 2020)
+       inferior temporal cortex (from Jung et al., 2021)
    * - .. image:: media/charm/CHARM_Level_Flow_Orinoco.png
 
 The CHARM is distributed as a single data set with six
@@ -165,7 +165,7 @@ If you make use of the CHARM and/or accompanying NMT v2 data in your
 research, please cite:
 
    | Jung, B., Taylor, P.A., Seidlitz, J., Sponheim, C., Perkins P.,
-     Ungerleider, L.G., Glen, D., Messinger, A. (2020)  "A comprehensive
+     Ungerleider, L.G., Glen, D., Messinger, A. (2021)  "A comprehensive
      macaque fMRI pipeline and hierarchical atlas." NeuroImage, submitted.
    | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 

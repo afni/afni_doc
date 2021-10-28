@@ -394,7 +394,7 @@ If you use ``@animal_warper`` (esp. for alignment in animal studies),
 please cite:
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
-    Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
+    Messinger A (2021). A Comprehensive Macaque FMRI Pipeline and
     Hierarchical Atlas. NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
@@ -775,7 +775,7 @@ atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 <nh_macaque_demos>`):
 
 * | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
-    Messinger A (2020). A Comprehensive Macaque FMRI Pipeline and
+    Messinger A (2021). A Comprehensive Macaque FMRI Pipeline and
     Hierarchical Atlas. NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
@@ -787,7 +787,7 @@ pages for more information about the related :ref:`atlas and related
 template <nh_macaque_tempatl>`:
 
 * | Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G,
-    Garza-Villareal EA, Messinger A, Evrard HC (2020).  Subcortical
+    Garza-Villareal EA, Messinger A, Evrard HC (2021).  Subcortical
     Atlas of the Rhesus Macaque (SARM) for neuroimaging. NeuroImage
     235:117996.
   | `<https://pubmed.ncbi.nlm.nih.gov/33794360/>`_
@@ -796,7 +796,7 @@ template <nh_macaque_tempatl>`:
 *PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
 platform for nonhuman primate (NHP) neuroimaging, including AFNI tools
 (such as ``@animal_warper`` and ``afni_proc.py`` applied to macaque
-datasets; see al Jung et al., 2020, above, and these pages for more
+datasets; see al Jung et al., 2021, above, and these pages for more
 information about the related :ref:`templates and atlases
 <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 <nh_macaque_demos>`):
@@ -806,7 +806,7 @@ information about the related :ref:`templates and atlases
     Sponheim C, Wang X, Benn A, Cagna B, Dadarwal R, Evrard H,
     Garcia-Saldivar P, Giavasis S, Hartig R, Lepage C, Liu C, Majka P,
     Merchant H, Milham M, Rosa M, Tasserie J, Uhrig L, Margulies D,
-    Klink PC (2020).  A collaborative resource platform for non-human
+    Klink PC (2021).  A collaborative resource platform for non-human
     primate neuroimaging. Neuroimage, 226:117519.
   | `<https://pubmed.ncbi.nlm.nih.gov/33227425/>`_
   | `<https://doi.org/10.1016/j.neuroimage.2020.117519>`_
