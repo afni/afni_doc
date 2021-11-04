@@ -36,7 +36,7 @@ our fading memory...):
    * - Mike Beauchamp
      - Rasmus Birn
      - Jerzy Bodurka
-   * - Cesar Caballero Gaudes
+   * - Cesar Caballero-Gaudes
      - Gang Chen
      - Peggy Christidis
    * - Daniel Clark
@@ -47,59 +47,58 @@ our fading memory...):
      - Gianfranco F.
    * - Larry Frank
      - Carol Froehlich  
-     - Daniel Glen
-   * - Javier Gonzalez- Castillo
-     - Yaroslav Halchenko
-     - Rich Hammett
-   * - Michael Hanke
-     - Tom Holroyd      
-     - Vincent Hradil
-   * - Shruti Japee
-     - Mark Jenkinson
-     - Andrzej Jesmanowicz
-   * - Hans Johnson
-     - Ben Jung
-     - Jakub Kaczmarzyk
-   * - Greg Kiar
-     - Jay Brian Kummer
-     - Prantik Kundu
-   * - Rayus Kuplicki
-     - Stephen LaConte
-     - Peter Lauren
-   * - Peter Lauro              
-     - John Lee                 
-     - Jonathan Lisinksi        
-   * - Ross Markello            
-     - Chris Markiewicz         
-     - Peter Molfese            
-   * - Julia Molony             
-     - Kevin Murphy             
-     - Yamuna Narayana Swamy
-   * - Dylan Nielson            
-     - Paul Novak               
-     - Nikolaas Oosterhof       
-   * - Brian Pittman            
-     - Dillon Plunkett          
-     - Justin Rajendra          
-   * - Rick Reynolds            
-     - Vinai Roopchansingh      
-     - Chris Rorden             
-   * - Tom Ross                 
-     - Ziad Saad                
-     - Isaac Schwabacher        
-   * - Fred Tam                 
-     - Paul Taylor              
-     - Raoquiong Tong           
-   * - Giovanni Torres          
-     - Sam Torrisi
-     - Robert Vincent            
-   * - Andrej Vovk               
+     - Stefan Fuertinger
+   * - Daniel Glen               
+     - Javier Gonzalez- Castillo 
+     - Yaroslav Halchenko        
+   * - Rich Hammett              
+     - Michael Hanke             
+     - Tom Holroyd               
+   * - Vincent Hradil            
+     - Shruti Japee              
+     - Mark Jenkinson            
+   * - Andrzej Jesmanowicz       
+     - Hans Johnson              
+     - Ben Jung                  
+   * - Jakub Kaczmarzyk          
+     - Greg Kiar                 
+     - Jay Brian Kummer          
+   * - Prantik Kundu             
+     - Rayus Kuplicki            
+     - Stephen LaConte           
+   * - Peter Lauren              
+     - Peter Lauro               
+     - John Lee                  
+   * - Jonathan Lisinksi         
+     - Ross Markello             
+     - Chris Markiewicz          
+   * - Peter Molfese             
+     - Julia Molony              
+     - Kevin Murphy              
+   * - Yamuna Narayana Swamy     
+     - Dylan Nielson             
+     - Paul Novak                
+   * - Nikolaas Oosterhof        
+     - Brian Pittman             
+     - Dillon Plunkett           
+   * - Justin Rajendra           
+     - Rick Reynolds             
+     - Vinai Roopchansingh       
+   * - Chris Rorden              
+     - Tom Ross                  
+     - Ziad Saad                 
+   * - Isaac Schwabacher         
+     - Fred Tam                  
+     - Paul Taylor               
+   * - Raoquiong Tong            
+     - Giovanni Torres           
+     - Sam Torrisi               
+   * - Robert Vincent            
+     - Andrej Vovk               
      - Doug Ward                 
-     - David Warren              
-   * - Joshua Zosky              
+   * - David Warren              
+     - Joshua Zosky              
      -
-     -
-
 
 
 .. for use in making
