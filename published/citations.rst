@@ -393,9 +393,9 @@ please cite:
 If you use ``@animal_warper`` (esp. for alignment in animal studies),
 please cite:
 
-* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
-    Messinger A (2021). A Comprehensive Macaque FMRI Pipeline and
-    Hierarchical Atlas. NeuroImage 235:117997.
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Ungerleider
+    LG, Glen DR, Messinger A (2021). A Comprehensive Macaque FMRI
+    Pipeline and Hierarchical Atlas. NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
@@ -774,9 +774,9 @@ pages for more information about the related :ref:`templates and
 atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
 <nh_macaque_demos>`):
 
-* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Glen DR,
-    Messinger A (2021). A Comprehensive Macaque FMRI Pipeline and
-    Hierarchical Atlas. NeuroImage 235:117997.
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Ungerleider
+    LG Glen DR, Messinger A (2021). A Comprehensive Macaque FMRI
+    Pipeline and Hierarchical Atlas. NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
