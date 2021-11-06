@@ -307,7 +307,7 @@ to ISC (inter-subject correlation) and naturalistic FMRI
 For a nonparametric (voxelwise) approach to ISC (inter-subject
 correlation) and naturalistic FMRI, you might want to check out:
 
-* | Chen GC, Shin Y-W, Taylor PA,q Glen DR, Reynolds RC, Israel RB, Cox RW
+* | Chen GC, Shin Y-W, Taylor PA, Glen DR, Reynolds RC, Israel RB, Cox RW
     (2016). Untangling the Relatedness among Correlations, Part I:
     Nonparametric Approaches to Inter-Subject Correlation Analysis at the
     Group Level. Neuroimage 142:248-259. 
