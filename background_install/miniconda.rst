@@ -202,7 +202,7 @@ version and a set of modules to install, such as::
   conda create -y                 \
         -n py37_afni_tiny         \
         python=3.7                \
-        matplotlib numpy
+        matplotlib numpy scipy
 
 where the new environment's name will be "py37_afni_tiny"; I called it
 this because that is basically the minimal set of modules used within
@@ -214,7 +214,7 @@ should be used), one could run::
    conda create -y                 \
          -n py27_afni_tiny         \
          python=2.7                \
-         matplotlib numpy          \
+         matplotlib numpy scipy    \
          pillow ipython
 
 Now, if I type ``conda list env``, I will see a list of all my
@@ -402,7 +402,7 @@ Let's say you want to add the Sphinx module with cloud-theme support
   conda create -y                 \
       -n py37_afni_with_sph       \
       python=3.7                  \
-      matplotlib numpy            \
+      matplotlib numpy scipy      \
       sphinx cloud_sptheme
 
 You will likely get the following message:
@@ -525,12 +525,12 @@ Set up Conda (quick)
       conda create -y                 \
             -n py37_afni_tiny         \
             python=3.7                \
-            matplotlib numpy
+            matplotlib numpy scipy
 
       conda create -y                 \
             -n py27_afni_tiny         \
             python=2.7                \
-            matplotlib numpy          \
+            matplotlib numpy scipy    \
             pillow ipython
 
 #. **Add to an existing environment**
