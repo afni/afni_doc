@@ -137,7 +137,7 @@ of their timing, please cite:
 If you use ``3dMEPFM`` for multi-echo "paradigm free mapping", please cite:
 
 * | Caballero-Gaudes C, Moia S, Panwar P, Bandettini PA,
-    Gonzalez-Castillo J (2019).A deconvolution algorithm for
+    Gonzalez-Castillo J (2019). A deconvolution algorithm for
     multi-echo functional MRI: Multi-echo Sparse Paradigm Free
     Mapping.  NeuroImage 202:116081.
   | `<https://pubmed.ncbi.nlm.nih.gov/31419613/>`_
@@ -626,6 +626,17 @@ please see:
     Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
 
+If you want to read about getting better tissue contrast in your EPI
+images (particularly with flip angle selection, among other factors),
+please see:
+
+* | Gonzalez-Castillo J, Duthie KN, Saad ZS, Chu C, Bandettini PA, Luh
+    W-M (2013). Effects of image contrast on functional MRI image
+    registration. Neuroimage 67:163-74.  doi:
+    10.1016/j.neuroimage.2012.10.07
+  | `<https://pubmed.ncbi.nlm.nih.gov/23128074/>`_
+
+
 .. _pub_cit_noooo_gsr:
 
 Re. Global signal regression (noooo...)
@@ -639,13 +650,13 @@ as an alternative, please check out/reference:
 * | Saad ZS, Gotts SJ, Murphy K, Chen G, Jo HJ, Martin A, Cox RW (2012).
     Trouble at Rest: How Correlation Patterns and Group Differences
     Become Distorted After Global Signal Regression.  Brain
-    Connectivity, 2(1):25-32. doi: 10.1089/brain.2012.0080
+    Connectivity 2(1):25-32. doi: 10.1089/brain.2012.0080
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/>`_
 
 * | **Comment:** this is the "GCOR" (global correlation) parameter paper:
   | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
     Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
-    Brain Connectivity, 3(4):339-352. doi: 10.1089/brain.2013.0156
+    Brain Connectivity 3(4):339-352. doi: 10.1089/brain.2013.0156
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
 
 * | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
