@@ -90,6 +90,19 @@ If you use ``3dSeg`` for segmentation, please cite:
     Neuroimage 55:142-152.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3031751/>`_
 
+\.\.\. and if you want to read more about automatic segmentation using
+other classification methods, with application to a variety of healthy
+brains, as well as those with disease, severe atrophy and lesions,
+please see:
+
+* | Selvaganesana K, Whitehead E, DeAlwis PM, Schindler MK, Inati S
+    Saad ZS, Ohayona JE, Cortese ICM, Smith B, Jacobson S, Nath A,
+    Reich DS, Inati S, Nair G (2019). Robust, atlas-free, automatic
+    segmentation of brain MRI in health and disease. Heliyon 5(2):
+    e01226. doi: 10.1016/j.heliyon.2019.e01226
+  | `<https://www.sciencedirect.com/science/article/pii/S2405844018354860>`_
+
+
 If you use ``3dReHo``, ``3dNetCorr``, ``3dRSFC``, ``3dLombScargle``
 (yes, really a program), ``3dAmpToRSFC``, ``3dSpaceTimeCorr``, and/or
 ``3dSliceNDice``, please cite:
@@ -162,6 +175,17 @@ their analysis in AFNI here:
     retinotopic organization within lateral occipitotemporal cortex. J
     Vis 16(6):14, 1–21.
   | `<https://pubmed.ncbi.nlm.nih.gov/27105060/>`_
+
+If you are interested in multiecho fMRI (see also the
+``afni_proc.py.`` :ref:`help page <ahelp_afni_proc.py>` for ways to
+process this kind of data conveniently), please see:
+
+* | Kundu P, Brenowitz ND, Voon V, Worbe Y, Vertes PE, Inati SJ, Saad
+    ZS, Bandettini PA, Bullmore ET (2013). Integrated strategy for
+    improving functional connectivity mapping using multiecho
+    fMRI. Proc Natl Acad Sci USA. 110:16187–92.
+  | `<https://pubmed.ncbi.nlm.nih.gov/24038744/>`_
+
 
 If you use the program ``PTA`` for profile-tracking analysis (PTA) to
 estimate nonlinear trajectories, trends or profiles through smoothing
@@ -314,9 +338,9 @@ correlation) and naturalistic FMRI, you might want to check out:
     doi:10.1016/j.neuroimage.2016.05.023
   | `<https://pubmed.ncbi.nlm.nih.gov/27195792/>`_
 
-If you use ``1dSVAR`` (Structured Vector AutoRegression)
+If you use ``1dSVAR`` (Structured Vector AutoRegression), please cite:
 
-* | Chen G, Glen DR, Saad ZS, Paul Hamilton J, Thomason ME, Gotlib IH,
+* | Chen G, Glen DR, Saad ZS, Hamilton JP, Thomason ME, Gotlib IH,
     Cox RW (2011). Vector autoregression, structural equation
     modeling, and their synthesis in neuroimaging data
     analysis. Comput Biol Med 41(12):1142-55. doi:
@@ -625,6 +649,16 @@ please see:
     PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
     Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+
+If you want to find out more about modeling the hemodynamic response
+in FMRI (particularly with using multivariate and linear mixed-effects
+modeling), then please see:
+
+* | Chen G, Saad ZS, Adleman NE, Leibenluft E, Cox RW
+    (2015). Detecting the subtle shape differences in hemodynamic
+    responses at the group level. Front. Neurosci. 9:375. doi:
+    10.3389/fnins.2015.00375
+  | `<https://www.frontiersin.org/articles/10.3389/fnins.2015.00375/full>`_
 
 If you want to read about getting better tissue contrast in your EPI
 images (particularly with flip angle selection, among other factors),
