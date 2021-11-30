@@ -862,10 +862,9 @@ information about the related :ref:`templates and atlases
 * | Saleem KS, Avram AV, Glen D, Yen CC-C, Ye FQ, Komlosh M, Basser PJ
     (2021).  High-resolution mapping and digital atlas of subcortical
     regions in the macaque monkey based on matched MAP-MRI and
-    histology. bioRxiv 2021.11.23.469706. doi:
-    10.1101/2021.11.23.469706
+    histology. Neuroimage *(accepted)* 118759.
   | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
-
+  | `<https://doi.org/10.1016/j.neuroimage.2021.118759>`_
 
 Data projects: NIFTI format
 ==============================
