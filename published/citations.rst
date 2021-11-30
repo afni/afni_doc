@@ -825,7 +825,6 @@ atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
-
 *SARM: Hierarchical subcortical atlas.* Subcortical Atlas of the
 Rhesus Macaque (SARM) for structural region labels (and see these
 pages for more information about the related :ref:`atlas and related
@@ -855,6 +854,18 @@ information about the related :ref:`templates and atlases
     primate neuroimaging. Neuroimage, 226:117519.
   | `<https://pubmed.ncbi.nlm.nih.gov/33227425/>`_
   | `<https://doi.org/10.1016/j.neuroimage.2020.117519>`_
+
+*SC21 (subcortical template) and updated D99: high resolution macaque
+ atlasing*. Anatomical delineation using histology and high-resolution
+ MAP-MRI (and data are available in NIFTI and GIFTI formats):
+
+* | Saleem KS, Avram AV, Glen D, Yen CC-C, Ye FQ, Komlosh M, Basser PJ
+    (2021).  High-resolution mapping and digital atlas of subcortical
+    regions in the macaque monkey based on matched MAP-MRI and
+    histology. bioRxiv 2021.11.23.469706. doi:
+    10.1101/2021.11.23.469706
+  | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
+
 
 Data projects: NIFTI format
 ==============================
