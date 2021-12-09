@@ -617,7 +617,7 @@ condition-level generalizability:
 
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Taylor PA, Haller
     SP. Hyperbolic trade-off: the importance of balancing trial and
-    subject sample sizes in neuroimaging. *(submitted)*.
+    subject sample sizes in neuroimaging. Neuroimage *(accepted)*.
   | `<https://www.biorxiv.org/content/10.1101/2021.07.15.452548v1.full>`_
 
 In this commentary, we suggest: 1) adopting a modeling approach
@@ -856,8 +856,8 @@ information about the related :ref:`templates and atlases
   | `<https://doi.org/10.1016/j.neuroimage.2020.117519>`_
 
 *SC21 (subcortical template) and updated D99: high resolution macaque
- atlasing*. Anatomical delineation using histology and high-resolution
- MAP-MRI (and data are available in NIFTI and GIFTI formats):
+atlasing*. Anatomical delineation using histology and high-resolution
+MAP-MRI (and data are available in NIFTI and GIFTI formats):
 
 * | Saleem KS, Avram AV, Glen D, Yen CC-C, Ye FQ, Komlosh M, Basser PJ
     (2021).  High-resolution mapping and digital atlas of subcortical

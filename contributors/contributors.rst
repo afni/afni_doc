@@ -90,15 +90,15 @@ our fading memory...):
    * - Isaac Schwabacher         
      - Fred Tam                  
      - Paul Taylor               
-   * - Raoquiong Tong            
+   * - Josh Teves
+     - Raoquiong Tong            
      - Giovanni Torres           
-     - Sam Torrisi               
-   * - Robert Vincent            
+   * - Sam Torrisi               
+     - Robert Vincent            
      - Andrej Vovk               
-     - Doug Ward                 
-   * - David Warren              
+   * - Doug Ward                 
+     - David Warren              
      - Joshua Zosky              
-     -
 
 
 .. for use in making
