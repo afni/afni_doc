@@ -153,7 +153,7 @@ You can download and unpack the datasets in any of the following ways:
     tar -xvf NMT_v1.3.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
-    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz>`_,
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz>`__,
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 
@@ -261,7 +261,7 @@ You can download and unpack the datasets in any of the following ways:
     tar -xvf NMT_v1.2.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
-    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz>`_,
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz>`__,
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 

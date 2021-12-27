@@ -266,6 +266,8 @@ also discussed more :ref:`here<stats_center>`), please cite/check out:
 If you use the mixed effects meta analysis (MEMA) program ``3dMEMA``
 in your work, please cite:
 
+.. _cit_csnbc_2012:
+
 * | Chen G, Saad ZS, Nath AR, Beauchamp MS, Cox RW (2012).
     FMRI Group Analysis Combining Effect Estimates and Their Variances.
     Neuroimage, 60: 747-765.

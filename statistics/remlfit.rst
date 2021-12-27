@@ -379,7 +379,7 @@ starts at 0, not 1, as `decreed by the Almighty
   
   * [HIGHLY REQUIRED]
 
-  * The matrix provided to ``3dREMLfit` is the censored matrix; that
+  * The matrix provided to ``3dREMLfit`` is the censored matrix; that
     is, the time points (TRs) to be censored have had the
     corresponding rows removed from the full matrix.
 

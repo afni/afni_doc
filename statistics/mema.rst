@@ -49,11 +49,8 @@ conversely, a less reliable beta estimate (i.e., lower t-statistic)
 from a subject will be discounted in the MEMA model. Such strategy can
 be surprisingly tolerant of and robust against some types of outliers
 compared to the conventional group analysis method. More theoretical
-considerations of MEMA can be found in the following literature:
-
-Chen et al., 2012. FMRI Group Analysis Combining Effect Estimates and
-Their Variances. NeuroImage 60, 747-765.
-(:ref:`pubmed link <https://www.ncbi.nlm.nih.gov/pubmed/22245637>`)
+considerations of MEMA can be found in the following literature: see
+:ref:`Chen et al. (2012)<cit_csnbc_2012>`.
 
 MEMA Modeling
 ================
@@ -333,10 +330,10 @@ no quotes are needed around the square brackets. See example below):
 
 All input files should only contain ONE (either beta or t-statistic)
 sub-brick. You don't have to type those input file names. Instead I
-suggest that you list all those files by executing 'ls -1 *.BRIK'
+suggest that you list all those files by executing ``ls -1 *.BRIK``
 (number ONE, not letter L ) on the terminal, and copy and taste them
-onto the 3dMEMA interface. Directories can be included as part of the
-file name, that is, those input files don't have to be in the same
+onto the ``3dMEMA`` interface. Directories can be included as part of
+the file name, that is, those input files don't have to be in the same
 directory where you run 3dMEMA. It's always a good habit, for records
 and for running it again (or a different analysis) in batch mode later
 on, to save all the input items in a pure text file with content like

@@ -181,7 +181,7 @@ v2 in any of the following ways:
     tar -xvf NMT_v2.0_sym.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
-    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz>`_,
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz>`__,
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 
@@ -203,7 +203,7 @@ v2 in any of the following ways:
     tar -xvf NMT_v2.0_asym.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
-    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz>`_,
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz>`__,
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 
