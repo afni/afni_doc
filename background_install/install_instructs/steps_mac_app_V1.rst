@@ -1,3 +1,9 @@
+:orphan:
+
+.. comment:
+
+   this file is purely historical now
+
 
 .. _install_steps_mac_app_v1:
 
@@ -81,7 +87,7 @@ Break It Down Again [#f3]_
 Install Netpbm
 --------------
 
-.. include:: substep_netpbm.rst
+.. include:: substep_mac_netpbm.rst
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 

@@ -42,29 +42,29 @@ it typically requires admin privileges on a Mac to do so).
 Setup terminal
 --------------
 
-.. include:: ../install_instructs/substep_mac_setup_term.rst
+.. include:: /background_install/install_instructs/substep_mac_setup_term.rst
 
 
 Install AFNI binaries
 ---------------------
 
-.. include:: ../install_instructs/substep_mac_abin.rst
+.. include:: /background_install/install_instructs/substep_mac_abin.rst
 
 Set default AFNI+SUMA environment variables
 --------------------------------------------
 
-.. include:: ../install_instructs/substep_profiles.rst
+.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Setup Mac environment variables
 -----------------------------------
 
-.. include:: ../install_instructs/substep_mac_env.rst
+.. include:: /background_install/install_instructs/substep_mac_env.rst
 
 
 Reboot
 ------
 
-.. include:: ../install_instructs/substep_mac_reboot.rst
+.. include:: /background_install/install_instructs/substep_mac_reboot.rst
 
 
 .. ---------- HERE/BELOW: copy for all installs --------------
@@ -72,27 +72,27 @@ Reboot
 Make AFNI/SUMA profiles
 -----------------------
 
-.. include:: ../install_instructs/substep_profiles.rst
+.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Prepare for Bootcamp
 ------------------------------------
 
-.. include:: ../install_instructs/substep_bootcamp.rst
+.. include:: /background_install/install_instructs/substep_bootcamp.rst
 
 Evaluate setup/system (**important!**)
 -----------------------------------------
 
-.. include:: ../install_instructs/substep_evaluate.rst
+.. include:: /background_install/install_instructs/substep_evaluate.rst
 
 Niceify terminal (optional, but goood)
 --------------------------------------
 
-.. include:: ../install_instructs/substep_rcfiles_mac.rst
+.. include:: /background_install/install_instructs/substep_rcfiles_mac.rst
 
 Keep up-to-date (remember!)
 ---------------------------
 
-.. include:: ../install_instructs/substep_update.rst
+.. include:: /background_install/install_instructs/substep_update.rst
 
 |
 
@@ -100,7 +100,7 @@ Keep up-to-date (remember!)
 Enable more SUMA keypresses (recommended)
 ----------------------------------------------------------
 
-.. include:: ../install_instructs/substep_mac_keyshortcuts.rst
+.. include:: /background_install/install_instructs/substep_mac_keyshortcuts.rst
 
 
 

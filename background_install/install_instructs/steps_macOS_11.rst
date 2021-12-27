@@ -1,5 +1,5 @@
 
-.. _install_steps_mac:
+.. _install_steps_mac11:
 
 **macOS 11** *(via command line)*
 ===============================================
