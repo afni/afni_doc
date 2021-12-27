@@ -1,5 +1,11 @@
 .. _devdocs_cmake:
 
+.. comment:
+
+   don't mix using '~~~~~' and '^^^^^^' for (sub)subsections.  Sphinx
+   will be unhappy.  Here, we opt to use only the latter.
+
+
 Cmake for AFNI - making AFNI is a piece of C(m)ake
 ==================================================
 
@@ -115,7 +121,7 @@ subsequently be executed.
 .. _devdocs_cmake_config:
 
 Configuring cmake
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 When running cmake, it will try to find out the details of your system
 based on the options you have passed on the command line. This includes
@@ -126,7 +132,7 @@ that you do not have a dependency installed.
 .. _devdocs_cmake_gen:
 
 Generating a build system
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Assuming no errors occur during cmake's configure-time, cmake will try
 to generate a build system. This consists of writing a set of build
@@ -136,7 +142,7 @@ on the current host.
 .. _devdocs_cmake_exec:
 
 Executing a build
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 After the build system is generated you can build your project in the
 conventional way. I.e. for a Make build system you simply execute:
@@ -158,7 +164,7 @@ typing something like
 .. _devdocs_cmake_ninja:
 
 The ninja build system
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 You can use this by setting the environment variable CMAKE_GENERATOR
 to "Ninja" (cmake version > 3.14) or by adding ``-GNinja`` to the
@@ -180,7 +186,7 @@ be figured out through experimentation.
 .. _devdocs_cmake_install:
 
 Installation
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 WARNING: By default an installation will go into /usr/local which you
 likely do not want to do. When testing that the installation works this
@@ -203,7 +209,7 @@ Using **tcsh**:
 .. _devdocs_cmake_use:
 
 Using an installation
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 It is worth noting that a build target (pytest) exists to do inplace
 testing on the build. As one might expect it uses the pytest software to
@@ -342,7 +348,7 @@ avoided are:
 .. _devdocs_cmake_repr_targ:
 
 Representing targets as variables (bad)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes this is present because it's old cmake code or the find module
 is old cmake code. For example the `X11 find
@@ -359,7 +365,7 @@ link incorrectly, you have a slightly confusing error in linking
 .. _devdocs_cmake_no_find:
 
 Not using a find module for dependencies (bad)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is a result of the sad fact that if I say something like the
 following it may just work:
