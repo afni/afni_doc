@@ -20,11 +20,16 @@ the app on **OS 10.13 to 10.15** with various hardware.
 
 This app will download and install the recommended versions of the
 following:
- 1. Xcode Command Line Tools
- #. Xquartz
- #. Homebrew
- #. R
- #. AFNI
+
+1. Xcode Command Line Tools
+
+#. Xquartz
+
+#. Homebrew
+
+#. R
+
+#. AFNI
 
 It can also run the afni_system_check, download class / bootcamp data, and
 install shiny packages.
@@ -114,7 +119,7 @@ Start Your Engines [#f3]_
 
 
 .. note:: This is **NOT** an unattended install! The dialogs **WILL**
-          time out after ~10 hours. ::
+          time out after ~10 hours. 
 
 Use your M-O-U-S-E!
 -------------------
@@ -134,7 +139,7 @@ Use your M-O-U-S-E!
 
 .. note:: Everything you see in the text box will be saved to a log file on
             your desktop with a name similar to
-            "afni_install_log.20190223-055115.txt" ::
+            "afni_install_log.20190223-055115.txt"
 
 * The next dialog presents you with choices of what to install.
     The recommended choices are automatically selected by default, but you
@@ -153,7 +158,7 @@ Use your M-O-U-S-E!
 
 .. note:: Notice that a temporary folder "afni_install_temp_delete_me" is
           created in your home directory. It will be deleted when
-          you quit. If not, it is safe to delete. ::
+          you quit. If not, it is safe to delete.
 
 
 Don't let the fear install [#f4]_
