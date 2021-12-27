@@ -168,7 +168,6 @@ these programs are:
             
    * - Program
      - OpenMP use
-
    * - 3BlurInMask 
      - parallelized across sub-bricks
    * - 3dTcorrMap
