@@ -96,10 +96,6 @@ master_doc = 'index'
 # [PT: March 29, 2018] Had to change way of getting version number,
 # because will do build elsewhere now, and AFNI_version*txt are not
 # Python files
-##### !!!!!!!!!!!! temp fix, don't know why this won't work with
-##### !!!!!!!!!!!! subprocess!!
-# wafni = "/home/ptaylor/afni_src/linux_ubuntu_12_64/afni"
-# wafni = "/home/afniHQ/abin/afni"
 wafni = subprocess.check_output("which afni",
                                 stderr=subprocess.STDOUT,
                                 shell=True)
