@@ -206,6 +206,8 @@ Methods: SUMA
 If you use SUMA in your work, such as for surface calculations and/or
 visualizations, please cite:
 
+.. _cit_srajc_2004:
+
 * | Saad ZS, Reynolds RC, Argall B, Japee S, Cox RW (2004). SUMA: an
     interface for surface-based intra- and inter-subject analysis with
     AFNI, in: 2004 2nd IEEE International Symposium on Biomedical
@@ -214,6 +216,8 @@ visualizations, please cite:
     to Macro (IEEE Cat No. 04EX821), pp. 1510-1513
     Vol. 2. doi.org/10.1109/ISBI.2004.1398837
   | `<https://ieeexplore.ieee.org/document/1398837>`_
+
+.. _cit_sr_2012:
 
 * | Saad ZS, Reynolds RC (2012). SUMA. Neuroimage 62,
     768–773. doi.org/10.1016/j.neuroimage.2011.09.016
@@ -247,8 +251,11 @@ If you use either of the linear mixed effects (LME) modeling programs
     73: 176-190.
   | `<https://pubmed.ncbi.nlm.nih.gov/23376789/>`_
 
-If you use multivariate modeling (MVM) program ``3dMVM`` in your work,
-please cite:
+If you use multivariate modeling (MVM) program ``3dMVM`` in your work
+(or if you want to learn more about within-group centering, which is
+also discussed more :ref:`here<stats_center>`), please cite/check out:
+
+.. _cit_caslc_2014:
 
 * | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
     Applications of multivariate modeling to neuroimaging group

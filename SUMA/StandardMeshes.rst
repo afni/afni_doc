@@ -30,7 +30,7 @@ Standard meshes
 
 This section describes the process that allows us to establish node to
 node correspondence across surfaces from different subjects. Much of
-this has been lifted from [SR_2012]_.
+this has been lifted from :ref:`Saad & Reynolds (2012)<cit_sr_2012>`.
 
 Here is the process by which we take a set of surfaces and re-create
 them with a new standard mesh that is shared by all subjects in a
@@ -82,7 +82,7 @@ regular grid.
    FreeSurfer's cortical parcellations. Colors on standard-mesh
    surfaces (bottomrow) reflect each node's
    index. :ref:`Figure<media/StdMeshes_S+R_F1.jpg>` and text taken
-   from [Saad_2011]_.
+   from :ref:`Saad & Reynolds (2012)<cit_sr_2012>`.
 
 With SUMA, instead of mapping a subject's data value onto the template
 mesh, we recreate each subject's original surface using the mesh of the
@@ -116,4 +116,4 @@ applicable in the volume.
    :ref:`@SUMA_Make_Spec_FS <@SUMA_Make_Spec_FS>` so you do not need
    to make some yourself unless you want a different mesh density or
    for fun.
-   
+ 

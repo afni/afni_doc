@@ -278,8 +278,8 @@ overall mean nullify the effect of interest (group difference), but it
 could also lead to either uninterpretable or unintended results such
 as Lord’s paradox (Lord, 1967; Lord, 1969). In contrast, within-group
 centering, even though rarely performed, offers a unique modeling
-strategy that should be seriously considered when appropriate (e.g.,
-`Chen et al., 2014 <https://afni.nimh.nih.gov/pub/dist/HBM2014/Chen_in_press.pdf>`_). [CASLC_2014]_
+strategy that should be seriously considered when appropriate
+(e.g., see :ref:`Chen et al. (2014)<cit_caslc_2014>`).
 
 When to center within- or across-groups?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

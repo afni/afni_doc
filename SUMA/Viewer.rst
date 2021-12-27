@@ -1490,7 +1490,7 @@ all you see is the background plane(s):
    :align: center
    :name: media/collayer.0001.jpg
    
-   :ref:`(link)`<media/collayer.0001.jpg>`
+   :ref:`(link)<media/collayer.0001.jpg>`
    
 Turn background planes off by pressing :ref:`b <LC_b>` once. Now all
 you see is "No Color" color on all nodes:
