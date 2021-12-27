@@ -7,7 +7,6 @@
 *******************************************
 
 .. contents:: 
-
    :local:
 
 Pre-built Dockerfile
