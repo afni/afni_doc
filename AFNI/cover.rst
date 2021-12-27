@@ -48,27 +48,32 @@ Words here.
    
    :ref:`(link)<media/single_subject.jpg>`
    
-.. container:: clearer
-   
-   .. image:: media/blank.jpg
+
+.. comment out at the moment
+
+   .. container:: clearer
+
+      .. image:: media/blank.jpg
    
 Pipeline
 --------
 
 An uber_subject blurb.
 
-.. figure:: media/single_subject.jpg
+.. figure:: media/uber_subject.jpg
    :figwidth: 40%
    :align: right
-   :target: ../_images/single_subject.jpg
-   :name: media/single_subject.jpg
+   :target: ../_images/uber_subject.jpg
+   :name: media/uber_subject.jpg
    
-   :ref:`(link)<media/single_subject.jpg>`
+   :ref:`(link)<media/uber_subject.jpg>`
    
-.. container:: clearer
-   
-   .. image:: media/blank.jpg
-   
+.. comment out at the moment
+
+   .. container:: clearer
+
+      .. image:: media/blank.jpg
+
 
 Freehand ROI drawing in any viewer. See :ref:`drawing_ROIs`.
 

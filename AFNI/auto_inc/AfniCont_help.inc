@@ -2,29 +2,31 @@
 .. _AfniCont:
 
 
+A note on the GUI:
 
+.. code-block:: none
 
-************************************************
-* GPL AFNI: Analysis of Functional NeuroImages *
-*           Version AFNI_18.0.27       *
-*                                              *
-* Major portions are Copyright 1994-2000,      *
-*   Medical College of Wisconsin               *
-*   Milwaukee, WI 53226-0509                   *
-* See file README.copyright for information,   *
-* or the Datamode->Misc->License menu item.    *
-*                                              *
-* Released to the public by MCW under the GNU  *
-* General Public License (version 2), Dec 2000 *
-*                                              *
-* Author:  Robert W Cox, PhD                   *
-************************************************
+   ************************************************
+   * GPL AFNI: Analysis of Functional NeuroImages *
+   *           Version AFNI_18.0.27       *
+   *                                              *
+   * Major portions are Copyright 1994-2000,      *
+   *   Medical College of Wisconsin               *
+   *   Milwaukee, WI 53226-0509                   *
+   * See file README.copyright for information,   *
+   * or the Datamode->Misc->License menu item.    *
+   *                                              *
+   * Released to the public by MCW under the GNU  *
+   * General Public License (version 2), Dec 2000 *
+   *                                              *
+   * Author:  Robert W Cox, PhD                   *
+   ************************************************
 
-   .. figure:: media/AfniCont.auto.jpg
-      :name: media/AfniCont.auto.jpg
-      :align: center
+.. figure:: media/AfniCont.auto.jpg
+   :name: media/AfniCont.auto.jpg
+   :align: center
 
-      :ref: `(link)<media/AfniCont.auto.jpg>`
+   :ref:`(link)<media/AfniCont.auto.jpg>`
 
 
 

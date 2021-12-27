@@ -1,4 +1,4 @@
-.. _Controllers:
+.. _Controllers_afni:
 
 ***********
 Controllers
@@ -18,7 +18,7 @@ AFNI Controller
 
 .. include:: auto_inc/AfniCont_help.inc 
 
-..
+.. comment out the following:
 
    Graph Controller
    ================
