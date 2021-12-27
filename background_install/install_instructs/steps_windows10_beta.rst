@@ -17,7 +17,7 @@ What to do?
              replace" the old Linux-- note that this involves deleting
              files on the Linux side, so be sure to backup any files
              onto the Windows side, as they suggest `HERE
-             <https://blogs.msdn.microsoft.com/commandline/2017/04/11/windows-10-creators-update-whats-new-in-bashwsl-windows-console/>`_.
+             <https://blogs.msdn.microsoft.com/commandline/2017/04/11/windows-10-creators-update-whats-new-in-bashwsl-windows-console/>`__.
 
 These setup instructions are for the **(now out of date) beta**
 "Creators Update" version of "Bash on Ubuntu" (BoUoW) for Windows 10.
@@ -63,11 +63,11 @@ Install prerequisite: "Bash on Windows"
 ---------------------------------------
 
 * Follow the instructions in the first paragraph `HERE
-  <https://technet.microsoft.com/en-us/library/ff629472.aspx>`_ to get
+  <https://technet.microsoft.com/en-us/library/ff629472.aspx>`__ to get
   Windows PowerShell up and running.
 
 * Follow the instructions `HERE
-  <https://msdn.microsoft.com/en-us/commandline/wsl/install_guide>`_
+  <https://msdn.microsoft.com/en-us/commandline/wsl/install_guide>`__
   to install "Bash on Windows" from Microsoft. (Requires Admin
   privileges.)
 
@@ -139,7 +139,7 @@ Useful setup tips (optional, but recommended)
 ---------------------------------------------
 
 a. Install Ubuntu terminal fonts as described `HERE
-   <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
+   <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__.
 
 #. Follow these ``gnome-terminal`` steps:
 
