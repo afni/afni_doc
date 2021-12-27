@@ -4,7 +4,8 @@
 ****************************
 Basic Unix : shell variables
 ****************************
-setting and applying shell variables
+
+Setting and applying shell variables
 
    Use of variables is essential in writing processing scripts,
    allowing the scripts to be easily modified for use with different
@@ -50,6 +51,7 @@ Setting and accessing a variable
 
 Delete the variable and try again
 ---------------------------------
+
 What happens when one tries to access an unset (non-existent) variable?
 
    commands (type these in the terminal window)::
@@ -78,6 +80,7 @@ What happens when one tries to access an unset (non-existent) variable?
 
 Set a variable to some directory
 --------------------------------
+
 There is nothing special about assigning a directory name to a
 variable, except that it could then be used in ``cd`` or ``ls``
 commands.
@@ -98,8 +101,9 @@ commands.
    The ``ls`` command shows the contents of that directory.  The shell
    expands ``$ddir`` before the ``ls`` command is envoked.
 
-maybe we made a mistake
+Maybe we made a mistake
 -----------------------
+
 There are, of course, many ways to make mistakes.  But consider an
 example where we just specify the wrong name of the directory.
 
@@ -126,6 +130,7 @@ example where we just specify the wrong name of the directory.
 
 Play with the ``$ddir`` variable
 --------------------------------
+
 Use the current ``$ddir`` variable with some more commands.
 Start in the ``AFNI_data6`` directory.
 
