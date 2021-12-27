@@ -164,47 +164,48 @@ these programs are:
 
 .. list-table:: 
    :header-rows: 1
-   :widths: 90
+   :widths: 10 90
             
    * - Program
      - OpenMP use
-   * - 3BlurInMask 
+   * - **3BlurInMask**
      - parallelized across sub-bricks
-   * - 3dTcorrMap
+   * - **3dTcorrMap**
      - parallelized across the inner voxel loop
-   * - 3dDespike
+   * - **3dDespike**
      - parallelized across voxels
-   * - 3dAllineate
+   * - **3dAllineate**
      - parallelized across voxels in the interpolation functions
        (Example #1 below)
-   * - AlphaSim
+   * - **AlphaSim**
      - parallelized across simulated 3D volumes
-   * - 3dREMLfit
+   * - **3dREMLfit**
      - parallelized across voxels in the REML estimation loop, and
        across ARMA(1,1) (a,b) parameter pairs in the REML matrix setup
        loop.
-   * - 3dLocalPV
+   * - **3dLocalPV**
      - parallelized across voxels
-   * - 3dLocalStat
+   * - **3dLocalStat**
      - parallelized across voxels
-   * - 3dBandpass
+   * - **3dBandpass**
      - the ``-blur`` option is parallelized across sub-bricks
-   * - 3dGroupInCorr
+   * - **3dGroupInCorr**
      - computations of correlations are parallelized across time
        series datasets; computations of t-tests are parallelized
        across voxels
-   * - 3dTcorr1D
+   * - **3dTcorr1D**
      - computations are parallelized across columns of the input 1D
        file
-   * - 3dClustSim -- the new and improved version of ``AlphaSim``
-       (deprecated) -- parallelized across simulated 3D volumes, and
-       with fewer ``malloc``/\ ``free`` spin problems, since it uses a
-       customized clustering procedure rather than the general one
-       ``AlphaSim`` used; also, workspaces for each thread are
-       allocated before the work begins, so that ``malloc``/\ ``free``
-       invocations inside the simulation loop are limited; cf. Example
-       #6 below for a discussion of why this is bad.
-   * - 3dAutoTcorrelate
+   * - **3dClustSim**
+     - *(the new and improved version of ``AlphaSim``, which has been
+       deprecated for a long time)* parallelized across simulated 3D
+       volumes, and with fewer ``malloc``/\ ``free`` spin problems,
+       since it uses a customized clustering procedure rather than the
+       general one ``AlphaSim`` used; also, workspaces for each thread
+       are allocated before the work begins, so that ``malloc``/\
+       ``free`` invocations inside the simulation loop are limited;
+       cf. Example #6 below for a discussion of why this is bad.
+   * - **3dAutoTcorrelate**
      - parallelized across the outer voxel loop; to get any decent
        speedup required converting the input dataset to a 'vectim'
        struct (time order first rather than last): otherwise,
