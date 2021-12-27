@@ -228,8 +228,8 @@ seem useless but actually makes scripting easier).
 **Example commands:**
 
 * This is an example of taking a DWI dset ("buddi.nii") and a
-  *TORTOISE-style b*\-matrix ("buddi.bmtxt") after running their
-  *``DR_BUDDI`` function, and testing for flips::
+  TORTOISE-style b*\-matrix ("buddi.bmtxt") after running their
+  ``DR_BUDDI`` program, and testing for flips::
 
     @GradFlipTest                           \
         -in_dwi       buddi.nii               \
