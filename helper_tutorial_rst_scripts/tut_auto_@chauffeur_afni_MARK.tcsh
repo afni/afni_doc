@@ -1093,7 +1093,7 @@ something with that underlying program that is called.
 #. On Macs, you might see the following kind of streaming messages in
    the terminal, and images will not be created:
 
-   .. code-block:: tcsh
+   .. code-block:: none
 
       -- trying to start Xvfb :570
       [1] 53344
