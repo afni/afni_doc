@@ -285,12 +285,12 @@ that you would normally click or key-press in the GUI from scripts.
 This functionality is known as "driving".  Some description of driving
 SUMA are provided :ref:`HERE <self_guided_scripts>`, with lists of
 drivable functionalities `HERE
-<https://afni.nimh.nih.gov/pub/dist/doc/program_help/DriveSuma.html>`_.
+<https://afni.nimh.nih.gov/pub/dist/doc/program_help/DriveSuma.html>`__.
 Lists of AFNI drivable functions are given `HERE
 <https://afni.nimh.nih.gov/pub/dist/doc/program_help/README.driver.html>`_.
 You can also check out more FATCAT-specific examples in the FATCAT
 Demo, which is obtainable as described `HERE
-<https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/FATCAT_All.html#demo-data-sets-and-scripts>`_.
+<https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/FATCAT_All.html#demo-data-sets-and-scripts>`__.
 
 .. note:: We give a *brief* example here of using some basic SUMA
           capability in viewing surfaces+tract information, with
@@ -407,5 +407,5 @@ or afni_layout settings):
           viewing of structure, combining data and interactively
           viewing it.  Please do download the the FATCAT Demo examples
           (again, see `HERE
-          <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/FATCAT_All.html#demo-data-sets-and-scripts>`_),
+          <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/FATCAT/FATCAT_All.html#demo-data-sets-and-scripts>`__),
           and check out the processing scripts there for more.

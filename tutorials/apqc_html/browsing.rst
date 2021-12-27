@@ -289,9 +289,9 @@ We propose approaches to reduce the latter and increase convenience
           browser's behavior and/or quirks in order to prevent loss of
           work.
 
-If you open+view a QC HTML page and then try to close it, you will
-likely get this message (along with a couple buttons):
-  *This page is asking you to confirm that you want to leave - data
+| If you open+view a QC HTML page and then try to close it, you will
+  likely get this message (along with a couple buttons):
+| *This page is asking you to confirm that you want to leave - data
   you have entered may not be saved.*
 
 As noted above, this feature is to prevent loss of any

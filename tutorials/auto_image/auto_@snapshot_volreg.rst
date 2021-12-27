@@ -138,19 +138,21 @@ perspective.
    * - .. image:: media/QC_snapshot_vr/svr_a2e_anat_epi.jpg
           :width: 100%   
           :align: center
+
 |
 
-| **Question:** So, is it better to view this in standard space or EPI space?
+| **Question:** So, is it better to view this in standard space or EPI
+  space?
 
 | **(Possible) Answer:** Both can be useful in their own way.  The
-standard space version is nice because that is the final, meaningful
-result; and if I wanted to check a *group's* worth of data, I would
-flip through a stack of these images (e.g., from Linux command line:
-``eog group/sub-*/svr_*final_anat_epi.jpg``) and since see if any
-major differences popped out, since they should all be aligned to the
-saaaame space.  However, if something went wrong, it would be nice to
-check individual alignment steps to see which one went wrong (EPI ->
-anat, or anat -> template, or ...), too.
+  standard space version is nice because that is the final, meaningful
+  result; and if I wanted to check a *group's* worth of data, I would
+  flip through a stack of these images (e.g., from Linux command line:
+  ``eog group/sub-*/svr_*final_anat_epi.jpg``) and since see if any
+  major differences popped out, since they should all be aligned to
+  the saaaame space.  However, if something went wrong, it would be
+  nice to check individual alignment steps to see which one went wrong
+  (EPI -> anat, or anat -> template, or ...), too.
 
 |
 
