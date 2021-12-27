@@ -27,7 +27,8 @@ ContributeDocs.rst then from the command line::
    
 For this to work, you will want to have Latex, `Sphinx
 <http://sphinx-doc.org>`_ installed, along with `fulltoc
-<http://sphinxcontrib-fulltoc.readthedocs.org/en/latest/install.html>`_. An easy  way to install the Sphinx components would be with::
+<http://sphinxcontrib-fulltoc.readthedocs.org/en/latest/install.html>`_. An
+easy way to install the Sphinx components would be with::
    
    sudo easy_install -U Sphinx
    pip install sphinxcontrib-fulltoc
@@ -69,7 +70,7 @@ Also a breeze as in this example:
 .. figure:: media/suma_mni_n27.jpg
    :align: center
    :figwidth: 50%
-   :name: media/suma_mni_n27.jpg
+   :name: devdocs_media-suma_mni_n27.jpg
       
    :ref:`A random picture here.<media/suma_mni_n27.jpg>`. Note how name is used to create a permalink for the figure which would be accessible from the browser using the link established with 'ref'. Name does not have to be identical to the image file name, but it is a convenient way to do it.
 
@@ -79,21 +80,21 @@ And a few more pictures together:
    :align: left
    :figwidth: 30%
    :target: ../../_images/suma_mni_n27_pry1.jpg
-   :name: media/suma_mni_n27_pry1.jpg
+   :name: devdocs_media-suma_mni_n27_pry1.jpg
    
    Left aligned! Click on picture to see it in full size. If you're reading the source, the target path is to the image file as copied by the make html process. Images are copied automatically to _build/html/_images/ so you need not make a copy but you have to set the relative path. :ref:`(link)<media/suma_mni_n27_pry1.jpg>`
    
 .. figure:: media/suma_mni_n27_pry2.jpg
    :align: right
    :figwidth: 30%
-   :name: media/suma_mni_n27_pry2.jpg
+   :name: devdocs_media-suma_mni_n27_pry2.jpg
    
    :ref:`Right aligned!<media/suma_mni_n27_pry2.jpg>`
    
 .. figure:: media/suma_mni_n27_pry3.jpg
    :align: center
    :figwidth: 30%
-   :name: media/suma_mni_n27_pry3.jpg
+   :name: devdocs_media-suma_mni_n27_pry3.jpg
    
    :ref:`Center of course.<media/suma_mni_n27_pry3.jpg>` Note that in the source I add the center figure last. If I define it between the left and right figures, then the spacing gets messed up...
    
