@@ -27,6 +27,10 @@ from afnipy import afni_util as au
 ## [PT: Feb 15, 2021] Put ":orphan:" at top of files so we don't get
 ## annoying warning about not being included in toctree
 ##
+## [PT: 27 Dec 2021] Add a fix to deal with Sphinx being clever about
+## recognizing option names and expecting (= demanding) an option list
+## with very specific formatting to follow it.
+##
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
@@ -239,7 +243,24 @@ for afni_prog in prog_list:
             # [PT: May 13, 2019] 
             if cur_line.__contains__("*") :
                 cur_line = cur_line.replace("*", "\*")
-            
+
+            ### [PT: 27 Dec 2021] The following fix is added to
+            ### address the numerous repeated warnings for
+            ### timing_tool.py's help:
+            #     WARNING: Option list ends without a blank line;
+            #     unexpected unindent
+            ### The above occurs (and for AP's help, too) for options
+            ### that are just flags (i.e., they take no args), or for
+            ### ones that have an option name given with >1 space of
+            ### separation. The Fix is to escape the initial '-' sign,
+            ### so Sphinx doesn't try to be too clever about option
+            ### lists.
+            if len(cur_line) :
+                if cur_line[0] == "-" :
+                    #print("  ++ NB replacing the '-':", cur_line)
+                    cur_line = "\\" + cur_line
+                    #print("     ... with guarded one:", cur_line)
+
             ## give the appropriate header punctuation and the header
             ## line
             if code == '1':
