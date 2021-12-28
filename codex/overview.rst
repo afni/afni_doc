@@ -30,38 +30,21 @@ examples of interest.  These lists will likely grow over time.
 
 **Main Program List** 
 
+   .. hlist:: 
+      :columns: 3
 
-
-  ``@SUMA_Make_Spec_FS``, ``@SSwarper``, ``3dMEMA``, ``3dClustSim``,
-  ``gen_group_command.py``, ``3dclust``/\ ``3dClusterize`` (latter now
-
-
-   .. list-table:: 
-      :widths: 33 33 33 
-      :header-rows: 0
-      :stub-columns: 0
-
-      * - ``afni_proc.py``
-        - ``@SSwarper``
-        - ``gen_group_command.py``
-      * - ``3dClusterize``
-        - ``3dclust``
-        - ``3dmask_tool``
-      * - ``3dMEMA``              
-        - ``3dClustSim``          
-        - ``BayesianGroupAna.py`` 
-      * - ``recon-all`` (FS)    
-        - ``@SUMA_Make_Spec_FS``
-
-
-.. comment: 
-
-   can copy+paste more of these list-table structures as more rows are
-   needed:
-
-      * - 
-        - 
-        - 
+      * ``afni_proc.py``
+      * ``@SSwarper``
+      * ``3dClusterize``
+      * ``3dclust``
+      * ``gen_group_command.py``
+      * ``3dmask_tool``
+      * ``3dMEMA``              
+      * ``3dClustSim``          
+      * ``BayesianGroupAna.py`` 
+      * ``recon-all`` (FS)    
+      * ``@SUMA_Make_Spec_FS``
+        
 
 
 **Study keywords by category**

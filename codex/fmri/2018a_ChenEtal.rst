@@ -1,7 +1,7 @@
 .. _codex_fmri_2018a_ChenEtal:
 
 
-**Chen et al. (2018a).** FMRI processing with AFNI: Some comments and corrections on “Exploring the Impact of Analysis Software on Task fMRI Results"
+**Chen et al. (2018a).** A tail of two sides: Artificially doubled false positive rates in neuroimaging due to the sidedness choice with t-tests
 ******************************************************************************************************************************************************
 
 .. contents:: :local:
