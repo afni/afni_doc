@@ -1,7 +1,8 @@
-name: sphinxdocs                     # To make:  conda env create -f *.yml
+name: sphinxdocs                  # To make:  conda env create -f *.yml
+channel_priority: strict
 channels:
-  - anaconda
   - conda-forge
+  - anaconda
 dependencies:
   - cloud_sptheme
   - pandoc
