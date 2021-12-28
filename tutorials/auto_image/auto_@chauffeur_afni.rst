@@ -1,6 +1,6 @@
 
 
-.. _auto_@chauffeur_afni:
+.. _tut_auto_@chauffeur_afni:
 
 *********************
 Using @chauffeur_afni
@@ -12,7 +12,7 @@ Using @chauffeur_afni
 Introduction
 ============
 
-**Download script:** :download:`auto_@chauffeur_afni.tcsh <media/auto_@chauffeur_afni/auto_@chauffeur_afni.tcsh>`
+**Download script:** :download:`tut_auto_@chauffeur_afni.tcsh <media/auto_@chauffeur_afni/tut_auto_@chauffeur_afni.tcsh>`
 
 
 .. comment:
@@ -1180,7 +1180,7 @@ something with that underlying program that is called.
 #. On Macs, you might see the following kind of streaming messages in
    the terminal, and images will not be created:
 
-   .. code-block:: tcsh
+   .. code-block:: none
 
       -- trying to start Xvfb :570
       [1] 53344

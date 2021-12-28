@@ -18,8 +18,8 @@ AFNI_data6/roi_demo):
  # tutorial pages: @chauffeur_afni
  adjunct_make_script_and_rst.py                                              \
      -input          tut_auto_@chauffeur_afni_MARK.tcsh                      \
-     -reflink        auto_@chauffeur_afni                                    \
-     -prefix_script  auto_@chauffeur_afni.tcsh                               \
+     -reflink        tut_auto_@chauffeur_afni                                \
+     -prefix_script  tut_auto_@chauffeur_afni.tcsh                           \
      -prefix_rst ~/AFNI/afni_doc/tutorials/auto_image/auto_@chauffeur_afni.rst \
      -execute_script
 
