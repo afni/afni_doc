@@ -22,7 +22,7 @@ want for any ROI-based analysis, even though they may indeed be in the
 GM tissue mask.  So, in order to prepare for analyses where one just
 wants localized regions, we demonstrate de-selecting these regions
 from the GM maps in DT space that were created using
-``fat_proc_map_to_dti`` in the step, ":ref:`postpre_II`".
+``fat_proc_map_to_dti`` in the step, ":ref:`fp_postpre_II`".
 
 Additionally, specifically in preparation for tracking, one might want
 to inflate the GM regions, which we consider "targets" for the
