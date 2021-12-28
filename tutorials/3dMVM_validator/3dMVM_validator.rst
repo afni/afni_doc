@@ -60,16 +60,24 @@ similar to the "-dataTable" input for `3dMVM
 
 * The table **MUST** be saved as a comma, space, or tab separated
   values file, but can have any extension.
+
 * The first column header **MUST** be "Subj". Spelling and
   capitalization counts!
+
 * The last column header **MUST** be "InputFile".
+
   * This column should have a path to your datasets.
+
   * Relative paths are ok, but for portability sake, full paths are
     recommended.
+
   * Subbrik selectors are allowed.
+
 * The middle columns are what ever variables you have that may go into
   your model.
+
   * They can be categorical or quantitative variables.
+
 * All other rules for 3dMVM -dataTable must be followed as well.
 
 For example:
@@ -99,16 +107,22 @@ Start Up
       :align: left
 
    * Helpful prompts will show up in the lower right corner of the window.
+
    * The afni gui will load the first dataset from your table and
      display windows to the left of the screen.
+
    * The shiny app will have read your data table and parsed the
      variables and info boxes will be filled with information.
+
      * Categorical variables, numerical variables, and number of
        subjects.
+
    * The first input box will be pre filled with a categorical
      variable.
+
    * The app will guess if there are within subject variables and give
      suggestions.
+
    * Same for the quantitative variables.
 
 Location location location
@@ -231,8 +245,8 @@ Rudie Can't Fail. [#f9]_
 
 .. note::
 
-    We don't care about the p value for this model!!!
-    We only want to make sure it doesn't fail!!!
+   We don't care about the p value for this model!!!
+   We only want to make sure it doesn't fail!!!
 
 .. +-------------------------------------------------------+
 .. | Choosing a strange region will also fail.             |
