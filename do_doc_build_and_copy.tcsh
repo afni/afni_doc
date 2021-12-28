@@ -96,7 +96,7 @@ endif
 
 if ( "$DO_BUILD" == "1" ) then
 
-    echo "++ Do documentation build!"
+    echo "++ START: Do documentation build!"
 
     # preliminary checks to make sure some things have been installed
     if ( $DO_DEVDOCS ) then
@@ -117,21 +117,22 @@ if ( "$DO_BUILD" == "1" ) then
 
     ### Make preliminary stuff from helpfiles: will open both AFNI and
     ### SUMA this way
+    echo "++ STEP: gen_all"
     tcsh @gen_all $gen_all_opts
 
     # ------------- python stuff --------------------
     cd python_help_scripts
 
-    echo "++ Make quickbuild_instructs"
+    echo "++ STEP: Make quickbuild_instructs"
     set dir_instructs = "../background_install/install_instructs"
     python make_substeps_of_quickbuilds.py ${dir_instructs}
 
-    echo "++ Make list of All Program Helps"
+    echo "++ STEP: Make list of All Program Helps"
     set dir_allhelp = "../programs"
     mkdir -p ${dir_allhelp}
     python help2sphinx.py -OutFolder ${dir_allhelp}
 
-    echo "++ Make classified/groupings stuff"
+    echo "++ STEP: Make classified/groupings stuff"
     set fieldfile = list_STYLED_NEW.txt
     python convert_list_to_fields_pandas.py        \
         list_AFNI_PROGS_classed.txt                \
@@ -140,29 +141,29 @@ if ( "$DO_BUILD" == "1" ) then
         $fieldfile                                 \
         ../educational/classified_progs.rst
 
-    echo "++ Make AFNI startup tips RST"
+    echo "++ STEP: Make AFNI startup tips RST"
     python make_file_of_startup_tips.py            \
         all_startup_tips.txt                       \
         ../educational/startup_tips.rst
 
-    echo "++ Make AFNI GUI readme tips RST"
+    echo "++ STEP: Make AFNI GUI readme tips RST"
     python make_file_of_gui_readme_tips.py         \
         all_gui_tips.txt                           \
         ../educational/gui_readme_tips.rst
 
-    echo "++ Make AFNI environment variable RST"
+    echo "++ STEP: Make AFNI environment variable RST"
     python make_file_of_readme_env.py              \
         all_env_vars.txt                           \
         ../educational/readme_env_vars.rst
 
-    echo "++ Make AFNI colorbars RST"
+    echo "++ STEP: Make AFNI colorbars RST"
     python make_file_of_all_afni_cbars.py          \
         ../educational/media/cbars                 \
         ../educational/all_afni_cbars.rst
 
     # [PT: Mar 8, 2019] added
     if ( -e $aho_dir ) then
-        echo "++ List AFNI handouts"
+        echo "++ STEP: List AFNI handouts"
         \ls -1 ${aho_dir} > ../educational/media/${aho_txt}
 
         python convert_handouts_list_to_table.py \
