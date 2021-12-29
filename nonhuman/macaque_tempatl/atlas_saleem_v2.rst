@@ -11,8 +11,8 @@
 .. highlight:: none
 
 
-Summary
--------
+Overview
+--------
 
 This is a comprehensive MRI-histology based atlas of Rhesus macaque 
 monkey brain with segmentation of both cortical and subcortical areas 
@@ -25,7 +25,7 @@ intended for use as a reference standard for macaque neuroanatomical,
 functional, and connectional imaging studies involving both cortical 
 and subcortical targets. 
 
-Download D99v2.0 dataset 
+Download
 --------------------------
 
 The updated D99 atlas and template files are available either through
@@ -34,22 +34,37 @@ already installed on your system::
 
    @Install_D99_macaque
 
-| To download and unpack the datasets from the direct link, please see
-  the instructions at the **D99 V2.0 link:**
+| To download and unpack the datasets from the direct link,
 | `<https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz>`_
 
 **(Atlas is a single volume with combined cortical and subcortical areas)**
 
+You may download the D99 datasets from the AFNI website
+using the links below.
+* *(the plain Linux-y terminal way)* **copy+paste**::
+
+    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz
+    tar -xvf D99_v2.0_dist.tgz
+
+* | *(the mouseclick+ way)* **click on** `this link
+    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz>`_,
+  | \.\.\. and then unpack the zipped directory by either clicking on it
+    or using the above ``tar`` command.
+
+
+Contents
+------------------
+
 ============================= ======================================================================
 D99 related files 		          Description
 ============================= ======================================================================
-D99_atlas_v2.0_right.nii.gz   right hemisphere template
-D99_atlas_v2.0.nii.gz         symmetric template on both right and left hemispheres
-D99_Suppl_Table_1.xlsx        spreadsheet with all 368 areas segmented areas in the atlas; see above
-D99_template.nii.gz           ex vivo MTR D99 volume
+D99_atlas_v2.0.nii.gz         symmetric atlas of cortical+subcortial regions
+D99_template.nii.gz           ex vivo MTR D99 volume template
+D99_atlas_v2.0_right.nii.gz   atlas of only right hemisphere
+D99_Suppl_Table_1.xlsx        spreadsheet with all 368 areas segmented areas in the atlas
 D99_v2.0_labels_semicolon.txt abbreviations of the 368 areas used in this atlas
-Roilists.txt                  useful lists of label combinations
-Surfs_right                   surfaces for right hemisphere
+roilists.txt                  useful lists of label combinations
+surfs_right                   surfaces for right hemisphere
 ============================= ======================================================================
 
 Example images
@@ -80,6 +95,19 @@ to R-C top row only.
 
    * - D99 digital atlas version 2.0 cortical segmentation surfaces
    * - .. image:: media/D99_v2.0/img_D99_v2.0_fig3.png
+
+AFNI environment variables
+----------------------------------
+
+The @Install_D99_macaque script automatically adds AFNI environment variables to use
+the D99_v2.0 atlas, but these can be these variables can be configured in your .afnirc
+file in your home directory to take advantage of the D99 atlas for "whereami",
+"Show atlas colors" and "Go to atlas location" in the AFNI GUI:
+
+| AFNI_SUPP_ATLAS_DIR = directory_where_you_have_installed_atlas/SARM
+| AFNI_ATLAS_COLORS = Saleem_D99_v2.0
+| AFNI_WHEREAMI_DEC_PLACES = 2
+
 
 Citation/questions
 ------------------
