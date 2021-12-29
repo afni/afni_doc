@@ -182,9 +182,9 @@ if ( "$DO_BUILD" == "1" ) then
 
         # copy the desired contents over for SUMA
         echo "++ sync or swim"
-        rsync -av --delete  ${SUMA_media}         \
+        rsync -av  ${SUMA_media}         \
             ./SUMA/media
-        rsync -av --delete  ${SUMA_inc}           \
+        rsync -av  ${SUMA_inc}           \
             ./SUMA/auto_inc
 
         ### AT PRESENT, don't do anything with AFNI contents, because
