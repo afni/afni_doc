@@ -46,8 +46,8 @@ using the links below.
     wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz
     tar -xvf D99_v2.0_dist.tgz
 
-* | *(the mouseclick+ way)* **click on** `this link
-    <https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz>`_,
+* | *(the mouseclick+ way)* **click on** 
+    `<https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz>`_,
   | \.\.\. and then unpack the zipped directory by either clicking on it
     or using the above ``tar`` command.
 
