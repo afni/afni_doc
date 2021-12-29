@@ -37,14 +37,15 @@ examples of interest.  These lists will likely grow over time.
       * ``@SSwarper``
       * ``3dClusterize``
       * ``3dclust``
-      * ``gen_group_command.py``
-      * ``3dmask_tool``
-      * ``3dMEMA``              
       * ``3dClustSim``          
+      * ``3dmask_tool``
       * ``BayesianGroupAna.py`` 
       * ``recon-all`` (FS)    
       * ``@SUMA_Make_Spec_FS``
-        
+      * ``gen_group_command.py``
+      * ``3dttest++``
+      * ``3dMEMA``              
+      * ``3dANOVA2``
 
 
 **Study keywords by category**
@@ -70,6 +71,8 @@ examples of interest.  These lists will likely grow over time.
         - MNI, Talairach, Haskins-ped, native,
       * - **Template align method**
         - linear, nonlinear
+      * - **Geometry of final analysis**
+        - volumetric (default), surface
       * - **Tissue segmentation method**
         - 3dSeg, FreeSurfer
       * - **Tissue regression**

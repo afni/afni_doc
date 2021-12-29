@@ -9,6 +9,7 @@ FMRI Codex
 .. toctree::
    :maxdepth: 2
 
+   2021_YangEtal
    2018b_ChenEtal
    2018a_ChenEtal
    2018_TaylorEtal
