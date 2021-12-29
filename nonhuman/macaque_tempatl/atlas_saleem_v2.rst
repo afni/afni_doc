@@ -104,7 +104,7 @@ the D99_v2.0 atlas, but these can be these variables can be configured in your .
 file in your home directory to take advantage of the D99 atlas for "whereami",
 "Show atlas colors" and "Go to atlas location" in the AFNI GUI:
 
-| AFNI_SUPP_ATLAS_DIR = directory_where_you_have_installed_atlas/SARM
+| AFNI_SUPP_ATLAS_DIR = directory_where_you_have_installed_D99v2_atlas
 | AFNI_ATLAS_COLORS = Saleem_D99_v2.0
 | AFNI_WHEREAMI_DEC_PLACES = 2
 
