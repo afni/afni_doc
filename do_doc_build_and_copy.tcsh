@@ -6,8 +6,13 @@
 set gen_all_opts = () #( "-phelp" )
 set DO_BUILD    = 0
 set DO_PUSH     = 0
-set DO_PHELP    = 0    # prob don't need to change with the opt below
-set DO_DEVDOCS  = 0    # [PT: Jan 4, 2020] specific env deps
+set DO_PHELP    = 0        # prob don't need to change with the opt below
+set DO_DEVDOCS  = 0        # [PT: Jan 4, 2020] specific env deps
+
+set USE_SUMAFNI_INIT = 1  # [PT: 28 Dec 2021] use some pre-built SUMA docs
+set DO_GEN_AFNI = 0        # [PT: 28 Dec 2021] run AFNI GUI (def: off)
+set DO_GEN_SUMA = 0        # [PT: 28 Dec 2021] run SUMA GUI (def: off)
+
 
 # ======================================================================
 
@@ -19,7 +24,13 @@ set DO_DEVDOCS  = 0    # [PT: Jan 4, 2020] specific env deps
 #                   make, to be buildable anywhere with the same command
 #                   -> added in J Lee's pip uninstall/install fix for
 #                      denoting the run_test_utils dir.
- 
+#
+# [PT: 28 Dec 2021] use some pre-built SUMA doc info, namely images
+#                   used in: SUMA/Controller.rst and SUMA/Viewer.rst.
+#                   These are now stored on afni
+#                   (pub/dist/doc/htmldoc_sumafni_init.tgz), and can
+#                   be regenerated if need be (but they don't change
+#                   often. Should reduce the number of compile warnings.
  
 # ======================================================================
 
@@ -42,10 +53,16 @@ while ( $ac <= $#argv )
     else if ( "$argv[$ac]" == "-devdocs" ) then
         set DO_DEVDOCS = 1
 
+    # [PT: 28 Dec 2021]
+    else if ( "$argv[$ac]" == "-no_sumafni_init" ) then
+        set USE_SUMAFNI_INIT = 0
+
     else if ( "$argv[$ac]" == "-gen_all_afni" ) then
+        set DO_GEN_AFNI = 1
         set gen_all_opts = ( $gen_all_opts "-afni" )
 
     else if ( "$argv[$ac]" == "-gen_all_suma" ) then
+        set DO_GEN_SUMA = 1
         set gen_all_opts = ( $gen_all_opts "-suma" )
 
     # this is probably never necessary now
@@ -61,13 +78,28 @@ while ( $ac <= $#argv )
     @ ac += 1
 end
 
+# ============================ verify ===================================
+# [PT: 28 Dec 2021]
+
+if( ${DO_GEN_AFNI} && ${USE_SUMAFNI_INIT} ) then
+    echo "** ERROR: cannot make RST files with AFNI GUI while also using"
+    echo "   the stored docs online."
+    goto BAD_EXIT
+endif
+
+if( ${DO_GEN_SUMA} && ${USE_SUMAFNI_INIT} ) then
+    echo "** ERROR: cannot make RST files with SUMA GUI while also using"
+    echo "   the stored docs online."
+    goto BAD_EXIT
+endif
+
 # =================== set paths: need AFNI installed ====================
 
 # find where AFNI binaries are
 set adir      = ""
 which afni >& /dev/null
 if ( $status ) then
-    echo "** Cannot find 'afni' (?!)."
+    echo "** Cannot find 'afni' (??)."
     goto BAD_EXIT
 else
     set aa   = `which afni`
@@ -96,7 +128,7 @@ endif
 
 if ( "$DO_BUILD" == "1" ) then
 
-    echo "++ START: Do documentation build!"
+    echo "++ START: Do documentation build"
 
     # preliminary checks to make sure some things have been installed
     if ( $DO_DEVDOCS ) then
@@ -111,7 +143,7 @@ if ( "$DO_BUILD" == "1" ) then
         set testdir_make = `grep TESTSDIR Makefile`
         echo "++ Checking that TESTSDIR is set in Makefile (just printing):"
         echo "   ${testdir_make}"
-        echo "++ NB: this is probably just set (hard-wired!) to run on safni."
+        echo "++ NB: this is probably just set (hard-wired) to run on safni."
 
     endif
 
@@ -119,6 +151,48 @@ if ( "$DO_BUILD" == "1" ) then
     ### SUMA this way
     echo "++ STEP: gen_all"
     tcsh @gen_all $gen_all_opts
+
+    # ------------- copy premade pages, maybe --------------------
+    # [PT: 28 Dec 2021]
+
+    if ( ${USE_SUMAFNI_INIT} ) then
+        echo "++ STEP: use SUMAFNI_INIT pages"
+
+        set dir_sa_init = htmldoc_sumafni_init
+        set SUMA_media  = "${dir_sa_init}/SUMA/media/"    # keep slash
+        set SUMA_inc    = "${dir_sa_init}/SUMA/auto_inc/" # keep slash
+        ##set AFNI_init   = "${dir_sa_init}/AFNI/"          # keep slash
+        
+        # either download or reuse the directory
+        if ( ! -d ${dir_sa_init} ) then 
+            echo "++ Download SUMAFNI init dir: '${dir_sa_init}'"
+            wget https://afni.nimh.nih.gov/pub/dist/doc/${dir_sa_init}.tgz
+            touch ${dir_sa_init}.tgz
+            if ( $status ) then
+                echo "** ERROR: cannot download ${dir_sa_init}.tgz"
+                goto BAD_EXIT
+            endif
+
+            tar -xf ${dir_sa_init}.tgz
+            touch ${dir_sa_init}
+        else
+            echo "++ Reuse existing SUMAFNI init dir: '${dir_sa_init}'"
+            echo "   (If you *don't* want to reuse it, you better remove it.)"
+        endif
+
+        # copy the desired contents over for SUMA
+        echo "++ sync or swim"
+        rsync -av --delete  ${SUMA_media}         \
+            ./SUMA/media
+        rsync -av --delete  ${SUMA_inc}           \
+            ./SUMA/auto_inc
+
+        ### AT PRESENT, don't do anything with AFNI contents, because
+        ### we don't build those anyways
+        ##rsync -av --delete  ${AFNI_init}          \
+        ##    ./AFNI
+
+    endif
 
     # ------------- python stuff --------------------
     cd python_help_scripts
@@ -220,14 +294,14 @@ endif
 # =========================== do push ========================
 
 #if ( "$DO_PUSH" == "1" ) then
-#    echo "++ Pushin' the current docs over to afni (and the World!)."
+#    echo "++ Pushin' the current docs over to afni (and the World)."
 #    rsync -av --delete _build/html/         \
 #        afni.nimh.nih.gov:/fraid/pub/dist/doc/htmldoc
 #    echo "++ ... and done pushing the docs.\n"
 #endif
 if ( "$DO_PUSH" == "1" ) then
     echo "++ Pushin' the current docs as <<afniHQ>>"
-    echo     " over to afni (and the World!)."
+    echo     " over to afni (and the World)."
     rsync -av --delete _build/html/         \
         afniHQ@afni.nimh.nih.gov:/fraid/pub/dist/doc/htmldoc
     echo "++ ... and done pushing the docs.\n"
@@ -275,9 +349,9 @@ EOF
     goto GOOD_EXIT
 
 BAD_EXIT:
-    echo "\n++ Better luck next time -- bye!\n"
+    echo "\n++ Better luck next time -- bye\n"
     exit 1
 
 GOOD_EXIT:
-    echo "\n++ Successfully accomplished your endeavors-- bye!\n"
+    echo "\n++ Successfully accomplished your endeavors-- bye\n"
     exit 0
