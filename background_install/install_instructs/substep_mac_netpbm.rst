@@ -1,19 +1,27 @@
 
+
+.. comment:
+   This old set of 3 steps seems to be replaced by the new, single one 
+
+    #. Copy+paste::
+
+         bash
+
+    #. Copy+paste::
+
+         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+
+    #. Copy+paste::
+
+       exit
+
 #. Copy+paste::
 
-     bash
-
-#. Copy+paste::
-
-     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 #. Copy+paste::
 
      brew install netpbm
-
-#. Copy+paste::
-
-     exit
 
 **Purpose:** Install "netpbm", which has functionality for converting
 image formats (such as to PNG) and is used in several programs like
