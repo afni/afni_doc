@@ -31,9 +31,23 @@ from afnipy import afni_util as au
 ## recognizing option names and expecting (= demanding) an option list
 ## with very specific formatting to follow it.
 ##
+## [PT: 30 Dec 2021] Include a list of available manuals, too, which
+## are stored here: https://afni.nimh.nih.gov/pub/dist/doc/manual/,
+## so Gang won't be mad at me anymore.
+## -> this is just done as a 'hardwired' list, because it was simple
+##    to implement, and we don't expect the manual list to change
+##    anymore; that part of getting the list of manuals could always
+##    be adapted later by some enterprising spirit.
+## + Also, fix issue here with incomplete list(s) being output if the
+#    total number of programs was not a factor of 3.
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
+
+## where we (currently) get the manual list to read
+file_pdfman   = 'list_manuals.txt'
+## where the base webadress of the files online be
+webbase_pdfman = 'https://afni.nimh.nih.gov/pub/dist/doc/manual/'
 
 ########################################################################
 ## functions
@@ -71,6 +85,12 @@ def next_line(help_in,line_num):
                 return(1)
             else:
                 return(0)  ## has text but no header code
+
+## this could be done in a fancier way to read from webpage, if that
+## is desired in The Future
+def get_list_pdfman(fname):
+    mlist = au.read_text_file(fname)
+    return mlist
 
 ########################################################################
 ## parse command line arguments / build help
@@ -153,13 +173,32 @@ toc_file = OutFolder+"main_toc.rst"
 main_toc = open(toc_file,"w")
 
 ## write out the header
-main_toc.write(":tocdepth: 2\n\n")
-main_toc.write(".. _programs_main:\n\n")
-main_toc.write("##################\n")
-main_toc.write("All program helps\n")
-main_toc.write("##################\n\n")
-main_toc.write('This is a list of all AFNI programs.  Click on any name to see the help for that program.\n\nFor additional reference, please also see the "classified" list of helps :ref:`HERE<edu_class_prog>`\, where programs are loosely grouped by topic and functionality, with a brief description of each provided.\n\n')
-main_toc.write(".. csv-table::\n\n")
+top_text = '''
+:tocdepth: 2
+
+.. _programs_main:
+
+##################
+All program helps
+##################
+
+.. contents:: :local:
+
+Links to program help files
+----------------------------
+
+This is a list of all AFNI programs.  Click on any name to see the
+help for that program.
+
+For additional reference, please also see the "classified" list of
+helps :ref:`HERE<edu_class_prog>`\, where programs are loosely grouped
+by topic and functionality, with a brief description of each provided.
+
+.. csv-table::
+
+'''
+
+main_toc.write(top_text)
 
 ########################################################################
 ## main loop through prog_list
@@ -196,7 +235,7 @@ for afni_prog in prog_list:
         csv_index = 3
     elif csv_index == 3:
         csv_line = csv_line+":ref:`"+afni_prog+" <ahelp_"+afni_prog+">`"
-        main_toc.write("   "+csv_line+"\n")
+        main_toc.write(csv_line+"\n")
         csv_index = 1
 
     ## open file for writing
@@ -328,5 +367,65 @@ for afni_prog in prog_list:
     ## reset code flag
     has_codes = 0
     
+# we might also have a last line with <3 elements left to write
+if csv_index != 1 :
+    main_toc.write(csv_line+"\n")
+
+# =======================================================================
+# Bonus, end of year special: Buy one help file listing, get one 
+# PDF-manuals for free!
+
+print("++ Add PDF-manual section of 'All Program helps'")
+
+## write out the section header
+pdfman_text = '''
+
+.. _programs_main_pdfman:
+
+Links to program manuals
+----------------------------
+
+This is a list of all AFNI program manuals, which were written in
+ancient times in elvish runes.  These are the few that have been
+translated to modern(ish) human speak.
+
+It is possible that some of these manuals refer to programs that are
+no longer in circulation, typically having been deprecated for a newer
+one.  The "classified" list of program helps
+:ref:`HERE<edu_class_prog>`\, contains information on such
+deprecations and pointers to the more modern version.
+
+.. csv-table::
+   :width: 100%
+
+'''
+
+main_toc.write(pdfman_text)
+
+list_pdfman = get_list_pdfman(file_pdfman)
+
+## for the main_toc 3 column csv
+csv_line = ""
+csv_index = 1
+
+for pdfman in list_pdfman :
+    print(pdfman)
+
+    ## add to main_toc as a 3 column csv
+    if csv_index == 1:
+        csv_line  = "   `"+pdfman+" <"+webbase_pdfman+pdfman+">`_,"
+        csv_index = 2
+    elif csv_index == 2:
+        csv_line  = csv_line+"`"+pdfman+" <"+webbase_pdfman+pdfman+">`_,"
+        csv_index = 3
+    elif csv_index == 3:
+        csv_line = csv_line+"`"+pdfman+" <"+webbase_pdfman+pdfman+">`_"
+        main_toc.write(csv_line+"\n")
+        csv_index = 1
+
+# we might also have a last line with <3 elements left to write
+if csv_index != 1 :
+    main_toc.write(csv_line+"\n")
+
 ## close the main_toc
 main_toc.close()
