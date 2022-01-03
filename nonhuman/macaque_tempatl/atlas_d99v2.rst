@@ -77,8 +77,8 @@ selected subcortical regions are also indicated with cortical areas in
 top row. For the segmentation of cortical areas, see
 below. Abbreviations: 9d-dorsal prefrontal area; SCP-superior
 cerebellar peduncle; V1-primary visual cortex.  Orientation: D-dorsal;
-V-ventral; R-rostral; C-caudal; L-lateral.  Scale bar: 10 mm applies
-to R-C top row only.
+V-ventral; R-rostral; C-caudal; L-lateral.  Scale bar (10 mm) in the 
+top row applies to sagittal as well as horizontal (axial) and coronal slices.
 
 .. list-table:: 
    :header-rows: 1
