@@ -1,4 +1,4 @@
-.. _atlas_saleem_v2:
+.. _atlas_d99v2:
 
 **Macaque Atlas: D99 v2.0 (current)**
 ===============================================================================
@@ -16,12 +16,12 @@ cortical and subcortical atlas**, as well as how to download it. The
 atlas is distributed as a single volume with combined cortical and
 subcortical areas.
 
-This is a comprehensive, MRI-histology based atlas of Rhesus macaque 
+This is a comprehensive, MRI-histology based atlas of the Rhesus macaque 
 monkey brain with segmentation of both cortical and subcortical areas 
 in one 3D volume (see related figure below). We mapped a total of 368 
 (149 cortical+219 subcortical) regions in this atlas (see suppl Table 1). 
-It is important to note that the 219 parcellated subcortical regions also 
-include the non-subcortical regions such as the cerebellar cortex and the 
+It is important to note that the 219 parcellated "subcortical" regions also 
+include non-subcortical regions such as the cerebellar cortex and the 
 hippocampal formation. This version 2 of the "D99" template atlas is 
 intended for use as a reference standard for macaque neuroanatomical, 
 functional, and connectional imaging studies involving both cortical 
