@@ -57,7 +57,7 @@ D99 related files 		          Description
 D99_atlas_v2.0.nii.gz         symmetric atlas of cortical+subcortial regions
 D99_template.nii.gz           ex vivo MTR D99 volume template
 D99_atlas_v2.0_right.nii.gz   atlas of only right hemisphere
-D99_Suppl_Table_1.xlsx        spreadsheet with all 368 areas segmented areas in the atlas
+D99_Suppl_Table_1.xlsx        spreadsheet with all 368 segmented areas in the atlas
 D99_v2.0_labels_semicolon.txt abbreviations of the 368 areas used in this atlas
 roilists.txt                  useful lists of label combinations
 surfs_right/                  directory of surfaces for right hemisphere
