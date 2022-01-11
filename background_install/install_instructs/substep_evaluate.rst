@@ -3,16 +3,18 @@
 
      afni_system_check.py -check_all
 
-#. **Read** the "Please Fix" section at the end.  If there are no
-   suggestions, then rejoice!  Otherwise, **try** the suggestion(s)
-   there.
+#. | **Read** the "Please Fix" section at the end.  If there are no
+     suggestions, then rejoice!  Otherwise, **try** the suggestion(s)
+     there.
+   |
 
 #. Open up the AFNI and SUMA GUIs, juuuust to make sure all is well::
    
      afni
      suma
 
-   Report any crashes!
+   | Report any crashes!
+   |
 
 #. If stuck, then ...
 

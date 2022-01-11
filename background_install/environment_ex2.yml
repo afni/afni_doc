@@ -1,0 +1,7 @@
+name: py27_afni_tiny          # TO MAKE:  conda env create -f env*_ex2.yml
+dependencies:
+  - python=2.7
+  - matplotlib
+  - numpy
+  - scipy
+  - pillow

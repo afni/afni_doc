@@ -1,0 +1,8 @@
+name: py39_afni_mid          # TO MAKE:  conda env create -f env*_ex3.yml
+dependencies:
+  - python=3.9
+  - matplotlib
+  - pillow
+  - numpy
+  - scipy
+  - "ipython>=7.20"          # specific ver for tab-autocomplete to work

@@ -6,11 +6,18 @@
 **Miniconda: Python(s) in a convenient setup**
 **********************************************
 
+.. highlight:: tcsh
+
 .. contents:: 
    :local:
 
 Overview
 ========
+
+*This page is neither a recommendation to use Conda, nor is it a full
+tutorial on using it.  It is just meant to be a helpful starting point
+to Conda, if it sounds appealing to you.  Examples here are just for
+managing a few Python needs for AFNI.*
 
 Python is increasingly used in the imaging world. Everyone and their
 sheepadoodle seems to be writing in it and coming across it in some
@@ -30,183 +37,190 @@ Anyway, managing potentially multiple versions of Python, as well as
 diferent sets of dependencies can be tricky.  There are different ways
 of doing this, but through personal experience I have found using
 "Conda" to be (by far) the easiest and most straightforward.  We can
-basically set up one or more **environments** with specific Python
-versions, modules and dependencies, and we can swap back and forth
-between them fairly easily---they are each separate and distinct, and
-don't get in each other's way.  We can set one to be "on" by default,
-not really think about it often, and then just change to another
-environment if we need to.  Nice.
+basically set up one or more **environments** (or **envs**) with
+specific Python versions, modules and dependencies, and we can swap
+back and forth between them fairly easily---they are each separate and
+distinct, and don't get in each other's way.  We can set one to be
+"on" by default, not really think about it often, and then just change
+to another environment if we need to.  Nice.
 
-This page is neither a recommendation to use Conda, nor is it a full
-tutorial on using it.  It is just meant to be a helpful starting point
-to Conda, *if it sounds appealing to you*, to manage your Python
-needs.
+| We will use the specific installation form of Conda called
+  "Miniconda", because it starts of being light-weight, and you can
+  then add whatever you need.  Some official reference pages for this
+  are:
+| `<https://docs.conda.io/projects/conda/en/latest/user-guide/index.html>`_
+| `<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
 
-We will use the specific installation form of Conda called
-"Miniconda", because it starts of being light-weight, and you can then
-add whatever you need.
+These notes apply to either Linux or Mac OS. Miniconda can also be
+installed on Windows directly, but since AFNI doesn't run there, who
+cares?
+
+These notes are only for setting up Conda for a single user.
+Instructions for installing Conda for multiple users is `described on
+the conda website here
+<https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/admin-multi-user-install.html>`_.
+
+**Very important note:** you should **not** need your ``sudo``
+password to install Conda on your system, nor to run later "conda"
+commands. Using ``sudo`` with ``conda`` will just cause headaches
+later, so don't do it.
+
 
 .. _install_miniconda_verbose:
 
 Set up Conda (verbose)
 ==========================
 
-Whether you are using Linux---either directly or through the Windows
-Subsystem Linux---or Mac, the setup will basically follow the same
-steps.  (Miniconda can also be installed on Windows directly, but
-since AFNI doesn't run there, who cares?)
-
-This example is for setting up Conda for a single user system.
-Instructions for installing Conda for multiple users is `described
-on the conda website here
-<https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/admin-multi-user-install.html>`_.  We don't discuss it further.
-
-**Note** that you should **not** need your ``sudo`` password to
-install Conda on your system, nor to run later "conda" commands.
 
 Download+install miniconda
 --------------------------
 
-1. **Click here and select installer to download (e.g., to home
-   directory):**
-
-   * `Linux installers <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`_
-
-   * `Mac installers <https://docs.conda.io/en/latest/miniconda.html#macosx-installers>`_
-
-   **Note on selection:** Most computers now are 64-bit, and selecting
-   the "Python 3.7" version makes sense (you can still use it to set
-   up Python 2.* environments on your system).  For Macs, I used the
-   bash script version (rather than pkg), just because the former is
-   more similar to what is done on Linux.
-
-2. **Run the downloaded installer script:**
-
-   Type ``bash SCRIPT_NAME``, such as:
-
-   * *For Linux*::
-       
-       bash Miniconda3-latest-Linux-x86_64.sh
-
-   * *For Mac*::
-       
-       bash Miniconda3-latest-MacOSX-x86_64.sh
-
-   You will be prompted for various things:
-
-   * hit ``Enter`` to read agreement; hit spacebar to navigate through
-     it quickly; type ``yes`` to agree to it.
-
-   * when prompted about installation directory, I just left it in the
-     default "home".
-
-   * did I wish to initialize Miniconda3? I typed: yes
-     
-   I then got a message that I was successfully set up; and also a
-   "conda: Command not found message". So I did...
-
-3. **Make updates known to terminal:**
-
-   Open a new terminal.  You should see a text string like "(base)" to
-   the left of your terminal prompt, and it will be to the left of
-   every prompt (though you can optionally turn that off, which I do).
-
-   You can also source the ``~/.*rc`` file for your shell, which
-   should update your current terminal.  (To know what type of shell
-   you are using, you can type ``echo $0``.) 
+1. **To download+install, copy+paste**:
    
-   * *For bash*::
+   |
 
-       source ~/.bashrc
+   * *\.\.\. for Linux*::
 
-   * *For tcsh*::
+       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       bash Miniconda3-latest-Linux-x86_64.sh -b
 
-       source ~/.cshrc
+   * *\.\.\. for Mac*::
+
+       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       bash Miniconda3-latest-MacOSX-x86_64.sh -b
+
+   If you don't have ``wget`` on your computer, you can instead
+   replace it with ``curl -O``.
+
+   *NB:* The ``-b`` option runs the installer in "batch mode", saying
+   yes to all prompts: install into home directory, accept licenses.
+   To go through those options manually, don't include that option.
+
+   |
+
+
+#. **To initialize conda in shells, copy+paste**::
+     
+     conda init bash tcsh zsh
+
+   This puts conda setup text into each of the above shell's
+   ``~/.*rc`` files.
+
+   *NB:* Conda/miniconda gets setup with path names hardwired into its
+   files, so you can\ *not* just move your "miniconda3" directory and
+   update these path locations later and still have it work.
+
+   |
+
+#. **Make updates known to terminal**
+
+   Do one of the following:
+   
+   A. Open a new terminal.  You should now see a text string like
+      "(base)" to the left of your terminal prompt. (Below, we show you
+      can optionally disable that text.)
+
+      |
+
+   B. Source your shell's ``~/.*rc`` file (to know your current shell,
+      type ``echo $0``):
+
+      |
+
+      * \.\.\. *for bash*::
+
+          source ~/.bashrc
+
+      * \.\.\. *for tcsh or csh*::
+
+          source ~/.cshrc
+
+      * \.\.\. *for zsh*::
+
+          source ~/.zshrc
 
    You should see a string "(base)" string stuck before your terminal
-   prompt now.  Typing ``conda -V`` should also show you your version
-   number.
+   prompt now.  (Below, you can optionally disable that text.)
 
-   **Note:** your conda version should be at least 4.6.
+   Type ``conda -V`` to see the version number.  *NB:* It should be at
+   least 4.6.
 
    
-Sidenote
---------
+.. comment out this info? guess so.
 
-What has Conda done to **initialize** things in the terminal?  It has
-stuck some commands into your shell's startup file; in my
-``~/.bashrc`` file (because I use ``bash`` shell), I can now see the
-following text::
+   Sidenote
+   --------
 
-  
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/USERNAME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-	eval "$__conda_setup"
-    else
-	if [ -f "/home/USERNAME/miniconda3/etc/profile.d/conda.sh" ]; then
-	    . "/home/USERNAME/miniconda3/etc/profile.d/conda.sh"
-	else
-	    export PATH="/home/USERNAME/miniconda3/bin:$PATH"
-	fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
-\.\.\. where ``USERNAME`` is replaced with my actual username.  If you
-chose to install miniconda in a different location than your home
-directory, then the paths shown would be different.  
-
-Note that conda/miniconda gets setup with path names hardwired into
-its files, so you will **not** just be able to move your "miniconda3"
-directory and update these path locations later and still have it
-work.
+   What has Conda done to **initialize** things in the terminal?  It has
+   stuck some commands into your shell's startup file; in my
+   ``~/.bashrc`` file (because I use ``bash`` shell), I can now see the
+   following text::
 
 
-Disable conda prompt string (opt)
----------------------------------
+       # >>> conda initialize >>>
+       # !! Contents within this block are managed by 'conda init' !!
+       __conda_setup="$('/home/${USER}/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+       if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+       else
+      if [ -f "/home/${USER}/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/${USER}/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/home/${USER}/miniconda3/bin:$PATH"
+      fi
+       fi
+       unset __conda_setup
+       # <<< conda initialize <<<
 
-I **do** want to have a conda environment up and running in each new
-terminal by default (so that Python is immediately available), but I
-**don't** like having "(base)" appearing before my prompt all the
-time.  To turn it off, you can just run::
-  
-  conda config --set changeps1 False
+   \.\.\. where ``${USER}`` is replaced with my actual username.  If you
+   chose to install miniconda in a different location than your home
+   directory, then the paths shown would be different.  
 
-and then in each new terminal, you won't have that appear anymore.
-(To make your existing terminal recognize this change, source your
-shell's ``~/.*rc`` file, e.g. ``source ~/.bashrc`` or ``source
-~/.cshrc``.)
+   Note that conda/miniconda gets setup with path names hardwired into
+   its files, so you will **not** just be able to move your "miniconda3"
+   directory and update these path locations later and still have it
+   work.
 
-If in the future you want to **re-enable** this behavior, then you can
-always run::
-  
-  conda config --set changeps1 True
+Load/exit basic conda environments
+-------------------------------------
 
-Make basic conda environments
----------------------------------
-
-To see what conda environments are currently available on your
-computer, you can type::
+To see the list of currently available conda environments, type::
 
   conda env list
 
-The name of all available environments will appear in the first
-column, as well as their locations in the second.  The environment
-which is currently loaded will have an asterisk ``*`` after its name.
+The name of each available environment appears in the first column
+(its file location appears in the second).  The currently active
+environment has an asterisk ``*`` after its name (one might not be
+loaded).
 
-To create a new environment, at its simplest you can specify a Python
-version and a set of modules to install, such as::
+To load or "activate" an environment in that list called ``ENV_NAME``,
+type::
+
+  conda activate ENV_NAME
+
+To exit or "deactivate" the current environment, type::
+
+  conda deactivate
+
+Make+check conda environments (e.g., Python for AFNI)
+------------------------------------------------------------
+
+There are many aspects to creating a new environment.  We only provide
+the most basic here.  For example, conda can manage much more
+complicated environments, beyond loading just Python+modules.
+
+Here is an example of creating a new environment, one that packages
+Python version 3.9 and a few useful modules (whose unspecified version
+numbers will be whatever conda decides)::
   
   conda create -y                 \
-        -n py37_afni_tiny         \
-        python=3.7                \
+        -n py39_afni_tiny         \
+        python=3.9                \
         matplotlib numpy scipy
 
-where the new environment's name will be "py37_afni_tiny"; I called it
-this because that is basically the minimal set of modules used within
-AFNI (and even those aren't used very often).
+This new environment's name is "py39_afni_tiny"; I called it this
+because that is basically the minimal set of modules used within AFNI
+(at present).
 
 To make a similar setup for Python 2.7 (no earlier versions of Python
 should be used), one could run::
@@ -215,169 +229,161 @@ should be used), one could run::
          -n py27_afni_tiny         \
          python=2.7                \
          matplotlib numpy scipy    \
-         pillow ipython
+         pillow 
 
 Now, if I type ``conda list env``, I will see a list of all my
-available environments::
+available environments (where ``${USER}`` would actually be replaced
+by my username)::
 
    # conda environments:
    #
-   base                  *  /home/USERNAME/miniconda3
-   py27_afni_tiny           /home/USERNAME/miniconda3/envs/py27_afni_tiny
-   py37_afni_tiny           /home/USERNAME/miniconda3/envs/py37_afni_tiny
+   base                  *  /home/${USER}/miniconda3
+   py27_afni_tiny           /home/${USER}/miniconda3/envs/py27_afni_tiny
+   py39_afni_tiny           /home/${USER}/miniconda3/envs/py39_afni_tiny
 
-To turn off a Conda environment, you can run::
+As noted above, to switch to ``py39_afni_tiny``, I would type::
 
-  conda deactivate
-
-To activate a particular environment, you can run ``conda activate
-NAME``, such as::
-
-    conda activate py27_afni_tiny
+  conda activate py39_afni_tiny
 
 To see what modules are installed in your active environment (and
 their version numbers) you can run::
 
    conda list
 
-\.\.\. which, in the current "py27_afni_tiny" would be as follows (and
+\.\.\. which, in the current "py39_afni_tiny" would be as follows (and
 you might have slightly different things):
 
 .. hidden-code-block:: none
    :starthidden: True
    :label: - show list output y/n -
 
-   # packages in environment at /home/ptaylor/miniconda3/envs/py27_afni_tiny:
+   # packages in environment at /home/ptaylor/miniconda3/envs/py39_afni_tiny:
    #
    # Name                    Version                   Build  Channel
-   backports                 1.0                        py_2    anaconda
-   backports.functools_lru_cache 1.6.1                      py_0    anaconda
-   backports.shutil_get_terminal_size 1.0.0                    py27_2    anaconda
-   backports_abc             0.5                        py_1    anaconda
-   blas                      1.0                         mkl    anaconda
-   ca-certificates           2020.10.14                    0    anaconda
-   certifi                   2019.11.28               py27_0    anaconda
-   cycler                    0.10.0                   py27_0    anaconda
-   dbus                      1.13.18              hb2f20db_0    anaconda
-   decorator                 4.4.2                      py_0    anaconda
-   enum34                    1.1.6                    py27_1    anaconda
-   expat                     2.2.10               he6710b0_2    anaconda
-   fontconfig                2.13.0               h9420a91_0    anaconda
-   freetype                  2.10.4               h5ab3b9f_0    anaconda
-   functools32               3.2.3.2                  py27_1    anaconda
-   futures                   3.3.0                    py27_0    anaconda
-   glib                      2.56.2               hd408876_0    anaconda
-   gst-plugins-base          1.14.0               hbbd80ab_1    anaconda
-   gstreamer                 1.14.0               hb453b48_1    anaconda
-   icu                       58.2                 he6710b0_3    anaconda
-   intel-openmp              2020.2                      254    anaconda
-   ipython                   5.8.0                    py27_1    conda-forge
-   ipython_genutils          0.2.0                    py27_0    anaconda
-   jpeg                      9d                   h36c2ea0_0    conda-forge
-   kiwisolver                1.1.0            py27he6710b0_0    anaconda
-   libblas                   3.9.0           1_h6e990d7_netlib    conda-forge
-   libcblas                  3.9.0           3_h893e4fe_netlib    conda-forge
-   libedit                   3.1.20191231         h14c3975_1    anaconda
-   libffi                    3.3                  he6710b0_2    anaconda
-   libgcc-ng                 9.1.0                hdf63c60_0    anaconda
-   libgfortran-ng            7.5.0               h14aa051_18    conda-forge
-   libgfortran4              7.5.0               h14aa051_18    conda-forge
-   liblapack                 3.9.0           3_h893e4fe_netlib    conda-forge
-   libpng                    1.6.37               hbc83047_0    anaconda
-   libstdcxx-ng              9.1.0                hdf63c60_0    anaconda
-   libtiff                   4.1.0                h2733197_1    anaconda
-   libuuid                   1.0.3                h1bed415_2    anaconda
-   libxcb                    1.14                 h7b6447c_0    anaconda
-   libxml2                   2.9.10               hb55368b_3    anaconda
-   lz4-c                     1.9.2                heb0550a_3    anaconda
-   matplotlib                2.2.3            py27hb69df0a_0    anaconda
-   mkl                       2019.4                      243    anaconda
-   mkl-service               2.3.0            py27he904b0f_0    anaconda
-   mkl_fft                   1.0.15           py27ha843d7b_0    anaconda
-   mkl_random                1.1.0            py27hd6b4f25_0    anaconda
-   ncurses                   6.2                  he6710b0_1    anaconda
-   numpy                     1.16.6           py27hbc911f0_0    anaconda
-   numpy-base                1.16.6           py27hde5b4d6_0    anaconda
-   olefile                   0.46                     py27_0    anaconda
-   openssl                   1.1.1h               h7b6447c_0    anaconda
-   pathlib2                  2.3.5                    py27_0    anaconda
-   pcre                      8.44                 he6710b0_0    anaconda
-   pexpect                   4.8.0              pyh9f0ad1d_2    conda-forge
-   pickleshare               0.7.5                    py27_0    anaconda
-   pillow                    6.2.1            py27hd70f55b_1    conda-forge
-   pip                       19.3.1                   py27_0    anaconda
-   prompt_toolkit            1.0.15                     py_1    conda-forge
-   ptyprocess                0.6.0                    py27_0    anaconda
-   pygments                  2.3.1                    py27_0    anaconda
-   pyparsing                 2.4.7                      py_0    anaconda
-   pyqt                      5.9.2            py27h22d08a2_1    anaconda
-   python                    2.7.18               h15b4118_1    anaconda
-   python-dateutil           2.8.1                      py_0    anaconda
-   pytz                      2020.1                     py_0    anaconda
-   qt                        5.9.7                h5867ecd_1    anaconda
-   readline                  8.0                  h7b6447c_0    anaconda
-   scandir                   1.10.0           py27h7b6447c_0    anaconda
-   scipy                     1.2.1            py27h921218d_2    conda-forge
-   setuptools                44.0.0                   py27_0    anaconda
-   simplegeneric             0.8.1                    py27_2    anaconda
-   singledispatch            3.4.0.3                 py_1001    anaconda
-   sip                       4.19.13          py27he6710b0_0    anaconda
-   six                       1.15.0                     py_0    anaconda
-   sqlite                    3.33.0               h62c20be_0    anaconda
-   subprocess32              3.5.4            py27h7b6447c_0    anaconda
-   tk                        8.6.10               hbc83047_0    anaconda
-   tornado                   5.1.1            py27h7b6447c_0    anaconda
-   traitlets                 4.3.3                    py27_0    anaconda
-   wcwidth                   0.2.5                      py_0    anaconda
-   wheel                     0.35.1                     py_0    anaconda
-   xz                        5.2.5                h7b6447c_0    anaconda
-   zlib                      1.2.11               h7b6447c_3    anaconda
-   zstd                      1.4.4                h0b5b093_3    anaconda
+   _libgcc_mutex             0.1                        main  
+   _openmp_mutex             4.5                       1_gnu  
+   blas                      1.0                         mkl  
+   brotli                    1.0.9                he6710b0_2  
+   ca-certificates           2021.10.26           h06a4308_2  
+   certifi                   2021.10.8        py39h06a4308_0  
+   cycler                    0.11.0             pyhd3eb1b0_0  
+   dbus                      1.13.18              hb2f20db_0  
+   expat                     2.4.1                h2531618_2  
+   fontconfig                2.13.1               h6c09931_0  
+   fonttools                 4.25.0             pyhd3eb1b0_0  
+   freetype                  2.11.0               h70c0345_0  
+   giflib                    5.2.1                h7b6447c_0  
+   glib                      2.69.1               h5202010_0  
+   gst-plugins-base          1.14.0               h8213a91_2  
+   gstreamer                 1.14.0               h28cd5cc_2  
+   icu                       58.2                 he6710b0_3  
+   intel-openmp              2021.4.0          h06a4308_3561  
+   jpeg                      9d                   h7f8727e_0  
+   kiwisolver                1.3.1            py39h2531618_0  
+   lcms2                     2.12                 h3be6417_0  
+   ld_impl_linux-64          2.35.1               h7274673_9  
+   libffi                    3.3                  he6710b0_2  
+   libgcc-ng                 9.3.0               h5101ec6_17  
+   libgfortran-ng            7.5.0               ha8ba4b0_17  
+   libgfortran4              7.5.0               ha8ba4b0_17  
+   libgomp                   9.3.0               h5101ec6_17  
+   libpng                    1.6.37               hbc83047_0  
+   libstdcxx-ng              9.3.0               hd4cf53a_17  
+   libtiff                   4.2.0                h85742a9_0  
+   libuuid                   1.0.3                h7f8727e_2  
+   libwebp                   1.2.0                h89dd481_0  
+   libwebp-base              1.2.0                h27cfd23_0  
+   libxcb                    1.14                 h7b6447c_0  
+   libxml2                   2.9.12               h03d6c58_0  
+   lz4-c                     1.9.3                h295c915_1  
+   matplotlib                3.5.0            py39h06a4308_0  
+   matplotlib-base           3.5.0            py39h3ed280b_0  
+   mkl                       2021.4.0           h06a4308_640  
+   mkl-service               2.4.0            py39h7f8727e_0  
+   mkl_fft                   1.3.1            py39hd3c417c_0  
+   mkl_random                1.2.2            py39h51133e4_0  
+   munkres                   1.1.4                      py_0  
+   ncurses                   6.3                  h7f8727e_2  
+   numpy                     1.21.2           py39h20f2e39_0  
+   numpy-base                1.21.2           py39h79a1101_0  
+   olefile                   0.46               pyhd3eb1b0_0  
+   openssl                   1.1.1l               h7f8727e_0  
+   packaging                 21.3               pyhd3eb1b0_0  
+   pcre                      8.45                 h295c915_0  
+   pillow                    8.4.0            py39h5aabda8_0  
+   pip                       21.2.4           py39h06a4308_0  
+   pyparsing                 3.0.4              pyhd3eb1b0_0  
+   pyqt                      5.9.2            py39h2531618_6  
+   python                    3.9.7                h12debd9_1  
+   python-dateutil           2.8.2              pyhd3eb1b0_0  
+   qt                        5.9.7                h5867ecd_1  
+   readline                  8.1.2                h7f8727e_0  
+   scipy                     1.7.3            py39hc147768_0  
+   setuptools                58.0.4           py39h06a4308_0  
+   sip                       4.19.13          py39h2531618_0  
+   six                       1.16.0             pyhd3eb1b0_0  
+   sqlite                    3.37.0               hc218d9a_0  
+   tk                        8.6.11               h1ccaba5_0  
+   tornado                   6.1              py39h27cfd23_0  
+   tzdata                    2021e                hda174b7_0  
+   wheel                     0.37.1             pyhd3eb1b0_0  
+   xz                        5.2.5                h7b6447c_0  
+   zlib                      1.2.11               h7f8727e_4  
+   zstd                      1.4.9                haebb681_0  
 
 
 So, in this environment, I could run a program that imports
 matplotlib, whereas in the "base" environment, I couldn't.
 
-To add a module to an existing environment, you can use the following
-syntax::
+Add to+update conda environments
+-------------------------------------
 
-  conda install -n <env_name> <package>
+To add a new package or module ``NEW_PACK`` to an existing environment
+``ENV_NAME``, one can use the following syntax::
+
+  conda install -n ENV_NAME NEW_PACK
 
 \.\.\. so, for example example, you could add the scipy module to one
 of the above environments with::
 
-  conda install -n py27_afni_tiny scipy
+  conda install -n py27_afni_tiny ipython
 
-To update a module or package in a currently active environment, you
-can use::
+To update a module or package ``CURR_PACK`` in a currently active
+environment, you can use::
 
-  conda update <package>
+  conda update CURR_PACK
 
 \.\.\. for example,::
 
   conda update matplotlib
 
+So, let's say you want one primary environment on your OS to have all
+your packages of interest loaded, so you don't have to hop between
+environments when using different programs.  You could make one that
+has everything you know you need loaded now, and then in the future
+you could simply keep adding to it.  This might be useful with AFNI,
+in particular, because there are so few requirements here (modern
+Python with a very small number of modules).
 
 
 Specify default environment for the terminal
 -----------------------------------------------
 
-From the Conda initialization, the "base" environment is the default
-one running in any new terminal.  We might prefer to make one of our
-newly made environments the default.  To do so, I will include a line
-``conda activate NAME`` in my shell's ``~/.*rc`` file somewhere
-*after* the "conda initialize" lines.
+By default, conda will load the "base" environment in any new
+terminal.  To instead have a different environment ``ENV_NAME`` loaded
+in each new terminal/shell, we can add the line ``conda activate
+ENV_NAME`` in the shell's ``~/.*rc`` file somewhere *after* the ``#
+>>> conda initialize >>>`` lines.
 
-Thus, since I am running "bash" shell, I have the following line in my
-``~/.bashrc`` \file::
+Since I am running "bash" shell, I have added the following line in my
+``~/.bashrc`` \file (by opening that file with a text editor)::
 
-  conda activate py37_afni_tiny
+  conda activate py39_afni_tiny
 
-Once you source that ``~/.*rc`` file again or open a new terminal, you
-should see that specific environment loaded (look for the asterisked
-env in the output of ``conda env list``).  If it *didn't* work,
-please check that your conda version is at least 4.6 (via ``conda
--V``).
+After sourcing that file or opening a new terminal, ``conda env list``
+should show that environment loaded, in this and in any new terminals.
+If that did *not* work, please check that that the conda version is at
+least 4.6 (via ``conda -V``).
 
 If you do choose to automatically activate your own env like this,
 then you might also want to run this in a terminal::
@@ -386,6 +392,205 @@ then you might also want to run this in a terminal::
 
 so that conda doesn't pre-load the "base" environment unnecessarily
 (taking a bit of time).
+
+
+Disable conda prompt string (opt)
+---------------------------------
+
+Personally I **don't** like having the name of the conda environment
+always appearing before my prompt, like "(base)" or whatever.  To not
+display that text, you can run::
+  
+  conda config --set changeps1 False
+
+To make your existing terminal recognize this change, source your
+shell's ``~/.*rc`` file, e.g. ``source ~/.bashrc`` or ``source
+~/.cshrc``. Or open a new terminal.
+
+If in the future you want to **re-enable** this behavior, then you can
+always run::
+  
+  conda config --set changeps1 True
+
+These commands edit a text file called ``~/.condarc``.  You can open
+it and see what defaults/settings you have made, if you wish.
+
+
+.. _install_miniconda_quick:
+
+Set up Conda (quick)
+==========================
+
+1. **Download and install**
+
+   |
+
+   * *\.\.\. for Linux*::
+
+       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       bash Miniconda3-latest-Linux-x86_64.sh -b
+
+   * *\.\.\. for Mac*::
+
+       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       bash Miniconda3-latest-MacOSX-x86_64.sh -b
+
+#. **Initialize conda in shells**
+
+   ::
+
+     conda init bash tcsh zsh
+
+#. **Make updates known to terminal**
+
+   |
+   | Open a new terminal, or source your shell's ``~/.*rc`` file.
+   |
+
+#. **Remove annoying prompt string (opt)**
+
+   ::
+
+      conda config --set changeps1 False
+
+
+#. **Make some new environments: AFNI minimal Python**
+
+   ::
+
+      conda create -y                 \
+            -n py39_afni_tiny         \
+            python=3.9                \
+            matplotlib numpy scipy
+
+      conda create -y                 \
+            -n py27_afni_tiny         \
+            python=2.7                \
+            matplotlib numpy scipy    \
+            pillow 
+
+#. **Load an existing environment**
+
+   Copy+paste::
+   
+     conda activate ENV_NAME
+
+   For example, from above to setup for AFNI::
+
+     conda activate py39_afni_tiny
+
+#. **Activate an env by default**
+
+   |
+   | To activate some env ``ENV_NAME`` by default, put ``conda
+     activate ENV_NAME`` in your shell's ``~/.*rc`` file, *after* the
+     ``# <<< conda initialize <<<`` line.
+   | For example, to set up for AFNI,
+     put ``conda activate py39_afni_tiny`` there.
+
+   *NB1:* This assumes your conda version (``conda -V``) is at
+   least 4.6.
+
+   *NB2:* If you do automatically activate your own env, then also
+   copy+paste the following to not pre-load the "base" env (adding
+   unnecessary time)::
+
+     conda config --set auto_activate_base false
+
+   | *NB3:* In general, you don't want to keep appending different
+     ``conda activate ...`` commands in a ``~/.*rc`` file, as each one
+     takes a bit of time.
+   |
+
+#. **Add to an existing environment**
+
+   Once you have built an environment, if you decide you another
+   package that you might have forgotten, you can do so with:
+
+   ::
+
+      conda install -n ENV_NAME  PACK_NAME
+
+
+   For example, 
+
+   ::
+
+      conda install -n py27_afni_tiny pandas
+
+
+#. **Quicktasks with Conda**
+
+   List modules (starred/asterisked one is active)::
+
+     conda env list
+
+   Deactivate current module::
+
+     conda deactivate
+
+   Activate/switch to a specific module::
+
+     conda activate NAME
+
+   See module+version list in current env::
+
+     conda list
+
+   Update a package in the current environment::
+
+     conda update PACKAGE
+
+
+A note on making envs, re. AFNI and more
+===========================================
+
+It is entirely up to you, Dear User, what modules you install and how
+you organize your environments (and if you even *choose* to use
+Conda).  At the moment AFNI has very minimal Python requirements. In
+fact, the AFNI set of recommended modules might simply fit inside
+those requirements that you have for other software/uses, and you
+might not need to do anything new.
+
+We certainly don't anticipate or desire a person to set up one
+specific environment for running AFNI, then another for running some
+other software, and then another for another project\.\.\.  While that
+is possible, it seems annoying and inefficient, and often unnecessary.
+So, hopefully, you can set up one environment (or a small number of
+them) and not have to switch too much.
+
+
+Fancier things with Conda
+=========================
+
+There are a lot of fancy things that can be done with Conda that we
+will not describe here.  A good starting point is the `Managing
+Environments documentation
+<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_.
+
+Cloning
+-------
+
+One concept with Conda is **cloning environments**: if I can setup a
+Conda environment on my laptop with a certain set of modules, each
+with a certain version number, then I can "clone" it and use that
+exact recipe to setup a duplicate environment on a different computer.
+This is a nice concept for reproducibility (as sometimes using
+different version numbers of modules can affect outputs/results).
+
+`More on cloning and building identical conda envs can be read
+<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#cloning-an-environment>`_.
+
+Note that in practice, truly duplicating environments exactly is
+actually pretty tough.  Getting very close might be good enough for
+most purposes, though, in practice.
+
+View Conda Cheatsheet
+----------------------
+
+It's here: `the conda cheatsheet
+<https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>`_.
+
 
 Make conda environments, more generally
 -----------------------------------------
@@ -451,193 +656,4 @@ result in success this time.
 **Thus, if you try to build an environment and get told that some
 desired module can't be found, you can search for it amongst available
 channels, add that channel to your Conda setup, and try again.**
-
-.. _install_miniconda_quick:
-
-Set up Conda (quick)
-==========================
-
-1. **Download and install**
-
-   At ensuing prompts, I mostly type "yes" and/or accept default
-   options; see verbose description above.
-
-   * *For Linux and tcsh*::
-
-       set script_file = Miniconda3-latest-Linux-x86_64.sh
-       curl -O https://repo.anaconda.com/miniconda/${script_file}
-       bash ${script_file}
-
-     when done::
-
-       source ~/.cshrc
-
-   * *For Linux and bash*::
-
-       script_file=Miniconda3-latest-Linux-x86_64.sh
-       curl -O https://repo.anaconda.com/miniconda/${script_file}
-       bash ${script_file}
-
-     when done::
-
-       source ~/.bashrc
-
-   * *For Mac and tcsh*::
-
-       set script_file = Miniconda3-latest-MacOSX-x86_64.sh
-       curl -O https://repo.anaconda.com/miniconda/${script_file}
-       bash ${script_file}
-
-     when done::
-
-       source ~/.cshrc
-
-   * *For Mac and bash*::
-
-       script_file=Miniconda3-latest-MacOSX-x86_64.sh
-       curl -O https://repo.anaconda.com/miniconda/${script_file}
-       bash ${script_file}
-
-     when done::
-
-       source ~/.bashrc
-
-#. **Remove annoying prompt string (opt)**
-
-   ::
-
-      conda config --set changeps1 False
-
-#. **Add any channels, if needed (opt)**
-
-   Many standard modules are default channels, but one can add more as
-   necessary, e.g.::
-
-      conda config --add channels conda-forge --add channels anaconda
-
-   To find out what channel has your module of interest, use the
-   searchbar at the top of this page: https://anaconda.org
-
-#. **Make some new environments**
-
-   ::
-
-      conda create -y                 \
-            -n py37_afni_tiny         \
-            python=3.7                \
-            matplotlib numpy scipy
-
-      conda create -y                 \
-            -n py27_afni_tiny         \
-            python=2.7                \
-            matplotlib numpy scipy    \
-            pillow ipython
-
-#. **Add to an existing environment**
-
-   ::
-
-      conda install -n py27_afni_tiny scipy
-
-#. **Activate an env by default**
-
-   Specify the env to activate in your ``~/.*rc`` file. 
-
-   Open up the ``~/.bashrc`` or ``~/.cshrc`` text file and put
-   ``conda activate NAME`` **after** the conda-initialization lines
-   in that file, or, e.g. copy+paste:
-
-   * *For tcsh*::
-
-       echo "" >> ~/.cshrc
-       echo "conda activate py37_afni_tiny" >> ~/.cshrc
-       echo "" >> ~/.cshrc
-
-   * *For bash*::
-
-       echo "" >> ~/.bashrc
-       echo "conda activate py37_afni_tiny" >> ~/.bashrc
-       echo "" >> ~/.bashrc
-
-   **Note:** This assumes your conda version (``conda -V``) is at
-   least 4.6.
-
-   If you do automatically activate your own env, then you might also
-   want to do this::
-
-     conda config --set auto_activate_base false
-
-   so that conda doesn't pre-load the "base" environment unnecessarily
-   (taking a bit of time).
-
-#. **Quicktasks with Conda**
-
-   List modules (starred/asterisked one is active)::
-
-     conda env list
-
-   Deactivate current module::
-
-     conda deactivate
-
-   Activate/switch to a specific module::
-
-     conda activate NAME
-
-   See module+version list in current env::
-
-     conda list
-
-   Update a package in the current environment::
-
-     conda update PACKAGE
-
-
-Fancier things with Conda
-=========================
-
-There are a lot of fancy things that can be done with Conda that we
-will not describe here.  A good starting point is the `Managing
-Environments documentation
-<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_.
-
-Cloning
--------
-
-One concept with Conda is **cloning environments**: if I can setup a
-Conda environment on my laptop with a certain set of modules, each
-with a certain version number, then I can "clone" it and use that
-exact recipe to setup a duplicate environment on a different computer.
-This is a nice concept for reproducibility (as sometimes using
-different version numbers of modules can affect outputs/results).
-
-`More on cloning and building identical conda envs can be read
-<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#cloning-an-environment>`_.
-
-Note that in practice, truly duplicating environments exactly is
-actually pretty tough.  Getting very close might be good enough for
-most purposes, though, in practice.
-
-View Conda Cheatsheet
-----------------------
-
-It's here: `the conda cheatsheet <https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>`_.
-
-
-A note on making envs and choosing modules
-===========================================
-
-It is entirely up to you, Dear User, what modules you install and how
-you organize your environments (and if you even *choose* to use
-Conda).  At the moment AFNI-land has pretty minimal Python
-requirements. In fact, the AFNI set of recommended modules might
-simply fit inside those requirements that you have for other
-software/uses, and you might not need to do anything new.
-
-We certainly don't anticipate or desire a person to set up one
-specific environment for running AFNI, then another for running some
-other software, and then another for another project... While that is
-possible, it seems annoying and inefficient.  And unnecessary.  So,
-hopefully, you can set up one environments (or maybe two, because of
-the Python-2.7 and Python-3.* split), and not have to switch too much.
 
