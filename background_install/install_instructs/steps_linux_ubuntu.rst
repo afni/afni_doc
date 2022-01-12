@@ -89,7 +89,9 @@ Install AFNI binaries
 Install R
 ---------
 
-1. For ... 
+1. Check your shell type (``echo $0``). For ... 
+
+   |
 
    * ... a ``tcsh`` terminal, copy+paste::
    
@@ -106,8 +108,6 @@ Install R
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu.tcsh
-
-   (To check your shell type, copy+paste: ``echo $0``)
 
    **Purpose:** Step 1 of setting up modern R from scratch. Set the
    environment variable ``$R_LIBS`` to specify where to install+find

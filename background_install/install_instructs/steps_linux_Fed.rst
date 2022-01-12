@@ -11,21 +11,31 @@
 
 .. highlight:: none
 
-What to do?
------------
 
 These setup instructions are for modern **Linux versions** of **Fedora
 (21+)**.
 
+Things to note before starting
+--------------------------------
+
 .. include:: substep_intro.rst
 
-#. To open a text file, you can type ``gedit FILENAME``.  For
-   example, to open the bash "rc" file::
+#. **To open a text file,** use any text editor you like, and/or you
+   can type ``gedit FILENAME``, such as either::
+
+     gedit ~/.bashrc 
 
      gedit ~/.bashrc &
 
-Install prerequisite packages
------------------------------
+
+Quick setup
+----------------------------------
+
+.. include:: substep_quickbuild_linux_Fed.rst
+
+
+(slow setup) Install prerequisite packages
+---------------------------------------------
 
 1. To be able to install latest packages, copy+paste::
 
@@ -42,8 +52,9 @@ Install prerequisite packages
   **Purpose:** Installs a lot of packages that AFNI depends on (so we
   don't have to reinvent the wheel!).
          
-Install AFNI binaries
----------------------
+
+(slow setup) Install AFNI binaries
+---------------------------------------
 
 1. Choose one of the following approaches:
 
@@ -69,10 +80,12 @@ Install AFNI binaries
    ``~/.cshrc`` and ``~/.bashrc``.
 
 
-Install R
----------
- 
-1. For ... 
+(slow setup) Install R
+--------------------------
+
+1. Check your shell type (``echo $0``). For ... 
+
+   |
 
    * ... a ``tcsh`` terminal, copy+paste::
    
@@ -90,8 +103,6 @@ Install R
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        . ~/.bashrc
 
-   (To check your shell type, copy+paste: ``echo $0``)
-
    | **Purpose:** Set the environment variable ``$R_LIBS`` to specify
      where to install+find the **R** packages.
    | 
@@ -106,38 +117,62 @@ Install R
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
-Setup Python (opt)
----------------------------------
-
-.. include:: substep_miniconda.rst
 
 
-Prepare for Bootcamp
---------------------
+(slow setup) Prepare for Bootcamp
+-----------------------------------
 
 .. include:: substep_bootcamp.rst
 
 
-Evaluate setup/system (**important!**)
---------------------------------------------
+(slow setup) Evaluate setup/system (**important!**)
+-----------------------------------------------------
 
 .. include:: substep_evaluate.rst
 
 
-Niceify terminal (optional, but goood)
---------------------------------------
+(slow setup) Niceify terminal (optional, but goood)
+---------------------------------------------------
 
 .. include:: substep_rcfiles.rst
 
-Install extras (optional, but recommended for Bootcamp prep)
-------------------------------------------------------------------
+
+(slow setup) Install extras (optional, but recommended for Bootcamp prep)
+----------------------------------------------------------------------------
 
 .. include:: substep_extra_packs.rst
 
-Keep up-to-date (remember!)
----------------------------
+
+(slow setup) Keep up-to-date (remember!)
+------------------------------------------------
 
 .. include:: substep_update.rst
+
+
+A note on setting up Python/using Conda (opt)
+-----------------------------------------------
+
+*For this OS, you should* not *need to do anything further to set up
+your Python*.
+
+.. include:: substep_miniconda.rst
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .. older, set term shell:

@@ -27,7 +27,6 @@ Things to note before starting
      gedit ~/.bashrc &
 
 
-
 Quick setup
 ----------------------------------
 
@@ -126,8 +125,9 @@ Quick setup
 (slow setup) Install R
 --------------------------
  
-1. For \.\.\. 
+1. Check your shell type (``echo $0``). For ... 
 
+   |
 
    * \.\.\. a ``tcsh`` terminal, copy+paste::
    
@@ -142,8 +142,6 @@ Quick setup
        mkdir  $R_LIBS
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
-
-   (To check your shell type, copy+paste: ``echo $0``)
 
    | **Purpose:** Set the environment variable ``$R_LIBS`` to specify
      where to install+find the **R** packages.
@@ -205,6 +203,7 @@ Quick setup
 
 #. Also, consider extending time for screen saver: ``System Settings``
    -> ``Brightness & Lock``, and set inactivity duration.
+
 
 (slow setup) Install extras (optional, but recommended for Bootcamp prep)
 ----------------------------------------------------------------------------
