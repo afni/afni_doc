@@ -24,18 +24,22 @@ to these instructions!*
 
      gedit ~/.bashrc &
 
-Install prerequisite packages
------------------------------
+
+
+Quick setup
+----------------------------------
+
+.. include:: substep_quickbuild_linux_ubuntu_20_64.rst
+
+
+(slow setup) Install prerequisite packages
+---------------------------------------------
  
 1. Copy+paste each of the following::
 
      sudo add-apt-repository universe
 
-   | ::
-
      sudo add-apt-repository -y "ppa:marutter/rrutter4.0"
-
-   | ::
 
      sudo add-apt-repository -y "ppa:marutter/c2d4u3.5"
 
@@ -47,8 +51,6 @@ Install prerequisite packages
 #. Copy+paste each of the following::
 
      sudo apt-get update
-
-   | ::
 
      sudo apt-get install -y tcsh xfonts-base libssl-dev       \
                              python-is-python3                 \
@@ -93,8 +95,8 @@ Install prerequisite packages
    **Purpose:** Make a symbolic link for the specific version of GSL
    included in this version of Ubuntu. 
 
-Install AFNI binaries
----------------------
+(slow setup) Install AFNI binaries
+---------------------------------------
 
 1. Choose one of the following approaches:
 
@@ -119,8 +121,8 @@ Install AFNI binaries
    ``~/.cshrc`` and ``~/.bashrc``.
 
 
-Install R
----------
+(slow setup) Install R
+--------------------------
  
 1. For \.\.\. 
 
@@ -179,20 +181,20 @@ Install R
 .. ---------- HERE/BELOW: copy for all installs --------------
 
 
-Prepare for Bootcamp
---------------------
+(slow setup) Prepare for Bootcamp
+-----------------------------------
 
 .. include:: substep_bootcamp.rst
 
 
-Evaluate setup/system (**important!**)
-----------------------------------------
+(slow setup) Evaluate setup/system (**important!**)
+-----------------------------------------------------
 
 .. include:: substep_evaluate.rst
 
 
-Niceify terminal (optional, but goood)
---------------------------------------
+(slow setup) Niceify terminal (optional, but goood)
+---------------------------------------------------
 
 .. include:: substep_rcfiles.rst
 
@@ -202,28 +204,21 @@ Niceify terminal (optional, but goood)
 #. Also, consider extending time for screen saver: ``System Settings``
    -> ``Brightness & Lock``, and set inactivity duration.
 
-Install extras (optional, but recommended for Bootcamp prep)
------------------------------------------------------------------
+(slow setup) Install extras (optional, but recommended for Bootcamp prep)
+----------------------------------------------------------------------------
 
 .. include:: substep_extra_packs.rst
 
-Keep up-to-date (remember!)
----------------------------
+(slow setup) Keep up-to-date (remember!)
+------------------------------------------------
 
 .. include:: substep_update.rst
 
 
-Setup Python (opt)
-----------------------------------------
+A note on setting up Python/using Conda (opt)
+-----------------------------------------------
 
 *For this OS, you should* not *need to do anything further to set up
 your Python*.
 
 .. include:: substep_miniconda.rst
-
-
-Quick setup (condensed instructs)
-----------------------------------
-
-.. include:: substep_quickbuild_linux_ubuntu_20_64.rst
-
