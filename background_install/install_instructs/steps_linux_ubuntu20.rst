@@ -10,17 +10,19 @@
 
 .. highlight:: none
 
-What to do?
------------
-
 These setup instructions are for **Ubuntu Linux version 20.04** (Focal
 Fossa). *And a note of thanks to Chris Rorden, who contributed advice
 to these instructions!*
 
+Things to note before starting
+--------------------------------
+
 .. include:: substep_intro.rst
 
-#. To open a text file, you can type ``gedit FILENAME``.  For
-   example, to open the bash "rc" file::
+#. **To open a text file,** use any text editor you like, and/or you
+   can type ``gedit FILENAME``, such as either::
+
+     gedit ~/.bashrc 
 
      gedit ~/.bashrc &
 
