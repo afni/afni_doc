@@ -1,0 +1,26 @@
+# Used for processing in: 
+#    
+#    Steinhauser JL, Teed AR, Al-Zoubi O, Hurlemann R, Chen G, Khalsa
+#    SS (2022). Functional dissection of neural connectivity in
+#    generalized anxiety disorder.
+#    https://www.biorxiv.org/content/10.1101/2022.01.09.475543v1
+#
+# See also the project github page for further scripts and files:
+#    https://github.com/Jonas-Ste/GAD_MBA_FC
+#
+# NB: This version contains minor changes to linespacing, from the
+# github repository version (for aesthetic purposes).  No content
+# word/command was changed.
+#
+##############################################################################
+
+
+MBA                                                  \
+    -prefix      Iso_MBA_full_output -Y cor_z        \
+    -chains      4                                   \
+    -iterations  1000                                \
+    -model       '1+group'                           \
+    -cVars       'group'                             \
+    -EOI         'group'                             \
+    -dataTable   MBA_input_full.txt                  \
+    -ROIlist     ROIlist.txt
