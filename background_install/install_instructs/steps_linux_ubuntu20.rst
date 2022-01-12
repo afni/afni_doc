@@ -128,7 +128,6 @@ Install R
        setenv R_LIBS $HOME/R
        mkdir  $R_LIBS
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       echo  'export R_LIBS=$HOME/R' >> ~/.zshrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
 
    * \.\.\. a ``bash`` terminal, copy+paste::
@@ -136,7 +135,6 @@ Install R
        export R_LIBS=$HOME/R
        mkdir  $R_LIBS
        echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       echo  'export R_LIBS=$HOME/R' >> ~/.zshrc
        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
 
    (To check your shell type, copy+paste: ``echo $0``)
