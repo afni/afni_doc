@@ -87,7 +87,6 @@ Install AFNI binaries
    ``$HOME/abin/``; and add that location to the ``$PATH`` in both
    ``~/.cshrc`` and ``~/.bashrc``.
 
-.. include:: substep_profiles.rst
 
 Install R
 ---------

@@ -94,7 +94,6 @@ Install AFNI binaries
    ``$HOME/abin/``; and add that location to the ``$PATH`` in both
    ``~/.cshrc`` and ``~/.bashrc``.
 
-.. include:: substep_profiles.rst
 
 Install R
 ---------
@@ -139,10 +138,6 @@ Setup Python (opt)
 
 .. include:: substep_miniconda.rst
 
-Make AFNI/SUMA profiles
------------------------
-
-.. include:: substep_profiles.rst
 
 Prepare for Bootcamp
 --------------------

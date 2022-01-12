@@ -47,12 +47,6 @@ Install AFNI binaries
 .. include:: substep_mac_abin.rst
 
 
-Set default AFNI+SUMA environment variables
---------------------------------------------
-
-.. include:: substep_profiles.rst
-
-
 Reboot
 ------
 

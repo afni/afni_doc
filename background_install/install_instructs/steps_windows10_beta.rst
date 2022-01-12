@@ -176,11 +176,6 @@ a. Install Ubuntu terminal fonts as described `HERE
 .. ---------- HERE/BELOW: copy for all installs --------------
 
 
-Make AFNI/SUMA profiles
------------------------
-
-.. include:: substep_profiles.rst
-
 Prepare for Bootcamp
 --------------------
 
