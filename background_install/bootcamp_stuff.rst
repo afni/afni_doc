@@ -21,7 +21,9 @@
 
      - for other Linux:
 
-       a. :ref:`RedHat, CentOS or Fedora <install_steps_linux_Fed_RH>`
+       a. :ref:`Fedora <install_steps_linux_Fed>`
+
+       #. :ref:`RedHat/CentOS <install_steps_linux_RH>`
 
      - for Mac OS X: 
        

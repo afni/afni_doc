@@ -27,15 +27,15 @@ to these instructions!*
 Install prerequisite packages
 -----------------------------
  
-1. Copy+paste::
+1. Copy+paste each of the following::
 
      sudo add-apt-repository universe
 
-   Copy+paste::
+   | ::
 
      sudo add-apt-repository -y "ppa:marutter/rrutter4.0"
 
-   Copy+paste::
+   | ::
 
      sudo add-apt-repository -y "ppa:marutter/c2d4u3.5"
 
@@ -44,9 +44,11 @@ Install prerequisite packages
      installation.
    |
 
-#. Copy+paste each::
+#. Copy+paste each of the following::
 
      sudo apt-get update
+
+   | ::
 
      sudo apt-get install -y tcsh xfonts-base libssl-dev       \
                              python-is-python3                 \

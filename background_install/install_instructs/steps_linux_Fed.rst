@@ -1,9 +1,9 @@
 .. from: https://afni.nimh.nih.gov/pub/dist/HOWTO/howto/ht00_inst/html/linux_inst_current.html
 
-.. _install_steps_linux_Fed_RH:
+.. _install_steps_linux_Fed:
 
 
-**Linux, Fedora and Red Hat**
+**Linux, Fedora**
 ==========================================================
 
 .. contents:: The essential system setup
@@ -15,8 +15,7 @@ What to do?
 -----------
 
 These setup instructions are for modern **Linux versions** of **Fedora
-(21+)** and **Red Hat (RHEL) 7**, along with the corresponding
-**CentOS 7**.
+(21+)**.
 
 .. include:: substep_intro.rst
 
@@ -32,9 +31,7 @@ Install prerequisite packages
 
      sudo yum update
 
-#. For ...
-
-   * *... Fedora*, copy+paste::
+#. Copy+paste::
    
        sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
@@ -42,53 +39,30 @@ Install prerequisite packages
                            python3-matplotlib
        sudo yum update -y
    
-   * *... CentOS/RHEL 7*, copy+paste::
-
-       sudo yum install -y epel-release
-       sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
-                           PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
-                           libpng12 xorg-x11-server-Xvfb firefox              \
-                           python3-matplotlib
-       sudo yum update -y
-
   **Purpose:** Installs a lot of packages that AFNI depends on (so we
   don't have to reinvent the wheel!).
          
 Install AFNI binaries
 ---------------------
 
-1. For ...
+1. Choose one of the following approaches:
 
-   * *... installing binaries from online on Fedora*, copy+paste::
+   * *(default) To install the binaries from online*, copy+paste::
 
        cd
        curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
        tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
 
-   * *... installing binaries from online on CentOS/RHEL 7*, copy+paste::
+
+   * *(alternative) To install already-downloaded binaries,* use
+     ``-local_package ..`` (replacing ``PATH_TO_FILE`` with the actual
+     path; also, if ``@update.afni.binaries`` has also been
+     downloaded, you can skip the ``curl ..`` command), copy+paste::
 
        cd
        curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-       tcsh @update.afni.binaries -package linux_centos_7_64 -do_extras
-
-   * *... (alternative) installing already-downloaded binaries,*
-     you can use ``-local_package ..`` (replace "PATH_TO_FILE" with
-     the actual path; also, if ``@update.afni.binaries`` has also been
-     downloaded, you can skip the ``curl ..`` command), ...:
-
-     * *... on Fedora*, copy+paste::
-
-         cd
-         curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-         tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
+       tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
  
-     * *... on CentOS/RHEL 7*, copy+paste::
-
-         cd
-         curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-         tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_centos_7_64.tgz -do_extras
-
-
    **Purpose:** Download and unpack the current binaries in your
    ``$HOME`` directory; set the AFNI binary directory name to
    ``$HOME/abin/``; and add that location to the ``$PATH`` in both
@@ -118,19 +92,18 @@ Install R
 
    (To check your shell type, copy+paste: ``echo $0``)
 
-   **Purpose:** Setup modern R from scratch. This relies on the
-   environment variable ``$R_LIBS``, to specify where to install the
-   packages and where to read them from later (when R programs
-   run). The last command sources the relevant RC file so the present
-   terminal knows about the updates.
+   | **Purpose:** Set the environment variable ``$R_LIBS`` to specify
+     where to install+find the **R** packages.
+   | 
 
 #. Copy+paste::
      
      rPkgsInstall -pkgs ALL
 
    **Purpose:** Get specific R packages needed for AFNI programs. This
-   step might take a while to complete.
-     
+   step might take a while (of order an hour) to complete as R
+   compiles packages. Sigh.
+
 .. ---------- HERE/BELOW: copy for all installs --------------
 
 Setup Python (opt)

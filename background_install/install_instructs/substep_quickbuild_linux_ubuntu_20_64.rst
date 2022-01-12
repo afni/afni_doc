@@ -111,12 +111,6 @@ Then run each of them, as described below.
       source ~/.cshrc
       
       
-      echo "++ Setup AFNI env vars"
-      
-      cp $HOME/abin/AFNI.afnirc $HOME/.afnirc
-      suma -update_env
-      
-      
       echo "++ Download Bootcamp data"
       
       curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD.tgz
