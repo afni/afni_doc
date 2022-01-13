@@ -519,50 +519,51 @@ Set up Conda (quick)
       conda install -n py27_afni_tiny pandas
 
 
-#. **Quicktasks with Conda**
+**Quicktasks with Conda**
+==========================
 
-   List modules (starred/asterisked one is active)::
+List available modules (starred/asterisked one is active)::
 
-     conda env list
+  conda env list
 
-   Deactivate current module::
+Deactivate current module::
 
-     conda deactivate
+  conda deactivate
 
-   Activate/switch to a specific environment/module::
+Activate/switch to a specific environment/module::
 
-     conda activate ENV_NAME
+  conda activate ENV_NAME
 
-   See module+version list in current env::
+See module+version list in current env::
 
-     conda list
+  conda list
 
-   Update a package in the current environment::
+Update a package in the current environment::
 
-     conda update PACKAGE
+  conda update PACKAGE
 
-   Add a package to some environment::
+Add a package to some environment::
 
-      conda install -n ENV_NAME PACK_NAME
+   conda install -n ENV_NAME PACK_NAME
 
-   Add a channel to an active environment (with top priority among
-   channels)::
+Add a channel to an active environment (with top priority among
+channels)::
 
-     conda config --add channels NEW_CHANNEL 
+  conda config --add channels NEW_CHANNEL 
 
-   Add a channel to an active environment (with *bottom* priority
-   among channels)::
+Add a channel to an active environment (with *bottom* priority
+among channels)::
 
-     conda config --append channels NEW_CHANNEL 
+  conda config --append channels NEW_CHANNEL 
 
-   Remove an existing environment (``ENV_NAME`` cannot be active when
-   this command is run)::
+Remove an existing environment (``ENV_NAME`` cannot be active when
+this command is run)::
 
-     conda remove --name ENV_NAME --all
+  conda remove --name ENV_NAME --all
 
-   Update conda program version::
+Update conda program version::
 
-     conda update -n base -c defaults conda
+  conda update -n base -c defaults conda
 
 A note on making envs, re. AFNI and more
 ===========================================
