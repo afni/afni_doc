@@ -197,9 +197,16 @@ if ( "$DO_BUILD" == "1" ) then
     # ------------- python stuff --------------------
     cd python_help_scripts
 
-    echo "++ STEP: Make quickbuild_instructs"
-    set dir_instructs = "../background_install/install_instructs"
-    python make_substeps_of_quickbuilds.py ${dir_instructs}
+    if ( 0 ) then
+        echo "++ STEP: Make quickbuild_instructs"
+        set dir_instructs = "../background_install/install_instructs"
+        python make_substeps_of_quickbuilds.py ${dir_instructs}
+    else
+        echo "+* STEP (disabled, temporarily): quickbuild_instructs"
+        echo "       Don't make separate quickbuild instructs at the moment."
+        echo "       Just use quickbuilds written 'as is'; user can read sep."
+        echo "       The files are changing too much; may revisit later."
+    endif
 
     echo "++ STEP: Make list of All Program Helps"
     set dir_allhelp = "../programs"

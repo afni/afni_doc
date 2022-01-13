@@ -5,6 +5,11 @@ import os
 
 from afnipy import afni_util as au
 
+print("+* [PT: Jan 13, 2022] Turning this off at the moment; "
+      "maybe revisit later")
+sys.exit(0)
+
+
 THIS_PROG = 'make_substeps_of_quickbuilds.py'
 NUM_ARGS  = 1
 
