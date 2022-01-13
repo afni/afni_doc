@@ -509,7 +509,7 @@ Set up Conda (quick)
 
    ::
 
-      conda install -n ENV_NAME  PACK_NAME
+      conda install -n ENV_NAME PACK_NAME
 
 
    For example, 
@@ -529,9 +529,9 @@ Set up Conda (quick)
 
      conda deactivate
 
-   Activate/switch to a specific module::
+   Activate/switch to a specific environment/module::
 
-     conda activate NAME
+     conda activate ENV_NAME
 
    See module+version list in current env::
 
@@ -540,6 +540,25 @@ Set up Conda (quick)
    Update a package in the current environment::
 
      conda update PACKAGE
+
+   Add a package to some environment::
+
+      conda install -n ENV_NAME PACK_NAME
+
+   Add a channel to an active environment (with top priority among
+   channels)::
+
+     conda config --add channels NEW_CHANNEL 
+
+   Add a channel to an active environment (with *bottom* priority
+   among channels)::
+
+     conda config --append channels NEW_CHANNEL 
+
+   Remove an existing environment (``ENV_NAME`` cannot be active when
+   this command is run)::
+
+     conda remove --name ENV_NAME --all
 
 
 A note on making envs, re. AFNI and more
