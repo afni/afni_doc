@@ -149,7 +149,7 @@ You can download and unpack the datasets in any of the following ways:
 
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.3.tgz
     tar -xvf NMT_v1.3.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
@@ -257,7 +257,7 @@ You can download and unpack the datasets in any of the following ways:
 
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v1.2.tgz
     tar -xvf NMT_v1.2.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link

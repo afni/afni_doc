@@ -166,7 +166,7 @@ if ( "$DO_BUILD" == "1" ) then
         # either download or reuse the directory
         if ( ! -d ${dir_sa_init} ) then 
             echo "++ Download SUMAFNI init dir: '${dir_sa_init}'"
-            wget https://afni.nimh.nih.gov/pub/dist/doc/${dir_sa_init}.tgz
+            curl -O https://afni.nimh.nih.gov/pub/dist/doc/${dir_sa_init}.tgz
             touch ${dir_sa_init}.tgz
             if ( $status ) then
                 echo "** ERROR: cannot download ${dir_sa_init}.tgz"

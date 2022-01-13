@@ -81,10 +81,10 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.bmn_subject_level_02_ap.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_subject_level_01_qwarp.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_subject_level_02_ap.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_group_level_02_mema.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.bmn_subject_level_02_ap.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_subject_level_01_qwarp.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_subject_level_02_ap.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018_TaylorEtal/s.nimh_group_level_02_mema.tcsh
 
 View scripts
 ============

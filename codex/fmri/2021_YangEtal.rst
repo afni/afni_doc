@@ -87,11 +87,11 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s1.2021_YangEtal_ap.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s2.2021_YangEtal_ap.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s3.2021_YangEtal_gen_ttest++.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s4.2021_YangEtal_gen_ANOVA2.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s5.2021_YangEtal_MVM.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s1.2021_YangEtal_ap.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s2.2021_YangEtal_ap.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s3.2021_YangEtal_gen_ttest++.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s4.2021_YangEtal_gen_ANOVA2.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2021_YangEtal/s5.2021_YangEtal_MVM.tcsh
 
 View scripts
 ============

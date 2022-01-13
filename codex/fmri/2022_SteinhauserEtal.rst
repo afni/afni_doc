@@ -80,8 +80,8 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2022_SteinhauserEtal/preprocessing_command_afniproc.sh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2022_SteinhauserEtal/run_MBA_full.txt
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2022_SteinhauserEtal/preprocessing_command_afniproc.sh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2022_SteinhauserEtal/run_MBA_full.txt
 
 View scripts
 ============

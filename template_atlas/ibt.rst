@@ -190,7 +190,7 @@ You can download and unpack these in any of the following ways:
 
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/tgz/IBT_DATASETS.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/tgz/IBT_DATASETS.tgz
     tar -xvf IBT_DATASETS.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link

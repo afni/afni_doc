@@ -39,7 +39,7 @@ any of the following ways:
 
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/D99_Saleem/D99_v2.0_dist.tgz
     tar -xvf D99_v2.0_dist.tgz
 
 * | *(the mouseclick+ way)* **click here**:

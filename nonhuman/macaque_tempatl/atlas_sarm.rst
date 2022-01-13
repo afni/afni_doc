@@ -145,7 +145,7 @@ You may download the SARM datasets separately, from the AFNI website
 using the links below.
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/SARM/SARM.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/SARM/SARM.tgz
     tar -xvf SARM.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link

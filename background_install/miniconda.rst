@@ -81,15 +81,15 @@ Download+install miniconda
 
    * *\.\.\. for Linux*::
 
-       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
    * *\.\.\. for Mac*::
 
-       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
-   If you don't have ``wget`` on your computer, you can instead
+   If you don't have ``curl -O`` on your computer, you can instead
    replace it with ``curl -O``.
 
    *NB:* The ``-b`` option runs the installer in "batch mode", saying
@@ -427,12 +427,12 @@ Set up Conda (*quick*)
 
    * *\.\.\. for Linux*::
 
-       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
    * *\.\.\. for Mac*::
 
-       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
 #. **Initialize conda in shells**

@@ -78,8 +78,8 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2016_ChenEtal/s.2016_ChenEtal_01_init.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2016_ChenEtal/s.2016_ChenEtal_02_ap.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2016_ChenEtal/s.2016_ChenEtal_01_init.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2016_ChenEtal/s.2016_ChenEtal_02_ap.tcsh
 
 View scripts
 ============

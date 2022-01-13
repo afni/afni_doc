@@ -177,7 +177,7 @@ v2 in any of the following ways:
 
 * *(the plain Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz
     tar -xvf NMT_v2.0_sym.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link
@@ -199,7 +199,7 @@ v2 in any of the following ways:
 
 * *(the Linux-y terminal way)* **copy+paste**::
 
-    wget https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz
+    curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz
     tar -xvf NMT_v2.0_asym.tgz
 
 * | *(the mouseclick+ way)* **click on** `this link

@@ -74,8 +74,8 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018b_ChenEtal/runBGA.tcsh
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018b_ChenEtal/test_ToMI_1106.txt
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018b_ChenEtal/runBGA.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018b_ChenEtal/test_ToMI_1106.txt
 
 View scripts
 ============

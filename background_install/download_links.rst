@@ -70,17 +70,17 @@ Unless otherwise stated, the binaries are for 64 bit systems.
   * `linux_ubuntu_16_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz>`_
        for Ubuntu (>= 16.04)::
 
-         wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz
+         curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_ubuntu_16_64.tgz
 
   * `linux_openmp_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz>`_
        for Ubuntu (<16), Fedora, Red Hat, etc.::
 
-         wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz
+         curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz
 
   * `linux_centos_7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_centos_7_64.tgz>`_
       for CentOS, Red Hat (RHEL 7)::
 
-        wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_centos_7_64.tgz
+        curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_centos_7_64.tgz
      
 .. _afni_bin_mac:
 
@@ -89,12 +89,12 @@ Unless otherwise stated, the binaries are for 64 bit systems.
   * `macos_10.12_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz>`_
       Mac 10.12 and higher:: 
 
-         wget https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz
+         curl -O https://afni.nimh.nih.gov/pub/dist/tgz/macos_10.12_local.tgz
 
   * `macosx_10.7_local.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz>`_
       Mac 10.7 - 10.11, **but these binaries are no longer updated (email with any questions)**::
 
-        wget https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz
+        curl -O https://afni.nimh.nih.gov/pub/dist/tgz/macosx_10.7_local.tgz
 
 .. _afni_bin_other:
 
@@ -103,17 +103,17 @@ Unless otherwise stated, the binaries are for 64 bit systems.
   * `linux_xorg7.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz>`_
        32 bit linux systems::
 
-         wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz
+         curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7.tgz
 
   * `linux_xorg7_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz>`_
       possibly other Linux, **but probably use one of the above options**:: 
 
-        wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz
+        curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_xorg7_64.tgz
        
   * `linux_fedora_21_64.tgz <https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz>`_
        Fedora 21, **but these binaries are no longer updated (at the moment)**::
 
-         wget https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz
+         curl -O https://afni.nimh.nih.gov/pub/dist/tgz/linux_fedora_21_64.tgz
 
 |
 
@@ -128,7 +128,7 @@ work) is to compile from the source itself:
 * `AFNI Source Code <https://afni.nimh.nih.gov/pub/dist/tgz/afni_src.tgz>`_
     Compilable source (can be built on most Linux/Unix/Mac)::
 
-      wget https://afni.nimh.nih.gov/pub/dist/tgz/afni_src.tgz
+      curl -O https://afni.nimh.nih.gov/pub/dist/tgz/afni_src.tgz
 
 There are several usable, example ``Makefile``\s included in the main
 ``afni_src/`` directory, as well as a couple (mainly for Linux
@@ -150,11 +150,11 @@ the precompiled platform versions:
 
 It also contains several standard reference brains and demo data
 sets. All files are downloadable by clicking on the links on the above
-page, and also by using command line functions such as ``curl`` or
-``wget``, such as::
+page, and also by using command line functions such as ``wget`` or
+``curl -O``, such as::
   
   curl -O https://afni.nimh.nih.gov/pub/dist/tgz/TTatlas+tlrc.*
-  wget https://afni.nimh.nih.gov/pub/dist/tgz/TTatlas+tlrc.*
+  curl -O https://afni.nimh.nih.gov/pub/dist/tgz/TTatlas+tlrc.*
 
 NB: for most demo sets, there is an ``@Install_*`` command to procure
 and open the directory.

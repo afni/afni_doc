@@ -63,7 +63,7 @@ To download, either:
 
 * \.\.\. or copy+paste into a terminal::
 
-    wget https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018a_ChenEtal/s.nimh_group_level_02_mema_bisided.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2018a_ChenEtal/s.nimh_group_level_02_mema_bisided.tcsh
 
 View scripts
 ============
