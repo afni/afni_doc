@@ -36,13 +36,19 @@ Quick setup
 (slow setup) Install prerequisite packages
 ---------------------------------------------
  
+.. note: for here and below, need to keep uptodate with this
+   (changing) page for Rstan/brms installation issues
+
+   https://github.com/stan-dev/rstan/wiki/Configuring-C-Toolchain-for-Linux
+
+
 1. Copy+paste each of the following::
 
      sudo add-apt-repository universe
 
      sudo add-apt-repository -y "ppa:marutter/rrutter4.0"
 
-     sudo add-apt-repository -y "ppa:marutter/c2d4u3.5"
+     sudo add-apt-repository -y "ppa:c2d4u.team/c2d4u4.0+"
 
    | **Purpose:** Being able to get dependencies from the latter two
      repositories is necessary for installing the ``brms`` R-package
