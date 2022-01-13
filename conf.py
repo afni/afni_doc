@@ -67,6 +67,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # 'mathjax', because I think the former looks muuuch better when
 # rendered online.  Still have to check about the 'make latexpdf', but
 # that has issues of its own at the moment.
+# PT: Jan 12, 2022: add sphinx_copybutton
 extensions = [
     'sphinxcontrib.fulltoc',
     'sphinx.ext.mathjax',
@@ -75,7 +76,8 @@ extensions = [
     'sphinxcontrib.programoutput',
     'sphinx.ext.doctest',
     'sphinxarg.ext',
-    'hidden_code_block'
+    'hidden_code_block',
+    'sphinx_copybutton'
 ]
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 

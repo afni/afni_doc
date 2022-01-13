@@ -13,6 +13,7 @@ dependencies:
   - sphinx
   - sphinx-argparse
   - sphinxcontrib-fulltoc
+  - sphinx-copybutton
   - tcsh
   - pip:
     - sphinxcontrib-programoutput
