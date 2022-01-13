@@ -68,7 +68,7 @@ later, so don't do it.
 
 .. _install_miniconda_verbose:
 
-Set up Conda (verbose)
+Set up Conda (*verbose*)
 ==========================
 
 
@@ -418,7 +418,7 @@ it and see what defaults/settings you have made, if you wish.
 
 .. _install_miniconda_quick:
 
-Set up Conda (quick)
+Set up Conda (*quick*)
 ==========================
 
 1. **Download and install**
@@ -519,8 +519,8 @@ Set up Conda (quick)
       conda install -n py27_afni_tiny pandas
 
 
-**Quicktasks with Conda**
-==========================
+Short list of conda commands
+=============================
 
 List available modules (starred/asterisked one is active)::
 

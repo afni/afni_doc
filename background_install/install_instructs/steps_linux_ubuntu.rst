@@ -11,16 +11,26 @@
 
 .. highlight:: none
 
-What to do?
------------
+These setup instructions are for **Ubuntu Linux version 20.04** (Focal
+Fossa). *And a note of thanks to Chris Rorden, who contributed advice
+to these instructions!*
 
-These setup instructions are for Ubuntu Linux versions 15.10
-(Wily Werewolf) and earlier.
+
+Things to note before starting
+--------------------------------
 
 .. include:: substep_intro.rst
 
-#. To open a text file, you can type ``gedit FILENAME``.  For
-   example, to open the bash "rc" file::
+#. **To copy and paste** in a Linux terminal, one can use
+   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
+   terminals, one might first enable this functionality: rightclick on
+   the panel's taskbar, select "Properties" and put a checkmark by
+   this option.)
+
+#. **To open a text file,** use any text editor you like, and/or you
+   can type ``gedit FILENAME``, such as either::
+
+     gedit ~/.bashrc 
 
      gedit ~/.bashrc &
 
@@ -41,6 +51,9 @@ Install prerequisite packages
                                gsl-bin netpbm xvfb gnome-tweak-tool     \
                                libjpeg62 xterm gedit evince firefox eog \
                                xfonts-100dpi
+
+     Copy+paste::
+
        sudo apt-get update
 
    * *... version 15.10*, copy+paste::
@@ -50,9 +63,21 @@ Install prerequisite packages
                                libmotif4 libmotif-dev motif-clients     \
                                gsl-bin netpbm xvfb gnome-tweak-tool     \
                                libjpeg62 firefox eog xfonts-100dpi
+
+     Copy+paste::
+
        sudo apt-get update
+
+     Copy+paste::
+
        sudo ln -s /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0
+
+     Copy+paste::
+
        sudo dpkg -i http://mirrors.kernel.org/ubuntu/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb
+
+     Copy+paste::
+
        sudo apt-get install -f
 
      (To check your version number, copy+paste: ``lsb_release -a``)

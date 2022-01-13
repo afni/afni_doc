@@ -20,6 +20,12 @@ Things to note before starting
 
 .. include:: substep_intro.rst
 
+#. **To copy and paste** in a Linux terminal, one can use
+   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
+   terminals, one might first enable this functionality: rightclick on
+   the panel's taskbar, select "Properties" and put a checkmark by
+   this option.)
+
 #. **To open a text file,** use any text editor you like, and/or you
    can type ``gedit FILENAME``, such as either::
 
@@ -47,7 +53,9 @@ Quick setup
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
                            xorg-x11-server-Xvfb firefox                       \
                            python3-matplotlib
-       sudo yum update -y
+   Copy+paste::
+
+     sudo yum update -y
    
   **Purpose:** Installs a lot of packages that AFNI depends on (so we
   don't have to reinvent the wheel!).

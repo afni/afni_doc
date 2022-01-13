@@ -11,18 +11,28 @@
 
 .. highlight:: none
 
-What to do?
------------
-
 These setup instructions are for modern **Linux versions** of **Red
 Hat (RHEL) 7**, along with the corresponding **CentOS 7**.
 
+
+Things to note before starting
+--------------------------------
+
 .. include:: substep_intro.rst
 
-#. To open a text file, you can type ``gedit FILENAME``.  For
-   example, to open the bash "rc" file::
+#. **To copy and paste** in a Linux terminal, one can use
+   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
+   terminals, one might first enable this functionality: rightclick on
+   the panel's taskbar, select "Properties" and put a checkmark by
+   this option.)
+
+#. **To open a text file,** use any text editor you like, and/or you
+   can type ``gedit FILENAME``, such as either::
+
+     gedit ~/.bashrc 
 
      gedit ~/.bashrc &
+
 
 Install prerequisite packages
 -----------------------------
@@ -33,11 +43,17 @@ Install prerequisite packages
 
 #. Copy+paste::
 
-       sudo yum install -y epel-release
-       sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
-                           PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
-                           libpng12 xorg-x11-server-Xvfb firefox              \
+     sudo yum install -y epel-release
+
+   Copy+paste::
+
+     sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc        \
+                           PyQt4 R-devel netpbm-progs gnome-tweak-tool ed    \
+                           libpng12 xorg-x11-server-Xvfb firefox             \
                            python3-matplotlib
+
+   Copy+paste::
+
        sudo yum update -y
 
   **Purpose:** Installs a lot of packages that AFNI depends on (so we

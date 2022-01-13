@@ -19,6 +19,12 @@ Things to note before starting
 
 .. include:: substep_intro.rst
 
+#. **To copy and paste** in a Linux terminal, one can use
+   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
+   terminals, one might first enable this functionality: rightclick on
+   the panel's taskbar, select "Properties" and put a checkmark by
+   this option.)
+
 #. **To open a text file,** use any text editor you like, and/or you
    can type ``gedit FILENAME``, such as either::
 
@@ -42,11 +48,15 @@ Quick setup
    https://github.com/stan-dev/rstan/wiki/Configuring-C-Toolchain-for-Linux
 
 
-1. Copy+paste each of the following::
+1. Copy+paste::
 
      sudo add-apt-repository universe
 
+   Copy+paste::
+
      sudo add-apt-repository -y "ppa:marutter/rrutter4.0"
+
+   Copy+paste::
 
      sudo add-apt-repository -y "ppa:c2d4u.team/c2d4u4.0+"
 
@@ -55,9 +65,11 @@ Quick setup
      installation.
    |
 
-#. Copy+paste each of the following::
+#. Copy+paste::
 
      sudo apt-get update
+
+   Copy+paste::
 
      sudo apt-get install -y tcsh xfonts-base libssl-dev       \
                              python-is-python3                 \
