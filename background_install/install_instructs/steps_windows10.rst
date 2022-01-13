@@ -9,22 +9,26 @@
 
 .. highlight:: none
 
-What to do?
------------
+These setup instructions are for setting up Ubuntu on **Windows 10**,
+through **Windows Subsystem for Linux (WSL).** 
 
-These setup instructions are for setting up Ubuntu on the **"Fall
-Creators Update" (FCU) version of Windows 10**, known as the **Windows
-Subsystem for Linux (WSL).** This FCU was released in Windows version
-1709 around October, 2017.
 
-See `this "What's New" page
-<https://blogs.msdn.microsoft.com/commandline/2017/10/11/whats-new-in-wsl-in-windows-10-fall-creators-update/>`_
-for more information about the Windows updates since their earlier
-beta version of having Ubuntu.  Mainly, the present installation is a
-lot easier now.  Yippee.
+Things to note before starting
+---------------------------------
 
-#. **The user must have admin privileges** (can run ``sudo ...``).
-   Some steps require an internet connection.
+0. **Each step** involves either copy+pasting a command, or clicking
+   on a download link.
+
+#. **Admin privileges** are needed for some steps: check if you can
+   run ``sudo ls``, entering the correct password.  If you can't,
+   perhaps ask an administrator to do that step, and you can do the
+   others that don't require it.
+
+#. **If** you run into any problems, please just ask a clear question on
+   the `AFNI Message Board
+   <https://afni.nimh.nih.gov/afni/community/board/>`_.
+
+
 
 Install Linux
 -----------------------------------
@@ -33,6 +37,64 @@ Install Linux
      select "Ubuntu 20.04" as your desired flavor of Linux:
    | `https://docs.microsoft.com/en-us/windows/wsl/install-manual
      <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_
+   | We list the same steps below, with some (possibly helpful) additional
+     comments.
+     
+
+   **NB:** It may not be possible to run Windows PowerShell while the
+   OS is in "S mode".  Since the PowerShell is needed to install WSL,
+   you might have to leave S mode to be able to have Linux on current
+   Windows 10.  It may not be possible to re-enter S mode once you
+   leave, so please be aware of this choice.
+
+   **How to switch out of S mode** *if you want*:
+
+     Windows Start Menu key -> Settings (or gear icon) -> Update &
+     Security -> Activation (in left panel) -> under "Switch to
+     Windows 10 Home" select the "Go to the Store" link by the
+     shopping bag -> Select the "Get" button under "Switch out of S
+     mode".
+
+   **Step 1: Enable the Windows Subsystem for Linux**
+
+      | Open PowerShell *as as administrator*:
+      | ``WinKey+r`` -> type "powershell" -> ``Ctrl+Shift+Enter`` ->
+        select "Yes" to make changes to your computer
+      | \.\.\. and the top bar of the terminal that opens should have
+        "Administrator: Windows PowerShell"
+      
+      | Copy the terminal text:
+
+        .. code::
+
+           dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+      | To be able to paste into the PowerShell terminal: right click
+        on PowerShell top bar -> Properties -> under "Options" tab and
+        "Edit Options" box, put a check next to "Use Ctrl+Shift+C/V as
+        Copy/Paste".  After this, you can use ``Ctrl+Shift+c`` to
+        paste the above ``dism.exe ...`` command; then hit ``Enter``
+        to run it.
+
+   **Restart Windows device**
+
+   *(jump to)* **Step 6: Install your Linux distribution of choice**
+
+      | Select ``Ubuntu 20.04 LTS``.
+      | On next page, click "Get" button under Ubuntu 20.04 LTS.
+      | Click on "Install" when asked.
+      | Click on "Launch" when asked.
+
+      | Wait for the the installation to finish.
+      
+      | Create a user account (``UNIX username``) and password when
+        prompted in the terminal.
+
+   *Congratulations, Phase One of installation is complete, but there
+   is more to go\.\.\.*
+
+   Close the terminal before proceeding to the next step.
+
 
 
 .. older: this guides people to WSL 2, which is not very good at the moment
@@ -50,22 +112,35 @@ Install VcXsrv Windows X Server
 1. | Click here to start automatic download:
    | `https://sourceforge.net/projects/vcxsrv/files/latest/download
      <https://sourceforge.net/projects/vcxsrv/files/latest/download>`_
+   | Click/open the downloaded ``vcxsrv*.exe``, and allow permissions
+     for it.
    | Use default installation settings.  
+   | When the installer finishes, you should have a new ``XLaunch``
+     icon on your desktop
+   |
 
-#. *Now and forever,* **first** doubleclick on the VcXsrv icon on your
-   Desktop, and **then** start Ubuntu, for example by typing "ubuntu"
-   in the Windows search bar.  (Sorry, not our design!)
+#. | *Now and forever when you want to run the WSL terminal:* 
+   | **First** doubleclick on the VcXsrv/XLaunch icon
+     on your Desktop
+   | Select "Next" for all prompts, and then "Finish".
+   | **Then** start Ubuntu, for example by selecting WinKey -> Ubuntu,
+     or by searching for "Ubuntu" in the search bar. (After opening,
+     you can rightclick on the icon that appears in the bottom panel,
+     and select "Pin to taskbar", to be able to select more quickly.)
+   | *Sorry, this is not our design!*
+   |
 
 #. **To enable copy+paste ability in Ubuntu terminal,** right-click on
    the toolbar at the top of the Ubuntu terminal, and select
    "Properties"; in the Options tab, make sure the box next to
    "QuickEdit Mode" is selected.
 
-   You can then paste into a terminal by either right-clicking or
-   hitting the "Enter" key.  (To "copy" text that is *in* the
-   terminal, just highlight it, and then you should be able to
-   right-click to paste; to "copy" text from *outside* the terminal,
-   you probably need to highlight it and hit "Ctrl+c".)
+   | You can then paste into a terminal by either right-clicking or
+     hitting the "Enter" key.  (To "copy" text that is *in* the
+     terminal, just highlight it, and then you should be able to
+     right-click to paste; to "copy" text from *outside* the terminal,
+     you probably need to highlight it and hit "Ctrl+c".)
+   |
 
 #. Copy+paste::
 
@@ -74,20 +149,21 @@ Install VcXsrv Windows X Server
      echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
      echo "setenv NO_AT_BRIDGE 1" >> ~/.cshrc
 
-   **Purpose:** First, set DISPLAY properly, so you can open GUIs like
-   ``afni``, ``suma``, etc.  Then, avoid having some
-   very-non-necessary GTK warnings from programs.
-    
+   | **Purpose:** First, set DISPLAY properly, so you can open GUIs like
+     ``afni``, ``suma``, etc.  Then, avoid having some
+     very-non-necessary GTK warnings from programs.
+   |
+
 #. Close (exit) Ubuntu terminal, so that changes are effected the next
    time you open it.
 
 More setup tips for Ubuntu+Windows
 ---------------------------------------------
 
-1. Install Ubuntu terminal fonts as described `under "Bonus: Install
-   the Ubuntu Font for a True Ubuntu Experience" on this page (waaay
-   down)
-   <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
+1. | Install Ubuntu terminal fonts as described `under "Bonus: Install
+     the Ubuntu Font for a True Ubuntu Experience" on this page (waaay
+     down)
+     <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`_.
 
 #. | The default profile "use colors from system theme" shows an
      all-black terminal.  To adjust this to something nicer: 
@@ -95,48 +171,14 @@ More setup tips for Ubuntu+Windows
    | Select the ``Edit`` tab, then ``Profile``, 
    | Turn **off** "use colors ...", and just pick a scheme+palette
      that you like.
+   |
 
 #. | **Note:**
    | In gnome-terminal, things are similar to other Linux
      implementations. The middle button pastes whatever is
      highlighted in the WSL terminal or other gnome-terminal:
      ``shift-ctrl-c`` copies, and ``shift-ctrl-v`` also pastes.
-
-Transferring data between Ubuntu and Windows 
----------------------------------------------
-
-#. You can "see" your Windows file system from the Ubuntu side, where
-   it appears as ``/mnt/c/``.  For example, if your Windows username
-   is USERNAME, then the following would copy a file called FILE.pdf
-   on your Windows Desktop to your current Ubuntu terminal location::
-
-     cp /mnt/c/Users/USERNAME/Desktop/FILE.pdf .
-
-#. To mount external devices (e.g., a USB) from the Ubuntu side.
-   Let's say your external device appears as the "G:" drive on Windows
-   when you plug it into a USB port.  You could mount that drive from
-   Ubuntu as follows::
-
-     sudo mkdir /mnt/g                # make a mount point location; 'g' is a convenient label here
-     sudo mount -t drvfs G: /mnt/g    # mount the external drive to it
-
-   If you had a file FILE.nii on the "G:" drive USB, you could now
-   copy it to your present location with::
-
-     cp /mnt/g/FILE.nii .
-
-   **To safely unmount the USB before unplugging it**, type::
-
-     sudo umount /mnt/g
-
-   *Bonus note:* you can mount/unmount network shares in a similar way::
-
-     sudo mkdir /mnt/share
-     sudo mount -t drvfs '\\server\share' /mnt/share
-
-     ...
-
-     sudo umount /mnt/share
+   |
 
 Install prerequisite: AFNI and package dependencies
 ----------------------------------------------------
@@ -163,42 +205,42 @@ Install prerequisite: AFNI and package dependencies
    your Windows computer (though, realize it is Linux that makes this
    happen!).
 
-.. ---------- HERE/BELOW: copy for all installs --------------
 
-Setup Python (opt)
----------------------------------
+A note on transferring data between Ubuntu and Windows 
+---------------------------------------------------------
 
-.. include:: substep_miniconda.rst
+#. You can "see" your Windows file system from the Ubuntu side, where
+   it appears as ``/mnt/c/``.  For example, if your Windows username
+   is USERNAME, then the following would copy a file called FILE.pdf
+   on your Windows Desktop to your current Ubuntu terminal location::
 
-Prepare for Bootcamp
---------------------
+     cp /mnt/c/Users/USERNAME/Desktop/FILE.pdf .
 
-.. include:: substep_bootcamp.rst
+#. | To mount external devices (e.g., a USB) from the Ubuntu side.
+     Let's say your external device appears as the "G:" drive on
+     Windows when you plug it into a USB port.  You could mount that
+     drive from Ubuntu as follows, where---
+   | the first command makes a mount point location ('g' is a 
+     convenient label here), and
+   | the second mounts the external drive to it::
 
-Evaluate setup/system (important!)
-----------------------------------
+     sudo mkdir /mnt/g
+     sudo mount -t drvfs G: /mnt/g
 
-.. include:: substep_evaluate.rst
+   If you had a file FILE.nii on the "G:" drive USB, you could now
+   copy it to your present location with::
 
-Niceify terminal (optional, but goood)
---------------------------------------
+     cp /mnt/g/FILE.nii .
 
-.. include:: substep_rcfiles.rst
+   **To safely unmount the USB before unplugging it**, type::
 
-Install extras (optional, but recommended for Bootcamp prep)
------------------------------------------------------------------
+     sudo umount /mnt/g
 
-.. include:: substep_extra_packs.rst
+   *Bonus note:* you can mount/unmount network shares in a similar way::
 
-Keep up-to-date (remember!)
----------------------------
+     sudo mkdir /mnt/share
+     sudo mount -t drvfs '\\server\share' /mnt/share
 
-.. include:: substep_update.rst
+     ...
 
-.. figure:: media/AFNI_on_Windows10_2ways.jpg
-   :align: center
-   :figwidth: 70%
-   :name: media/AFNI_on_Windows10_2ways.jpg
-   
-
-
+     sudo umount /mnt/share
