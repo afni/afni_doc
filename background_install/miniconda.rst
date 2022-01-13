@@ -560,6 +560,9 @@ Set up Conda (quick)
 
      conda remove --name ENV_NAME --all
 
+   Update conda program version::
+
+     conda update -n base -c defaults conda
 
 A note on making envs, re. AFNI and more
 ===========================================
