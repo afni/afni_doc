@@ -11,3 +11,4 @@ Templates & Atlases
    howto
    sswarper_base
    ibt
+   other_tas
