@@ -245,7 +245,7 @@ if ( "$DO_BUILD" == "1" ) then
         ../educational/all_afni_cbars.rst
 
     echo "++ STEP: Make pretty list of other templates+atlases"
-    echo make_list_of_pub_dist_atlases.py
+    python make_list_of_pub_dist_atlases.py
 
     # [PT: Mar 8, 2019] added
     if ( -e $aho_dir ) then
