@@ -305,7 +305,8 @@ If you perform test-rest reliability analysis with the ``TRR`` program
 
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Haller SP (2021).
     Trial and error: a hierarchical modeling approach to test-retest
-    assessment. bioRxiv 2021.01.04.425305 (and accepted in NeuroImage).
+    assessment. NeuroImage 245:118647.
+  | `<https://doi.org/10.1016/j.neuroimage.2021.118647>`_
   | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v3>`_
     
 If you use IntraClass Correlation (ICC) methods within AFNI via
@@ -625,8 +626,9 @@ neuroimaging from the perspectives of both statistical efficiency and
 condition-level generalizability:
 
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Taylor PA, Haller
-    SP. Hyperbolic trade-off: the importance of balancing trial and
-    subject sample sizes in neuroimaging. Neuroimage *(accepted)*.
+    SP (2022). Hyperbolic trade-off: the importance of balancing trial 
+    and subject sample sizes in neuroimaging. NeuroImage 247:118786.
+  | `<https://doi.org/10.1016/j.neuroimage.2021.118786>`_
   | `<https://www.biorxiv.org/content/10.1101/2021.07.15.452548v1.full>`_
 
 In this commentary, we suggest: 1) adopting a modeling approach
@@ -637,7 +639,7 @@ over-reduction in result reporting:
 * | Chen G, Taylor PA, Stoddard J, Cox RW, Bandettini PA, Pessoa L.
     Sources of information waste in neuroimaging: mishandling
     structures, thinking dichotomously, and over-reducing
-    data. *(submitted)*.
+    data. *(Aperture: accepted)*.
   | `<https://www.biorxiv.org/content/10.1101/2021.05.09.443246v2.full>`_
 
 For work checking out different methods of diffusion/DWI acquisition
@@ -871,9 +873,9 @@ MAP-MRI (and data are available in NIFTI and GIFTI formats):
 * | Saleem KS, Avram AV, Glen D, Yen CC-C, Ye FQ, Komlosh M, Basser PJ
     (2021).  High-resolution mapping and digital atlas of subcortical
     regions in the macaque monkey based on matched MAP-MRI and
-    histology. Neuroimage *(accepted)* 118759.
-  | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
+    histology. Neuroimage 245:118759.
   | `<https://doi.org/10.1016/j.neuroimage.2021.118759>`_
+  | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
 
 Data projects: NIFTI format
 ==============================

@@ -33,19 +33,20 @@ examples of interest.  These lists will likely grow over time.
    .. hlist:: 
       :columns: 3
 
-      * ``afni_proc.py``
-      * ``@SSwarper``
-      * ``3dClusterize``
+      * ``3dANOVA2``
       * ``3dclust``
+      * ``3dClusterize``
       * ``3dClustSim``          
       * ``3dmask_tool``
-      * ``BayesianGroupAna.py`` 
-      * ``recon-all`` (FS)    
-      * ``@SUMA_Make_Spec_FS``
-      * ``gen_group_command.py``
-      * ``3dttest++``
       * ``3dMEMA``              
-      * ``3dANOVA2``
+      * ``3dttest++``
+      * ``afni_proc.py``
+      * ``BayesianGroupAna.py`` 
+      * ``gen_group_command.py``
+      * ``MBA``
+      * ``recon-all`` (FS)    
+      * ``@SSwarper``
+      * ``@SUMA_Make_Spec_FS``
 
 
 **Study keywords by category**
