@@ -31,7 +31,9 @@ set DO_GEN_SUMA = 0        # [PT: 28 Dec 2021] run SUMA GUI (def: off)
 #                   (pub/dist/doc/htmldoc_sumafni_init.tgz), and can
 #                   be regenerated if need be (but they don't change
 #                   often. Should reduce the number of compile warnings.
- 
+#
+# [PT: 20 Jan 2022] add in 'other template+atlas' page
+
 # ======================================================================
 
 if ( $#argv == 0 ) goto SHOW_HELP
@@ -241,6 +243,9 @@ if ( "$DO_BUILD" == "1" ) then
     python make_file_of_all_afni_cbars.py          \
         ../educational/media/cbars                 \
         ../educational/all_afni_cbars.rst
+
+    echo "++ STEP: Make pretty list of other templates+atlases"
+    echo make_list_of_pub_dist_atlases.py
 
     # [PT: Mar 8, 2019] added
     if ( -e $aho_dir ) then
