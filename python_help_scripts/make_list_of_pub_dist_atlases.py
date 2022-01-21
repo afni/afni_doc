@@ -49,8 +49,8 @@ Overview
 =========
 
 A default set of atlases and templates are distributed with the AFNI
-binaries (the `atlases_current.tgz
-<{link_atlases}atlases_current.tgz>`__).  
+binaries (the `afni_atlases_dist.tgz
+<{link_atlases}afni_atlases_dist.tgz>`__).  
 There are also additional atlas and template datasets (both human and
 non-human) that can be downloaded, which are listed below.  This list
 is likely to expand over time.
