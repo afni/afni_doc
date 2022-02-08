@@ -554,15 +554,17 @@ consider citing:
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
 
 If you want to note the good performance of AFNI's defacing/refacing
-tool ``@afni_refacer_run``, you can check out those OHBM-2020 poster
-that found it the overall best among currently available tools:
+tool ``@afni_refacer_run``, you can check out this independent study
+that found it to be the overall best among currently available tools
+(also presented at OHBM 2020):
 
-* | Theyers A, Arnott SR, Zamyadi M, O'Reilly M, Bartha R, Symons S,
-    MacQueen G, Hassel S, Lerch JP, Anagnostou E, Strother SC
-    (2020). Comparison of MRI Defacing Software Across Multiple
-    Cohorts.  Presented at the Organization for Human Brain
-    Mapping, 2020.
-  | `<https://cdn-akamai.6connex.com/645/1827//OHBM2020Poster_15919688426481638.pdf>`_
+* | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
+    GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
+    Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
+    SR (2021). Multisite Comparison of MRI Defacing Software Across
+    Multiple Cohorts. Front. Psychiatry 12:617997. doi:
+    10.3389/fpsyt.2021.617997
+  | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
 
 If you want to note the good performance of AFNI's volume registration
 for motion correction with ``3dvolreg``, you might consider:
