@@ -783,6 +783,30 @@ using multiple metrics of deformation distance and overlap:
 Data projects: animal templates and atlases
 ==============================================
 
+*Multimodal Marmoset resource.* This project provides a new resource
+for marmoset brain mapping, which integrates the largest awake
+resting-state fMRI dataset to date (39 marmosets, 709 runs, and 12053
+mins), cellular- level neuronal-tracing dataset (52 marmosets and 143
+injections), and multi-resolution diffusion MRI dataset:
+
+* | Tian X, Chen Y, Majka P, Szczupak D, Perl YS, Yen CC, Tong C, Song
+    K, Jiang H, Glen D, Deco G, Rosa MGP, Silva AC, Liang Z, Liu C
+    (2022). Integrated resource for functional and structural
+    connectivity of the marmoset brain. (*submitted*) bioRxiv
+    2021.11.12.468389.
+  | `<https://www.biorxiv.org/content/10.1101/2021.11.12.468389v1>`_
+
+*Marmoset atlas v3.* This project provides new population-based
+in-vivo standard templates and tools derived from multi-modal data of
+27 marmosets, including multiple types of T1w and T2w contrast images,
+DTI contrasts, large field-of-view MRI and CT images, atlases and
+surfaces:
+
+* | Liu C, Yen CC, Szczupak D, Tian X, Glen D, Silva AC
+    (2021). Marmoset Brain Mapping V3: Population multi-modal standard
+    volumetric and surface-based templates. Neuroimage 226:117620.
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7908070/>`_
+
 *Marmoset atlas v2.* This project provides some of the highest
 resolution nonhuman primate MRI templates and atlas for gray and white
 matter with multi-modal MRI imaging at 0.150 mm, 0.060 mm, 0.080 mm
