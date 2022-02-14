@@ -132,12 +132,21 @@ if ( "$DO_BUILD" == "1" ) then
 
     echo "++ START: Do documentation build"
 
+    set env_list = `conda env list | grep sphinxdocs`
+    if ( $status ) then
+        echo "** Failure to find 'sphinxdocs' with 'conda env list'."
+        echo "   Please make sure you have the environment set up,"
+        echo "   which is made from environment.yml in the afni_doc/ dir."
+        exit 1
+    endif
+
+
     # preliminary checks to make sure some things have been installed
     if ( $DO_DEVDOCS ) then
 
         set env_list = `conda env list | grep afni_dev`
         if ( $status ) then
-            echo "** Failure to find 'afni_dev' with 'conda env list'/"
+            echo "** Failure to find 'afni_dev' with 'conda env list'."
             echo "   Please make sure you have the environment set up."
             exit 1
         endif
@@ -198,6 +207,8 @@ if ( "$DO_BUILD" == "1" ) then
 
     # ------------- python stuff --------------------
     cd python_help_scripts
+
+    conda activate sphinxdocs
 
     if ( 0 ) then
         echo "++ STEP: Make quickbuild_instructs"
