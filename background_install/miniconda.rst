@@ -102,10 +102,11 @@ Download+install miniconda
 
 #. **To initialize conda in shells, copy+paste**::
      
-     conda init bash tcsh zsh
+     ~/miniconda3/bin/conda init bash tcsh zsh
 
    This puts conda setup text into each of the above shell's
-   ``~/.*rc`` files.
+   ``~/.*rc`` files (the relative path to ``conda`` must be given when
+   using the batch mode installation in the previous step).
 
    *NB:* Conda/miniconda gets setup with path names hardwired into its
    files, so you can\ *not* just move your "miniconda3" directory and
@@ -440,7 +441,7 @@ Set up Conda (*quick*)
 
    ::
 
-     conda init bash tcsh zsh
+     ~/miniconda3/bin/conda init bash tcsh zsh
 
 #. **Make updates known to terminal**
 
