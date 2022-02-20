@@ -137,7 +137,7 @@ if ( "$DO_BUILD" == "1" ) then
         echo "** Failure to find 'sphinxdocs' with 'conda env list'."
         echo "   Please make sure you have the environment set up,"
         echo "   which is made from environment.yml in the afni_doc/ dir."
-        exit 1
+        goto BAD_EXIT
     endif
 
 
@@ -148,7 +148,7 @@ if ( "$DO_BUILD" == "1" ) then
         if ( $status ) then
             echo "** Failure to find 'afni_dev' with 'conda env list'."
             echo "   Please make sure you have the environment set up."
-            exit 1
+            goto BAD_EXIT
         endif
 
         set testdir_make = `grep TESTSDIR Makefile`

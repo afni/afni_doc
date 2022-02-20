@@ -81,16 +81,17 @@ Download+install miniconda
 
    * *\.\.\. for Linux*::
 
-       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
    * *\.\.\. for Mac*::
 
-       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
-   If you don't have ``curl -O`` on your computer, you can instead
-   replace it with ``curl -O``.
+   The ``curl`` program should be installed on your computer after
+   following AFNI setup instructions.  You can also copy+paste the
+   link into a browser and download it that way.
 
    *NB:* The ``-b`` option runs the installer in "batch mode", saying
    yes to all prompts: install into home directory, accept licenses.
@@ -427,12 +428,12 @@ Set up Conda (*quick*)
 
    * *\.\.\. for Linux*::
 
-       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
    * *\.\.\. for Mac*::
 
-       curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
 #. **Initialize conda in shells**
