@@ -84,7 +84,7 @@ Quick setup
                              gnome-terminal nautilus           \
                              gnome-icon-theme-symbolic         \
                              firefox xfonts-100dpi             \
-                             r-base-dev                        \
+                             r-base-dev cmake                  \
                              libgdal-dev libopenblas-dev       \
                              libnode-dev libudunits2-dev       \
                              libgfortran4
