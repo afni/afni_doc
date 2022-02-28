@@ -18,6 +18,7 @@
    steps_linux_RH
    steps_mac
    steps_mac_app
+   steps_mac_11_ARM
    steps_windows10
    steps_windows10_beta
 
