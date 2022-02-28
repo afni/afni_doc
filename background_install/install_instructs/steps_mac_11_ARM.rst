@@ -40,6 +40,10 @@ Terminal security preferences
 Install Homebrew+packages
 ---------------------------------
 
+**Question:** netpbm is not explicitly listed here?  I am surprised.
+Below I see it linked.  Should we added it here (even if it is somehow
+a dependency of another package here?
+
 .. include:: substep_mac_11_homebrew.rst
 
 Install R
@@ -139,10 +143,12 @@ Reboot
 .. include:: substep_mac_reboot.rst
 
 
-Install Netpbm
---------------
+.. NTS: netpbm should be taken care of by above brew command now
 
-.. include:: substep_mac_netpbm.rst
+   Install Netpbm
+   --------------
+
+   .. include:: substep_mac_netpbm.rst
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
