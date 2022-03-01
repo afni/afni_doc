@@ -11,7 +11,7 @@ Copy+paste::
 Copy+paste::
 
   brew install  libpng jpeg expat freetype fontconfig openmotif  \
-                libomp libxt gsl glib pkg-config gcc
+                libomp libxt gsl glib pkg-config gcc netpbm libiconv
 
 **Purpose:** Install the Homebrew package manager and then use it to
 install some necessary dependencies (for ``gcc``, ver=10 is used here

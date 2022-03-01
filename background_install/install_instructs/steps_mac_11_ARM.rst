@@ -40,10 +40,6 @@ Terminal security preferences
 Install Homebrew+packages
 ---------------------------------
 
-**Question:** netpbm is not explicitly listed here?  I am surprised.
-Below I see it linked.  Should we added it here (even if it is somehow
-a dependency of another package here?
-
 .. include:: substep_mac_11_homebrew.rst
 
 Install R
@@ -89,46 +85,31 @@ Compile AFNI binaries
 * | cd into the src directory 
   | **need to provide specific command**
 
-* Copy+paste (**Question:** should the string 'ARM' be included in the
-  ``Makefile.macos_11_clang`` filename?  the names below are messy and
-  do not match: Makefile.macos_11_clang, macos_11.5_ARM_M1_clang,
-  make_mac11_ARM_clang.  We can/should make the string more
-  consistent, such as always have 'macos_11_ARM_clang' be used in
-  each)::
+* Copy+paste ::
 
-    cp Makefile.macos_11_clang Makefile
-
-  Note either clang or gcc10, gcc11 or later should all work
-  (**Question:** for whom is this note? I don't see any other
-  Makefiles with those names of other compilers)
+    cp Makefile.macos_11_ARM_clang Makefile
 
 * Copy+paste::
 
     bash -c "make vastness 2>&1 | tee log_make_mac11_ARM_clang.txt"
 
 
-* (**Question:** how do we want users to do the following
-  verification?) make sure the installation all worked okay, and there
-  are no missing programs, usually because of missing dependencies
+* Do a quick check to see if there are obvious build errors reoorted.
+  Errors will usually happen because of missing dependencies.
 
 * copy installation directory to standardish afni binary directory::
 
     mkdir -P ~/abin
-    cp -rp macos_11.5_ARM_M1_clang/* ~/abin/.
+    cp -rp macos_11_ARM_clang/* ~/abin/.
 
-* get atlases and templates.  Copy+paste::
+* get atlases and templates and move the atlases to the abin directory
+  with the executables. Copy+paste::
 
     cd
     curl -O https://afni.nimh.nih.gov/pub/dist/atlases/afni_atlases_dist.tgz
     tar xvf afni_atlases_dist.tgz
-
-* (**Question:** how should we be more specific here?) either put the
-  atlases in the abin directory with the executables or set the
-  ``AFNI_ATLAS_PATH` to include the afni_atlases_dist directory::
-
-    cp afni_atlases_dist/* ~/abin/.
-
-
+    cp ~/afni_atlases_dist/* ~/abin/.
+    rm -rf ~/afni_atlases_dist
 
 
 Setup Mac env variables
@@ -142,13 +123,6 @@ Reboot
 
 .. include:: substep_mac_reboot.rst
 
-
-.. NTS: netpbm should be taken care of by above brew command now
-
-   Install Netpbm
-   --------------
-
-   .. include:: substep_mac_netpbm.rst
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
@@ -237,7 +211,7 @@ Enable more SUMA keypresses (recommended)
       #. Copy+paste::
 
            sudo ln -s /sw/bin/python2.7 /sw/bin/python
-           echo 'setenv PYTHONPATH /sw/lib/qt4-mac/lib/python2.7/site-packages' >> ~/.cshrc
+           echo 'setenv PYTHON /sw/lib/qt4-mac/lib/python2.7/site-packages' >> ~/.cshrc
 
    #. To test your PyQt4, copy+paste::
 
