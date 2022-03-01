@@ -116,8 +116,7 @@ Other: preprocessing and HARDI considerations
 Currently, *preprocessing* steps (such as corrections for outliers,
 subject motion, induced eddy currents and magnetic susceptibility) are
 not treated in FATCAT.  For these things, one might use, for example,
-`TORTOISE
-<https://science.nichd.nih.gov/confluence/display/nihpd/TORTOISE>`_.
+`TORTOISE <https://tortoise.nibib.nih.gov/tortoise>`_.
 
 Additionally, tracking capability includes both single
 direction-per-voxel (i.e., DTI-based) and multiple direction-per-voxel
