@@ -35,70 +35,73 @@ our fading memory...):
      - Matthew Belmonte
    * - Mike Beauchamp
      - Rasmus Birn
-     - Jerzy Bodurka
-   * - Cesar Caballero-Gaudes
-     - Gang Chen
-     - Peggy Christidis
-   * - Daniel Clark
-     - Bob Cox
-     - Cameron Craddock
-   * - Lamont Cranston
-     - K\. Donahue
-     - Gianfranco F.
-   * - Larry Frank
-     - Carol Froehlich  
-     - Stefan Fuertinger
-   * - Daniel Glen               
+     - Paul Bloom
+   * - Jerzy Bodurka             
+     - Cesar Caballero-Gaudes    
+     - Gang Chen                 
+   * - Peggy Christidis          
+     - Daniel Clark              
+     - Bob Cox                   
+   * - Cameron Craddock          
+     - Lamont Cranston           
+     - K\. Donahue               
+   * - Gianfranco F.             
+     - Larry Frank               
+     - Carol Froehlich           
+   * - Stefan Fuertinger         
+     - Daniel Glen               
      - Javier Gonzalez- Castillo 
-     - Yaroslav Halchenko        
-   * - Rich Hammett              
+   * - Yaroslav Halchenko        
+     - Rich Hammett              
      - Michael Hanke             
-     - Tom Holroyd               
-   * - Vincent Hradil            
+   * - Tom Holroyd               
+     - Vincent Hradil            
      - Shruti Japee              
-     - Mark Jenkinson            
-   * - Andrzej Jesmanowicz       
+   * - Mark Jenkinson            
+     - Andrzej Jesmanowicz       
      - Hans Johnson              
-     - Ben Jung                  
-   * - Jakub Kaczmarzyk          
+   * - Ben Jung                  
+     - Jakub Kaczmarzyk          
      - Greg Kiar                 
-     - Jay Brian Kummer          
-   * - Prantik Kundu             
+   * - Jay Brian Kummer          
+     - Prantik Kundu             
      - Rayus Kuplicki            
-     - Stephen LaConte           
-   * - Peter Lauren              
+   * - Stephen LaConte           
+     - Peter Lauren              
      - Peter Lauro               
-     - John Lee                  
-   * - Jonathan Lisinksi         
+   * - John Lee                  
+     - Jonathan Lisinksi         
      - Ross Markello             
-     - Chris Markiewicz          
-   * - Peter Molfese             
+   * - Chris Markiewicz          
+     - Peter Molfese             
      - Julia Molony              
-     - Kevin Murphy              
-   * - Yamuna Narayana Swamy     
+   * - Kevin Murphy              
+     - Yamuna Narayana Swamy     
      - Dylan Nielson             
-     - Paul Novak                
-   * - Nikolaas Oosterhof        
+   * - Paul Novak                
+     - Nikolaas Oosterhof        
      - Brian Pittman             
-     - Dillon Plunkett           
-   * - Justin Rajendra           
+   * - Dillon Plunkett           
+     - Justin Rajendra           
      - Rick Reynolds             
-     - Vinai Roopchansingh       
-   * - Chris Rorden              
+   * - Vinai Roopchansingh       
+     - Chris Rorden              
      - Tom Ross                  
-     - Ziad Saad                 
-   * - Isaac Schwabacher         
-     - Fred Tam                  
+   * - Ziad Saad                 
+     - Jan-Mathijs Schoffelen    
+     - Isaac Schwabacher         
+   * - Fred Tam                  
      - Paul Taylor               
-   * - Josh Teves
-     - Raoquiong Tong            
+     - Josh Teves                
+   * - Raoquiong Tong            
      - Giovanni Torres           
-   * - Sam Torrisi               
-     - Robert Vincent            
+     - Sam Torrisi               
+   * - Robert Vincent            
      - Andrej Vovk               
-   * - Doug Ward                 
-     - David Warren              
+     - Doug Ward                 
+   * - David Warren              
      - Joshua Zosky              
+     - 
 
 
 .. for use in making
