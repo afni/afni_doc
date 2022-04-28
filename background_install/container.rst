@@ -9,6 +9,24 @@
 .. contents:: 
    :local:
 
+Install the Docker Engine
+==========================
+
+| Notes on installing the Docker Engine on various OSs/platforms are
+  available here:
+| `<https://docs.docker.com/engine/install/>`_
+| For example, I have followed the installation steps for Ubuntu here:
+| `<https://docs.docker.com/engine/install/ubuntu/>`_
+| \.\.\. and my computer did not burst into flames (*yet!*).
+
+| The list of AFNI-build containers that are distributed on Docker Hub
+  is here:
+| `<https://hub.docker.com/u/afni>`_
+| Below, we show an example using ``afni_make_build``; this is the
+  best starting point at present, while ``afni_cmake_build`` could be
+  reasonable (if not essentially the same), as well.
+
+
 Pre-built Dockerfile
 ======================
 
@@ -20,15 +38,15 @@ AFNI codebase and uses the CircleCi yml file `here
 
 To use the container, copy+paste::
 
-  docker pull afni/afni
+  docker pull afni/afni_make_build
 
-  docker run --rm -ti  afni/afni
+  docker run --rm -ti  afni/afni_make_build
 
  
 To develop using that build environment, run the following from the
 afni repository::
 
-  docker run --rm -ti  -v $PWD:/opt/afni afni/afni
+  docker run --rm -ti  -v $PWD:/opt/afni afni/afni_make_build
 
 and there you have it.
 
