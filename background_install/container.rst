@@ -22,9 +22,10 @@ Install the Docker Engine
 | The list of AFNI-build containers that are distributed on Docker Hub
   is here:
 | `<https://hub.docker.com/u/afni>`_
-| Below, we show an example using ``afni_make_build``; this is the
-  best starting point at present, while ``afni_cmake_build`` could be
-  reasonable (if not essentially the same), as well.
+| Below, we show an example using the ``afni_make_build`` container;
+  this is the best starting point at present, while
+  ``afni_cmake_build`` could be reasonable (if not essentially the
+  same), as well.
 
 
 Pre-built Dockerfile
