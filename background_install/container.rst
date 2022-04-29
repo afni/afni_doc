@@ -58,7 +58,7 @@ AFNI codebase and uses the CircleCi yml file `here
    To do that while also mounting your home directory (to access those
    files), you can run::
 
-     docker run --rm -ti  -v $HOME:/opt/home  afni/afni_make_build
+     docker run --rm -ti  -v ${HOME}:/opt/home  afni/afni_make_build
 
    \.\.\. after which everything in your typical home directory would
    be accessible under ``/opt/home/``.
@@ -69,18 +69,18 @@ AFNI codebase and uses the CircleCi yml file `here
      docker run --rm -ti                  \
          --user=`id -u`                   \
          -v /tmp/.X11-unix:/tmp/.X11-unix \
-         -e DISPLAY=$DISPLAY              \
-         -v $HOME:/opt/home               \
+         -e DISPLAY=${DISPLAY}            \
+         -v ${HOME}:/opt/home             \
          afni/afni_make_build
 
    .. another example
 
       docker run --rm -ti                  \
-          --user=$( id -u )                \
+          --user=`id -u`                   \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
-          -e DISPLAY=$DISPLAY              \
+          -e DISPLAY=${DISPLAY}            \
           -v /Users:/home                  \
-          --env HOME=/home/$USER           \
+          --env HOME=/home/${USER}         \
           afni/afni_make_build
 
 **Exit the container**
