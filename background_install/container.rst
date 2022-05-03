@@ -83,6 +83,8 @@ AFNI codebase and uses the CircleCi yml file `here
           --env HOME=/home/${USER}         \
           afni/afni_make_build
 
+   *(Thanks, Vinai, for many helpful pointers with this!)*
+
 **Exit the container**
 
    Select the terminal and hit ``Ctrl+d``, or type the command
