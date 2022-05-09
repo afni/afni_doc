@@ -1,7 +1,7 @@
 name: py27_afni_tiny          # TO MAKE:  conda env create -f env*_ex2.yml
 dependencies:
   - python=2.7
-  - matplotlib
+  - "matplotlib>=2.2.3"       # minimal ver for 'pythonic' APQC HTML
   - numpy
   - scipy
   - pillow

@@ -1,8 +1,10 @@
 name: py39_afni_mid          # TO MAKE:  conda env create -f env*_ex3.yml
 dependencies:
   - python=3.9
-  - matplotlib
+  - "matplotlib>=2.2.3"      # minimal ver for 'pythonic' APQC HTML
   - pillow
   - numpy
   - scipy
-  - "ipython>=7.20"          # specific ver for tab-autocomplete to work
+  - "ipython>=7.20"          # minimal ver for tab-autocomplete to work
+  - jupyter
+  - prompt_toolkit=2.0.*     # for jupyter to autocomplete

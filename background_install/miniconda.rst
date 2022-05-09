@@ -183,6 +183,22 @@ Download+install miniconda
    directory and update these path locations later and still have it
    work.
 
+Update conda version (opt)
+------------------------------------ 
+
+When you run some Conda commands, you might receive promptings to
+update your Conda version.  Sometimes explicit commands for
+copy+pasting are even provided.  Go ahead and do so.  The following
+command can also be used to update your Conda (or to check that you
+are update, at least)::
+
+  conda update -n base -c defaults conda
+
+To check your current Conda version, type::
+
+  conda --version
+
+
 Load/exit basic conda environments
 -------------------------------------
 
@@ -204,21 +220,22 @@ To exit or "deactivate" the current environment, type::
 
   conda deactivate
 
-Make+check conda environments (e.g., Python for AFNI)
+Make+check conda environments (e.g., Python for AFNI), 1
 ------------------------------------------------------------
 
 There are many aspects to creating a new environment.  We only provide
 the most basic here.  For example, conda can manage much more
 complicated environments, beyond loading just Python+modules.
 
-Here is an example of creating a new environment, one that packages
-Python version 3.9 and a few useful modules (whose unspecified version
-numbers will be whatever conda decides)::
+Here is an example of creating a new environment from a command line,
+one that packages Python version 3.9 and a few useful modules (whose
+unspecified version numbers will be whatever conda decides, with
+Matplotlib being *at least* 2.2.3)::
   
-  conda create -y                 \
-        -n py39_afni_tiny         \
-        python=3.9                \
-        matplotlib numpy scipy
+  conda create -y                        \
+        -n py39_afni_tiny                \
+        python=3.9                       \
+        "matplotlib>=2.2.3" numpy scipy
 
 This new environment's name is "py39_afni_tiny"; I called it this
 because that is basically the minimal set of modules used within AFNI
@@ -227,11 +244,11 @@ because that is basically the minimal set of modules used within AFNI
 To make a similar setup for Python 2.7 (no earlier versions of Python
 should be used), one could run::
 
-   conda create -y                 \
-         -n py27_afni_tiny         \
-         python=2.7                \
-         matplotlib numpy scipy    \
-         pillow 
+  conda create -y                        \
+        -n py27_afni_tiny                \
+        python=2.7                       \
+        "matplotlib>=2.2.3" numpy scipy  \
+        pillow 
 
 Now, if I type ``conda list env``, I will see a list of all my
 available environments (where ``${USER}`` would actually be replaced
@@ -336,6 +353,46 @@ you might have slightly different things):
 
 So, in this environment, I could run a program that imports
 matplotlib, whereas in the "base" environment, I couldn't.
+
+Make+check conda environments (e.g., Python for AFNI), 2
+----------------------------------------------------------------------
+
+This is the command line style to create a new environment (perhaps
+preferable to command line style, for easier saving and sharing),
+including both specific and minimal package dependency versions::
+
+* Make a new text file called :download:`environment_ex1.yml`:
+
+  .. include:: environment_ex2.yml
+     :literal:
+     :code: yaml
+
+  \.\.\. and then run::
+
+    conda env create -f environment_ex1.yml
+
+* Make a new text file called :download:`environment_ex2.yml`:
+
+  .. include:: environment_ex2.yml
+     :literal:
+     :code: yaml
+
+  \.\.\. and then run::
+
+    conda env create -f environment_ex2.yml
+
+* *(Bonus, because I like IPython, and jupyter-notebooks are
+  common)* Make a new text file called
+  :download:`environment_ex3.yml`:
+
+  .. include:: environment_ex3.yml
+     :literal:
+
+  \.\.\. and then run::
+
+    conda env create -f environment_ex3.yml
+
+
 
 Add to+update conda environments
 -------------------------------------
@@ -455,21 +512,72 @@ Set up Conda (*quick*)
 
       conda config --set changeps1 False
 
-
-#. **Make some new environments: AFNI minimal Python**
+#. **Update conda version (opt)**
 
    ::
 
-      conda create -y                 \
-            -n py39_afni_tiny         \
-            python=3.9                \
-            matplotlib numpy scipy
+      conda update -n base -c defaults conda
 
-      conda create -y                 \
-            -n py27_afni_tiny         \
-            python=2.7                \
-            matplotlib numpy scipy    \
+   \.\.\. and to display conda version::
+
+     conda --version
+
+#. **Make some new environments (from command line): AFNI minimal Python**
+
+   This is the command line style to create a new environment,
+   including both specific and minimal package dependency versions::
+
+      conda create -y                        \
+            -n py39_afni_tiny                \
+            python=3.9                       \
+            "matplotlib>=2.2.3" numpy scipy
+
+      conda create -y                        \
+            -n py27_afni_tiny                \
+            python=2.7                       \
+            "matplotlib>=2.2.3" numpy scipy  \
             pillow 
+
+   See the next section for a slightly better way.
+   
+   |
+
+#. **Make some new environments (from text file): AFNI minimal Python**
+
+   This is the command line style to create a new environment (perhaps
+   preferable to command line style, for easier saving and sharing),
+   including both specific and minimal package dependency versions::
+
+   * Make a new text file called :download:`environment_ex1.yml`:
+
+     .. include:: environment_ex1.yml
+        :literal:
+
+     \.\.\. and then run::
+
+       conda env create -f environment_ex1.yml
+
+   * Make a new text file called :download:`environment_ex2.yml`:
+
+     .. include:: environment_ex2.yml
+        :literal:
+
+     \.\.\. and then run::
+
+       conda env create -f environment_ex2.yml
+
+   * *(Bonus, because I like IPython, and jupyter-notebooks are
+     common)* Make a new text file called
+     :download:`environment_ex3.yml`:
+
+     .. include:: environment_ex3.yml
+        :literal:
+
+     \.\.\. and then run::
+
+       conda env create -f environment_ex3.yml
+
+
 
 #. **Load an existing environment**
 
