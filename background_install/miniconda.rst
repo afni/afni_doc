@@ -220,7 +220,7 @@ To exit or "deactivate" the current environment, type::
 
   conda deactivate
 
-Make+check conda environments (e.g., Python for AFNI), 1
+Make new envs from cmd line: AFNI minimal Python
 ------------------------------------------------------------
 
 There are many aspects to creating a new environment.  We only provide
@@ -354,12 +354,12 @@ you might have slightly different things):
 So, in this environment, I could run a program that imports
 matplotlib, whereas in the "base" environment, I couldn't.
 
-Make+check conda environments (e.g., Python for AFNI), 2
+Make new envs from text file: AFNI minimal Python
 ----------------------------------------------------------------------
 
 This is the command line style to create a new environment (perhaps
 preferable to command line style, for easier saving and sharing),
-including both specific and minimal package dependency versions::
+including both specific and minimal package dependency versions:
 
 * Make a new text file called :download:`environment_ex1.yml`:
 
@@ -522,7 +522,7 @@ Set up Conda (*quick*)
 
      conda --version
 
-#. **Make some new environments (from command line): AFNI minimal Python**
+#. **Make new envs from cmd line: AFNI minimal Python**
 
    This is the command line style to create a new environment,
    including both specific and minimal package dependency versions::
@@ -542,7 +542,7 @@ Set up Conda (*quick*)
    
    |
 
-#. **Make some new environments (from text file): AFNI minimal Python**
+#. **Make new envs from text file: AFNI minimal Python**
 
    This is the command line style to create a new environment (perhaps
    preferable to command line style, for easier saving and sharing),
