@@ -1,0 +1,12 @@
+name: py39_afni_ted           # conda env create -f env*afni_ted.yml
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - "matplotlib>=2.2.3"       # minimal ver for 'pythonic' APQC HTML
+  - numpy
+  - scipy
+  - pip                       # used for TEDANA
+  - pip:
+    - tedana                  # getting TEDANA

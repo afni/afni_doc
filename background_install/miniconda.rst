@@ -790,3 +790,60 @@ result in success this time.
 desired module can't be found, you can search for it amongst available
 channels, add that channel to your Conda setup, and try again.**
 
+Comments on AFNI-specific conda environments
+==============================================
+
+Conda can be used to create environments with a very wide range of
+dependencies.  For the purposes of interacting with AFNI, we tend to
+just focus on Python modules, since all other dependencies should
+essentially be sorted out by following the main installation
+instructions for a given OS.
+
+AFNI has very few Python module dependencies.  Most AFNI Python
+programs in fact have no non-base module dependencies.  However, if
+you are going to use conda/miniconda to set up a Python environment
+anyways, you might as well install any possible modules, too.
+Moreover, some programs you might want to use in conjunction with AFNI
+might have additional dependencies, which you could add to your
+AFNI-running environment, too.
+
+Every Python program in the AFNI distribution runs in either Python
+2.7 or Python 3.\* *except* for the distributed version of Prantik
+Kundu's multi-echo FMRI-processing program ``meica.py``, which must be
+run in Python 2.7 (because of when it was written and its developer
+has left the field).
+
+Some comments then about possible AFNI environments to make, or
+dependencies to combine with your other 
+
+* for most projects with AFNI, you could use either of the
+  ``py27_afni_tiny`` or ``py39_afni_tiny`` environments, described
+  above, on their own or with their dependencies added to a
+  pre-existing environment. NB: there is no strict Python 3.9
+  requirement for AFNI---it was just used in the example; one should
+  be fine using Python 3.7 or higher.  Since Python 2.7 is technically
+  deprecated now, you might opt for a Python 3.\* recipe, all other
+  things being equal.
+
+* *If* you will be using Prantik's older ``meica.py`` program, then
+  you would want a Python 2.7-based environment available, such as
+  ``py27_afni_tiny``.  It could be used as your main environment, or
+  it could just be one you switch in-and-out of for running that
+  specific program.  (Being able to easily switch environments is
+  basically the raison-d'etre of conda.)
+
+* *If* you want to incorporate the modern `TEDANA (Dupre et al., 2021)
+  <tutorials/fatcat_prep/Overview.rst>`_ into your AFNI processing of
+  ME-FMRI data, then here is an example of an environment
+  incorporating both sets of dependencies.  You could make a new text
+  file called :download:`environment_afni_ted.yml`:
+
+  .. include:: environment_afni_ted.yml
+     :literal:
+
+  \.\.\. and then run::
+
+    conda env create -f environment_afni_ted.yml
+
+  NB: these reflect current TEDANA installation instructions, which
+  might change over time.  We will try to keep up with those.
