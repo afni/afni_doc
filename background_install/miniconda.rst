@@ -363,7 +363,7 @@ including both specific and minimal package dependency versions:
 
 * Make a new text file called :download:`environment_ex1.yml`:
 
-  .. include:: environment_ex2.yml
+  .. include:: environment_ex1.yml
      :literal:
      :code: yaml
 
