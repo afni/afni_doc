@@ -84,10 +84,15 @@ Download+install miniconda
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
-   * *\.\.\. for Mac*::
+   * *\.\.\. for Mac (intel chip)*::
 
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
+
+   * *\.\.\. for Mac (M1 chip)*::
+
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+       bash Miniconda3-latest-MacOSX-arm64.sh -b
 
    The ``curl`` program should be installed on your computer after
    following AFNI setup instructions.  You can also copy+paste the
@@ -489,10 +494,15 @@ Set up Conda (*quick*)
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
        bash Miniconda3-latest-Linux-x86_64.sh -b
 
-   * *\.\.\. for Mac*::
+   * *\.\.\. for Mac (intel chip)*::
 
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
+
+   * *\.\.\. for Mac (M1 chip)*::
+
+       curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+       bash Miniconda3-latest-MacOSX-arm64.sh -b
 
 #. **Initialize conda in shells**
 
@@ -546,7 +556,7 @@ Set up Conda (*quick*)
 
    This is the command line style to create a new environment (perhaps
    preferable to command line style, for easier saving and sharing),
-   including both specific and minimal package dependency versions::
+   including both specific and minimal package dependency versions:
 
    * Make a new text file called :download:`environment_ex1.yml`:
 
