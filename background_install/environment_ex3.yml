@@ -5,6 +5,6 @@ dependencies:
   - pillow
   - numpy
   - scipy
-  - "ipython>=7.20"          # minimal ver for tab-autocomplete to work
+  - "ipython>=8.0"           # minimal ver for tab-autocomplete to work
   - jupyter
-  - prompt_toolkit=2.0.*     # for jupyter to autocomplete
+  - prompt_toolkit=3.0.*     # >=2 for jupyter to autocomplete; >=3 for ipython
