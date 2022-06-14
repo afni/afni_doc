@@ -22,7 +22,8 @@ Silicon CPUs (M1 chip, not Intel)**.
    for example).  Some steps require an internet connection.
 
 #. **Do not add sudo to a command** unless it is already written.  You
-   may still be prompted for your sudo/admin password in several steps.
+   may still be prompted for your sudo/admin password in several
+   steps.  These steps have "(admin)" in their title.
    
 #. **This has been tested on macOS 12.3.1 and 12.4** It may work on macOS 11,
    but the python installation may not be necessary.
@@ -151,6 +152,9 @@ Install AFNI
     
      curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
      tcsh @update.afni.binaries -package macos_10.12_local -do_extras
+
+#. Open a new terminal (or source current shell's "rc" file, as
+   suggested in finishing text).
 
 **Purpose:** Install AFNI binaries (in default ``~/abin`` location).
 
