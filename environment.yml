@@ -15,5 +15,6 @@ dependencies:
   - sphinxcontrib-fulltoc
   - sphinx-copybutton
   - tcsh
+  - sphinx_toolbox
   - pip:
     - sphinxcontrib-programoutput
