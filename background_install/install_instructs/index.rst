@@ -18,7 +18,8 @@
    steps_linux_RH
    steps_mac
    steps_mac_app
-   index_mac
+   steps_macOS_12_Silicon
+   steps_macOS_12_Intel
    steps_windows10
    steps_windows10_beta
 

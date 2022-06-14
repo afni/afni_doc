@@ -13,20 +13,18 @@
      afni
      suma
 
-   | Report any crashes!
-   |
+**Report any crashes or problems!**
 
-#. If stuck, then ...
+If stuck, then ...
 
-   * ... put any error message into an online search, and/or post a
-     question on the `Message Board
-     <https://afni.nimh.nih.gov/afni/community/board/>`_
+* try searching online with the error message, and/or ask on the
+  `Message Board
+  <https://afni.nimh.nih.gov/afni/community/board/>`_
 
-   * ... copy+paste this::
+* send the system check to an AFNI guru for advice---copy+paste::
 
-       afni_system_check.py -check_all > out.afni_system_check.txt
+    afni_system_check.py -check_all > out.ASC.txt
 
-     \... and email the file "out.afni_system_check.txt" to an AFNI
-     Guru for advice.
+  \.\.\. and email the file "out.ASC.txt".
 
 
