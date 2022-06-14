@@ -12,7 +12,7 @@
 What to do?
 -----------
 
-These setup instructions are for **macOS 12.3.1 or greater with Intel CPUs (not Apple silicon)**.
+These setup instructions are for **macOS 12.3.1 or greater with Apple silicon CPUs (not Intel)**.
 
 0. **Each step** involves either copy+pasting a command, or clicking
    on a download link.
@@ -22,7 +22,26 @@ These setup instructions are for **macOS 12.3.1 or greater with Intel CPUs (not 
    
 #. **This has been tested on macOS 12.3.1 and 12.4** It may work on macOS 11,
    but the python installation may not be necessary.
+   
+#. This installs the Intel compiled binaries (NOT the native Apple Silicon 
+   binaries)  Therefor, it needs Rosetta 2. Native binaries are in progress.
 
+Install Rosetta 2 (admin)
+-------------------------------------
+   
+* **Rosetta 2**::
+    
+    softwareupdate --install-rosetta
+    
+* .. collapse:: Details
+    
+    This installs the Rosetta 2 system that allows the Apple Silicon machines
+    to run Intel compiled binaries.  We will compile AFNI for Apple Silicon,
+    but it is not yet completed.  AFNI will run faster once we do that, but 
+    AFNI is pretty fast anyway.  However, it is not noticeably slower 
+    (at least to me).
+     
+   
 Install Homebrew and packages (admin)
 -------------------------------------
     
@@ -30,6 +49,10 @@ Install Homebrew and packages (admin)
 
     cd
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+* **Privacy Setting**::
+
+    brew analytics off
 
 * **Packages**::
     
@@ -50,7 +73,9 @@ Install Homebrew and packages (admin)
 
 * .. collapse:: Details
 
-    Homebrew will install the Xcode command line tools first.  
+    Homebrew will install the Xcode command line tools first.  This also turns
+    off the analytics which will stop Homebrew from collecting data. If you want
+    to send them your usage data, you can leave that step out.
     macOS 12.3.1 removed python, so we are installing it here.  
     netpbm is needed for some image outputs.  
     cmake is needed for compiling some R libraries.  
@@ -88,7 +113,7 @@ Update PATH
 * Copy+paste the following::
 
     touch ~/.zshrc
-    echo 'export PATH=$PATH:/usr/local/opt/python/libexec/bin' >> ~/.zshrc
+    echo 'export PATH=$PATH:/opt/homebrew/opt/python/libexec/bin' >> ~/.zshrc
     echo 'export PATH=$PATH:/Library/Frameworks/R.framework/Resources' >> ~/.zshrc
     echo 'export PATH=$PATH:/usr/local/gfortran/bin' >> ~/.zshrc
     source ~/.zshrc

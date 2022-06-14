@@ -31,6 +31,10 @@ Install Homebrew and packages (admin)
     cd
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+* **Privacy Setting**::
+
+    brew analytics off
+        
 * **Packages**::
     
     brew install python netpbm cmake
@@ -50,7 +54,9 @@ Install Homebrew and packages (admin)
 
 * .. collapse:: Details
 
-    Homebrew will install the Xcode command line tools first.  
+    Homebrew will install the Xcode command line tools first.  This also turns
+    off the analytics which will stop Homebrew from collecting data. If you want
+    to send them your usage data, you can leave that step out.
     macOS 12.3.1 removed python, so we are installing it here.  
     netpbm is needed for some image outputs.  
     cmake is needed for compiling some R libraries.  
