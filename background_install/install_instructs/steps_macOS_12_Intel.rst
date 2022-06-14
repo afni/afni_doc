@@ -1,5 +1,5 @@
 
-.. _install_steps_mac12_4_intel:
+.. _install_steps_mac12_intel:
 
 **Intel - macOS 12.3.1+**
 ===============================================
