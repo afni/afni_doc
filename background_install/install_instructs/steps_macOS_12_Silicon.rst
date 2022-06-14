@@ -34,13 +34,13 @@ not compiled for Apple Silicon (on our to-do list).
 Install Homebrew and packages (admin)
 -------------------------------------
 
-.. include:: substep_macos12_R_gfortran.rst
+.. include:: substep_macos12_homebrew.rst
 
 
 Install R (admin)
 -----------------
 
-.. include:: substep_macos12_homebrew.rst
+.. include:: substep_macos12_R_gfortran.rst
 
 
 Update Path
@@ -83,31 +83,27 @@ Evaluate setup/system (**important!**)
 
 .. include:: substep_evaluate.rst
 
-Prepare for Bootcamp (opt)
+
+Optional Extras
+--------------------------
+
+Setup Python (*a* method)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: substep_miniconda.rst
+
+
+Prepare for Bootcamp (install demo data)
 -----------------------------------------
 
 .. include:: substep_bootcamp.rst
 
-Optional Extras
---------------------------
 
 Setup terminal (opt)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_mac_setup_term.rst
 
-
-.. ---------- HERE/BELOW: copy for all installs --------------
-
-Setup Python (one method)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: substep_miniconda.rst
-
-.. nts:
- 
-   moved the evaluation step above for this OS, because users will
-   have basic python from install
 
 Niceify terminal (add convenience!)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,14 +116,15 @@ Install extras (recommended for Bootcamp prep)
 
 .. include:: substep_extra_packs.rst
 
+
 Keep up-to-date (remember!)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_update.rst
 
+
 Enable more SUMA keypresses (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 .. include:: substep_mac_keyshortcuts.rst
 

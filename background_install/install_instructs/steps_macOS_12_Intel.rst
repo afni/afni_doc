@@ -22,13 +22,13 @@ CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
 Install Homebrew and packages (admin)
 -------------------------------------
 
-.. include:: substep_macos12_R_gfortran.rst
+.. include:: substep_macos12_homebrew.rst
 
 
 Install R (admin)
 -----------------
 
-.. include:: substep_macos12_homebrew.rst
+.. include:: substep_macos12_R_gfortran.rst
 
 
 Update Path
@@ -67,6 +67,7 @@ Reboot
 
 .. include:: substep_mac_reboot.rst
 
+
 Evaluate setup/system (**important!**)
 -----------------------------------------
 
@@ -76,18 +77,23 @@ Evaluate setup/system (**important!**)
 Optional Extras
 ---------------
 
-
-.. ---------- HERE/BELOW: copy for all installs --------------
-
-Setup Python (one method)
+Setup Python (*a* method)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_miniconda.rst
 
-.. nts:
- 
-   moved the evaluation step above for this OS, because users will
-   have basic python from install
+
+Prepare for Bootcamp  (install demo data)
+-----------------------------------------
+
+.. include:: substep_bootcamp.rst
+
+
+Setup terminal (opt)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: substep_mac_setup_term.rst
+
 
 Niceify terminal (add convenience!)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,14 +106,15 @@ Install extras (recommended for Bootcamp prep)
 
 .. include:: substep_extra_packs.rst
 
+
 Keep up-to-date (remember!)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_update.rst
 
+
 Enable more SUMA keypresses (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 .. include:: substep_mac_keyshortcuts.rst
 
