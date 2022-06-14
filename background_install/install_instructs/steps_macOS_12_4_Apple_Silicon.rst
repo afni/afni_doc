@@ -1,7 +1,7 @@
 
 .. _install_steps_mac12_4_Apple_Silicon:
 
-**Apple Silicon - macOS 12.3.1+**
+**Apple Silicon (M1,M2,etc.) - macOS 12.3.1+**
 ===============================================
 
 .. contents:: The essential system setup
