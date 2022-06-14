@@ -22,6 +22,8 @@
 #
 # [JR: June 14, 2022] added sphinx_toolbox for some added functionality
 # Specifically collapsing sections
+#
+# [PT: June 14, 2022] backed out sphinx_toolbox at present...
 ###########################################################################
 
 import sys
@@ -40,7 +42,6 @@ import cloud_sptheme as csp
 # $ pip install sphinxcontrib.programoutput
 # $ pip install sphinx-argparse
 # $ apt install pandoc
-# $ pip install sphinx_toolbox
 ### BUT nowadays, one should be able to use the included
 ### environment.yml file and create a conda env with all necessary
 ### dependencies (assuming you have AFNI binaries installed and ready
@@ -80,8 +81,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinxarg.ext',
     'hidden_code_block',
-    'sphinx_copybutton',
-    'sphinx_toolbox.collapse'
+    'sphinx_copybutton'
 ]
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
