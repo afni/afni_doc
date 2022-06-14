@@ -1,5 +1,5 @@
 
-#. **Main R libraries**::
+#. **Install main R libraries**::
     
      Rscript -e "install.packages(c('afex','phia','snow','nlme','lmerTest'), repos='https://cloud.r-project.org')"
 

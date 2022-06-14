@@ -49,7 +49,7 @@ Update Path
 .. nts:
    different than Intel, for python
 
-#. **Path** (zsh)::
+#. **Add to path** (zsh)::
 
      touch ~/.zshrc
      echo 'export PATH=$PATH:/opt/homebrew/opt/python/libexec/bin'      >> ~/.zshrc

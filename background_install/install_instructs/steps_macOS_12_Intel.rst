@@ -37,7 +37,7 @@ Update Path
 .. nts:
    different than Silicon, for python
 
-#. **Path** (zsh)::
+#. **Add to path** (zsh)::
 
     touch ~/.zshrc
     echo 'export PATH=$PATH:/usr/local/opt/python/libexec/bin'         >> ~/.zshrc
