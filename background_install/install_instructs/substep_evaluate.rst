@@ -1,5 +1,5 @@
 
-1. Copy+paste::
+1. Open a new terminal, and then copy+paste::
 
      afni_system_check.py -check_all
 

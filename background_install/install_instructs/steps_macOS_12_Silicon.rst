@@ -72,11 +72,13 @@ Install AFNI
 
 .. include:: substep_macos12_afni.rst
 
+.. should not be necessary
 
-Reboot
-------
+   Reboot
+   ------
 
-.. include:: substep_mac_reboot.rst
+   .. include:: substep_mac_reboot.rst
+
 
 Evaluate setup/system (**important!**)
 -----------------------------------------
