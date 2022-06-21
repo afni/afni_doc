@@ -7,6 +7,7 @@ Statistics
 .. toctree::
    :maxdepth: 2
 
+   gc_blog
    center
    deconvolve
    nlfim
