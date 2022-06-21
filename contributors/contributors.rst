@@ -53,55 +53,55 @@ our fading memory...):
      - Javier Gonzalez- Castillo 
    * - Yaroslav Halchenko        
      - Rich Hammett              
-     - Michael Hanke             
-   * - Tom Holroyd               
+     - Taylor Hanayik
+   * - Michael Hanke             
+     - Tom Holroyd               
      - Vincent Hradil            
-     - Shruti Japee              
-   * - Mark Jenkinson            
+   * - Shruti Japee              
+     - Mark Jenkinson            
      - Andrzej Jesmanowicz       
-     - Hans Johnson              
-   * - Ben Jung                  
+   * - Hans Johnson              
+     - Ben Jung                  
      - Jakub Kaczmarzyk          
-     - Greg Kiar                 
-   * - Jay Brian Kummer          
+   * - Greg Kiar                 
+     - Jay Brian Kummer          
      - Prantik Kundu             
-     - Rayus Kuplicki            
-   * - Stephen LaConte           
+   * - Rayus Kuplicki            
+     - Stephen LaConte           
      - Peter Lauren              
-     - Peter Lauro               
-   * - John Lee                  
+   * - Peter Lauro               
+     - John Lee                  
      - Jonathan Lisinksi         
-     - Ross Markello             
-   * - Chris Markiewicz          
+   * - Ross Markello             
+     - Chris Markiewicz          
      - Peter Molfese             
-     - Julia Molony              
-   * - Kevin Murphy              
+   * - Julia Molony              
+     - Kevin Murphy              
      - Yamuna Narayana Swamy     
-     - Dylan Nielson             
-   * - Paul Novak                
+   * - Dylan Nielson             
+     - Paul Novak                
      - Nikolaas Oosterhof        
-     - Brian Pittman             
-   * - Dillon Plunkett           
+   * - Brian Pittman             
+     - Dillon Plunkett           
      - Justin Rajendra           
-     - Rick Reynolds             
-   * - Vinai Roopchansingh       
+   * - Rick Reynolds             
+     - Vinai Roopchansingh       
      - Chris Rorden              
-     - Tom Ross                  
-   * - Ziad Saad                 
+   * - Tom Ross                  
+     - Ziad Saad                 
      - Jan-Mathijs Schoffelen    
-     - Isaac Schwabacher         
-   * - Fred Tam                  
+   * - Isaac Schwabacher         
+     - Fred Tam                  
      - Paul Taylor               
-     - Josh Teves                
-   * - Raoquiong Tong            
+   * - Josh Teves                
+     - Raoquiong Tong            
      - Giovanni Torres           
-     - Sam Torrisi               
-   * - Robert Vincent            
+   * - Sam Torrisi               
+     - Robert Vincent            
      - Andrej Vovk               
-     - Doug Ward                 
-   * - David Warren              
+   * - Doug Ward                 
+     - David Warren              
      - Joshua Zosky              
-     - 
 
 
 .. for use in making
