@@ -13,6 +13,7 @@ Welcome to AFNI's documentation!
    :includehidden:
 
    background_install/main_toc
+   starting/intro
    educational/main_toc
    programs/main_toc
    codex/main_toc

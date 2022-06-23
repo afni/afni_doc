@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _nhp_main:
+
 Non-human processing
 ====================
 

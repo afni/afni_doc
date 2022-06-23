@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _statistics_main:
+
 Statistics
 ==========
 
