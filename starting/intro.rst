@@ -70,7 +70,7 @@ here, which we encourage exploring.
 * | :ref:`Docker container notes <install_container_build>`
 
 
-**Educational resources**
+**Bootcamp and video lectures**
 
 * `AFNI Academy series: lectures based on the AFNI Bootcamp, combining
   theory and hands-on examples <https://www.youtube.com/c/afnibootcamp>`_
@@ -80,12 +80,15 @@ here, which we encourage exploring.
 * :ref:`Links to AFNI handouts (part of Bootcamp), GUI keyboard
   shortcuts and startup tips (and more) <edu_main>`
 
-* :ref:`Mega-page linking to all program helps <programs_main>`
+* :ref:`Quick Unix tutorial <U_all>`
+
+
+**Program listings and helps**
 
 * :ref:`"Classified" program guide: list of AFNI programs grouped
   thematically <edu_class_prog>`
 
-* :ref:`Quick Unix tutorial <U_all>`
+* :ref:`Mega-page linking to all program helps <programs_main>`
 
 
 **Code, command, script and functionality examples**
