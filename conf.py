@@ -217,6 +217,8 @@ html_theme_options = {
     "headlinkcolor": "#8B0000",
     "rubricbgcolor": "#8B0000",
     "headtextcolor": "#8B0000",
+    "externalrefs": "false",
+    # "externalicon": "",   # another way to turn off/reset arrow to ext links
     "headlinkcolor": "#8B0000"
 }  
 #    "bodyfont": "Arial",
