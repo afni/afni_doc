@@ -1,8 +1,8 @@
 .. _codex_fmri_2018_TaylorEtal:
 
 
-**Taylor et al. (2018).** FMRI processing with AFNI: Some comments and corrections on “Exploring the Impact of Analysis Software on Task fMRI Results"
-******************************************************************************************************************************************************
+**Taylor et al. (2018).** *FMRI processing with AFNI: Some comments and corrections ...*
+******************************************************************************************
 
 .. contents:: :local:
 

@@ -1,8 +1,8 @@
 .. _codex_fmri_2018b_ChenEtal:
 
 
-**Chen et al. (2018b).** Handling Multiplicity in Neuroimaging Through Bayesian Lenses with Multilevel Modeling
-****************************************************************************************************************
+**Chen et al. (2018b).** *Handling Multiplicity in Neuroimaging Through Bayesian ...*
+***************************************************************************************
 
 .. contents:: :local:
 

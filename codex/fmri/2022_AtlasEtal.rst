@@ -1,8 +1,8 @@
 .. _codex_fmri_2022_AtlasEtal:
 
 
-**Atlas et al. (2022).** Instructions and experiential learning have similar impacts on pain and pain-related brain responses but produce dissociations in value-based reversal learning.
-******************************************************************************************************************************************************************************************
+**Atlas et al. (2022).** *Instructions and experiential learning have similar ...*
+************************************************************************************
 
 .. contents:: :local:
 

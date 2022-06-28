@@ -1,8 +1,8 @@
 .. _codex_fmri_2022_SteinhauserEtal:
 
 
-**Steinhauser et al. (2022).** Functional dissection of neural connectivity in generalized anxiety disorder
-**********************************************************************************************************************************************************************
+**Steinhauser et al. (2022).** *Functional dissection of neural connectivity ...*
+***********************************************************************************
 
 .. contents:: :local:
 

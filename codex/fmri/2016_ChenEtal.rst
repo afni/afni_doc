@@ -1,8 +1,8 @@
 .. _codex_fmri_2016_ChenEtal:
 
 
-**Chen et al. (2016).** Untangling the Relatedness among Correlations, Part II: Inter-Subject Correlation Group Analysis through Linear Mixed-Effects Modeling
-**************************************************************************************************************************************************************
+**Chen et al. (2016).** *Untangling the Relatedness among Correlations, Part II: ...*
+****************************************************************************************
 
 .. contents:: :local:
 

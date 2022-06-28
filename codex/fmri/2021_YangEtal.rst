@@ -1,8 +1,8 @@
 .. _codex_fmri_2021_YangEtal:
 
 
-**Yang et al. (2021).** Different activation signatures in the primary sensorimotor and higher-level regions for haptic three-dimensional curved surface exploration
-**********************************************************************************************************************************************************************
+**Yang et al. (2021).** *Different activation signatures in the primary sensorimotor ...*
+********************************************************************************************
 
 .. contents:: :local:
 
