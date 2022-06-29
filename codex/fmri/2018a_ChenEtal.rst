@@ -80,6 +80,6 @@ the variables like ``$SLURM_CPUS_PER_TASK``, ``$SLURM_JOBID``, etc.
 
 
 .. aliases for scripts, so above is easier to read
-.. |s01| replace:: :download:`s.bmn_subject_level_02_ap.tcsh
+.. |s01| replace:: :download:`s.nimh_group_level_02_mema_bisided.tcsh
                    </codex/fmri/media/2018a_ChenEtal/s.nimh_group_level_02_mema_bisided.tcsh>`
 
