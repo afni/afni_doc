@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import copy
 import sys as sys
 import os
 
@@ -50,9 +51,14 @@ quickly doing this.
 
 # ===================================================================
 
-VERSION   = "1.0"
-VER_DATE  = "Oct 21, 2019"
 AUTHOR    = "PA Taylor (NIMH, NIH)"
+
+#VERSION   = "1.0" ;VER_DATE  = "Oct 21, 2019"
+# start of the program
+#
+VERSION   = "1.1" ;VER_DATE  = "July 8, 2022"
+# fix to make ending criterion more stable
+
 
 help_string = '''
 --------------------------------------------------------------------
@@ -317,7 +323,7 @@ def parse_all_lines(LL, skip_lines=0):
 
             lines_left = N-i
             # a variable will end the file
-            if lines_left < 4 :
+            if lines_left <= 4 :
                 for j in range(1, lines_left):
                     w  = LL[i+j]
                     text.append( w )
@@ -431,7 +437,26 @@ def check_for_webaddr(sss):
         return ppp
     else:
         return sss
-        
+
+def remove_empty_endlines(LL):
+    """Take a list of strings, and remove any empty or purely-whitespace
+    strings at the end, only.  Return the cleansed list.
+
+    """
+
+    N = len(LL)
+
+    MM = copy.deepcopy(LL)
+
+    idx   = 1
+    FOUND = True
+    while idx < N and FOUND :
+        if MM[N-idx].strip() == '':
+            emp_str = MM.pop(N-idx)
+        else:
+            FOUND = False
+        idx+= 1
+    return MM        
 
 # ====================================================================
 
@@ -475,8 +500,9 @@ if __name__=="__main__":
     os.system("afni -env > %s" % (ifile))
 
     all_lines  = au.read_text_file( ifile, strip=0 )
+    all_lines_clean = remove_empty_endlines(all_lines)
 
-    allenvs = parse_all_lines(all_lines)
+    allenvs = parse_all_lines(all_lines_clean)
 
     write_out_env_vars_rst(ofile, allenvs)
 
