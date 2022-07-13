@@ -8,6 +8,8 @@
 .. contents::
    :depth: 3
 
+**Download the pdf version here:** `afni03_interactive.pdf <https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
+
 Start the AFNI GUI
 ======================
 
@@ -182,3 +184,75 @@ Controller window tour
 
 2nd column
 ++++++++++
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+   
+   * - * Use these to select the type of view for your data. **Need more here**
+         
+         * ``Original View``
+         * ``AC-PC Aligned``
+         * ``Talairach View``
+         * notes on why these are sometimes greyed out.
+         
+     - .. image:: media/afni03_interactive/afni_controller_window_view.png
+          :width: 100%
+          :align: right
+          
+          
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+ 
+   * - * ``Define Overlay ->``: Use this to control the thresholds, colors,
+         etc. for overlays.
+         
+         * More on this here -> **put link here**
+         
+       * ``See Overlay``: Show / Hide the overlay dataset
+       
+         * This is useful for seeing what anatomical features are 'under' a 
+           particular overlay color
+           
+       * ``Define Datamode`` Use this to control the mode in which the underlay
+         data is viewed, and also to save 3D datasets to disk
+         
+         * More on this here -> **put link here**
+         
+     - .. image:: media/afni03_interactive/afni_controller_window_overlay_datamode.png
+          :width: 100%
+          :align: right
+
+
+
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+ 
+   * - * ``Switch`` Use this to choose from which session 3D datasets may be 
+         viewed
+         
+         * All datasets in same directory are assumed to be aligned in space
+         
+           * **this is in the handout, but I don't think it is true...**
+           
+         * Any dataset can be the underlay; any dataset can be the overlay
+         
+       * ``Read`` Click this button to get a 'chooser' dialog window to select
+         a new directory from which to read datasets
+         
+         * This will add a new 'session' that you can select with the ``Switch``
+           button
+       
+     - .. image:: media/afni03_interactive/afni_controller_window_DataDir.png
+          :width: 100%
+          :align: right
+          
+          
+          
+          
+          
+          
+          
