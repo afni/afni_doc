@@ -8,7 +8,8 @@
 .. contents::
    :depth: 3
 
-**Download the pdf version here:** `afni03_interactive.pdf <https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
+**Download the pdf version here:** `afni03_interactive.pdf 
+<https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
 
 Start the AFNI GUI
 ======================
@@ -55,8 +56,6 @@ How does the AFNI GUI load datasets into memory when started?
           home directory, if it is present.  This file is used to
           change many of the defaults (cf the :ref:`list of all AFNI
           environment variables <edu_env_vars>` to set there).
-
-
 
 Controller window tour
 ===================================
@@ -200,7 +199,6 @@ Controller window tour
           :width: 100%
           :align: right
           
-          
 .. list-table::
    :widths: 60 40
    :header-rows: 0
@@ -223,9 +221,6 @@ Controller window tour
      - .. image:: media/afni03_interactive/afni_controller_window_overlay_datamode.png
           :width: 100%
           :align: right
-
-
-
 
 .. list-table::
    :widths: 60 40
@@ -250,9 +245,67 @@ Controller window tour
           :width: 100%
           :align: right
           
-          
-          
-          
-          
-          
-          
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+
+   * - * ``UnderLay`` choose which 3D dataset to view as the background 
+         (grayscale)
+         
+         * Current underlay dataset determines the resolution of and 3D region 
+           covered by image viewers
+         * anatomical or time series datasets usually go here
+         * Datasets which can be graphed are marked with a ``*`` after 
+           their names
+         
+       * ``OverLay`` Use this to choose which overlay (color) 3D dataset to view
+         
+         * Functional (statistical) dataset usually goes here
+         * Functional datasets will be interpolated to the 
+           underlay resolution, and flipped to that orientation (if needed)
+         
+           * The ``Define Datamode`` panel controls the interpolation method
+             (**put link here**)
+           
+       * Both buttons open a dataset chooser window (**put link here**)
+       * Datasets that are compressed have a ``z`` after their names
+       * Datasets available are from the current session
+       
+     - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
+          :width: 100%
+          :align: right
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+
+   * - * ``EditEnv`` **need more here**
+
+       * ``NIML+PO``: Start listening for NIML and Plugout TCP/IP (network 
+         sockets) **need more here**
+
+         * Expecting AFNI to talk to suma and/or plugout_drive
+         * Like running ``afni -niml -yesplugouts`` on the command line
+         * Greyed out if already listening (you already pushed it or launched
+           afni with ``-niml -yesplugouts``
+
+     - .. image:: media/afni03_interactive/afni_controller_window_env_niml.png
+          :width: 100%
+          :align: right
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+  
+   * - * ``Control Surface``: control the display of overlaid surfaces in the 
+         image viewers when talking with ``suma``
+         
+         * Surface nodes will have little boxes drawn, when they appear in a 
+           slice
+         * Surface triangles will have line segments drawn, where they intersect 
+           a slice center-plane
+         * Greyed out if ``suma`` is not running and talking with ``afni``
+  
+     - .. image:: media/afni03_interactive/afni_controller_window_cont_surf.png
+          :width: 100%
+          :align: right
