@@ -12,45 +12,34 @@
 <https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
 
 Start the AFNI GUI
-======================
-
-.. NTS: 
-
-   The following list table of the image is a way to make the
-   Controller image be only part of page width and not have the
-   whitespace be clickable to open the image (but still leave the
-   image itself clickable); I think having the controller panel looks
-   nice, as well as leaving the background look uncolorized
+==================
 
 .. list-table::
-   :widths: 40
-   :header-rows: 1
+   :widths: 60 40
+   :header-rows: 0
    
-   * - AFNI GUI Controller Panel
-   * - .. image:: media/afni03_interactive/afni_controller_window.png
+   * - * Start the GUI by typing ``afni`` at the command line.
+      
+       * How does the AFNI GUI load datasets into memory when started?
+         
+         * The ``afni`` GUI reads datasets from the current directory.
+         * If there are no datasets in current directory, it tries to read
+           sub-directories 1 level deeper.
+           
+       * ``afni dir1 dir2 ...`` reads datasets from directories listed.
+       * ``afni -R`` reads datasets from the current directory and from all
+         directories below it.
+       * There are also special directories that can be specified to always
+         also be opened when you run the AFNI GUI; these often contain
+         reference templates and atlases, so these datasets don't have to be
+         copied around.
+        
+         * These are specified with AFNI environment variables, such as
+           ``AFNI_GLOBAL_SESSION``, ``AFNI_ATLAS_PATH``, and more.
+          
+     - .. image:: media/afni03_interactive/afni_controller_window.png
           :align: center
           :width: 400
-
-How does the AFNI GUI load datasets into memory when started?
-
-* The ``afni`` GUI reads datasets from the current directory.
-
-  * If there are no datasets in current directory, it tries to read
-    sub-directories 1 level deeper.
-
-* ``afni dir1 dir2 ...`` reads datasets from directories listed.
-* ``afni -R`` reads datasets from the current directory and from all
-  directories below it.
-
-* There are also special directories that can be specified to always
-  also be opened when you run the AFNI GUI; these often contain
-  reference templates and atlases, so these dsets don't have to be
-  copied around.  
-
-  * These are specified with AFNI environment variables, such as
-    ``AFNI_GLOBAL_SESSION``, ``AFNI_ATLAS_PATH``, and more.
-
-|
 
 .. note:: AFNI reads a settings file named ``~/.afnirc`` from your
           home directory, if it is present.  This file is used to
@@ -110,6 +99,7 @@ Controller window tour
          crosshairs
        * ``Wrap``: Montage layout wraps around when the slices go past
          an edge of the dataset
+         
      - .. image:: media/afni03_interactive/afni_controller_window_xhairs.png 
           :width: 100%
           :align: right
@@ -151,7 +141,7 @@ Controller window tour
          viewing their data files directly
 
          * Not warping on demand -- see the top of the ``Define
-           Datamode`` control panel
+           Datamode`` control panel :ref:`(see here)<Define Datamode>`
 
      - .. image:: media/afni03_interactive/afni_controller_window_image_graph.png
            :width: 100%
@@ -206,7 +196,7 @@ Controller window tour
    * - * ``Define Overlay ->``: Use this to control the thresholds, colors,
          etc. for overlays.
          
-         * More on this here -> **put link here**
+         * More on this here -> :ref:`custom text<Heading Text>`
          
        * ``See Overlay``: Show / Hide the overlay dataset
        
@@ -309,3 +299,72 @@ Controller window tour
      - .. image:: media/afni03_interactive/afni_controller_window_cont_surf.png
           :width: 100%
           :align: right
+          
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+    
+   * - * Green buttons open your default web browser to various afni related 
+         pages.
+         
+       * Blue button opens an afni GUI window with lots of info
+   
+       * ``News``: Web link to `afni digest history 
+         <https://afni.nimh.nih.gov/pub/dist/src/AFNI_digest_history.txt>`_
+         
+       * ``Forum``: Web link to `AFNI Message Board 
+         <https://afni.nimh.nih.gov/afni/community/board/list.php?1?>`_
+  
+       * ``Tips``: afni GUI window with lots of info. A web based version of 
+         this exists `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#afni-for-absolute-beginners>`_
+  
+       * ``Helps``: Web link to `All program helps 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/main_toc.html>`_
+       
+       * ``YouTube``: Web link to the official `AFNI Bootcamp YouTube page 
+         <https://www.youtube.com/channel/UC40RiNZN7_dCuB6Lg7HJl1g>`_
+       
+     - .. image:: media/afni03_interactive/afni_controller_window_news_etc.png
+          :width: 100%
+          :align: right
+
+.. _Define Overlay:
+          
+Define Overlay
+==============
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 0
+   
+   * - * Click ``Define OverLay ->`` button to open the overlay panel
+       
+     - .. image:: media/afni03_interactive/define_olay_start.png
+          :width: 100%
+          :align: right
+
+.. _Define Datamode:
+
+Define Datamode
+===============
+
+.. _Dataset Chooser:
+
+Dataset "Chooser"
+=================
+
+.. _Image Viewer:
+
+Image Viewer
+============
+
+.. _Graph Viewer:
+
+Graph Viewer
+============
+
+
+
+
+
