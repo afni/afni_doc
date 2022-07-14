@@ -64,7 +64,9 @@ AFNI codebase and uses the CircleCi yml file `here
    be accessible under ``/opt/home/``.
 
    Finally, to do both of those things *and* to have the ability to
-   open up the GUIs, you could run::
+   open up the ``afni`` and ``suma`` GUIs (see :ref:`this note
+   <install_container_build_mac12_Sili>` if using macOS 12 with an
+   Apple Silicon CPU), you could run::
 
      docker run --rm -ti                  \
          --user=`id -u`                   \
@@ -72,6 +74,9 @@ AFNI codebase and uses the CircleCi yml file `here
          -e DISPLAY=${DISPLAY}            \
          -v ${HOME}:/opt/home             \
          afni/afni_make_build
+
+   Note that to be able to use the above command, your local computer
+   itself must be set up to open the GUIs.
 
    .. another example
 
@@ -90,6 +95,40 @@ AFNI codebase and uses the CircleCi yml file `here
    Select the terminal and hit ``Ctrl+d``, or type the command
    ``exit``.
 
+.. _install_container_build_mac12_Sili:
+
+A note if you are using macOS 12 
+----------------------------------------------------------
+
+Things are slightly more complicated to be able to run the GUIs
+through Docker. The following still assumes you have already installed
+XQuartz on your computer following :ref:`the AFNI install instuctions
+<install_steps_mac12_Silicon>`.
+
+First, set your XQuartz security preferences as follows (which should
+only have to be done once):
+
+1. Launch XQuartz, open its menu, and select **Preferences**
+#. Go to the **Security** tab, and ensure "Allow connections from
+   network clients" is checked.
+
+Then, you can run your docker container as follows (yes, two commands)::
+ 
+  xhost + `hostname`
+
+  docker run --rm -ti                    \
+      --user=`id -u`                     \
+      -v /tmp/.X11-unix:/tmp/.X11-unix   \
+      -e DISPLAY=host.docker.internal:0  \
+      -v ${HOME}:/opt/home               \
+      afni/afni_make_build
+
+The above is derived from notes and further discussion `here
+<https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285>`_.
+The original instructions suggested the first command should be
+``xhost + ${hostname}``, but that did not apply to ``tcsh``/\ ``csh``
+shells, while the above version does, as well as for ``zsh``/\
+``bash``.
 
 Neurodocker
 ==============
