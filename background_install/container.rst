@@ -114,7 +114,7 @@ only have to be done once):
 
 Then, you can run your docker container as follows (yes, two commands)::
  
-  xhost + `hostname`
+  xhost + ${hostname}
 
   docker run --rm -ti                    \
       --user=`id -u`                     \
@@ -125,10 +125,8 @@ Then, you can run your docker container as follows (yes, two commands)::
 
 The above is derived from notes and further discussion `here
 <https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285>`_.
-The original instructions suggested the first command should be
-``xhost + ${hostname}``, but that did not apply to ``tcsh``/\ ``csh``
-shells, while the above version does, as well as for ``zsh``/\
-``bash``.
+As written, the ``xhost`` command may just apply in ``zsh``/\ ``bash``
+shells.
 
 Neurodocker
 ==============
