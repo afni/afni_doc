@@ -49,7 +49,8 @@ values stored at each pixel ...``::
 The two numbers under ``statpar`` (=statistic parameters), 2 and 412,
 on the second line are the degrees of freedom for this F-statistic.
 (The statcode relates to internal code usage/labelling for identifying
-this type of statistic.)
+this type of statistic; see the help of ``cdf`` for a wee bit more
+description, if intrigued.)
 
 Further down you should be able to locate the other t-statistic
 sub-brick (#8)::
