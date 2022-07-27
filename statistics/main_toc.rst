@@ -11,6 +11,7 @@ Statistics
 
    gc_blog
    center
+   df
    deconvolve
    nlfim
    remlfit
