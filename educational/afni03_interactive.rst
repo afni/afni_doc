@@ -196,7 +196,7 @@ Controller window tour
    * - * ``Define Overlay ->``: Use this to control the thresholds, colors,
          etc. for overlays.
          
-         * More on this here -> :ref:`custom text<Heading Text>`
+         * More on this here -> :ref:`Overlay<edu_afni03_overlay>`
          
        * ``See Overlay``: Show / Hide the overlay dataset
        
@@ -206,7 +206,7 @@ Controller window tour
        * ``Define Datamode`` Use this to control the mode in which the underlay
          data is viewed, and also to save 3D datasets to disk
          
-         * More on this here -> **put link here**
+         * More on this here -> :ref:`Datamode<edu_afni03_datamode>`
          
      - .. image:: media/afni03_interactive/afni_controller_window_overlay_datamode.png
           :width: 100%
@@ -334,20 +334,14 @@ Controller window tour
 Define Overlay
 ==============
 
-.. list-table::
-   :widths: 30 70
-   :header-rows: 0
-   
-   * - * Click ``Define OverLay ->`` button to open the overlay panel
-       
-     - .. image:: media/afni03_interactive/define_olay_start.png
-          :width: 100%
-          :align: right
+:ref:`Open Define Overlay Page<edu_afni03_overlay>`
 
 .. _Define Datamode:
 
 Define Datamode
 ===============
+
+:ref:`Open Define Datamode Page<edu_afni03_datamode>`
 
 .. _Dataset Chooser:
 
