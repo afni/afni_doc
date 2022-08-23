@@ -254,10 +254,11 @@ Controller window tour
          * Functional datasets will be interpolated to the 
            underlay resolution, and flipped to that orientation (if needed)
          
-           * The ``Define Datamode`` panel controls the interpolation method
-             (**put link here**)
+           * The ``Define Datamode`` panel controls the interpolation method.
+             :ref:`(See here)<edu_afni03_datamode>`
            
-       * Both buttons open a dataset chooser window (**put link here**)
+       * Both buttons open a dataset chooser window 
+         :ref:`(See here)<edu_afni03_chooser>`
        * Datasets that are compressed have a ``z`` after their names
        * Datasets available are from the current session
        
@@ -347,6 +348,8 @@ Define Datamode
 
 Dataset "Chooser"
 =================
+
+:ref:`Open Dataset Chooser Page<edu_afni03_chooser>`
 
 .. _Image Viewer:
 
