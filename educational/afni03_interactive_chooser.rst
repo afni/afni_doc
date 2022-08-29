@@ -10,7 +10,7 @@
 
 **Go back to the start** :ref:`HERE<edu_afni03_interactive>`
 
-.. _Define Chooser:
+.. _Dataset Chooser:
 
 Dataset Chooser
 ===============

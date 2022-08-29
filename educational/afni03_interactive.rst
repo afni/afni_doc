@@ -46,6 +46,46 @@ Start the AFNI GUI
           change many of the defaults (cf the :ref:`list of all AFNI
           environment variables <edu_env_vars>` to set there).
 
+Open an image for viewing
++++++++++++++++++++++++++
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+  
+   * - * An Image Window may have opened when afni was launched.
+         (If not, you can open an image window by clicking ``Image`` next to 
+         ``Axial``, ``Sagittal``, or ``Coronal``. 
+         :ref:`see here<Open Image and Graph>` )
+   
+       * ``UnderLay`` chooses which 3D dataset to view as the background 
+         (grayscale)
+         
+         * Current underlay dataset determines the resolution of and 3D region 
+           covered by image viewers
+         * anatomical or time series datasets usually go here
+         * Datasets which can be graphed are marked with a ``*`` after 
+           their names
+         
+       * ``OverLay`` Use this to choose which overlay (color) 3D dataset to view
+         
+         * Functional (statistical) dataset usually goes here
+         * Functional datasets will be interpolated to the 
+           underlay resolution, and flipped to that orientation (if needed)
+         
+           * The ``Define Datamode`` panel controls the interpolation method.
+             :ref:`(See here)<edu_afni03_datamode>`
+           
+       * Both buttons open a dataset chooser window 
+         :ref:`(See here)<edu_afni03_chooser>`
+       * Datasets that are compressed have a ``z`` after their names
+       * Datasets available are from the current session
+       * :ref:`See here for more information on the Image Window<edu_afni03_image_window>`
+       
+     - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
+          :width: 100%
+          :align: right
+
 Controller window tour
 ===================================
 
@@ -121,6 +161,8 @@ Controller window tour
      - .. image:: media/afni03_interactive/afni_controller_window_index.png 
           :width: 100%
           :align: right
+
+.. _Open Image and Graph:
 
 .. list-table::
    :widths: 60 40
@@ -235,6 +277,8 @@ Controller window tour
           :width: 100%
           :align: right
           
+<<<<<<< HEAD
+=======
 .. list-table::
    :widths: 60 40
    :header-rows: 0
@@ -265,6 +309,7 @@ Controller window tour
      - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
           :width: 100%
           :align: right
+>>>>>>> 412617ec43d8d0a0f8c90f01315a390a7b3b7752
 
 .. list-table::
    :widths: 60 40
@@ -330,6 +375,14 @@ Controller window tour
           :width: 100%
           :align: right
 
+
+.. _Image Viewer:
+
+Image Viewer
+============
+
+:ref:`Open Image Viewer Page<edu_afni03_image_window>`
+          
 .. _Define Overlay:
           
 Define Overlay
@@ -351,10 +404,7 @@ Dataset "Chooser"
 
 :ref:`Open Dataset Chooser Page<edu_afni03_chooser>`
 
-.. _Image Viewer:
 
-Image Viewer
-============
 
 .. _Graph Viewer:
 
