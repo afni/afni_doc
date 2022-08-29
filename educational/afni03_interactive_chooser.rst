@@ -10,7 +10,11 @@
 
 **Go back to the start** :ref:`HERE<edu_afni03_interactive>`
 
+<<<<<<< HEAD
 .. _Dataset Chooser:
+=======
+.. _Define Chooser:
+>>>>>>> 412617ec43d8d0a0f8c90f01315a390a7b3b7752
 
 Dataset Chooser
 ===============

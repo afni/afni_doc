@@ -277,6 +277,39 @@ Controller window tour
           :width: 100%
           :align: right
           
+<<<<<<< HEAD
+=======
+.. list-table::
+   :widths: 60 40
+   :header-rows: 0
+
+   * - * ``UnderLay`` choose which 3D dataset to view as the background 
+         (grayscale)
+         
+         * Current underlay dataset determines the resolution of and 3D region 
+           covered by image viewers
+         * anatomical or time series datasets usually go here
+         * Datasets which can be graphed are marked with a ``*`` after 
+           their names
+         
+       * ``OverLay`` Use this to choose which overlay (color) 3D dataset to view
+         
+         * Functional (statistical) dataset usually goes here
+         * Functional datasets will be interpolated to the 
+           underlay resolution, and flipped to that orientation (if needed)
+         
+           * The ``Define Datamode`` panel controls the interpolation method.
+             :ref:`(See here)<edu_afni03_datamode>`
+           
+       * Both buttons open a dataset chooser window 
+         :ref:`(See here)<edu_afni03_chooser>`
+       * Datasets that are compressed have a ``z`` after their names
+       * Datasets available are from the current session
+       
+     - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
+          :width: 100%
+          :align: right
+>>>>>>> 412617ec43d8d0a0f8c90f01315a390a7b3b7752
 
 .. list-table::
    :widths: 60 40
