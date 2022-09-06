@@ -47,8 +47,7 @@ Graph Window
    * - * Graph viewer takes voxel values from same dataset as image viewer
    
          * If dataset has only 1 sub-brick, graph viewer only shows numbers
-         
-           * Not very useful unless you are an MRI physics type, perhaps
+           (Not very useful unless you are an MRI physics type, perhaps)
  
        * To look at images from one dataset locked to graphs from another 
          dataset, must use 2 AFNI controllers and ``Define Datamode`` ⇒ 
@@ -71,7 +70,29 @@ Graph Window
           :width: 100%
           :align: right
           
+          
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
 
+   * - * Central sub-graph (current focus location) is outlined in *yellow*
+         
+         * Current time index is marked with small red diamond on data graph
+         * Left-clicking in a non-central sub-graph moves that location to 
+           focus. Making it the *yellow* center sub-graph and moving the 
+           crosshairs on the image window to match the new location.
+         * Left-clicking in central sub-graph moves time index to nearest point
+         
+           * Can also use ``Index`` control in AFNI controller to change time
+           
+         * Right-clicking in any sub-graph pops up some statistics of its data
+         
+     - .. image:: media/afni03_interactive/graph_window_stats.png
+          :width: 100%
+          :align: right
+          
+          
+          
 
           
 ****************************************
