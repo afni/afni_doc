@@ -7,7 +7,7 @@
 
 .. contents::
    :depth: 3
-
+  
 **Download the pdf version here:** `afni03_interactive.pdf 
 <https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
 
@@ -343,43 +343,15 @@ Controller window tour
           :width: 100%
           :align: right
 
+****************************************
+  Using AFNI Interactively *Continued* 
+****************************************
 
-.. _Image Viewer:
-
-Image Viewer
-============
-
-:ref:`Open Image Viewer Page<edu_afni03_image_window>`
-          
-.. _Define Overlay:
-          
-Define Overlay
-==============
-
-:ref:`Open Define Overlay Page<edu_afni03_overlay>`
-
-.. _Define Datamode:
-
-Define Datamode
-===============
-
-:ref:`Open Define Datamode Page<edu_afni03_datamode>`
-
-.. _Dataset Chooser:
-
-Dataset "Chooser"
-=================
-
-:ref:`Open Dataset Chooser Page<edu_afni03_chooser>`
+:ref:`Next (Suggested) Page: Image Viewer<edu_afni03_image_window>`
+===================================================================
 
 
+Jump to Sections
+================
 
-.. _Graph Viewer:
-
-Graph Viewer
-============
-
-
-
-
-
+.. include:: afni03_jump_to_section.rst

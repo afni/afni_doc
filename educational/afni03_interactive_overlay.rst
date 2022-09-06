@@ -25,3 +25,15 @@ Define Overlay
           :width: 100%
           :align: right
           
+****************************************
+  Using AFNI Interactively *Continued* 
+****************************************
+
+:ref:`Next (Suggested) Page: Define Datamode<edu_afni03_datamode>`
+==================================================================
+
+
+Jump to Sections
+================
+
+.. include:: afni03_jump_to_section.rst

@@ -1,8 +1,8 @@
-.. _edu_afni03_image_window:
+.. _edu_afni03_graph:
 
 
 ******************************************
-**Using AFNI Interactively: Image Window**
+**Using AFNI Interactively: Graph Window**
 ******************************************
 
 .. contents::
@@ -10,28 +10,30 @@
 
 **Go back to the start** :ref:`HERE<edu_afni03_interactive>`
 
-.. _Image Window:
-
-Image Window
+.. _Graph Window:
+          
+Graph Window
 ============
 
 .. list-table::
-   :widths: 50 50
+   :widths: 30 70
    :header-rows: 0
    
-   * - * New text here
+   * - * Ooh! graphs
        
-     - .. image:: media/afni03_interactive/image_window.png
+     - .. image:: media/afni03_interactive/graph_window.png
           :width: 100%
           :align: right
+          
           
           
 ****************************************
   Using AFNI Interactively *Continued* 
 ****************************************
 
-:ref:`Next (Suggested) Page: Graph Window<edu_afni03_graph>`
-============================================================
+:ref:`Next (Suggested) Page: Overlay<edu_afni03_overlay>`
+=========================================================
+
 
 Jump to Sections
 ================
