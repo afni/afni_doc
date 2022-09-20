@@ -2,13 +2,13 @@
 
 
 *********************************************
-**Using AFNI Interactively: Dataset Chooser**
+**GUI guide: Chooser menu**
 *********************************************
 
 .. contents::
    :depth: 3
 
-**Go back to the start** :ref:`HERE<edu_afni03_interactive>`
+.. include:: substep_afni03_jump.rst
 
 Dataset Chooser
 ===============
@@ -23,3 +23,7 @@ Dataset Chooser
      - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
           :width: 100%
           :align: right
+
+|
+
+.. include:: substep_afni03_jump.rst

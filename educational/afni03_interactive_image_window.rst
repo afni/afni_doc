@@ -2,13 +2,13 @@
 
 
 ******************************************
-**Using AFNI Interactively: Image Window**
+**GUI guide: Image Window**
 ******************************************
 
 .. contents::
    :depth: 3
 
-**Go back to the start** :ref:`HERE<edu_afni03_interactive>`
+.. include:: substep_afni03_jump.rst
 
 .. _Image Window:
 
@@ -25,15 +25,6 @@ Image Window
           :width: 100%
           :align: right
           
-          
-****************************************
-  Using AFNI Interactively *Continued* 
-****************************************
+|
 
-:ref:`Next (Suggested) Page: Graph Window<edu_afni03_graph>`
-============================================================
-
-Jump to Sections
-================
-
-.. include:: afni03_jump_to_section.rst
+.. include:: substep_afni03_jump.rst
