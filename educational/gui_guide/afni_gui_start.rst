@@ -2,23 +2,15 @@
 
 
 ***********************************
-**GUI guide: Startup and overview**
+**GUI guide: Startup**
 ***********************************
 
 .. contents:: :local:
-  
-.. include:: substep_afni03_jump.rst
-
-
-**Download the pdf version of the original AFNI interactive guide here:**
-`afni03_interactive.pdf
-<https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
-
 
 Start the AFNI GUI
 ==================
 
-#. Start the GUI by typing ``afni`` at the command line::
+#. The basic way to start the AFNI GUI at the command line by typing::
 
      afni
 
@@ -84,51 +76,7 @@ available for viewing in the AFNI GUI.
           environment variables <edu_env_vars>` to set there).
 
 
-AFNI GUI Overview
-===================================
+Jump within GUI Guide
+========================
 
-text 
-
-.. list-table:: 
-   :header-rows: 1
-   :width: 100%
-   :align: center
-
-   * - Main controller and windows
-   * - .. image:: media/afni03_interactive/afni_interactive_overv_main.png
-          :width: 100%
-          :align: center
-
-|
-
-text
-
-|
-
-.. list-table:: 
-   :header-rows: 1
-   :width: 100%
-   :align: center
-
-   * - Image window panel and menus
-   * - .. image:: media/afni03_interactive/afni_interactive_overv_image.png
-          :width: 100%
-          :align: center
-
-|
-
-text
-
-|
-
-.. list-table:: 
-   :header-rows: 1
-   :width: 100%
-   :align: center
-
-   * - Datamode panel and menus
-   * - .. image:: media/afni03_interactive/afni_interactive_overv_datamode.png
-          :width: 100%
-          :align: center
-
-.. include:: substep_afni03_jump.rst
+.. include:: substep_gui_jump.rst

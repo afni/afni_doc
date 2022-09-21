@@ -7,24 +7,21 @@
 
 .. contents:: :local:
   
-.. include:: substep_afni03_jump.rst
 
 .. list-table:: 
    :header-rows: 1
-   :width: 50%
+   :width: 40%
    :align: center
 
    * - AFNI GUI: Main controller
-   * - .. image:: media/afni03_interactive/afni_controller_window.png
+   * - .. image:: media/afni_controller_window.png
           :width: 100%
           :align: center
 
 
-Main Controller
-===================================
 
 Load underlay/overlay datasets
-+++++++++++++++++++++++++++++++
+===================================
 
 .. list-table::
    :widths: 60 40
@@ -61,13 +58,13 @@ Load underlay/overlay datasets
        * :ref:`See here for more information on the Image
          Window<edu_afni03_image_window>`
        
-     - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
+     - .. image:: media/afni_controller_window_under_over_lay.png
           :width: 100%
           :align: right
 
 
 1st column
-++++++++++
+=================
 
 .. list-table::
    :widths: 60 40
@@ -91,7 +88,7 @@ Load underlay/overlay datasets
          * Right-click in coordinate display to change the
            coordinate order
 
-     - .. image:: media/afni03_interactive/afni_controller_window_xyz.png 
+     - .. image:: media/afni_controller_window_xyz.png 
           :width: 100%  
           :align: right
     
@@ -117,7 +114,7 @@ Load underlay/overlay datasets
        * ``Wrap``: Montage layout wraps around when the slices go past
          an edge of the dataset
          
-     - .. image:: media/afni03_interactive/afni_controller_window_xhairs.png 
+     - .. image:: media/afni_controller_window_xhairs.png 
           :width: 100%
           :align: right
 
@@ -135,7 +132,7 @@ Load underlay/overlay datasets
            the number
          * Right click on ``Index`` for a menu of extra options
 
-     - .. image:: media/afni03_interactive/afni_controller_window_index.png 
+     - .. image:: media/afni_controller_window_index.png 
           :width: 100%
           :align: right
 
@@ -162,7 +159,7 @@ Load underlay/overlay datasets
          * Not warping on demand -- see the top of the ``Define
            Datamode`` control panel :ref:`(see here)<Define Datamode>`
 
-     - .. image:: media/afni03_interactive/afni_controller_window_image_graph.png
+     - .. image:: media/afni_controller_window_image_graph.png
            :width: 100%
            :align: right
 
@@ -186,12 +183,12 @@ Load underlay/overlay datasets
            right of ``done``
          * We won't be responsible for the consequences
 
-     - .. image:: media/afni03_interactive/afni_controller_window_bhelp_done.png
+     - .. image:: media/afni_controller_window_bhelp_done.png
           :width: 100%
           :align: right
 
 2nd column
-++++++++++
+==============
 
 .. list-table::
    :widths: 60 40
@@ -205,7 +202,7 @@ Load underlay/overlay datasets
          * ``Talairach View``
          * notes on why these are sometimes greyed out.
          
-     - .. image:: media/afni03_interactive/afni_controller_window_view.png
+     - .. image:: media/afni_controller_window_view.png
           :width: 100%
           :align: right
           
@@ -228,7 +225,7 @@ Load underlay/overlay datasets
          
          * More on this here -> :ref:`Datamode<edu_afni03_datamode>`
          
-     - .. image:: media/afni03_interactive/afni_controller_window_overlay_datamode.png
+     - .. image:: media/afni_controller_window_overlay_datamode.png
           :width: 100%
           :align: right
 
@@ -253,7 +250,7 @@ Load underlay/overlay datasets
          * This will add a new 'session' that you can select with the
            ``Switch`` button
        
-     - .. image:: media/afni03_interactive/afni_controller_window_DataDir.png
+     - .. image:: media/afni_controller_window_DataDir.png
           :width: 100%
           :align: right
           
@@ -274,7 +271,7 @@ Load underlay/overlay datasets
          * Greyed out if already listening (you already pushed it or
            launched afni with ``-niml -yesplugouts``
 
-     - .. image:: media/afni03_interactive/afni_controller_window_env_niml.png
+     - .. image:: media/afni_controller_window_env_niml.png
           :width: 100%
           :align: right
 
@@ -291,7 +288,7 @@ Load underlay/overlay datasets
            a slice center-plane
          * Greyed out if ``suma`` is not running and talking with ``afni``
   
-     - .. image:: media/afni03_interactive/afni_controller_window_cont_surf.png
+     - .. image:: media/afni_controller_window_cont_surf.png
           :width: 100%
           :align: right
           
@@ -321,11 +318,13 @@ Load underlay/overlay datasets
          page of Bootcamp lecture videos
          <https://www.youtube.com/channel/UC40RiNZN7_dCuB6Lg7HJl1g>`_
        
-     - .. image:: media/afni03_interactive/afni_controller_window_news_etc.png
+     - .. image:: media/afni_controller_window_news_etc.png
           :width: 100%
           :align: right
 
 
-|
 
-.. include:: substep_afni03_jump.rst
+Jump within GUI Guide
+========================
+
+.. include:: substep_gui_jump.rst
