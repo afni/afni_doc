@@ -2,7 +2,7 @@
 
 
 *************************************
-**GUI guide: Overlay panel**
+**AFNI GUI: Overlay panel**
 *************************************
 
 .. contents:: :local:

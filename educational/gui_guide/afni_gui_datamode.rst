@@ -2,7 +2,7 @@
 
 
 **************************************
-**GUI guide: Datamode panel**
+**AFNI GUI: Datamode panel**
 **************************************
 
 .. contents:: :local:

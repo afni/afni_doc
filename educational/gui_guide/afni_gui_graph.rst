@@ -2,7 +2,7 @@
 
 
 ******************************************
-**GUI guide: Graph window**
+**AFNI GUI: Graph window**
 ******************************************
 
 .. contents:: :local:

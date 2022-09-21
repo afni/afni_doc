@@ -2,7 +2,7 @@
 
 
 ******************************************
-**GUI guide: Image window**
+**AFNI GUI: Image window**
 ******************************************
 
 .. contents:: :local:
