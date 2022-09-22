@@ -42,7 +42,7 @@ Graph Window
 ============
 
 .. list-table::
-   :widths: 60 40
+   :widths: 50 50
    :header-rows: 0
    
    * - * Graph viewer takes voxel values from same dataset as image
@@ -81,26 +81,65 @@ Graph Window
    * - * Central sub-graph (current focus location) is outlined in
          *yellow*
          
-         * Current time index is marked with small red diamond on data
-           graph
-         * Left-clicking in a non-central sub-graph moves that
-           location to focus. Making it the *yellow* center sub-graph
-           and moving the crosshairs on the image window to match the
-           new location.
-         * Left-clicking in central sub-graph moves time index to
-           nearest point
+       * Current time index is marked with small red diamond on data
+         graph
+       * Left-clicking in a non-central sub-graph moves that
+         location to focus. Making it the *yellow* center sub-graph
+         and moving the crosshairs on the image window to match the
+         new location.
+       * Left-clicking in central sub-graph moves time index to
+         nearest point
+       
+         * Can also use ``Index`` control in AFNI controller to
+           change time
          
-           * Can also use ``Index`` control in AFNI controller to
-             change time
-           
-         * Right-clicking in any sub-graph pops up some statistics of
-           its data
+       * Right-clicking in any sub-graph pops up some statistics of
+         its data
          
      - .. image:: media/graph_window_stats.png
           :width: 100%
           :align: right
           
-          
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+
+   * - * Left-clicking the icon in the lower left corner causes icon and menu 
+         buttons to disappear.
+       * Useful if you want to do a screenshot to save AFNI window(s)
+       * Left-clicking in same place will bring icon and buttons back
+       
+     - .. image:: media/graph_window_clear.png
+          :width: 100%
+          :align: right
+
+Opt Menu
+========
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+   
+   * - * ``Opt`` menu buttons let you control how graphs appear
+       * Many items have keyboard shortcuts
+       * Make sure you are typing into the correct window!
+       * (XQuartz on Mac makes it difficult to see...)
+         
+     - .. image:: media/graph_window_opt_open2.png
+          :width: 100%
+          :align: right
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+   
+   * - * ``Scale`` changes scale of graphs. 
+          Mapping from voxel values to screen pixels.
+       * ``Down [-]`` and ``Up [+]`` shrinks or expands the graphs vertically
+         
+     - .. image:: media/graph_window_opt_scale.png
+          :width: 100%
+          :align: right
 
 Jump within GUI Guide
 ========================
