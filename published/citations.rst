@@ -199,6 +199,14 @@ the population-level, please cite:
   | `<https://pubmed.ncbi.nlm.nih.gov/33667672/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.11.01.363838v2>`_
 
+If you are interested in edge detection and visualization in
+volumetric data, consider checking out ``3dedgedog`` and please see:
+
+* | Rorden C, Newman-Norlund R, Drake C, Glen DR, Fridriksson J,
+    Hanayik T, Taylor PA (2022). Improving 3D Edge Detection for
+    Visual Inspection of MRI Coregistration and Alignment. 
+    (*submitted*).
+  | `<https://www.biorxiv.org/content/10.1101/2022.09.14.507937v1>`_
 
 Methods: SUMA
 ==============
