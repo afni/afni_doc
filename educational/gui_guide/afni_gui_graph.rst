@@ -130,7 +130,7 @@ Opt Menu
           :align: right
 
 .. list-table::
-   :widths: 50 50
+   :widths: 70 30
    :header-rows: 0
    
    * - * ``Index Pin/Stride`` changes which data points are displayed in 
@@ -156,7 +156,7 @@ Opt Menu
           :align: right
           
 .. list-table::
-   :widths: 50 50
+   :widths: 70 30
    :header-rows: 0
    
    * - * ``Scale`` changes scale of graphs. 
@@ -165,7 +165,7 @@ Opt Menu
        * ``Choose`` lets you pick exact scale factor.
        
          * .. image:: media/graph_window_opt_scale_choose.png
-              :width: 45%
+              :width: 40%
          * Positive (pix/datum) = number of *y* screen pixels for each change of 
            1 in data.
          * Negative (datum/pix) = size of change in data to get 1 *y*
@@ -184,7 +184,7 @@ Opt Menu
           :align: right
 
 .. list-table::
-   :widths: 50 50
+   :widths: 70 30
    :header-rows: 0
    
    * - * ``Matrix`` changes number of sub-graphs across each row and column.
@@ -197,7 +197,7 @@ Opt Menu
           :align: right
 
 .. list-table::
-   :widths: 50 50
+   :widths: 70 30
    :header-rows: 0
    
    * - * ``Grid`` lets you change spacing of vertical grid lines 
@@ -223,7 +223,46 @@ Opt Menu
           :width: 100%
           :align: right
 
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``[Slice]`` lets you change slices
+       * ``Down[z]`` and ``Up[Z]`` move one slice
+       * Can also choose slice directly from menu
+       * Current voxel indexes are shown below graphs:
+       * .. image:: media/graph_window_opt_slice_zoom.png
+            :width: 100%
+       * Corresponds to ``[Voxel Coords?]`` display in AFNI controller 
+         (from ``Define Datamode`` ⇒ ``Misc menu`` 
+         :ref:`see here<Define Datamode>`) 
+       
+     - .. image:: media/graph_window_opt_slice.png
+          :width: 100%
+          :align: right
 
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``[Colors, Etc.]`` lets you alter the colors/lines used for drawing.
+       * Lines used for sub-graph frame boxes, grid lines, data graphs, FIM
+         orts/ideals, and double plots can have color changes and be made 
+         thicker.
+         
+         * Grid color is also used to highlight central sub-graph.
+         
+       * Can choose to graph curves as lines, points, or both together
+       * Can change color of background and text
+       * Can change gap between sub-graph boxes
+       * Play with it and see what you can make!
+       * **Do we need more here?**
+       
+     - .. image:: media/graph_window_opt_colors.png
+          :width: 100%
+          :align: right
+          
+          
 Jump within GUI Guide
 ========================
 
