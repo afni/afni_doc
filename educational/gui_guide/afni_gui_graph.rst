@@ -174,7 +174,7 @@ Opt Menu
        * ``Auto [a]`` makes AFNI pick a nice scale factor (this one time)
        * ``AUTO [A]`` autoscale the graphs (every time they are redrawn)
        * Scale factor does not change when you resize graph,change matrix, etc.
-         You usually have to auto-scale ``a`` of ``[A]`` afterwards.
+         You usually have to auto-scale ``[a]`` or ``[A]`` afterwards.
        * Current scale factor is shown below graphs:
        * .. image:: media/graph_window_opt_scale_zoom.png
             :width: 100%
