@@ -125,9 +125,11 @@ Opt Menu
        * Make sure you are typing into the correct window!
        * (XQuartz on Mac makes it difficult to see...)
          
-     - .. image:: media/graph_window_opt_open2.png
+     - .. image:: media/graph_window_opt_open_ubuntu.png
           :width: 100%
           :align: right
+
+.. _gui_guide_graph_window_opt_index_pin:
 
 .. list-table::
    :widths: 70 30
@@ -135,6 +137,15 @@ Opt Menu
    
    * - * ``Index Pin/Stride`` changes which data points are displayed in 
          the graph. Useful when switching between datasets of different lengths.
+         
+         .. list-table::
+             :width: 32%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/graph_window_opt_index_pin.png
+                   :width: 100%
+         
        * The defaults (0, 0, 1) show all data points in the dataset.
        * ``Bot...`` sets which data point is the first (on the left)
        * ``Top...`` sets which data point is the last (on the right)
@@ -148,13 +159,16 @@ Opt Menu
        * For example, if the data has 151 time points, setting ``Bot...`` = 
          10, ``Top...`` = 100, ``Stride`` = 9 will get you a graph that shows
          every 9th data point from the 10th to the 99th.
-       * .. image:: media/graph_window_opt_index_pin_zoom.png
-            :width: 100%
+         
+       .. image:: media/graph_window_opt_index_pin_zoom.png
+          :width: 100%
             
-     - .. image:: media/graph_window_opt_index_pin.png
+     - .. image:: media/graph_window_opt_index_pin_select.png
           :width: 100%
           :align: right
           
+.. _gui_guide_graph_window_opt_scale:
+
 .. list-table::
    :widths: 70 30
    :header-rows: 0
@@ -164,8 +178,14 @@ Opt Menu
        * ``Down [-]`` and ``Up [+]`` shrinks or expands the graphs vertically.
        * ``Choose`` lets you pick exact scale factor.
        
-         * .. image:: media/graph_window_opt_scale_choose.png
-              :width: 40%
+         .. list-table::
+             :width: 32%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/graph_window_opt_scale_choose.png
+                   :width: 100%
+
          * Positive (pix/datum) = number of *y* screen pixels for each change of 
            1 in data.
          * Negative (datum/pix) = size of change in data to get 1 *y*
@@ -176,12 +196,15 @@ Opt Menu
        * Scale factor does not change when you resize graph,change matrix, etc.
          You usually have to auto-scale ``[a]`` or ``[A]`` afterwards.
        * Current scale factor is shown below graphs:
-       * .. image:: media/graph_window_opt_scale_zoom.png
-            :width: 100%
+         
+       .. image:: media/graph_window_opt_scale_zoom.png
+          :width: 100%
        
      - .. image:: media/graph_window_opt_scale.png
           :width: 100%
           :align: right
+
+.. _gui_guide_graph_window_opt_matrix:
 
 .. list-table::
    :widths: 70 30
@@ -196,6 +219,8 @@ Opt Menu
           :width: 100%
           :align: right
 
+.. _gui_guide_graph_window_opt_grid:
+
 .. list-table::
    :widths: 70 30
    :header-rows: 0
@@ -207,8 +232,13 @@ Opt Menu
        * ``AutoGrid`` lets AFNI choose something reasonable (default)
        * ``Choose`` lets you pick the number exactly.
        
-         * .. image:: media/graph_window_opt_grid_choose.png
-              :width: 45%
+       .. list-table::
+                   :width: 32%
+                   :align: center
+                   :header-rows: 0
+ 
+                   * - .. image:: media/graph_window_opt_grid_choose.png
+                         :width: 100%
        
        * ``HorZ [h]`` will put in a dashed line at the *y* = 0 
          level in sub-graphs.
@@ -216,12 +246,15 @@ Opt Menu
          * Only useful if data range spans negative and positive values!
      
        * Current grid spacing is shown below graphs.
-       * .. image:: media/graph_window_opt_grid_zoom.png
-            :width: 100%
+         
+       .. image:: media/graph_window_opt_grid_zoom.png
+          :width: 100%
               
      - .. image:: media/graph_window_opt_grid.png
           :width: 100%
           :align: right
+
+.. _gui_guide_graph_window_opt_slice:
 
 .. list-table::
    :widths: 70 30
@@ -231,8 +264,10 @@ Opt Menu
        * ``Down[z]`` and ``Up[Z]`` move one slice
        * Can also choose slice directly from menu
        * Current voxel indexes are shown below graphs:
-       * .. image:: media/graph_window_opt_slice_zoom.png
-            :width: 100%
+         
+       .. image:: media/graph_window_opt_slice_zoom.png
+          :width: 100%
+            
        * Corresponds to ``[Voxel Coords?]`` display in AFNI controller 
          (from ``Define Datamode`` ⇒ ``Misc menu`` 
          :ref:`see here<Define Datamode>`) 
@@ -240,6 +275,8 @@ Opt Menu
      - .. image:: media/graph_window_opt_slice.png
           :width: 100%
           :align: right
+
+.. _gui_guide_graph_window_opt_colors:
 
 .. list-table::
    :widths: 70 30
@@ -256,13 +293,64 @@ Opt Menu
        * Can change color of background and text
        * Can change gap between sub-graph boxes
        * Play with it and see what you can make!
-       * **Do we need more here?**
        
      - .. image:: media/graph_window_opt_colors.png
           :width: 100%
           :align: right
           
+.. _gui_guide_graph_window_opt_baseline:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Baseline [b]`` changes how the sub-graphs are plotted.
+       * All sub-graphs have same scale factor, to convert values into vertical 
+         pixels.
+       * Baseline is value that gets plotted to bottom of sub-graph.
+       * ``Individual``: all sub-graphs have different baselines
+         
+         * Baseline = smallest value in each displayed time series
+         * This can be confusing; same vertical location doesn't mean same value
+         * Shown below graphs as ``Base: separate``
+        
+       * ``Common``: all sub-graphs shown at any one time get same baseline
+         
+         * Baseline = smallest value in all displayed time series
+         * Shown below graphs as ``Base: common``
+         * May need to rescale ``[a]`` after changing baseline
           
+       * ``Global``: all sub-graphs get same baseline even when spatial position 
+         changes
+         
+         * Default global level is smallest value in entire dataset
+         * Set from ``[Baseline]`` ⇒ ``[Set Global]`` menu item
+         
+         .. list-table::
+             :width: 42%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/graph_window_opt_baseline_set_global.png
+                   :width: 100%
+                   
+       * Range of central sub-graph is shown to left of graph region
+
+         * Central sub-graph bottom (baseline) value is shown at lower left
+         * Upper left shows value at top of central sub-graph box
+         * Number in [brackets] shows data range of one sub-graph box's height
+         * If baselines are separate, bot/top values only apply to central 
+           sub-graph.
+       
+       * Baseline mode is displayed at the bottom of the graph window.
+  
+         .. image:: media/graph_window_opt_baseline_highlight.png
+            :width: 80%
+      
+     - .. image:: media/graph_window_opt_baseline.png
+          :width: 100%
+          :align: right
+
 Jump within GUI Guide
 ========================
 
