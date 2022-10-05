@@ -137,6 +137,7 @@ Opt Menu
    
    * - * ``Index Pin/Stride`` changes which data points are displayed in 
          the graph. Useful when switching between datasets of different lengths.
+         **(note to staff: this is not in the gui button help)**
          
          .. list-table::
              :width: 32%
@@ -351,6 +352,131 @@ Opt Menu
           :width: 100%
           :align: right
 
+.. _gui_guide_graph_window_opt_show_text:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Show Text? [t]`` allows you to see text display of values instead 
+         of graphs.
+       * The number shown will be the numerical value at that voxel for the 
+         current time index. 
+       * The display at the bottom of the graph will show info for the central
+         sub-graph. In the below example, the values are:
+         
+         * ``indx=13 [#14]`` is the current time index (and sub-brik).
+         * ``val=261`` is the numerical value of the voxel at the central 
+           sub-graph.
+         * ``@t=29.15151`` is the time value calculated from the TR of the 
+           dataset. (provided there is a TR in the dataset header information).
+        
+         .. image:: media/graph_window_opt_show_text_plot.png
+            :width: 80%
+            
+     - .. image:: media/graph_window_opt_show_text.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_graph_window_opt_thresh_fade:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Thresh Fade? [F]`` marks sub-graphs of those voxels that are below 
+         threshold. **(note to staff: this is not in the gui button help)**
+       * Those sub-graphs for voxels that are un-colored when ``See Overlay`` 
+         is turned on will be greyed out. 
+       * Fading is only on when ``See Overlay`` is on and with ``Clusterize`` 
+         and ``InstaCorr``.  
+       * If ``Fading`` is on, there is an indicator at the bottom of the graph 
+         window.
+       * The sub-plots are data from the underlay with fading from the 
+         thresholded overlay.
+       * The red and blue text in the sub-graphs in the below example are just 
+         for emphasis...
+
+         .. image:: media/graph_window_opt_thresh_fade_graph.png
+            :width: 80%
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/graph_window_opt_thresh_fade_image.png
+                   :width: 100%
+            
+              - .. image:: media/graph_window_opt_thresh_fade_image_zoom2.png
+                   :width: 100%       
+                   
+     - .. image:: media/graph_window_opt_thresh_fade.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_graph_window_opt_save_image:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Save Image [S]`` lets you save a snapshot of the graph window to an 
+         image file. 
+
+         .. list-table::
+             :width: 42%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/graph_window_opt_save_image_dialog.png
+                   :width: 100%
+
+       * The image will be saved into your current directory. (where you 
+         started afni)
+       * If you don't provide an extension (``.jpg`` or ``.png``), the image 
+         will be saved as a ``.ppm`` file (Portable Pixmap Format).
+         
+         * If you use ``.jpeg`` as the extension, you will still get ``.ppm``
+
+     - .. image:: media/graph_window_opt_save_image.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_graph_window_opt_save_image:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Write Center [w]`` lets you write data from central sub-graph to a 
+         file.
+       * The file is in ASCII format that can be imported into other programs
+       * The filename is of the form xxx_yyy_zzz.suffix.1D (using voxel indexes)
+       * The ``Set 'w' Suffix`` dialog lets you add text after the xxx_yyy_zzz 
+         and before the .1D file extension separated by ``.``. 
+       * For example if you set your suffix as ``my_data``, and the central
+         sub-graph is at the voxel coordinates x=50, y=100, z=150, the file 
+         name will be ``050_100_150.my_data.1D``
+       * ``Write Center`` will overwrite a file with the same name if it exists 
+         in the same directory. So use the set suffix to make sure you don't 
+         lose any data.
+       * Once you choose your suffix you will not be able to remove the suffix,
+         only change it to something else 
+         (**note to staff: may need to fix this**)
+
+         .. list-table::
+             :width: 42%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/graph_window_opt_write_center_suffix.png
+                   :width: 100%
+                   
+     - .. image:: media/graph_window_opt_write_center.png
+          :width: 100%
+          :align: right
+          
 Jump within GUI Guide
 ========================
 
