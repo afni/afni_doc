@@ -68,7 +68,7 @@ Quick setup
                              libglu1-mesa-dev libglw1-mesa     \
                              libxm4 build-essential            \
                              libcurl4-openssl-dev libxml2-dev  \
-                             libgfortran-10-dev libgomp1       \
+                             libgfortran-11-dev libgomp1       \
                              gnome-terminal nautilus           \
                              firefox xfonts-100dpi             \
                              r-base-dev cmake                  \
