@@ -476,7 +476,36 @@ Opt Menu
      - .. image:: media/graph_window_opt_write_center.png
           :width: 100%
           :align: right
+
+.. _gui_guide_graph_window_opt_tran_0D:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Tran 0D`` lets you transform the data before it is graphed.
+       * The chosen function is applied to each point in the time series.
+       * ``Log10`` and ``SSqrt`` useful for images with extreme values.
+         
+     - .. image:: media/graph_window_opt_tran_0D.png
+          :width: 100%
+          :align: right
           
+.. _gui_guide_graph_window_opt_tran_1D:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Tran 1D`` lets you transform the data before it is graphed.
+       * The chosen function is applied to the time series as a whole.
+       * **Note to staff: Lots of stuff here. How much detail do we want? 
+         Is there a good place with documentation?**
+         
+     - .. image:: media/graph_window_opt_tran_1D.png
+          :width: 100%
+          :align: right
+
 Jump within GUI Guide
 ========================
 
