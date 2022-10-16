@@ -55,7 +55,22 @@ Graph Window
        * To look at images from one dataset locked to graphs from
          another dataset, must use 2 AFNI controllers and ``Define
          Datamode`` ⇒ ``Lock`` on AFNI control panel
-      
+       * Keystrokes in graphs that have no menu items are:
+         
+         * ``<`` or ``,`` or left-arrow keys move the time index down by one.
+         * ``>`` or ``.`` or right-arrow keys move the time index up by one.
+         * ``L`` turns off/on the AFNI logo in the lower left corner.
+         
+       * The following are video mode operations moving the cursor through the 
+         time index. An easy way to animate an EPI time series, to look for 
+         subject motion.
+
+         * ``v`` moves through the data forwards and jumps back to the start
+           of the graphs when it gets to the last time index.
+         * ``V`` is the same only it moves the cursor backwards.
+         * ``r`` moves forwards but bounces back from the last time index.
+         * ``R`` moves backwards and bounces back from the first time index.
+           
      - .. image:: media/graph_window.png
           :width: 100%
           :align: right
@@ -108,10 +123,17 @@ Graph Window
          buttons to disappear.
        * Useful if you want to do a screenshot to save AFNI window(s)
        * Left-clicking in same place will bring icon and buttons back
-       
+
      - .. image:: media/graph_window_clear.png
           :width: 100%
           :align: right
+
+ [ L ] turns off/on the AFNI logo in the corner
+ [ v V r R ] are video mode operations, like in the image viewer
+➥ Moving through time index, rather than slice index
+➥ An easy way to animate an EPI time series, to look for subject motion
+
+
 
 Opt Menu
 ========
@@ -409,7 +431,7 @@ Opt Menu
                    :width: 100%
             
               - .. image:: media/graph_window_opt_thresh_fade_image_zoom2.png
-                   :width: 100%       
+                   :width: 100%
                    
      - .. image:: media/graph_window_opt_thresh_fade.png
           :width: 100%
@@ -486,7 +508,14 @@ Opt Menu
    * - * ``Tran 0D`` lets you transform the data before it is graphed.
        * The chosen function is applied to each point in the time series.
        * ``Log10`` and ``SSqrt`` useful for images with extreme values.
-         
+       * The below images are before and after a Log10 transformation.
+
+         .. image:: media/graph_window_opt_tran_0D_raw.png
+            :width: 70%
+            
+         .. image:: media/graph_window_opt_tran_0D_log10.png
+            :width: 70%
+                   
      - .. image:: media/graph_window_opt_tran_0D.png
           :width: 100%
           :align: right
@@ -499,10 +528,77 @@ Opt Menu
    
    * - * ``Tran 1D`` lets you transform the data before it is graphed.
        * The chosen function is applied to the time series as a whole.
+       * You can combine the 0D and 1D transformations if you want to get 
+         fancy.
+       * Below is the raw data as above with the AdptMean19 transformation.
+         (XQuartz on macOS obscures the text a bit in the lower right corner)
+         
+         .. image:: media/graph_window_opt_tran_1D_AdptMean19.png
+            :width: 70%
+
        * **Note to staff: Lots of stuff here. How much detail do we want? 
-         Is there a good place with documentation?**
+         Is there a good place with documentation? Should we break this
+         section out?**
          
      - .. image:: media/graph_window_opt_tran_1D.png
+          :width: 100%
+          :align: right
+          
+.. _gui_guide_graph_window_opt_double_plot:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Double Plot`` lets you plot output of ``Tran 1D`` and original data 
+         together.
+       * ``Tran 1D`` must be active to see the transformed data along with the 
+         original time series data. 
+       * Below is the data with ``Tran 0D`` set to ``Log10`` and ``Tran 1D`` 
+         set to ``AdptMean19`` and ``DPlot On``.
+       * You can always change the colors with the ``Colors, Etc.`` option 
+         above. (:ref:`see here<gui_guide_graph_window_opt_colors>`) 
+
+         .. image:: media/graph_window_opt_tran_0D_log10_1D_AdptMean19.png
+            :width: 70%
+
+     - .. image:: media/graph_window_opt_double_plot.png
+          :width: 100%
+          :align: right
+          
+.. _gui_guide_graph_window_opt_Detrend:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``Detrend`` changes the order of the time series L1 detrending /
+         baseline removal.
+       * ``-1`` is for NO detrending (default).
+
+         .. image:: media/graph_window_opt_tran_0D_log10_1D_AdptMean19.png
+            :width: 70%
+
+     - .. image:: media/graph_window_opt_Detrend.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_graph_window_opt_Xaxis:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 0
+   
+   * - * ``X-axis`` lets you choose how graph x-axis is chosen
+       * The default is linear time.
+       * Useful only in **very** limited circumstances!
+       * Below is the same data with ``X-axis=center`` (not really sure that 
+         is useful with this data...)
+         
+         .. image:: media/graph_window_opt_Xaxis_center.png
+            :width: 70%
+            
+     - .. image:: media/graph_window_opt_Xaxis.png
           :width: 100%
           :align: right
 
