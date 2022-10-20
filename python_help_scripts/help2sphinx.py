@@ -178,9 +178,9 @@ top_text = '''
 
 .. _programs_main:
 
-##################
-All program helps
-##################
+###################################
+Alphabetical list of program helps
+###################################
 
 .. contents:: :local:
 

@@ -222,7 +222,7 @@ if ( "$DO_BUILD" == "1" ) then
     endif
 
     echo "++ STEP: Make list of All Program Helps"
-    set dir_allhelp = "../programs"
+    set dir_allhelp = "../programs/alpha"
     mkdir -p ${dir_allhelp}
     python help2sphinx.py -OutFolder ${dir_allhelp}
 
@@ -233,7 +233,7 @@ if ( "$DO_BUILD" == "1" ) then
         $fieldfile
     python convert_fields_to_rst.py                \
         $fieldfile                                 \
-        ../educational/classified_progs.rst
+        ../programs/classified_progs.rst
 
     echo "++ STEP: Make AFNI startup tips RST"
     python make_file_of_startup_tips.py            \
