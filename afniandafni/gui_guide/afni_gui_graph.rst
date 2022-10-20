@@ -522,8 +522,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Tran 0D<gui_guide_graph_window_opt_tran_0D>`
+     - 
    * - * ``Tran 0D`` lets you transform the data before it is graphed.
        * The chosen function is applied to each point in the time series.
        * ``Log10`` and ``SSqrt`` useful for images with extreme values.
@@ -543,8 +545,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Tran 1D<gui_guide_graph_window_opt_tran_1D>`
+     - 
    * - * ``Tran 1D`` lets you transform the data before it is graphed.
        * The chosen function is applied to the time series as a whole.
        * You can combine the 0D and 1D transformations if you want to get 
@@ -567,8 +571,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Double Plot<gui_guide_graph_window_opt_double_plot>`
+     - 
    * - * ``Double Plot`` lets you plot output of ``Tran 1D`` and original data 
          together.
        * ``Tran 1D`` must be active to see the transformed data along with the 
@@ -589,8 +595,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Detrend<gui_guide_graph_window_opt_Detrend>`
+     - 
    * - * ``Detrend`` changes the order of the time series L1 detrending /
          baseline removal.
        * ``-1`` is for NO detrending (default).
@@ -606,8 +614,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`X-axis<gui_guide_graph_window_opt_Xaxis>`
+     - 
    * - * ``X-axis`` lets you choose how graph x-axis is chosen
        * The default is linear time.
        * Useful only in **very** limited circumstances!
