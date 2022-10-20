@@ -1,96 +1,70 @@
-.. _edu_afni03_interactive:
+.. _edu_afni03_main:
 
 
-****************************
-**Using AFNI Interactively**
-****************************
+************************************
+**AFNI GUI: Main controller**
+************************************
 
-.. contents::
-   :depth: 3
+.. contents:: :local:
   
-**Download the pdf version here:** `afni03_interactive.pdf 
-<https://afni.nimh.nih.gov/pub/dist/edu/data/CD.expanded/afni_handouts/afni03_interactive.pdf>`_
 
-Start the AFNI GUI
-==================
+.. list-table:: 
+   :header-rows: 1
+   :width: 40%
+   :align: center
 
-.. list-table::
-   :widths: 60 40
-   :header-rows: 0
-   
-   * - * Start the GUI by typing ``afni`` at the command line.
-      
-       * How does the AFNI GUI load datasets into memory when started?
-         
-         * The ``afni`` GUI reads datasets from the current directory.
-         * If there are no datasets in current directory, it tries to read
-           sub-directories 1 level deeper.
-           
-       * ``afni dir1 dir2 ...`` reads datasets from directories listed.
-       * ``afni -R`` reads datasets from the current directory and from all
-         directories below it.
-       * There are also special directories that can be specified to always
-         also be opened when you run the AFNI GUI; these often contain
-         reference templates and atlases, so these datasets don't have to be
-         copied around.
-        
-         * These are specified with AFNI environment variables, such as
-           ``AFNI_GLOBAL_SESSION``, ``AFNI_ATLAS_PATH``, and more.
-          
-     - .. image:: media/afni03_interactive/afni_controller_window.png
+   * - AFNI GUI: Main controller
+   * - .. image:: media/afni_controller_window.png
+          :width: 100%
           :align: center
-          :width: 400
 
-.. note:: AFNI reads a settings file named ``~/.afnirc`` from your
-          home directory, if it is present.  This file is used to
-          change many of the defaults (cf the :ref:`list of all AFNI
-          environment variables <edu_env_vars>` to set there).
 
-Open an image for viewing
-+++++++++++++++++++++++++
+
+Load underlay/overlay datasets
+===================================
 
 .. list-table::
    :widths: 60 40
    :header-rows: 0
   
-   * - * An Image Window may have opened when afni was launched.
-         (If not, you can open an image window by clicking ``Image`` next to 
-         ``Axial``, ``Sagittal``, or ``Coronal``. 
-         :ref:`see here<Open Image and Graph>` )
+   * - * An Image Window may have opened when ``afni`` was launched.
+         (If not, you can open an image window by clicking ``Image``
+         next to ``Axial``, ``Sagittal``, or ``Coronal``; :ref:`see
+         here<Open Image and Graph>` )
    
        * ``UnderLay`` chooses which 3D dataset to view as the background 
          (grayscale)
          
-         * Current underlay dataset determines the resolution of and 3D region 
-           covered by image viewers
+         * Current underlay dataset determines the resolution of and
+           3D region covered by image viewers
          * anatomical or time series datasets usually go here
          * Datasets which can be graphed are marked with a ``*`` after 
            their names
          
-       * ``OverLay`` Use this to choose which overlay (color) 3D dataset to view
+       * ``OverLay`` Use this to choose which overlay (color) 3D
+         dataset to view
          
          * Functional (statistical) dataset usually goes here
          * Functional datasets will be interpolated to the 
            underlay resolution, and flipped to that orientation (if needed)
          
-           * The ``Define Datamode`` panel controls the interpolation method.
-             :ref:`(See here)<edu_afni03_datamode>`
+           * The ``Define Datamode`` panel controls the interpolation
+             method (:ref:`see here<edu_afni03_datamode>`)
            
        * Both buttons open a dataset chooser window 
-         :ref:`(See here)<edu_afni03_chooser>`
+         (:ref:`see here<edu_afni03_chooser>`)
        * Datasets that are compressed have a ``z`` after their names
        * Datasets available are from the current session
-       * :ref:`See here for more information on the Image Window<edu_afni03_image_window>`
+       * :ref:`See here for more information on the Image
+         Window<edu_afni03_image_window>`
        
-     - .. image:: media/afni03_interactive/afni_controller_window_under_over_lay.png
+     - .. image:: media/afni_controller_window_under_over_lay.png
           :width: 100%
           :align: right
 
-Controller window tour
-===================================
 
 1st column
-++++++++++
+=================
 
 .. list-table::
    :widths: 60 40
@@ -114,7 +88,7 @@ Controller window tour
          * Right-click in coordinate display to change the
            coordinate order
 
-     - .. image:: media/afni03_interactive/afni_controller_window_xyz.png 
+     - .. image:: media/afni_controller_window_xyz.png 
           :width: 100%  
           :align: right
     
@@ -140,7 +114,7 @@ Controller window tour
        * ``Wrap``: Montage layout wraps around when the slices go past
          an edge of the dataset
          
-     - .. image:: media/afni03_interactive/afni_controller_window_xhairs.png 
+     - .. image:: media/afni_controller_window_xhairs.png 
           :width: 100%
           :align: right
 
@@ -158,7 +132,7 @@ Controller window tour
            the number
          * Right click on ``Index`` for a menu of extra options
 
-     - .. image:: media/afni03_interactive/afni_controller_window_index.png 
+     - .. image:: media/afni_controller_window_index.png 
           :width: 100%
           :align: right
 
@@ -185,7 +159,7 @@ Controller window tour
          * Not warping on demand -- see the top of the ``Define
            Datamode`` control panel :ref:`(see here)<Define Datamode>`
 
-     - .. image:: media/afni03_interactive/afni_controller_window_image_graph.png
+     - .. image:: media/afni_controller_window_image_graph.png
            :width: 100%
            :align: right
 
@@ -209,25 +183,26 @@ Controller window tour
            right of ``done``
          * We won't be responsible for the consequences
 
-     - .. image:: media/afni03_interactive/afni_controller_window_bhelp_done.png
+     - .. image:: media/afni_controller_window_bhelp_done.png
           :width: 100%
           :align: right
 
 2nd column
-++++++++++
+==============
 
 .. list-table::
    :widths: 60 40
    :header-rows: 0
    
-   * - * Use these to select the type of view for your data. **Need more here**
+   * - * Use these to select the type of view for your data. **Need
+         more here**
          
          * ``Original View``
          * ``AC-PC Aligned``
          * ``Talairach View``
          * notes on why these are sometimes greyed out.
          
-     - .. image:: media/afni03_interactive/afni_controller_window_view.png
+     - .. image:: media/afni_controller_window_view.png
           :width: 100%
           :align: right
           
@@ -245,12 +220,12 @@ Controller window tour
          * This is useful for seeing what anatomical features are 'under' a 
            particular overlay color
            
-       * ``Define Datamode`` Use this to control the mode in which the underlay
-         data is viewed, and also to save 3D datasets to disk
+       * ``Define Datamode`` Use this to control the mode in which the
+         underlay data is viewed, and also to save 3D datasets to disk
          
          * More on this here -> :ref:`Datamode<edu_afni03_datamode>`
          
-     - .. image:: media/afni03_interactive/afni_controller_window_overlay_datamode.png
+     - .. image:: media/afni_controller_window_overlay_datamode.png
           :width: 100%
           :align: right
 
@@ -258,22 +233,24 @@ Controller window tour
    :widths: 60 40
    :header-rows: 0
  
-   * - * ``Switch`` Use this to choose from which session 3D datasets may be 
-         viewed
+   * - * ``Switch`` Use this to choose from which session 3D datasets
+         may be viewed
          
-         * All datasets in same directory are assumed to be aligned in space
+         * All datasets in same directory are assumed to be aligned in
+           space
          
            * **this is in the handout, but I don't think it is true...**
            
-         * Any dataset can be the underlay; any dataset can be the overlay
+         * Any dataset can be the underlay; any dataset can be the
+           overlay
          
-       * ``Read`` Click this button to get a 'chooser' dialog window to select
-         a new directory from which to read datasets
+       * ``Read`` Click this button to get a 'chooser' dialog window
+         to select a new directory from which to read datasets
          
-         * This will add a new 'session' that you can select with the ``Switch``
-           button
+         * This will add a new 'session' that you can select with the
+           ``Switch`` button
        
-     - .. image:: media/afni03_interactive/afni_controller_window_DataDir.png
+     - .. image:: media/afni_controller_window_DataDir.png
           :width: 100%
           :align: right
           
@@ -289,11 +266,12 @@ Controller window tour
          sockets) **need more here**
 
          * Expecting AFNI to talk to suma and/or plugout_drive
-         * Like running ``afni -niml -yesplugouts`` on the command line
-         * Greyed out if already listening (you already pushed it or launched
-           afni with ``-niml -yesplugouts``
+         * Like running ``afni -niml -yesplugouts`` on the command
+           line
+         * Greyed out if already listening (you already pushed it or
+           launched afni with ``-niml -yesplugouts``
 
-     - .. image:: media/afni03_interactive/afni_controller_window_env_niml.png
+     - .. image:: media/afni_controller_window_env_niml.png
           :width: 100%
           :align: right
 
@@ -310,7 +288,7 @@ Controller window tour
            a slice center-plane
          * Greyed out if ``suma`` is not running and talking with ``afni``
   
-     - .. image:: media/afni03_interactive/afni_controller_window_cont_surf.png
+     - .. image:: media/afni_controller_window_cont_surf.png
           :width: 100%
           :align: right
           
@@ -323,35 +301,30 @@ Controller window tour
          
        * Blue button opens an afni GUI window with lots of info
    
-       * ``News``: Web link to `afni digest history 
+       * ``News``: Web link to `AFNI Digest History
          <https://afni.nimh.nih.gov/pub/dist/src/AFNI_digest_history.txt>`_
          
        * ``Forum``: Web link to `AFNI Message Board 
          <https://afni.nimh.nih.gov/afni/community/board/list.php?1?>`_
   
-       * ``Tips``: afni GUI window with lots of info. A web based version of 
+       * ``Tips``: GUI window with lots of info. A web based version of 
          this exists `here 
          <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#afni-for-absolute-beginners>`_
   
        * ``Helps``: Web link to `All program helps 
          <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/main_toc.html>`_
        
-       * ``YouTube``: Web link to the official `AFNI Bootcamp YouTube page 
+       * ``YouTube``: Web link to the official `"AFNI Academy" YouTube
+         page of Bootcamp lecture videos
          <https://www.youtube.com/channel/UC40RiNZN7_dCuB6Lg7HJl1g>`_
        
-     - .. image:: media/afni03_interactive/afni_controller_window_news_etc.png
+     - .. image:: media/afni_controller_window_news_etc.png
           :width: 100%
           :align: right
 
-****************************************
-  Using AFNI Interactively *Continued* 
-****************************************
-
-:ref:`Next (Suggested) Page: Image Viewer<edu_afni03_image_window>`
-===================================================================
 
 
-Jump to Sections
-================
+Jump within GUI Guide
+========================
 
-.. include:: afni03_jump_to_section.rst
+.. include:: substep_gui_jump.rst

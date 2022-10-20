@@ -9,6 +9,7 @@ Educational resources
    :maxdepth: 2
 
    bootcamp_recordings
+   gui_guide/main_toc
    handouts
    outside_lectures
    gui_readme_tips
