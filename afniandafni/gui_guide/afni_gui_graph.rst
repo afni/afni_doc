@@ -70,7 +70,10 @@ Graph Window
          * ``V`` is the same only it moves the cursor backwards.
          * ``r`` moves forwards but bounces back from the last time index.
          * ``R`` moves backwards and bounces back from the first time index.
-           
+
+       * `Link to all graph window keyboard shortcuts 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#keyboard-shortcuts-graph-viewer-window>`_
+
      - .. image:: media/graph_window.png
           :width: 100%
           :align: right
@@ -128,35 +131,30 @@ Graph Window
           :width: 100%
           :align: right
 
- [ L ] turns off/on the AFNI logo in the corner
- [ v V r R ] are video mode operations, like in the image viewer
-➥ Moving through time index, rather than slice index
-➥ An easy way to animate an EPI time series, to look for subject motion
-
-
-
 Opt Menu
 ========
 
 .. list-table::
-   :widths: 50 50
+   :widths: 35 65
    :header-rows: 0
    
    * - * ``Opt`` menu buttons let you control how graphs appear
        * Many items have keyboard shortcuts
        * Make sure you are typing into the correct window!
-       * (XQuartz on Mac makes it difficult to see...)
+       * (XQuartz on macOS makes the button difficult to read...)
          
-     - .. image:: media/graph_window_opt_open_ubuntu.png
+     - .. image:: media/graph_window_opt_open_short.png
           :width: 100%
           :align: right
 
 .. _gui_guide_graph_window_opt_index_pin:
-
+   
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Index Pin/Stride<gui_guide_graph_window_opt_index_pin>`
+     - 
    * - * ``Index Pin/Stride`` changes which data points are displayed in 
          the graph. Useful when switching between datasets of different lengths.
          **(note to staff: this is not in the gui button help)**
@@ -183,8 +181,9 @@ Opt Menu
          10, ``Top...`` = 100, ``Stride`` = 9 will get you a graph that shows
          every 9th data point from the 10th to the 99th.
          
-       .. image:: media/graph_window_opt_index_pin_zoom.png
-          :width: 100%
+         .. image:: media/graph_window_opt_index_pin_zoom.png
+            :width: 100%
+            :align: left
             
      - .. image:: media/graph_window_opt_index_pin_select.png
           :width: 100%
@@ -194,8 +193,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Scale<gui_guide_graph_window_opt_scale>`
+     - 
    * - * ``Scale`` changes scale of graphs. 
           Mapping from voxel values to screen pixels.
        * ``Down [-]`` and ``Up [+]`` shrinks or expands the graphs vertically.
@@ -220,8 +221,8 @@ Opt Menu
          You usually have to auto-scale ``[a]`` or ``[A]`` afterwards.
        * Current scale factor is shown below graphs:
          
-       .. image:: media/graph_window_opt_scale_zoom.png
-          :width: 100%
+         .. image:: media/graph_window_opt_scale_zoom.png
+            :width: 100%
        
      - .. image:: media/graph_window_opt_scale.png
           :width: 100%
@@ -231,8 +232,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Matrix<gui_guide_graph_window_opt_matrix>`
+     - 
    * - * ``Matrix`` changes number of sub-graphs across each row and column.
        * ``Down [m]`` and ``Up [M]`` decrease and increase number.
        * ``#`` lets you pick number exactly with allowable matrix sizes 
@@ -246,8 +249,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Grid<gui_guide_graph_window_opt_grid>`
+     - 
    * - * ``Grid`` lets you change spacing of vertical grid lines 
          (yellow in color by default).
        * Useful for showing regular timing interval (e.g., block timings)
@@ -270,8 +275,8 @@ Opt Menu
      
        * Current grid spacing is shown below graphs.
          
-       .. image:: media/graph_window_opt_grid_zoom.png
-          :width: 100%
+         .. image:: media/graph_window_opt_grid_zoom.png
+            :width: 100%
               
      - .. image:: media/graph_window_opt_grid.png
           :width: 100%
@@ -281,15 +286,17 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
-   * - * ``[Slice]`` lets you change slices
+   :header-rows: 1
+
+   * - :ref:`Slice<gui_guide_graph_window_opt_slice>`
+     - 
+   * - * ``Slice`` lets you change slices
        * ``Down[z]`` and ``Up[Z]`` move one slice
        * Can also choose slice directly from menu
        * Current voxel indexes are shown below graphs:
          
-       .. image:: media/graph_window_opt_slice_zoom.png
-          :width: 100%
+         .. image:: media/graph_window_opt_slice_zoom.png
+            :width: 100%
             
        * Corresponds to ``[Voxel Coords?]`` display in AFNI controller 
          (from ``Define Datamode`` ⇒ ``Misc menu`` 
@@ -303,9 +310,11 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
-   * - * ``[Colors, Etc.]`` lets you alter the colors/lines used for drawing.
+   :header-rows: 1
+
+   * - :ref:`Colors, Etc.<gui_guide_graph_window_opt_colors>`
+     - 
+   * - * ``Colors, Etc.`` lets you alter the colors/lines used for drawing.
        * Lines used for sub-graph frame boxes, grid lines, data graphs, FIM
          orts/ideals, and double plots can have color changes and be made 
          thicker.
@@ -325,8 +334,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Baseline<gui_guide_graph_window_opt_baseline>`
+     - 
    * - * ``Baseline [b]`` changes how the sub-graphs are plotted.
        * All sub-graphs have same scale factor, to convert values into vertical 
          pixels.
@@ -378,8 +389,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Show Text?<gui_guide_graph_window_opt_show_text>`
+     - 
    * - * ``Show Text? [t]`` allows you to see text display of values instead 
          of graphs.
        * The number shown will be the numerical value at that voxel for the 
@@ -404,8 +417,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Thresh Fade?<gui_guide_graph_window_opt_thresh_fade>`
+     - 
    * - * ``Thresh Fade? [F]`` marks sub-graphs of those voxels that are below 
          threshold. **(note to staff: this is not in the gui button help)**
        * Those sub-graphs for voxels that are un-colored when ``See Overlay`` 
@@ -441,8 +456,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Save Image<gui_guide_graph_window_opt_save_image>`
+     - 
    * - * ``Save Image [S]`` lets you save a snapshot of the graph window to an 
          image file. 
 
@@ -469,8 +486,10 @@ Opt Menu
 
 .. list-table::
    :widths: 70 30
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Write Center<gui_guide_graph_window_opt_save_image>`
+     - 
    * - * ``Write Center [w]`` lets you write data from central sub-graph to a 
          file.
        * The file is in ASCII format that can be imported into other programs
