@@ -238,22 +238,22 @@ if ( "$DO_BUILD" == "1" ) then
     echo "++ STEP: Make AFNI startup tips RST"
     python make_file_of_startup_tips.py            \
         all_startup_tips.txt                       \
-        ../educational/startup_tips.rst
+        ../afniandafni/startup_tips.rst
 
     echo "++ STEP: Make AFNI GUI readme tips RST"
     python make_file_of_gui_readme_tips.py         \
         all_gui_tips.txt                           \
-        ../educational/gui_readme_tips.rst
+        ../afniandafni/gui_readme_tips.rst
 
     echo "++ STEP: Make AFNI environment variable RST"
     python make_file_of_readme_env.py              \
         all_env_vars.txt                           \
-        ../educational/readme_env_vars.rst
+        ../afniandafni/readme_env_vars.rst
 
     echo "++ STEP: Make AFNI colorbars RST"
     python make_file_of_all_afni_cbars.py          \
-        ../educational/media/cbars                 \
-        ../educational/all_afni_cbars.rst
+        ../afniandafni/media/cbars                 \
+        ../afniandafni/all_afni_cbars.rst
 
     echo "++ STEP: Make pretty list of other templates+atlases"
     python make_list_of_pub_dist_atlases.py

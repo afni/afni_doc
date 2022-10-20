@@ -16,7 +16,7 @@ Welcome to AFNI's documentation!
    starting/intro
    educational/main_toc
    programs/main_toc
-   codex/main_toc
+   afniandafni/main_toc
    SUMA/main_toc
    FATCAT/main_toc
    statistics/main_toc
@@ -24,8 +24,9 @@ Welcome to AFNI's documentation!
    nonhuman/main_toc
    tutorials/main_toc
    demos/main_toc
-   devdocs/main_toc
+   codex/main_toc
    published/main_toc
+   devdocs/main_toc
    contributors/main_toc
    glossary
    afni_home
