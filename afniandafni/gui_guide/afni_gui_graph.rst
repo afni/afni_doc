@@ -482,13 +482,13 @@ Opt Menu
           :width: 100%
           :align: right
 
-.. _gui_guide_graph_window_opt_save_image:
+.. _gui_guide_graph_window_opt_write_center:
 
 .. list-table::
    :widths: 70 30
    :header-rows: 1
 
-   * - :ref:`Write Center<gui_guide_graph_window_opt_save_image>`
+   * - :ref:`Write Center<gui_guide_graph_window_opt_write_center>`
      - 
    * - * ``Write Center [w]`` lets you write data from central sub-graph to a 
          file.
