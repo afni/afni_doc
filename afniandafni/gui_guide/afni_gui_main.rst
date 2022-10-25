@@ -19,9 +19,10 @@
           :align: center
 
 
+.. _gui_guide_main_load_dsets:
 
 Load underlay/overlay datasets
-===================================
+==============================
 
 .. list-table::
    :widths: 60 40
@@ -92,10 +93,14 @@ Load underlay/overlay datasets
           :width: 100%  
           :align: right
     
+.. _gui_guide_controller_window_xhairs:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
+   :header-rows: 1
    
+   * - :ref:`Xhairs<gui_guide_controller_window_xhairs>`
+     - 
    * - * ``Xhairs``: Type of crosshairs
 
          * *Off:* no display of crosshairs
