@@ -1,9 +1,9 @@
 .. _edu_afni03_image:
 
 
-******************************************
+**************************
 **AFNI GUI: Image window**
-******************************************
+**************************
 
 .. contents:: :local:
 
@@ -45,7 +45,7 @@ Image Window
 
          * This action affects all image viewers in the current AFNI controller.
          
-     - .. image:: media/afni_image_window.png
+     - .. image:: media/image_window.png
           :width: 100%
           :align: right
 
@@ -71,7 +71,36 @@ Image Window
           :width: 100%
           :align: right
           
-          
+.. _gui_guide_image_window_HiddenImage_popup:
+
+.. list-table::
+   :widths: 55 45
+   :header-rows: 1
+
+   * - :ref:`Hidden Image Popup Menu<gui_guide_image_window_HiddenImage_popup>`
+     - 
+   * - * Hidden image popup menu using Button 3 or right-click over the actual
+         image.
+       * ``InstaCorr Set``
+       * ``InstaCorr SeedJump``
+       * ``Jumpback``
+       * ``Jump to (xyz)``
+       * ``Jump to (ijk UL)``
+       * ``Jump to (ijk OL)``
+       * ``Jump to (Cluster)``
+       * ``-Go to atlas location``
+       * ``-Where Am I?``
+       * ``-Atlas Colors``
+       * ``Image display``
+       * ``Edit Environment``
+       * ``Draw ROI plugin``
+       * ``bg =x`` (x is some number)
+
+     - .. image:: media/image_window_HiddenImage_popup.png
+          :width: 100%
+          :align: right
+
+
 .. _gui_guide_image_window_slider:
 
 .. list-table::
@@ -88,7 +117,7 @@ Image Window
        * Hold button click down to scroll continuously through slices. 
        * Middle-click in 'trough' to jump quickly to a given location.
        * Mouse scroll-wheel action when cursor is over image also changes 
-         slices
+         slices.
        
      - .. image:: media/image_window_slider.png
           :width: 100%
@@ -97,55 +126,98 @@ Image Window
 .. _gui_guide_image_window_IntensityBar:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 55 45
    :header-rows: 1
 
    * - :ref:`Vertical Intensity Bar<gui_guide_image_window_IntensityBar>`
      - 
    * - * Vertical intensity bar to right of image shows mapping from numbers 
          stored in image to colors shown on screen.
+       * Bottom of intensity bar corresponds to smallest numbers displayed.
+       * Top corresponds to largest numbers displayed 
+         (popup hint shows numerical range)
+       * Smallest-to-largest display range is selected from the ``Disp``
+         control panel. :ref:`(see here)<gui_guide_image_window_Disp>`, or 
+         from the right click hidden popup menu 
+         :ref:`(see here)<edu_afni03_image_window_intensity_popup>`.
        * Scroll-wheel in the intensity bar changes contrast.
        * ALT (``⌘`` on macOS) plus scroll-wheel in intensity bar changes 
          brightness.
+       * All image viewers from all AFNI controllers use the same intensity bar.
 
-     - .. image:: media/afni_image_window_IntensityBar.png
+         * When you change intensity scale in one viewer, all others viewers 
+           change.
+         * Unless AFNI is started with the ``-uniq`` command line option, 
+           in which case each AFNI **controller's** viewers have independent 
+           intensity bars. But all image viewers from same controller always 
+           share same intensity bar.
+
+     - .. image:: media/image_window_IntensityBar.png
           :width: 100%
           :align: right
-          
+
 .. _gui_guide_image_window_RightButtons:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 55 45
    :header-rows: 1
 
-   * - :ref:`Colr, Swap, Norm , .etc<gui_guide_image_window_RightButtons>`
+   * - :ref:`Colr, Swap, Norm, .etc<gui_guide_image_window_RightButtons>`
      - 
-   * - * ``Buttons``
-       * 
+   * - * ``Colr`` changes grayscale to color spectrum, and back (fun & useless).
+       * ``Swap`` swaps top of intensity bar with bottom.
+       * ``Norm`` returns the intensity bar to normal (after you mess it up).
+       * ``c`` controls contrast. ``b`` controls brightness.
 
-     - .. image:: media/afni_image_window_RightButtons.png
+         * Useful combination ``c`` ↑ 2-3 times, ``b`` ↓ 2-3 times.
+
+       * ``r`` rotates the intensity bar (also fun & useless).
+       * ``g`` changes the gamma factor (nonlinearity) for the intensity bar.
+       * ``i`` changes the size of the image in the window.
+       * ``9`` changes the opacity of the color overlay. 
+         (This control only present for X11 TrueColor displays 
+         **does this matter anymore?**)
+       * ``z`` zooms out and in.
+       * ``pan`` lets you pan around when zoomed in. (greyed out if not zoomed)
+       * ``crop`` lets you crop the image viewing area.
+       * ``Card`` or ``Obliq`` (not a button) tells you if the dataset axes 
+          are parallel to LR-AP-IS or not parallel. 
+       * At bottom right, the arrowpad controls the crosshairs.
+       
+         * Arrows move 1 pixel in that direction for the **current window**.
+         * Central button closes and opens crosshair gap (for fine control 
+           of the crosshairs location)
+         * For more crosshairs controls 
+           :ref:`see here<gui_guide_controller_window_xhairs>`.
+
+     - .. image:: media/image_window_RightButtons.png
           :width: 100%
           :align: right
 
 .. _gui_guide_image_window_Disp:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 30 25 45
    :header-rows: 1
 
    * - :ref:`Disp<gui_guide_image_window_Disp>`
      - 
+     -
    * - * ``Disp``
        * 
 
-     - .. image:: media/afni_image_window_Disp.png
+     - .. image:: media/image_window_Disp_menu.png
+          :width: 100%
+          :align: right
+
+     - .. image:: media/image_window_Disp.png
           :width: 100%
           :align: right
           
 .. _gui_guide_image_window_Save1:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 55 45
    :header-rows: 1
 
    * - :ref:`Save1.jpg<gui_guide_image_window_Save1>`
@@ -153,7 +225,7 @@ Image Window
    * - * ``Save1.jpg``
        * 
 
-     - .. image:: media/afni_image_window_Save1.png
+     - .. image:: media/image_window_Save1.png
           :width: 100%
           :align: right
 
@@ -174,7 +246,7 @@ Image Window
 .. _gui_guide_image_window_Rec:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 55 45
    :header-rows: 1
 
    * - :ref:`Rec<gui_guide_image_window_Rec>`
@@ -183,36 +255,6 @@ Image Window
        * 
 
      - .. image:: media/afni_image_window_Rec.png
-          :width: 100%
-          :align: right
-
-.. _gui_guide_image_window_HiddenImage:
-
-.. list-table::
-   :widths: 60 40
-   :header-rows: 1
-
-   * - :ref:`Hidden Image Popup Menu<gui_guide_image_window_HiddenImage>`
-     - 
-   * - * Hidden image popup menu (using Button 3 or right-click)
-       * 
-
-     - .. image:: media/afni_image_window_HiddenImage.png
-          :width: 100%
-          :align: right
-
-.. _gui_guide_image_window_HiddenIntensity:
-
-.. list-table::
-   :widths: 60 40
-   :header-rows: 1
-
-   * - :ref:`Hidden Intensity Bar Popup Menu<gui_guide_image_window_HiddenIntensity>`
-     - 
-   * - * Hidden Intensity Bar Popup Menu
-       * 
-
-     - .. image:: media/afni_image_window_HiddenIntesity.png
           :width: 100%
           :align: right
 
