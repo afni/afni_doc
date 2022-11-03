@@ -200,15 +200,36 @@ Image Window
 .. _gui_guide_image_window_Disp:
 
 .. list-table::
-   :widths: 30 25 45
+   :widths: 35 25 40
    :header-rows: 1
 
    * - :ref:`Disp<gui_guide_image_window_Disp>`
      - 
      -
-   * - * ``Disp``
-       * 
+   * - * ``Disp`` controls the way images are displayed and saved.
+       * It pops up its own control window and most controls change image 
+         immediately.
+       * Orientation controls at top allow you to flip image around.
+       * ``+ LR Mirror`` flips the image left to right. For example, if the 
+         image was displayed ``left=Left`` it will flip to ``left=Right``
+       * ``No Overlay`` lets you turn color overlays off (crosshairs; function)
+       * ``Min-to-Max`` Intensity bar is data min-to-max.
+       * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
+         This avoids having a few very bright voxels dominate intensity 
+         scaling.
+       * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
+         tries to keep image shape *true* as you stretch/shrink window.
+       * The save panel controls how images are saved to disk.
 
+         * All buttons off: saved image file contains slice raw data.
+           (not what you want)
+         * ``Nsize Save``: same, but images are 2N in size.
+         * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
+         * ``Save to .xxx(s)``: saves image(s) to specified format.
+         * ``Save One``: for saving montage.
+
+       * **More of this may need to go on its own page**
+       
      - .. image:: media/image_window_Disp_menu.png
           :width: 100%
           :align: right
@@ -265,6 +286,19 @@ Image Window
              * - .. image:: media/image_window_Save1_format.png
                     :width: 100%
 
+       * Selecting ``Sav:aGif`` will save an animated .gif file scrolling 
+         through the slices of the image.
+       * Selecting this will change the saveing dialog box adding a ``From:`` 
+         and ``To:`` indicating the slices that you want.
+
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+  
+             * - .. image:: media/image_window_Save1_aGif.png
+                    :width: 100%
+                    
        * **Warning**: Images are saved as sent to the viewer, not as displayed.
        
          * Means that aspect ratio of saved image may be wrong. (non-square 
