@@ -112,12 +112,15 @@ Image Window
    * - * The slider below image lets you move between slices.
        * The number above the slider indicates the current displayed slice. 
          (in this case 144)
-       * Left-click and drag to move past many slices.
-       * Left-click ahead or behind to move 1 image at a time.
+       * Leftclick and drag to move past many slices.
+       * Leftclick ahead or behind to move 1 image at a time.
        * Hold button click down to scroll continuously through slices. 
-       * Middle-click in 'trough' to jump quickly to a given location.
+       * Middle click (option+left click on macOS if you set it up in XQuartz) 
+         in 'trough' to jump quickly to a given location.
        * Mouse scroll-wheel action when cursor is over image also changes 
          slices.
+       * ctrl+click will jump to the start of end of the slices, depending on 
+         which side of slider you click.
        
      - .. image:: media/image_window_slider.png
           :width: 100%
@@ -220,10 +223,57 @@ Image Window
    :widths: 55 45
    :header-rows: 1
 
-   * - :ref:`Save1.jpg<gui_guide_image_window_Save1>`
+   * - :ref:`Sav1.jpg<gui_guide_image_window_Save1>`
      - 
-   * - * ``Save1.jpg``
-       * 
+   * - * ``Sav1.jpg`` lets you save images from viewer to disk files.
+       * Image files are saved in your current working directory.
+       * The saved image is on the matrix of the dataset. It is NOT a screen 
+         capture; that is, the image saved will not depend on the size of the 
+         image viewer window or the resolution of the screen.
+       * The crosshairs will be captured with the image unless you turn it off. 
+         :ref:`(see here on how to do that)<gui_guide_controller_window_xhairs>`
+       * The ``Prefix`` is the name of the image file you want to save *without
+         the extension*.  afni will append the extension of your chosen format.
+       * If you use the same prefix more than once, afni will overwrite the 
+         image saved to disk without warning.
+       * ``Blowup`` causes an explosion in your computer, destroying all work!
+       * *just checking to see if anyone reads this...*
+       * Actually ``Blowup`` artificially increases the size/resolution of the 
+         output image by a factor of your choosing from 1 to 8. This is useful 
+         for outputting pretty images for all of the papers you are going to 
+         publish **(while also citing AFNI)** `See here on how to cite AFNI.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/published/citations.html#afni-software-package>`_
+   
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Save1_dialog.png
+                    :width: 100%
+
+       * The ``.jpg`` will change with your choice of output format. (for 
+         example it might be ``Sav1.bmp`` for a bitmap image)
+       * To change the format, right click the ``Sav1.jpg`` button to get 
+         this popup:
+
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Save1_format.png
+                    :width: 100%
+
+       * **Warning**: Images are saved as sent to the viewer, not as displayed.
+       
+         * Means that aspect ratio of saved image may be wrong. (non-square 
+           pixels)
+         * This can be fixed with ``Define Datamode`` ⇒ ``Warp Anat on Demand``
+           :ref:`(see here)<edu_afni03_datamode>`.
+         * Or by setting ``AFNI_IMAGE_SAVESQUARE`` to ``YES``
+           `(see here)
+           <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/readme_env_vars.html>`_.
 
      - .. image:: media/image_window_Save1.png
           :width: 100%
