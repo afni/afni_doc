@@ -81,6 +81,7 @@ Image Window
      - 
    * - * Hidden image popup menu using Button 3 or right-click over the actual
          image.
+       * **May need its own page to show some examples.**
        * ``InstaCorr Set``
        * ``InstaCorr SeedJump``
        * ``Jumpback``
@@ -207,6 +208,7 @@ Image Window
      - 
      -
    * - * ``Disp`` controls the way images are displayed and saved.
+       * **This may need to go on its own page!**
        * It pops up its own control window and most controls change image 
          immediately.
        * Orientation controls at top allow you to flip image around.
@@ -219,7 +221,8 @@ Image Window
          scaling.
        * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
          tries to keep image shape *true* as you stretch/shrink window.
-       * The save panel controls how images are saved to disk.
+       * The save panel controls how images are saved to disk. For more 
+         details, :ref:`(see below)<gui_guide_image_window_Save1>`
 
          * All buttons off: saved image file contains slice raw data.
            (not what you want)
@@ -227,8 +230,52 @@ Image Window
          * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
          * ``Save to .xxx(s)``: saves image(s) to specified format.
          * ``Save One``: for saving montage.
+         * ``Save Anim GIF`` will save an animated .gif file scrolling 
+           through the slices of the image.
 
-       * **More of this may need to go on its own page**
+       * ``Project`` applies a projection function to plus-or-minus 'Slab' 
+         images from each pixel. The ``Slab +-`` selects the number of slices 
+         around the current view to use for the projection.  Useful for looking
+         at blood vessels and other different images.
+       * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
+         and ``SSqrt`` are useful for images with extreme values.
+       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
+         ``Median 9`` smoothing can be useful for printing images.
+       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
+         as x vs. y graphs. 
+         
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_RowGraphs.png
+                   :width: 100%
+                   
+         * Each graph is from one displayed horizontal row of 
+           the image. 
+         * The bottom rowgraph is from the image row under the crosshairs. 
+         * Upper rowgraphs are from higher image rows. 
+         * Image transformation functions and image rotation/flips will affect 
+           the rowgraphs as well as the image display. 
+         * The color marker indicates the crosshair focus point and can be 
+           hidden with the ``No Overlay`` button.
+         * If you want columns, flip the image with ``CCW 90``.
+
+       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_SurfGraph.png
+                   :width: 100%
+
+       * Extra imaging processing filters are provided at the bottom.
+       
+         * ``Sharpen`` is sometimes useful for deblurring images.
+         * ``Edge Detect`` is useful as the underlay for checking alignment.
        
      - .. image:: media/image_window_Disp_menu.png
           :width: 100%
@@ -321,12 +368,52 @@ Image Window
    
    * - :ref:`Montage<gui_guide_image_window_montage>`
      - 
-   * - * ``Mont``
+   * - * ``Mont`` lets you display a rectangular layout of images 
+         (i.e., montage).
        
-     - .. image:: media/image_window_mont_xhairs.png
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+  
+             * - .. image:: media/image_window_mont_dialog.png
+                    :width: 100%
+       
+       * ``Across`` and ``Down`` determine number of sub-images shown.
+       * ``Spacing`` determines how far apart the selected slices are
+
+         * Every nth slice, for n = 1, 2, ...
+         * Multiple crosshairs in other image viewers will show montage slices.
+       
+       * ``Border`` lets you put some blank pixels between sub-images.
+       * ``Color`` lets you choose the color of the border pixels.
+       * At bottom row, the action buttons cause something to happen:
+          
+         * ``Quit`` closes the Montage control window.
+         * ``1x1`` changes Across and Down back to 1.
+         * ``Draw`` actually causes the montage to be drawn.
+         * ``Set`` ⇔ ``Draw`` then ``Quit``
+         
+       * In this example, we have selected a 2 by 2 montage showing every other 
+         slice with a 1 pixel yellow border.
+         
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_mont_axl.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_mont_sag.png
+                   :width: 100%
+    
+
+
+     - .. image:: media/image_window_mont.png
           :width: 100%
           :align: right
-
+          
 .. _gui_guide_image_window_Rec:
 
 .. list-table::
