@@ -434,7 +434,7 @@ Image Window
              * - .. image:: media/image_window_Rec_dialog.png
                     :width: 100%
         
-       * The top section controsl **WHEN** images will be recorded into the 
+       * The top section controls **WHEN** images will be recorded into the 
          sequence.
          
          * ``Off`` ⇒ recording is off...
