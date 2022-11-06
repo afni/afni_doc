@@ -201,12 +201,11 @@ Image Window
 .. _gui_guide_image_window_Disp:
 
 .. list-table::
-   :widths: 35 25 40
+   :widths: 55 45
    :header-rows: 1
 
    * - :ref:`Disp<gui_guide_image_window_Disp>`
      - 
-     -
    * - * ``Disp`` controls the way images are displayed and saved.
        * **This may need to go on its own page!**
        * It pops up its own control window and most controls change image 
@@ -234,9 +233,10 @@ Image Window
            through the slices of the image.
 
        * ``Project`` applies a projection function to plus-or-minus 'Slab' 
-         images from each pixel. The ``Slab +-`` selects the number of slices 
-         around the current view to use for the projection.  Useful for looking
-         at blood vessels and other different images.
+         images from each pixel. 
+       * ``Slab +-`` selects the number of slices around the current view to 
+         use for the projection.  Useful for looking at blood vessels and 
+         other different images.
        * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
          and ``SSqrt`` are useful for images with extreme values.
        * ``Tran 2D`` provides some 2D image filters for the underlay only. 
@@ -277,13 +277,14 @@ Image Window
          * ``Sharpen`` is sometimes useful for deblurring images.
          * ``Edge Detect`` is useful as the underlay for checking alignment.
        
-     - .. image:: media/image_window_Disp_menu.png
-          :width: 100%
-          :align: right
-
      - .. image:: media/image_window_Disp.png
           :width: 100%
           :align: right
+
+       .. image:: media/image_window_Disp_menu.png
+          :width: 60%
+          :align: left
+
           
 .. _gui_guide_image_window_Save1:
 
