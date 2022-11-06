@@ -84,15 +84,49 @@ Image Window
        * **May need its own page to show some examples.**
        * ``InstaCorr Set``
        * ``InstaCorr SeedJump``
-       * ``Jumpback``
-       * ``Jump to (xyz)``
-       * ``Jump to (ijk UL)``
-       * ``Jump to (ijk OL)``
+       * ``Jumpback`` lets you jump the focus position back to its last place.
+         Useful for when you click in the wrong place and get lost.
+       * ``Jump to (xyz)`` lets you enter *xyz*-coordinates (in mm), 
+         and then the focus position will jump there. 
+         (3 numbers ``,`` or space separated)
+         
+         * External programs ``3dclust`` and others can generate *xyz* 
+           coordinates of interest.
+         * Once you have ``+tlrc`` dataset, can jump to regions from 
+           Talairach atlas.
+         
+         .. list-table::
+             :width: 50%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_HiddenImage_popup_jump_xyz.png
+                   :width: 100%
+         
+       * ``Jump to (ijk UL)`` lets you jump to a particular voxel index 
+         location in the underlay coordinate system. (Dialog box is similar to 
+         ``Jump to (xyz)``)
+       * ``Jump to (ijk OL)`` lets you jump to a particular voxel index 
+         location in the overlay coordinate system. (Dialog box is similar to 
+         ``Jump to (xyz)``)
+        
        * ``Jump to (Cluster)``
        * ``-Go to atlas location``
        * ``-Where Am I?``
        * ``-Atlas Colors``
-       * ``Image display``
+       * ``Image display`` lets you turn control widgets on and off to 
+         unclutter screen a little; useful if you want to make a screenshot.
+         But use the ``Sav1`` button instead of a screenshot. 
+         :ref:`(see here)<gui_guide_image_window_Save1>`
+       
+         .. list-table::
+             :width: 50%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_HiddenImage_popup_Image_Display.png
+                   :width: 100%
+       
        * ``Edit Environment``
        * ``Draw ROI plugin``
        * ``bg =x`` (x is some number)
