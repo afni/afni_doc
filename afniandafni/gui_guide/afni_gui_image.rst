@@ -45,6 +45,20 @@ Image Window
 
          * This action affects all image viewers in the current AFNI controller.
          
+       * Shift+button 2 will allow you to drag crop a region.
+       
+         * (The middle button on a 3 button mouse, or click down 
+           on the scroll-wheel, or shift+option on macOS.)
+       
+       * Keyboard shortcuts are listed 
+         `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#keyboard-shortcuts-image-viewer-window>`_.
+       * ``Clusterize`` shortcuts (these have a *cool* animation effect):
+       
+         * ``j`` = Jump to the nearest cluster's peak (or center of mass)
+         * ``f`` = Flash current cluster if the crosshairs are inside one.
+         * ``n`` or ``N`` = Jump to the next or previous cluster's peak or 
+           center of mass.
+           
      - .. image:: media/image_window.png
           :width: 100%
           :align: right
