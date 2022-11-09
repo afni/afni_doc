@@ -1,9 +1,9 @@
 .. _edu_afni03_main:
 
 
-************************************
+*****************************
 **AFNI GUI: Main controller**
-************************************
+*****************************
 
 .. contents:: :local:
   
@@ -19,9 +19,10 @@
           :align: center
 
 
+.. _gui_guide_main_load_dsets:
 
 Load underlay/overlay datasets
-===================================
+==============================
 
 .. list-table::
    :widths: 60 40
@@ -66,10 +67,14 @@ Load underlay/overlay datasets
 1st column
 =================
 
+.. _gui_guide_controller_window_xyz:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Coordinate Display<gui_guide_controller_window_xyz>`
+     - 
    * - * The **xyz-coordinate display** in upper left corner shows
          current focus location
        * By default, the coordinates are in **RAI** order (from the
@@ -92,10 +97,14 @@ Load underlay/overlay datasets
           :width: 100%  
           :align: right
     
+.. _gui_guide_controller_window_xhairs:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
+   :header-rows: 1
    
+   * - :ref:`Xhairs<gui_guide_controller_window_xhairs>`
+     - 
    * - * ``Xhairs``: Type of crosshairs
 
          * *Off:* no display of crosshairs
@@ -118,10 +127,14 @@ Load underlay/overlay datasets
           :width: 100%
           :align: right
 
+.. _gui_guide_controller_window_Index:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
+   :header-rows: 1
 
+   * - :ref:`Index<gui_guide_controller_window_Index>`
+     - 
    * - * ``Index``: Time index
 
          * Controls the time index of the images being viewed
@@ -138,10 +151,14 @@ Load underlay/overlay datasets
 
 .. _Open Image and Graph:
 
+.. _gui_guide_controller_window_image_graph:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
+   :header-rows: 1
 
+   * - :ref:`Image and Graph<gui_guide_controller_window_image_graph>`
+     - 
    * - * ``Image`` and ``Graph`` buttons for the adjacent views
          (Axial, Sagittal, Coronal)
 
@@ -163,10 +180,14 @@ Load underlay/overlay datasets
            :width: 100%
            :align: right
 
+.. _gui_guide_controller_window_BHelp:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`BHelp<gui_guide_controller_window_BHelp>`
+     - 
    * - * ``BHelp`` button: when pressed, the cursor changes to a hand
          shape
 
@@ -190,10 +211,14 @@ Load underlay/overlay datasets
 2nd column
 ==============
 
+.. _gui_guide_controller_window_Views:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
-   
+   :header-rows: 1
+
+   * - :ref:`Views<gui_guide_controller_window_Views>`
+     - 
    * - * Use these to select the type of view for your data. **Need
          more here**
          
@@ -205,11 +230,15 @@ Load underlay/overlay datasets
      - .. image:: media/afni_controller_window_view.png
           :width: 100%
           :align: right
-          
+         
+.. _gui_guide_controller_window_Overlay_Datamode:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
- 
+   :header-rows: 1
+
+   * - :ref:`Overlay and Datamode<gui_guide_controller_window_Overlay_Datamode>`
+     - 
    * - * ``Define Overlay ->``: Use this to control the thresholds, colors,
          etc. for overlays.
          
@@ -229,10 +258,14 @@ Load underlay/overlay datasets
           :width: 100%
           :align: right
 
+.. _gui_guide_controller_window_DataDir:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
- 
+   :header-rows: 1
+
+   * - :ref:`DataDir, Switch and Read<gui_guide_controller_window_DataDir>`
+     - 
    * - * ``Switch`` Use this to choose from which session 3D datasets
          may be viewed
          
@@ -255,11 +288,14 @@ Load underlay/overlay datasets
           :align: right
           
 
+.. _gui_guide_controller_window_EditEnv_NIML:
 
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
+   :header-rows: 1
 
+   * - :ref:`EditEnv and NIML+PO<gui_guide_controller_window_EditEnv_NIML>`
+     - 
    * - * ``EditEnv`` **need more here**
 
        * ``NIML+PO``: Start listening for NIML and Plugout TCP/IP (network 
@@ -275,10 +311,14 @@ Load underlay/overlay datasets
           :width: 100%
           :align: right
 
+.. _gui_guide_controller_window_ControlSurface:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
-  
+   :header-rows: 1
+
+   * - :ref:`Control Surface<gui_guide_controller_window_ControlSurface>`
+     - 
    * - * ``Control Surface``: control the display of overlaid surfaces in the 
          image viewers when talking with ``suma``
          
@@ -292,10 +332,14 @@ Load underlay/overlay datasets
           :width: 100%
           :align: right
           
+.. _gui_guide_controller_window_NewsForum_etc:
+
 .. list-table::
    :widths: 60 40
-   :header-rows: 0
-    
+   :header-rows: 1
+
+   * - :ref:`News, Forum, Tips, Helps, YouTube<gui_guide_controller_window_NewsForum_etc>`
+     - 
    * - * Green buttons open your default web browser to various afni related 
          pages.
          
