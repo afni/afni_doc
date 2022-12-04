@@ -609,6 +609,16 @@ you scale your data in a voxelwise manner, you might consider citing:
     Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
   | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
 
+If you'd like to display more full results with transparent
+thresholding (rather than hiding away much information with
+all-or-nothing thresholding), then check out:
+
+* | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
+    DA, Bandettini PA, Mejia AF, Chen G (2022). Highlight Results,
+    Don’t Hide Them: Enhance interpretation, reduce biases and improve
+    reproducibility. *(submitted)* bioRxiv doi:10.1101/2022.10.26.513929
+  | `<https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_
+
 If you are curious about how to deal with multiplicity issues in your
 statistical analysis of MRI, consider this discussion of neighborhood
 leverage (*new!*) vs global calibration (*old!*) with a Bayesian
