@@ -38,6 +38,11 @@ Dataset Chooser
    * - * The dialog window will indicate ``Underlay`` or ``Overlay`` 
          coresponding to which button you clicked.
        * The chooser will list the datasets available in the current directory.
+       * By default when you start ``afni``, it will automatically load the 
+         first dataset alphabetically and that will be selected in your chooser 
+         menu. (You can set the ``AFNI_START_SMALL`` environment variable to 
+         ``YES`` which will default to loading the dataset with the smallest 
+         file size first for speed)
        * The left column has prefix names of datasets.
          
          * Datasets without an extension are in afni's ``.BRIK`` and 
@@ -75,9 +80,26 @@ Dataset Chooser
    :widths: 60 40
    :header-rows: 1
 
-   * - :ref:`Chooser a dataset details<_gui_guide_chooser_choice>`
+   * - :ref:`To choose a dataset<_gui_guide_chooser_choice>`
      - 
-   * - * remember to add the rescan
+   * - * Click on label, or scroll with mouse scroll-wheel, use keyboard, 
+         arrows, or click the ``Index`` up / down arrows.
+       * Press ``Apply`` button to select the highlighted dataset, and 
+         also keep the chooser window open.
+       * Press ``Set`` button to select the highlighted dataset, and also 
+         close the chooser window.
+       * Set environment variable ``AFNI_DATASET_BROWSE`` to ``YES`` to have 
+         AFNI switch to that dataset immediately upon selection 
+         (don't need to use ``Apply`` or ``Set``).
+       * Environment variables can be set in your ``.afnirc`` file, or by 
+         using the ``Edit Environment`` control panel 
+         (cf. ``Define Datamode`` ⇒ ``Misc``).
+         
+         * :ref:`See here for the datamode panel<edu_afni03_datamode>`.
+         * `See here for the list of all AFNI environment variables
+           <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/readme_env_vars.html>`_.
+
+
 
      - .. image:: media/dataset_chooser_underlay.png
           :width: 100%
