@@ -28,6 +28,49 @@ The choice of answer to Q1 is typically more fundamental.  The answer
 to Q2 depends slightly on Q1 as well: if the response heights vary,
 the user essentially picks a representative duration to set the scale.
 
+TL;DR description of block choices
+========================================
+
+Below are a set of images showing examples of the convolved models for
+the exact same set of inputs (in this case, with subtle labellings;
+see above for a clearer one).  In each image, the horizontal, dashed
+cyan line shows unit height.  Formatted as **onset time:duration
+time** pairs, the input timing specification has the following
+successively increasing durations (units in seconds; values can be
+non-integer)::
+
+  0:1 30:2.5 60:3 90:4 120:5 150:6 180:10 210:20 240:40
+
+From left->right, the three columns show convolved responses using:
+``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
+``dmUBLOCK(...)`` with arguments :math:`\leq 0`.  Each row shows the
+convolved response for the above set of stimuli using a different
+argument in the function's parentheses (or not using any argument).
+
+**It is typically recommended to use** ``dmUBLOCK(...)``
+**with a negative** :math:`\leq 1` **argument value.**  Briefly:
+
+* In 99\% of cases, one uses duration modulation because one wants to
+  have the convolved response amplitude depend on the stimulus
+  duration.  Therefore, one would *avoid* cases where the argument is
+  :math:`\geq 1`, like ``dmBLOCK(2)``, ``dmUBLOCK(2)``, etc.
+ 
+* It is often *convenient* to explicitly pick the stimulus duration
+  whose response gets scaled to unity---that just makes explanation
+  clearer.  That value might come from typical or average response
+  durations in a study, say.  In that case, one should use
+  ``dmUBLOCK`` with a negative argument, such as ``dmUBLOCK(-2)``,
+  ``dmUBLOCK(-12)``, etc.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 100 
+
+   * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
+       5, 6, 10, 20, 40 s), notated
+   * - .. image:: media/decon_blocks/img_all_decon_blocks_X.jpg
+          :width: 100%
+
 Longer description of block choices
 ========================================
 
@@ -39,6 +82,12 @@ successively increasing durations (units in seconds)::
 
   0:1 30:2 60:3 90:4 120:5 150:6 180:10 210:20 240:40
 
+From left->right, the three columns show convolved responses using:
+``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
+``dmUBLOCK(...)`` with arguments :math:`\leq 0`.  Each row shows the
+convolved response for the above set of stimuli using a different
+argument in the function's parentheses (or not using any argument).
+
 .. list-table::
    :header-rows: 1
    :widths: 100 
@@ -46,7 +95,7 @@ successively increasing durations (units in seconds)::
    * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
        5, 6, 10, 20, 40 s)
    * - .. image:: media/decon_blocks/img_all_decon_blocks.jpg
-
+          :width: 100%
 
 **Column 1:** The first column shows images with ``dmBLOCK``, which
 only takes a positive parameter (:math:`\geq 0`) or no parameter.
@@ -118,8 +167,8 @@ response height :math:`< 1`.
 
 **Choosing a function and parameter in practice**
 
-It is typically recommended to ``dmUBLOCK(...)`` with a negative
-:math:`\leq 1` argument value:
+**It is typically recommended to use** ``dmUBLOCK(...)``
+**with a negative** :math:`\leq 1` **argument value.**  Briefly:
 
 * In 99\% of cases, one uses duration modulation because one wants to
   have the convolved response amplitude depend on the stimulus
@@ -133,40 +182,6 @@ It is typically recommended to ``dmUBLOCK(...)`` with a negative
   ``dmUBLOCK`` with a negative argument, such as ``dmUBLOCK(-2)``,
   ``dmUBLOCK(-12)``, etc.
 
-TL;DR description of block choices
-========================================
-
-Below are a set of images showing examples of the convolved models for
-the exact same set of inputs (in this case, with subtle labellings;
-see above for a clearer one).  In each image, the horizontal, dashed
-cyan line shows unit height.  Formatted as **onset time:duration
-time** pairs, the input timing specification has the following
-successively increasing durations (units in seconds)::
-
-  0:1 30:2 60:3 90:4 120:5 150:6 180:10 210:20 240:40
-
-In brief, it is typically recommended to ``dmUBLOCK(...)`` with a
-negative :math:`\leq 1` argument value:
-
-* In 99\% of cases, one uses duration modulation because one wants to
-  have the convolved response amplitude depend on the stimulus
-  duration.  Therefore, one would *avoid* cases where the argument is
-  :math:`\geq 1`, like ``dmBLOCK(2)``, ``dmUBLOCK(2)``, etc.
- 
-* It is often *convenient* to explicitly pick the stimulus duration
-  whose response gets scaled to unity---that just makes explanation
-  clearer.  That value might come from typical or average response
-  durations in a study, say.  In that case, one should use
-  ``dmUBLOCK`` with a negative argument, such as ``dmUBLOCK(-2)``,
-  ``dmUBLOCK(-12)``, etc.
-
-.. list-table::
-   :header-rows: 1
-   :widths: 100 
-
-   * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
-       5, 6, 10, 20, 40 s), notated
-   * - .. image:: media/decon_blocks/img_all_decon_blocks_X.jpg
 
 Additional notes
 =====================
