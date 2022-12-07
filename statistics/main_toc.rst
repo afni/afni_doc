@@ -13,6 +13,7 @@ Statistics
    center
    df
    deconvolve
+   deconvolve_block
    nlfim
    remlfit
    anova
