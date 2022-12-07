@@ -39,7 +39,7 @@ time** pairs, the input timing specification has the following
 successively increasing durations (units in seconds; values can be
 non-integer)::
 
-  0:1 30:2.5 60:3 90:4 120:5 150:6 180:10 210:20 240:40
+  0:1 30:2.5 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40
 
 From left->right, the three columns show convolved responses using:
 ``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
@@ -67,7 +67,7 @@ argument in the function's parentheses (or not using any argument).
    :widths: 100 
 
    * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
-       5, 6, 10, 20, 40 s), notated
+       5.5, 6, 10, 20, 40 s), notated
    * - .. image:: media/decon_blocks/img_all_decon_blocks_X.jpg
           :width: 100%
 
@@ -80,7 +80,7 @@ cyan line shows unit height.  Formatted as **onset time:duration
 time** pairs, the input timing specification has the following
 successively increasing durations (units in seconds)::
 
-  0:1 30:2 60:3 90:4 120:5 150:6 180:10 210:20 240:40
+  0:1 30:2 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40
 
 From left->right, the three columns show convolved responses using:
 ``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
@@ -93,7 +93,7 @@ argument in the function's parentheses (or not using any argument).
    :widths: 100 
 
    * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
-       5, 6, 10, 20, 40 s)
+       5.5, 6, 10, 20, 40 s)
    * - .. image:: media/decon_blocks/img_all_decon_blocks.jpg
           :width: 100%
 
@@ -155,7 +155,7 @@ which is scaled to 1).  For negative arguments :math:`\leq 1`, the
 response height now *also* varies as a function of block duration,
 with an added bit of clarity: the magnitude of the argument chosen
 specifies what duration response is scaled to unity.  Thus, for
-``dmUBLOCK(-5)`` a 5 s stimulus has a response of height 1, a 3 s
+``dmUBLOCK(-5.5)`` a 5.5 s stimulus has a response of height 1, a 3 s
 stimulus has a response height :math:`< 1`, and a 10 s stimulus has a
 response height :math:`< 1`.
 
