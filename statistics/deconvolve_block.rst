@@ -31,71 +31,101 @@ the user essentially picks a representative duration to set the scale.
 TL;DR description of block choices
 ========================================
 
-Below are a set of images showing examples of the convolved models for
-the exact same set of inputs (in this case, with subtle labellings;
-see above for a clearer one).  In each image, the horizontal, dashed
-cyan line shows unit height.  Formatted as **onset time:duration
-time** pairs, the input timing specification has the following
-successively increasing durations (units in seconds; values can be
-non-integer)::
+To specify the DM block model, you must specify **two** features:
 
-  0:1 30:2.5 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40
+* the **function** to be used, which could be ``dmBLOCK`` or
+  ``dmUBLOCK``,
 
-From left->right, the three columns show convolved responses using:
-``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
-``dmUBLOCK(...)`` with arguments :math:`\leq 0`.  Each row shows the
-convolved response for the above set of stimuli using a different
-argument in the function's parentheses (or not using any argument).
+* the **parenthetical argument** to supply, which could be either
+  nothing or a set of parentheses with a number inside.
 
-**It is typically recommended to use** ``dmUBLOCK(...)``
-**with a negative** :math:`\leq 1` **argument value.**  Briefly:
+**It is typically recommended to use the** ``dmUBLOCK(...)``
+**function with a negative argument value, whose magnitude is the mean
+response time of the subject or group.** Briefly:
 
-* In 99\% of cases, one uses duration modulation because one wants to
-  have the convolved response amplitude depend on the stimulus
-  duration.  Therefore, one would *avoid* cases where the argument is
-  :math:`\geq 1`, like ``dmBLOCK(2)``, ``dmUBLOCK(2)``, etc.
+* | In most cases, one uses duration modulation because one wants
+    to have the convolved response amplitude depend on the stimulus
+    duration.  That is, the answer to Q1 above is generally "Yes".
+  | Therefore, one would *avoid* cases where the response amplitude
+    would be constant and independent of stimulus duration (below
+    figure, *red* section; anywhere the argument would be positive).
  
 * It is often *convenient* to explicitly pick the stimulus duration
   whose response gets scaled to unity---that just makes explanation
-  clearer.  That value might come from typical or average response
-  durations in a study, say.  In that case, one should use
-  ``dmUBLOCK`` with a negative argument, such as ``dmUBLOCK(-2)``,
-  ``dmUBLOCK(-12)``, etc.
+  clearer.  Using ``dmUBLOCK`` with a negative argument provides that
+  functionality: the magnitude of the argument is the duration whose
+  response gets scaled to unity (below figure, *green* section; one
+  can't provide the time-to-scale-to in the blue sections, since no
+  argument is given ).
+
+* | The magnitude of the parameter value is the time whose response
+    will have height of unity.  A good way to choose that value would
+    be by calculating the typical time (mean or median) of the
+    response durations in a study---providing an answer to Q2 above.
+  | Generally, the typical response for a subject and for the group
+    should be similar, so you could pick either. *If* those are not
+    the same\.\.\. then one must choose what would be most meaningful
+    for the study paradigm and hypothesis.
+
+**For example,** if the average response time for a subject were
+2.4893 s, one might choose ``dmUBLOCK(-2.5)`` as the duration
+modulator.
+
+
+**Figure.** *A set of example images of convolved models that have the
+exact same input (the dashed cyan line shows a unit height level).
+The input timing specification contains successively increasing
+durations, for didactic purposes.  It is formatted as pairs of
+``onset_time:duration_time`` values, following successively increasing
+durations (units in seconds; values can be non-integer)*: ``0:1 30:2.5
+60:3 90:4 120:5.5 150:6 180:10 210:20 240:40``
 
 .. list-table::
    :header-rows: 1
    :widths: 100 
 
-   * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
-       5.5, 6, 10, 20, 40 s), notated
+   * - Examples of ``dmBLOCK`` and ``dmUBLOCK`` functions (cols) and
+       arguments (rows), commented
    * - .. image:: media/decon_blocks/img_all_decon_blocks_X.jpg
           :width: 100%
+
+|
 
 Longer description of block choices
 ========================================
 
 Below are a set of images showing examples of the convolved models for
-the exact same set of inputs.  In each image, the horizontal, dashed
-cyan line shows unit height.  Formatted as **onset time:duration
-time** pairs, the input timing specification has the following
-successively increasing durations (units in seconds)::
+the exact same set of inputs.  Each panel shows the resulting
+convolved response curve, based on the **two** selections that you,
+the analyst, make when choosing the DM block:
 
-  0:1 30:2 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40
+* the **function** to be used, which could be ``dmBLOCK`` or
+  ``dmUBLOCK`` (see column header),
 
-From left->right, the three columns show convolved responses using:
-``dmBLOCK(...)``, ``dmUBLOCK(...)`` with arguments :math:`\geq 0`, and
-``dmUBLOCK(...)`` with arguments :math:`\leq 0`.  Each row shows the
-convolved response for the above set of stimuli using a different
-argument in the function's parentheses (or not using any argument).
+* the **parenthetical argument** to supply, which could be either
+  nothing or a set of parentheses with a number inside (see left of
+  each panel).
+
+In each image, the dashed cyan line shows a unit height level.  The
+input timing specification just shows successively increasing
+durations, for didactic purposes.  It is formatted as pairs of
+``onset_time:duration_time`` values, following successively increasing
+durations (units in seconds; values can be non-integer)::
+
+  0:1 30:2.5 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40
+
+|
 
 .. list-table::
    :header-rows: 1
    :widths: 100 
 
-   * - ``dmBLOCK`` and ``dmUBLOCK`` examples (block lengths: 1, 2, 3, 4,
-       5.5, 6, 10, 20, 40 s)
+   * - Examples of ``dmBLOCK`` and ``dmUBLOCK`` functions (cols) and
+       arguments (rows)
    * - .. image:: media/decon_blocks/img_all_decon_blocks.jpg
           :width: 100%
+
+|
 
 **Column 1:** The first column shows images with ``dmBLOCK``, which
 only takes a positive parameter (:math:`\geq 0`) or no parameter.
@@ -151,13 +181,13 @@ than 1.
 non-positive parameter (:math:`\leq 0`) or no parameter.  The first
 two plots are identical to those of column 2, by definition (response
 amplitudes vary in height, increasing until a plateau is reached,
-which is scaled to 1).  For negative arguments :math:`\leq 1`, the
-response height now *also* varies as a function of block duration,
-with an added bit of clarity: the magnitude of the argument chosen
-specifies what duration response is scaled to unity.  Thus, for
-``dmUBLOCK(-5.5)`` a 5.5 s stimulus has a response of height 1, a 3 s
-stimulus has a response height :math:`< 1`, and a 10 s stimulus has a
-response height :math:`< 1`.
+which is scaled to 1).  For negative arguments, the response height
+now *also* varies as a function of block duration, with an added bit
+of clarity: the magnitude of the argument chosen specifies what
+duration response is scaled to unity.  Thus, for ``dmUBLOCK(-5.5)`` a
+5.5 s stimulus has a response of height 1, a 3 s stimulus has a
+response height :math:`< 1`, and a 10 s stimulus has a response height
+:math:`< 1`.
 
 * So, for this column, one must be answering Q1 as **yes** (because
   all response heights depend on stimulus duration). Then, one
@@ -165,23 +195,53 @@ response height :math:`< 1`.
   response height of unity; (the negative of) that value is used as
   the argument.
 
-**Choosing a function and parameter in practice**
+|
 
-**It is typically recommended to use** ``dmUBLOCK(...)``
-**with a negative** :math:`\leq 1` **argument value.**  Briefly:
+**Taking all of the above into consideration, when choosing a function
+and parameter in practice, it is typically recommended to use**
+``dmUBLOCK(...)`` **with a negative argument value, whose magnitude is
+the mean response time of the subject or group.** Briefly:
 
-* In 99\% of cases, one uses duration modulation because one wants to
-  have the convolved response amplitude depend on the stimulus
-  duration.  Therefore, one would *avoid* cases where the argument is
-  :math:`\geq 1`, like ``dmBLOCK(2)``, ``dmUBLOCK(2)``, etc.
+* | In most cases, one uses duration modulation because one wants
+    to have the convolved response amplitude depend on the stimulus
+    duration.  That is, the answer to Q1 above is generally "Yes".
+  | Therefore, one would *avoid* cases where the response amplitude
+    would be constant and independent of stimulus duration (below
+    figure, *red* section; anywhere the argument would be positive).
  
 * It is often *convenient* to explicitly pick the stimulus duration
   whose response gets scaled to unity---that just makes explanation
-  clearer.  That value might come from typical or average response
-  durations in a study, say.  In that case, one should use
-  ``dmUBLOCK`` with a negative argument, such as ``dmUBLOCK(-2)``,
-  ``dmUBLOCK(-12)``, etc.
+  clearer.  Using ``dmUBLOCK`` with a negative argument provides that
+  functionality: the magnitude of the argument is the duration whose
+  response gets scaled to unity (below figure, *green* section; one
+  can't provide the time-to-scale-to in the blue sections, since no
+  argument is given ).
 
+* | The magnitude of the parameter value is the time whose response
+    will have height of unity.  A good way to choose that value would
+    be by calculating the typical time (mean or median) of the
+    response durations in a study---providing an answer to Q2 above.
+  | Generally, the typical response for a subject and for the group
+    should be similar, so you could pick either. *If* those are not
+    the same\.\.\. then one must choose what would be most meaningful
+    for the study paradigm and hypothesis.
+
+**For example,** if the average response time for a subject were
+2.4893 s, one might choose ``dmUBLOCK(-2.5)`` as the duration
+modulator.
+
+|
+
+.. list-table::
+   :header-rows: 1
+   :widths: 100 
+
+   * - Examples of ``dmBLOCK`` and ``dmUBLOCK`` functions (cols) and
+       arguments (rows), commented
+   * - .. image:: media/decon_blocks/img_all_decon_blocks_X.jpg
+          :width: 100%
+
+|
 
 Additional notes
 =====================
