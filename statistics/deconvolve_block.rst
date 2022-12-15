@@ -24,9 +24,10 @@ Essentially, one will choose based on answering 2 questions:
 
 #. To what value should the amplitude be scaled?
 
-The choice of answer to Q1 is typically more fundamental.  The answer
-to Q2 depends slightly on Q1 as well: if the response heights vary,
-the user essentially picks a representative duration to set the scale.
+The choice of answer to Q1 is typically more fundamental, and is
+almost certainly yes.  The answer to Q2 depends slightly on Q1 as
+well: if the response heights vary, the user essentially picks a
+representative duration to set the scale.
 
 TL;DR description of block choices
 ========================================
@@ -38,6 +39,14 @@ To specify the DM block model, you must specify **two** features:
 
 * the **parenthetical argument** to supply, which could be either
   nothing or a set of parentheses with a number inside.
+
+Given that dmBLOCK, dmUBLOCK and dmUBLOCK(d) (with d<0) are generally
+considered to be acceptable, what are the differences between them?
+
+* the shapes of these functions are identical
+
+* only the scaling differs, and that scaling is constant (and
+  therefore would not affect a t-test statistic, for example)
 
 **It is typically recommended to use the** ``dmUBLOCK(...)``
 **function with a negative argument value, whose magnitude is the mean
@@ -51,7 +60,7 @@ response time of the subject or group.** Briefly:
     figure, *red* section; anywhere the argument would be positive).
  
 * It is often *convenient* to explicitly pick the stimulus duration
-  whose response gets scaled to unity---that just makes explanation
+  whose response gets scaled to unity---that just makes an explanation
   clearer.  Using ``dmUBLOCK`` with a negative argument provides that
   functionality: the magnitude of the argument is the duration whose
   response gets scaled to unity (below figure, *green* section; one
@@ -60,8 +69,9 @@ response time of the subject or group.** Briefly:
 
 * | The magnitude of the parameter value is the time whose response
     will have height of unity.  A good way to choose that value would
-    be by calculating the typical time (mean or median) of the
-    response durations in a study---providing an answer to Q2 above.
+    be by calculating the typical time (mean, median or a rounded 
+    version of either) of the response durations in a study---
+    providing an answer to Q2 above.
   | Generally, the typical response for a subject and for the group
     should be similar, so you could pick either. *If* those are not
     the same\.\.\. then one must choose what would be most meaningful
