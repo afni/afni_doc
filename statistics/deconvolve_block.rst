@@ -75,9 +75,9 @@ modulator.
 **Figure.** *A set of example images of convolved models that have the
 exact same input (the dashed cyan line shows a unit height level).
 The input timing specification contains successively increasing
-durations, for didactic purposes.  It is formatted as pairs of
-``onset_time:duration_time`` values, following successively increasing
-durations (units in seconds; values can be non-integer)*: ``0:1 30:2.5
+durations, for didactic purposes.  It is formatted as pairs of*
+``onset_time:duration_time`` *values, following successively increasing
+durations (units in seconds; values can be non-integer):* ``0:1 30:2.5
 60:3 90:4 120:5.5 150:6 180:10 210:20 240:40``
 
 .. list-table::
