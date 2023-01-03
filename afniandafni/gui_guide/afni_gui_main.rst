@@ -56,8 +56,9 @@ Load underlay/overlay datasets
          (:ref:`see here<edu_afni03_chooser>`).
        * Datasets that are compressed have a ``z`` after their names.
        * Datasets available are from the current session.
-       * :ref:`See here for more information on the Image
-         Window<edu_afni03_image_window>`.
+       * If new datasets have been added to the current session directory,
+         afni will rescan the directory and popup a little message.
+       * :ref:`See here for more information on the Image Window<edu_afni03_image>`.
        
      - .. image:: media/afni_controller_window_under_over_lay.png
           :width: 100%
