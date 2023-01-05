@@ -25,6 +25,8 @@ Define Datamode
          panel.
        * This controls the mode in which the underlay and overlay are viewed.
        * Also allows you to save 3D datasets to disk.
+       * The datamode panel will overlap the ``Define OverLay ->`` panel.
+         But clicking either will bring that one to the front.
        
      - .. image:: media/datamode_open.png
           :width: 100%
@@ -33,7 +35,7 @@ Define Datamode
 .. _gui_guide_datamode_ulay:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 70 30
    :header-rows: 1
 
    * - :ref:`Underlay Settings<gui_guide_datamode_ulay>`
@@ -59,7 +61,7 @@ Define Datamode
 .. _gui_guide_datamode_olay:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 70 30
    :header-rows: 1
 
    * - :ref:`Overlay Settings<gui_guide_datamode_olay>`
@@ -98,7 +100,7 @@ Define Datamode
 .. _gui_guide_datamode_Resamp:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 70 30
    :header-rows: 1
 
    * - :ref:`Saving Resampled Datasets<gui_guide_datamode_Resamp>`
@@ -127,7 +129,7 @@ Define Datamode
 .. _gui_guide_datamode_SaveAs:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 70 30
    :header-rows: 1
 
    * - :ref:`Save As<gui_guide_datamode_SaveAs>`
@@ -156,12 +158,12 @@ Define Datamode
 .. _gui_guide_datamode_ReScan_Read:
 
 .. list-table::
-   :widths: 60 40
+   :widths: 70 30
    :header-rows: 1
 
    * - :ref:`Rescan and Read<gui_guide_datamode_ReScan_Read>`
      - 
-   * - * The purpose of the ``Rescan`` buttons is to read the contents of 
+   * - * ``Rescan`` buttons read the contents of 
          session directories again in order to make newly created datasets 
          (e.g., from the ``3dmerge`` program or the ``SaveAs`` button) 
          available for ``AFNI`` viewing. 
@@ -178,7 +180,7 @@ Define Datamode
            ``.1D`` file, ``AFNI`` will not be aware of that fact even after 
            this rescan operation.
 
-       * The purpose of the ``Read`` buttons is to read in new data. (The 
+       * ``Read`` buttons read in new data. (The 
          ``Rescan`` buttons are to re-read data from old directories.) 
          
          * ``Sess`` opens a directory chooser window to read a new session 
@@ -196,6 +198,119 @@ Define Datamode
            ``https://`` in the ``AFNILIST`` file!).
 
      - .. image:: media/datamode_ReScan_Read.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_datamode_Lock:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 1
+
+   * - :ref:`Lock<gui_guide_datamode_Lock>`
+     - 
+   * - * The ``Lock`` button drops down the menu of controllers which should 
+         be *'locked'* together in their viewpoint coordinates.
+       * The lock will only take effect when you next move the crosshairs, or 
+         click on the ``Enforce All`` button.
+       * By default all controllers are locked in regards to their viewpoint 
+         coordinates. Also ``Zoom lock`` and ``Free Thresh`` are selected.
+       * Changing a setting on one locked controller will apply that setting 
+         to all locked controllers. 
+
+       .. list-table::
+           :width: 100%
+           :align: center
+           :header-rows: 0
+
+           * - * The first 3 options (in colors) are shortcuts.
+               * ``Clear All`` will unlock all controllers. You will get 
+                 a warning popup the first time you click this telling you 
+                 how to undo it.
+               * ``Set All`` is the default and will re-select all 
+                 controllers if you have unlocked some or all.
+               * ``Enforce All`` will automatically sync the viewpoints on 
+                 all of the controllers.
+               * ``Time lock`` will lock the ``Index`` of each controller if 
+                 the underlay has multiple sub-bricks (as in a time series 
+                 dataset).
+               * ``IJK lock`` will change the viewpoint locking to match 
+                 the *"i j k"* coordinates of controller rather than the 
+                 default setting of matching the *"x y z"* coordinates. So if 
+                 the datasets in different controllers have very different 
+                 coordinate systems, this will look a bit random.
+               * The next 3 buttons are actually "radio" buttons so they are 
+                 mutually exclusive. They control how the overlay is 
+                 thresholded.
+               * ``Free Thresh`` is the default and you can set each 
+                 controller with a different threshold.
+               * ``Lock Val`` locks the actual value of the threshold (T or 
+                 F or whatever it happens to be).
+               * ``Lock pVal`` locks the calculated p-value of the overlay 
+                 threshold (I find this more useful).
+               * ``Lock Range`` will lock the range of values of each 
+                 controller's overlay. This will disable ``autoRange`` for 
+                 all controllers. After you engage this, you can click 
+                 ``autoRange`` in one controller to have all controllers 
+                 match that range.
+               * ``Lock Pbar`` will make all controller overlay color bars 
+                 match. Without this selected you can have different colors 
+                 for each controller etc..
+               * The rest of the buttons allow you to select which 
+                 controllers you want to lock together (A through J, although
+                 I think you can have more controllers than that..?)
+                 
+             - .. image:: media/datamode_Lock_popup.png
+                  :width: 70%
+                  :align: right 
+
+     - .. image:: media/datamode_Lock.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_datamode_Misc:
+
+.. list-table::
+   :widths: 70 30
+   :header-rows: 1
+
+   * - :ref:`Misc<gui_guide_datamode_Misc>`
+     - 
+   * - * The ``Misc`` button drops down the menu of miscellaneous options.
+         **note to staff: button help in the gui needs to be updated**
+
+       .. list-table::
+           :width: 100%
+           :align: center
+           :header-rows: 0
+
+           * - * ``Voxel Coords?`` will toggle the crosshair location from *mm* 
+                 (the default) to voxel indexes.
+               * ``Show Hints?`` will turn off (on is the default) the popup 
+                 hints that appear when you hover the cursor over an element 
+                 in the gui.
+               * ``ULay Info`` and ``OLay Info`` will pop up a window that 
+                 displays the output of ``3dinfo`` for the underlay and overlay 
+                 respectively.
+               * ``Edit Environment`` will open the environment editor window 
+                 to set or change environment variables. This button has the 
+                 same functionality as the ``EditEnv`` button on the main 
+                 controller window 
+                 :ref:`(See here.)<gui_guide_controller_window_EditEnv_NIML>`.
+               * ``Edit 1DChain`` and ``Edit 2DChain`` open controllers for 
+                 applying functions to your data. **note to staff: I have no 
+                 idea what these do...**
+               
+               
+               
+               
+             - .. image:: media/datamode_Misc_popup.png
+                  :width: 70%
+                  :align: right 
+                  
+
+     - .. image:: media/datamode_Misc.png
           :width: 100%
           :align: right
 
