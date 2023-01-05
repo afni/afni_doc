@@ -31,33 +31,34 @@ Load underlay/overlay datasets
    * - * An Image Window may have opened when ``afni`` was launched.
          (If not, you can open an image window by clicking ``Image``
          next to ``Axial``, ``Sagittal``, or ``Coronal``; :ref:`see
-         here<Open Image and Graph>` )
+         here<Open Image and Graph>` ).
    
        * ``UnderLay`` chooses which 3D dataset to view as the background 
-         (grayscale)
+         (grayscale).
          
          * Current underlay dataset determines the resolution of and
-           3D region covered by image viewers
-         * anatomical or time series datasets usually go here
+           3D region covered by image viewers.
+         * anatomical or time series datasets usually go here.
          * Datasets which can be graphed are marked with a ``*`` after 
-           their names
+           their names.
          
        * ``OverLay`` Use this to choose which overlay (color) 3D
-         dataset to view
+         dataset to view.
          
-         * Functional (statistical) dataset usually goes here
+         * Functional (statistical) dataset usually goes here.
          * Functional datasets will be interpolated to the 
-           underlay resolution, and flipped to that orientation (if needed)
+           underlay resolution, and flipped to that orientation (if needed).
          
            * The ``Define Datamode`` panel controls the interpolation
-             method (:ref:`see here<edu_afni03_datamode>`)
+             method (:ref:`see here<edu_afni03_datamode>`).
            
        * Both buttons open a dataset chooser window 
-         (:ref:`see here<edu_afni03_chooser>`)
-       * Datasets that are compressed have a ``z`` after their names
-       * Datasets available are from the current session
-       * :ref:`See here for more information on the Image
-         Window<edu_afni03_image_window>`
+         (:ref:`see here<edu_afni03_chooser>`).
+       * Datasets that are compressed have a ``z`` after their names.
+       * Datasets available are from the current session.
+       * If new datasets have been added to the current session directory,
+         afni will rescan the directory and popup a little message.
+       * :ref:`See here for more information on the Image Window<edu_afni03_image>`.
        
      - .. image:: media/afni_controller_window_under_over_lay.png
           :width: 100%
@@ -76,7 +77,7 @@ Load underlay/overlay datasets
    * - :ref:`Coordinate Display<gui_guide_controller_window_xyz>`
      - 
    * - * The **xyz-coordinate display** in upper left corner shows
-         current focus location
+         current focus location.
        * By default, the coordinates are in **RAI** order (from the
          DICOM standard):
 
@@ -115,13 +116,13 @@ Load underlay/overlay datasets
            A-P axes (etc.)
 
        * ``X+``: Montage will show the crosshairs in all slices or
-         just one slice
+         just one slice.
        * ``Color``: Change the color of crosshairs to make it more
-         visible with certain image overlays
+         visible with certain image overlays.
        * ``Gap``: Size of gap (in voxels) at the center of the
-         crosshairs
+         crosshairs.
        * ``Wrap``: Montage layout wraps around when the slices go past
-         an edge of the dataset
+         an edge of the dataset.
          
      - .. image:: media/afni_controller_window_xhairs.png 
           :width: 100%
@@ -137,13 +138,13 @@ Load underlay/overlay datasets
      - 
    * - * ``Index``: Time index
 
-         * Controls the time index of the images being viewed
-         * Controls the underlay image only
+         * Controls the time index of the images being viewed.
+         * Controls the underlay image only.
          * Only available for images that have multiple subbricks 
-           (usually for time)
+           (usually for time).
          * Increment or decrement with the arrows or just type in
-           the number
-         * Right click on ``Index`` for a menu of extra options
+           the number.
+         * Right click on ``Index`` for a menu of extra options.
 
      - .. image:: media/afni_controller_window_index.png 
           :width: 100%
@@ -160,21 +161,21 @@ Load underlay/overlay datasets
    * - :ref:`Image and Graph<gui_guide_controller_window_image_graph>`
      - 
    * - * ``Image`` and ``Graph`` buttons for the adjacent views
-         (Axial, Sagittal, Coronal)
+         (Axial, Sagittal, Coronal).
 
-         * Normal: button opens a viewing window
-         * Inverted: button raises opened window
+         * Normal: button opens a viewing window.
+         * Inverted: button raises opened window.
          * Right-click on an inverted button 'fetches' the image /
-           graph window
+           graph window.
 
        * N.B.: AFNI does not read datasets from disk until a window is
-         opened
+         opened.
        * This can make opening the first viewing window be quite slow
        * ``Graph`` buttons are only enabled for datasets that are
-         viewing their data files directly
+         viewing their data files directly.
 
          * Not warping on demand -- see the top of the ``Define
-           Datamode`` control panel :ref:`(see here)<Define Datamode>`
+           Datamode`` control panel :ref:`(see here)<Define Datamode>`.
 
      - .. image:: media/afni_controller_window_image_graph.png
            :width: 100%
@@ -189,20 +190,19 @@ Load underlay/overlay datasets
    * - :ref:`BHelp<gui_guide_controller_window_BHelp>`
      - 
    * - * ``BHelp`` button: when pressed, the cursor changes to a hand
-         shape
+         shape.
 
          * Use it to click on any AFNI button and you will get a
-           small help popup (and click on it when done, to close)
-         * AFNI also has 'hints' (AKA 'tooltips')
+           small help popup (and click on it when done, to close).
+         * AFNI also has 'hints' (AKA 'tooltips').
 
-       * Press the ``done`` button twice within 5 seconds to exit AFNI
+       * Press the ``done`` button twice within 5 seconds to exit AFNI.
 
-         * The first button press changes ``done`` to ``DONE``
+         * The first button press changes ``done`` to ``DONE``.
          * Fail to press second time in 5 seconds: it changes back to
-           ``done``
+           ``done``.
          * Don't press a mouse button in the blank square to the
-           right of ``done``
-         * We won't be responsible for the consequences
+           right of ``done``. We won't be responsible for the consequences.
 
      - .. image:: media/afni_controller_window_bhelp_done.png
           :width: 100%
@@ -220,7 +220,7 @@ Load underlay/overlay datasets
    * - :ref:`Views<gui_guide_controller_window_Views>`
      - 
    * - * Use these to select the type of view for your data. **Need
-         more here**
+         more here**.
          
          * ``Original View``
          * ``AC-PC Aligned``
@@ -242,17 +242,17 @@ Load underlay/overlay datasets
    * - * ``Define Overlay ->``: Use this to control the thresholds, colors,
          etc. for overlays.
          
-         * More on this here -> :ref:`Overlay<edu_afni03_overlay>`
+         * More on this here -> :ref:`Overlay<edu_afni03_overlay>`.
          
-       * ``See Overlay``: Show / Hide the overlay dataset
+       * ``See Overlay``: Show / Hide the overlay dataset.
        
          * This is useful for seeing what anatomical features are 'under' a 
-           particular overlay color
+           particular overlay color.
            
        * ``Define Datamode`` Use this to control the mode in which the
-         underlay data is viewed, and also to save 3D datasets to disk
+         underlay data is viewed, and also to save 3D datasets to disk.
          
-         * More on this here -> :ref:`Datamode<edu_afni03_datamode>`
+         * More on this here -> :ref:`Datamode<edu_afni03_datamode>`.
          
      - .. image:: media/afni_controller_window_overlay_datamode.png
           :width: 100%
@@ -267,21 +267,21 @@ Load underlay/overlay datasets
    * - :ref:`DataDir, Switch and Read<gui_guide_controller_window_DataDir>`
      - 
    * - * ``Switch`` Use this to choose from which session 3D datasets
-         may be viewed
+         may be viewed.
          
          * All datasets in same directory are assumed to be aligned in
-           space
+           space.
          
            * **this is in the handout, but I don't think it is true...**
            
          * Any dataset can be the underlay; any dataset can be the
-           overlay
+           overlay.
          
        * ``Read`` Click this button to get a 'chooser' dialog window
-         to select a new directory from which to read datasets
+         to select a new directory from which to read datasets.
          
          * This will add a new 'session' that you can select with the
-           ``Switch`` button
+           ``Switch`` button.
        
      - .. image:: media/afni_controller_window_DataDir.png
           :width: 100%
@@ -296,16 +296,16 @@ Load underlay/overlay datasets
 
    * - :ref:`EditEnv and NIML+PO<gui_guide_controller_window_EditEnv_NIML>`
      - 
-   * - * ``EditEnv`` **need more here**
+   * - * ``EditEnv`` **need more here**.
 
        * ``NIML+PO``: Start listening for NIML and Plugout TCP/IP (network 
-         sockets) **need more here**
+         sockets) **need more here**.
 
-         * Expecting AFNI to talk to suma and/or plugout_drive
+         * Expecting AFNI to talk to suma and/or plugout_drive.
          * Like running ``afni -niml -yesplugouts`` on the command
-           line
+           line.
          * Greyed out if already listening (you already pushed it or
-           launched afni with ``-niml -yesplugouts``
+           launched afni with ``-niml -yesplugouts``.
 
      - .. image:: media/afni_controller_window_env_niml.png
           :width: 100%
@@ -320,13 +320,13 @@ Load underlay/overlay datasets
    * - :ref:`Control Surface<gui_guide_controller_window_ControlSurface>`
      - 
    * - * ``Control Surface``: control the display of overlaid surfaces in the 
-         image viewers when talking with ``suma``
+         image viewers when talking with ``suma``.
          
          * Surface nodes will have little boxes drawn, when they appear in a 
-           slice
+           slice.
          * Surface triangles will have line segments drawn, where they intersect 
-           a slice center-plane
-         * Greyed out if ``suma`` is not running and talking with ``afni``
+           a slice center-plane.
+         * Greyed out if ``suma`` is not running and talking with ``afni``.
   
      - .. image:: media/afni_controller_window_cont_surf.png
           :width: 100%
@@ -343,24 +343,24 @@ Load underlay/overlay datasets
    * - * Green buttons open your default web browser to various afni related 
          pages.
          
-       * Blue button opens an afni GUI window with lots of info
+       * Blue button opens an afni GUI window with lots of info.
    
        * ``News``: Web link to `AFNI Digest History
-         <https://afni.nimh.nih.gov/pub/dist/src/AFNI_digest_history.txt>`_
+         <https://afni.nimh.nih.gov/pub/dist/src/AFNI_digest_history.txt>`_.
          
        * ``Forum``: Web link to `AFNI Message Board 
-         <https://afni.nimh.nih.gov/afni/community/board/list.php?1?>`_
+         <https://afni.nimh.nih.gov/afni/community/board/list.php?1?>`_.
   
        * ``Tips``: GUI window with lots of info. A web based version of 
          this exists `here 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#afni-for-absolute-beginners>`_
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#afni-for-absolute-beginners>`_.
   
        * ``Helps``: Web link to `All program helps 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/main_toc.html>`_
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/main_toc.html>`_.
        
        * ``YouTube``: Web link to the official `"AFNI Academy" YouTube
          page of Bootcamp lecture videos
-         <https://www.youtube.com/channel/UC40RiNZN7_dCuB6Lg7HJl1g>`_
+         <https://www.youtube.com/channel/UC40RiNZN7_dCuB6Lg7HJl1g>`_.
        
      - .. image:: media/afni_controller_window_news_etc.png
           :width: 100%
