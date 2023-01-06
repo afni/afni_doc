@@ -33,7 +33,7 @@ Dataset Chooser
    :widths: 60 40
    :header-rows: 1
 
-   * - :ref:`Chooser window details<gui_guide_chooser_start>`
+   * - :ref:`Chooser window details<gui_guide_chooser_window>`
      - 
    * - * The dialog window will indicate ``Underlay`` or ``Overlay`` 
          coresponding to which button you clicked.
@@ -80,7 +80,7 @@ Dataset Chooser
    :widths: 60 40
    :header-rows: 1
 
-   * - :ref:`To choose a dataset<_gui_guide_chooser_choice>`
+   * - :ref:`To choose a dataset<gui_guide_chooser_choice>`
      - 
    * - * Click on label, or scroll with mouse scroll-wheel, use keyboard, 
          arrows, or click the ``Index`` up / down arrows.
