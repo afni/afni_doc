@@ -22,6 +22,8 @@ If you use AFNI in your work, please cite:
     29(3):162-173. doi:10.1006/cbmr.1996.0014 
   | `<https://pubmed.ncbi.nlm.nih.gov/8812068/>`_
 
+  |
+
 * | RW Cox, JS Hyde (1997). Software tools for analysis and
     visualization of FMRI Data.  NMR in Biomedicine, 10: 171-178.
   | `<https://pubmed.ncbi.nlm.nih.gov/9430344/>`_
@@ -132,12 +134,16 @@ of their timing, please cite:
     32(9):1400-18.
   | `<http://dx.doi.org/10.1002/hbm.21116>`_
 
+  |
+
 * | Caballero-Gaudes C, Petridou N, Francis ST, Dryden IL, Gowland PA
     (2013).  Paradigm Free Mapping with Sparse Regression
     Automatically detects Single-Trial Functional Magnetic Resonance
     Imaging Blood Oxygenation Level Dependent Responses.  Hum Brain
     Mapp 34(3):501-18.  
   | `<http://dx.doi.org/10.1002/hbm.21452>`_
+
+  |
 
 * | **Comment:** this is specifically for applying PFM to resting state 
     data:
@@ -164,11 +170,15 @@ their analysis in AFNI here:
     Visual Cortex. J Neurosci 38:2294–2303.
   | `<https://www.jneurosci.org/content/38/9/2294>`_
 
+  |
+
 * | Silson EH, Chan AW, Reynolds RC, Kravitz DJ, Baker CI (2015). A
     retinotopic basis for the division of high-level scene processing
     between lateral and ventral human occipitotemporal cortex. J
     Neurosci 35:11921–11935.
   | `<https://europepmc.org/article/pmc/pmc4549403>`_
+
+  |
 
 * | Silson EH, Groen II, Kravitz DJ, Baker CI (2016) Evaluating the
     correspondence between face-, scene-, and object-selectivity and
@@ -198,6 +208,29 @@ the population-level, please cite:
     application to longitudinal studies.  NeuroImage 233:117891.
   | `<https://pubmed.ncbi.nlm.nih.gov/33667672/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.11.01.363838v2>`_
+
+If you are using AFNI's defacing/refacing tool ``@afni_refacer_run``
+(which has a tutorial page :ref:`here <tut_auto_@afni_refacer_run>`),
+please check out its presentation at OHBM-2020:
+
+* | Cox RW, Taylor PA (2020). Why de-face when you can re-face?
+    Presented at the 26th Annual Meeting of the Organization for Human 
+    Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2020/AFNI_reface_OHBM2020.pdf>`_
+
+  |
+
+* | **Comment:** you might also be interested in this independent
+    evaluation that found ``@afni_refacer_run`` to be the overall best
+    among the tested/currently available defacing/refacing tools:
+  | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
+    GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
+    Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
+    SR (2021). Multisite Comparison of MRI Defacing Software Across
+    Multiple Cohorts. Front. Psychiatry 12:617997. doi:
+    10.3389/fpsyt.2021.617997
+  | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
+
 
 If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
@@ -246,6 +279,22 @@ please see:
     PSF, Cox RW (2006).  FIAC Analysis According to AFNI and SUMA.
     Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+
+If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
+:ref:`SurfLayers <tut_surflayers>` functionality, please cite:
+
+* | Torrisi S, Lauren P, Taylor PA, Park S, Feinberg D, Glen DR
+    (2021). Creating Layered Surfaces to Visualize with AFNI + SUMA, with
+    applications to laminar fMRI. Presented at the 27th Annual Meeting of
+    the Organization for Human Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2021/OHBM2021_SurfLayers_v2.pdf>`_
+
+  |
+
+* | Lauren P, Glen DR, Reynolds RC, Torrisi S, Taylor PA (2022).
+    Using Clipping PLanes to Analyze Brain Data in SUMA. Presented at 
+    the 28th Annual Meeting of the Organization for Human Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
 
 
 Methods: Group analysis, stats and clustering
@@ -374,6 +423,8 @@ smoothness estimation in your work, please cite:
     USA. 114(17):E3370-E3371. doi:10.1073/pnas.1614961114
   | `<https://pubmed.ncbi.nlm.nih.gov/28420798/>`_
 
+  |
+
 * | Cox RW, Chen G, Glen DR, Reynolds RC, Taylor PA (2017). FMRI
     Clustering in AFNI: False-Positive Rates Redux.  Brain Connect
     7(3):152-171. doi: 10.1089/brain.2016.0475.
@@ -398,11 +449,15 @@ main FATCAT paper, above):
     Mapp. 36(1):170-186. doi:10.1002/hbm.22620
   | `<https://pubmed.ncbi.nlm.nih.gov/25182535/>`_
 
+  |
+
 * | Chen G, Adleman NE, Saad ZS, Leibenluft E, Cox RW (2014).
     Applications of multivariate modeling to neuroimaging group
     analysis: A comprehensive alternative to univariate general linear
     model.  NeuroImage 99:571-588.
   | `<https://pubmed.ncbi.nlm.nih.gov/24954281/>`_
+
+  |
 
 * | Taylor PA, Chen G, Cox RW, Saad ZS (2016). Open Environment for
     Multimodal Interactive Connectivity Visualization and
@@ -440,6 +495,8 @@ please cite:
     Pipeline and Hierarchical Atlas. NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
+
+  |
 
 * | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). A
     new method for improving functional-to-structural MRI alignment
@@ -561,18 +618,12 @@ consider citing:
     10, 1220. doi.org/10.1038/s41467-019-09230-w
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
 
-If you are using AFNI's defacing/refacing tool ``@afni_refacer_run``,
-please check out its presentation at OHBM-2020:
+If you want to note the good performance of AFNI's defacing/refacing
+tool ``@afni_refacer_run``, you can check out this independent study
+that found it to be the overall best among currently available
+refacing/defacing tools:
 
-* | Cox RW, Taylor PA (2020). Why de-face when you can re-face?
-    Presented at the 26th Annual Meeting of the Organization for Human 
-    Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/HBM2020/AFNI_reface_OHBM2020.pdf>`_
-
-* | **Comment:** you might also be interested in this independent
-    evaluation that found ``@afni_refacer_run`` to be the overall best
-    among the tested/currently available defacing/refacing tools:
-  | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
+* | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
     GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
     Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
     SR (2021). Multisite Comparison of MRI Defacing Software Across
@@ -726,11 +777,15 @@ as an alternative, please check out/reference:
     Connectivity 2(1):25-32. doi: 10.1089/brain.2012.0080
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3484684/>`_
 
+  |
+
 * | **Comment:** this is the "GCOR" (global correlation) parameter paper:
   | Saad ZS, Reynolds RC, Jo HJ, Gotts SJ, Chen G, Martin A, Cox RW (2013).
     Correcting Brain-Wide Correlation Differences in Resting-State FMRI.
     Brain Connectivity 3(4):339-352. doi: 10.1089/brain.2013.0156
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749702/>`_
+
+  |
 
 * | Jo HJ, Gotts SJ, Reynolds RC, Bandettini PA, Martin A, Cox RW, Saad
     ZS (2013).  Effective preprocessing procedures virtually eliminate
@@ -738,16 +793,22 @@ as an alternative, please check out/reference:
     of Applied Mathematics: art.no. 935154.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3886863/>`_
 
+  |
+
 * | Gotts SJ, Saad ZS, Jo HJ, Wallace GL, Cox RW, Martin A (2013).  The
     perils of global signal regression for group comparisons: A case
     study of Autism Spectrum Disorders.
     Front. Hum. Neurosci. 7:356. doi: 10.3389/fnhum.2013.00356
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3709423/>`_
 
+  |
+
 * | Gotts SJ, Simmons WK, Milbury LA, Wallace GL, Cox RW, Martin A (2012).
     Fractionation of Social Brain Circuits in Autism Spectrum Disorders.
     Brain, 135: 2711-2725.
   | `<https://pubmed.ncbi.nlm.nih.gov/22791801/>`_
+
+  |
 
 * | Caballero-Gaudes C, Reynolds RC (2017).  Methods for cleaning the
     BOLD fMRI signal. Neuroimage 154:128-149. 
