@@ -561,12 +561,18 @@ consider citing:
     10, 1220. doi.org/10.1038/s41467-019-09230-w
   | `<https://www.nature.com/articles/s41467-019-09230-w>`_
 
-If you want to note the good performance of AFNI's defacing/refacing
-tool ``@afni_refacer_run``, you can check out this independent study
-that found it to be the overall best among currently available tools
-(also presented at OHBM 2020):
+If you are using AFNI's defacing/refacing tool ``@afni_refacer_run``,
+please check out its presentation at OHBM-2020:
 
-* | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
+* | Cox RW, Taylor PA (2020). Why de-face when you can re-face?
+    Presented at the 26th Annual Meeting of the Organization for Human 
+    Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2020/AFNI_reface_OHBM2020.pdf>`_
+
+* | **Comment:** you might also be interested in this independent
+    evaluation that found ``@afni_refacer_run`` to be the overall best
+    among the tested/currently available defacing/refacing tools:
+  | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
     GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
     Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
     SR (2021). Multisite Comparison of MRI Defacing Software Across

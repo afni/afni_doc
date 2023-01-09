@@ -1,6 +1,6 @@
 :tocdepth: 2
 
-References, papers and citations
+References, methods and citations
 =================================
 
 
