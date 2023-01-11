@@ -302,19 +302,55 @@ Define Datamode
                  applying functions to your data. **note to staff: I have no 
                  idea what these do...**
                
-               
-               
-               
              - .. image:: media/datamode_Misc_popup.png
                   :width: 70%
                   :align: right 
-                  
 
      - .. image:: media/datamode_Misc.png
           :width: 100%
           :align: right
 
+.. _gui_guide_datamode_Plugins:
 
+.. list-table::
+   :widths: 70 30
+   :header-rows: 1
+
+   * - :ref:`Misc<gui_guide_datamode_Plugins>`
+     - 
+   * - * The ``Plugins`` button drops down the menu of plugin programs loaded 
+         when AFNI started.
+   
+       .. list-table::
+           :width: 100%
+           :align: center
+           :header-rows: 0
+
+           * - * ``3dsvm``
+               * ``Dataset NOTES``
+               * ``Dataset #2``
+               * ``Dataset #N``
+               * ``Draw Dataset``
+               * ``Edit Tagset``
+               * ``Histogram``
+               * ``Histogram: CC``
+               * ``Histogram: Multi``
+               * ``Maxima``
+               * ``Nudge Dataset``
+               * ``Render Dataset``
+               * ``ScatterPlot``
+               * ``Vol2Surf``
+               
+
+             - .. image:: media/datamode_Plugins_popup.png
+                  :width: 70%
+                  :align: right 
+   
+     - .. image:: media/datamode_Plugins.png
+          :width: 100%
+          :align: right
+          
+          
 Jump within GUI Guide
 ========================
 
