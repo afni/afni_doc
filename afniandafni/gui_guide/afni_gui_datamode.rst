@@ -138,7 +138,7 @@ Define Datamode
          (Underlay or Overlay) under a new name.
        * These datasets will be written at the spatial resolution they are 
          stored in -- **they won't be resampled**.
-       * Datasets that are 'warp-on-demand' (don't have their on data) cannot 
+       * Datasets that are 'warp-on-demand' (don't have their own data) cannot 
          be ``SaveAs``'ed!
        * If you do not give an extension, the dataset will be saved in afni 
          format.
@@ -218,55 +218,51 @@ Define Datamode
        * Changing a setting on one locked controller will apply that setting 
          to all locked controllers. 
 
-       .. list-table::
-           :width: 100%
-           :align: center
-           :header-rows: 0
-
-           * - * The first 3 options (in colors) are shortcuts.
-               * ``Clear All`` will unlock all controllers. You will get 
-                 a warning popup the first time you click this telling you 
-                 how to undo it.
-               * ``Set All`` is the default and will re-select all 
-                 controllers if you have unlocked some or all.
-               * ``Enforce All`` will automatically sync the viewpoints on 
-                 all of the controllers.
-               * ``Time lock`` will lock the ``Index`` of each controller if 
-                 the underlay has multiple sub-bricks (as in a time series 
-                 dataset).
-               * ``IJK lock`` will change the viewpoint locking to match 
-                 the *"i j k"* coordinates of controller rather than the 
-                 default setting of matching the *"x y z"* coordinates. So if 
-                 the datasets in different controllers have very different 
-                 coordinate systems, this will look a bit random.
-               * The next 3 buttons are actually "radio" buttons so they are 
-                 mutually exclusive. They control how the overlay is 
-                 thresholded.
-               * ``Free Thresh`` is the default and you can set each 
-                 controller with a different threshold.
-               * ``Lock Val`` locks the actual value of the threshold (T or 
-                 F or whatever it happens to be).
-               * ``Lock pVal`` locks the calculated p-value of the overlay 
-                 threshold (I find this more useful).
-               * ``Lock Range`` will lock the range of values of each 
-                 controller's overlay. This will disable ``autoRange`` for 
-                 all controllers. After you engage this, you can click 
-                 ``autoRange`` in one controller to have all controllers 
-                 match that range.
-               * ``Lock Pbar`` will make all controller overlay color bars 
-                 match. Without this selected you can have different colors 
-                 for each controller etc..
-               * The rest of the buttons allow you to select which 
-                 controllers you want to lock together (A through J, although
-                 I think you can have more controllers than that..?)
-                 
-             - .. image:: media/datamode_Lock_popup.png
-                  :width: 70%
-                  :align: right 
-
      - .. image:: media/datamode_Lock.png
           :width: 100%
           :align: right
+
+   * - * The first 3 options (in colors) are shortcuts.
+       * ``Clear All`` will unlock all controllers. You will get 
+         a warning popup the first time you click this telling you 
+         how to undo it.
+       * ``Set All`` is the default and will re-select all 
+         controllers if you have unlocked some or all.
+       * ``Enforce All`` will automatically sync the viewpoints on 
+         all of the controllers.
+       * ``Time lock`` will lock the ``Index`` of each controller if 
+         the underlay has multiple sub-bricks (as in a time series 
+         dataset).
+       * ``IJK lock`` will change the viewpoint locking to match 
+         the *"i j k"* coordinates of controller rather than the 
+         default setting of matching the *"x y z"* coordinates. So if 
+         the datasets in different controllers have very different 
+         coordinate systems, this will look a bit random.
+       * The next 3 buttons are actually "radio" buttons so they are 
+         mutually exclusive. They control how the overlay is 
+         thresholded.
+       * ``Free Thresh`` is the default and you can set each 
+         controller with a different threshold.
+       * ``Lock Val`` locks the actual value of the threshold (T or 
+         F or whatever it happens to be).
+       * ``Lock pVal`` locks the calculated p-value of the overlay 
+         threshold (I find this more useful).
+       * ``Lock Range`` will lock the range of values of each 
+         controller's overlay. This will disable ``autoRange`` for 
+         all controllers. After you engage this, you can click 
+         ``autoRange`` in one controller to have all controllers 
+         match that range.
+       * ``Lock Pbar`` will make all controller overlay color bars 
+         match. Without this selected you can have different colors 
+         for each controller etc..
+       * The rest of the buttons allow you to select which 
+         controllers you want to lock together (A through J, although
+         I think you can have more controllers than that..?)
+         
+     - .. image:: media/datamode_Lock_popup.png
+          :width: 70%
+          :align: right 
+  
 
 
 .. _gui_guide_datamode_Misc:
@@ -301,6 +297,7 @@ Define Datamode
                * ``Edit 1DChain`` and ``Edit 2DChain`` open controllers for 
                  applying functions to your data. **note to staff: I have no 
                  idea what these do...**
+               * ``Save Layout``
                
              - .. image:: media/datamode_Misc_popup.png
                   :width: 70%
@@ -316,7 +313,7 @@ Define Datamode
    :widths: 70 30
    :header-rows: 1
 
-   * - :ref:`Misc<gui_guide_datamode_Plugins>`
+   * - :ref:`Plugins<gui_guide_datamode_Plugins>`
      - 
    * - * The ``Plugins`` button drops down the menu of plugin programs loaded 
          when AFNI started.
