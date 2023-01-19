@@ -46,7 +46,8 @@ Define Overlay
          **typo in the button help for ``ULay``**
        * The ``Thr`` allows you to choose the sub-brick of the overlay 
          dataset with which to threshold the ``Olay`` sub-brick.
-       * **need screen caps here**
+       * In this example the "Coef" is the overlay and is thresholded by the 
+         "Tstat".
          
      - .. image:: media/overlay_main_ulay_olay_thr.png
           :width: 100%
@@ -91,11 +92,92 @@ Define Overlay
          down. (Press with ``Shift`` to rotate in steps of 4)
        * ``F`` will flip the color bar Top-to-Bottom. This works for the 
          continuous color scale and discretely panned color bars.
-         
 
      - .. image:: media/overlay_main_ranges.png
           :width: 100%
           :align: right
+
+
+.. _gui_guide_overlay_color_bar:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Color Bar<gui_guide_overlay_color_bar>`
+     - 
+   * - * The color bar represents the color that maps to the overlay data.
+       * The number in the top and bottom right (in this case 4.168 and -4.168. 
+         The bottom number is out of view because of XQuartz) 
+         corresponds to the range selected (in this case ``autoRange`` 
+         is selected). If you were to de-select ``autoRange`` and enter a 
+         number, that number would be represented here. 
+       * Left clicking in the color bar will flip the colors top to bottom.
+       * There is a hidden menu if you right click in the color bar. The 
+         ``value`` displayed is the value at the vertical location at which 
+         you right clicked. The ``RGB`` is the numerical representation of the 
+         color at that point from 0 to 255 for red, green, and blue (helpful 
+         if you want to color match in a figure).
+
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_color_bar_hidden.png
+                   :width: 100%
+
+       .. list-table::
+          :widths: 60 40
+          :align: center
+          :header-rows: 0
+          
+          * - * Clicking ``Choose Colorscale`` will open a popup menu with 
+                lots of choices of different color bars. I believe that 
+                ``Reds_and_Blues_Inv`` is the default, but play with the 
+                different choices to see what you like. There are discrete 
+                integer scales that are good for atlases or region of 
+                interest maps.
+
+            - .. image:: media/overlay_main_color_bar_Choose_Colorscale.png
+                 :width: 100%
+
+       * The ``#`` drop down menu lets you subdivide the color bar into panes 
+         by the selected number. The default ``**`` is a continuous color bar.
+       * ``Pos?`` is de-selected by default to show positive and negative 
+         values. If you select ``Pos?`` only positive overlay values will be 
+         shown. The range of the color bar will start at 0, so the color 
+         mapping will change accordingly. Zero overlay values are never 
+         overlaid.
+
+     - .. image:: media/overlay_main_color_bar.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_overlay_thr_slider:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Threshold Slider<gui_guide_overlay_thr_slider>`
+     - 
+   * - * Drag the slider bar to adjust the threshold for the overlay display. 
+         You can left click above or below the slider to jump up or down by 
+         the 3rd digit value (just try it).
+   
+         * Threshold doesn't apply if the dataset is RGB-format. (I have 
+           never seen one of these datasets...)
+         * Threshold applies to the ``Thr`` sub-brick.
+         
+       * The value shown to the left of the slider  is between 0 and 1 
+         (modified by a power of 10 as explained below).
+       * 
+
+     - .. image:: media/overlay_main_thr_slider.png
+          :width: 100%
+          :align: right
+
 
 
 Jump within GUI Guide

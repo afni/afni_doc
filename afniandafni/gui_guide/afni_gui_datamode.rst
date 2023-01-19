@@ -149,7 +149,6 @@ Define Datamode
        * It is possible to over-write an existing dataset with ``SaveAs``,
          but this is usually **NOT** advisable, unless you are going to quit 
          ``AFNI`` almost immediately.
-       * **need screen caps here**
 
      - .. image:: media/datamode_SaveAs.png
           :width: 100%
@@ -172,7 +171,6 @@ Define Datamode
            as clicking the ``UnderLay`` or ``OverLay`` buttons in the main 
            panel after adding new datasets. 
            :ref:`(See here.)<gui_guide_main_load_dsets>`
-         * **need screen caps here**
          * ``All`` rescans all session directories.
          * ``*.1D`` rescans for timeseries files instead of AFNI datasets. 
            Note that the program won't re-read a filename that has already 
@@ -186,7 +184,6 @@ Define Datamode
          * ``Sess`` opens a directory chooser window to read a new session 
            directory. This has the same functionality as the ``Read`` button 
            in the main controller panel. 
-         * **need screen caps here**
            :ref:`(See here.)<gui_guide_controller_window_DataDir>`
          * ``1D`` opens a file chooser window to read a new timeseries file.
          * ``Web`` opens a dialog box to enter an address to read datasets 
@@ -196,6 +193,14 @@ Define Datamode
            ``AFNILIST`` is a text file with one dataset name per line (will be 
            fetched from the same Web directory; do **NOT** put ``ftp://`` or 
            ``https://`` in the ``AFNILIST`` file!).
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/datamode_Read_Web.png
+                   :width: 100%
 
      - .. image:: media/datamode_ReScan_Read.png
           :width: 100%
