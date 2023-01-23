@@ -114,35 +114,6 @@ Define Overlay
          is selected). If you were to de-select ``autoRange`` and enter a 
          number, that number would be represented here. 
        * Left clicking in the color bar will flip the colors top to bottom.
-       * There is a hidden menu if you right click in the color bar. The 
-         ``value`` displayed is the value at the vertical location at which 
-         you right clicked. The ``RGB`` is the numerical representation of the 
-         color at that point from 0 to 255 for red, green, and blue (helpful 
-         if you want to color match in a figure).
-
-         .. list-table::
-             :width: 40%
-             :align: center
-             :header-rows: 0
- 
-             * - .. image:: media/overlay_main_color_bar_hidden.png
-                   :width: 100%
-
-       .. list-table::
-          :widths: 60 40
-          :align: center
-          :header-rows: 0
-          
-          * - * Clicking ``Choose Colorscale`` will open a popup menu with 
-                lots of choices of different color bars. I believe that 
-                ``Reds_and_Blues_Inv`` is the default, but play with the 
-                different choices to see what you like. There are discrete 
-                integer scales that are good for atlases or region of 
-                interest maps.
-
-            - .. image:: media/overlay_main_color_bar_Choose_Colorscale.png
-                 :width: 100%
-
        * The ``#`` drop down menu lets you subdivide the color bar into panes 
          by the selected number. The default ``**`` is a continuous color bar.
        * ``Pos?`` is de-selected by default to show positive and negative 
@@ -154,6 +125,32 @@ Define Overlay
      - .. image:: media/overlay_main_color_bar.png
           :width: 100%
           :align: right
+
+   * - * There is a hidden menu if you right click in the color bar. The 
+         ``value`` displayed is the value at the vertical location at which 
+         you right clicked. The ``RGB`` is the numerical representation of the 
+         color at that point from 0 to 255 for red, green, and blue (helpful 
+         if you want to color match in a figure).
+         
+         .. list-table::
+             :width: 40%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_color_bar_hidden.png
+                   :width: 100%
+                   
+       * Clicking ``Choose Colorscale`` will open a popup menu with 
+         lots of choices of different color bars. I believe that 
+         ``Reds_and_Blues_Inv`` is the default, but play with the 
+         different choices to see what you like. There are discrete 
+         integer scales that are good for atlases or region of 
+         interest maps.
+       * More on color bars in AFNI `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/all_afni_cbars.html#>`_.
+
+     - .. image:: media/overlay_main_color_bar_Choose_Colorscale.png
+          :width: 60%
 
 .. _gui_guide_overlay_thr_slider:
 
@@ -184,7 +181,7 @@ Define Overlay
    :widths: 60 40
    :header-rows: 1
 
-   * - :ref:`p value etc^<gui_guide_overlay_p_q_10>`
+   * - :ref:`p  q 10^<gui_guide_overlay_p_q_10>`
      - 
    * - * The ``p=`` displays the estimated significance (p-value) of the 
          threshold slider if possible. This is the 'uncorrected' or per-voxel 
@@ -238,47 +235,120 @@ Define Overlay
                - .. image:: media/overlay_main_p_q_10_scroll_up.png
                    :width: 100%
 
-       * There is a hidden menu that appears if you right click and hold in the 
-         p or q area. This menu also appears if you right click and hold on the 
-         ``Thr`` label atop the threshold slider.
-
-
-       .. list-table::
-          :widths: 70 30
-          :align: center
-          :header-rows: 0
-
-          * - * ``Use Threshold?`` is selected by default. If you deselect it, the 
-                threshold slider will do nothing and you will get **NO** 
-                thresholding at all.
-              * ``Thr = OLay ?`` sets the ``Thr`` sub-brick to be the same as the 
-                ``OLay`` sub-brick. This is useful for looking at full F-stats or 
-                anova's etc.
-              * ``Thr = Olay+1 ?`` (**note to staff: capitalization is wrong here**) 
-                sets the ``Thr`` sub-brick to be the next sub-brick after the 
-                ``OLay`` that is selected. This is useful for t-tests or anything 
-                with a coefficient and a T-stat.
-              * ``AutoThreshold`` uses some sort of magic incantation spun by Bob 
-                the Wise to select a threshold based on the alignment of the stars 
-                and the user's birthday. **note to staff: fix this!!**
-              * ``Set threshold`` pops up a dialog allowing you to enter a 
-                number directly. It will modify the ``10^`` selection to match the 
-                number you enter. If you enter a negative number, the threshold 
-                slider will flash and there will be an annoying beep tone.
-              * ``Set p-value`` and ``Set q-value`` will give you the same dialog 
-                boxes as shown above with the scrolling actions.
-              * ``Set p=0.001`` does what it says... Just quicker than messing with 
-                the slider.
-              * 
-            - .. image:: media/overlay_main_p_q_10_right_click.png
-                 :width: 100%
-
-
      - .. image:: media/overlay_main_p_q_10.png
           :width: 100%
           :align: right
 
+.. _gui_guide_overlay_thr_hidden:
 
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Hidden Threshold Menu<gui_guide_overlay_thr_hidden>`
+     -
+     
+   * - * There is a hidden menu that appears if you right click and hold in the 
+         p or q area. This menu also appears if you right click and hold on the 
+         ``Thr`` label atop the threshold slider.
+
+     - .. image:: media/overlay_main_thr_hidden.png
+          :width: 100%
+          :align: right
+
+   * - * ``Use Threshold?`` is selected by default. If you deselect it, the 
+         threshold slider will do nothing and you will get **NO** 
+         thresholding at all.
+       * ``Thr = OLay ?`` sets the ``Thr`` sub-brick to be the same as the 
+         ``OLay`` sub-brick. This is useful for looking at full F-stats or 
+         anova's etc.
+       * ``Thr = Olay+1 ?`` (**note to staff: capitalization is wrong here**) 
+         sets the ``Thr`` sub-brick to be the next sub-brick after the 
+         ``OLay`` that is selected. This is useful for t-tests or anything 
+         with a coefficient and a T-stat.
+       * ``AutoThreshold``: the threshold is selected as ``0.5*median`` of the 
+         upper 65% of the positive values in the volume. If it's a statistic, 
+         then the threshold is the square root of the value that 
+         corresponds to 0.001 and that ``AutoThreshold`` value.
+       * ``Set threshold`` pops up a dialog allowing you to enter a 
+         number directly. It will modify the ``10^`` selection to match the 
+         number you enter. If you enter a negative number, the threshold 
+         slider will flash and there will be an annoying beep tone.
+       * ``Set p-value`` and ``Set q-value`` will give you the same dialog 
+         boxes as shown above with the scrolling actions.
+       * ``Set p=0.001`` does what it says... Just quicker than messing with 
+         the slider.
+       * ``Sign`` gives you 3 options. The default is ``Pos & Neg``. 
+         ``Pos only`` hides all of the negative values, but keeps the color 
+         scale unchanged. This differs from the ``Pos?`` button in that the 
+         ``Pos?`` button will rescale the colors so that ``~0.0`` is the bottom 
+         of the color bar. ``Neg only`` hides all of the positive values but 
+         keeps the color scale unchanged. These choices interact with the 
+         ``Pos?`` button. So if you have ``Pos?`` selected, then choose 
+         ``Neg only`` you will hide everything. ``Pos?`` selected with 
+         ``Pos only`` or ``Pos & Neg`` is the same as ``Pos?``.
+       * ``Alpha`` changes the ``A`` button color fading method.
+       * ``Add FDR Curves`` computes FDR curves for the ``OLay`` statistical
+         sub-bricks. (same as ``3drefit -addFDR``)
+       * ``Meaning of p-values`` will open a text window explaining a bit...
+         The same text is `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dttest%2B%2B_sphx.html#a-note-about-p-values-everyone-s-favorite-subject>`_.
+
+     - .. image:: media/overlay_main_thr_hidden_menu.png
+          :width: 70%
+          :align: left
+
+.. _gui_guide_overlay_OLay_edit_hidden:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Hidden OLay Menu<gui_guide_overlay_OLay_edit_hidden>`
+     -
+     
+   * - * There is a hidden menu that appears if you right click and hold in 
+         the ``OLay`` or ``Edit OLay`` area. This area is above the color
+         bar and extends to the area above the ``Clusterize`` button.
+
+     - .. image:: media/overlay_main_OLay_edit_hidden.png
+          :width: 100%
+          :align: right
+
+   * - * ``Set OLay range = 1`` is a shortcut for deselecting ``autoRange`` 
+         and entering ``1`` in the range box.
+       * ``Equalize Spacing`` only applies if you have chosen multiple color 
+         panes with the ``#`` menu. Then it will make all panes an equal size.
+       * ``Flip Colors`` is the same as left clicking the color bar or 
+         pushing the ``F`` button. 
+       * ``Jumpto OLay Max @Thr`` and ``Jumpto OLay Min @Thr`` will jump to 
+         the voxel location in the ``OLay`` with the max or min value given 
+         the current threshold settings. These are greyed out if there is no 
+         threshold set.  **note to staff: typo in menu and hover text**
+       * ``Save pbar to image`` will pop up a dialog box allowing you to 
+         give a file name for an exported image of the color bar. This image 
+         file will be saved in your current directory. Using identical names 
+         will overwrite the file with no warning.
+       * ``Read in palette`` will open a file chooser window allowing you to 
+         choose a ``.pal`` file to load. This file should be a plain text file 
+         with a title and color values in hex or rgb format. 
+         More info on how to make one `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/OLD/afni_colorscale.html>`_. 
+         Also this may be helpful: `MakeColorMap 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/MakeColorMap_sphx.html#ahelp-makecolormap>`_.
+       * ``Write out palette`` will save your current color map to a ``.pal`` 
+         file in your current directory. Using identical names will append the 
+         current color bar to the previous. This is bad.
+       * ``Show Palette Table`` will pop up a window with color names and hex 
+         values (sometimes text). This might be useful in making your own 
+         color palettes.
+       * ``Tran 0D`` and ``Tran 2D`` are the same functions in the ``Disp`` 
+         menu in the image window. :ref:`See here.<gui_guide_image_window_Disp>`
+
+
+     - .. image:: media/overlay_main_olay_hidden.png
+          :width: 70%
+          :align: left
 
 Jump within GUI Guide
 ========================
