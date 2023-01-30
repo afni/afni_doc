@@ -266,10 +266,9 @@ Define Overlay
          sets the ``Thr`` sub-brick to be the next sub-brick after the 
          ``OLay`` that is selected. This is useful for t-tests or anything 
          with a coefficient and a T-stat.
-       * ``AutoThreshold``: the threshold is selected as ``0.5*median`` of the 
-         upper 65% of the positive values in the volume. If it's a statistic, 
-         then the threshold is the square root of the value that 
-         corresponds to 0.001 and that ``AutoThreshold`` value.
+       * ``AutoThreshold``: a quick automatic threshold, combining p=0.001 
+         and the 3dCliplevel algorithm. More info `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClipLevel_sphx.html#ahelp-3dcliplevel>`_.
        * ``Set threshold`` pops up a dialog allowing you to enter a 
          number directly. It will modify the ``10^`` selection to match the 
          number you enter. If you enter a negative number, the threshold 
