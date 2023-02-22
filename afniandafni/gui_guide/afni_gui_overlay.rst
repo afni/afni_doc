@@ -344,10 +344,67 @@ Define Overlay
        * ``Tran 0D`` and ``Tran 2D`` are the same functions in the ``Disp`` 
          menu in the image window. :ref:`See here.<gui_guide_image_window_Disp>`
 
-
      - .. image:: media/overlay_main_olay_hidden.png
           :width: 70%
           :align: left
+
+.. _gui_guide_overlay_A_B:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Alpha and Box (A B)<gui_guide_overlay_A_B>`
+     -
+
+   * - * The ``A`` and ``B`` buttons allow you to display all of your 
+         statistical results while highlighting voxels above your threshold.
+         This is a nice way to show your results in a paper. For more details,
+         see the **Highlight Results, Don't Hide Them** paper in bioRxiv 
+         `here 
+         <https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_.
+
+       * The right image (below) is the default view. The left image (below) 
+         has both ``A`` and ``B`` selected. The below threshold voxels have 
+         alpha fading. The above threshold voxel clusters have boxes around 
+         them. This is our preferred method of viewing our results.
+
+         .. list-table::
+             :widths: 25 25
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_A_B_default.png
+                   :width: 100%
+                   :align: right
+               - .. image:: media/overlay_main_A_B_both.png
+                   :width: 100%
+                   :align: right
+
+       * The right image (below) is the has only the ``A`` alpha fading. 
+         The left image (below) has only the ``B`` boxes.
+
+         .. list-table::
+             :widths: 25 25
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_A_B_alpha.png
+                   :width: 100%
+                   :align: right
+               - .. image:: media/overlay_main_A_B_box.png
+                   :width: 100%
+                   :align: right
+               
+     - .. image:: media/overlay_main_A_B.png
+          :width: 100%
+          :align: right
+          
+
+
+
+
+
 
 Jump within GUI Guide
 ========================
