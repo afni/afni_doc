@@ -318,6 +318,8 @@ data for download:
     Quality Control (QC) Procedures in fMRI.
   | `Research Topic homepage <https://www.frontiersin.org/research-topics/33922/demonstrating-quality-control-qc-procedures-in-fmri>`_
 
+  |
+
 * | Taylor PA, Etzel JA, Glen D, Reynolds RC, Moraczewski D, Basavaraj
     A (2022). FMRI Open QC Project.  DOI 10.17605/OSF.IO/QAESM 
   | `<https://osf.io/qaesm/>`_
