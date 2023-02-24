@@ -310,6 +310,18 @@ data (and you should!), please cite:
     doi.org/10.3389/fninf.2020.00018
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
 
+If you are interested in detailed QC discussions in FMRI, please see
+the following Frontiers Research Topic project page and related public
+data for download:
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC (2022).  Demonstrating
+    Quality Control (QC) Procedures in fMRI.
+  | `Research Topic homepage <https://www.frontiersin.org/research-topics/33922/demonstrating-quality-control-qc-procedures-in-fmri>`_
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC, Moraczewski D, Basavaraj
+    A (2022). FMRI Open QC Project.  DOI 10.17605/OSF.IO/QAESM 
+  | `<https://osf.io/qaesm/>`_
+
 
 Methods: Group analysis, stats and clustering
 =============================================
