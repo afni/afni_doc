@@ -221,6 +221,15 @@ please check out its presentation at OHBM-2020:
     10.3389/fpsyt.2021.617997
   | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
 
+For information on different ways to estimate thickness measures
+(e.g., cortical thickness), please check out this presentation from
+OHBM-2018:
+
+* | Glen D, Taylor PA, Seidlitz J, Glen M, Liu C, Molfese P, Reynolds
+    R, (2018). Through Thick and Thin: Measuring Thickness in MRI with
+    AFNI. Presented at the 24th Annual Meeting of the Organization for
+    Human Brain Mapping.  |
+    `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
 
 If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
