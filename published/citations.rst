@@ -228,8 +228,8 @@ OHBM-2018:
 * | Glen D, Taylor PA, Seidlitz J, Glen M, Liu C, Molfese P, Reynolds
     R, (2018). Through Thick and Thin: Measuring Thickness in MRI with
     AFNI. Presented at the 24th Annual Meeting of the Organization for
-    Human Brain Mapping.  |
-    `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
+    Human Brain Mapping.  
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
 
 If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
@@ -239,6 +239,17 @@ volumetric data, consider checking out ``3dedgedog`` and please see:
     Visual Inspection of MRI Coregistration and Alignment. 
     (*submitted*).
   | `<https://www.biorxiv.org/content/10.1101/2022.09.14.507937v1>`_
+
+If you are interested in modeling a detailed, voxelwise hemodynamic
+response function (HRF) *without* assuming a constant+canonical shape
+and *with* useful regularization, then see:
+
+* | Chen G, Taylor PA, Reynolds RC, Leibenluft E, Pine DS, Brotmas MA,
+    Pagliaccio D, Haller SP (2023). BOLD response is more than just
+    magnitude: improving detection sensitivity through capturing
+    hemodynamic profiles. (*submitted*).
+  | `<https://www.biorxiv.org/content/10.1101/2023.02.13.528362v1>`_
+
 
 Methods: SUMA
 ==============
