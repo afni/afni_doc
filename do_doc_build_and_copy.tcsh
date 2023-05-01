@@ -279,7 +279,7 @@ if ( "$DO_BUILD" == "1" ) then
         echo "   ... from: $PWD"
 
         # need this env running for devdocs
-        conda activate afni_dev
+        conda activate afni_dev_TMP
 
         # the afni_dev env specifies one specific dir for getting the
         # afni_test_utils module.  First use pip to *undo* that
