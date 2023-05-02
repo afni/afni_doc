@@ -53,6 +53,7 @@ Quick setup
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
                            xorg-x11-server-Xvfb firefox                       \
                            python3-matplotlib
+
    Copy+paste::
 
      sudo yum update -y
