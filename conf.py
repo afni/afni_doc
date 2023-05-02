@@ -247,12 +247,6 @@ html_title = "%s" % (project) # don't need doc version number
 # of the sidebar. Updated to deal with variable change in Sphinx v>=6.0.0.
 html_logo = "AFNISUMA.jpg" # None
 logo_url  = html_logo
-html_theme_options = {
-   "logo": {
-      "image_light": html_logo,
-      "image_dark":  html_logo,
-   }
-}
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32

@@ -719,10 +719,11 @@ thresholding (rather than hiding away much information with
 all-or-nothing thresholding), then check out:
 
 * | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
-    DA, Bandettini PA, Mejia AF, Chen G (2022). Highlight Results,
-    Don’t Hide Them: Enhance interpretation, reduce biases and improve
-    reproducibility. *(submitted)* bioRxiv doi:10.1101/2022.10.26.513929
-  | `<https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_
+    DA, Bandettini PA, Mejia AF, Chen G (2023). Highlight Results,
+    Don't Hide Them: Enhance interpretation, reduce biases and improve
+    reproducibility. Neuroimage 274:120138. 
+    doi: 10.1016/j.neuroimage.2023.120138
+  | `<https://pubmed.ncbi.nlm.nih.gov/37116766/>`_
 
 If you are curious about how to deal with multiplicity issues in your
 statistical analysis of MRI, consider this discussion of neighborhood
@@ -927,9 +928,9 @@ injections), and multi-resolution diffusion MRI dataset:
 * | Tian X, Chen Y, Majka P, Szczupak D, Perl YS, Yen CC, Tong C, Song
     K, Jiang H, Glen D, Deco G, Rosa MGP, Silva AC, Liang Z, Liu C
     (2022). Integrated resource for functional and structural
-    connectivity of the marmoset brain. (*submitted*) bioRxiv
-    2021.11.12.468389.
-  | `<https://www.biorxiv.org/content/10.1101/2021.11.12.468389v1>`_
+    connectivity of the marmoset brain. Nat Commun 13(1):7416. 
+    doi: 10.1038/s41467-022-35197-2.
+  | `<https://pubmed.ncbi.nlm.nih.gov/36456558/>`_
 
 *Marmoset atlas v3.* This project provides new population-based
 in-vivo standard templates and tools derived from multi-modal data of

@@ -1,7 +1,7 @@
-.. _codex_fmri_2022_TaylorEtal:
+.. _codex_fmri_2023_TaylorEtal:
 
 
-**Taylor et al. (2022).** *Highlight Results, Don't Hide Them: Enhance interpretation, ...*
+**Taylor et al. (2023).** *Highlight Results, Don't Hide Them: Enhance interpretation, ...*
 *******************************************************************************************************
 
 .. contents:: :local:
@@ -14,11 +14,12 @@ Introduction
 Here we present commands used in the following paper:
 
 * | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
-    DA, Bandettini PA, Mejia AF, Chen G (2022).  Highlight Results,
+    DA, Bandettini PA, Mejia AF, Chen G (2023). Highlight Results,
     Don't Hide Them: Enhance interpretation, reduce biases and improve
-    reproducibility. (submitted)
+    reproducibility. Neuroimage 274:120138. 
+    doi: 10.1016/j.neuroimage.2023.120138
 
-  | `<https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_
+  | `<https://pubmed.ncbi.nlm.nih.gov/37116766/>`_
 
 **Abstract:** Most neuroimaging studies display results that represent
 only a tiny fraction of the collected data. While it is conventional
