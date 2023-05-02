@@ -50,10 +50,6 @@ Install AFNI binaries
 
 .. include:: /background_install/install_instructs/substep_mac_abin.rst
 
-Set default AFNI+SUMA environment variables
---------------------------------------------
-
-.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Setup Mac environment variables
 -----------------------------------
@@ -69,10 +65,6 @@ Reboot
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
-Make AFNI/SUMA profiles
------------------------
-
-.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Prepare for Bootcamp
 ------------------------------------
