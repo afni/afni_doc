@@ -3,7 +3,7 @@
 :tocdepth: 2
 
 
-AFNI Codex: Code Examples from publications
+Codex: AFNI Code Examples from publications
 ============================================
 
 Below is an archive of "larger" AFNI commands that have been used in
