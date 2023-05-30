@@ -349,7 +349,7 @@ Load underlay/overlay datasets
          <https://afni.nimh.nih.gov/pub/dist/src/AFNI_digest_history.txt>`_.
          
        * ``Forum``: Web link to `AFNI Message Board 
-         <https://afni.nimh.nih.gov/afni/community/board/list.php?1?>`_.
+         <https://discuss.afni.nimh.nih.gov>`_.
   
        * ``Tips``: GUI window with lots of info. A web based version of 
          this exists `here 
