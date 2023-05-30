@@ -20,9 +20,12 @@ These setup instructions are for **macOS 11**.
 #. **The user must have admin privileges** (can run ``sudo ...``).
    Some steps require an internet connection.
 
-#. **Do** the system check in the "Evaluate" stage. Try any recommendations in its "Please Fix" section.
+#. **Do** the system check in the "Evaluate" stage. Try any
+   recommendations in its "Please Fix" section.
 
-#. If you run into any problems, please just ask a clear question on the `Message Board <https://afni.nimh.nih.gov/afni/community/board/>`_.
+#. If you run into any problems, please just ask a clear question on
+   the `Message Board
+   <https://discuss.afni.nimh.nih.gov/>`_.
 
 
 Install Xcode and XQuartz (admin priviledges required)

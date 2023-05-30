@@ -24,7 +24,7 @@ possible, but please reach out to discuss any possible improvements or
 modernizations.
 
 We are always (well, *usually*) happy to answer questions via the AFNI
-`Message Board <https://afni.nimh.nih.gov/afni/community/board/>`_,
+`Message Board <https://discuss.afni.nimh.nih.gov/>`_,
 and hopefully these scripts further the discussion.
 
 

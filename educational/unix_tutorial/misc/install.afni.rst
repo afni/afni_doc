@@ -7,7 +7,7 @@ Installing AFNI (software)
 
 To install AFNI, please see `HowTo #0 <https://afni.nimh.nih.gov/pub/dist/HOWTO/howto/ht00_inst/html/index.html>`_ for descriptions and details.
 
-For help with installation difficulties, please search or post to the `AFNI Message Board <https://afni.nimh.nih.gov/afni/community/board>`_
+For help with installation difficulties, please search or post to the `AFNI Message Board <https://discuss.afni.nimh.nih.gov/>`_
 
 If you are somewhat confident, consider this quick example for a modern Linux system::
 
