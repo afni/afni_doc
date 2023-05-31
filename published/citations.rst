@@ -319,16 +319,17 @@ your FMRI data, including using the afni_proc.py quality control
     AFNI. Front. Neurosci. 16:1073800. doi: 10.3389/fnins.2022.1073800
   | `<https://www.frontiersin.org/articles/10.3389/fnins.2022.1073800/full/>`_
 
+The above article was created as part of a Research Topic on
+demonstrating quality control in FMRI.  The Editorial for that
+Project---with a description of its inception, a summary of its
+contributions and some recommendations for moving forward---is
+here:
 
-If you use the left-right flip checking for consistency in your MRI
-data (and you should!), please cite:
-
-* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
-    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
-    Data: An Efficient and Robust Method to Check MRI Dataset
-    Consistency Using AFNI. Front. Neuroinformatics 14. 
-    doi.org/10.3389/fninf.2020.00018
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
+* | Taylor PA, Glen DR, Reynolds RC, Basavaraj A, Moraczewski D,
+    Etzel JA (2023). Editorial: Demonstrating quality control (QC)
+    procedures in fMRI. Front. Neurosci. 17:1205928. doi:
+    10.3389/fnins.2023.1205928
+  | `<https://www.frontiersin.org/articles/10.3389/fnins.2023.1205928/full>`_
 
 If you are interested in detailed QC discussions in FMRI, please see
 the following Frontiers Research Topic project page and related public
@@ -343,6 +344,16 @@ data for download:
 * | Taylor PA, Etzel JA, Glen D, Reynolds RC, Moraczewski D, Basavaraj
     A (2022). FMRI Open QC Project.  DOI 10.17605/OSF.IO/QAESM 
   | `<https://osf.io/qaesm/>`_
+
+If you use the left-right flip checking for consistency in your MRI
+data (and you should!), please cite:
+
+* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
+    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
+    Data: An Efficient and Robust Method to Check MRI Dataset
+    Consistency Using AFNI. Front. Neuroinformatics 14. 
+    doi.org/10.3389/fninf.2020.00018
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
 
 
 Methods: Group analysis, stats and clustering
