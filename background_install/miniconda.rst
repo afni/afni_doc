@@ -240,11 +240,16 @@ Matplotlib being *at least* 2.2.3)::
   conda create -y                        \
         -n py39_afni_tiny                \
         python=3.9                       \
-        "matplotlib>=2.2.3" numpy scipy
+        "matplotlib>=2.2.3" numpy scipy  \
+        "flask>=2.1.2"                   \
+        "flask-cors>=3.0.10"
 
 This new environment's name is "py39_afni_tiny"; I called it this
 because that is basically the minimal set of modules used within AFNI
-(at present).
+(at present). *As of July 2, 2023,* in now includes the Python-flask
+module dependencies used for running a local server, so the buttons in
+the APQC HTML save information automatically; this functionality only
+appears possible in Python v3.
 
 To make a similar setup for Python 2.7 (no earlier versions of Python
 should be used), one could run::
@@ -540,7 +545,9 @@ Set up Conda (*quick*)
       conda create -y                        \
             -n py39_afni_tiny                \
             python=3.9                       \
-            "matplotlib>=2.2.3" numpy scipy
+            "matplotlib>=2.2.3" numpy scipy  \
+            "flask>=2.1.2"                   \
+            "flask-cors>=3.0.10"
 
       conda create -y                        \
             -n py27_afni_tiny                \
@@ -751,6 +758,8 @@ Let's say you want to add the Sphinx module with cloud-theme support
       -n py37_afni_with_sph       \
       python=3.7                  \
       matplotlib numpy scipy      \
+      "flask>=2.1.2"              \
+      "flask-cors>=3.0.10"        \
       sphinx cloud_sptheme
 
 You will likely get the following message:
