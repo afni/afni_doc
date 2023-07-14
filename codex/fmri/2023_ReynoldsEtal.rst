@@ -62,6 +62,12 @@ data visualization, task-based
   of codes and supplementary text files:
 | `<https://github.com/afni/apaper_afniqc_frontiers>`_
 
+| **APQC HTML outputs:**
+| To download the APQC HTML directories for all the datasets processed
+  in this project, please visit:
+| `<https://osf.io/qaesm/files/osfstorage>`_
+| and click on the `team_results_qc_files_ReynoldsEtal2023` directory.
+
 **Note:** This work was one of several contributed to the following
 Frontiers Research Topic project, described here:
 
