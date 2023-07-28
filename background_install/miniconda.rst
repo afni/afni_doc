@@ -238,13 +238,13 @@ unspecified version numbers will be whatever conda decides, with
 Matplotlib being *at least* 2.2.3)::
   
   conda create -y                        \
-        -n py39_afni_tiny                \
-        python=3.9                       \
+        -n py3_afni_tiny                 \
+        python                           \
         "matplotlib>=2.2.3" numpy scipy  \
         "flask>=2.1.2"                   \
         "flask-cors>=3.0.10"
 
-This new environment's name is "py39_afni_tiny"; I called it this
+This new environment's name is "py3_afni_tiny"; I called it this
 because that is basically the minimal set of modules used within AFNI
 (at present). *As of July 2, 2023,* in now includes the Python-flask
 module dependencies used for running a local server, so the buttons in
@@ -255,7 +255,7 @@ To make a similar setup for Python 2.7 (no earlier versions of Python
 should be used), one could run::
 
   conda create -y                        \
-        -n py27_afni_tiny                \
+        -n py2_afni_tiny                 \
         python=2.7                       \
         "matplotlib>=2.2.3" numpy scipy  \
         pillow 
@@ -267,26 +267,26 @@ by my username)::
    # conda environments:
    #
    base                  *  /home/${USER}/miniconda3
-   py27_afni_tiny           /home/${USER}/miniconda3/envs/py27_afni_tiny
-   py39_afni_tiny           /home/${USER}/miniconda3/envs/py39_afni_tiny
+   py2_afni_tiny            /home/${USER}/miniconda3/envs/py2_afni_tiny
+   py3_afni_tiny            /home/${USER}/miniconda3/envs/py3_afni_tiny
 
-As noted above, to switch to ``py39_afni_tiny``, I would type::
+As noted above, to switch to ``py3_afni_tiny``, I would type::
 
-  conda activate py39_afni_tiny
+  conda activate py3_afni_tiny
 
 To see what modules are installed in your active environment (and
 their version numbers) you can run::
 
    conda list
 
-\.\.\. which, in the current "py39_afni_tiny" would be as follows (and
+\.\.\. which, in the current "py3_afni_tiny" would be as follows (and
 you might have slightly different things):
 
 .. hidden-code-block:: none
    :starthidden: True
    :label: - show list output y/n -
 
-   # packages in environment at /home/ptaylor/miniconda3/envs/py39_afni_tiny:
+   # packages in environment at /home/ptaylor/miniconda3/envs/py3_afni_tiny:
    #
    # Name                    Version                   Build  Channel
    _libgcc_mutex             0.1                        main  
@@ -415,7 +415,7 @@ To add a new package or module ``NEW_PACK`` to an existing environment
 \.\.\. so, for example example, you could add the scipy module to one
 of the above environments with::
 
-  conda install -n py27_afni_tiny ipython
+  conda install -n py2_afni_tiny ipython
 
 To update a module or package ``CURR_PACK`` in a currently active
 environment, you can use::
@@ -447,7 +447,7 @@ ENV_NAME`` in the shell's ``~/.*rc`` file somewhere *after* the ``#
 Since I am running "bash" shell, I have added the following line in my
 ``~/.bashrc`` \file (by opening that file with a text editor)::
 
-  conda activate py39_afni_tiny
+  conda activate py3_afni_tiny
 
 After sourcing that file or opening a new terminal, ``conda env list``
 should show that environment loaded, in this and in any new terminals.
@@ -543,14 +543,14 @@ Set up Conda (*quick*)
    including both specific and minimal package dependency versions::
 
       conda create -y                        \
-            -n py39_afni_tiny                \
-            python=3.9                       \
+            -n py3_afni_tiny                 \
+            python                           \
             "matplotlib>=2.2.3" numpy scipy  \
             "flask>=2.1.2"                   \
             "flask-cors>=3.0.10"
 
       conda create -y                        \
-            -n py27_afni_tiny                \
+            -n py2_afni_tiny                 \
             python=2.7                       \
             "matplotlib>=2.2.3" numpy scipy  \
             pillow 
@@ -604,7 +604,7 @@ Set up Conda (*quick*)
 
    For example, from above to setup for AFNI::
 
-     conda activate py39_afni_tiny
+     conda activate py3_afni_tiny
 
 #. **Activate an env by default**
 
@@ -613,7 +613,7 @@ Set up Conda (*quick*)
      activate ENV_NAME`` in your shell's ``~/.*rc`` file, *after* the
      ``# <<< conda initialize <<<`` line.
    | For example, to set up for AFNI,
-     put ``conda activate py39_afni_tiny`` there.
+     put ``conda activate py3_afni_tiny`` there.
 
    *NB1:* This assumes your conda version (``conda -V``) is at
    least 4.6.
@@ -643,7 +643,7 @@ Set up Conda (*quick*)
 
    ::
 
-      conda install -n py27_afni_tiny pandas
+      conda install -n py2_afni_tiny pandas
 
 
 Short list of conda commands
@@ -836,7 +836,7 @@ Some comments then about possible AFNI environments to make, or
 dependencies to combine with your other 
 
 * for most projects with AFNI, you could use either of the
-  ``py27_afni_tiny`` or ``py39_afni_tiny`` environments, described
+  ``py2_afni_tiny`` or ``py3_afni_tiny`` environments, described
   above, on their own or with their dependencies added to a
   pre-existing environment. NB: there is no strict Python 3.9
   requirement for AFNI---it was just used in the example; one should
@@ -846,7 +846,7 @@ dependencies to combine with your other
 
 * *If* you will be using Prantik's older ``meica.py`` program, then
   you would want a Python 2.7-based environment available, such as
-  ``py27_afni_tiny``.  It could be used as your main environment, or
+  ``py2_afni_tiny``.  It could be used as your main environment, or
   it could just be one you switch in-and-out of for running that
   specific program.  (Being able to easily switch environments is
   basically the raison-d'etre of conda.)
