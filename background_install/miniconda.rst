@@ -233,7 +233,8 @@ the most basic here.  For example, conda can manage much more
 complicated environments, beyond loading just Python+modules.
 
 Here is an example of creating a new environment from a command line,
-one that packages Python version 3.9 and a few useful modules (whose
+one that packages the most recent Python version (which will likely
+have major version number "3") and a few useful modules (whose
 unspecified version numbers will be whatever conda decides, with
 Matplotlib being *at least* 2.2.3)::
   
@@ -838,11 +839,10 @@ dependencies to combine with your other
 * for most projects with AFNI, you could use either of the
   ``py2_afni_tiny`` or ``py3_afni_tiny`` environments, described
   above, on their own or with their dependencies added to a
-  pre-existing environment. NB: there is no strict Python 3.9
-  requirement for AFNI---it was just used in the example; one should
-  be fine using Python 3.7 or higher.  Since Python 2.7 is technically
-  deprecated now, you might opt for a Python 3.\* recipe, all other
-  things being equal.
+  pre-existing environment. NB: there is no strict Python version
+  requirement for AFNI.  Since Python 2.7 is technically deprecated
+  now, you might opt for a Python 3.\* recipe, all other things being
+  equal.
 
 * *If* you will be using Prantik's older ``meica.py`` program, then
   you would want a Python 2.7-based environment available, such as

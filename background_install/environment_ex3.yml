@@ -1,6 +1,6 @@
-name: py39_afni_mid          # TO MAKE:  conda env create -f env*_ex3.yml
+name: py3_afni_mid           # TO MAKE:  conda env create -f env*_ex3.yml
 dependencies:
-  - python=3.9
+  - python
   - "matplotlib>=2.2.3"      # minimal ver for 'pythonic' APQC HTML
   - pillow
   - numpy
