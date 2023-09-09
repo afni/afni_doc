@@ -62,6 +62,7 @@ Quick setup
      sudo apt-get install -y tcsh xfonts-base libssl-dev       \
                              python-is-python3                 \
                              python3-matplotlib python3-numpy  \
+                             python3-flask python3-flask-cors  \
                              python3-pil                       \
                              gsl-bin netpbm gnome-tweaks       \
                              libjpeg62 xvfb xterm vim curl     \
