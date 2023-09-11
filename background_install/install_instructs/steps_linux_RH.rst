@@ -50,7 +50,8 @@ Install prerequisite packages
      sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc        \
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed    \
                            libpng12 xorg-x11-server-Xvfb firefox             \
-                           python3-matplotlib
+                           python3-matplotlib python3-numpy                  \
+                           python3-flask python3-flask-cors
 
    Copy+paste::
 
