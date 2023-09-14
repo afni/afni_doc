@@ -25,14 +25,47 @@ Intensity Bar Hidden Popup
 .. _gui_guide_image_window_IntensityBar_Popup_disp_range:
 
 .. list-table::
-   :widths: 65 35
+   :widths: 80 20
    :header-rows: 1
 
    * - :ref:`Choose Display Range
        <gui_guide_image_window_IntensityBar_Popup_disp_range>`
      - 
-   * - * ``disp_range``
-       * 
+   * - * ``Choose Display Range`` pops up a dialog box that allows you to set 
+         the bottom and top intensity values to display in the image 
+         window.  
+
+       * This anatomical image has intensity values that range from 0 to 4111.
+         The ``Clean`` button shows that the AFNI gui is already and by 
+         default, showing a range of 2% to 98%. The histogram below shows the 
+         number of voxels at each of the intensity values. Notice the large 
+         number of voxels near zero. Those are excluded in the default view of 
+         2% minimum. (that is a good thing)
+         
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_disp_range_clean.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_disp_range_clean_hist.png
+                   :width: 100%
+
+       * This is the same anatomical image but with the bottom 200 values 
+         excluded. Notice the intensity range was changed to ``[User]``
+         
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_disp_range_200_4111.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_disp_range_200_4111_hist.png
+                   :width: 100%
 
      - .. image:: media/image_window_IntensityBar_Popup_disp_range.png
           :width: 100%
