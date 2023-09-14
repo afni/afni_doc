@@ -365,8 +365,6 @@ Define Overlay
          <https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_.
          Another helpful reference is `here 
          <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3920766/>`_.
-         
-         |
       
        * The left image (below) is the default view. The right image (below) 
          has both ``A`` and ``B`` selected. The below threshold voxels have 
@@ -420,7 +418,10 @@ Define Overlay
 
    * - :ref:`Clusterize<gui_guide_overlay_Clusterize>`
      -
-   * - * 
+   * - * Clusterize is an interactive version of 
+         `3dClusterize 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClusterize_sphx.html#ahelp-3dclusterize>`_
+         program.
    
          .. list-table::
              :width: 100%
