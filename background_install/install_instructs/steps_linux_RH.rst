@@ -3,7 +3,7 @@
 .. _install_steps_linux_RH:
 
 
-**Linux, Red Hat**
+**Linux, Red Hat and CentOS**
 ==========================================================
 
 .. contents:: The essential system setup

@@ -3,7 +3,7 @@
 .. _install_steps_linux_ubuntu16:
 
 
-**Linux, Ubuntu 16.04 - 17.10**
+**Linux, Ubuntu 16.04**
 =================================================================
 
 .. contents:: The essential system setup

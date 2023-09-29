@@ -7,23 +7,18 @@
 ********************************************************************
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    overview
-   steps_linux_ubuntu
-   steps_linux_ubuntu16
-   steps_linux_ubuntu18
-   steps_linux_ubuntu20
    steps_linux_ubuntu22
+   steps_linux_ubuntu20
    steps_linux_Fed
    steps_linux_RH
-   steps_mac
-   steps_mac_app
    steps_macOS_12_Silicon
    steps_macOS_12_Intel
    steps_windows10
-   steps_windows10_beta
 
+   older_install
 
 ..
    error_msgs

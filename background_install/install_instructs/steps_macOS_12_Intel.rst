@@ -1,8 +1,8 @@
 
 .. _install_steps_mac12_intel:
 
-**macOS, 12+ (Intel chip)**
-===============================================
+**macOS 12+ (Intel chip)**
+================================================================
 
 .. contents:: The essential system setup
    :local:
@@ -12,61 +12,47 @@
 What to do?
 -----------
 
-These setup instructions are for **macOS 12.3.1 or greater with Intel
+These setup instructions are for **macOS 12 greater with Intel
 CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
 
 
 .. include:: substep_macos12_intro.rst
 
+Quick setup
+----------------------------------
 
-Install Homebrew and packages (admin)
--------------------------------------
+*For NIMH users:* 
 
-.. include:: substep_macos12_homebrew.rst
+A. Use the *NIMH Self Service* application to install the dependencies
+   needed by AFNI (PIV-card **required**).  \*\*\*\ *Coming soon.*\ \*\*\*
 
+#. Copy+paste the following to get a download script::
 
-Install R (admin)
------------------
+     cd
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_intel_b_user.tcsh
 
-.. include:: substep_macos12_R_gfortran.rst
+#. Copy+paste the following to run the install script (**do not** use ``sudo`` here)::
 
+     tcsh OS_notes.macos_12_intel_b_user.tcsh
 
-Update Path
------------
+*For non-NIMH users:* 
 
-.. nts:
-   different than Silicon, for python
+A. Copy+paste the following to get download scripts::
 
-#. **Add to path** (zsh)::
+     cd
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_intel_a_admin.zsh
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_intel_b_user.tcsh
 
-    touch ~/.zshrc
-    echo 'export PATH=$PATH:/usr/local/opt/python/libexec/bin'         >> ~/.zshrc
-    echo 'export PATH=$PATH:/Library/Frameworks/R.framework/Resources' >> ~/.zshrc
-    echo 'export PATH=$PATH:/usr/local/gfortran/bin'                   >> ~/.zshrc
-    source ~/.zshrc
+#. Copy+paste the following to run the first install script
+   (**requires** ``sudo`` with password)::
 
-**Purpose:** This adds ``python``, ``R`` and ``gfortran`` to your path
-so the command line can use them.  Assumes ``zsh`` is your login shell
-(the Mac default).
+     sudo zsh OS_notes.macos_12_intel_a_admin.zsh
 
+#. Copy+paste the following to run the second install script (**do
+   not** use ``sudo`` here)::
 
-R Libraries
------------
+     tcsh OS_notes.macos_12_intel_b_user.tcsh
 
-.. include:: substep_macos12_Rpkgs.rst
-
-
-Install AFNI
-------------
-
-.. include:: substep_macos12_afni.rst
-
-
-.. should not be necessary:
-   Reboot
-   ------
-
-   .. include:: substep_mac_reboot.rst
 
 
 Evaluate setup/system (**important!**)

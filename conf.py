@@ -194,6 +194,9 @@ html_theme = "cloud"
 ### 'bodyfont' in this dictionary, the main text font should be
 ### controlled in _static/style.css and the *.ttf files there,
 ### specifying the body->font-family there
+#### **BUT** note that we now include bodyfont/fontscssurl here, too,
+#### with the same font, so that googleapis is not pinged, because
+#### that will slow down page viewing even from just local copy
 html_theme_options = { 
     "stickysidebar": "true",
     "collapsiblesidebar": "true",
@@ -204,6 +207,8 @@ html_theme_options = {
     "lighter_header_decor": "true",
     "linkcolor": "#1874CD",
     "bgcolor": "#F5F5F5",
+    "bodyfont": "local_PT_sans",  
+    "fontcssurl" : "local_PT_sans",
     #"bodyfont": "PT Sans, sans-serif",
     #"fontcssurl" : "//fonts.googleapis.com/css?family=PT+Sans|Noticia+Text|Open+Sans|Droid+Sans+Mono|Roboto",
     "bodylineheight": "1.4em",

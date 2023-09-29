@@ -1,8 +1,8 @@
 
 .. _install_steps_mac12_Silicon:
 
-**macOS, 12+ (Apple Silicon: M1, M2, ...)**
-==============================================
+**macOS 12+ (Apple Silicon/ARM: M1, M2, ...)**
+=========================================================
 
 .. contents:: The essential system setup
    :local:
@@ -12,72 +12,50 @@
 What to do?
 -----------
 
-These setup instructions are for **macOS 12.3.1 or greater with Apple
-Silicon CPUs** (not :ref:`Intel chips <install_steps_mac12_Intel>`).
+These setup instructions are for **macOS 12 or greater with Apple
+Silicon/ARM CPUs** (not :ref:`Intel chips <install_steps_mac12_Intel>`).
 
 
 .. include:: substep_macos12_intro.rst
 
+Quick setup
+----------------------------------
 
-Install Rosetta 2 (admin)
--------------------------------------
-   
-#. **Rosetta**::
-    
-     softwareupdate --install-rosetta
-    
-**Purpose:** This installs the Rosetta 2 system that allows the Apple
-Silicon machines to run Intel-compiled binaries.  At present, AFNI is
-not compiled for Apple Silicon (on our to-do list).
-     
-   
-Install Homebrew and packages (admin)
--------------------------------------
+*For NIMH users:* 
 
-.. include:: substep_macos12_homebrew.rst
+A. Use the *NIMH Self Service* application to install the dependencies
+   needed by AFNI (PIV-card **required**). \*\*\*\ *Coming soon.*\ \*\*\*
 
+#. Copy+paste the following to get a download script::
 
-Install R (admin)
------------------
+     cd
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
 
-.. include:: substep_macos12_R_gfortran.rst
+#. Copy+paste the following to run the install script (**do not** use ``sudo`` here)::
 
+     tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
-Update Path
------------
+*For non-NIMH users:* 
 
-.. nts:
-   different than Intel, for python
+A. Copy+paste the following to get download scripts::
 
-#. **Add to path** (zsh)::
+     cd
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_a_admin.zsh
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
 
-     touch ~/.zshrc
-     echo 'export PATH=$PATH:/opt/homebrew/opt/python/libexec/bin'      >> ~/.zshrc
-     echo 'export PATH=$PATH:/Library/Frameworks/R.framework/Resources' >> ~/.zshrc
-     echo 'export PATH=$PATH:/usr/local/gfortran/bin'                   >> ~/.zshrc
-     source ~/.zshrc
+#. Copy+paste the following to run the first install script
+   (**requires** ``sudo`` with password)::
 
-**Purpose:** This adds ``python``, ``R`` and ``gfortran`` to your path
-so the command line can use them.  Assumes ``zsh`` is your login shell
-(the Mac default).
+     sudo zsh OS_notes.macos_12_ARM_a_admin.zsh
 
-Install R Libraries
----------------------
+#. Copy+paste the following to run the second install script (**do
+   not** use ``sudo`` here)::
 
-.. include:: substep_macos12_Rpkgs.rst
+     tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
 
-Install AFNI
-------------
 
-.. include:: substep_macos12_afni.rst
 
-.. should not be necessary
-
-   Reboot
-   ------
-
-   .. include:: substep_mac_reboot.rst
 
 
 Evaluate setup/system (**important!**)
@@ -87,7 +65,7 @@ Evaluate setup/system (**important!**)
 
 
 Optional Extras
---------------------------
+---------------
 
 Setup Python (*a* method)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,7 +73,7 @@ Setup Python (*a* method)
 .. include:: substep_miniconda.rst
 
 
-Prepare for Bootcamp (install demo data)
+Prepare for Bootcamp  (install demo data)
 -----------------------------------------
 
 .. include:: substep_bootcamp.rst
@@ -129,6 +107,11 @@ Enable more SUMA keypresses (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_mac_keyshortcuts.rst
+
+
+
+
+
 
 
 
