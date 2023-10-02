@@ -50,6 +50,8 @@ A. Copy+paste the following to get download scripts::
 
 #. Reboot the computer (for the changes to take effect).
 
+   |
+
 #. Copy+paste the following to run the second install script (**do
    not** use ``sudo`` here)::
 
