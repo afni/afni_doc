@@ -1,8 +1,8 @@
 
 .. _install_steps_mac12_Silicon:
 
-**macOS 12+ (Apple Silicon/ARM: M1, M2, ...)**
-=========================================================
+**macOS 12+ (Apple Silicon/ARM processor/chip: M1, M2, ...)**
+===============================================================
 
 .. contents:: The essential system setup
    :local:
@@ -21,7 +21,7 @@ Silicon/ARM CPUs** (not :ref:`Intel chips <install_steps_mac12_Intel>`).
 Quick setup
 ----------------------------------
 
-*For NIMH users:* 
+*Special case, for macOS computers administered by NIMH (NIH, USA):* 
 
 A. Use the *NIMH Self Service* application to install the dependencies
    needed by AFNI (PIV-card **required**). \*\*\*\ *Coming soon.*\ \*\*\*
@@ -35,7 +35,7 @@ A. Use the *NIMH Self Service* application to install the dependencies
 
      tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
-*For non-NIMH users:* 
+*General case:* 
 
 A. Copy+paste the following to get download scripts::
 

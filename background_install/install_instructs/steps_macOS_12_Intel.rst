@@ -1,7 +1,7 @@
 
 .. _install_steps_mac12_intel:
 
-**macOS 12+ (Intel chip)**
+**macOS 12+ (Intel processor/chip)**
 ================================================================
 
 .. contents:: The essential system setup
@@ -12,7 +12,7 @@
 What to do?
 -----------
 
-These setup instructions are for **macOS 12 greater with Intel
+These setup instructions are for **macOS 12 or greater with Intel
 CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
 
 
@@ -21,7 +21,7 @@ CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
 Quick setup
 ----------------------------------
 
-*For NIMH users:* 
+*Special case, for macOS computers administered by NIMH (NIH, USA):* 
 
 A. Use the *NIMH Self Service* application to install the dependencies
    needed by AFNI (PIV-card **required**).  \*\*\*\ *Coming soon.*\ \*\*\*
@@ -35,7 +35,7 @@ A. Use the *NIMH Self Service* application to install the dependencies
 
      tcsh OS_notes.macos_12_intel_b_user.tcsh
 
-*For non-NIMH users:* 
+*General case:* 
 
 A. Copy+paste the following to get download scripts::
 
