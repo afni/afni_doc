@@ -48,6 +48,8 @@ A. Copy+paste the following to get download scripts::
 
      sudo zsh OS_notes.macos_12_ARM_a_admin.zsh
 
+#. Reboot the computer (for the changes to take effect).
+
 #. Copy+paste the following to run the second install script (**do
    not** use ``sudo`` here)::
 
