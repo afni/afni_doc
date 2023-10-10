@@ -18,49 +18,63 @@ Silicon/ARM CPUs** (not :ref:`Intel chips <install_steps_mac12_Intel>`).
 
 .. include:: substep_macos12_intro.rst
 
-Quick setup
+Quick setup (General users)
 ----------------------------------
 
-*Special case, for macOS computers administered by NIMH (NIH, USA):* 
+This section describes primary installation instructions *for general
+users, and it is assumed that you have administrative/sudo privileges
+on your macOS computer:*
+
+A. Copy+paste the following to get download scripts::
+
+     cd
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_a_admin_pt1.zsh
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_a_admin_pt2.zsh
+     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
+
+#. Copy+paste the following to run the first admin-level install
+   script (which will ask you to enter your administrator password)::
+
+     zsh OS_notes.macos_12_ARM_a_admin_pt1.zsh
+
+#. Copy+paste the following to run the second admin-level install
+   script (which will ask you to enter your administrator password)::
+
+     zsh OS_notes.macos_12_ARM_a_admin_pt2.zsh
+
+#. Reboot the computer (for the changes to take effect).
+
+   |
+
+#. Copy+paste the following to run the user-level install script (no
+   password required)::
+
+     tcsh OS_notes.macos_12_ARM_b_user.tcsh
+
+Quick setup (special case: NIMH-administered computers)
+---------------------------------------------------------
+
+This section describes primary installation instructions *for the
+special case of having a macOS computer administered by NIMH (NIH,
+USA):*
 
 A. Use the *NIMH Self Service* application to install the dependencies
    needed by AFNI (PIV-card **required**). \*\*\*\ *Coming soon.*\ \*\*\*
+
+   |
 
 #. Copy+paste the following to get a download script::
 
      cd
      curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
 
-#. Copy+paste the following to run the install script (**do not** use ``sudo`` here)::
+#. Copy+paste the following to run the user-level install script (no
+   password required)::
 
      tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
-*General case:* 
-
-A. Copy+paste the following to get download scripts::
-
-     cd
-     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_a_admin.zsh
-     curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
-
-#. Copy+paste the following to run the first install script
-   (**requires** ``sudo`` with password)::
-
-     sudo zsh OS_notes.macos_12_ARM_a_admin.zsh
-
-#. Reboot the computer (for the changes to take effect).
-
-   |
-
-#. Copy+paste the following to run the second install script (**do
-   not** use ``sudo`` here)::
-
-     tcsh OS_notes.macos_12_ARM_b_user.tcsh
-
-
-
-
-
+*Thanks to the NIMH Mac Engineering team for helping to set this set
+of instructions up.*
 
 Evaluate setup/system (**important!**)
 -----------------------------------------
