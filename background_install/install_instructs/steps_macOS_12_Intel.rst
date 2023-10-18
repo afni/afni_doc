@@ -56,11 +56,25 @@ Quick setup (special case: NIMH-administered computers)
 
 This section describes primary installation instructions *for the
 special case of having a macOS computer administered by NIMH (NIH,
-USA):*
+USA), where the user does not have admin privileges:*
 
 A. Use the *NIMH Self Service* application to install the dependencies
-   needed by AFNI (PIV-card **required**). \*\*\*\ *Coming soon.*\ \*\*\*
+   needed by AFNI (PIV-card **required**):
    
+   .. list-table:: 
+      :header-rows: 0
+      :widths: 33 33 33
+      :stub-columns: 0
+
+      *  - 1. Open the NIMH Self Service App on the Mac
+         - 2. Type AFNI in the search bar:
+         - 3. Click "Install" for "AFNI Dependencies":
+      *  - 
+         - .. image:: media/img_nimh_selfservice_app.png
+              :width: 100%
+         - .. image:: media/img_nimh_selfservice_app_afni_icon.png
+              :width: 100%  
+
    |
    
 #. Copy+paste the following to get a download script::
