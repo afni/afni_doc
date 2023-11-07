@@ -33,7 +33,9 @@ A. Copy+paste the following to get download scripts::
      curl -O https://raw.githubusercontent.com/afni/afni/master/src/other_builds/OS_notes.macos_12_ARM_b_user.tcsh
 
 #. Copy+paste the following to run the first admin-level install
-   script (which will ask you to enter your administrator password)::
+   script (which will ask you to enter your administrator password,
+   **twice (once early, once later)**)::
+
 
      zsh OS_notes.macos_12_ARM_a_admin_pt1.zsh
 
