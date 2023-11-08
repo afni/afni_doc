@@ -135,6 +135,13 @@ functionality at the same time.
 
   3dcopy DSET DSET.nii.gz
 
+**3dAFNItoNIFTI.** Another simple approach with short syntax, but one
+that will adapt any BRIK/HEAD file with multiple scale factors to
+having just one for the NIFTI file (and there are a few other options
+regarding header adjustments)::
+
+  3dAFNItoNIFTI -prefix DSET.nii.gz DSET
+
 **3dcalc.** This might be useful if you also want to specify the data
 type, for example, but that is not necessary::
 

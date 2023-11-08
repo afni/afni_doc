@@ -7,6 +7,6 @@ NIFTI
 .. toctree::
    :maxdepth: 2
 
-   conversion
    format
- 
+   notes
+   conversion

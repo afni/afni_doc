@@ -19,6 +19,18 @@ To that end, NIfTI (which stands for **N**\euroimaging
 NIH-sponsored working group to promote interoperability of functional
 neuroimaging software tools.  
 
+| The NIfTI (or NIFTI) data format is still central to neuroimaging work
+  today.  It remains opens to suggestions, while also greatly valuing
+  stability as an underlying dependency to a large fraction of software
+  analysis tools in the field.  The central NIFTI project GitHub
+  repository, for various languages like C, Matlab and Java is here:
+| `<https://github.com/NIFTI-Imaging>`_
+
+|
+
+NIfTI and AFNI: working together
+======================================
+
 AFNI and NIFTI have a long history of working together:
 
 * AFNI has formally supported NIFTI usage for both input and output
@@ -38,15 +50,7 @@ AFNI and NIFTI have a long history of working together:
   of the publicly available `NIfTI C-library repository on GitHub
   <https://github.com/NIFTI-Imaging/nifti_clib>`_.
 
-| The NIfTI (or NIFTI) data format is still central to neuroimaging work
-  today.  It remains opens to suggestions, while also greatly valuing
-  stability as an underlying dependency to a large fraction of software
-  analysis tools in the field.  The central NIFTI project GitHub
-  repository, for various languages like C, Matlab and Java is here:
-| `<https://github.com/NIFTI-Imaging>`_
-
 |
-
 
 The NIfTI Data Format Working Group
 =======================================
