@@ -1,9 +1,9 @@
 
 .. _nifti_notes:
 
-*********************************************************
-**NIFTI and BRIK/HEAD: Similarities and differences**
-*********************************************************
+****************************************************************
+**NIFTI and BRIK/HEAD: Similarities, differences and mappings**
+****************************************************************
 
 .. contents:: :local:
 
@@ -31,7 +31,7 @@ We cover some of these here.
 
 .. _nifti_notes_dh:
 
-One file vs two files
+Dataset: one or two files
 =======================================
 
 Some image formats separate the data (numbers comprising the
@@ -54,10 +54,10 @@ easier to read.
 
 .. _nifti_notes_fix_flex:
 
-Minimal/fixed vs flexible headers (and extensions)
+Headers: Minimal/fixed (+extensions) or flexible
 ====================================================
 
-The NIFTI header fields were designed to be *fixed* and rather
+**NIFTI header fields** were designed to be *fixed* and rather
 minimal.  That is, the set of items does not change (and they take up
 a known number of bytes on the disk), and there is intentionally not a
 very large set of them.
@@ -96,10 +96,10 @@ very large set of them.
           have also occurred in the ensuing years, so always check the
           most up-to-date documentation, as well.
 
-In contrast, the BRIK/HEAD file headers are more flexible and can
-store a larger amount of information directly. While the BRIK/HEAD
-fields greatly overlap and directly map onto the smaller set of NIFTI
-fields, additional items that AFNI used include:
+**BRIK/HEAD file headers** are more flexible and can store a larger
+amount of information directly. While the BRIK/HEAD fields greatly
+overlap and directly map onto the smaller set of NIFTI fields,
+additional items that AFNI used include:
 
 * space descriptions
 
@@ -151,127 +151,11 @@ down later.
 
 .. _nifti_notes_qsform:
 
-NIFTI: possible ambiguity in `qform_code` and `sform_code` 
+Spaces: ``qform_code`` and ``sform_code`` or space name(s)
 =============================================================
 
-Throughout much of neuroimaging's history, it has been useful to know
-whether the given dataset is still in its "original" or "native" space
-(or at least only rotated/shifted), or whether it has been
-aligned/warped to a template or reference ("standard") space.  There
-are different ways to encode this information in headers.
-
-In NIFTI, the ``qform_code`` and ``sform_code`` values control this.
-These are each integer values that hierarchically encode whether the
-data are in "original" or in a "template" space---or, confusingly,
-whether it is an "arbitrary" space.  The latter ambiguity seems a
-particularly unfortunate allowed choice; it was implemented to provide
-backwards compatability with the ANALYZE format that some software
-used. Unfortunately, such cases specifying an ambiguous space still
-get output in some software (NB: this should not happen in AFNI
-output).
-
-The currently (as of Nov, 2023) recognized ``qform_code`` and
-``sform_code`` scalar values, and their interpretations, are shown in
-the following table:
-
-.. list-table:: 
-   :header-rows: 1
-   :widths: 10 35 55
-   :stub-columns: 0
-
-   * - value
-     - label
-     - description
-   * - 0
-     - ``NIFTI_XFORM_UNKNOWN``
-     - Arbitrary coordinates (Method 1).
-   * - 1
-     - ``NIFTI_XFORM_SCANNER_ANAT``
-     - Scanner-based anatomical coordinates.
-   * - 2
-     - ``NIFTI_XFORM_ALIGNED_ANAT``
-     - Coordinates aligned to another file's, or to anatomical
-       "truth". **This is ambiguous as to being in standard space or
-       not.**
-   * - 3
-     - ``NIFTI_XFORM_TALAIRACH``
-     - Coordinates aligned to Talairach-Tournoux Atlas; (0,0,0)=AC,
-       etc.
-   * - 4
-     - ``NIFTI_XFORM_MNI_152``
-     - MNI 152 normalized coordinates.
-   * - 5
-     - ``NIFTI_XFORM_TEMPLATE_OTHER``
-     - Normalized coordinates (for any general standard template
-       space). Added March 8, 2019.
-
-Within the BRIK/HEAD format, the information about space is stored in
-the header in the ``TEMPLATE_SPACE`` attribute, as well as reflected
-in the filename itself as typically either ``+orig`` or ``+tlrc``
-(AFNI's "view extension for the space", seen with ``3dinfo
--av_space``).  
-
-* The *view extension* parts of the filename are fairly generic,
-  reflecting simply being in native or *some* standard space
-  specifically (NB: use of "+tlrc" isn't just restricted to Talairach
-  space---that is somewhat a legacy convention from The Old Days when
-  there were a very small number of standard spaces).
-
-* In contrast, the ``TEMPLATE_SPACE`` is a more specific space name;
-  it encodes a more *specific* version of Talairach (like ``TT_N27``)
-  or MNI or IBT or HaskinsPeds or NMT template; and for native space
-  data, it is just ``ORIG``.
-
-There is a 1-to-1 mapping between AFNI view extension and the
-*unambiguous* ``[qs]form_code`` values, and then some extra
-information is necessary to deal with the arbitrary case.  This will
-be done by setting the following AFNI environment variable:
-
-``AFNI_NIFTI_VIEW``
-    *The default view extension used for output when creating AFNI format
-    datasets from NIFTI datasets.This variable is only applicable for
-    sform and qform codes that do not have clearly defined views
-    (sform/qform code = 2). Set to "tlrc" or "orig". See also
-    AFNI_DEFAULT_STD_SPACE and AFNI_NIFTI_PRIORITY. Note sform/qform code=5
-    can be used for spaces other than MNI or TLRC including MNI_ANAT or D99
-    spaces.*
-
-
-**Essentially,** the mapping rules are as follows:
-
-* NIFTI ``[qs]form_code`` values of 3, 4 or 5 denote that the dataset
-  is in some standard space, and map to BRIK/HEAD view extensions of
-  ``+tlrc``.  Furthermore, the latter's ``TEMPLATE_SPACE`` attribute
-  can carry more specific naming information about the template, even
-  within the Talairach, MNI, IBT, etc. families.
-
-* NIFTI ``[qs]form_code`` values of 0 or 1 denote that the dataset is
-  in some original or native coordinate space, and map to BRIK/HEAD
-  view extensions of ``+orig``.  The latter's ``TEMPLATE_SPACE`` should
-  correspondingly be simply ``ORIG``.
-
-* *If* ``AFNI_NIFTI_VIEW = tlrc``, then NIFTI ``[qs]form_code`` values
-  of 2 will be interpreted as representing data in some standard
-  space, and map to BRIK/HEAD view extensions of ``+tlrc``; the
-  latter's ``TEMPLATE_SPACE`` attribute will be ``TLRC``. But if
-  ``AFNI_NIFTI_VIEW = orig``, the dataset will be interpreted as being
-  in some native or original coordinate space, and map to BRIK/HEAD
-  view extensions of ``+orig`` and ``TEMPLATE_SPACE`` name of ``ORIG``.
-
-Easy, right?
-
-
-.. note:: As a final sidenote here, there are three methods that can be
-          used for mapping the data values to grid coordinates
-          (conveniently called Method 1, Method 2 and Method 3).  More
-          details of this are provided in the `NIFTI C-library code
-          <https://github.com/NIFTI-Imaging/nifti_clib/blob/master/nifti2/nifti1.h>`_,
-          but basically: Method 1 is the old way that applies only
-          when :math:`qform_code = 0`; Method 2, when
-          :math:`qform_code > 0` (and ``quatern_*`` and ``qoffset_*``
-          header information is used); and Method 3 when
-          :math:`sform_code > 0` (and ``srow_*`` information is used).
-
-
-
+This is a pretty large discussion point.  Please see :ref:`this page
+<nifti_qsform>` for the details, as well as comments on using AFNI
+programs to deal with some subtle issues that can arise with
+coordinate space considerations.
 

@@ -9,4 +9,5 @@ NIFTI
 
    format
    notes
+   qsform_code
    conversion
