@@ -7,6 +7,8 @@ Space names, ``qform_code`` and ``sform_code``
 
 .. contents:: :local:
 
+.. highlight:: none
+
 .. _nifti_qsform_oview:
 
 Overview
@@ -84,7 +86,7 @@ the following table:
 
 .. _nifti_qsform_bh:
 
-BRIK/HEAD: space names and mapping to/from NIFTI
+BRIK/HEAD: space names; map to/from NIFTI
 ===================================================
 
 Within the BRIK/HEAD format, the information about space is stored in
@@ -176,7 +178,7 @@ and ``sform_code`` values directly (using ``nifti_tool`` or
 Get header information
 ===========================
 
-NIFTI dataset header information can be checked with ``nifti_tool``.
+**NIFTI dataset header** information can be checked with ``nifti_tool``.
 One can display the full header::
 
   nifti_tool -disp_hdr -infiles DSET
@@ -186,7 +188,52 @@ values::
 
   nifti_tool -disp_hdr                           \
       -field qform_code -field sform_code        \
-      -infiles var.1.scale.r01.nii.gz 
+      -infiles DSET
 
+For example, running the latter on the
+``MNI152_2009_template_SSW.nii.gz`` template dataset produces:
 
+  .. code-block::
 
+     N-1 header file 'MNI152_2009_template_SSW.nii.gz', num_fields = 2
+       name                offset  nvals  values
+       ------------------- ------  -----  ------
+       qform_code           252      1    4
+       sform_code           254      1    4
+
+\.\.\. which seems appropriate.
+
+It is also useful to check and see if the NIFTI dataset has any
+extensions, which can be done with::
+
+  nifti_tool -disp_exts -infiles DSET
+
+**BRIK/HEAD dataset header** information can be checked with
+``3dinfo``.  One can display the header information with::
+
+  3dinfo DSET
+
+\.\.\. or specific field(s), like space names, with::
+
+  3dinfo -space -av_space -gen_space -prefix DSET
+
+For example, running the latter on the
+``MNI152_T1_2009c+tlrc.HEAD`` template dataset produces:
+
+  .. code-block::
+
+     MNI    +tlrc    MNI       MNI152_T1_2009c
+
+\.\.\. which also seems appropriate. One can also view header
+attributes with ``3dAttribute``, such as viewing all with::
+
+  3dAttribute -all DSET
+
+\.\.\. or specific field(s), like TEMPLATE_SPACE, with::
+
+  3dAttribute -name TEMPLATE_SPACE DSET
+
+**NB:** one can also run ``3dinfo`` and ``3dAttribute`` on NIFTI
+datasets, and each will output their usual information still.  This is
+in large part because :ref:`AFNI readily inputs and outputs NIFTI
+<nifti_usage>`.
