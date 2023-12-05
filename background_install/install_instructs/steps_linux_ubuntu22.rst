@@ -75,7 +75,7 @@ Quick setup
                              firefox xfonts-100dpi             \
                              r-base-dev cmake                  \
                              libgdal-dev libopenblas-dev       \
-                             libnode-dev libudunits2-dev
+                             libnode-dev libudunits2-dev bc
 
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we

@@ -89,7 +89,7 @@ Quick setup
                              r-base-dev cmake                  \
                              libgdal-dev libopenblas-dev       \
                              libnode-dev libudunits2-dev       \
-                             libgfortran4
+                             libgfortran4 bc
 
    .. nb:
 
