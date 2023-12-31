@@ -231,6 +231,18 @@ OHBM-2018:
     Human Brain Mapping.  
   | `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
 
+
+If you are interested in calculating degree centrality (DC) and local
+functional density (lFCD), consider checking out ``3dDegreeCentrality``
+and ``3dLFCD``, respectively, and please see:
+
+* | Craddock RC, Clark DC (2016). Optimized implementations of
+    voxel-wise degree centrality and local functional connectivity
+    density mapping in AFNI. GigaScience, Volume 5, Issue suppl_1,
+    s13742–016–0147–0–d, doi: 10.1186/s13742-016-0147-0-d
+  | `<https://academic.oup.com/gigascience/article/5/suppl_1/s13742-016-0147-0-d/2965209>`_
+
+
 If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
 
