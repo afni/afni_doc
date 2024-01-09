@@ -680,8 +680,8 @@ Meta-methodology, commentary and validations
 =============================================
 
 If you want to note the good performance of AFNI's time series
-autocorrelation modeling compared with other software, you might
-consider citing:
+autocorrelation modeling (``3dREMLfit``) compared with other software,
+you might consider reading:
 
 * | Olszowy W, Aston J, Rua C, Williams GB (2019).  Accurate
     autocorrelation modeling substantially improves fMRI reliability.
