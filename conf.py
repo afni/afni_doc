@@ -102,6 +102,10 @@ imgmath_latex_opts     = ["\\usepackage{textcomp}",
 imgmath_latex_preamble = "".join(imgmath_latex_opts)
 ###mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
+imgmath_embed = True ### put in to fix having wrong path encoded,
+                     ### should be ../_images/math but instead is just
+                     ### _images/math
+
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
