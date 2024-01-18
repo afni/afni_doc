@@ -74,7 +74,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # PT: Jan 12, 2022: add sphinx_copybutton
 extensions = [
     'sphinxcontrib.fulltoc',
-    'sphinx.ext.mathjax',
+    'sphinx.ext.imgmath', #'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     'cloud_sptheme.ext.table_styling',
     'sphinxcontrib.programoutput',
@@ -83,7 +83,24 @@ extensions = [
     'hidden_code_block',
     'sphinx_copybutton'
 ]
-mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+####### PT: In order to be able to read equations offline, I'm now
+####### switching from mathjax to imgmath; distributing mathjax might
+####### be too large, but will investigate that, too.  build machine
+####### must also have: dvipng or dvisvgm see:
+####### http://www.sphinx-doc.org/en/1.6/ext/math.html#module-sphinx.ext.imgmath
+####### for more useful info.  Also, using 'svg' images, because they
+####### seem sharper.
+html_math_renderer     = 'imgmath'
+imgmath_image_format   = 'svg'
+imgmath_font_size      = 14
+# use "--exact" so that the math text boxes don't get clipped
+imgmath_dvisvgm_args   = ['--no-fonts', '--exact'] 
+# use textcomp and mathptmx to get heavier (= easier to read) fonts in
+# the math eqs
+imgmath_latex_opts     = ["\\usepackage{textcomp}", 
+                          "\\usepackage{mathptmx}"]
+imgmath_latex_preamble = "".join(imgmath_latex_opts)
+###mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 todo_include_todos = True
 
