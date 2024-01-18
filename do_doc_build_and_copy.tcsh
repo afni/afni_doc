@@ -208,7 +208,7 @@ if ( "$DO_BUILD" == "1" ) then
     # ------------- python stuff --------------------
     cd python_help_scripts
 
-    conda activate sphinxdocs
+    conda activate sphinxdocs2
 
     if ( 0 ) then
         echo "++ STEP: Make quickbuild_instructs"
