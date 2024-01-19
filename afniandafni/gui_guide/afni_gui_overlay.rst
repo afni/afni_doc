@@ -44,11 +44,15 @@ Define Overlay
        * The sub-brick labels are assigned when the dataset is created. The 
          index values show the numerical location of the sub-brick in the 
          dataset (starting at 0 of course).
-         **typo in the button help for ``ULay``**
        * The ``Thr`` allows you to choose the sub-brick of the overlay 
          dataset with which to threshold the ``Olay`` sub-brick.
        * In this example the "Coef" is the overlay and is thresholded by the 
          "Tstat".
+       * **Pro tip:** if you have a lot of sub-bricks for any of the
+         ``ULay``, ``OLay`` or ``Thr`` datasets, the list can be
+         *quite* large and clunky when you left-click on menu to pick
+         one; instead, you can *right-click* on the label itself
+         (``Ulay``, etc.) to open up a scrollable menu.
          
      - .. image:: media/overlay_main_ulay_olay_thr.png
           :width: 100%
