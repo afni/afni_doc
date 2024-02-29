@@ -16,9 +16,8 @@ Here we present commands used in the following paper:
 * | Chen G, Taylor PA, Reynolds RC, Leibenluft E, Pine DS, Brotmas MA,
     Pagliaccio D, Haller SP (2023). BOLD response is more than just
     magnitude: improving detection sensitivity through capturing
-    hemodynamic profiles. (*submitted*).
-
-  | `<https://www.biorxiv.org/content/10.1101/2023.02.13.528362v1>`_
+    hemodynamic profiles. Neuroimage 277:120224.
+  | `<https://pubmed.ncbi.nlm.nih.gov/37327955/>`_
 
 
 | **Abstract:** Typical FMRI analyses assume a canonical hemodynamic

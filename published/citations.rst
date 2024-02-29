@@ -789,9 +789,8 @@ over-reduction in result reporting:
     (2022).  Sources of information waste in neuroimaging: mishandling
     structures, thinking dichotomously, and over-reducing
     data. Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
+  | `<https://apertureneuro.org/article/77476-sources-of-information-waste-in-neuroimaging-mishandling-structures-thinking-dichotomously-and-over-reducing-data>`_
   | `<https://www.biorxiv.org/content/10.1101/2021.05.09.443246v2.full>`_
-  | `<https://apertureneuropub.cloud68.co/articles/46/>`_
-  | `Direct Aperture link to PDF (better formatting than the HTML) <https://www.humanbrainmapping.org/files/Aperture%20Neuro/Accepted%20Works%20PDF/5_46_Chen_Sources_of_information_waste_in_neuroimaging.pdf>`_
 
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
