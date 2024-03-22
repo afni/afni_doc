@@ -247,9 +247,11 @@ If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
 
 * | Rorden C, Newman-Norlund R, Drake C, Glen DR, Fridriksson J,
-    Hanayik T, Taylor PA (2022). Improving 3D Edge Detection for
+    Hanayik T, Taylor PA (2024). Improving 3D Edge Detection for
     Visual Inspection of MRI Coregistration and Alignment. 
-    (*submitted*).
+    J Neurosci Methods. Mar 18:110112. doi: 10.1016/j.jneumeth.2024.110112. 
+    Epub ahead of print. PMID: 38508496.
+  | `<https://pubmed.ncbi.nlm.nih.gov/38508496/>`_
   | `<https://www.biorxiv.org/content/10.1101/2022.09.14.507937v1>`_
 
 If you are interested in modeling a detailed, voxelwise hemodynamic
