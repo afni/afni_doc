@@ -324,6 +324,16 @@ If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
 Methods: Quality control (QC)
 =============================
 
+To see a description of several QC tools in AFNI---including
+`afni_proc.py`\'s APQC HTML, `gen_ss_review_table.py` and
+`gtkyd_check`--- please check out:
+
+* | Taylor PA, Glen DR, Chen G, Cox RW, Hanayik T, Rorden C, Nielson
+    DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
+    Tools in AFNI: Systematic, in-depth and interactive QC with
+    afni_proc.py and more.  doi: 10.1101/2024.03.27.586976.
+* | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v1>`_
+
 For detailed examples and descriptions of investigating the quality of
 your FMRI data, including using the afni_proc.py quality control
 (APQC) HTML report and ``gen_ss_review_table.py``, please check out:
@@ -792,7 +802,6 @@ over-reduction in result reporting:
     structures, thinking dichotomously, and over-reducing
     data. Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
   | `<https://apertureneuro.org/article/77476-sources-of-information-waste-in-neuroimaging-mishandling-structures-thinking-dichotomously-and-over-reducing-data>`_
-  | `<https://www.biorxiv.org/content/10.1101/2021.05.09.443246v2.full>`_
 
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
