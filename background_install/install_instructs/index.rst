@@ -10,6 +10,7 @@
    :maxdepth: 1
 
    overview
+   steps_linux_ubuntu24
    steps_linux_ubuntu22
    steps_linux_ubuntu20
    steps_linux_Fed
