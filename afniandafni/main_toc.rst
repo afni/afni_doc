@@ -2,7 +2,7 @@
 
 .. _edu_main:
 
-AFNI (and afni)
+AFNI GUI (afni)
 =====================
 
 .. toctree::
