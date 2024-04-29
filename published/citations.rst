@@ -325,14 +325,19 @@ Methods: Quality control (QC)
 =============================
 
 To see a description of several QC tools in AFNI---including
-`afni_proc.py`\'s APQC HTML, `gen_ss_review_table.py` and
-`gtkyd_check`--- please check out:
+``afni_proc.py``\'s APQC HTML, ``gen_ss_review_table.py`` and
+``gtkyd_check``\--- please check out:
 
 * | Taylor PA, Glen DR, Chen G, Cox RW, Hanayik T, Rorden C, Nielson
     DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
     Tools in AFNI: Systematic, in-depth and interactive QC with
     afni_proc.py and more.  doi: 10.1101/2024.03.27.586976.
-* | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v1>`_
+  | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v1>`_
+
+* | **Comment:** it is also worth checking out this fun, online demo
+    of the APQC HTML and some of its interactive functionality,
+    described in the above paper: 
+  | `<https://afni.github.io/qc-demo-repo/>`_
 
 For detailed examples and descriptions of investigating the quality of
 your FMRI data, including using the afni_proc.py quality control
