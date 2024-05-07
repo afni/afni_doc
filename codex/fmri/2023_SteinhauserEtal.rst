@@ -1,7 +1,7 @@
 .. _codex_fmri_2023_SteinhauserEtal:
 
 
-**Steinhauser et al. (2023).** *FReduced vmPFC-insula functional connectivity in generalized ...*
+**Steinhauser et al. (2023).** *Reduced vmPFC-insula functional connectivity in generalized ...*
 **************************************************************************************************
 
 .. contents:: :local:
