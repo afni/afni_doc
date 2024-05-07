@@ -53,6 +53,16 @@ A. Copy+paste the following to get download scripts::
 
      tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
+#. To get additional Python libraries used in AFNI, it currently
+   appears most efficient on macOS to use `conda` (e.g., Miniconda or
+   Anaconda). :ref:`Quick Miniconda Setup <install_miniconda_quick>`
+   instructions are provided, with the necessary set of Python
+   libraries provided for an environment (e.g., in
+   "environment_ex1.yml"). These could be added to an existing
+   environment, or used to create a new one. **NB:** this should be
+   done *after* AFNI binaries have been compiled.
+
+
 Quick setup (special case: NIMH-administered computers)
 ---------------------------------------------------------
 
@@ -79,6 +89,11 @@ A. Use the *NIMH Self Service* application to install the dependencies
 
    |
 
+   *Thanks to the NIMH Mac Engineering team for helping to set this set
+   of instructions up.*
+
+   |
+
 #. Copy+paste the following to get a download script::
 
      cd
@@ -89,8 +104,16 @@ A. Use the *NIMH Self Service* application to install the dependencies
 
      tcsh OS_notes.macos_12_ARM_b_user.tcsh
 
-*Thanks to the NIMH Mac Engineering team for helping to set this set
-of instructions up.*
+#. To get additional Python libraries used in AFNI, it currently
+   appears most efficient on macOS to use `conda` (e.g., Miniconda or
+   Anaconda). No administrator password is needed for
+   this. :ref:`Quick Miniconda Setup <install_miniconda_quick>`
+   instructions are provided, with the necessary set of Python
+   libraries provided for an environment (e.g., in
+   "environment_ex1.yml"). These could be added to an existing
+   environment, or used to create a new one. **NB:** this should be
+   done *after* AFNI binaries have been compiled.
+
 
 Evaluate setup/system (**important!**)
 -----------------------------------------
