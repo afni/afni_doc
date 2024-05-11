@@ -102,7 +102,7 @@ Quick setup
 
        cd
        curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-       tcsh @update.afni.binaries -package linux_ubuntu_16_64 -do_extras 
+       tcsh @update.afni.binaries -package linux_ubuntu_24_64 -do_extras 
 
    * *(alternative) To install already-downloaded binaries,* use
      ``-local_package ..`` (replacing ``PATH_TO_FILE`` with the actual
@@ -111,7 +111,7 @@ Quick setup
 
        cd
        curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-       tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_ubuntu_16_64.tgz -do_extras 
+       tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_ubuntu_24_64.tgz -do_extras 
 
    **Purpose:** Download and unpack the current binaries in your
    ``$HOME`` directory; set the AFNI binary directory name to
