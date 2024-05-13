@@ -86,12 +86,6 @@ Quick setup
      if you are running Ubuntu on a Windows machine.
    | 
 
-#. Copy+paste::
-     
-     sudo ln -s /usr/lib/x86_64-linux-gnu/libgsl.so.27 /usr/lib/x86_64-linux-gnu/libgsl.so.19
-
-   **Purpose:** Make a symbolic link for the specific version of GSL
-   included in this version of Ubuntu. 
 
 (slow setup) Install AFNI binaries
 ---------------------------------------
