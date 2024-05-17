@@ -10,6 +10,7 @@ FMRI Codex
    :maxdepth: 2
 
    2024_BeynelEtal
+   2024_TaylorEtal
    2023_ReynoldsEtal
    2023_ChenEtal
    2023_TaylorEtal
