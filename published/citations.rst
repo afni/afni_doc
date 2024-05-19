@@ -48,14 +48,21 @@ check out (and cite, as relevant) the following:
     Results'. bioRxiv 308643; doi:10.1101/308643
   | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
 
-If you use ANATICOR to de-noise FMRI datasets (e.g., in
-``afni_proc.py``), please cite:
+If you use (fast) ANATICOR to de-noise FMRI datasets, such as in
+``afni_proc.py``, please cite:
 
 * | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
     correlation in resting state FMRI, with artifact detection and
     removal. Neuroimage. 2010;52(2):571-582. 
     doi:10.1016/j.neuroimage.2010.04.246
   | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
+
+
+* | Jo HJ, Reynolds RC, Gotts SJ, Handwerker DA, Balzekas I, Martin A,
+    Cox RW, Bandettini PA (2020). Fast detection and reduction of
+    local transient artifacts in resting-state fMRI. Comput Biol Med
+    120:103742.
+  | `<https://pubmed.ncbi.nlm.nih.gov/32421647/>`_
 
 If you use InstaCorr to investigate your data (it is *definitely* fun
 and even *highly probably* informative), please cite:
