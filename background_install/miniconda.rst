@@ -240,7 +240,8 @@ Matplotlib being *at least* 2.2.3)::
   conda create -y                        \
         -n py39_afni_tiny                \
         python=3.9                       \
-        "matplotlib>=2.2.3" numpy scipy
+        "matplotlib>=2.2.3" numpy scipy  \
+        flask flask-cors
 
 This new environment's name is "py39_afni_tiny"; I called it this
 because that is basically the minimal set of modules used within AFNI
@@ -546,7 +547,9 @@ Set up Conda (*quick*)
       conda create -y                        \
             -n py39_afni_tiny                \
             python=3.9                       \
-            "matplotlib>=2.2.3" numpy scipy
+            "matplotlib>=2.2.3" numpy scipy  \
+            flask flask-cors
+            
 
    .. no longer include:
       conda create -y                        \
@@ -759,6 +762,7 @@ Let's say you want to add the Sphinx module with cloud-theme support
       -n py39_afni_with_sph       \
       python=3.9                  \
       matplotlib numpy scipy      \
+      flask flask-cors            \
       sphinx cloud_sptheme
 
 You will likely get the following message:
