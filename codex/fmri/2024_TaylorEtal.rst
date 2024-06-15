@@ -57,7 +57,7 @@ FMRI, EPI, MPRAGE, quality control, visualization, quantitative
 
 
 **Main programs:** 
-``afni_proc.py``, ``sswarper2``, ``@ss_review_basic``,
+``open_apqc.py``, ``afni_proc.py``, ``sswarper2``, ``@ss_review_basic``,
 ``@ss_review_driver``, ``gen_ss_review_table.py``, ``gtykd_check``
 
 
