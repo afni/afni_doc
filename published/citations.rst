@@ -39,15 +39,6 @@ If you use the realtime functionality from AFNI, please cite:
     1014-1018.
   | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
 
-For several choices of FMRI processing with ``afni_proc.py``, please
-check out (and cite, as relevant) the following:
-
-* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
-    (2018).  FMRI processing with AFNI: Some comments and corrections
-    on 'Exploring the Impact of Analysis Software on Task fMRI
-    Results'. bioRxiv 308643; doi:10.1101/308643
-  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
-
 If you use (fast) ANATICOR to de-noise FMRI datasets, such as in
 ``afni_proc.py``, please cite:
 
@@ -328,6 +319,39 @@ If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
   | `<https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
 
 
+Methods: FMRI processing and pipelines
+======================================
+
+| *NB: there are also several examples of various processing pipeslines
+  for full projects and papers here:* 
+| :ref:`The Codex: AFNI Code Examples <codex_main>`.
+
+Do you like processing FMRI data? If so, please check out this
+description of using ``afni_proc.py`` to do so:
+
+* | Reynolds RC, Glen DR, Chen G, Saad ZS, Cox RW, Taylor PA
+    (2024). Processing, evaluating and understanding FMRI data with
+    afni_proc.py. arXiv:2406.05248 [q-bio.NC]
+  | `<https://arxiv.org/abs/2406.05248>`_
+
+For an earlier discussion of several choices of FMRI processing with
+``afni_proc.py``, please check out the following:
+
+* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
+    (2018).  FMRI processing with AFNI: Some comments and corrections
+    on 'Exploring the Impact of Analysis Software on Task fMRI
+    Results'. bioRxiv 308643; doi:10.1101/308643
+  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
+
+For an example of using ``afni_proc.py`` to process non-human data,
+please see:
+
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Ungerleider
+    LG, Glen DR, Messinger A (2021). A Comprehensive Macaque FMRI
+    Pipeline and Hierarchical Atlas. NeuroImage 235:117997.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
+
+
 Methods: Quality control (QC)
 =============================
 
@@ -339,7 +363,7 @@ To see a description of several QC tools in AFNI---including
     DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
     Tools in AFNI: Systematic, in-depth and interactive QC with
     afni_proc.py and more.  doi: 10.1101/2024.03.27.586976.
-  | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v1>`_
+  | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v2>`_
 
 * | **Comment:** it is also worth checking out this fun, online demo
     of the APQC HTML and some of its interactive functionality,
