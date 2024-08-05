@@ -79,12 +79,17 @@ A. Use the *NIMH Self Service* application to install the dependencies
 
       *  - 1. Open the NIMH Self Service App on the Mac
          - 2. Type AFNI in the search bar:
-         - 3. Click "Install" for "AFNI Dependencies":
+         - 3. Click "Install" for "AFNI Dependencies" 
       *  - 
          - .. image:: media/img_nimh_selfservice_app.png
               :width: 100%
          - .. image:: media/img_nimh_selfservice_app_afni_icon.png
               :width: 100%  
+      *  -
+         -
+         - **NB:** The App finishes subtly, just changing text to read
+           "Reinstall". When it completes, carry on to further
+           installation stages below.
 
    |
 
