@@ -333,6 +333,17 @@ description of using ``afni_proc.py`` to do so:
     (2024). Processing, evaluating and understanding FMRI data with
     afni_proc.py. arXiv:2406.05248 [q-bio.NC]
   | `<https://arxiv.org/abs/2406.05248>`_
+ 
+  |
+ 
+* | **Comment:** check out the associated demo that runs the code
+    described in the above paper. Details, including how to download
+    the unprocessed data with scripts, is described on this `GitHub
+    README page
+    <https://github.com/afni/apaper_afni_proc/tree/main?tab=readme-ov-file#apaper_afni_proc>`_.
+    A copy of all `afni_proc.py` results directories from the paper
+    and demo are available on this OSF page:
+    `<https://osf.io/gn7b5/>`_.
 
 For an earlier discussion of several choices of FMRI processing with
 ``afni_proc.py``, please check out the following:
