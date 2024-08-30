@@ -1119,6 +1119,18 @@ MAP-MRI (and data are available in NIFTI and GIFTI formats):
   | `<https://doi.org/10.1016/j.neuroimage.2021.118759>`_
   | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
 
+*White matter atlas of the domestic canine brain*. A WM atlas of the
+canine brain, derived from DTI tracking and manual segmentation
+(affectionately and colloquially known as the "CornDog" atlas, given
+its roots at Cornell University):
+
+* | Inglis FM, Taylor PA, Andrews EF, Pascalau R, Voss HU, Glen DR,
+    Johnson PJ (2024).  A diffusion tensor imaging white matter atlas
+    of the domestic canine brain. Imaging Neuroscience 2: 1-21.
+  | `<https://doi.org/10.1162/imag_a_00276>`_
+  | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968/A-Diffusion-Tensor-Imaging-White-Matter-Atlas-of>`_
+
+
 Data projects: NIFTI format
 ==============================
 
