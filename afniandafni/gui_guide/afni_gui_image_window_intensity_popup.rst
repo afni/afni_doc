@@ -22,7 +22,9 @@
 Intensity Bar Hidden Popup
 ==========================
 
-These options apply to the ``Underlay`` data set exclusively.
+These options apply to the ``Underlay`` data set exclusively and are set 
+per image window.  For example if you change an option in the sagittal image 
+window, it will not apply to the axial or coronal image windows.
 
 .. _gui_guide_image_window_IntensityBar_Popup_disp_range:
 
@@ -157,7 +159,8 @@ These options apply to the ``Underlay`` data set exclusively.
    * - :ref:`Invert?
        <gui_guide_image_window_IntensityBar_Popup_invert>`
      - 
-   * - * ``invert``
+   * - * ``Invert?`` is a toggle option to compute a "negative" version of the 
+         underlay data set. 
        * 
 
      - .. image:: media/image_window_IntensityBar_Popup_Invert.png
