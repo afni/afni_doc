@@ -10,8 +10,8 @@
 #    Banker LA, Grant SS, Pine DS (2022). Instructions and
 #    experiential learning have similar impacts on pain and
 #    pain-related brain responses but produce dissociations in
-#    value-based reversal learning. (submitted)
-#    https://www.biorxiv.org/content/10.1101/2021.08.25.457682v1
+#    value-based reversal learning. 11:e73353. doi: 10.7554/eLife.73353.
+#    https://pubmed.ncbi.nlm.nih.gov/36317867/
 #
 # To run for a single subject, type (while providing actual values for
 # SUBJ_ID and DATA_DIR):

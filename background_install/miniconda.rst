@@ -240,20 +240,26 @@ Matplotlib being *at least* 2.2.3)::
   conda create -y                        \
         -n py39_afni_tiny                \
         python=3.9                       \
-        "matplotlib>=2.2.3" numpy scipy
+        "matplotlib>=2.2.3" numpy scipy  \
+        flask flask-cors
 
 This new environment's name is "py39_afni_tiny"; I called it this
 because that is basically the minimal set of modules used within AFNI
 (at present).
 
-To make a similar setup for Python 2.7 (no earlier versions of Python
-should be used), one could run::
+.. [PT: 2024-04-19 ] no longer directly advertise Python 2.7
 
-  conda create -y                        \
-        -n py27_afni_tiny                \
-        python=2.7                       \
-        "matplotlib>=2.2.3" numpy scipy  \
-        pillow 
+    To make a similar setup for Python 2.7 (no earlier versions of Python
+    should be used), one could run::
+
+      conda create -y                        \
+            -n py27_afni_tiny                \
+            python=2.7                       \
+            "matplotlib>=2.2.3" numpy scipy  \
+            pillow 
+
+    ... and this would appear below:
+    py27_afni_tiny           /home/${USER}/miniconda3/envs/py27_afni_tiny
 
 Now, if I type ``conda list env``, I will see a list of all my
 available environments (where ``${USER}`` would actually be replaced
@@ -262,7 +268,6 @@ by my username)::
    # conda environments:
    #
    base                  *  /home/${USER}/miniconda3
-   py27_afni_tiny           /home/${USER}/miniconda3/envs/py27_afni_tiny
    py39_afni_tiny           /home/${USER}/miniconda3/envs/py39_afni_tiny
 
 As noted above, to switch to ``py39_afni_tiny``, I would type::
@@ -376,15 +381,17 @@ including both specific and minimal package dependency versions:
 
     conda env create -f environment_ex1.yml
 
-* Make a new text file called :download:`environment_ex2.yml`:
+  .. [PT: 2024-04-19 ] no longer directly advertise Python 2.7
 
-  .. include:: environment_ex2.yml
-     :literal:
-     :code: yaml
+      * Make a new text file called :download:`environment_ex2.yml`:
 
-  \.\.\. and then run::
+        .. include:: environment_ex2.yml
+           :literal:
+           :code: yaml
 
-    conda env create -f environment_ex2.yml
+        \.\.\. and then run::
+
+          conda env create -f environment_ex2.yml
 
 * *(Bonus, because I like IPython, and jupyter-notebooks are
   common)* Make a new text file called
@@ -410,7 +417,7 @@ To add a new package or module ``NEW_PACK`` to an existing environment
 \.\.\. so, for example example, you could add the scipy module to one
 of the above environments with::
 
-  conda install -n py27_afni_tiny ipython
+  conda install -n py39_afni_tiny scipy
 
 To update a module or package ``CURR_PACK`` in a currently active
 environment, you can use::
@@ -540,8 +547,11 @@ Set up Conda (*quick*)
       conda create -y                        \
             -n py39_afni_tiny                \
             python=3.9                       \
-            "matplotlib>=2.2.3" numpy scipy
+            "matplotlib>=2.2.3" numpy scipy  \
+            flask flask-cors
+            
 
+   .. no longer include:
       conda create -y                        \
             -n py27_afni_tiny                \
             python=2.7                       \
@@ -567,14 +577,15 @@ Set up Conda (*quick*)
 
        conda env create -f environment_ex1.yml
 
-   * Make a new text file called :download:`environment_ex2.yml`:
+   .. no longer include:
+       * Make a new text file called :download:`environment_ex2.yml`:
 
-     .. include:: environment_ex2.yml
-        :literal:
+         .. include:: environment_ex2.yml
+            :literal:
 
-     \.\.\. and then run::
+         \.\.\. and then run::
 
-       conda env create -f environment_ex2.yml
+           conda env create -f environment_ex2.yml
 
    * *(Bonus, because I like IPython, and jupyter-notebooks are
      common)* Make a new text file called
@@ -636,7 +647,7 @@ Set up Conda (*quick*)
 
    ::
 
-      conda install -n py27_afni_tiny pandas
+      conda install -n py39_afni_tiny pandas
 
 
 Short list of conda commands
@@ -748,9 +759,10 @@ Let's say you want to add the Sphinx module with cloud-theme support
 (I doubt you will, but just as an example). If you try::
 
   conda create -y                 \
-      -n py37_afni_with_sph       \
-      python=3.7                  \
+      -n py39_afni_with_sph       \
+      python=3.9                  \
       matplotlib numpy scipy      \
+      flask flask-cors            \
       sphinx cloud_sptheme
 
 You will likely get the following message:
@@ -826,21 +838,22 @@ has left the field).
 Some comments then about possible AFNI environments to make, or
 dependencies to combine with your other 
 
-* for most projects with AFNI, you could use either of the
-  ``py27_afni_tiny`` or ``py39_afni_tiny`` environments, described
-  above, on their own or with their dependencies added to a
-  pre-existing environment. NB: there is no strict Python 3.9
-  requirement for AFNI---it was just used in the example; one should
-  be fine using Python 3.7 or higher.  Since Python 2.7 is technically
-  deprecated now, you might opt for a Python 3.\* recipe, all other
-  things being equal.
+* for most projects with AFNI, you could use the ``py39_afni_tiny``
+  environments, described above, on its own or with its dependencies
+  added to a pre-existing environment. **NB: there is no strict Python
+  3.9 requirement for AFNI**---it was just used in the example; one
+  should be fine using Python 3.7 or higher.  Also, Python 2.7 is
+  technically deprecated now (though most AFNI program run fine in it
+  still, having 3.\* makes a lot more sense).
 
 * *If* you will be using Prantik's older ``meica.py`` program, then
-  you would want a Python 2.7-based environment available, such as
-  ``py27_afni_tiny``.  It could be used as your main environment, or
-  it could just be one you switch in-and-out of for running that
-  specific program.  (Being able to easily switch environments is
-  basically the raison-d'etre of conda.)
+  you would want a Python 2.7-based environment available.  It could
+  be used as your main environment, or it could just be one you switch
+  in-and-out of for running that specific program.  (Being able to
+  easily switch environments is basically the raison-d'etre of conda.)
+  However, for most application purposes (beyond methodological
+  comparison) we would perhaps recommend user's run the newer tedana
+  group's version of MEICA (see below).
 
 * *If* you want to incorporate the modern `TEDANA (Dupre et al., 2021)
   <tutorials/fatcat_prep/Overview.rst>`_ into your AFNI processing of

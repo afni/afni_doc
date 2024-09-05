@@ -268,7 +268,7 @@ setting the "OMP_NUM_THREADS" environment variable in either a script
 or your RC files (just running the help file of ``3dQwarp`` should
 show you what it is presently set at).  If you have any questions
 about this, `just ask
-<https://afni.nimh.nih.gov/afni/community/board/>`_!
+<https://discuss.afni.nimh.nih.gov/>`_!
 
 .. hidden-code-block:: Tcsh
    :starthidden: False

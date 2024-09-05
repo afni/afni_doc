@@ -19,6 +19,7 @@ Welcome to AFNI's documentation!
    afniandafni/main_toc
    SUMA/main_toc
    FATCAT/main_toc
+   nifti/main_toc
    statistics/main_toc
    template_atlas/main_toc
    nonhuman/main_toc

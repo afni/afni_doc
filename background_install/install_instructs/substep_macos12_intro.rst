@@ -1,16 +1,17 @@
+
+#. **To verify your processor/chip type**, you can click on the Apple
+   icon in the upper left of the screen -> "About this Mac", and check
+   the "Processor" or "Chip" type listed.
  
-#. **Each step** involves either copy+pasting text into a terminal,
-   which is in a green field like::
+#. **Each step** involves copy+pasting text into a terminal (the
+   Terminal app, which can be found via the Finder). This text is
+   highlighted in a green field like::
      
      ls
 
-   \.\.\. or a rebooting/clicking on link.
+   In some cases, clicking/typing in an app is necessary, as well as
+   rebooting the computer for changes to take effect.
 
-#. **The user must have admin privileges** (able to run ``sudo ls``,
-   for example).  These steps have "(admin)" in their title.  Do
-   **not** include ``sudo`` in a command unless it is already written.
-   
 #. **If you need to know your shell type**, copy+paste ``echo $0``.
    
-#. **This has been tested on macOS 12.3.1 and 12.4.** It may work on
-   macOS 11, but the python installation may not be necessary.
+

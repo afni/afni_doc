@@ -183,7 +183,7 @@ most strongly during development with the firefox browser.  It
 *should* play nicely with any modern, mainstream browser (e.g.,
 Chrome, Explorer, Safari, etc.), but quirks may occur.  If you come
 across any difficulties, please let us know via the `Message Board
-<https://afni.nimh.nih.gov/afni/community/board/>`_ so we can try to
+<https://discuss.afni.nimh.nih.gov/>`_ so we can try to
 address them (however, please note that some issues may not be
 resolvable except by using a different browser).
 

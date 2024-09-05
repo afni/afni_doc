@@ -31,78 +31,80 @@ our fading memory...):
    :stub-columns: 0
 
    * - Brenna Argall
-     - Gregory Baxter
-     - Matthew Belmonte
-   * - Mike Beauchamp
-     - Rasmus Birn
-     - Paul Bloom
-   * - Jerzy Bodurka             
+     - Jason Bacon
+     - Gregory Baxter            
+   * - Matthew Belmonte          
+     - Mike Beauchamp            
+     - Rasmus Birn               
+   * - Paul Bloom                
+     - Jerzy Bodurka             
      - Cesar Caballero-Gaudes    
-     - Gang Chen                 
-   * - Peggy Christidis          
+   * - Gang Chen                 
+     - Peggy Christidis          
      - Daniel Clark              
-     - Bob Cox                   
-   * - Cameron Craddock          
+   * - Bob Cox                   
+     - Cameron Craddock          
      - Lamont Cranston           
-     - K\. Donahue               
-   * - Gianfranco F.             
+   * - K\. Donahue               
+     - Gianfranco F.             
      - Larry Frank               
-     - Carol Froehlich           
-   * - Stefan Fuertinger         
+   * - Carol Froehlich           
+     - Stefan Fuertinger         
      - Daniel Glen               
-     - Javier Gonzalez- Castillo 
-   * - Yaroslav Halchenko        
+   * - Javier Gonzalez- Castillo 
+     - Yaroslav Halchenko        
      - Rich Hammett              
-     - Taylor Hanayik
-   * - Michael Hanke             
+   * - Taylor Hanayik            
+     - Michael Hanke             
      - Tom Holroyd               
-     - Vincent Hradil            
-   * - Shruti Japee              
+   * - Vincent Hradil            
+     - Shruti Japee              
      - Mark Jenkinson            
-     - Andrzej Jesmanowicz       
-   * - Hans Johnson              
+   * - Andrzej Jesmanowicz       
+     - Hans Johnson              
      - Ben Jung                  
-     - Jakub Kaczmarzyk          
-   * - Greg Kiar                 
+   * - Jakub Kaczmarzyk          
+     - Greg Kiar                 
      - Jay Brian Kummer          
-     - Prantik Kundu             
-   * - Rayus Kuplicki            
+   * - Prantik Kundu             
+     - Rayus Kuplicki            
      - Stephen LaConte           
-     - Peter Lauren              
-   * - Peter Lauro               
+   * - Peter Lauren              
+     - Peter Lauro               
      - John Lee                  
-     - Jonathan Lisinksi         
-   * - Ross Markello             
+   * - Jonathan Lisinksi         
+     - Ross Markello             
      - Chris Markiewicz          
-     - Peter Molfese             
-   * - Julia Molony              
+   * - Peter Molfese             
+     - Julia Molony              
      - Kevin Murphy              
-     - Yamuna Narayana Swamy     
-   * - Dylan Nielson             
+   * - Yamuna Narayana Swamy     
+     - Dylan Nielson             
      - Paul Novak                
-     - Nikolaas Oosterhof        
-   * - Brian Pittman             
+   * - Nikolaas Oosterhof        
+     - Brian Pittman             
      - Dillon Plunkett           
-     - Justin Rajendra           
-   * - Rick Reynolds             
+   * - Justin Rajendra           
+     - Rick Reynolds             
      - Vinai Roopchansingh       
-     - Chris Rorden              
-   * - Tom Ross                  
+   * - Chris Rorden              
+     - Tom Ross                  
      - Ziad Saad                 
-     - Jan-Mathijs Schoffelen    
-   * - Isaac Schwabacher         
+   * - Jan-Mathijs Schoffelen    
+     - Isaac Schwabacher         
      - Fred Tam                  
-     - Paul Taylor               
-   * - Josh Teves                
+   * - Paul Taylor               
+     - Josh Teves                
      - Raoquiong Tong            
-     - Giovanni Torres           
-   * - Sam Torrisi               
+   * - Giovanni Torres           
+     - Sam Torrisi               
      - Robert Vincent            
-     - Andrej Vovk               
-   * - Doug Ward                 
+   * - Andrej Vovk               
+     - Doug Ward                 
      - David Warren              
-     - Joshua Zosky              
-
+   * - Joshua Zosky              
+     -
+     -
 
 .. for use in making
 

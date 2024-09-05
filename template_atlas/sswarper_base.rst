@@ -74,11 +74,11 @@ We now distribute such volumes for a growing number of spaces.  They
 can typically be identified by having "_SSW" attached after their
 prefix, such as:
 
-* `MNI152_2009_template_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/current/MNI152_2009_template_SSW.nii.gz>`_  (the original!)
+* `MNI152_2009_template_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/afni_atlases_dist/MNI152_2009_template_SSW.nii.gz>`_  (the original!)
 
-* `TT_N27_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/current/TT_N27_SSW.nii.gz>`_
+* `TT_N27_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/afni_atlases_dist/TT_N27_SSW.nii.gz>`_
 
-* `HaskinsPeds_NL_template1.0_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/current/HaskinsPeds_NL_template1.0_SSW.nii.gz>`_: the Haskins Pediatric (HP) template
+* `HaskinsPeds_NL_template1.0_SSW.nii.gz <https://afni.nimh.nih.gov/pub/dist/atlases/afni_atlases_dist/HaskinsPeds_NL_template1.0_SSW.nii.gz>`_: the Haskins Pediatric (HP) template
 
 The above sub-volumes need to be present in the ``-base ..`` dataset
 for ``@SSwarper``, in the correct order.  You are welcome to make your

@@ -19,7 +19,7 @@ binaries, as well as the compilable source code.
 
 As of Jan. 1, 2016, AFNI utilizes a version numbering system, which is
 useful for tracking changes, getting help on the `Message Board
-<https://afni.nimh.nih.gov/afni/community/board/>`_, reporting in
+<https://discuss.afni.nimh.nih.gov/>`_, reporting in
 published work, etc.  The version is reported using a trio of numbers,
 corresponding to **"major.minor.micro"** (or roughly,
 *"yearly.quarterly.oftenly"*) updates. You can discover the mystery
@@ -29,7 +29,7 @@ number on your own system by simply typing::
 
 This version number should *always* be provided when posting questions
 on the `Message Board
-<https://afni.nimh.nih.gov/afni/community/board/>`_.
+<https://discuss.afni.nimh.nih.gov/>`_.
 
 .. note:: The record of changes (new options, new programs, bug fixes,
           et al.) is maintained for all the see in the online `AFNI

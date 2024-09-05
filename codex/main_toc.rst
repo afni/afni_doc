@@ -3,7 +3,7 @@
 :tocdepth: 2
 
 
-AFNI Codex: Code Examples from publications
+Codex: AFNI Code Examples from publications
 ============================================
 
 Below is an archive of "larger" AFNI commands that have been used in
@@ -24,7 +24,7 @@ possible, but please reach out to discuss any possible improvements or
 modernizations.
 
 We are always (well, *usually*) happy to answer questions via the AFNI
-`Message Board <https://afni.nimh.nih.gov/afni/community/board/>`_,
+`Message Board <https://discuss.afni.nimh.nih.gov/>`_,
 and hopefully these scripts further the discussion.
 
 

@@ -22,7 +22,7 @@ commands listed here.**
 recommendations in its "Please Fix" section.
 
 If you run into any problems, please just ask a clear question on the
-`Message Board <https://afni.nimh.nih.gov/afni/community/board/>`_.
+`Message Board <https://discuss.afni.nimh.nih.gov/>`_.
 
 
 
@@ -50,10 +50,6 @@ Install AFNI binaries
 
 .. include:: /background_install/install_instructs/substep_mac_abin.rst
 
-Set default AFNI+SUMA environment variables
---------------------------------------------
-
-.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Setup Mac environment variables
 -----------------------------------
@@ -69,10 +65,6 @@ Reboot
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
-Make AFNI/SUMA profiles
------------------------
-
-.. include:: /background_install/install_instructs/substep_profiles.rst
 
 Prepare for Bootcamp
 ------------------------------------
