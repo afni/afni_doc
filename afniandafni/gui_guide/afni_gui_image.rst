@@ -752,7 +752,7 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Choose Flatten Range
        <gui_guide_image_window_IntensityBar_Popup_flatten>`
      - 
-   * - * ``flatten``
+   * - * ``Choose Flatten Range``
        * 
 
      - .. image:: media/image_window_IntensityBar_Popup_flatten.png
