@@ -217,7 +217,10 @@ Image Window
    * - :ref:`Colr, Swap, Norm, .etc<gui_guide_image_window_RightButtons>`
      - 
    * - * ``Colr`` changes grayscale to color spectrum, and back (fun & useless).
-       * ``Swap`` swaps top of intensity bar with bottom.
+       * ``Swap`` swaps top of intensity bar with bottom. (handy to see things 
+         like the bounding box or abnormalities depending on the type of data). 
+         This is similar to the ``Invert?`` button 
+         :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup_invert>`.
        * ``Norm`` returns the intensity bar to normal (after you mess it up).
        * ``c`` controls contrast. ``b`` controls brightness.
 
@@ -711,7 +714,30 @@ only appear in the image window and do not change the data set on disk.
      - 
    * - * ``Invert?`` is a toggle option to compute a "negative" version of the 
          underlay data set. 
-       * 
+       * The image is first automasked then grey scale map is inverted.
+       * The functionality is similar to what is described in the old message 
+         board post 
+         `here <https://afni.nimh.nih.gov/afni/community/board/read.php?1,59489,59500>`_.
+       * This function is the same as the ``Swap`` button except that the 
+         image is automasked and the background is not inverted. 
+         :ref:`(see above)<gui_guide_image_window_RightButtons>`.
+       * The program `fat_proc_imit2w_from_t1w 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/fat_proc_imit2w_from_t1w_sphx.html#ahelp-fat-proc-imit2w-from-t1w>`_ 
+         does something similar but saves an output data set.
+       * This is sometimes useful with FLAIR data to highlight abnormalities 
+         like stroke lesions or tumors.
+       * The image on the right is the "inverted" version of the left image.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_Invert_epi.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_Invert_epi_inverted.png
+                   :width: 100%
 
      - .. image:: media/image_window_IntensityBar_Popup_Invert.png
           :width: 100%
