@@ -1,7 +1,7 @@
 :tocdepth: 2
 
-References, methods and citations
-=================================
+Citations and Reference Works
+==============================
 
 
 .. toctree::

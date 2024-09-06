@@ -63,7 +63,7 @@ For questions/comments/suggestions, please contact:
      - *paul.taylor __at__ nih.gov*
 
 | \.\.\. and/or use the ever-popular AFNI Message Board:
-| `<https://afni.nimh.nih.gov/afni/community/board/>`_
+| `<https://discuss.afni.nimh.nih.gov>`_
 
 
 

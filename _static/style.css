@@ -156,3 +156,11 @@ table.docutils .justify-align {
     font-weight: bold; */
     /*color: blue; */
 }
+
+
+/* highlight code, inline code */
+code.literal
+{
+    background-color: rgba(230,230,230,1);
+    border: 0px solid rgba(215,215,215,1);
+}

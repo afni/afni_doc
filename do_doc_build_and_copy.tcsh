@@ -209,6 +209,9 @@ if ( "$DO_BUILD" == "1" ) then
     cd python_help_scripts
 
     conda activate sphinxdocs
+    ### the below version has more modern sphinx stuff, tested while
+    ### updating
+    #conda activate sphinxdocs2
 
     if ( 0 ) then
         echo "++ STEP: Make quickbuild_instructs"
@@ -280,6 +283,7 @@ if ( "$DO_BUILD" == "1" ) then
 
         # need this env running for devdocs
         conda activate afni_dev
+        ###conda activate afni_dev_TMP
 
         # the afni_dev env specifies one specific dir for getting the
         # afni_test_utils module.  First use pip to *undo* that

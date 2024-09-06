@@ -9,6 +9,7 @@ dependencies:
   - pip
   - python
   - pandas
+  - scipy
   - sphinx
   - sphinx-argparse
   - sphinxcontrib-fulltoc

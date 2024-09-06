@@ -39,33 +39,21 @@ If you use the realtime functionality from AFNI, please cite:
     1014-1018.
   | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
 
-If you use the left-right flip checking for consistency in your data
-(and you should!), please cite:
-
-* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
-    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
-    Data: An Efficient and Robust Method to Check MRI Dataset
-    Consistency Using AFNI. Front. Neuroinformatics 14. 
-    doi.org/10.3389/fninf.2020.00018
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
-
-For several choices of FMRI processing with ``afni_proc.py``, please
-check out (and cite, as relevant) the following:
-
-* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
-    (2018).  FMRI processing with AFNI: Some comments and corrections
-    on 'Exploring the Impact of Analysis Software on Task fMRI
-    Results'. bioRxiv 308643; doi:10.1101/308643
-  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
-
-If you use ANATICOR to de-noise FMRI datasets (e.g., in
-``afni_proc.py``), please cite:
+If you use (fast) ANATICOR to de-noise FMRI datasets, such as in
+``afni_proc.py``, please cite:
 
 * | Jo HJ, Saad ZS, Simmons WK, Milbury LA, Cox RW. Mapping sources of
     correlation in resting state FMRI, with artifact detection and
     removal. Neuroimage. 2010;52(2):571-582. 
     doi:10.1016/j.neuroimage.2010.04.246
   | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
+
+
+* | Jo HJ, Reynolds RC, Gotts SJ, Handwerker DA, Balzekas I, Martin A,
+    Cox RW, Bandettini PA (2020). Fast detection and reduction of
+    local transient artifacts in resting-state fMRI. Comput Biol Med
+    120:103742.
+  | `<https://pubmed.ncbi.nlm.nih.gov/32421647/>`_
 
 If you use InstaCorr to investigate your data (it is *definitely* fun
 and even *highly probably* informative), please cite:
@@ -231,15 +219,49 @@ please check out its presentation at OHBM-2020:
     10.3389/fpsyt.2021.617997
   | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
 
+For information on different ways to estimate thickness measures
+(e.g., cortical thickness), please check out this presentation from
+OHBM-2018:
+
+* | Glen D, Taylor PA, Seidlitz J, Glen M, Liu C, Molfese P, Reynolds
+    R, (2018). Through Thick and Thin: Measuring Thickness in MRI with
+    AFNI. Presented at the 24th Annual Meeting of the Organization for
+    Human Brain Mapping.  
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
+
+
+If you are interested in calculating degree centrality (DC) and local
+functional density (lFCD), consider checking out ``3dDegreeCentrality``
+and ``3dLFCD``, respectively, and please see:
+
+* | Craddock RC, Clark DC (2016). Optimized implementations of
+    voxel-wise degree centrality and local functional connectivity
+    density mapping in AFNI. GigaScience, Volume 5, Issue suppl_1,
+    s13742–016–0147–0–d, doi: 10.1186/s13742-016-0147-0-d
+  | `<https://academic.oup.com/gigascience/article/5/suppl_1/s13742-016-0147-0-d/2965209>`_
+
 
 If you are interested in edge detection and visualization in
 volumetric data, consider checking out ``3dedgedog`` and please see:
 
 * | Rorden C, Newman-Norlund R, Drake C, Glen DR, Fridriksson J,
-    Hanayik T, Taylor PA (2022). Improving 3D Edge Detection for
+    Hanayik T, Taylor PA (2024). Improving 3D Edge Detection for
     Visual Inspection of MRI Coregistration and Alignment. 
-    (*submitted*).
+    J Neurosci Methods. Mar 18:110112. doi: 10.1016/j.jneumeth.2024.110112. 
+    Epub ahead of print. PMID: 38508496.
+  | `<https://pubmed.ncbi.nlm.nih.gov/38508496/>`_
   | `<https://www.biorxiv.org/content/10.1101/2022.09.14.507937v1>`_
+
+If you are interested in modeling a detailed, voxelwise hemodynamic
+response function (HRF) *without* assuming a constant+canonical shape
+and *with* useful regularization, then see:
+
+* | Chen G, Taylor PA, Reynolds RC, Leibenluft E, Pine DS, Brotmas MA,
+    Pagliaccio D, Haller SP (2023). BOLD response is more than just
+    magnitude: improving detection sensitivity through capturing
+    hemodynamic profiles. Neuroimage 277:120224.
+  | `<https://pubmed.ncbi.nlm.nih.gov/37327955/>`_
+
 
 Methods: SUMA
 ==============
@@ -295,6 +317,114 @@ If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
     Using Clipping PLanes to Analyze Brain Data in SUMA. Presented at 
     the 28th Annual Meeting of the Organization for Human Brain Mapping.
   | `<https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
+
+
+Methods: FMRI processing and pipelines
+======================================
+
+| *NB: there are also several examples of various processing pipeslines
+  for full projects and papers here:* 
+| :ref:`The Codex: AFNI Code Examples <codex_main>`.
+
+Do you like processing FMRI data? If so, please check out this
+description of using ``afni_proc.py`` to do so:
+
+* | Reynolds RC, Glen DR, Chen G, Saad ZS, Cox RW, Taylor PA
+    (2024). Processing, evaluating and understanding FMRI data with
+    afni_proc.py. arXiv:2406.05248 [q-bio.NC]
+  | `<https://arxiv.org/abs/2406.05248>`_
+ 
+  |
+ 
+* | **Comment:** check out the associated demo that runs the code
+    described in the above paper. Details, including how to download
+    the unprocessed data with scripts, is described on this `GitHub
+    README page
+    <https://github.com/afni/apaper_afni_proc/tree/main?tab=readme-ov-file#apaper_afni_proc>`_.
+    A copy of all `afni_proc.py` results directories from the paper
+    and demo are available on this OSF page:
+    `<https://osf.io/gn7b5/>`_.
+
+For an earlier discussion of several choices of FMRI processing with
+``afni_proc.py``, please check out the following:
+
+* | Taylor PA, Chen G, Glen DR, Rajendra JK, Reynolds RC, Cox RW
+    (2018).  FMRI processing with AFNI: Some comments and corrections
+    on 'Exploring the Impact of Analysis Software on Task fMRI
+    Results'. bioRxiv 308643; doi:10.1101/308643
+  | `<https://www.biorxiv.org/content/10.1101/308643v1.abstract>`_
+
+For an example of using ``afni_proc.py`` to process non-human data,
+please see:
+
+* | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Perkins P, Ungerleider
+    LG, Glen DR, Messinger A (2021). A Comprehensive Macaque FMRI
+    Pipeline and Hierarchical Atlas. NeuroImage 235:117997.
+  | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
+
+
+Methods: Quality control (QC)
+=============================
+
+To see a description of several QC tools in AFNI---including
+``afni_proc.py``\'s APQC HTML, ``gen_ss_review_table.py`` and
+``gtkyd_check``\--- please check out:
+
+* | Taylor PA, Glen DR, Chen G, Cox RW, Hanayik T, Rorden C, Nielson
+    DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
+    Tools in AFNI: Systematic, in-depth and interactive QC with
+    afni_proc.py and more.  doi: 10.1101/2024.03.27.586976.
+  | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v2>`_
+
+* | **Comment:** it is also worth checking out this fun, online demo
+    of the APQC HTML and some of its interactive functionality,
+    described in the above paper: 
+  | `<https://afni.github.io/qc-demo-repo/>`_
+
+For detailed examples and descriptions of investigating the quality of
+your FMRI data, including using the afni_proc.py quality control
+(APQC) HTML report and ``gen_ss_review_table.py``, please check out:
+
+* | Reynolds RC, Taylor PA, Glen DR (2023). Quality control
+    practices in FMRI analysis: Philosophy, methods and examples using
+    AFNI. Front. Neurosci. 16:1073800. doi: 10.3389/fnins.2022.1073800
+  | `<https://www.frontiersin.org/articles/10.3389/fnins.2022.1073800/full/>`_
+
+The above article was created as part of a Research Topic on
+demonstrating quality control in FMRI.  The Editorial for that
+Project---with a description of its inception, a summary of its
+contributions and some recommendations for moving forward---is
+here:
+
+* | Taylor PA, Glen DR, Reynolds RC, Basavaraj A, Moraczewski D,
+    Etzel JA (2023). Editorial: Demonstrating quality control (QC)
+    procedures in fMRI. Front. Neurosci. 17:1205928. doi:
+    10.3389/fnins.2023.1205928
+  | `<https://www.frontiersin.org/articles/10.3389/fnins.2023.1205928/full>`_
+
+If you are interested in detailed QC discussions in FMRI, please see
+the following Frontiers Research Topic project page and related public
+data for download:
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC (2022).  Demonstrating
+    Quality Control (QC) Procedures in fMRI.
+  | `Research Topic homepage <https://www.frontiersin.org/research-topics/33922/demonstrating-quality-control-qc-procedures-in-fmri>`_
+
+  |
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC, Moraczewski D, Basavaraj
+    A (2022). FMRI Open QC Project.  DOI 10.17605/OSF.IO/QAESM 
+  | `<https://osf.io/qaesm/>`_
+
+If you use the left-right flip checking for consistency in your MRI
+data (and you should!), please cite:
+
+* | Glen DR, Taylor PA, Buchsbaum BR, Cox RW, Reynolds RC
+    (2020). Beware (Surprisingly Common) Left-Right Flips in Your MRI
+    Data: An Efficient and Robust Method to Check MRI Dataset
+    Consistency Using AFNI. Front. Neuroinformatics 14. 
+    doi.org/10.3389/fninf.2020.00018
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
 
 
 Methods: Group analysis, stats and clustering
@@ -609,8 +739,8 @@ Meta-methodology, commentary and validations
 =============================================
 
 If you want to note the good performance of AFNI's time series
-autocorrelation modeling compared with other software, you might
-consider citing:
+autocorrelation modeling (``3dREMLfit``) compared with other software,
+you might consider reading:
 
 * | Olszowy W, Aston J, Rua C, Williams GB (2019).  Accurate
     autocorrelation modeling substantially improves fMRI reliability.
@@ -671,10 +801,11 @@ thresholding (rather than hiding away much information with
 all-or-nothing thresholding), then check out:
 
 * | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
-    DA, Bandettini PA, Mejia AF, Chen G (2022). Highlight Results,
-    Don’t Hide Them: Enhance interpretation, reduce biases and improve
-    reproducibility. *(submitted)* bioRxiv doi:10.1101/2022.10.26.513929
-  | `<https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_
+    DA, Bandettini PA, Mejia AF, Chen G (2023). Highlight Results,
+    Don't Hide Them: Enhance interpretation, reduce biases and improve
+    reproducibility. Neuroimage 274:120138. 
+    doi: 10.1016/j.neuroimage.2023.120138
+  | `<https://pubmed.ncbi.nlm.nih.gov/37116766/>`_
 
 If you are curious about how to deal with multiplicity issues in your
 statistical analysis of MRI, consider this discussion of neighborhood
@@ -717,9 +848,7 @@ over-reduction in result reporting:
     (2022).  Sources of information waste in neuroimaging: mishandling
     structures, thinking dichotomously, and over-reducing
     data. Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
-  | `<https://www.biorxiv.org/content/10.1101/2021.05.09.443246v2.full>`_
-  | `<https://apertureneuropub.cloud68.co/articles/46/>`_
-  | `Direct Aperture link to PDF (better formatting than the HTML) <https://www.humanbrainmapping.org/files/Aperture%20Neuro/Accepted%20Works%20PDF/5_46_Chen_Sources_of_information_waste_in_neuroimaging.pdf>`_
+  | `<https://apertureneuro.org/article/77476-sources-of-information-waste-in-neuroimaging-mishandling-structures-thinking-dichotomously-and-over-reducing-data>`_
 
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
@@ -879,9 +1008,9 @@ injections), and multi-resolution diffusion MRI dataset:
 * | Tian X, Chen Y, Majka P, Szczupak D, Perl YS, Yen CC, Tong C, Song
     K, Jiang H, Glen D, Deco G, Rosa MGP, Silva AC, Liang Z, Liu C
     (2022). Integrated resource for functional and structural
-    connectivity of the marmoset brain. (*submitted*) bioRxiv
-    2021.11.12.468389.
-  | `<https://www.biorxiv.org/content/10.1101/2021.11.12.468389v1>`_
+    connectivity of the marmoset brain. Nat Commun 13(1):7416. 
+    doi: 10.1038/s41467-022-35197-2.
+  | `<https://pubmed.ncbi.nlm.nih.gov/36456558/>`_
 
 *Marmoset atlas v3.* This project provides new population-based
 in-vivo standard templates and tools derived from multi-modal data of
@@ -989,6 +1118,18 @@ MAP-MRI (and data are available in NIFTI and GIFTI formats):
     histology. Neuroimage 245:118759.
   | `<https://doi.org/10.1016/j.neuroimage.2021.118759>`_
   | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
+
+*White matter atlas of the domestic canine brain*. A WM atlas of the
+canine brain, derived from DTI tracking and manual segmentation
+(affectionately and colloquially known as the "CornDog" atlas, given
+its roots at Cornell University):
+
+* | Inglis FM, Taylor PA, Andrews EF, Pascalau R, Voss HU, Glen DR,
+    Johnson PJ (2024).  A diffusion tensor imaging white matter atlas
+    of the domestic canine brain. Imaging Neuroscience 2: 1-21.
+  | `<https://doi.org/10.1162/imag_a_00276>`_
+  | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968/A-Diffusion-Tensor-Imaging-White-Matter-Atlas-of>`_
+
 
 Data projects: NIFTI format
 ==============================

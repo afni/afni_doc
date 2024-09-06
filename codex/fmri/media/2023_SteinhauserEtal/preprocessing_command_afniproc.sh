@@ -3,9 +3,10 @@
 # Used for processing in: 
 #    
 #    Steinhauser JL, Teed AR, Al-Zoubi O, Hurlemann R, Chen G, Khalsa
-#    SS (2022). Functional dissection of neural connectivity in
-#    generalized anxiety disorder.
-#    https://www.biorxiv.org/content/10.1101/2022.01.09.475543v1
+#    SS (2023).  Reduced vmPFC-insula functional connectivity in 
+#    generalized anxiety disorder: a Bayesian confirmation study. Sci Rep. 
+#    13(1):9626. doi: 10.1038/s41598-023-35939-2
+#    https://pubmed.ncbi.nlm.nih.gov/37316518
 #
 # See also the project github page for further scripts and files:
 #    https://github.com/Jonas-Ste/GAD_MBA_FC

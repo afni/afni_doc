@@ -74,6 +74,7 @@ Quick setup
      sudo apt-get install -y tcsh xfonts-base libssl-dev       \
                              python-is-python3                 \
                              python3-matplotlib python3-numpy  \
+                             python3-flask python3-flask-cors  \
                              python3-pil                       \
                              gsl-bin netpbm gnome-tweak-tool   \
                              libjpeg62 xvfb xterm vim curl     \
@@ -88,7 +89,7 @@ Quick setup
                              r-base-dev cmake                  \
                              libgdal-dev libopenblas-dev       \
                              libnode-dev libudunits2-dev       \
-                             libgfortran4
+                             libgfortran4 bc
 
    .. nb:
 

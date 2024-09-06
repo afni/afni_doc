@@ -45,17 +45,19 @@ Quick setup
 
 1. To be able to install latest packages, copy+paste::
 
-     sudo yum update
+     sudo dnf update
 
 #. Copy+paste::
    
-       sudo yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
+       sudo dnf install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
                            PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
                            xorg-x11-server-Xvfb firefox                       \
-                           python3-matplotlib
+                           python3-matplotlib python3-numpy                   \
+                           python3-flask python3-flask-cors
+
    Copy+paste::
 
-     sudo yum update -y
+     sudo dnf update -y
    
   **Purpose:** Installs a lot of packages that AFNI depends on (so we
   don't have to reinvent the wheel!).

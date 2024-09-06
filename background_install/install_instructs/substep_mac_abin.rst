@@ -19,4 +19,5 @@
    **Purpose:** Download and unpack the current binaries in your
    ``$HOME`` directory; set the AFNI binary directory name to
    ``$HOME/abin/``; and add that location to the ``$PATH`` in both
-   ``~/.cshrc`` and ``~/.bashrc``.
+   ``~/.cshrc`` and ``~/.bashrc``.  This command also sets up default
+   ``~/.afnirc`` and ``~/.sumarc`` profiles and environment variables.

@@ -9,7 +9,7 @@ Main AFNI pages
 
 `Main AFNI homepage <https://afni.nimh.nih.gov/>`_
 
-`Message Board <https://afni.nimh.nih.gov/afni/community/board/list.php?1>`_
+`Message Board <https://discuss.afni.nimh.nih.gov>`_
 
 |
 

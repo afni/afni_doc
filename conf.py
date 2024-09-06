@@ -74,7 +74,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # PT: Jan 12, 2022: add sphinx_copybutton
 extensions = [
     'sphinxcontrib.fulltoc',
-    'sphinx.ext.mathjax',
+    'sphinx.ext.imgmath', #'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     'cloud_sptheme.ext.table_styling',
     'sphinxcontrib.programoutput',
@@ -83,7 +83,28 @@ extensions = [
     'hidden_code_block',
     'sphinx_copybutton'
 ]
-mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+####### PT: In order to be able to read equations offline, I'm now
+####### switching from mathjax to imgmath; distributing mathjax might
+####### be too large, but will investigate that, too.  build machine
+####### must also have: dvipng or dvisvgm see:
+####### http://www.sphinx-doc.org/en/1.6/ext/math.html#module-sphinx.ext.imgmath
+####### for more useful info.  Also, using 'svg' images, because they
+####### seem sharper.
+html_math_renderer     = 'imgmath'
+imgmath_image_format   = 'svg'
+imgmath_font_size      = 14
+# use "--exact" so that the math text boxes don't get clipped
+imgmath_dvisvgm_args   = ['--no-fonts', '--exact'] 
+# use textcomp and mathptmx to get heavier (= easier to read) fonts in
+# the math eqs
+imgmath_latex_opts     = ["\\usepackage{textcomp}", 
+                          "\\usepackage{mathptmx}"]
+imgmath_latex_preamble = "".join(imgmath_latex_opts)
+###mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML' # http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+
+imgmath_embed = True ### put in to fix having wrong path encoded,
+                     ### should be ../_images/math but instead is just
+                     ### _images/math
 
 todo_include_todos = True
 
@@ -194,6 +215,9 @@ html_theme = "cloud"
 ### 'bodyfont' in this dictionary, the main text font should be
 ### controlled in _static/style.css and the *.ttf files there,
 ### specifying the body->font-family there
+#### **BUT** note that we now include bodyfont/fontscssurl here, too,
+#### with the same font, so that googleapis is not pinged, because
+#### that will slow down page viewing even from just local copy
 html_theme_options = { 
     "stickysidebar": "true",
     "collapsiblesidebar": "true",
@@ -204,6 +228,8 @@ html_theme_options = {
     "lighter_header_decor": "true",
     "linkcolor": "#1874CD",
     "bgcolor": "#F5F5F5",
+    "bodyfont": "local_PT_sans",  
+    "fontcssurl" : "local_PT_sans",
     #"bodyfont": "PT Sans, sans-serif",
     #"fontcssurl" : "//fonts.googleapis.com/css?family=PT+Sans|Noticia+Text|Open+Sans|Droid+Sans+Mono|Roboto",
     "bodylineheight": "1.4em",
@@ -244,8 +270,9 @@ html_title = "%s" % (project) # don't need doc version number
 #html_short_title = None
 
 # The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
+# of the sidebar. Updated to deal with variable change in Sphinx v>=6.0.0.
 html_logo = "AFNISUMA.jpg" # None
+logo_url  = html_logo
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32

@@ -220,7 +220,7 @@ research, please cite:
    | Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
      (2020).  "A Comprehensive Macaque FMRI Pipeline and Hierarchical
      Atlas."  NeuroImage, submitted.
-   | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
+   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
 
    | Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
      Ungerleider L, Messinger A (2018). "A Population MRI Brain Template

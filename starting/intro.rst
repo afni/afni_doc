@@ -122,7 +122,7 @@ Asking questions and following updates
 
 We are happy to answer questions, receive suggestions, and generally
 discuss data analysis on the `AFNI Message Board
-<https://afni.nimh.nih.gov/afni/community/board/login.php?1>`_.
+<https://discuss.afni.nimh.nih.gov>`_.
 
 Additionally, please consider signing up for the `AFNI Digest
 <https://list.nih.gov/cgi-bin/wa.exe?SUBED1=afni_digest&A=1>`_.  This

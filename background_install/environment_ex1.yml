@@ -1,6 +1,8 @@
-name: py39_afni_tiny          # TO MAKE:  conda env create -f env*_ex1.yml
+name: py3_afni_tiny           # TO MAKE:  conda env create -f env*_ex1.yml
 dependencies:
-  - python=3.9
+  - python
   - "matplotlib>=2.2.3"       # minimal ver for 'pythonic' APQC HTML
   - numpy
   - scipy
+  - "flask>=2.1.2"            # for local server for APQC HTML 
+  - "flask-cors>=3.0.10"      # for local server for APQC HTML 

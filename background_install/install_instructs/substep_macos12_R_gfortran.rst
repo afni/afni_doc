@@ -2,7 +2,7 @@
 #. **Get R v3.6.3 gfortran v6.1**::
     
      cd
-     curl -s -L -o R-3.6.3.nn.pkg "https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.6.3.nn.pkg"
+     curl -s -L -o R-3.6.3.nn.pkg "https://cran-archive.r-project.org/bin/macosx/el-capitan/base/R-3.6.3.nn.pkg"
      curl -s -L -o gfortran-6.1.pkg "https://cloud.r-project.org/bin/macosx/tools/gfortran-6.1.pkg"
 
 #. **Install R**::

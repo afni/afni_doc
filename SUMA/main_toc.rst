@@ -3,7 +3,7 @@
 
 
 ####
-SUMA
+SUMA GUI (suma)
 ####
 
 .. toctree::
