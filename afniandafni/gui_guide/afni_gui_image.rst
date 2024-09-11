@@ -249,94 +249,6 @@ Image Window
           :width: 100%
           :align: right
 
-.. _gui_guide_image_window_Disp:
-
-.. list-table::
-   :widths: 55 45
-   :header-rows: 1
-
-   * - :ref:`Disp<gui_guide_image_window_Disp>`
-     - 
-   * - * ``Disp`` controls the way images are displayed and saved.
-       * **This may need to go on its own page!**
-       * It pops up its own control window and most controls change image 
-         immediately.
-       * Orientation controls at top allow you to flip image around.
-       * ``+ LR Mirror`` flips the image left to right. For example, if the 
-         image was displayed ``left=Left`` it will flip to ``left=Right``
-       * ``No Overlay`` lets you turn color overlays off (crosshairs; function)
-       * ``Min-to-Max`` Intensity bar is data min-to-max.
-       * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
-         This avoids having a few very bright voxels dominate intensity 
-         scaling.
-       * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
-         tries to keep image shape *true* as you stretch/shrink window.
-       * The save panel controls how images are saved to disk. For more 
-         details, :ref:`(see below)<gui_guide_image_window_Save1>`
-
-         * All buttons off: saved image file contains slice raw data.
-           (not what you want)
-         * ``Nsize Save``: same, but images are 2N in size.
-         * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
-         * ``Save to .xxx(s)``: saves image(s) to specified format.
-         * ``Save One``: for saving montage.
-         * ``Save Anim GIF`` will save an animated .gif file scrolling 
-           through the slices of the image.
-
-       * ``Project`` applies a projection function to plus-or-minus 'Slab' 
-         images from each pixel. 
-       * ``Slab +-`` selects the number of slices around the current view to 
-         use for the projection.  Useful for looking at blood vessels and 
-         other different images.
-       * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
-         and ``SSqrt`` are useful for images with extreme values.
-       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
-         ``Median 9`` smoothing can be useful for printing images.
-       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
-         as x vs. y graphs. 
-         
-         .. list-table::
-             :width: 100%
-             :align: center
-             :header-rows: 0
- 
-             * - .. image:: media/image_window_Disp_RowGraphs.png
-                   :width: 100%
-                   
-         * Each graph is from one displayed horizontal row of 
-           the image. 
-         * The bottom rowgraph is from the image row under the crosshairs. 
-         * Upper rowgraphs are from higher image rows. 
-         * Image transformation functions and image rotation/flips will affect 
-           the rowgraphs as well as the image display. 
-         * The color marker indicates the crosshair focus point and can be 
-           hidden with the ``No Overlay`` button.
-         * If you want columns, flip the image with ``CCW 90``.
-
-       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
-
-         .. list-table::
-             :width: 100%
-             :align: center
-             :header-rows: 0
- 
-             * - .. image:: media/image_window_Disp_SurfGraph.png
-                   :width: 100%
-
-       * Extra imaging processing filters are provided at the bottom.
-       
-         * ``Sharpen`` is sometimes useful for deblurring images.
-         * ``Edge Detect`` is useful as the underlay for checking alignment.
-       
-     - .. image:: media/image_window_Disp.png
-          :width: 100%
-          :align: right
-
-       .. image:: media/image_window_Disp_menu.png
-          :width: 60%
-          :align: left
-
-          
 .. _gui_guide_image_window_Save1:
 
 .. list-table::
@@ -554,7 +466,103 @@ Image Window
      - .. image:: media/image_window_Rec.png
           :width: 100%
           :align: right
-          
+
+Disp Menu
+=========
+
+.. _gui_guide_image_window_Disp_menu:
+
+.. _gui_guide_image_window_Disp:
+
+.. list-table::
+   :widths: 55 45
+   :header-rows: 1
+
+   * - :ref:`Disp<gui_guide_image_window_Disp>`
+     - 
+   * - * ``Disp`` controls the way images are displayed and saved.
+       * **This may need to go on its own page!**
+       * It pops up its own control window and most controls change image 
+         immediately.
+       * Orientation controls at top allow you to flip image around.
+       * ``+ LR Mirror`` flips the image left to right. For example, if the 
+         image was displayed ``left=Left`` it will flip to ``left=Right``
+       * ``No Overlay`` lets you turn color overlays off (crosshairs; function)
+       * ``Min-to-Max`` Intensity bar is data min-to-max.
+       * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
+         This avoids having a few very bright voxels dominate intensity 
+         scaling.
+       * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
+         tries to keep image shape *true* as you stretch/shrink window.
+       * The save panel controls how images are saved to disk. For more 
+         details, :ref:`(see below)<gui_guide_image_window_Save1>`
+
+         * All buttons off: saved image file contains slice raw data.
+           (not what you want)
+         * ``Nsize Save``: same, but images are 2N in size.
+         * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
+         * ``Save to .xxx(s)``: saves image(s) to specified format.
+         * ``Save One``: for saving montage.
+         * ``Save Anim GIF`` will save an animated .gif file scrolling 
+           through the slices of the image.
+
+       * ``Project`` applies a projection function to plus-or-minus 'Slab' 
+         images from each pixel. 
+       * ``Slab +-`` selects the number of slices around the current view to 
+         use for the projection.  Useful for looking at blood vessels and 
+         other different images.
+       * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
+         and ``SSqrt`` are useful for images with extreme values.
+       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
+         ``Median 9`` smoothing can be useful for printing images.
+       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
+         as x vs. y graphs. 
+         
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_RowGraphs.png
+                   :width: 100%
+                   
+         * Each graph is from one displayed horizontal row of 
+           the image. 
+         * The bottom rowgraph is from the image row under the crosshairs. 
+         * Upper rowgraphs are from higher image rows. 
+         * Image transformation functions and image rotation/flips will affect 
+           the rowgraphs as well as the image display. 
+         * The color marker indicates the crosshair focus point and can be 
+           hidden with the ``No Overlay`` button.
+         * If you want columns, flip the image with ``CCW 90``.
+
+       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_SurfGraph.png
+                   :width: 100%
+
+       * Extra imaging processing filters are provided at the bottom.
+       
+         * ``Sharpen`` is sometimes useful for deblurring images.
+         * ``Edge Detect`` is useful as the underlay for checking alignment.
+       
+     - .. image:: media/image_window_Disp.png
+          :width: 100%
+          :align: right
+
+       .. image:: media/image_window_Disp_menu.png
+          :width: 60%
+          :align: left
+
+
+
+
+
 Intensity Bar Hidden Popup
 ==========================
 
@@ -759,7 +767,6 @@ only appear in the image window and do not change the data set on disk.
           :width: 100%
           :align: right
 
-
 .. _gui_guide_image_window_IntensityBar_Popup_sharpen:
 
 .. list-table::
@@ -769,7 +776,7 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Choose Sharpen factor
        <gui_guide_image_window_IntensityBar_Popup_sharpen>`
      - 
-   * - * ``sharpen``
+   * - * ``Choose Sharpen factor``
        * 
 
      - .. image:: media/image_window_IntensityBar_Popup_sharpen.png
