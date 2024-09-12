@@ -161,8 +161,8 @@ Image Window
    * - * The slider below image lets you move between slices.
        * The number above the slider indicates the current displayed slice. 
          (in this case 144)
-       * Leftclick and drag to move past many slices.
-       * Leftclick ahead or behind to move 1 image at a time.
+       * Left click and drag to move past many slices.
+       * Left click ahead or behind to move 1 image at a time.
        * Hold button click down to scroll continuously through slices. 
        * Middle click (option+left click on macOS if you set it up in XQuartz) 
          in 'trough' to jump quickly to a given location.
@@ -216,7 +216,7 @@ Image Window
 
    * - :ref:`Colr, Swap, Norm, .etc<gui_guide_image_window_RightButtons>`
      - 
-   * - * ``Colr`` changes grayscale to color spectrum, and back (fun & useless).
+   * - * ``Colr`` changes gray scale to color spectrum, and back (fun & useless).
        * ``Swap`` swaps top of intensity bar with bottom. (handy to see things 
          like the bounding box or abnormalities depending on the type of data). 
          This is similar to the ``Invert?`` button 
@@ -237,7 +237,7 @@ Image Window
        * ``crop`` lets you crop the image viewing area.
        * ``Card`` or ``Obliq`` (not a button) tells you if the dataset axes 
           are parallel to LR-AP-IS or not parallel. 
-       * At bottom right, the arrowpad controls the crosshairs.
+       * At bottom right, the arrow pad controls the crosshairs.
        
          * Arrows move 1 pixel in that direction for the **current window**.
          * Central button closes and opens crosshair gap (for fine control 
@@ -299,7 +299,7 @@ Image Window
 
        * Selecting ``Sav:aGif`` will save an animated .gif file scrolling 
          through the slices of the image.
-       * Selecting this will change the saveing dialog box adding a ``From:`` 
+       * Selecting this will change the saving dialog box adding a ``From:`` 
          and ``To:`` indicating the slices that you want.
 
          .. list-table::
@@ -467,44 +467,157 @@ Image Window
           :width: 100%
           :align: right
 
-Disp Menu
-=========
-
-.. _gui_guide_image_window_Disp_menu:
+Disp Options
+============
 
 .. _gui_guide_image_window_Disp:
 
+``Disp`` controls the way images are displayed and saved.
+It pops up its own control window and most controls change image immediately.
+
+.. list-table:: 
+   :header-rows: 0
+   :width: 60%
+   :align: center
+
+   * - .. image:: media/image_window_Disp.png
+          :width: 100%
+          :align: center
+     - .. image:: media/image_window_Disp_menu.png
+          :width: 100%
+          :align: center
+
+.. _gui_guide_image_window_orient:
+
 .. list-table::
-   :widths: 55 45
+   :widths: 80 20
    :header-rows: 1
 
-   * - :ref:`Disp<gui_guide_image_window_Disp>`
+   * - :ref:`Orientation<gui_guide_image_window_orient>`
      - 
-   * - * ``Disp`` controls the way images are displayed and saved.
-       * **This may need to go on its own page!**
-       * It pops up its own control window and most controls change image 
-         immediately.
-       * Orientation controls at top allow you to flip image around.
+   * - * Orientation controls at top allow you to flip image around in certain
+         directions (clockwise and counter clockwise) and number of degrees.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - No Rotation
+               - CCW 90
+               - Rot 180
+               - CW 90
+             * - .. image:: media/image_window_Disp_menu_no_rot.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_ccw_90.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_rot_180.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_cw_90.png
+                    :width: 100%
+
        * ``+ LR Mirror`` flips the image left to right. For example, if the 
          image was displayed ``left=Left`` it will flip to ``left=Right``
-       * ``No Overlay`` lets you turn color overlays off (crosshairs; function)
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Not flipped (default).
+               - Left Right flipped.
+             * - .. image:: media/image_window_Disp_menu_LR_not_flipped.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_LR_flipped.png
+                    :width: 100%
+
+     - .. image:: media/image_window_Disp_menu_orient.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_intensity:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Overlay and Intensity<gui_guide_image_window_intensity>`
+     - 
+   * - * ``No Overlay`` lets you turn color overlays off (crosshairs, 
+         functional overlays, etc.)
        * ``Min-to-Max`` Intensity bar is data min-to-max.
        * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
          This avoids having a few very bright voxels dominate intensity 
-         scaling.
-       * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
-         tries to keep image shape *true* as you stretch/shrink window.
+         scaling.  This is the default setting.
+       * ``Clipped`` Intensities are mapped over an auto-clipped range of data 
+         in all images (Axial, Sagittal, and Coronal).
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Min-to-Max
+               - 2%-to-98%
+               - Clipped
+             * - .. image:: media/image_window_Disp_Min2Max.jpg
+                    :width: 100%
+               - .. image:: media/image_window_Disp_2to98.jpg
+                    :width: 100%
+               - .. image:: media/image_window_Disp_Clipped.jpg
+                    :width: 100%
+
+     - .. image:: media/image_window_Disp_menu_intensity.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_aspect_save:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Aspect and Save<gui_guide_image_window_aspect_save>`
+     - 
+   * - * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
+         tries to keep image shape *true* as you stretch/shrink window.  To 
+         get the window back to normal, close and reopen it.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Not sure why you would want to do this...
+             * - .. image:: media/image_window_Disp_menu_aspect.png
+                    :width: 100%
+
        * The save panel controls how images are saved to disk. For more 
-         details, :ref:`(see below)<gui_guide_image_window_Save1>`
+         details, :ref:`(see here)<gui_guide_image_window_Save1>`
 
          * All buttons off: saved image file contains slice raw data.
-           (not what you want)
-         * ``Nsize Save``: same, but images are 2N in size.
-         * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
+           Saved in PNM format (portable bitmap format).  These may not open 
+           in your default image viewer.
+         * ``Nsize Save``: images are saved at a power of 2 in PNM format .
+         * ``PNM Save``: images are saved in PNM format.
          * ``Save to .xxx(s)``: saves image(s) to specified format.
          * ``Save One``: for saving montage.
          * ``Save Anim GIF`` will save an animated .gif file scrolling 
            through the slices of the image.
+
+     - .. image:: media/image_window_Disp_menu_aspect_save.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_project:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Aspect and Save<gui_guide_image_window_aspect_save>`
+     - 
+   * - * ``Free Aspect``
 
        * ``Project`` applies a projection function to plus-or-minus 'Slab' 
          images from each pixel. 
@@ -546,21 +659,20 @@ Disp Menu
              * - .. image:: media/image_window_Disp_SurfGraph.png
                    :width: 100%
 
-       * Extra imaging processing filters are provided at the bottom.
+       * Extra imaging processing filters are provided at the bottom.  These 
+         options have extra parameters adjustable in the intensity bar popup 
+         window. :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`
        
+         * ``Flatten`` "flattens" the histogram of the image similar effect as 
+           adjusting the brightness and contrast manually.
          * ``Sharpen`` is sometimes useful for deblurring images.
-         * ``Edge Detect`` is useful as the underlay for checking alignment.
+         * ``Edge Detect`` applies a Sobel edge detection filter. 
+           This is useful as the underlay for checking alignment.
+         * ``VG paint`` applies a "painting" effect to the image just for fun.
        
-     - .. image:: media/image_window_Disp.png
+     - .. image:: media/image_window_Disp_menu.png
           :width: 100%
-          :align: right
-
-       .. image:: media/image_window_Disp_menu.png
-          :width: 60%
           :align: left
-
-
-
 
 
 Intensity Bar Hidden Popup
