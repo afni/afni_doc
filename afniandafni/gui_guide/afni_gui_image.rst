@@ -517,7 +517,8 @@ It pops up its own control window and most controls change image immediately.
                     :width: 100%
 
        * ``+ LR Mirror`` flips the image left to right. For example, if the 
-         image was displayed ``left=Left`` it will flip to ``left=Right``
+         image was displayed ``left=Anterior``, it will flip to 
+         ``left=Posterior``.
 
          .. list-table::
              :width: 100%
@@ -598,12 +599,57 @@ It pops up its own control window and most controls change image immediately.
          * All buttons off: saved image file contains slice raw data.
            Saved in PNM format (portable bitmap format).  These may not open 
            in your default image viewer.
-         * ``Nsize Save``: images are saved at a power of 2 in PNM format .
+         * ``Nsize Save``: images are saved at a power of 2 in PNM format.
          * ``PNM Save``: images are saved in PNM format.
          * ``Save to .xxx(s)``: saves image(s) to specified format.
-         * ``Save One``: for saving montage.
-         * ``Save Anim GIF`` will save an animated .gif file scrolling 
-           through the slices of the image.
+         * ``Save One``: Selected is default.  This will only save a snapshot of 
+           the current display.  This is the ONLY way to save a montage.  If 
+           it is not selected, the ``Save`` button asks for the first and 
+           last image indexes (slices) to save.  Then it saves each 
+           individual image (no montage) to an individual file.  By default, 
+           it saves **ALL** slices with the file name format of PREFIX.xxxx.
+
+           .. list-table::
+               :width: 40%
+               :align: center
+               :header-rows: 0
+
+               * - .. image:: media/image_window_Disp_menu_save_multi.png
+                      :width: 100%
+
+         * ``Save Anim GIF`` and ``Save Anim MPG`` will save an animated 
+           "movie" file scrolling through the slices of the image.  
+           
+           * Files will 
+             be saved in ``.gif`` or ``.mpg`` depending on the selection.
+           * This takes precedence over ``Save One``.  
+           * The top of the image window will display the progress of the 
+             export.
+           * This first exports a file per slice, then combines them into 
+             the ``.gif`` or ``.mpg`` format.  If you have a lot of slices, 
+             you will see the individual files in your current working 
+             directory before they are combined.
+           * GIF animations may require gifsicle to be installed.
+           * MPEG-1 animations may require ffmpeg to be installed.
+           * The ``.gif`` format takes up a lot more file space than ``.mpg`` 
+             with the same number of slices.
+           * The speed difference below is just from the display viewer.  Both 
+             movies have the same slices.
+
+           .. list-table::
+               :width: 60%
+               :align: center
+               :header-rows: 1
+
+               * - GIF format
+                 - MPG format
+
+               * - .. image:: media/image_window_Disp_menu_animated_gif.gif
+                      :width: 100%
+                 - .. image:: media/image_window_Disp_menu_animated_mpg.mpg
+                      :width: 100%
+
+
 
      - .. image:: media/image_window_Disp_menu_aspect_save.png
           :width: 100%
@@ -657,7 +703,7 @@ It pops up its own control window and most controls change image immediately.
              :header-rows: 0
  
              * - .. image:: media/image_window_Disp_SurfGraph.png
-                   :width: 100%
+                    :width: 100%
 
        * Extra imaging processing filters are provided at the bottom.  These 
          options have extra parameters adjustable in the intensity bar popup 
