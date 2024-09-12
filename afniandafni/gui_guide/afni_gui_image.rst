@@ -643,13 +643,10 @@ It pops up its own control window and most controls change image immediately.
 
                * - GIF format
                  - MPG format
-
                * - .. image:: media/image_window_Disp_menu_animated_gif.gif
                       :width: 100%
                  - .. image:: media/image_window_Disp_menu_animated_mpg.mpg
                       :width: 100%
-
-
 
      - .. image:: media/image_window_Disp_menu_aspect_save.png
           :width: 100%
@@ -661,16 +658,70 @@ It pops up its own control window and most controls change image immediately.
    :widths: 80 20
    :header-rows: 1
 
-   * - :ref:`Aspect and Save<gui_guide_image_window_aspect_save>`
+   * - :ref:`Project<gui_guide_image_window_project>`
      - 
-   * - * ``Free Aspect``
-
-       * ``Project`` applies a projection function to plus-or-minus 'Slab' 
+   * - * ``Project`` applies a projection function to plus-or-minus 'Slab' 
          images from each pixel. 
+
+         * ``Minimum`` = smallest value in the slab.
+         * ``Maximum`` = largest value in the slab.
+         * ``Mean`` = average value in the slab.
+         * ``Median`` = median value in the slab.
+         * ``OSfilt`` = xxx.
+         * ``Extreme`` = value farthest from the median.
+         * ``MAD`` = Mean absolute deviation.
+         * ``AdptMean`` = estimator of the mean.
+
        * ``Slab +-`` selects the number of slices around the current view to 
          use for the projection.  Useful for looking at blood vessels and 
-         other different images.
-       * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
+         other different images.  For example, selecting 2 will project 5 
+         slices (2 before, 2 after and the central slice).  Options range from 
+         0 to 19.
+       * Below are examples of the projection functions with slab size of 5.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+             
+             * - None
+               - Minimum
+               - Maximum
+               - Mean
+               - Median
+             * - .. image:: media/image_window_Disp_menu_project_none.png
+               - .. image:: media/image_window_Disp_menu_project_min.png
+               - .. image:: media/image_window_Disp_menu_project_max.png
+               - .. image:: media/image_window_Disp_menu_project_mean.png
+               - .. image:: media/image_window_Disp_menu_project_median.png
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+             
+             * - OSfilt
+               - Extreme
+               - MAD
+               - AdptMean
+             * - .. image:: media/image_window_Disp_menu_project_OSfilt.png
+               - .. image:: media/image_window_Disp_menu_project_extreme.png
+               - .. image:: media/image_window_Disp_menu_project_MAD.png
+               - .. image:: media/image_window_Disp_menu_project_AdptMean.png
+
+     - .. image:: media/image_window_Disp_menu_project.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_tran:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`The Rest<gui_guide_image_window_tran>`
+     - 
+   * - * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
          and ``SSqrt`` are useful for images with extreme values.
        * ``Tran 2D`` provides some 2D image filters for the underlay only. 
          ``Median 9`` smoothing can be useful for printing images.
