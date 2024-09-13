@@ -270,10 +270,9 @@ Define Overlay
          sets the ``Thr`` sub-brick to be the next sub-brick after the 
          ``OLay`` that is selected. This is useful for t-tests or anything 
          with a coefficient and a T-stat.
-       * ``AutoThreshold``: the threshold is selected as ``0.5*median`` of the 
-         upper 65% of the positive values in the volume. If it's a statistic, 
-         then the threshold is the square root of the value that 
-         corresponds to 0.001 and that ``AutoThreshold`` value.
+       * ``AutoThreshold``: a quick automatic threshold, combining p=0.001 
+         and the 3dCliplevel algorithm. More info `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClipLevel_sphx.html#ahelp-3dcliplevel>`_.
        * ``Set threshold`` pops up a dialog allowing you to enter a 
          number directly. It will modify the ``10^`` selection to match the 
          number you enter. If you enter a negative number, the threshold 
@@ -349,10 +348,128 @@ Define Overlay
        * ``Tran 0D`` and ``Tran 2D`` are the same functions in the ``Disp`` 
          menu in the image window. :ref:`See here.<gui_guide_image_window_Disp>`
 
-
      - .. image:: media/overlay_main_olay_hidden.png
           :width: 70%
           :align: left
+
+.. _gui_guide_overlay_A_B:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Alpha and Box (A B)<gui_guide_overlay_A_B>`
+     -
+
+   * - * The ``A`` (alpha) and ``B`` (boxed) buttons allow you to display all 
+         of your statistical results while highlighting voxels above your 
+         threshold. This is a nice way to show your results in a paper. 
+         For more details,see the **Highlight Results, Don't Hide Them** 
+         paper in bioRxiv `here 
+         <https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_.
+         Another helpful reference is `here 
+         <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3920766/>`_.
+      
+       * The left image (below) is the default view. The right image (below) 
+         has both ``A`` and ``B`` selected. The below threshold voxels have 
+         alpha fading. The above threshold voxel clusters have boxes around 
+         them. This is our preferred method of viewing our results.
+
+         .. list-table::
+             :widths: 25 25
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_A_B_default.png
+                   :width: 100%
+                   :align: right
+               - .. image:: media/overlay_main_A_B_both.png
+                   :width: 100%
+                   :align: right
+
+       * The left image (below) is the has only the ``A`` alpha fading. 
+         The ``A`` (alpha) only applies to *continuous* color scales.
+       * The right image (below) has only the ``B`` boxes. You can change 
+         the color of the boxes with the ``AFNI_FUNC_BOXED_COLOR`` environment 
+         variable.
+
+         .. list-table::
+             :widths: 25 25
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_A_B_alpha.png
+                   :width: 100%
+                   :align: right
+               - .. image:: media/overlay_main_A_B_box.png
+                   :width: 100%
+                   :align: right
+
+       * For more info and customization settings for these options, 
+         search for ``AFNI_FUNC_BOXED_COLOR`` in the environment variables 
+         page `here 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/afniandafni/readme_env_vars.html>`_.
+       
+     - .. image:: media/overlay_main_A_B.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_overlay_Clusterize:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`Clusterize<gui_guide_overlay_Clusterize>`
+     -
+   * - * Clusterize is an interactive version of 
+         `3dClusterize 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClusterize_sphx.html#ahelp-3dclusterize>`_
+         program.
+   
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/overlay_main_Clusterize_control.png
+                   :width: 70%
+
+     - .. image:: media/overlay_main_Clusterize.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_overlay_on_the_fly:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`On-the-fly Functional Overlays<gui_guide_overlay_on_the_fly>`
+     -
+   * - * ``InstaCorr``
+       * ``InstaCalc``
+       * ``3dTstat``
+       * ``GrpInCorr``
+
+     - .. image:: media/overlay_main_on_the_fly.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_overlay_InstaCorr:
+
+.. list-table::
+   :widths: 60 40
+   :header-rows: 1
+
+   * - :ref:`InstaCorr<gui_guide_overlay_InstaCorr>`
+     -
+   * - * 
+
+     - .. image:: media/overlay_main_InstaCorr.png
+          :width: 100%
+          :align: right
+
 
 Jump within GUI Guide
 ========================

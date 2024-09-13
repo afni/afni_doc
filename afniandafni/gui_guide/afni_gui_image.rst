@@ -161,8 +161,8 @@ Image Window
    * - * The slider below image lets you move between slices.
        * The number above the slider indicates the current displayed slice. 
          (in this case 144)
-       * Leftclick and drag to move past many slices.
-       * Leftclick ahead or behind to move 1 image at a time.
+       * Left click and drag to move past many slices.
+       * Left click ahead or behind to move 1 image at a time.
        * Hold button click down to scroll continuously through slices. 
        * Middle click (option+left click on macOS if you set it up in XQuartz) 
          in 'trough' to jump quickly to a given location.
@@ -191,7 +191,7 @@ Image Window
        * Smallest-to-largest display range is selected from the ``Disp``
          control panel. :ref:`(see here)<gui_guide_image_window_Disp>`, or 
          from the right click hidden popup menu 
-         :ref:`(see here)<edu_afni03_image_window_intensity_popup>`.
+         :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`.
        * Scroll-wheel in the intensity bar changes contrast.
        * ALT (``⌘`` on macOS) plus scroll-wheel in intensity bar changes 
          brightness.
@@ -216,8 +216,11 @@ Image Window
 
    * - :ref:`Colr, Swap, Norm, .etc<gui_guide_image_window_RightButtons>`
      - 
-   * - * ``Colr`` changes grayscale to color spectrum, and back (fun & useless).
-       * ``Swap`` swaps top of intensity bar with bottom.
+   * - * ``Colr`` changes gray scale to color spectrum, and back (fun & useless).
+       * ``Swap`` swaps top of intensity bar with bottom. (handy to see things 
+         like the bounding box or abnormalities depending on the type of data). 
+         This is similar to the ``Invert?`` button 
+         :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup_invert>`.
        * ``Norm`` returns the intensity bar to normal (after you mess it up).
        * ``c`` controls contrast. ``b`` controls brightness.
 
@@ -234,7 +237,7 @@ Image Window
        * ``crop`` lets you crop the image viewing area.
        * ``Card`` or ``Obliq`` (not a button) tells you if the dataset axes 
           are parallel to LR-AP-IS or not parallel. 
-       * At bottom right, the arrowpad controls the crosshairs.
+       * At bottom right, the arrow pad controls the crosshairs.
        
          * Arrows move 1 pixel in that direction for the **current window**.
          * Central button closes and opens crosshair gap (for fine control 
@@ -246,94 +249,6 @@ Image Window
           :width: 100%
           :align: right
 
-.. _gui_guide_image_window_Disp:
-
-.. list-table::
-   :widths: 55 45
-   :header-rows: 1
-
-   * - :ref:`Disp<gui_guide_image_window_Disp>`
-     - 
-   * - * ``Disp`` controls the way images are displayed and saved.
-       * **This may need to go on its own page!**
-       * It pops up its own control window and most controls change image 
-         immediately.
-       * Orientation controls at top allow you to flip image around.
-       * ``+ LR Mirror`` flips the image left to right. For example, if the 
-         image was displayed ``left=Left`` it will flip to ``left=Right``
-       * ``No Overlay`` lets you turn color overlays off (crosshairs; function)
-       * ``Min-to-Max`` Intensity bar is data min-to-max.
-       * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
-         This avoids having a few very bright voxels dominate intensity 
-         scaling.
-       * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
-         tries to keep image shape *true* as you stretch/shrink window.
-       * The save panel controls how images are saved to disk. For more 
-         details, :ref:`(see below)<gui_guide_image_window_Save1>`
-
-         * All buttons off: saved image file contains slice raw data.
-           (not what you want)
-         * ``Nsize Save``: same, but images are 2N in size.
-         * ``PNM Save``: images are saved in PPM/PGM format (color/gray).
-         * ``Save to .xxx(s)``: saves image(s) to specified format.
-         * ``Save One``: for saving montage.
-         * ``Save Anim GIF`` will save an animated .gif file scrolling 
-           through the slices of the image.
-
-       * ``Project`` applies a projection function to plus-or-minus 'Slab' 
-         images from each pixel. 
-       * ``Slab +-`` selects the number of slices around the current view to 
-         use for the projection.  Useful for looking at blood vessels and 
-         other different images.
-       * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
-         and ``SSqrt`` are useful for images with extreme values.
-       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
-         ``Median 9`` smoothing can be useful for printing images.
-       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
-         as x vs. y graphs. 
-         
-         .. list-table::
-             :width: 100%
-             :align: center
-             :header-rows: 0
- 
-             * - .. image:: media/image_window_Disp_RowGraphs.png
-                   :width: 100%
-                   
-         * Each graph is from one displayed horizontal row of 
-           the image. 
-         * The bottom rowgraph is from the image row under the crosshairs. 
-         * Upper rowgraphs are from higher image rows. 
-         * Image transformation functions and image rotation/flips will affect 
-           the rowgraphs as well as the image display. 
-         * The color marker indicates the crosshair focus point and can be 
-           hidden with the ``No Overlay`` button.
-         * If you want columns, flip the image with ``CCW 90``.
-
-       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
-
-         .. list-table::
-             :width: 100%
-             :align: center
-             :header-rows: 0
- 
-             * - .. image:: media/image_window_Disp_SurfGraph.png
-                   :width: 100%
-
-       * Extra imaging processing filters are provided at the bottom.
-       
-         * ``Sharpen`` is sometimes useful for deblurring images.
-         * ``Edge Detect`` is useful as the underlay for checking alignment.
-       
-     - .. image:: media/image_window_Disp.png
-          :width: 100%
-          :align: right
-
-       .. image:: media/image_window_Disp_menu.png
-          :width: 60%
-          :align: left
-
-          
 .. _gui_guide_image_window_Save1:
 
 .. list-table::
@@ -384,7 +299,7 @@ Image Window
 
        * Selecting ``Sav:aGif`` will save an animated .gif file scrolling 
          through the slices of the image.
-       * Selecting this will change the saveing dialog box adding a ``From:`` 
+       * Selecting this will change the saving dialog box adding a ``From:`` 
          and ``To:`` indicating the slices that you want.
 
          .. list-table::
@@ -551,7 +466,681 @@ Image Window
      - .. image:: media/image_window_Rec.png
           :width: 100%
           :align: right
+
+Disp Options
+============
+
+.. _gui_guide_image_window_Disp:
+
+``Disp`` controls the way images are displayed and saved.
+It pops up its own control window and most controls change image immediately.
+
+.. list-table:: 
+   :header-rows: 0
+   :width: 60%
+   :align: center
+
+   * - .. image:: media/image_window_Disp.png
+          :width: 100%
+          :align: center
+     - .. image:: media/image_window_Disp_menu.png
+          :width: 100%
+          :align: center
+
+.. _gui_guide_image_window_orient:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Orientation<gui_guide_image_window_orient>`
+     - 
+   * - * Orientation controls at top allow you to flip image around in certain
+         directions (clockwise and counter clockwise) and number of degrees.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - No Rotation
+               - CCW 90
+               - Rot 180
+               - CW 90
+             * - .. image:: media/image_window_Disp_menu_no_rot.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_ccw_90.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_rot_180.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_cw_90.png
+                    :width: 100%
+
+       * ``+ LR Mirror`` flips the image left to right. For example, if the 
+         image was displayed ``left=Anterior``, it will flip to 
+         ``left=Posterior``.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Not flipped (default).
+               - Left Right flipped.
+             * - .. image:: media/image_window_Disp_menu_LR_not_flipped.png
+                    :width: 100%
+               - .. image:: media/image_window_Disp_menu_LR_flipped.png
+                    :width: 100%
+
+     - .. image:: media/image_window_Disp_menu_orient.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_intensity:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Overlay and Intensity<gui_guide_image_window_intensity>`
+     - 
+   * - * ``No Overlay`` lets you turn color overlays off (crosshairs, 
+         functional overlays, etc.)
+       * ``Min-to-Max`` Intensity bar is data min-to-max.
+       * ``2%-to-98%`` Intensity bar is smallest 2% of data to largest 98%. 
+         This avoids having a few very bright voxels dominate intensity 
+         scaling.  This is the default setting.
+       * ``Clipped`` Intensities are mapped over an auto-clipped range of data 
+         in all images (Axial, Sagittal, and Coronal).
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Min-to-Max
+               - 2%-to-98%
+               - Clipped
+             * - .. image:: media/image_window_Disp_Min2Max.jpg
+                    :width: 100%
+               - .. image:: media/image_window_Disp_2to98.jpg
+                    :width: 100%
+               - .. image:: media/image_window_Disp_Clipped.jpg
+                    :width: 100%
+
+     - .. image:: media/image_window_Disp_menu_intensity.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_aspect_save:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Aspect and Save<gui_guide_image_window_aspect_save>`
+     - 
+   * - * ``Free Aspect`` lets you distort image shape freely. Otherwise, AFNI 
+         tries to keep image shape *true* as you stretch/shrink window.  To 
+         get the window back to normal, close and reopen it.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Not sure why you would want to do this...
+             * - .. image:: media/image_window_Disp_menu_aspect.png
+                    :width: 100%
+
+       * The save panel controls how images are saved to disk. For more 
+         details, :ref:`(see here)<gui_guide_image_window_Save1>`
+
+         * All buttons off: saved image file contains slice raw data.
+           Saved in PNM format (portable bitmap format).  These may not open 
+           in your default image viewer.
+         * ``Nsize Save``: images are saved at a power of 2 in PNM format.
+         * ``PNM Save``: images are saved in PNM format.
+         * ``Save to .xxx(s)``: saves image(s) to specified format.
+         * ``Save One``: Selected is default.  This will only save a snapshot of 
+           the current display.  This is the ONLY way to save a montage.  If 
+           it is not selected, the ``Save`` button asks for the first and 
+           last image indexes (slices) to save.  Then it saves each 
+           individual image (no montage) to an individual file.  By default, 
+           it saves **ALL** slices with the file name format of PREFIX.xxxx.
+
+           .. list-table::
+               :width: 40%
+               :align: center
+               :header-rows: 0
+
+               * - .. image:: media/image_window_Disp_menu_save_multi.png
+                      :width: 100%
+
+         * ``Save Anim GIF`` and ``Save Anim MPG`` will save an animated 
+           "movie" file scrolling through the slices of the image.  
+           
+           * Files will 
+             be saved in ``.gif`` or ``.mpg`` depending on the selection.
+           * This takes precedence over ``Save One``.  
+           * The top of the image window will display the progress of the 
+             export.
+           * This first exports a file per slice, then combines them into 
+             the ``.gif`` or ``.mpg`` format.  If you have a lot of slices, 
+             you will see the individual files in your current working 
+             directory before they are combined.
+           * GIF animations may require gifsicle to be installed.
+           * MPEG-1 animations may require ffmpeg to be installed.
+           * The ``.gif`` format takes up a lot more file space than ``.mpg`` 
+             with the same number of slices.
+           * The speed difference below is just from the display viewer.  Both 
+             movies have the same slices.
+
+           .. list-table::
+               :width: 60%
+               :align: center
+               :header-rows: 1
+
+               * - GIF format
+                 - MPG format
+               * - .. image:: media/image_window_Disp_menu_animated_gif.gif
+                      :width: 100%
+                 - .. image:: media/image_window_Disp_menu_animated_mpg.mpg
+                      :width: 100%
+
+     - .. image:: media/image_window_Disp_menu_aspect_save.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_project:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Project<gui_guide_image_window_project>`
+     - 
+   * - * ``Project`` applies a projection function to plus-or-minus 'Slab' 
+         images from each pixel. 
+
+         * ``Minimum`` = smallest value in the slab.
+         * ``Maximum`` = largest value in the slab.
+         * ``Mean`` = average value in the slab.
+         * ``Median`` = median value in the slab.
+         * ``OSfilt`` = xxx.
+         * ``Extreme`` = value farthest from the median.
+         * ``MAD`` = Mean absolute deviation.
+         * ``AdptMean`` = estimator of the mean.
+
+       * ``Slab +-`` selects the number of slices around the current view to 
+         use for the projection.  Useful for looking at blood vessels and 
+         other different images.  For example, selecting 2 will project 5 
+         slices (2 before, 2 after and the central slice).  Options range from 
+         0 to 19.
+       * Below are examples of the projection functions with slab size of 5.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+             
+             * - None
+               - Minimum
+               - Maximum
+               - Mean
+               - Median
+             * - .. image:: media/image_window_Disp_menu_project_none.png
+               - .. image:: media/image_window_Disp_menu_project_min.png
+               - .. image:: media/image_window_Disp_menu_project_max.png
+               - .. image:: media/image_window_Disp_menu_project_mean.png
+               - .. image:: media/image_window_Disp_menu_project_median.png
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+             
+             * - OSfilt
+               - Extreme
+               - MAD
+               - AdptMean
+             * - .. image:: media/image_window_Disp_menu_project_OSfilt.png
+               - .. image:: media/image_window_Disp_menu_project_extreme.png
+               - .. image:: media/image_window_Disp_menu_project_MAD.png
+               - .. image:: media/image_window_Disp_menu_project_AdptMean.png
+
+     - .. image:: media/image_window_Disp_menu_project.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_tran:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`The Rest<gui_guide_image_window_tran>`
+     - 
+   * - * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
+         and ``SSqrt`` are useful for images with extreme values.
+       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
+         ``Median 9`` smoothing can be useful for printing images.
+       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
+         as x vs. y graphs. 
+         
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_RowGraphs.png
+                   :width: 100%
+                   
+         * Each graph is from one displayed horizontal row of 
+           the image. 
+         * The bottom rowgraph is from the image row under the crosshairs. 
+         * Upper rowgraphs are from higher image rows. 
+         * Image transformation functions and image rotation/flips will affect 
+           the rowgraphs as well as the image display. 
+         * The color marker indicates the crosshair focus point and can be 
+           hidden with the ``No Overlay`` button.
+         * If you want columns, flip the image with ``CCW 90``.
+
+       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 0
+ 
+             * - .. image:: media/image_window_Disp_SurfGraph.png
+                    :width: 100%
+
+       * Extra imaging processing filters are provided at the bottom.  These 
+         options have extra parameters adjustable in the intensity bar popup 
+         window. :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`
+       
+         * ``Flatten`` "flattens" the histogram of the image similar effect as 
+           adjusting the brightness and contrast manually.
+         * ``Sharpen`` is sometimes useful for deblurring images.
+         * ``Edge Detect`` applies a Sobel edge detection filter. 
+           This is useful as the underlay for checking alignment.
+         * ``VG paint`` applies a "painting" effect to the image just for fun.
+       
+     - .. image:: media/image_window_Disp_menu.png
+          :width: 100%
+          :align: left
+
+
+Intensity Bar Hidden Popup
+==========================
+
+.. _gui_guide_image_window_IntensityBar_Popup:
+
+.. list-table:: 
+   :header-rows: 1
+   :width: 40%
+   :align: center
+
+   * - :ref:`Vertical Intensity Bar Popup<gui_guide_image_window_IntensityBar_Popup>`
+     - 
+   * - AFNI GUI: Image Window Intensity Bar Popup
+   * - .. image:: media/image_window_IntensityBar_Popup.png
+          :width: 75%
+          :align: center
+   * - :ref:`Right click on the image window intensity bar.
+       <gui_guide_image_window_IntensityBar>`
+
+These options apply to the ``Underlay`` data set exclusively and are set 
+per image window.  For example if you change an option in the sagittal image 
+window, it will not apply to the axial or coronal image windows.  The changes 
+only appear in the image window and do not change the data set on disk.
+
+.. _gui_guide_image_window_IntensityBar_Popup_disp_range:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Choose Display Range
+       <gui_guide_image_window_IntensityBar_Popup_disp_range>`
+     - 
+   * - * ``Choose Display Range`` pops up a dialog box that allows you to set 
+         the bottom and top intensity values to display in the image 
+         window.  
+
+       * This anatomical image has intensity values that range from 0 to 4111.
+         The ``Clean`` button shows that the AFNI gui is already and by 
+         default, showing a range of 2% to 98%. The histogram below shows the 
+         number of voxels at each of the intensity values. Notice the large 
+         number of voxels near zero. Those are excluded in the default view of 
+         2% minimum. (that is a good thing)
+         
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_disp_range_clean.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_disp_range_clean_hist.png
+                   :width: 100%
+
+       * This is the same anatomical image but with the bottom 200 values 
+         excluded. Notice the intensity range was changed to ``[User]``
+         
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_disp_range_200_4111.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_disp_range_200_4111_hist.png
+                   :width: 100%
+
+     - .. image:: media/image_window_IntensityBar_Popup_disp_range.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_zero_color:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Choose Zero Color
+       <gui_guide_image_window_IntensityBar_Popup_zero_color>`
+     - 
+   * - * ``Choose Zero Color`` Allows you to choose a color to represent the 
+         value of zero (0).  In the example on the left, the zero color is 
+         changed to white.  The default option is ``none``.
+       
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_zero_color_cont.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_zero_color_white.png
+                   :width: 100%
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+
+            * - This is more useful for masked data so you can change the 
+                background color and save out the image for a more stylistic 
+                version for a paper.
+
+              - .. image:: media/image_window_IntensityBar_Popup_zero_color_white_mni.png
+                   :width: 100%
+
+     - .. image:: media/image_window_IntensityBar_Popup_zero_color.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_automask:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Automask?<gui_guide_image_window_IntensityBar_Popup_automask>`
+     - 
+   * - * ``Automask?`` is a toggle option to instantly mask the image similar 
+         to `3dAutomask <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dAutomask_sphx.html#ahelp-3dautomask#>`_.
+         The image on the right is the "masked" version of the left image.
+         You can quickly toggle this on or off from that popup option and this
+         does not change the image data on disk.  
+       * Use this on EPI or previously skull stripped anatomical data sets.  
+         This does not do "skull-stripping"! 
+       * It is also useful in combination with the ``Choose Zero Color`` 
+         option for images in papers.
+       
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_Automask_epi.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_Automask_epi_masked.png
+                   :width: 100%
+
+     - .. image:: media/image_window_IntensityBar_Popup_Automask.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_image_window_IntensityBar_Popup_invert:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Invert?
+       <gui_guide_image_window_IntensityBar_Popup_invert>`
+     - 
+   * - * ``Invert?`` is a toggle option to compute a "negative" version of the 
+         underlay data set. 
+       * The image is first automasked then grey scale map is inverted.
+       * The functionality is similar to what is described in the old message 
+         board post 
+         `here <https://afni.nimh.nih.gov/afni/community/board/read.php?1,59489,59500>`_.
+       * This function is the same as the ``Swap`` button except that the 
+         image is automasked and the background is not inverted. 
+         :ref:`(see above)<gui_guide_image_window_RightButtons>`.
+       * The program `fat_proc_imit2w_from_t1w 
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/fat_proc_imit2w_from_t1w_sphx.html#ahelp-fat-proc-imit2w-from-t1w>`_ 
+         does something similar but saves an output data set.
+       * This is sometimes useful with FLAIR data to highlight abnormalities 
+         like stroke lesions or tumors.
+       * The image on the right is the "inverted" version of the left image.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - .. image:: media/image_window_IntensityBar_Popup_Invert_epi.png
+                   :width: 100%
+            
+              - .. image:: media/image_window_IntensityBar_Popup_Invert_epi_inverted.png
+                   :width: 100%
+
+     - .. image:: media/image_window_IntensityBar_Popup_Invert.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_image_window_IntensityBar_Popup_flatten:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Choose Flatten Range
+       <gui_guide_image_window_IntensityBar_Popup_flatten>`
+     - 
+   * - * ``Choose Flatten Range``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_flatten.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_image_window_IntensityBar_Popup_sharpen:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Choose Sharpen factor
+       <gui_guide_image_window_IntensityBar_Popup_sharpen>`
+     - 
+   * - * ``Choose Sharpen factor``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_sharpen.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_VG_factor:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Choose VG factor
+       <gui_guide_image_window_IntensityBar_Popup_VG_factor>`
+     - 
+   * - * ``VG_factor``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_VG_factor.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_crop_autocenter:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Crop Autocenter?
+       <gui_guide_image_window_IntensityBar_Popup_crop_autocenter>`
+     - 
+   * - * ``crop_autocenter``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_crop_autocenter.png
+          :width: 100%
+          :align: right
           
+.. _gui_guide_image_window_IntensityBar_Popup_global_range:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Image Global Range
+       <gui_guide_image_window_IntensityBar_Popup_global_range>`
+     - 
+   * - * ``global_range``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_global_range.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_plot_overlay:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Plot Overlay Plots
+       <gui_guide_image_window_IntensityBar_Popup_plot_overlay>`
+     - 
+   * - * ``plot_overlay``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_plot_overlay.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_display_graymap:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Display Graymap Plot
+       <gui_guide_image_window_IntensityBar_Popup_display_graymap>`
+     - 
+   * - * ``display_graymap``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_display_graymap.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_label:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Label, Size, Label Append String
+       <gui_guide_image_window_IntensityBar_Popup_label>`
+     - 
+   * - * ``Label``
+       * ``Size``
+       * ``Label Append String``
+
+     - .. image:: media/image_window_IntensityBar_Popup_label.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_tick:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Tick Div., Tick Size
+       <gui_guide_image_window_IntensityBar_Popup_tick>`
+     - 
+   * - * ``Tick Div.``
+       * ``Tick Size``
+
+     - .. image:: media/image_window_IntensityBar_Popup_tick.png
+          :width: 100%
+          :align: right
+
+.. _gui_guide_image_window_IntensityBar_Popup_CheckBrd:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`CheckBrd#<gui_guide_image_window_IntensityBar_Popup_CheckBrd>`
+     - 
+   * - * ``CheckBrd``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_CheckBrd.png
+          :width: 100%
+          :align: right
+
+
+.. _gui_guide_image_window_IntensityBar_Popup_Anim_Dup:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Anim_Dup<gui_guide_image_window_IntensityBar_Popup_Anim_Dup>`
+     - 
+   * - * ``Anim_Dup``
+       * 
+
+     - .. image:: media/image_window_IntensityBar_Popup_Anim_Dup.png
+          :width: 100%
+          :align: right
 
 Jump within GUI Guide
 ========================
