@@ -721,13 +721,27 @@ It pops up its own control window and most controls change image immediately.
    :widths: 80 20
    :header-rows: 1
 
-   * - :ref:`The Rest<gui_guide_image_window_tran>`
+   * - :ref:`Transforms<gui_guide_image_window_tran>`
      - 
    * - * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
          and ``SSqrt`` are useful for images with extreme values.
        * ``Tran 2D`` provides some 2D image filters for the underlay only. 
          ``Median 9`` smoothing can be useful for printing images.
-       * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
+
+     - .. image:: media/image_window_Disp_menu_tran.png
+          :width: 100%
+          :align: left
+
+
+.. _gui_guide_image_window_RowGraphs:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Row Graphs<gui_guide_image_window_RowGraphs>`
+     - 
+   * - * ``RowGraphs`` are plots of the underlay (grayscale) image intensity 
          as x vs. y graphs. 
          
          .. list-table::
@@ -738,17 +752,43 @@ It pops up its own control window and most controls change image immediately.
              * - .. image:: media/image_window_Disp_RowGraphs.png
                    :width: 100%
                    
-         * Each graph is from one displayed horizontal row of 
-           the image. 
-         * The bottom rowgraph is from the image row under the crosshairs. 
-         * Upper rowgraphs are from higher image rows. 
-         * Image transformation functions and image rotation/flips will affect 
-           the rowgraphs as well as the image display. 
-         * The color marker indicates the crosshair focus point and can be 
-           hidden with the ``No Overlay`` button.
-         * If you want columns, flip the image with ``CCW 90``.
+       * Each graph is from one displayed horizontal row of 
+         the image. 
+       * The bottom row graph is from the image row under the crosshairs. 
+       * Upper row graphs are from higher image rows. 
+       * Image transformation functions and image rotation/flips will affect 
+         the row graphs as well as the image display. 
+       * The color marker indicates the crosshair focus point and can be 
+         hidden with the ``No Overlay`` button.
+       * If you want columns, flip the image with ``CCW 90``. 
+         :ref:`(see here)<gui_guide_image_window_orient>`
+       * The number of graphs ranges from 0 to 9.
 
-       * ``Surfgraph`` lets you graph the voxel values in a surface graph.
+     - .. image:: media/image_window_Disp_menu_RowGraphs.png
+          :width: 100%
+          :align: left
+
+.. _gui_guide_image_window_surfgraph:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Surf Graphs<gui_guide_image_window_surfgraph>`
+     - 
+   * - * ``Surfgraph`` lets you graph the voxel values in a surface graph.
+       * These are a wire mesh plot of the underlay (grayscale) image 
+         intensity vs x and y.  
+       * Use the arrows in the ``SurfGraph`` window to rotate the view point.
+       * Use the middle button between the arrows to reset the viewpoint to 
+         the default orientation.
+       * The plotting routine may produce some erroneous vertical lines on 
+         occasion.
+       * The color "UK Flag" marker indicates the crosshair focus point.  It 
+         is drawn on top of the surface at the end.  So it is always visible 
+         even if it should be hidden behind the surface.  It shines through 
+         no matter what.
+       * The color marker can be turned off with the "No Overlay" button.
 
          .. list-table::
              :width: 100%
@@ -758,7 +798,20 @@ It pops up its own control window and most controls change image immediately.
              * - .. image:: media/image_window_Disp_SurfGraph.png
                     :width: 100%
 
-       * Extra imaging processing filters are provided at the bottom.  These 
+     - .. image:: media/image_window_Disp_menu_SurfGraph.png
+          :width: 100%
+          :align: left
+
+
+.. _gui_guide_image_window_filters:
+
+.. list-table::
+   :widths: 80 20
+   :header-rows: 1
+
+   * - :ref:`Filters<gui_guide_image_window_filters>`
+     - 
+   * - * Extra imaging processing filters are provided at the bottom.  These 
          options have extra parameters adjustable in the intensity bar popup 
          window. :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`
        
@@ -769,7 +822,7 @@ It pops up its own control window and most controls change image immediately.
            This is useful as the underlay for checking alignment.
          * ``VG paint`` applies a "painting" effect to the image just for fun.
        
-     - .. image:: media/image_window_Disp_menu.png
+     - .. image:: media/image_window_Disp_menu_filters.png
           :width: 100%
           :align: left
 
