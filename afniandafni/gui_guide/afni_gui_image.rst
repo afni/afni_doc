@@ -667,7 +667,7 @@ It pops up its own control window and most controls change image immediately.
          * ``Maximum`` = largest value in the slab.
          * ``Mean`` = average value in the slab.
          * ``Median`` = median value in the slab.
-         * ``OSfilt`` = xxx.
+         * ``OSfilt`` = Order Statistics filter.
          * ``Extreme`` = value farthest from the median.
          * ``MAD`` = Mean absolute deviation.
          * ``AdptMean`` = estimator of the mean.
@@ -704,10 +704,12 @@ It pops up its own control window and most controls change image immediately.
                - Extreme
                - MAD
                - AdptMean
+               - 
              * - .. image:: media/image_window_Disp_menu_project_OSfilt.png
                - .. image:: media/image_window_Disp_menu_project_extreme.png
                - .. image:: media/image_window_Disp_menu_project_MAD.png
                - .. image:: media/image_window_Disp_menu_project_AdptMean.png
+               - .. image:: media/image_window_Disp_menu_project_blank.png
 
      - .. image:: media/image_window_Disp_menu_project.png
           :width: 100%
