@@ -725,8 +725,57 @@ It pops up its own control window and most controls change image immediately.
      - 
    * - * ``Tran 0D`` lets you transform voxel values before display. ``Log10`` 
          and ``SSqrt`` are useful for images with extreme values.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - None
+              - Log10
+              - SSqrt
+              - Abs
+            * - .. image:: media/image_window_Disp_tran_none.png
+              - .. image:: media/image_window_Disp_tran_0D_log10.png
+              - .. image:: media/image_window_Disp_tran_0D_SSqrt.png
+              - .. image:: media/image_window_Disp_tran_0D_ABS.png
+
        * ``Tran 2D`` provides some 2D image filters for the underlay only. 
          ``Median 9`` smoothing can be useful for printing images.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - Median9
+              - Winsor9
+              - OSfilt9
+              - Median21
+              - Winsor21
+            * - .. image:: media/image_window_Disp_tran_2D_Median9.png
+              - .. image:: media/image_window_Disp_tran_2D_Winsor9.png
+              - .. image:: media/image_window_Disp_tran_2D_OSfilt9.png
+              - .. image:: media/image_window_Disp_tran_2D_Median21.png
+              - .. image:: media/image_window_Disp_tran_2D_Winsor21.png
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - AdptMean21
+              - abs[FFT2D]
+              - arg[FFT2D]
+              - Sharpness
+              - 2dChain
+            * - .. image:: media/image_window_Disp_tran_2D_AdptMean21.png
+              - .. image:: media/image_window_Disp_tran_2D_absfft2d.png
+              - .. image:: media/image_window_Disp_tran_2D_argfft2d.png
+              - .. image:: media/image_window_Disp_tran_2D_sharpness.png
+              - .. image:: media/image_window_Disp_tran_2D_2dchain.png
+
+       * 0D and 2D transformations can be combined for further effects.
 
      - .. image:: media/image_window_Disp_menu_tran.png
           :width: 100%
@@ -745,7 +794,7 @@ It pops up its own control window and most controls change image immediately.
          as x vs. y graphs. 
          
          .. list-table::
-             :width: 100%
+             :width: 90%
              :align: center
              :header-rows: 0
  
@@ -779,6 +828,9 @@ It pops up its own control window and most controls change image immediately.
    * - * ``Surfgraph`` lets you graph the voxel values in a surface graph.
        * These are a wire mesh plot of the underlay (grayscale) image 
          intensity vs x and y.  
+       * Options ``No``, ``Yes``, and ``Inv``.
+       * These plots can be saved from the viewer window.  However, they 
+         look much better if you maximize the window and take a screen shot.
        * Use the arrows in the ``SurfGraph`` window to rotate the view point.
        * Use the middle button between the arrows to reset the viewpoint to 
          the default orientation.
@@ -793,9 +845,19 @@ It pops up its own control window and most controls change image immediately.
          .. list-table::
              :width: 100%
              :align: center
-             :header-rows: 0
- 
+             :header-rows: 1
+
+             * - Standard Surf Graph
              * - .. image:: media/image_window_Disp_SurfGraph.png
+                    :width: 100%
+
+         .. list-table::
+             :width: 100%
+             :align: center
+             :header-rows: 1
+
+             * - Inverse Surf Graph
+             * - .. image:: media/image_window_Disp_SurfGraph_inv.png
                     :width: 100%
 
      - .. image:: media/image_window_Disp_menu_SurfGraph.png
@@ -815,13 +877,41 @@ It pops up its own control window and most controls change image immediately.
          options have extra parameters adjustable in the intensity bar popup 
          window. :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`
        
-         * ``Flatten`` "flattens" the histogram of the image similar effect as 
+         * ``Flatten`` "Flattens" the histogram of the image similar effect as 
            adjusting the brightness and contrast manually.
-         * ``Sharpen`` is sometimes useful for deblurring images.
+         * ``Sharpen`` applies a sharpening filter to the background.  This is 
+            sometimes useful for deblurring images.
          * ``Edge Detect`` applies a Sobel edge detection filter. 
            This is useful as the underlay for checking alignment.
          * ``VG paint`` applies a "painting" effect to the image just for fun.
-       
+         * You can use any combination of these filters and the 
+           :ref:`transformations<gui_guide_image_window_tran>` 
+           to create some interesting images.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - None
+              - Flatten
+              - Sharpen
+            * - .. image:: media/image_window_Disp_filters_none.png
+              - .. image:: media/image_window_Disp_filters_flatten.png
+              - .. image:: media/image_window_Disp_filters_sharpen.png
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - Edge Detect
+              - VG Paint
+              - Combo
+            * - .. image:: media/image_window_Disp_filters_edge.png
+              - .. image:: media/image_window_Disp_filters_paint.png
+              - .. image:: media/image_window_Disp_filters_flat_sharp_paint.png
+
      - .. image:: media/image_window_Disp_menu_filters.png
           :width: 100%
           :align: left
