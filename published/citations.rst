@@ -373,8 +373,9 @@ To see a description of several QC tools in AFNI---including
 * | Taylor PA, Glen DR, Chen G, Cox RW, Hanayik T, Rorden C, Nielson
     DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
     Tools in AFNI: Systematic, in-depth and interactive QC with
-    afni_proc.py and more.  doi: 10.1101/2024.03.27.586976.
-  | `<https://www.biorxiv.org/content/10.1101/2024.03.27.586976v2>`_
+    afni_proc.py and more. Imaging Neuroscience 2: 1–39. 
+    doi: 10.1162/imag_a_00246
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11382598/>`_
 
 * | **Comment:** it is also worth checking out this fun, online demo
     of the APQC HTML and some of its interactive functionality,
@@ -1128,7 +1129,7 @@ its roots at Cornell University):
     Johnson PJ (2024).  A diffusion tensor imaging white matter atlas
     of the domestic canine brain. Imaging Neuroscience 2: 1-21.
   | `<https://doi.org/10.1162/imag_a_00276>`_
-  | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968/A-Diffusion-Tensor-Imaging-White-Matter-Atlas-of>`_
+  | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968>`_
 
 
 Data projects: NIFTI format
