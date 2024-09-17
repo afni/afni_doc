@@ -195,7 +195,6 @@ the population-level, please refer to:
     linearity in neuroimaging: Capturing nonlinear relationships with
     application to longitudinal studies.**  NeuroImage 233:117891.
   | `<https://pubmed.ncbi.nlm.nih.gov/33667672/>`_
-  | `<https://www.biorxiv.org/content/10.1101/2020.11.01.363838v2>`_
 
 If you are using AFNI's defacing/refacing tool ``@afni_refacer_run``
 (which has a tutorial page :ref:`here <tut_auto_@afni_refacer_run>`),
@@ -249,7 +248,6 @@ volumetric data, consider checking out ``3dedgedog`` and please see:
     Visual Inspection of MRI Coregistration and Alignment. 
     J Neurosci Methods.** 406:110112. doi: 10.1016/j.jneumeth.2024.110112. 
   | `<https://pubmed.ncbi.nlm.nih.gov/38508496/>`_
-  | `<https://www.biorxiv.org/content/10.1101/2022.09.14.507937v1>`_
 
 If you are interested in modeling a detailed, voxelwise hemodynamic
 response function (HRF) *without* assuming a constant+canonical shape
@@ -278,6 +276,8 @@ visualizations, please refer to:
     to Macro (IEEE Cat No. 04EX821), pp. 1510-1513
     Vol. 2. doi.org/10.1109/ISBI.2004.1398837
   | `<https://ieeexplore.ieee.org/document/1398837>`_
+
+  |
 
 .. _cit_sr_2012:
 
@@ -485,7 +485,6 @@ population level, please refer to:
     pool or not to pool: Can we ignore cross-trial variability in
     FMRI?**  NeuroImage 225:117496.
   | `<https://doi.org/10.1016/j.neuroimage.2020.117496>`_
-  | `<https://www.biorxiv.org/content/10.1101/2020.05.19.102111v1>`_
  
 If you perform test-rest reliability analysis with the ``TRR`` program
 (or ``3dLMEr -TRR ..``), please refer to:
@@ -494,7 +493,6 @@ If you perform test-rest reliability analysis with the ``TRR`` program
     **Trial and error: a hierarchical modeling approach to test-retest
     assessment.** NeuroImage 245:118647.
   | `<https://doi.org/10.1016/j.neuroimage.2021.118647>`_
-  | `<https://www.biorxiv.org/content/10.1101/2021.01.04.425305v3>`_
     
 If you use IntraClass Correlation (ICC) methods within AFNI via
 ``3dICC``, please refer to:
@@ -503,7 +501,6 @@ If you use IntraClass Correlation (ICC) methods within AFNI via
     Leibenluft E, Brotman MA, Cox RW (2018). **Intraclass correlation:
     Improved modeling approaches and applications for
     neuroimaging.** Hum Brain Mapp. 2018;39(3):1187-1206. 
-  | `<https://doi.org/10.1002/hbm.23909>`_
   | `<https://pubmed.ncbi.nlm.nih.gov/29218829/>`_
 
 If you use ``3dISC`` for inter-subject correlation, please refer to:
@@ -512,7 +509,6 @@ If you use ``3dISC`` for inter-subject correlation, please refer to:
     the Relatedness among Correlations, Part II: Inter-Subject Correlation
     Group Analysis through Linear Mixed-Effects Modeling.** Neuroimage
     147:825-840. 
-  | `<https://doi.org/10.1016/j.neuroimage.2016.08.029>`_
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5303634/>`_
 
 For an ROI-based approach through Bayesian multilevel (BML) modeling
@@ -625,7 +621,6 @@ please refer to:
     LG, Glen DR, Messinger A (2021). **A Comprehensive Macaque FMRI
     Pipeline and Hierarchical Atlas.** NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
-  | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
   |
 
@@ -837,8 +832,7 @@ condition-level generalizability:
 * | Chen G, Pine DS, Brotman MA, Smith AR, Cox RW, Taylor PA, Haller
     SP (2022). **Hyperbolic trade-off: the importance of balancing trial 
     and subject sample sizes in neuroimaging.** NeuroImage 247:118786.
-  | `<https://doi.org/10.1016/j.neuroimage.2021.118786>`_
-  | `<https://www.biorxiv.org/content/10.1101/2021.07.15.452548v1.full>`_
+  | `<https://pubmed.ncbi.nlm.nih.gov/34906711/>`_
 
 In this commentary, we suggest: 1) adopting a modeling approach
 through accurately mapping the data hierarchy; 2) incorporating the
@@ -849,7 +843,7 @@ over-reduction in result reporting:
     (2022).  **Sources of information waste in neuroimaging: mishandling
     structures, thinking dichotomously, and over-reducing
     data.** Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
-  | `<https://apertureneuro.org/article/77476-sources-of-information-waste-in-neuroimaging-mishandling-structures-thinking-dichotomously-and-over-reducing-data>`_
+  | `<https://doi.org/10.52294/ApertureNeuro.2022.2.ZRJI8542>`_
 
 For work checking out different methods of diffusion/DWI acquisition
 and correction, such as prospective motion correction and the TORTOISE
@@ -980,8 +974,7 @@ using a new AFNI tool called ``make_template_dask.py``:
     GJ, Cox RW, Schumann G, Bharath RD, Benegal V (2020).  **A series of
     five population-specific Indian brain templates and atlases
     spanning ages 6 to 60 years.**  Hum Brain Mapp 41(18):5164-5175.
-  | `<https://onlinelibrary.wiley.com/doi/10.1002/hbm.25182>`_
-  | `<https://www.biorxiv.org/content/early/2020/08/10/2020.05.08.077172>`_
+  | `<https://pubmed.ncbi.nlm.nih.gov/32845057/>`_
 
 *Haskins pediatric atlas.* The Haskins pediatric templates and atlases
 were generated with nonlinear methods using structural MRI from 72
@@ -1076,7 +1069,6 @@ atlases <nh_macaque_tempatl>` and :ref:`task and rest FMRI Demos
     LG Glen DR, Messinger A (2021). **A Comprehensive Macaque FMRI
     Pipeline and Hierarchical Atlas.** NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
-  | `<https://www.biorxiv.org/content/10.1101/2020.08.05.237818v1>`_
 
 *SARM: Hierarchical subcortical atlas.* Subcortical Atlas of the
 Rhesus Macaque (SARM) for structural region labels (and see these
@@ -1088,7 +1080,6 @@ template <nh_macaque_tempatl>`:
     Atlas of the Rhesus Macaque (SARM) for neuroimaging.** NeuroImage
     235:117996.
   | `<https://pubmed.ncbi.nlm.nih.gov/33794360/>`_
-  | `<https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1.full>`_
 
 *PRIME-RE: the PRIMatE Resource Exchange.* A collaborative online
 platform for nonhuman primate (NHP) neuroimaging, including AFNI tools
@@ -1106,7 +1097,6 @@ information about the related :ref:`templates and atlases
     Klink PC (2021).  **A collaborative resource platform for non-human
     primate neuroimaging.** Neuroimage, 226:117519.
   | `<https://pubmed.ncbi.nlm.nih.gov/33227425/>`_
-  | `<https://doi.org/10.1016/j.neuroimage.2020.117519>`_
 
 *SC21 (subcortical template) and updated D99: high resolution macaque
 atlasing*. Anatomical delineation using histology and high-resolution
@@ -1117,7 +1107,6 @@ MAP-MRI (and data are available in NIFTI and GIFTI formats):
     regions in the macaque monkey based on matched MAP-MRI and
     histology.** Neuroimage 245:118759.
   | `<https://doi.org/10.1016/j.neuroimage.2021.118759>`_
-  | `<https://www.biorxiv.org/content/10.1101/2021.11.23.469706v1>`_
 
 *White matter atlas of the domestic canine brain*. A WM atlas of the
 canine brain, derived from DTI tracking and manual segmentation
@@ -1127,7 +1116,6 @@ its roots at Cornell University):
 * | Inglis FM, Taylor PA, Andrews EF, Pascalau R, Voss HU, Glen DR,
     Johnson PJ (2024).  **A diffusion tensor imaging white matter atlas
     of the domestic canine brain.** Imaging Neuroscience 2: 1-21.
-  | `<https://doi.org/10.1162/imag_a_00276>`_
   | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968>`_
 
 
