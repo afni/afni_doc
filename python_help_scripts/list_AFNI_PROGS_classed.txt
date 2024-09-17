@@ -18,6 +18,8 @@
 3 :: 3dExchange          :: Exchange values from one set of indices with another set
 2 :: @ROI_modal_grow     :: Dilate regions iteratively by most common value within a neighborhod 
 2 :: @ROI_decluster      :: Remove small separate parts of region
+4 :: gen_cluster_table   :: Take a cluster dataset and make a table of overlaps with respect to a given atlas.
+
 
 ++ 3 :: Simple dset calcs (-> make new dsets)
 5 :: 3dcalc              :: Voxel-by-voxel general purpose calculator
@@ -51,6 +53,7 @@
 1 :: 3ddot               :: Dot product (correlation coefficient) of 2 sub-bricks
 1 :: 3dStatClust         :: Find statistically connected clusters
 1 :: 3dGetrow            :: Output voxel values for a row/column in x,y,z space
+4 :: gen_cluster_table   :: Take a cluster dataset and make a table of overlaps with respect to a given atlas.
 
 
 ++ 1 :: Simulate/generate dsets
@@ -97,7 +100,7 @@
 3 :: 3dUndump                :: Create dataset from text (inverse of 3dmaskdump)
 1 :: 3dOverlap               :: Create mask that is overlap of nonzero voxels from multiple datasets
 2 :: 3dfractionize           :: Resample a mask dataset to a different resolution
-5 :: whereami                :: Get atlas region name for coordinates
+5 :: whereami_afni           :: Get atlas region name for coordinates
 1 :: 3dTto1D                 :: Collapse 4D data to 1D in various ways
 1 :: @Atlasize               :: Make an atlas from a dataset and label text files
 1 :: @MakeLabelTable         :: Assign labels to values
@@ -159,10 +162,11 @@
 1 :: @align_partial_oblique   :: Align (non-oblique) full- and partial-coverage T1w datasets; consider 3dQwarp instead.
 4 :: fat_proc_align_anat_pair  :: Align a T1w dset to a T2w dset, esp. as part of DWI processing and if incorporating FreeSurfer after
 4 :: fat_proc_axialize_anat   :: Attempt to align major viewing planes of anatomical with FOV, based on WB alignment to a reference vol
-5 :: @SSwarper                :: Skull-stripping program that uses a reference anatomical
+1 :: @SSwarper                :: (deprecated -> use newer sswarper2)
+5 :: sswarper2                :: Skull-stripping program that uses a reference anatomical 
 4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 1 :: @SUMA_AlignToExperiment  :: Align volume from FreeSurfer analysis to a different session's anatomical volume in order to warp surfaces similarly
-5 :: 3dQwarp                :: Align two datasets using nonlinear warping (relatedly, see @SSwarper, auto_warp.py, @toMNI_Qwarpar)
+5 :: 3dQwarp                :: Align two datasets using nonlinear warping (relatedly, see sswarper2, @SSwarper, auto_warp.py, @toMNI_Qwarpar)
 1 :: 3dNwarpAdjust            :: Adjust a collection of nonlinear warps for template building (@toMNI_Qwarpar)
 4 :: 3dNwarpApply             :: Apply a nonlinear warp to transform a dataset
 1 :: 3dNwarpCalc              :: Carry out calculations on nonlinear warps
@@ -196,7 +200,9 @@
 1 :: @get.afni.version             :: Download an archived version of AFNI source code using github
 1 :: afni_vcheck                   :: Check if update needed (compare present and available version numbers)
 3 :: afni_check_omp          :: Returns one value, the number of OMP_NUM_THREADS set (for programs able to use multiple CPUs with OpenMP)
-4 :: @afni_R_package_install   :: Install the R packages required by some AFNI programs from the Linux terminal (see also rPkgsInstall).
+4 :: @afni_R_package_install   :: Install the R packages required by some AFNI programs from the Linux terminal (see also rPkgsInstall)
+5 :: build_afni.py             :: compile AFNI from the git repository
+3 :: init_user_dotfiles.py     :: either initialize or just evaluate dot files (often used by build_afni.py)
 
 ++ 2 :: Copy/convert/manipulate dsets
 5 :: 3dcopy                 :: Copy a dataset to make new files
@@ -238,6 +244,13 @@
 1 :: @compute_gcor     :: Compute average pairwise correlation (GCOR), one number
 4 :: gen_ss_review_scripts.py  :: Generate QC review scripts
 1 :: gen_ss_review_table.py    :: Generate spread-sheet of review_basic results
+3 :: find_variance_lines.tcsh  :: check original space EPIs for variance line artifacts (used by afni_proc.py)
+5 :: gtkyd_check        :: "Getting To Know Your Data", by comparing+tabulating header info across many files 
+2 :: @grayplot          :: make a grayplot from residuals (errts) dataset, particularly in afni_proc.py results dir
+5 :: open_apqc.py       :: open up afni_proc.py's QC (APQC) HTML with a local server running, for interactive features
+2 :: roi_stats_warnings.py :: evaluate the output of compute_ROI_stats.tcsh, colorizing them for HTML display (used by apqc_make_tcsh.py)
+3 :: compute_ROI_stats.tcsh :: compute per-ROI size+TSNR statistics over a given dataset (used within afni_proc.py)
+4 :: gen_cluster_table   :: Take a cluster dataset and make a table of overlaps with respect to a given atlas.
 
 
 ++ 2 :: Time series pre-processing 
@@ -248,8 +261,8 @@
 1 :: 3dTsmooth          :: Smooth time series in the time domain
 3 :: 3dBrainSync        :: Alter one dataset’s time series to be maximally correlated with another dataset’s time series
 1 :: 3dTRfix            :: Resample a dataset in time from an irregular grid to a regular grid
-1 :: RetroTS.py         :: Generate slicewise physiological regressors
-
+1 :: RetroTS.py         :: Generate slicewise physiological regressors (deprecated -> use newer physio_calc.py)
+5 :: physio_calc.py     :: Generate slicewise physiological regressors, with QC and interactive editing mode
 
 ++ 2 :: Time series analysis 
 4 :: 3dDeconvolve      :: Multiple linear regression and deconvolution (ordinary least squares)
@@ -268,7 +281,7 @@
 
 
 ++ 2 :: Generate model 1D time series
-3 :: 3dDeconvolve       :: Generate hemodynamic responses for stimulus timing files
+3 :: 3dDeconvolve       :: Generate hemodynamic responses for stimulus timing files; also useful for displaying example convolution results
 1 :: 1dBport            :: Generate columns of sines and cosines for bandpassing
 1 :: waver              :: Generate hemodynamic responses to stimulus time series
 
@@ -287,11 +300,15 @@
 1 :: uber_proc.py 
 2 :: uber_subject.py           :: Graphical interface to help set up an afni_proc.py command (probably just use -> afni_proc.py directly; uber_subject.py does not have full range of options that afni_proc.py has;  recommended to use afni_proc.py examples as a basis, instead)
 5 :: afni_proc.py            :: Generate tcsh script for full processing (including QC) of single subject FMRI data--- it might just be your new best friend
+4 :: ap_run_simple_rest_me.tcsh :: a wrapper for afni_proc.py to generate simple processing and quick QC for multiecho FMRI data, using almost no options besides filenames
+4 :: ap_run_simple_rest.tcsh   ::a wrapper for afni_proc.py to generate simple processing and quick QC for single echo FMRI data, using almost no options besides filenames
+
 3 :: gen_group_command.py      :: Generate group analysis scripts
 4 :: gen_ss_review_scripts.py  :: Generate QC review scripts
 2 :: apqc_make_tcsh.py         :: Program used by afni_proc.py to build QC HTML (this builds script to generate images+text)
 2 :: apqc_make_html.py         :: Program used by afni_proc.py to build QC HTML (this builds HTML pieces made by apqc_make_tcsh.py)
 4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
+2 :: map_ap_to_deriv.py        :: supplementary program that can map afni_proc.py outputs to BIDS-style derivative structure (typically used via option in afni_proc.py)
 
 ++ 4 :: SUMA surface calculations, formats and viewing
 1 :: Surf2VolCoord
@@ -349,7 +366,8 @@
 4 :: 3dmask_tool             :: for combining/dilating/eroding/filling masks
 1 :: 3dIntracranial          :: Strip off outside-the-brain voxels
 5 :: 3dSkullStrip            :: Enhanced skull stripping
-5 :: @SSwarper               :: Combines skull stripping with generating a warp to a nonlinear template space; directly combinable with afni_proc.py, too!
+5 :: sswarper2               :: Combines skull stripping with generating a warp to a nonlinear template space; directly combinable with afni_proc.py, too!
+1 :: @SSwarper               :: (deprecated -> use newer sswarper2)
 -1 :: plugin(Gyrus Finder)    :: Interactively segment gray and white matter
 1 :: 3dClipLevel             :: Find value to threshold off outside-the-brain voxels
 3 :: 3dSeg                   :: Segment anatomical (t1w) volume into major brain tissue types
@@ -366,9 +384,6 @@
 
 
 ++ 4 :: Edit dset headers
-5 :: 3dinfo                  :: Print out information from the header
-1 :: 3dAttribute             :: Print out a single header attribute
-1 :: 3dnvals             :: Print out the number of sub-bricks (3D volumes) in a dataset
 2 :: 3dnewid                 :: Assign a new ID code to a dataset (also, generate a random string for filenames); useful for scripting to get temporary filenames/directory names
 4 :: 3drefit                 :: Lets you change attributes in a dataset header
 1 :: 3dNotes                  :: Lets you put text notes into a dataset header
@@ -396,7 +411,15 @@
 1 :: @FindAfniDsetPath        :: Find a path to dataset
 1 :: @isOblique               :: Flag if dataset is marked as oblique
 1 :: @Shift_Volume            :: Move origin of dataset by specified amount or shift between MNI and MNI_ANAT
+4 :: desphinxify              :: Help reorient datasets where subject had nose along scanner bore (e.g., nonhuman scanning)
+5 :: adjunct_deob_around_origin :: Wrap around the 3drefit functionality to remove obliquity from a dataset whilst preserving its origin
 
+++ 4 :: Check/compare dsets and their headers
+5 :: 3dinfo                  :: Print out information from the header
+1 :: 3dAttribute             :: Print out a single header attribute
+1 :: 3dnvals                 :: Print out the number of sub-bricks (3D volumes) in a dataset
+5 :: gtkyd_check             :: "Getting To Know Your Data", by comparing+tabulating header info across many files 
+4 :: 3dDiff                  :: Examine element-wise differences between two datasets
 
 ++ 2 :: Changing dset spatial structure
 1 :: 3daxialize               :: Rewrite dataset with slices in different direction
@@ -406,15 +429,22 @@
 
 
 ++ 2 :: Change dset temporal structure
-1 :: 3dUpsample           :: Upsample in time (to a shorter TR)
+1 :: 3dUpsample           :: Upsample in time (to a shorter TR), by integer factors (output will be float format)
+
+++ 2 :: Work with JSON files (e.g., sidecars)
+4 :: abids_json_info.py     :: Extract info from BIDS formatted json files (like those from dcm2niix)
+3 :: abids_json_tool.py     :: Manipulate json files in various ways (add keys, etc.), as well as convert back and forth from simple "two column" dictionary format
+4 :: abids_tool.py          :: Manipulate json files in specific ways: add TR, add slice timing, copy info
 
 
 ++ 3 :: Volume editing/image processing
-4 :: 3dedge3                :: Calculate edges in 3D, using "Optimal edge detection using recursive filtering"
+5 :: 3dedge3                :: Calculate edges in 3D, using "Optimal edge detection using recursive filtering"
 4 :: 3danisosmooth          :: Smooth a dataset using an anisotropic technique to preferentially preserve edges (e.g., to clean up structural images)
 4 :: 3dUnifize              :: Correct T1-weighted dataset for non-uniform histogram
 2 :: 3dSharpen              :: 3D sharpening filter applied to a dataset (to clean up a template)
-
+4 :: 3dedgedog              :: Calculate edges in 3D using "Differences of Gaussians (DoGs)"
+5 :: 3dDepthMap             :: Map out the depth of masks or sets of ROIs; can also effectively erode or edge-ify ROIs and masks
+3 :: 3dLocalUnifize         :: use "moving median" method to unifize brightness of dataset to 1, while preserving interesting structures in the original (used widely by afni_proc.py for human data)
 
 ++ 3 :: DWI/DTI/diffusion-related
 1 :: 3dDTeig                :: Computes eigenvalues and eigenvectors for an input DT set
@@ -451,7 +481,7 @@
 1 :: fat_mvm_gridconv.py   :: Convert ooold 3dTrackID output *.grid files; should be unnecessary now
 3 :: fat_mvm_prep.py       :: Combine *.grid/*.netcc files with subject data in CSV files; for fat_mvm* modeling
 3 :: fat_mvm_scripter.py    :: Read in a data table file (esp. from fat_mvm_prep.py) and build 3dMVM command
-
+4 :: fat_mat_tableize       :: Make tables for AFNI group analysis programs from outputs from 3dNetCorr (*.netcc) and 3dTrackID (*.grid)
 
 ++ 2 :: Fourier related, time series/freq
 4 :: 3dDFT                         :: FFT along time axis
@@ -487,14 +517,17 @@
 1 :: prompt_user                 :: (obsolete -> use prompt_popup)
 1 :: @AfniEnv                       :: Get and set AFNI environment variables
 1 :: imcat                        :: (deprecated name -> use new name 2dcat)
-
+5 :: @djunct_overlap_check        :: Show overlap of two datasets, like for judging initial alignment positioning (also can account for obliquity)
 
 ++ 2 :: Download/install demos
 3 :: @Install_IBT_DATASETS          :: Install India Brain Templates (IBTs) and atlases (IBTAs), reference volumes across most of human life span for Indian population studies
 1 :: @Install_3dPFM_Demo
 1 :: @Install_AfniRetinoDemo
 1 :: @Install_ClustScat_Demo
+4 :: @Install_SURFLAYERS_DEMO1      :: Install Surface Layers demo (combining AFNI and SUMA) from Torrisi et al.
 4 :: @Install_D99_macaque           :: Install Saleem D99 macaque atlas and template
+3 :: @Install_MBM_Marmoset          :: Install NIH marmoset template and atlases, from Liu et al.
+4 :: @Install_SAM_marmoset          :: Install Subcortical Atlas of the Marmoset (“SAM”) monkey dataset, from Saleem et al. 
 4 :: @Install_DBSproc               :: Install DBS processing pipeline script
 3 :: @Install_FATCAT_DEMO          :: Install original FATCAT Demo for DTI + some FMRI processing
 4 :: @Install_FATCAT_DEMO2          :: Install newer FATCAT Demo for DTI processing with fat_proc programs (and including TORTOISE and FreeSurfer processing)
@@ -525,7 +558,7 @@
 ++ 3 :: Edit dsets: concatenate, split, add/remove slices
 1 :: 3dbucket          :: Assemble a bucket dataset from multiple input sub-bricks
 4 :: 3dTcat            :: Concatenate sub-bricks from input datasets into one big 3D+time dataset
-4 :: 3dZeropad         :: Add zero slices around the edges of a dataset
+4 :: 3dZeropad         :: Add zero slices around the edges of a dataset (specifying per side or padding in various ways); can also be used to remove slices
 1 :: 3dTsplit4D        :: Convert a 3D+time dataset into multiple 3D single-brick files
 3 :: 3dZcat            :: Assemble a 3D+time dataset from multiple input sub-bricks
 3 :: 3dAutobox         :: Automatically crop a dataset to remove empty space
@@ -552,7 +585,7 @@
 
 
 ++ 2 :: Miscellaneous file manipulations 
-4 :: file_tool          :: Display or edit data in arbitrary files
+4 :: file_tool          :: Display or edit data in arbitrary files; find bad characters or missing "end of line" backslashes, for example
 4 :: 1d_tool.py         :: For manipulating and evaluating 1D files
 1 :: @diff.files        :: Compare (diff) a set of files to those in another location
 1 :: @diff.tree         :: Compare (diff) 2 directory trees of files
@@ -574,7 +607,7 @@
 ++ 1 :: Miscellaneous utilities
 3 :: ccalc               :: A command line calculator (like 3dcalc)
 3 :: cdf                 :: Compute probabilities, thresholds for standard distributions
-4 :: count               :: Generate numbered strings for command line scripts
+4 :: count_afni          :: Generate numbered strings for command line scripts
 4 :: afni_history        :: Display a log of updates to AFNI code
 5 :: apsearch            :: Simple+approx string searching; used in atlases and helps
 1 :: byteorder           :: Report the byteorder of the current CPU
@@ -755,7 +788,7 @@
 1 :: @ANATICOR
 1 :: @RetinoProc
 
-++ 0 :: R programs (written in R; called by other programss)
+++ 0 :: R programs (written in R; called by other programs)
 0 :: 1dGC.R
 0 :: 1dRplot
 0 :: 1dRplot.R
