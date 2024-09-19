@@ -191,7 +191,7 @@ Image Window
        * Smallest-to-largest display range is selected from the ``Disp``
          control panel. :ref:`(see here)<gui_guide_image_window_Disp>`, or 
          from the right click hidden popup menu 
-         :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`.
+         :ref:`(see here)<gui_guide_image_window_IntensityBar_Popup>`.
        * Scroll-wheel in the intensity bar changes contrast.
        * ALT (``⌘`` on macOS) plus scroll-wheel in intensity bar changes 
          brightness.
@@ -220,7 +220,7 @@ Image Window
        * ``Swap`` swaps top of intensity bar with bottom. (handy to see things 
          like the bounding box or abnormalities depending on the type of data). 
          This is similar to the ``Invert?`` button 
-         :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup_invert>`.
+         :ref:`(see here)<gui_guide_image_window_IntensityBar_Popup_invert>`.
        * ``Norm`` returns the intensity bar to normal (after you mess it up).
        * ``c`` controls contrast. ``b`` controls brightness.
 
@@ -875,7 +875,7 @@ It pops up its own control window and most controls change image immediately.
      - 
    * - * Extra imaging processing filters are provided at the bottom.  These 
          options have extra parameters adjustable in the intensity bar popup 
-         window. :ref:`(see below)<gui_guide_image_window_IntensityBar_Popup>`
+         window. :ref:`(see here)<gui_guide_image_window_IntensityBar_Popup>`
        
          * ``Flatten`` "Flattens" the histogram of the image similar effect as 
            adjusting the brightness and contrast manually.
@@ -928,8 +928,6 @@ Intensity Bar Hidden Popup
    :align: center
 
    * - :ref:`Vertical Intensity Bar Popup<gui_guide_image_window_IntensityBar_Popup>`
-     - 
-   * - AFNI GUI: Image Window Intensity Bar Popup
    * - .. image:: media/image_window_IntensityBar_Popup.png
           :width: 75%
           :align: center
@@ -985,6 +983,10 @@ only appear in the image window and do not change the data set on disk.
             
               - .. image:: media/image_window_IntensityBar_Popup_disp_range_200_4111_hist.png
                    :width: 100%
+
+       * To get those histogram plots, go to ``Define Datamode ->`` then 
+         ``Plugins`` then ``Histogram`` and select your underlay as the 
+         source.
 
      - .. image:: media/image_window_IntensityBar_Popup_disp_range.png
           :width: 100%
@@ -1082,7 +1084,7 @@ only appear in the image window and do not change the data set on disk.
          `here <https://afni.nimh.nih.gov/afni/community/board/read.php?1,59489,59500>`_.
        * This function is the same as the ``Swap`` button except that the 
          image is automasked and the background is not inverted. 
-         :ref:`(see above)<gui_guide_image_window_RightButtons>`.
+         :ref:`(see here)<gui_guide_image_window_RightButtons>`.
        * The program `fat_proc_imit2w_from_t1w 
          <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/fat_proc_imit2w_from_t1w_sphx.html#ahelp-fat-proc-imit2w-from-t1w>`_ 
          does something similar but saves an output data set.
@@ -1114,8 +1116,34 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Choose Flatten Range
        <gui_guide_image_window_IntensityBar_Popup_flatten>`
      - 
-   * - * ``Choose Flatten Range``
-       * 
+   * - * ``Choose Flatten Range`` allows you to adjust the "flattening" range 
+         of the ``Flatten`` filter that you can select from the ``Disp`` menu. 
+         :ref:`(see here)<gui_guide_image_window_filters>`
+       * The default is something reasonable. You can return to the default 
+         by deleting the numbers entered and clicking ``Set``.
+       
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - Selecting ``Choose Flatten Range`` opens a dialog box like 
+                this (but with no numbers entered).
+              - .. image:: media/image_window_IntensityBar_Popup_flatten_dialog.png
+                   :width: 80%
+                   :align: center
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - None
+              - Default
+              - 10 to 50
+            * - .. image:: media/image_window_IntensityBar_Popup_flatten_none.png
+              - .. image:: media/image_window_IntensityBar_Popup_flatten_default.png
+              - .. image:: media/image_window_IntensityBar_Popup_flatten_10_50.png
 
      - .. image:: media/image_window_IntensityBar_Popup_flatten.png
           :width: 100%
@@ -1130,8 +1158,35 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Choose Sharpen factor
        <gui_guide_image_window_IntensityBar_Popup_sharpen>`
      - 
-   * - * ``Choose Sharpen factor``
-       * 
+   * - * ``Choose Sharpen factor`` allows you to adjust the amount of 
+         "sharpening" that the ``Sharpen`` filter applies when you select it 
+         from the ``Disp`` menu. 
+         :ref:`(see here)<gui_guide_image_window_filters>`
+       * The default amount is 6.  You can choose an integer from 1 to 9.
+         Lower numbers equal less sharpening.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - Selecting ``Choose Sharpen factor`` opens this dialog box with 
+                the default value of 6 selected.
+              - .. image:: media/image_window_IntensityBar_Popup_sharpen_dialog.png
+                   :width: 80%
+                   :align: center
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - None
+              - 6 (default)
+              - 9
+            * - .. image:: media/image_window_IntensityBar_Popup_sharpen_none.png
+              - .. image:: media/image_window_IntensityBar_Popup_sharpen_default.png
+              - .. image:: media/image_window_IntensityBar_Popup_sharpen_9.png
 
      - .. image:: media/image_window_IntensityBar_Popup_sharpen.png
           :width: 100%
@@ -1147,8 +1202,35 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Choose VG factor
        <gui_guide_image_window_IntensityBar_Popup_VG_factor>`
      - 
-   * - * ``VG_factor``
-       * 
+   * - * ``VG_factor`` allows you to adjust the amount of the painting effect 
+         that the ``VG paint`` filter applies when you select it 
+         from the ``Disp`` menu. 
+         :ref:`(see here)<gui_guide_image_window_filters>`
+       * The default amount is 2.  You can choose an integer from 1 to 9.
+         Higher numbers look more abstract.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 0
+ 
+            * - Selecting ``Choose VG factor`` opens this dialog box with 
+                the default value of 2 selected.
+              - .. image:: media/image_window_IntensityBar_Popup_VG_dialog.png
+                   :width: 80%
+                   :align: center
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - None
+              - 2 (default)
+              - 9
+            * - .. image:: media/image_window_IntensityBar_Popup_sharpen_none.png
+              - .. image:: media/image_window_IntensityBar_Popup_VG_2.png
+              - .. image:: media/image_window_IntensityBar_Popup_VG_9.png
 
      - .. image:: media/image_window_IntensityBar_Popup_VG_factor.png
           :width: 100%
@@ -1164,8 +1246,10 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Crop Autocenter?
        <gui_guide_image_window_IntensityBar_Popup_crop_autocenter>`
      - 
-   * - * ``crop_autocenter``
-       * 
+   * - * ``Crop Autocenter?`` will automatically re-center the cropping 
+         sub-window (if cropping is active) around the crosshair position 
+         (as far as possible).
+       * **Not really sure what this does...**
 
      - .. image:: media/image_window_IntensityBar_Popup_crop_autocenter.png
           :width: 100%
@@ -1180,8 +1264,29 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Image Global Range
        <gui_guide_image_window_IntensityBar_Popup_global_range>`
      - 
-   * - * ``global_range``
-       * 
+   * - * ``Image Global Range`` determines the source of the values from 
+         which the viewer determines the range for display.
+       * ``Slice`` is the default option which calculates the range from the 
+         individual slice visible in the viewer.
+       * ``Volume`` uses the range of values from the entire volume.  For 
+         multi volume datasets, the range is calculated from the volume 
+         currently selected.
+       * ``Dataset`` uses the range of values from the entire dataset for 
+         multi volume data sets like functional data.  For single volume 
+         datasets like anatomical images, ``Dataset`` and ``Volume`` use the 
+         same range.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - Slice
+              - Volume
+              - Dataset
+            * - .. image:: media/image_window_IntensityBar_Popup_global_range_slice.png
+              - .. image:: media/image_window_IntensityBar_Popup_global_range_volume.png
+              - .. image:: media/image_window_IntensityBar_Popup_global_range_dataset.png
 
      - .. image:: media/image_window_IntensityBar_Popup_global_range.png
           :width: 100%
@@ -1197,8 +1302,9 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Plot Overlay Plots
        <gui_guide_image_window_IntensityBar_Popup_plot_overlay>`
      - 
-   * - * ``plot_overlay``
-       * 
+   * - * ``Plot Overlay Plots`` is on by default.
+       * Among other things, controls overlay of cortical surface geometry
+         sent to AFNI from the SUMA program.
 
      - .. image:: media/image_window_IntensityBar_Popup_plot_overlay.png
           :width: 100%
@@ -1214,7 +1320,7 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Display Graymap Plot
        <gui_guide_image_window_IntensityBar_Popup_display_graymap>`
      - 
-   * - * ``display_graymap``
+   * - * ``Display Graymap Plot``
        * 
 
      - .. image:: media/image_window_IntensityBar_Popup_display_graymap.png
