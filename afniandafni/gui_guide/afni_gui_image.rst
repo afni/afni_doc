@@ -740,7 +740,7 @@ It pops up its own control window and most controls change image immediately.
               - .. image:: media/image_window_Disp_tran_0D_SSqrt.png
               - .. image:: media/image_window_Disp_tran_0D_ABS.png
 
-       * ``Tran 2D`` provides some 2D image filters for the underlay only. 
+       * ``Tran 2D`` provides some 2D image filters for the underlay as a whole. 
          ``Median 9`` smoothing can be useful for printing images.
 
          .. list-table::
