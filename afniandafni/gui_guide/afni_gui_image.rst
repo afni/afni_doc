@@ -1249,7 +1249,21 @@ only appear in the image window and do not change the data set on disk.
    * - * ``Crop Autocenter?`` will automatically re-center the cropping 
          sub-window (if cropping is active) around the crosshair position 
          (as far as possible).
-       * **Not really sure what this does...**
+       * This is useful if you want to move around easily after you crop 
+         for looking at images zoomed in.
+       * This is toggle on/off with off selected by default.
+
+       .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - Autocenter Off
+              - Autocenter On
+            * - .. image:: media/image_window_IntensityBar_Popup_crop_autocenter_off.gif
+                   :width: 70%
+              - .. image:: media/image_window_IntensityBar_Popup_crop_autocenter_on.gif
+                   :width: 70%
 
      - .. image:: media/image_window_IntensityBar_Popup_crop_autocenter.png
           :width: 100%
@@ -1320,8 +1334,34 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Display Graymap Plot
        <gui_guide_image_window_IntensityBar_Popup_display_graymap>`
      - 
-   * - * ``Display Graymap Plot``
-       * 
+   * - * ``Display Graymap Plot`` pops up a graymap-versus-data value plot.
+       * There is a ``save image to file`` button that does what it says.
+       * If you move a slice a red histogram plot will be overlaid.
+       * The y axis is gray level (usually 0 to 255). 
+       * The x axis spans the range of the data that is shown. If you have 
+         2%-to-98% selected (default), the x axis will not include data 
+         above or below that range.  If you change the range from the ``Disp`` 
+         menu :ref:`(see here)<gui_guide_image_window_intensity>` or with the 
+         ``Choose Display Range`` button 
+         :ref:`(see here)<gui_guide_image_window_IntensityBar_Popup_disp_range>`, 
+         the x axis will reflect that change.
+       * The black curve will shift as you change the contrast and brightness 
+         with the ``c`` and ``b`` buttons 
+         :ref:`(see here)<gui_guide_image_window_RightButtons>` 
+         or using the mouse click and drag method over the image 
+         :ref:`(see here)<gui_guide_image_window_basics>`.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - Gray Map
+              - With Histogram
+              - Curve Shifted
+            * - .. image:: media/image_window_IntensityBar_Popup_graymap.png
+              - .. image:: media/image_window_IntensityBar_Popup_graymap_hist.png
+              - .. image:: media/image_window_IntensityBar_Popup_graymap_shift.png
 
      - .. image:: media/image_window_IntensityBar_Popup_display_graymap.png
           :width: 100%
