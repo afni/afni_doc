@@ -14,3 +14,4 @@ Templates & Atlases
    sswarper_base
    ibt
    other_tas
+   all_afni_atlases_dist
