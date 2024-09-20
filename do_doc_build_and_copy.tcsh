@@ -258,6 +258,11 @@ if ( "$DO_BUILD" == "1" ) then
         ../afniandafni/media/cbars                 \
         ../afniandafni/all_afni_cbars.rst
 
+    echo "++ STEP: Make AFNI atlases dist RST"
+    python make_file_of_afni_atlases_dist.py       \
+        ../template_atlas                          \
+        all_afni_atlases_dist.rst
+
     echo "++ STEP: Make pretty list of other templates+atlases"
     python make_list_of_pub_dist_atlases.py
 
