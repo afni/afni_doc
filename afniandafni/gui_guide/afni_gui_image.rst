@@ -1377,9 +1377,34 @@ only appear in the image window and do not change the data set on disk.
    * - :ref:`Label, Size, Label Append String
        <gui_guide_image_window_IntensityBar_Popup_label>`
      - 
-   * - * ``Label``
-       * ``Size``
-       * ``Label Append String``
+   * - * ``Label`` will allow you to display the location of the slice you are 
+         viewing in mm and direction (superior, inferior, etc.).
+
+         * The example below has the slice at 13.68 mm superior.  The label is 
+           the z direction because you are viewing the x and y in the axial 
+           image window.  Other views will show the appropriate labeling.
+         * The drop down menu will give you the options for the placement of 
+           the label in relation to the image window.  Default is ``Off``, 
+           but the options include all four corners and the top and bottom 
+           centered left to right.
+
+       * ``Size`` lets you choose the size of the label from ``Tiny`` to 
+         ``Enormous``.  The default is ``Medium``.
+       * ``Label Append String`` adds some text to the end of the label. You 
+         need to add a space at the beginning if you want to separate it from 
+         the original label.
+
+         .. list-table::
+            :width: 90%
+            :align: center
+            :header-rows: 1
+            
+            * - Medium upper left
+              - Huge
+              - Huge with custom text
+            * - .. image:: media/image_window_IntensityBar_Popup_label_default.png
+              - .. image:: media/image_window_IntensityBar_Popup_label_huge.png
+              - .. image:: media/image_window_IntensityBar_Popup_label_append.png
 
      - .. image:: media/image_window_IntensityBar_Popup_label.png
           :width: 100%
@@ -1392,11 +1417,22 @@ only appear in the image window and do not change the data set on disk.
    :widths: 80 20
    :header-rows: 1
 
-   * - :ref:`Tick Div., Tick Size
-       <gui_guide_image_window_IntensityBar_Popup_tick>`
+   * - :ref:`Ticks<gui_guide_image_window_IntensityBar_Popup_tick>`
      - 
-   * - * ``Tick Div.``
-       * ``Tick Size``
+   * - * ``Tick Div.`` add ticks to the border of the image window.  You can 
+         choose from 0 to 21 equal divisions separated by ticks.
+       * ``Tick Size`` defines the length of the ticks from the border toward 
+         the inside of the image window.  Options are 1 to 10.
+
+         .. list-table::
+            :width: 100%
+            :align: center
+            :header-rows: 1
+            
+            * - 10 ticks, size 1
+              - 21 ticks, size 10
+            * - .. image:: media/image_window_IntensityBar_Popup_ticks_10_1.png
+              - .. image:: media/image_window_IntensityBar_Popup_ticks_21_10.png
 
      - .. image:: media/image_window_IntensityBar_Popup_tick.png
           :width: 100%
