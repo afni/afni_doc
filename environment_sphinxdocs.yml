@@ -1,4 +1,4 @@
-name: sphinxdocs                  # To make:  conda env create -f *.yml
+name: sphinxdocs            # To make:  conda env create -f env*sphinxdocs.yml
 channel_priority: strict
 channels:
   - conda-forge
