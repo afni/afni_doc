@@ -77,9 +77,9 @@ text_title_desc = \
 
 text_title_desc+= \
 '''
-*****************************************
-**List of overlays in afni_atlases_dist**
-*****************************************
+***************************************************
+**List of atlases (and more) in afni_atlases_dist**
+***************************************************
 
 .. contents:: :local:
 
@@ -109,10 +109,9 @@ table_head_afni_atlases = \
 
 .. list-table:: 
    :header-rows: 1
-   :widths: 55 45
+   :widths: 100
 
-   * - Sagittal montage
-     - Axial montage
+   * - Combined montages
 
 '''
 
@@ -170,11 +169,10 @@ blurb : str
         
         # stuff within data dir to make note of
         self.all_cbar      = []
-        self.all_axi_img   = []
-        self.all_sag_img   = []
+        self.all_img       = []
         
         # section text: main output
-        self.section_text  = ''
+        self.section_text   = ''
 
         # ----- do work
         _check1 = self.make_and_verify_names()
@@ -198,23 +196,24 @@ blurb : str
             txt+= self.blurb
             txt+= '\n\n'
 
+        if (self.label).startswith('old'):
+            post_note = "*(NB: retired dataset)*"
+        else:
+            post_note = ""
+
         # start of list-table
         txt+= table_head_afni_atlases
 
         for ii in range(self.nolayulay):
             txt+= '''
-   * - **{olay}** (overlay)
-     - **{ulay}** (underlay)
-   * - .. image:: {img_sag}
-          :width: 100%
-     - .. image:: {img_axi}
-          :width: 100%
+   * - **{olay}**, overlaying {ulay} {post_note}
+   * - .. image:: {img}
+          :width: 90%
 
-'''.format(olay=self.all_olay_ulay[ii][0],
+'''.format(post_note=post_note,
+           olay=self.all_olay_ulay[ii][0],
            ulay=self.all_olay_ulay[ii][1],
-           #cbar=self.all_cbar[ii],
-           img_sag=self.all_sag_img[ii],
-           img_axi=self.all_axi_img[ii])
+           img=self.all_img[ii])
 
         self.section_text = txt
 
@@ -231,38 +230,24 @@ blurb : str
             # get cbar; annoying because simple globbing *can* find
             # more than one cbar
             sss = self.data_dir + '/' + 'cbar_' + self.label + '_'
-            # could have 1,2,3 or 4 digit number here
-            sss1 = sss + olay_base + '_?.jpg*'
-            sss2 = sss + olay_base + '_??.jpg*'
-            sss3 = sss + olay_base + '_???.jpg*' 
-            sss4 = sss + olay_base + '_????.jpg*'
-            ggg = glob.glob(sss1) + glob.glob(sss2) + \
-                  glob.glob(sss3) + glob.glob(sss4)
+            sss+= olay_base + '.jpg'
+            ggg = glob.glob(sss)
             if len(ggg) == 1 :
                 self.all_cbar.append(ggg[0])
             else:
                 ab.EP("Found {} cbar for basename: {}"
                       "".format(len(ggg), olay_base))
 
-            # get axial
+            # get image
             sss = self.data_dir + '/' + 'img_' + self.label + '_'
-            sss+= olay_base + '.axi.png'
+            sss+= olay_base + '.jpg'
             ggg = glob.glob(sss)
             if len(ggg) == 1 :
-                self.all_axi_img.append(ggg[0])
+                self.all_img.append(ggg[0])
             else:
                 ab.EP("Found {} axi img for basename: {}"
                       "".format(len(ggg), olay_base))
 
-            # get sagittal
-            sss = self.data_dir + '/' + 'img_' + self.label + '_'
-            sss+= olay_base + '.sag.png'
-            ggg = glob.glob(sss)
-            if len(ggg) == 1 :
-                self.all_sag_img.append(ggg[0])
-            else:
-                ab.EP("Found {} sag img for basename: {}"
-                      "".format(len(ggg), olay_base))
         # done
         return 0
 
