@@ -62,7 +62,10 @@ relegated here, please ping on the `Message Board
 
 # ------------------------------------------------------------------
 
-text_label = ".. _tempatl_afni_atlases:"
+TEXT_CHAP = "tempatl"
+TEXT_SEC  = "afni_atlases"
+
+text_label = ".. _{}_{}:".format(TEXT_CHAP, TEXT_SEC)
 
 text_title_desc = \
 '''
@@ -102,19 +105,6 @@ still available, just by separate download.  In some cases, the
 an optimal choice, so you might want to inquire about a more modern
 choice.
 '''
-
-# start of table for all subsections
-table_head_afni_atlases = \
-'''
-
-.. list-table:: 
-   :header-rows: 1
-   :widths: 100
-
-   * - Combined montages
-
-'''
-
 
 # ===================================================================
 
@@ -197,22 +187,44 @@ blurb : str
             txt+= '\n\n'
 
         if (self.label).startswith('old'):
-            post_note = "*(NB: retired dataset)*"
+            post_note = "\n   * - *NB: this dataset has been retired*"
         else:
             post_note = ""
 
-        # start of list-table
-        txt+= table_head_afni_atlases
-
         for ii in range(self.nolayulay):
-            txt+= '''
-   * - **{olay}**, overlaying {ulay} {post_note}
-   * - .. image:: {img}
-          :width: 90%
+            olay = self.all_olay_ulay[ii][0]
+            olay_base = self.get_volume_basename(olay)
+            ulay = self.all_olay_ulay[ii][1]
 
-'''.format(post_note=post_note,
-           olay=self.all_olay_ulay[ii][0],
-           ulay=self.all_olay_ulay[ii][1],
+            sub_title = "{olay}".format(
+                olay=olay
+            )
+            sub_title_uline = '^'*len(sub_title)
+
+
+            txt+= '''
+
+.. _{text_chap}_{text_sec}_{text_subsec}:
+
+{sub_title}
+{sub_title_uline}
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 100
+
+   * - Underlay: {ulay} {post_note}
+   * - .. image:: {img}
+          :width: 95%
+          :align: center
+
+'''.format(text_chap=TEXT_CHAP,
+           text_sec=TEXT_SEC,
+           text_subsec=olay_base,
+           sub_title=sub_title,
+           sub_title_uline=sub_title_uline,
+           ulay=ulay,
+           post_note=post_note,
            img=self.all_img[ii])
 
         self.section_text = txt
