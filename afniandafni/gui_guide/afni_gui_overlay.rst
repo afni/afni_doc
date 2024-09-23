@@ -151,7 +151,7 @@ Define Overlay
          integer scales that are good for atlases or region of 
          interest maps.
        * More on color bars in AFNI `here 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/all_afni_cbars.html#>`_.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/all_afni_cbars.html#>`__.
 
      - .. image:: media/overlay_main_color_bar_Choose_Colorscale.png
           :width: 60%
@@ -272,7 +272,7 @@ Define Overlay
          with a coefficient and a T-stat.
        * ``AutoThreshold``: a quick automatic threshold, combining p=0.001 
          and the 3dCliplevel algorithm. More info `here 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClipLevel_sphx.html#ahelp-3dcliplevel>`_.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dClipLevel_sphx.html#ahelp-3dcliplevel>`__.
        * ``Set threshold`` pops up a dialog allowing you to enter a 
          number directly. It will modify the ``10^`` selection to match the 
          number you enter. If you enter a negative number, the threshold 
@@ -295,7 +295,7 @@ Define Overlay
          sub-bricks. (same as ``3drefit -addFDR``)
        * ``Meaning of p-values`` will open a text window explaining a bit...
          The same text is `here 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dttest%2B%2B_sphx.html#a-note-about-p-values-everyone-s-favorite-subject>`_.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dttest%2B%2B_sphx.html#a-note-about-p-values-everyone-s-favorite-subject>`__.
 
      - .. image:: media/overlay_main_thr_hidden_menu.png
           :width: 70%
@@ -338,7 +338,7 @@ Define Overlay
          More info on how to make one `here 
          <https://afni.nimh.nih.gov/pub/dist/doc/OLD/afni_colorscale.html>`_. 
          Also this may be helpful: `MakeColorMap 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/MakeColorMap_sphx.html#ahelp-makecolormap>`_.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/MakeColorMap_sphx.html#ahelp-makecolormap>`__.
        * ``Write out palette`` will save your current color map to a ``.pal`` 
          file in your current directory. Using identical names will append the 
          current color bar to the previous. This is bad.
@@ -366,9 +366,9 @@ Define Overlay
          threshold. This is a nice way to show your results in a paper. 
          For more details,see the **Highlight Results, Don't Hide Them** 
          paper in bioRxiv `here 
-         <https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`_.
+         <https://www.biorxiv.org/content/10.1101/2022.10.26.513929v2>`__.
          Another helpful reference is `here 
-         <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3920766/>`_.
+         <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3920766/>`__.
       
        * The left image (below) is the default view. The right image (below) 
          has both ``A`` and ``B`` selected. The below threshold voxels have 
@@ -408,7 +408,7 @@ Define Overlay
        * For more info and customization settings for these options, 
          search for ``AFNI_FUNC_BOXED_COLOR`` in the environment variables 
          page `here 
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/afniandafni/readme_env_vars.html>`_.
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/afniandafni/readme_env_vars.html>`__.
        
      - .. image:: media/overlay_main_A_B.png
           :width: 100%
