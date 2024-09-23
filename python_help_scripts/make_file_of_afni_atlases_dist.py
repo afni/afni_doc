@@ -210,12 +210,11 @@ blurb : str
 {sub_title_uline}
 
 .. list-table:: 
-   :header-rows: 1
    :widths: 100
 
    * - Underlay: {ulay} {post_note}
    * - .. image:: {img}
-          :width: 95%
+          :width: 100%
           :align: center
 
 '''.format(text_chap=TEXT_CHAP,
