@@ -9,7 +9,7 @@ dependencies:
   - python
   - pandas
   - scipy
-  - sphinx
+  - "sphinx<6.0"          # PT: sidebar breaks for newer ver
   - sphinx-argparse
   - sphinxcontrib-fulltoc
   - sphinx-copybutton
