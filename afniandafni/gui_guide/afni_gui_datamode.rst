@@ -300,12 +300,13 @@ Define Datamode
                  controller window 
                  :ref:`(See here.)<gui_guide_controller_window_EditEnv_NIML>`.
                * ``Edit 1DChain`` and ``Edit 2DChain`` open controllers for 
-                 applying functions to your data. **note to staff: I have no 
-                 idea what these do...**
+                 applying functions or combinations of functions to your data. 
+                 :ref:`See here<gui_guide_image_window_tran>` for info on 
+                 some of the transformations for 2DChain.
                * ``Save Layout``
                
              - .. image:: media/datamode_Misc_popup.png
-                  :width: 70%
+                  :width: 100%
                   :align: right 
 
      - .. image:: media/datamode_Misc.png

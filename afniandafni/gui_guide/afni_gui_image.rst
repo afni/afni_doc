@@ -667,9 +667,9 @@ It pops up its own control window and most controls change image immediately.
          * ``Maximum`` = largest value in the slab.
          * ``Mean`` = average value in the slab.
          * ``Median`` = median value in the slab.
-         * ``OSfilt`` = Order Statistics filter.
-         * ``Extreme`` = value farthest from the median.
-         * ``MAD`` = Mean absolute deviation.
+         * ``OSfilt`` = Order Statistics filter. The weighted sum of neighbors.
+         * ``Extreme`` = alue farthest from the median.
+         * ``MAD`` = Mean Absolute Deviation.
          * ``AdptMean`` = estimator of the mean.
 
        * ``Slab +-`` selects the number of slices around the current view to 
@@ -768,14 +768,16 @@ It pops up its own control window and most controls change image immediately.
               - abs[FFT2D]
               - arg[FFT2D]
               - Sharpness
-              - 2dChain
+              - 2DChain (combos)
             * - .. image:: media/image_window_Disp_tran_2D_AdptMean21.png
               - .. image:: media/image_window_Disp_tran_2D_absfft2d.png
               - .. image:: media/image_window_Disp_tran_2D_argfft2d.png
               - .. image:: media/image_window_Disp_tran_2D_sharpness.png
-              - .. image:: media/image_window_Disp_tran_2D_2dchain.png
+              - .. image:: media/image_window_Disp_menu_project_blank.png
 
        * 0D and 2D transformations can be combined for further effects.
+       * :ref:`See here<gui_guide_datamode_Misc>` for info on how to use the 
+         2DChain option.
 
      - .. image:: media/image_window_Disp_menu_tran.png
           :width: 100%
