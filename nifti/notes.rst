@@ -75,7 +75,7 @@ very large set of them.
   integers). Some other changes included rearranging the order of
   header fields a bit. There was a public/open discussion of this, and
   the full set of proposed changes was approved; see 
-  `here <https://www.nitrc.org/forum/forum.php?thread_id=2070&forum_id=1941>`_
+  `here <https://www.nitrc.org/forum/forum.php?thread_id=2070&forum_id=1941>`__
   for a large part of the discussion. In the end, the NIFTI-2 header
   also contains a fixed number of fields, shown here in the 
   ``struct nifti_2_header``:
@@ -92,7 +92,7 @@ very large set of them.
 |
 
 .. note:: Some updates (such as allowed field values described `here
-          <https://www.nitrc.org/forum/forum.php?thread_id=10029&forum_id=1942>`_)
+          <https://www.nitrc.org/forum/forum.php?thread_id=10029&forum_id=1942>`__)
           have also occurred in the ensuing years, so always check the
           most up-to-date documentation, as well.
 
