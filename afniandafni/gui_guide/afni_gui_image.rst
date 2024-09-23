@@ -783,7 +783,6 @@ Intensity Bar Hidden Popup
    :align: center
 
    * - :ref:`Vertical Intensity Bar Popup<gui_guide_image_window_IntensityBar_Popup>`
-     - 
    * - AFNI GUI: Image Window Intensity Bar Popup
    * - .. image:: media/image_window_IntensityBar_Popup.png
           :width: 75%
