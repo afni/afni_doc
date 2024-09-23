@@ -282,10 +282,10 @@ Define Datamode
          **note to staff: button help in the gui needs to be updated**
 
        .. list-table::
-           :width: 100%
+           :widths: 65 35
            :align: center
            :header-rows: 0
-
+           
            * - * ``Voxel Coords?`` will toggle the crosshair location from *mm* 
                  (the default) to voxel indexes.
                * ``Show Hints?`` will turn off (on is the default) the popup 
@@ -301,10 +301,12 @@ Define Datamode
                  :ref:`(See here.)<gui_guide_controller_window_EditEnv_NIML>`.
                * ``Edit 1DChain`` and ``Edit 2DChain`` open controllers for 
                  applying functions or combinations of functions to your data. 
+                 :ref:`See here<gui_guide_graph_window_opt_tran_1D>` for info on 
+                 some of the transformations for 1DChain in the graph window.
                  :ref:`See here<gui_guide_image_window_tran>` for info on 
-                 some of the transformations for 2DChain.
+                 some of the transformations for 2DChain in the image window.
                * ``Save Layout``
-               
+
              - .. image:: media/datamode_Misc_popup.png
                   :width: 100%
                   :align: right 
