@@ -86,10 +86,10 @@ text_title_desc+= \
 
 .. contents:: :local:
 
-This page provides a list of pretty much all the overlays (atlases,
-masks, and more) in the "afni_atlases_dist.tgz" package that is
-distributed with AFNI code. Axial and sagittal images are shown for
-each. The listing is in alphabetical order.
+This page provides a list of the overlays (atlases, masks, and more)
+in the "afni_atlases_dist.tgz" package that is distributed with AFNI
+code. Axial and sagittal images are shown for each. The listing is in
+alphabetical order.
 
 Rather than copying around common atlas, template and other reference
 datasets, you can set an AFNI environment variable to specify that
