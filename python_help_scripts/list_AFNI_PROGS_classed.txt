@@ -191,7 +191,7 @@
 2 :: 3dCompareAffine         :: Measure the "distance" between 2 different affine spatial transformation matrices, for potential use in testing alignment software tools run in different environments
 2 :: 1dApar2mat              :: Compute an affine spatial transformation matrix from the set of parameters output by '3dAllineate -1Dparam_save ...'. This code can be used to modify the matrix by altering the physically relevant parameters (e.g., scalings, shifts, rotations, shears), and could be combined with program cat_matvec, for example.
 3 :: epi_b0_correct.py       :: Performs B0 distortion correction along the phase encode (PE) direction, using an acquired frequency (phase) image; originally written by Vinai Roopchansingh
-
+2 :: lesion_align            :: Align anatomical data that has large lesion features to a template, and use warp inversion to help segment original space data
 
 ++ 3 :: Update AFNI, install software, check setup/info (not demos)
 5 :: @update.afni.binaries       :: Update current AFNI binaries
@@ -347,8 +347,10 @@
 5 :: @SUMA_Make_Spec_FS        :: Convert Freesurfer surfaces to SUMA spec files
 2 :: @SUMA_Make_Spec_SF        :: Convert SureFit surfaces to SUMA spec files
 4 :: DriveSuma                 :: Send commands to SUMA program from script
-1 :: MakeColorMap               :: Make afni and suma colormaps
-
+1 :: MakeColorMap              :: Make afni and suma colormaps
+2 :: quickspecSL               :: Generate a specification file for new layers generated with the program SurfLayers 
+3 :: SurfLayers                :: Generate one or more intermediate surfaces between a pair of boundary surfaces (see also quickspecSL)
+4 :: SurfLocalStat             :: Compute local statistics on a surface, such as mean, mode, number of nodes, local smoothness (FWHM) and more
 
 ++ 3 :: Make/edit correlation matrices
 1 :: @ROI_Corr_Mat           :: Make an NxN ROI correlation matrix of N ROIs (consider 3dNetCorr instead)
@@ -540,7 +542,7 @@
 3 :: @Install_MACAQUE_DEMO          :: Install processing examples for task-based FMRI of macaque data, using @animal_warper and afni_proc.py (1 subject)
 3 :: @Install_MACAQUE_DEMO_REST     :: Install processing examples for resting state FMRI of macaque data, using @animal_warper and afni_proc.py (6 subjects)
 3 :: @Install_NMT                   :: Install NIMH Macaque Template (NMT) datasets (ver=2 is most recent) and CHARM and D99 atlases; can get both symmetric and asymmetric variants.
-
+4 :: @Install_APMULTI_Demo1_rest    :: Install multiecho FMRI (ME-FMRI) processing demo, which includes scripts for running afni_proc.py (including with tedana and older MEICA)
 
 ++ 3 :: Convert surfaces from other software
 5 :: @SUMA_Make_Spec_FS          :: Convert output from standard FreeSurfer 'recon-all' processing to AFNI+SUMAland
