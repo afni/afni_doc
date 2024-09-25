@@ -33,6 +33,11 @@ Start the AFNI GUI
 Start the AFNI GUI *Advanced*
 =============================
 
+This describes how to read datasets from multiple directory locations
+or specific subsets of files in a directory.  See also the :ref:`next
+section below <edu_afni03_start_permaload>` about specifying a special
+directory to *always* load, such as one with reference volumes.
+
 .. list-table::
    :widths: 50 50
    :header-rows: 0
@@ -41,20 +46,23 @@ Start the AFNI GUI *Advanced*
 
          .. code-block:: 
           
-            afni dir1 dir2 ...
-            
-     - * Read specific datasets:
+            afni -all_dsets dir1 dir2 ...
+
+     - * Read specific datasets (e.g., if the directory has very many
+         datasets and browsing a subset is easier; or opening specific
+         datasets across multiple directories):
        
          .. code-block:: 
           
             afni file1 file2 dir1/file3 ...
-     
-   * - *  Read datasets recursively, from the current directory and
-          recursively from all directories below it:
+                 
+    * - * Read datasets recursively, starting from the current
+          directory and then into all directories below it (loading
+          all at the same time; otherwise, exclude ``-all_dsets``):
    
           .. code-block:: 
     
-           afni -R
+           afni -R -all_dsets
 
      - * Create 'sessions' of files from multiple sub-directories, gathering
          datasets with a single subject identified, like in the BIDS file
@@ -72,9 +80,11 @@ Start the AFNI GUI *Advanced*
 
    * - * See ``afni -help`` or ``afni -hview`` for more details about these
          options or click `here
-         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/afni_sphx.html#ahelp-afni>`_
+         <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/afni_sphx.html#ahelp-afni>`__.
  
      - 
+
+.. _edu_afni03_start_permaload:
 
 Set special directories: datasets always loaded
 =================================================
