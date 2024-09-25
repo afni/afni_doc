@@ -42,7 +42,9 @@ directory to *always* load, such as one with reference volumes.
    :widths: 50 50
    :header-rows: 0
    
-   * - * Read datasets from multiple directories:
+   * - * Read datasets from multiple directories (the ``-all_dsets``
+         means that all dsets in the directories will be loaded, with
+         directory path shown in the selection menu):
 
          .. code-block:: 
           
@@ -56,13 +58,13 @@ directory to *always* load, such as one with reference volumes.
           
             afni file1 file2 dir1/file3 ...
                  
-    * - * Read datasets recursively, starting from the current
-          directory and then into all directories below it (loading
-          all at the same time; otherwise, exclude ``-all_dsets``):
+   * - * Read datasets recursively, starting from the current
+         directory and then into all directories below it (loading
+         all at the same time; otherwise, exclude ``-all_dsets``):
    
-          .. code-block:: 
+         .. code-block:: 
     
-           afni -R -all_dsets
+            afni -R -all_dsets
 
      - * Create 'sessions' of files from multiple sub-directories, gathering
          datasets with a single subject identified, like in the BIDS file
