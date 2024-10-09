@@ -40,12 +40,11 @@ Prepare to make Sphinx documentation on local OS
      git clone https://github.com/afni/afni_doc
 
 #. **Install necessary dependencies.** This can be done with Conda,
-   using an included ``environment.yml`` file:
+   using an included ``environment_sphinxdocs.yml`` file:
 
    * Install+setup Conda, e.g., see :ref:`install_miniconda` (note the
      :ref:`quick setup section <install_miniconda_quick>` there).
 
-     |
 
    * Use the afni_doc's ``*.yml`` file to create an environment with
      all Python-and Sphinx-related dependencies for building::
@@ -53,7 +52,6 @@ Prepare to make Sphinx documentation on local OS
        cd ~/afni_doc
        conda env create -f environment_sphinxdocs.yml
 
-     |
 
    You can set this environment as default, or just switch to it when
    you want to build the Sphinx documentation.
