@@ -51,7 +51,7 @@ Prepare to make Sphinx documentation on local OS
      all Python-and Sphinx-related dependencies for building::
 
        cd ~/afni_doc
-       conda env create -f environment.yml
+       conda env create -f environment_sphinxdocs.yml
 
      |
 
