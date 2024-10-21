@@ -169,7 +169,7 @@
 4 :: fat_proc_axialize_anat   :: Attempt to align major viewing planes of anatomical with FOV, based on WB alignment to a reference vol
 1 :: @SSwarper                :: (deprecated -> use newer sswarper2)
 5 :: sswarper2                :: Skull-stripping program that uses a reference anatomical 
-4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
+5 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains
 1 :: @SUMA_AlignToExperiment  :: Align volume from FreeSurfer analysis to a different session's anatomical volume in order to warp surfaces similarly
 5 :: 3dQwarp                :: Align two datasets using nonlinear warping (relatedly, see sswarper2, @SSwarper, auto_warp.py, @toMNI_Qwarpar)
 1 :: 3dNwarpAdjust            :: Adjust a collection of nonlinear warps for template building (@toMNI_Qwarpar)
@@ -379,7 +379,7 @@
 1 :: 3dClipLevel             :: Find value to threshold off outside-the-brain voxels
 3 :: 3dSeg                   :: Segment anatomical (t1w) volume into major brain tissue types
 4 :: @afni_refacer_run         :: Award-winning program to help anonymize datasets by defacing and/or refacing them (with free QC images!)
-4 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains (and directly combinable with afni_proc.py)
+5 :: @animal_warper           :: alignment and skullstripping and moves atlas regions to native space, specially suited for animal brains (and directly combinable with afni_proc.py)
 
 
 ++ 2 :: Dset histograms
@@ -563,20 +563,20 @@
 
 
 ++ 3 :: Edit dsets: concatenate, split, add/remove slices
-1 :: 3dbucket          :: Assemble a bucket dataset from multiple input sub-bricks
-4 :: 3dTcat            :: Concatenate sub-bricks from input datasets into one big 3D+time dataset
-4 :: 3dZeropad         :: Add zero slices around the edges of a dataset (specifying per side or padding in various ways); can also be used to remove slices
-1 :: 3dTsplit4D        :: Convert a 3D+time dataset into multiple 3D single-brick files
-3 :: 3dZcat            :: Assemble a 3D+time dataset from multiple input sub-bricks
+5 :: 3dbucket          :: Assemble a bucket dataset from multiple input sub-bricks
+5 :: 3dTcat            :: Concatenate sub-bricks from input datasets into one big 3D+time dataset
+5 :: 3dZeropad         :: Add zero slices around the edges of a dataset (specifying per side or padding in various ways); can also be used to remove slices
+2 :: 3dTsplit4D        :: Convert a 3D+time dataset into multiple 3D single-brick files
+2 :: 3dZcat            :: Assemble a 3D+time dataset from multiple input sub-bricks
 3 :: 3dAutobox         :: Automatically crop a dataset to remove empty space
-3 :: 3dZcutup          :: Cut slices out of a dataset to make a 'thinner' dataset
+2 :: 3dZcutup          :: Cut slices out of a dataset to make a 'thinner' dataset
 3 :: 3dXYZcat          :: Glue multiple sub-bricks together along the {x|y|z}-axis
 1 :: 3dZregrid         :: Interpolate a dataset to a different slice thickness
 
 
 ++ 4 :: Make/edit/evaluate stimulus timing files
 4 :: make_random_timing.py    :: Generate random stimulus times files
-4 :: timing_tool.py           :: Edit stimulus timing files
+5 :: timing_tool.py           :: Edit stimulus timing files
 1 :: 1dMarry                   :: Combine ragged 1D files for use with 3dDeconvolve's -stim_times_AM2 option
 1 :: make_stim_times.py       :: Convert 0/1 stim file format to stim times format
 1 :: RSFgen                 :: (obsolete -> use make_random_timing.py)
@@ -592,10 +592,10 @@
 
 
 ++ 2 :: Miscellaneous file manipulations 
-4 :: file_tool          :: Display or edit data in arbitrary files; find bad characters or missing "end of line" backslashes, for example
+5 :: file_tool          :: Display or edit data in arbitrary files; find bad characters or missing "end of line" backslashes, for example
 4 :: 1d_tool.py         :: For manipulating and evaluating 1D files
-1 :: @diff.files        :: Compare (diff) a set of files to those in another location
-1 :: @diff.tree         :: Compare (diff) 2 directory trees of files
+3 :: @diff.files        :: Compare (diff) a set of files to those in another location
+3 :: @diff.tree         :: Compare (diff) 2 directory trees of files
 1 :: 2swap              :: Byte pair swap, e.g., ab ba
 1 :: 4swap              :: Byte quad swap, e.g., abc dcba
 1 :: 24swap             :: Mixed 2 and 4 byte swaps in same file
@@ -637,8 +637,8 @@
 
 
 ++ 3 :: Resting state FMRI parameters
-3 :: 3dRSFC              :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) for uncensored time series
-3 :: 3dReHo              :: Calculate ReHo (Kendall's coefficient of concordance) for time series
+4 :: 3dRSFC              :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) for uncensored time series
+5 :: 3dReHo              :: Calculate ReHo (Kendall's coefficient of concordance) for time series
 3 :: 3dLombScargle       :: Calculate amp/pow spectrum (like FFT) along time axis with missing time points
 3 :: 3dAmpToRSFC         :: Calculate RSFC parameters (ALFF, fALFF, RSFA, etc.) from 3dLombScargle output
 2 :: 3dSpaceTimeCorr     :: Calculate the following for 2 dsets on the same grid: for each voxel in grid, calculate correlation map in each dset, and then correlate those spatial maps; store that correlation value at that location.  A way to look at similarity of correlation across, say, resting state datasets, perhaps.
