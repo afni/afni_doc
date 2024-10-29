@@ -259,6 +259,24 @@ and *with* useful regularization, then see:
     hemodynamic profiles.** Neuroimage 277:120224.
   | `<https://pubmed.ncbi.nlm.nih.gov/37327955/>`_
 
+If you want to include physio data like cardiac and respiratory
+measures, consider checking out ``physio_calc.py``, which includes QC
+images and even and interactive mode for fixing peak/trough
+estimation:
+
+* | Lauren PD, Glen DR, Reynolds RC, Taylor PA (2023). **physio_calc.py:
+    New program to model cardiac & respiratory contributions to BOLD
+    signal in AFNI.** Presented at the 29th Annual Meeting of the
+    Organization for Human Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2023/ohbm_2023_PeterLauren.pdf>`_
+
+  | 
+
+* | Lauren PD, Glen DR, Reynolds RC, Dean JN, Handwerker DA, Taylor PA
+    (2024).  **New in AFNI's physio_calc.py (for FMRI physio regressors):
+    QC images, reports and interactive mode.** Presented at the 30th Annual 
+    Meeting of the Organization for Human Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
 
 Methods: SUMA
 ==============
@@ -599,7 +617,7 @@ Methods: Alignment
 If you use either the local Pearson correlation (lpc) or local Pearson
 absolute (lpa) cost function in your alignment (e.g., with
 ``3dAllineate``, ``align_epi_anat.py``, ``afni_proc.py``, ``3dQwarp``,
-``@SSwarper``, ``@animal_warper``, etc.), please refer to:
+``@SSwarper``, ``sswarper2``, ``@animal_warper``, etc.), please refer to:
 
 * | Saad ZS, Glen DR, Chen G, Beauchamp MS, Desai R, Cox RW (2009). **A
     new method for improving functional-to-structural MRI alignment
@@ -613,6 +631,15 @@ please refer to:
 * | Cox RW, Glen DR (2013). **Nonlinear warping in AFNI.** Presented at
     the 19th Annual Meeting of the Organization for Human Brain Mapping.
   | `<https://afni.nimh.nih.gov/pub/dist/HBM2013/Cox_Poster_HBM2013.pdf>`_
+
+If you use ``sswarper2`` (which should provide similar or slightly
+improved results to its predecessor ``@SSwarper``, with which it
+shares mostly similar usage and output format), please refer to:
+
+* | Taylor PA, Reynolds RC, Glen DR (2024). **Improving skullstripping
+    and nonlinear warping in AFNI: sswarper2.** Presented at the 30th
+    Annual Meeting of the Organization for Human Brain Mapping.
+  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_ssw2.pdf>`_
 
 If you use ``@animal_warper`` (esp. for alignment in animal studies),
 please refer to:
@@ -989,6 +1016,24 @@ using multiple metrics of deformation distance and overlap:
     atlas.** Pediatric Radiology 51(4):628-639. DOI:
     10.1007/s00247-020-04875-y.
   | `<https://pubmed.ncbi.nlm.nih.gov/33211184/>`_
+
+*Schaefer-Yeo Atlases.* The original set of `Schaefer-Yeo
+atlases (2018) <https://pubmed.ncbi.nlm.nih.gov/28981612/>`_ have seen
+wide usage partly because the multi-scale resolution of this atlas has
+made it flexible for a variety of studies and for its ready usage for
+network analysis. This project improves some features of both the
+volumetric and surface atlases in terms of the spatial contiguity of
+the regions, removal of the jagged edges, placement on the higher
+resolution grid and better correspondence to the improved template
+space of the MNI 2009c volume. Furthermore, the standard mesh versions
+of the surface atlases allow for propagation into subject- specific
+native space via each subject's FreeSurfer registration and SUMA by
+enforcing spatial correspondence across subjects:
+
+* | Glen DR, Reynolds RC, You X, Kong R, Xue A, Yan X, Yeo BTT
+    (2021). Schaefer-Yeo-AFNI-2021 Atlases: Improved ROIs with AFNI+SUMA
+    Processing. In Proceedings of OHBM-2021.
+  | `<https://afni.nimh.nih.gov/pub/dist/HBM2021/Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf>`_
 
 Data projects: animal templates and atlases
 ==============================================
