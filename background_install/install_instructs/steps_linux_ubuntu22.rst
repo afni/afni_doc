@@ -73,9 +73,9 @@ Quick setup
                              libgfortran-11-dev libgomp1       \
                              gnome-terminal nautilus           \
                              firefox xfonts-100dpi             \
-                             r-base-dev cmake                  \
+                             r-base-dev cmake bc git           \
                              libgdal-dev libopenblas-dev       \
-                             libnode-dev libudunits2-dev bc
+                             libnode-dev libudunits2-dev
 
 
    **Purpose:** Installs a lot of packages that AFNI depends on (so we

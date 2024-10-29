@@ -73,7 +73,7 @@ Quick setup
                              libgfortran-14-dev libgomp1       \
                              gnome-terminal nautilus           \
                              firefox xfonts-100dpi             \
-                             r-base-dev cmake bc               \
+                             r-base-dev cmake bc git           \
                              libgdal-dev libopenblas-dev       \
                              libnode-dev libudunits2-dev
 
