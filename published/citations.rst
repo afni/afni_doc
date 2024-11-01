@@ -757,6 +757,18 @@ If you are curious about using multiecho/MEICA FMRI, please see:
     USA. 110(40):16187-16192. doi:10.1073/pnas.1301725110
   | `<https://pubmed.ncbi.nlm.nih.gov/24038744/>`_
 
+If you are curious about estimating slice-based motion correction in
+FMRI, please see recent updates to SLOMOCO (`Beall and Lowe, 2014
+<https://pubmed.ncbi.nlm.nih.gov/24969568/>`_), which uses a large
+amount of AFNI functionality under the hood, here:
+
+* | Shin W, Taylor PA, Lowe M (2024). **Estimation and Removal of
+    Residual Motion Artifact in Retrospectively Motion-Corrected fMRI
+    Data: A Comparison of Intervolume and Intravolume Motion Using Gold
+    Standard Simulated Motion Data**. Aperture
+    Neuro. 2024;4. doi:10.52294/001c.123369
+  | `<https://apertureneuro.org/article/123369-estimation-and-removal-of-residual-motion-artifact-in-retrospectively-motion-corrected-fmri-data-a-comparison-of-intervolume-and-intravolume-motion-u>`_
+
 
 Meta-methodology, commentary and validations
 =============================================
