@@ -1,4 +1,11 @@
 
+The AFNI Bootcamp involves hands-on learning with processing and
+looking at data. The packages installed here include the data,
+handouts and useful "cheat sheets" of commands. The full download size
+is several GB, and you should leave at least 10 GB free on your
+computer after downloading+unpacking the data, to be able to run
+various examples.
+
 1. Copy+paste (to download+upack Bootcamp data to your home directory)::
 
      cd
