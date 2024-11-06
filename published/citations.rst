@@ -144,9 +144,9 @@ of their timing, please cite:
 If you use ``3dMEPFM`` for multi-echo "paradigm free mapping", please cite:
 
 * | Caballero-Gaudes C, Moia S, Panwar P, Bandettini PA,
-    Gonzalez-Castillo J (2019). A deconvolution algorithm for
+    Gonzalez-Castillo J (2019). **A deconvolution algorithm for
     multi-echo functional MRI: Multi-echo Sparse Paradigm Free
-    Mapping.  NeuroImage 202:116081.
+    Mapping.**  NeuroImage 202:116081.
   | `<https://pubmed.ncbi.nlm.nih.gov/31419613/>`_
 
 If you are interested in using population receptive fields (pRFs) in
