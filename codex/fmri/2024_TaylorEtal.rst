@@ -14,11 +14,11 @@ Introduction
 Here we present commands used in the following paper:
 
 * | Taylor PA, Glen DR, Chen G, Cox RW, Hanayik T, Rorden C, Nielson
-    DM, Rajendra JK, Reynolds RC (2024). A Set of FMRI Quality Control
+    DM, Rajendra JK, Reynolds RC (2024). **A Set of FMRI Quality Control
     Tools in AFNI: Systematic, in-depth and interactive QC with
-    afni_proc.py and more. (submitted) bioRxiv doi:
-    10.1101/2024.03.27.586976.
-  | `<https://pubmed.ncbi.nlm.nih.gov/38585923/>`_
+    afni_proc.py and more.** Imaging Neuroscience 2: 1–39. 
+    doi: 10.1162/imag_a_00246
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11382598/>`_
 
 **Abstract:** 
 Quality control (QC) assessment is a vital part of FMRI processing and

@@ -344,12 +344,13 @@ Methods: FMRI processing and pipelines
 | :ref:`The Codex: AFNI Code Examples <codex_main>`.
 
 Do you like processing FMRI data? If so, please check out this
-description of using ``afni_proc.py`` to do so:
+description of using ``afni_proc.py`` (which also contains various
+tips, suggestions, option guidelines, and more!) to do so:
 
 * | Reynolds RC, Glen DR, Chen G, Saad ZS, Cox RW, Taylor PA
     (2024). **Processing, evaluating and understanding FMRI data with
-    afni_proc.py.** arXiv:2406.05248 [q-bio.NC]
-  | `<https://arxiv.org/abs/2406.05248>`_
+    afni_proc.py.** Imaging Neuroscience 2:1-52.
+  | `<https://doi.org/10.1162/imag_a_00347>`_
  
   |
  
