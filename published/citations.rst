@@ -551,7 +551,19 @@ correlation) and naturalistic FMRI, you might want to check out:
     doi:10.1016/j.neuroimage.2016.05.023
   | `<https://pubmed.ncbi.nlm.nih.gov/27195792/>`_
 
-If you use ``1dSVAR`` (Structured Vector AutoRegression), please refer to:
+If you want to learn more about building your data and modeling it in
+a systematic way---in particular, how to know what kind of covariates
+to collect and/or include---please check out this introduction to
+causal inference (it contains both concepts and helpful guidelines):
+
+* | Chen G, Cai Z, Taylor PA (2024). **Through the lens of causal
+    inference: Decisions and pitfalls of covariate selection.** Aperture
+    Neuro 4.
+  | `<https://doi.org/10.52294/001c.124817>`_
+
+
+If you use ``1dSVAR`` (Structured Vector AutoRegression), please refer
+to:
 
 * | Chen G, Glen DR, Saad ZS, Hamilton JP, Thomason ME, Gotlib IH,
     Cox RW (2011). **Vector autoregression, structural equation
