@@ -682,14 +682,6 @@ FATCAT paper:
     523–535. doi.org/10.1089/brain.2013.0154
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796333/>`_
 
-\.\.\. and if you use the TORTOISE package for accompanying
-diffusion-based processing (such as DIFFPREP, DR_BUDDI, etc.), then
-please check out:
-
-* `the bottom of the TORTOISE homepage
-  <https://tortoise.nibib.nih.gov/>`_ for appropriate citations for
-  those specific tools
-
 If you use mini-probabilistic tracking and/or SUMA tract
 visualization, please refer to (as well as the main FATCAT and SUMA
 papers, above):
@@ -709,6 +701,27 @@ above):
     7(9): e43415. 
   | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
 
+If you want to learn more about ways to reduce motion effects in
+DWI/DTI data (including using volumetric navigators during
+acquisition, and looking at how different software behave at different
+levels of motion), please check out:
+
+* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
+    Meintjes E (2016). **Assessing the performance of different DTI
+    motion correction strategies in the presence of EPI distortion
+    correction.** Hum Brain Mapp 37(12):4405-4424. 
+  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
+
+
+Several of the AFNI/FATCAT demos (for example, :ref:`this one
+<FATCAT_prep>`) also include using the TORTOISE package for
+accompanying diffusion-based processing, including running DIFFPREP,
+DR_BUDDI, etc. If using TORTOISE is of interest, then please check
+out:
+
+* `The TORTOISE homepage <https://tortoise.nibib.nih.gov/>`_, which
+  contains links to code, the package's message board, and further
+  reading.
 
 Methods: Additional applications
 ==================================
