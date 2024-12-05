@@ -14,6 +14,7 @@ Statistics
    df
    deconvolve
    deconvolve_block
+   deconvolve_2004
    nlfim
    remlfit
    anova
