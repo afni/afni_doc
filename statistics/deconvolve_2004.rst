@@ -1,7 +1,7 @@
 .. _stats_decon2004:
 
 ******************************************************
-**3dDeconvolve Notes**
+**Some 3dDeconvolve Notes**
 ******************************************************
 
 .. contents:: :local:
@@ -18,7 +18,7 @@ usage, and other words of wisdom that might be useful.
 
 .. _stats_decon2004_svd:
 
-SVD now used to compute X-matrix pseudoinverse
+SVD for X-matrix pseudoinverse
 =================================================
 
 Gaussian elimination on the normal equations of X has been replaced by
