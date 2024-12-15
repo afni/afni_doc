@@ -203,7 +203,7 @@ please check out its presentation at OHBM-2020:
 * | Cox RW, Taylor PA (2020). **Why de-face when you can re-face?**
     Presented at the 26th Annual Meeting of the Organization for Human 
     Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/HBM2020/AFNI_reface_OHBM2020.pdf>`_
+  | `AFNI_reface_OHBM2020.pdf <https://afni.nimh.nih.gov/pub/dist/HBM2020/AFNI_reface_OHBM2020.pdf>`_
 
   |
 
@@ -226,7 +226,7 @@ OHBM-2018:
     R, (2018). **Through Thick and Thin: Measuring Thickness in MRI with
     AFNI.** Presented at the 24th Annual Meeting of the Organization for
     Human Brain Mapping.  
-  | `<https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
+  | `OHBM_2018_Thickness.pdf <https://afni.nimh.nih.gov/pub/dist/HBM2018/OHBM_2018_Thickness.pdf>`_
 
 
 If you are interested in calculating degree centrality (DC) and local
@@ -268,7 +268,7 @@ estimation:
     New program to model cardiac & respiratory contributions to BOLD
     signal in AFNI.** Presented at the 29th Annual Meeting of the
     Organization for Human Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2023/ohbm_2023_PeterLauren.pdf>`_
+  | `ohbm_2023_PeterLauren.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2023/ohbm_2023_PeterLauren.pdf>`_
 
   | 
 
@@ -276,7 +276,7 @@ estimation:
     (2024).  **New in AFNI's physio_calc.py (for FMRI physio regressors):
     QC images, reports and interactive mode.** Presented at the 30th Annual 
     Meeting of the Organization for Human Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
+  | `ohbm_2024_taylor_etal_physio_calc_updates.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
 
 Methods: SUMA
 ==============
@@ -326,14 +326,14 @@ If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
     (2021). **Creating Layered Surfaces to Visualize with AFNI + SUMA, with
     applications to laminar fMRI.** Presented at the 27th Annual Meeting of
     the Organization for Human Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/HBM2021/OHBM2021_SurfLayers_v2.pdf>`_
+  | `OHBM2021_SurfLayers_v2.pdf <https://afni.nimh.nih.gov/pub/dist/HBM2021/OHBM2021_SurfLayers_v2.pdf>`_
 
   |
 
 * | Lauren P, Glen DR, Reynolds RC, Torrisi S, Taylor PA (2022).
     **Using Clipping PLanes to Analyze Brain Data in SUMA.** Presented at 
     the 28th Annual Meeting of the Organization for Human Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
+  | `OHBM2022_lauren_clippingPlanes.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
 
 
 Methods: FMRI processing and pipelines
@@ -343,9 +343,13 @@ Methods: FMRI processing and pipelines
   for full projects and papers here:* 
 | :ref:`The Codex: AFNI Code Examples <codex_main>`.
 
-Do you like processing FMRI data? If so, please check out this
-description of using ``afni_proc.py`` (which also contains various
-tips, suggestions, option guidelines, and more!) to do so:
+Do you like processing FMRI data? Like, for either single-or
+multi-echo FMRI, on a surface or a volume, for ROI-based or voxelwise
+analysis, using physio regressors or B0 inhomogeneity distortion, and
+all with an interactive quality control HTML report? If so, please
+check out this description of using ``afni_proc.py``, which also
+contains various tips, suggestions, scripts, option guidelines, and
+more:
 
 * | Reynolds RC, Glen DR, Chen G, Saad ZS, Cox RW, Taylor PA
     (2024). **Processing, evaluating and understanding FMRI data with
@@ -379,6 +383,15 @@ please see:
     LG, Glen DR, Messinger A (2021). **A Comprehensive Macaque FMRI
     Pipeline and Hierarchical Atlas.** NeuroImage 235:117997.
   | `<https://pubmed.ncbi.nlm.nih.gov/33789138/>`_
+
+For an example of using ``afni_proc.py`` to process multiecho FMRI
+data (with an accompanying demo with scripts and data that can be
+downloaded by running ``@Install_APMULTI_Demo1_rest``), please see:
+
+* | Taylor PA, Gotts SJ, Gilmore AW, Teves J, Reynolds RC (2022). **A
+    multi-echo FMRI processing demo including TEDANA in afni_proc.py
+    pipelines**. Proc. OHBM-2022.
+  | `OHBM2022_tayloretal_apmulti.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_tayloretal_apmulti.pdf>`_
 
 
 Methods: Quality control (QC)
@@ -652,7 +665,7 @@ shares mostly similar usage and output format), please refer to:
 * | Taylor PA, Reynolds RC, Glen DR (2024). **Improving skullstripping
     and nonlinear warping in AFNI: sswarper2.** Presented at the 30th
     Annual Meeting of the Organization for Human Brain Mapping.
-  | `<https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_ssw2.pdf>`_
+  | `hbm_2024_taylor_etal_ssw2.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_ssw2.pdf>`_
 
 If you use ``@animal_warper`` (esp. for alignment in animal studies),
 please refer to:
@@ -1071,7 +1084,7 @@ enforcing spatial correspondence across subjects:
 * | Glen DR, Reynolds RC, You X, Kong R, Xue A, Yan X, Yeo BTT
     (2021). Schaefer-Yeo-AFNI-2021 Atlases: Improved ROIs with AFNI+SUMA
     Processing. In Proceedings of OHBM-2021.
-  | `<https://afni.nimh.nih.gov/pub/dist/HBM2021/Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf>`_
+  | `Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf <https://afni.nimh.nih.gov/pub/dist/HBM2021/Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf>`_
 
 Data projects: animal templates and atlases
 ==============================================
@@ -1213,6 +1226,6 @@ continues to use, as well as to maintain), you can refer to:
     (sort of) new image data format standard: NiFTI-1.** Presented at
     the 10th Annual Meeting of the Organization for Human Brain
     Mapping.
-  | The poster: `<https://nifti.nimh.nih.gov/nifti-1/documentation/hbm_nifti_2004.pdf>`_
+  | The poster: `hbm_nifti_2004.pdf <https://nifti.nimh.nih.gov/nifti-1/documentation/hbm_nifti_2004.pdf>`_
   | NIFTI web docs, such as they are: `<https://nifti.nimh.nih.gov/>`_
   | NIFTI-1 page: `<https://nifti.nimh.nih.gov/nifti-1>`_
