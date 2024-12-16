@@ -55,10 +55,10 @@ X-matrix condition numbers
 
 The X matrix condition number is now computed and printed. This can be
 disabled using the ``-nocond`` option. As a rough guide, if the matrix
-condition number is about 10p, then roundoff errors will cause about p
+condition number is about 10^p, then roundoff errors will cause about p
 decimal places of accuracy to be lost in the calculation of the
 regression parameter estimates. In double precision, a condition
-number more than 107 would be worrying. In single precision, more than
+number more than 10^7 would be worrying. In single precision, more than
 1000 would be cause for concern. Note that if Gaussian elimination is
 used, then the effective condition number is squared (twice as bad in
 terms of lost decimal places); this is why the SVD solution was
