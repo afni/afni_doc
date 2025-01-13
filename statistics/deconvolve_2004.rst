@@ -82,6 +82,11 @@ implemented.
 
 The new ``-xjpeg filename`` option will save a JPEG image of the columns of 
 the regression matrix X into the given file. 
+(image below is from the boot camp example)
+
+.. image:: media/X.jpg
+    :width: 25%
+    :align: center
 
 * Each column is scaled separately, from white=minimum to black=maximum.
 * Environment variable ``AFNI_XJPEG_COLOR`` determine the colors of the lines 
