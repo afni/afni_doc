@@ -7,16 +7,23 @@
 .. contents:: :local:
 
 Overview
-========
+++++++++
 
 These are notes by Bob Cox, from the great ``3dDeconvolve`` Upgrades
-of 2004. This page contains notes on various features added in that
+of 2004 and 2007. This page contains notes on various features added in that
 happy time.
 
 Sections below will contain comments on underlying algorithms, option
 usage, and other words of wisdom that might be useful.
 
-The current help page is `here. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve/>`_
+The current help page is for ``3dDeconvolve`` is `here. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve/>`_
+
+The original 2004 notes page is `here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSummer2004.html>`_
+
+The original 2007 notes page is `here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSpring2007.html>`_
+
+``3dDeconvolve`` Upgrades Summer 2004
++++++++++++++++++++++++++++++++++++++
 
 .. _stats_decon2004_svd:
 
@@ -427,8 +434,8 @@ this file.
       30 *
       *
 
-``rtype``
----------
+rtype
+-----
 
 This allows you to play the game R-Type originally released in arcades back in 
 1987. `See here. <https://en.wikipedia.org/wiki/R-Type>`_.
@@ -437,7 +444,7 @@ This is not to be confused with the ``Type R`` which is the performance editions
 of certain Honda models.
 `See here. <https://en.wikipedia.org/wiki/Honda_Type_R>`_.
 
-All joking aside ``rtype`` specifies the type of response model that is to
+All joking aside, ``rtype`` specifies the type of response model that is to
 follow each stimulus. The following formats for ``rtype`` are recognized:
 **THERE ARE OTHER AND MORE MODERN TYPES AVAILABLE. 
 SEE THE CURRENT HELP** 
@@ -446,6 +453,7 @@ SEE THE CURRENT HELP**
 1. ``'GAM'`` is the response function h\ :sub:`G`\(t;b,c) = (t/(bc))\ :sup:`b`\
    exp(b-t/c) for the Cohen parameters b=8.6, c=0.547. This function peaks at
    the value 1 at t=bc, and is the same as the output of ``waver -GAM``.
+   See `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`_.
 
 2. ``'GAM(b,c)'`` is the same response function as above, but where you give the
    'b' and 'c' values explicitly. The ``GAM`` response models have 1 regression
@@ -462,8 +470,7 @@ SEE THE CURRENT HELP**
    functions (and n regression parameters per voxel).
 
    * A 'tent' function is just the colloquial term for a 'linear B-spline'. That
-     is 
-     | tent(x) = max( 0 , 1-\|x\| )
+     is tent(x) = max( 0 , 1-\|x\| )
    * A 'tent' function model for the hemodynamic response function is the same
      as modeling the HRF as a continuous piecewise linear function. Here, the
      input 'n' is the number of straight-line pieces.
@@ -482,3 +489,87 @@ SEE THE CURRENT HELP**
    (and n regression parameters per voxel). The qth basis function, for q=1..n,
    is h\ :sub:`POLY,q`\(t) = P\ :sub:`q`\(2(t-b)/(c-b)-1) 
    where P\ :sub:`q`\(x) is the qth Legendre polynomial.
+
+8. ``'BLOCK(d,p)'`` is a block stimulus of duration d starting at each stimulus
+   time.
+
+   * The basis block response function is the convolution of a gamma variate
+     response function with a 'tophat' function:
+
+     * H(t) = ∫\ :sub:`0`\ :sup:`min(t,d)`\ h(t-s) ds where h(t) = (t/4)\ :sup:`4`\ exp(4-t)
+       * h(t) peaks at t=4 with h(4)=1, whereas H(t) peaks at t=d/(1-exp(-d/4).
+         Note that the peak value of H(t) depends on 'd'; call this peak value
+         H :sub:`peak`\(d).
+   * ``'BLOCK(d)'`` means that the response function to a stimulus at time s is
+     H(t-s) for t=s..s+d+15.
+   * ``'BLOCK(d,p)'`` means that the response function to a stimulus at time s
+     is p⋅H(t-s)/H\ :sub:`peak`\(d) for t=s..s+d+15. That is, the response is
+     rescaled so that the peak value of the entire block is 'p' rather than 
+     H\ :sub:`peak`\(d). For most purposes, the best value would be p=1.
+   * ``'BLOCK'`` is a 1 parameter model (the amplitude).
+
+9. ``'EXPR(b,c) exp1 exp2 ...'`` is a set of user-defined basis functions,
+   ranging between times s+b and s+c after each stimulus time s. The expressions
+   are given using the syntax of ``3dcalc``, and can use the symbolic variables:
+
+   * ``'t'`` = time from stimulus
+   * ``'x'`` = t scaled to range from 0 to 1 over the b..c interval
+   * ``'z'`` = t scaled to range from -1 to 1 over the b..c interval
+   * An example, which is equivalent to ``'SIN(0,35,3)'``, is ``'EXPR(0,35)
+     sin(PI*x) sin(2*PI*x) sin(3*PI*x)'``. Expressions are separated by blanks,
+     and must not contain whitespace themselves. An expression must use at least
+     one of the symbols 't', 'x', or 'z', unless the entire expression is the
+     single character "1".
+
+The basis functions defined above are not normalized in any particular way. The
+``-basis_normall`` option can be used to specify that each basis function be
+scaled so that its peak absolute value is a constant. For example
+``-basis_normall 1`` will scale each function to have amplitude 1. Note that
+this scaling is actually done on a very fine grid over the entire domain of t
+values for the function, and so the exact peak value may not be reached on any
+given point in the actual FMRI time series.
+
+* Note that it is the basis function that is normalized, *not* the convolution
+  of the basis function with the stimulus timing!
+* The ``-basis_normall`` option must be given *before* any ``-stim_times``
+  options to which you want it applied!
+
+
+
+If you use a ``-iresp`` option to output the hemodynamic (impulse) response
+function corresponding to a ``-stim_times`` option, this function will be
+sampled at the rate given by the new ``-TR_times`` dt option. The default value
+is the TR of the input dataset, but you may wish to plot it at a higher time
+resolution. (The same remarks apply to the ``-sresp`` option.)
+
+Since the parameters in most models do not correspond directly to amplitudes of
+the response, care must be taken when using GLTs with these.
+
+* The parameters for ``GAM``, ``TENT``, ``CSPLIN``, and ``BLOCK`` do corresond
+  directly to FMRI signal change amplitudes.
+* **I NEED TO THINK THIS THROUGH SOME MORE** (Says Bob)
+
+Next to be implemented (someday): an option to compute areas under the curve
+from the basis-function derived HRFs.
+
+-----
+
+More changes are on the way - RWCox - 22 Sep 2004 - Bilbo and Frodo Baggins'
+birthday!
+
+-----
+
+The ``-nodata`` option now works with the ``-stim_times`` option.
+
+* However, since ``-stim_times`` needs to know the number of time points (NT)
+  and the time spacing (TR), you have to supply these values after the
+  ``-nodata`` option if you are using ``-stim_times``.
+* For example: ``-nodata 114 2.5`` to indicate 114 points in time with a spacing
+  of 2.5 s.
+
+.. _stats_decon2007:
+
+Spring 2007 Changes to ``3dDeconvolve``
++++++++++++++++++++++++++++++++++++++++
+
+
