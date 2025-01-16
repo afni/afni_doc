@@ -453,17 +453,89 @@ SEE THE CURRENT HELP**
 1. ``'GAM'`` is the response function h\ :sub:`G`\(t;b,c) = (t/(bc))\ :sup:`b`\
    exp(b-t/c) for the Cohen parameters b=8.6, c=0.547. This function peaks at
    the value 1 at t=bc, and is the same as the output of ``waver -GAM``.
-   See `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`_.
+   See `here for waver <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`_.
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``GAM`` output from ``-xjeg``
+        - ``GAM`` output from ``1dplot``
+      * - .. image:: media/GAM_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/GAM_1d.jpg
+             :width: 90%
+             :align: center
+   
+   Plot generated with:
+
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg gam_x.jpg \
+                  -local_times -x1D stdout:                      \
+                  -stim_times 1 '1D: 10 60 110 170' 'GAM'        \
+      | 1dplot -THICK -one -stdin -xlabel Time  -jpg GAM_1d.jpg  \
+               -DAFNI_1DPLOT_COLOR_01=red 
+
+----
 
 2. ``'GAM(b,c)'`` is the same response function as above, but where you give the
    'b' and 'c' values explicitly. The ``GAM`` response models have 1 regression
    parameter per voxel (the amplitude of the response).
 
-3. ``'SPMG2'``is the  SPM gamma variate regression model, which has 2 regression
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``GAM(b,c)`` output from ``-xjeg``
+        - ``GAM(b,c)`` output from ``1dplot``
+      * - .. image:: media/GAMbc_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/GAMbc_1d.jpg
+             :width: 90%
+             :align: center
+   
+   Plot generated with:
+
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg GAMbc_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'GAM(10,2)'  \
+      | 1dplot -THICK -one -stdin -xlabel Time -jpg GAMbc_1d.jpg \
+               -DAFNI_1DPLOT_COLOR_01=red 
+
+----
+
+3. ``'SPMG2'`` is the  SPM gamma variate regression model, which has 2 regression
    parameters per voxel. The basis functions are:
 
    * h\ :sub:`SPM,1`\(t) = exp(-t) [ t\ :sup:`5`\/12 - t\ :sup:`15`\/(6*15!) ]
    * h\ :sub:`SPM,2`\(t) = d/dt [ h\ :sub:`SPM,1`\(t) ]
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``SPMG2`` output from ``-xjeg``
+        - ``SPMG2`` output from ``1dplot``
+      * - .. image:: media/SPMG2_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/SPMG2_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SPMG2_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'SPMG2'  \
+      | 1dplot -THICK -one -stdin -xlabel Time -jpg SPMG2_1d.jpg 
 
 4. ``'TENT(b,c,n)'`` is a tent function deconvolution model, ranging between
    times ``s+b`` and ``s+c`` after each stimulus time ``s``, with n basis
@@ -475,14 +547,62 @@ SEE THE CURRENT HELP**
      as modeling the HRF as a continuous piecewise linear function. Here, the
      input 'n' is the number of straight-line pieces.
 
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``TENT(b,c,n)`` output from ``-xjeg``
+        - ``TENT(b,c,n)`` output from ``1dplot``
+      * - .. image:: media/TENT_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/TENT_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg TENT_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'TENT(3,30,3)'  \
+      | 1dplot -thick -one -stdin -xlabel Time -jpg TENT_1d.jpg
+
+----
+
 5. ``'CSPLIN(b,c,n)'`` is a cubic spline deconvolution model; similar to the
    ``TENT`` model, but where smooth cubic splines replace the non-smooth tent
    functions.
 
-6. 'SIN(b,c,n)' => A sin() function deconvolution model, ranging between times
-   s+b and s+c after each stimulus time s, with n basis functions (and n
-   regression parameters per voxel). The qth basis function, for q=1..n, is
-   h\ :sub:`SIN,q`\(t) = sin(qπ(t-b)/(c-b)).
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``CSPLIN(b,c,n)`` output from ``-xjeg``
+        - ``CSPLIN(b,c,n)`` output from ``1dplot``
+      * - .. image:: media/CSPLIN_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/CSPLIN_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg CSPLIN_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'CSPLIN(1,30,5)'  \
+      | 1dplot -thick -one -stdin -xlabel Time -jpg CSPLIN_1d.jpg
+
+----
+
+6. ``'SIN(b,c,n)'`` is a sin() function deconvolution model, ranging between
+   times s+b and s+c after each stimulus time s, with n basis functions (and n
+   regression parameters per voxel). The qth basis function, for q=1..n, is h\
+   :sub:`SIN,q`\(t) = sin(qπ(t-b)/(c-b)).
 
 7. ``'POLY(b,c,n)'`` is a polynomial function deconvolution model, ranging
    between times s+b and s+c after each stimulus time s, with n basis functions
@@ -534,8 +654,6 @@ given point in the actual FMRI time series.
 * The ``-basis_normall`` option must be given *before* any ``-stim_times``
   options to which you want it applied!
 
-
-
 If you use a ``-iresp`` option to output the hemodynamic (impulse) response
 function corresponding to a ``-stim_times`` option, this function will be
 sampled at the rate given by the new ``-TR_times`` dt option. The default value
@@ -572,4 +690,41 @@ The ``-nodata`` option now works with the ``-stim_times`` option.
 Spring 2007 Changes to ``3dDeconvolve``
 +++++++++++++++++++++++++++++++++++++++
 
+.. _stats_decon2007_small:
 
+Small changes: to the defaults, new options, *etc*.
+===================================================
+
+* ``-nobout`` and ``-full_first`` are now the defaults. These changes mean that
+  if you *want* the β weights for the baseline parameters in the output
+  ``-bucket`` dataset, you have to specify -bout on the command line. If you
+  *want* the full-model statistics to appear last in the dataset, you have to
+  specify ``-nofull_first`` on the command line.
+|
+* Even if you do not give the ``-fout`` option on the command line (indicating you
+  do *not* want *F*-statistics for various hypotheses to be calculated), the program
+  will still compute the full model *F*-statistics. If you don't want that for
+  some reason, you have to use the new ``-nofullf_atall`` option.
+| 
+* If you do not give a ``-bucket`` option on the command line, then the program
+  will act as if you had given ``-bucket Decon``. (This is known as the "Ah need
+  a bucket" change, with apologies to KFC.)
+|
+* The program now *always* outputs (to a file) the regression matrix **X**, even
+  if you don't give a ``-x1D`` option. The default filename will be the same as
+  the ``-bucket`` prefix, with the suffix ``.x1D`` added.
+
+  * The matrix file format has been slightly altered to store column labels in
+    XML-style comments in the header. (Previously, the matrix was just written
+    out as an array of unlabeled numbers.) These labels will be useful in an
+    upcoming regression matrix analysis program being planned by Ziad Saad. They
+    are also useful in the new program ``3dSynthesize`` (cf. *infra*).
+| 
+* ``3dDeconvolve`` used to fail with the ``-nodata`` option combined with
+  ``-stim_times``. This crash should be a thing of the past.
+
+  * When using ``-nodata``, the program needs to know the length of the
+    (non-existent) imaging data (number of TRs) and it also needs to know the
+    TR. The simplest and best way to specify these values is to put them
+    immediately after the ``-nodata`` option; for example ``-nodata 300 2.5`` to
+    indicate 300 time points with TR=2.5 s.
