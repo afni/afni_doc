@@ -594,7 +594,7 @@ SEE THE CURRENT HELP**
 
       3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg CSPLIN_x.jpg \
              -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'CSPLIN(1,30,5)'  \
+             -stim_times 1 '1D: 10 60 110 170' 'CSPLIN(1,30,4)'  \
       | 1dplot -thick -one -stdin -xlabel Time -jpg CSPLIN_1d.jpg
 
 ----
@@ -604,11 +604,59 @@ SEE THE CURRENT HELP**
    regression parameters per voxel). The qth basis function, for q=1..n, is h\
    :sub:`SIN,q`\(t) = sin(qπ(t-b)/(c-b)).
 
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``SIN(b,c,n)`` output from ``-xjeg``
+        - ``SIN(b,c,n)`` output from ``1dplot``
+      * - .. image:: media/SIN_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/SIN_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SIN_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'SIN(1,30,2)'  \
+      | 1dplot -thick -one -stdin -xlabel Time -jpg SIN_1d.jpg
+
+----
+
 7. ``'POLY(b,c,n)'`` is a polynomial function deconvolution model, ranging
    between times s+b and s+c after each stimulus time s, with n basis functions
    (and n regression parameters per voxel). The qth basis function, for q=1..n,
    is h\ :sub:`POLY,q`\(t) = P\ :sub:`q`\(2(t-b)/(c-b)-1) 
    where P\ :sub:`q`\(x) is the qth Legendre polynomial.
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``POLY(b,c,n)`` output from ``-xjeg``
+        - ``POLY(b,c,n)`` output from ``1dplot``
+      * - .. image:: media/POLY_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/POLY_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg POLY_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'POLY(1,30,3)'  \
+      | 1dplot -thick -one -stdin -xlabel Time -jpg POLY_1d.jpg
+
+----
 
 8. ``'BLOCK(d,p)'`` is a block stimulus of duration d starting at each stimulus
    time.
@@ -627,6 +675,31 @@ SEE THE CURRENT HELP**
      rescaled so that the peak value of the entire block is 'p' rather than 
      H\ :sub:`peak`\(d). For most purposes, the best value would be p=1.
    * ``'BLOCK'`` is a 1 parameter model (the amplitude).
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+   
+      * - ``BLOCK(d,p)`` output from ``-xjeg``
+        - ``BLOCK(d,p)`` output from ``1dplot``
+      * - .. image:: media/BLOCK_x.jpg
+             :width: 50%
+             :align: center
+        - .. image:: media/BLOCK_1d.jpg
+             :width: 90%
+             :align: center
+
+   Plot generated with:
+   
+   .. code-block::
+
+      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg BLOCK_x.jpg \
+             -local_times -x1D stdout:                  \
+             -stim_times 1 '1D: 10 60 110 170' 'BLOCK(20,1)'  \
+      | 1dplot -thick -one -stdin -xlabel Time -jpg BLOCK_1d.jpg \
+               -DAFNI_1DPLOT_COLOR_01=red 
+
+----
 
 9. ``'EXPR(b,c) exp1 exp2 ...'`` is a set of user-defined basis functions,
    ranging between times s+b and s+c after each stimulus time s. The expressions
