@@ -480,6 +480,8 @@ SEE THE CURRENT HELP**
 
 ----
 
+|
+
 2. ``'GAM(b,c)'`` is the same response function as above, but where you give the
    'b' and 'c' values explicitly. The ``GAM`` response models have 1 regression
    parameter per voxel (the amplitude of the response).
@@ -509,6 +511,8 @@ SEE THE CURRENT HELP**
 
 ----
 
+|
+
 3. ``'SPMG2'`` is the  SPM gamma variate regression model, which has 2 regression
    parameters per voxel. The basis functions are:
 
@@ -536,6 +540,8 @@ SEE THE CURRENT HELP**
              -local_times -x1D stdout:                  \
              -stim_times 1 '1D: 10 60 110 170' 'SPMG2'  \
       | 1dplot -THICK -one -stdin -xlabel Time -jpg SPMG2_1d.jpg 
+
+----
 
 4. ``'TENT(b,c,n)'`` is a tent function deconvolution model, ranging between
    times ``s+b`` and ``s+c`` after each stimulus time ``s``, with n basis
@@ -701,6 +707,8 @@ SEE THE CURRENT HELP**
 
 ----
 
+|
+
 9. ``'EXPR(b,c) exp1 exp2 ...'`` is a set of user-defined basis functions,
    ranging between times s+b and s+c after each stimulus time s. The expressions
    are given using the syntax of ``3dcalc``, and can use the symbolic variables:
@@ -713,6 +721,8 @@ SEE THE CURRENT HELP**
      and must not contain whitespace themselves. An expression must use at least
      one of the symbols 't', 'x', or 'z', unless the entire expression is the
      single character "1".
+
+----
 
 The basis functions defined above are not normalized in any particular way. The
 ``-basis_normall`` option can be used to specify that each basis function be
@@ -801,3 +811,87 @@ Small changes: to the defaults, new options, *etc*.
     TR. The simplest and best way to specify these values is to put them
     immediately after the ``-nodata`` option; for example ``-nodata 300 2.5`` to
     indicate 300 time points with TR=2.5 s.
+  * If you don't do the above, then if you use ``-nlast``, that value (+1) will
+    be used as the number of TRs. If you don't give the TR in some way, then the
+    default ``-nodata`` TR is 1.0 s. This TR is unimportant if you only use
+    ``-stim_file``, but is crucial if you use ``-stim_times`` with ``-nodata``
+    or with ``-input1D``.
+|
+
+* New option ``-float`` (or ``-datum float``) can be used to make all the output
+  datasets be stored in floating point format. In the past, only scaled shorts
+  were possible, and the limited (16-bit) precision of these sometimes caused
+  problems. Shorts are still the default, but at some point in the future I may
+  change the default to floats — if/when this happens, the option ``-short`` can
+  be used if you like the more compact format.
+|
+* The program now reports when ``-stim_times`` time values are out of the time
+  span of the dataset. These are not fatal errors, but can help notify you to
+  potential problems of your timing files. (This problem is known as the PSFB
+  syndrome — it's not as bad as the Mike Beauchamp syndrome, but try to avoid
+  it.)
+|
+* The labels for the ``-bucket`` output dataset sub-bricks have been changed
+  slightly to be more consistent and readable (e.g., ``Tstat`` instead of
+  ``t-st`` to indicate a *t*-statistic).
+|
+* ``3dDeconvolve`` now computes a recommended ``-polort`` value (1 degree for
+  every 150 s of continuous imaging). If your input value is less than this, a
+  non-fatal WARNING message is printed. If you use ``-polort A``, then the
+  program will automatically choose the polynomial degree to use for detrending
+  (AKA high pass filtering).
+|
+* A new ``CSPLIN()`` model for ``-stim_times`` is now available. This function
+  is a drop-in replacement for ``TENT()``, with the same 3 arguments. The basis
+  functions are cardinal cubic splines, rather than cardinal linear splines.
+  ``CSPLIN()`` will produce smoother looking HRF curves, if plotted with
+  ``-TR_times`` less than the dataset TR. (As always, if you are going to change
+  your analysis methodology, run some data the old way and the new way, then
+  compare the results to make sure you understand what is happening!)
+
+.. _stats_decon2007_goforit:
+
+Detection and processing of matrix errors; new ``-GOFORIT`` option
+==================================================================
+
+* ``3dDeconvolve`` now makes several more checks for "bad things" in the
+  regression matrix.
+
+  * Besides checking the full matrix condition number, it also checks several
+    sub-matrices: the signal sub-model, the baseline sub-model, the ``-polort``
+    sub-model, and the ``-stim_base`` sub-model.
+  * Each check is printed out and labeled as to how good the program "thinks" it
+    is. Potentially bad values are flagged with ** **BEWARE** **
+
+  * **N.B.**: ``3dDeconvolve``'s condition number is *not* exactly the same as
+    that computed by Matlab. ``3dDeconvolve`` first scales the matrix columns to
+    have L\ :sup:`2`\-norm = 1, and then computes the condition number from the
+    ratio of the extreme singular values of *that* matrix. This method prevents
+    the pathology of saying that the matrix diag(1,10\ :sup:`–6`\) is
+    ill-conditioned.
+  * Other "bad things" that the program checks for include duplicate stimulus
+    filenames, duplicate regression matrix columns, and all zero matrix columns.
+
+|
+
+* If "bad things" are detected in the matrix (each will be flagged in the text
+  printout with a warning message containing the symbols '!!'), then
+  3dDeconvolve will not carry out the regression analysis. However, if you give
+  the command line option ``-GOFORIT``, then the program will proceed with the
+  analysis. I *strongly* recommend that you **understand** the reason for the
+  problem(s), and don't just blindly use ``-GOFORIT`` all the time.
+
+|
+
+* To help disentangle the ``ERROR`` and ``WARNING`` messages (if any) from the
+  rest of the text output, they are now also output to a file named
+  ``3dDeconvolve.err``.
+
+.. _stats_decon2007_censor:
+
+New option for censoring time points
+====================================
+
+* The ``-CENSORTR`` option lets you specify on the command line time points to
+  be removed from the analysis. It is followed by a list of strings; each string
+  is of one of the following forms:
