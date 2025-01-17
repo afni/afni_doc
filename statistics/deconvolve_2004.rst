@@ -174,6 +174,7 @@ using a symbolic notation.
 
 .. list-table::
    :widths: 20 80
+   :align: left
 
    * - ``Stim``
      - put +1 in the matrix row for each lag of ``Stim``
@@ -895,3 +896,159 @@ New option for censoring time points
 * The ``-CENSORTR`` option lets you specify on the command line time points to
   be removed from the analysis. It is followed by a list of strings; each string
   is of one of the following forms:
+
+  .. list-table::
+     :widths: 20 80
+     :align: left
+
+     * - ``37``
+       - remove global time index #37
+     * - ``2:37``
+       - remove time index #37 in run #2
+     * - ``37..47``
+       - remove global time indexes #37-47
+     * - ``37-47``
+       - same as above
+     * - ``2:37..47``
+       - remove time indexes #37-47 in run #2
+     * - ``'*:0-2'``
+       - remove time indexes #0-2 in all runs
+
+* Time indexes within each run start at 0.
+* Run indexes start at 1 (just be to confusing, and also to be compatible with
+  afni_proc.py).
+* Multiple ``-CENSORTR`` options may be used, or multiple ``-CENSORTR`` strings
+  can be given at once, separated by spaces or commas.
+* **N.B.**: Under the above rules, ``2:37,47`` means index #37 in run #2 and
+  then global time index #47; it does not mean index #37 in run #2 and then
+  index #47 in run #2. To help catch this possible misuse, the program will
+  print a warning message if you use some ``-CENSORTR`` strings with run numbers
+  and some without run numbers.
+
+
+.. _stats_decon2007_3dSynthesize:
+
+New program ``3dSynthesize`` for creating 3D+time datasets
+==========================================================
+
+* This program combines the β weights stored in the ``-cbucket`` output from
+  ``3dDeconvolve``, and the regression matrix time series stored in the ``-x1D``
+  output, to produce model fit time series datasets. ``3dDeconvolve`` itself has
+  the ``-fitts`` option to produce the full model fit in each voxel.
+  ``3dSynthesize`` can be used to produce model fits from subsets of the full
+  model.
+| 
+* In the examples below, suppose that ``fred+orig`` is the output from
+  ``-cbucket`` and that ``fred.x1D`` is the output from ``-x1D``. Also suppose
+  that there were two stimulus classes, given labels ``Face`` and ``House`` in
+  ``3dDeconvolve`` using ``-stim_label`` options.
+
+  * Baseline sub-model:
+
+    .. code-block::
+
+       3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline -prefix fred_baseline
+
+    For example, you could subtract ``fred+baseline+orig`` from the FMRI data
+    time series, using ``3dcalc``, to get a signal+noise dataset with no
+    baseline. This combination of programs would be one way to detrend a
+    multi-run dataset in a logically consistent fashion.
+
+  * Baseline plus ``Face`` stimulus sub-model (but not the ``House`` stimulus):
+
+    .. code-block::
+
+       3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline Face prefix fred_Face
+
+    Baseline plus ``House`` stimulus sub-model (but not the ``Face`` stimulus):
+
+    .. code-block::
+
+      3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline House prefix fred_House
+
+* In general, if you want to "Double Plot" the resulting dataset on top of the
+  original time series dataset (with the ``Dataset #N`` plugin), you'll need the
+  baseline model component so that the ``3dSynthesize`` output is on the same
+  magnitude scale for graphing.
+* For further details, see the ``-help`` output from ``3dSynthesize``: available
+  `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dSynthesize_sphx.html#ahelp-3dsynthesize>`_.
+|
+
+* [**25 Jun 2007] Censoring**
+
+  * ``3dDeconvolve`` and ``3dSynthesize`` have been modified to work when the
+    ``3dDeconvolve`` run using a time point censoring option (i.e., ``-censor``
+    and/or ``-CENSORTR``). The matrix files output by ``3dDeconvolve`` (which
+    files are now renamed to end in ``.xmat.1D``) have information about which
+    time points were censored. ``3dSynthesize`` can use that information to
+    generate sub-bricks to fill in those time points which are missing in the
+    actual matrix. The options are:
+
+    .. list-table::
+       :widths: 20 80
+       :align: left
+  
+       * - ``-cenfill zero``
+         - rfill censored time points with zeros [the new default]
+       * - ``-cenfill nbhr``
+         - fill censored time points with the average of their non-censored time
+           neighbors
+       * - ``-cenfill none``
+         - rdon't put sub-bricks in for censored time points [what the program
+           used to do]
+
+    Another option is to use the new ``-x1D_uncensored filename`` option in
+    ``3dDeconvolve`` to output an uncensored version of the regression matrix,
+    then use that matrix as the input the ``3dSynthesize.`` Then the model fit
+    that you choose will be computed at all the time points.
+
+----
+----
+
+
+.. _stats_decon2007_amp_mod:
+
+Amplitude Modulated FMRI regression analysis
+++++++++++++++++++++++++++++++++++++++++++++
+
+Analysis of event-related FMRI data when the amplitude of each event's BOLD
+response might depend on some externally observed data.
+
+Conceptual Introduction
+=======================
+
+When carrying out an FMRI experiment, the stimuli/tasks are grouped into
+classes. Within each class, the FMRI-measurable brain activity is presumed to be
+the same for each repetition of the task. This crude approximation is necessary
+since FMRI datasets are themselves crude, with low temporal resolution and a low
+contrast-to-noise ratio (*i.e.*, the BOLD signal change is not very big).
+Therefore multiple measurements of the "same" response are needed to build up
+decent statistics. 
+| 
+
+In many experiments, with each individual stimulus/task a separate measurement
+of subject behavior is taken; for example, reaction time, galvanic skin
+response, emotional valence, pain level perception, et cetera. It is sometimes
+desirable to incorporate this **A**mplitude **M**odulation (**AM**) information
+into the FMRI data analysis.
+|
+
+Binary AM
+=========
+
+If the AM were binary in nature ("on" and "off"), one method of carrying out the
+analysis would be to split the tasks into two classes, and analyze these
+stimulus classes separately (*i.e.*, with two ``-stim_times`` options). The
+statistical test for activation ignoring the AM would then be a 2 DOF F-test,
+which could be carried out in ``3dDeconvolve`` by using a 2 row GLT. The contrast
+between the two conditions ("on−off") could be carried out with a 1 row GLT. For
+example:
+
+  .. code-block::
+
+     3dDeconvolve ...                                                    \
+      -stim_times 1 regressor_on.1D  'BLOCK(1,1)' -stim_label 1 'On'  \
+      -stim_times 2 regressor_off.1D 'BLOCK(1,1)' -stim_label 2 'Off' \
+      -gltsym 'SYM: On \ Off' -glt_label 1 'On+Off'                   \
+      -gltsym 'SYM: On -Off'  -glt_label 2 'On-Off' ...
+
