@@ -414,72 +414,77 @@ this file.
    These times will be converted to global times by the program, by
    adding the time offset for each imaging run.
    
-N.B.: The times are relative to the start of the data time series as
-input to ``3dDeconvolve``. If the first few points of each imaging run
-have been cut off, then the actual stimulus times must be adjusted
-correspondingly (e.g., if 2 time points were excised with TR=2.5, then
-the actual stimulus times should be reduced by 5.0 before being input
-to ``3dDeconvolve``).
+   N.B.: The times are relative to the start of the data time series
+   as input to ``3dDeconvolve``. If the first few points of each
+   imaging run have been cut off, then the actual stimulus times must
+   be adjusted correspondingly (e.g., if 2 time points were excised
+   with TR=2.5, then the actual stimulus times should be reduced by
+   5.0 before being input to ``3dDeconvolve``).
 
-Two follow-up notes:
+3. When using the multi-row input style, you may have the situation
+   where the particular class of stimulus does not occur at all in a
+   given imaging run. To encode this, the corresponding row of the
+   timing file should consist of a single ``*`` character; for
+   example, if there are 4 imaging runs but the kth stimulus only
+   occurs in runs 2 and 4, then the ``tname`` file would look
+   something like this:
 
-* When using the multi-row input style, you may have the situation
-  where the particular class of stimulus does not occur at all in a
-  given imaging run. To encode this, the corresponding row of the
-  timing file should consist of a single ``*`` character; for
-  example, if there are 4 imaging runs but the kth stimulus only
-  occurs in runs 2 and 4, then the ``tname`` file would look
-  something like this:
-
-  .. code-block::
+   .. code-block::
      
-     *
-     3.2 7.9 18.2 21.3
-     *
-     8.3 17.5 22.2
+      *
+      3.2 7.9 18.2 21.3
+      *
+      8.3 17.5 22.2
 
-* In the situation where you are using multi-row input AND there is
-  at most one actual stimulus per run, then you might think that the
-  correct input would be something like:
+4. In the situation where you are using multi-row input AND there is
+   at most one actual stimulus per run, then you might think that the
+   correct input would be something like:
 
-  .. code-block::
+   .. code-block::
 
-     *
-     *
-     30
-     *
+      *
+      *
+      30
+      *
 
-  **However, this will be confused with the 1 column format, which means 
-  global times, and so this is wrong. Instead, you can put an extra \* on 
-  one line with an actual stimulus, and then things will work OK:**
+   **However, this will be confused with the 1 column format, which
+   means global times, and so this is wrong. Instead, you can put an
+   extra \* on one line with an actual stimulus, and then things will
+   work OK:**
 
-  .. code-block::
+   .. code-block::
 
-     *
-     *
-     30 *
-     *
+      *
+      *
+      30 *
+      *
 
 rtype
 -----
 
-This allows you to play the game R-Type originally released in arcades back in 
-1987. `See here. <https://en.wikipedia.org/wiki/R-Type>`__.
+.. comment: 
 
-This is not to be confused with the ``Type R`` which is the performance editions
-of certain Honda models.
-`See here. <https://en.wikipedia.org/wiki/Honda_Type_R>`__.
+    This allows you to play the game R-Type originally released in
+    arcades back in
+    1987. `See here. <https://en.wikipedia.org/wiki/R-Type>`__.
 
-All joking aside, ``rtype`` specifies the type of response model that is to
-follow each stimulus. The following formats for ``rtype`` are recognized:
-**THERE ARE OTHER AND MORE MODERN TYPES AVAILABLE. 
-SEE THE CURRENT HELP** 
-`HERE <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve>`__.
+    This is not to be confused with the ``Type R`` which is the
+    performance editions of certain Honda models.  `See
+    here. <https://en.wikipedia.org/wiki/Honda_Type_R>`__.
 
-1. ``'GAM'`` is the response function h\ :sub:`G`\(t;b,c) = (t/(bc))\ :sup:`b`\
-   exp(b-t/c) for the Cohen parameters b=8.6, c=0.547. This function peaks at
-   the value 1 at t=bc, and is the same as the output of ``waver -GAM``.
-   See `here for waver <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`__.
+    All joking aside, 
+
+``rtype`` specifies the type of response model that is to follow each
+stimulus. The following formats for ``rtype`` are recognized, **along
+with the more modern types describe in the current version of the
+program help** `here
+<https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve>`__.
+
+1. ``'GAM'`` is the response function :math:`h_G(t;b,c) =
+   (t/(bc))^b\,\exp(b-t/c)` for the Cohen parameters :math:`b=8.6,
+   c=0.547`. This function peaks at the value 1 at :math:`t=bc`, and
+   is the same as the output of ``waver -GAM``.  See `here for waver
+   <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`__.
 
    .. list-table::
       :widths: 50 50
@@ -657,7 +662,7 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
       3dDeconvolve                                                  \
           -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SIN_x.jpg \
@@ -689,33 +694,36 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
       3dDeconvolve                                                   \
           -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg POLY_x.jpg \
           -local_times -x1D stdout:                                  \
           -stim_times 1 '1D: 10 60 110 170' 'POLY(1,30,3)'           \
-          | 1dplot -thick -one -stdin -xlabel Time -jpg POLY_1d.jpg
+        | 1dplot -thick -one -stdin -xlabel Time -jpg POLY_1d.jpg
 
 ----
 
-8. ``'BLOCK(d,p)'`` is a block stimulus of duration d starting at each stimulus
-   time.
+8. ``'BLOCK(d,p)'`` is a block stimulus of duration ``d`` starting at
+   each stimulus time.
 
-   * The basis block response function is the convolution of a gamma variate
-     response function with a 'tophat' function:
+   * The basis block response function is the convolution of a gamma
+     variate response function with a 'tophat' function: :math:`H(t) =
+     \int_0^{min(t,d)} h(t-s) ds`, where :math:`h(t) =
+     (t/4)^4\,\exp(4-t)`; :math:`h(t)` peaks at :math:`t=4`, with
+     :math:`h(4)=1`, whereas :math:`H(t)` peaks at
+     :math:`t=d/(1-\exp(-d/4))`.  Note that the peak value of
+     :math:`H(t)` depends on 'd'; call this peak value
+     :math:`H_{peak}(d)`.
 
-     * H(t) = ∫\ :sub:`0`\ :sup:`min(t,d)`\ h(t-s) ds where h(t) = (t/4)\ :sup:`4`\ exp(4-t)
-       * h(t) peaks at t=4 with h(4)=1, whereas H(t) peaks at t=d/(1-exp(-d/4).
-         Note that the peak value of H(t) depends on 'd'; call this peak value
-         H :sub:`peak`\(d).
    * ``'BLOCK(d)'`` means that the response function to a stimulus at
      time s is :math:`H(t-s)` for :math:`t=s..s+d+15`.
    * ``'BLOCK(d,p)'`` means that the response function to a stimulus
-     at time s is p⋅H(t-s)/H\ :sub:`peak`\(d) for t=s..s+d+15. That
-     is, the response is rescaled so that the peak value of the entire
-     block is 'p' rather than H\ :sub:`peak`\(d). For most purposes,
-     the best value would be p=1.
+     at time *s* is :math:`p\cdot H(t-s)/H_{peak}(d)` for
+     :math:`t=s..s+d+15`. That is, the response is rescaled so that
+     the peak value of the entire block is 'p' rather than
+     :math:`H_{peak}(d)`. For most purposes, the best value would be
+     :math:`p=1`.
    * ``'BLOCK'`` is a 1 parameter model (the amplitude).
 
    .. list-table::
@@ -733,14 +741,14 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
       3dDeconvolve                                                    \
           -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg BLOCK_x.jpg \
           -local_times -x1D stdout:                                   \
           -stim_times 1 '1D: 10 60 110 170' 'BLOCK(20,1)'             \
-          | 1dplot -thick -one -stdin -xlabel Time -jpg BLOCK_1d.jpg  \
-                -DAFNI_1DPLOT_COLOR_01=red 
+        | 1dplot -thick -one -stdin -xlabel Time -jpg BLOCK_1d.jpg  \
+              -DAFNI_1DPLOT_COLOR_01=red 
 
 ----
 
