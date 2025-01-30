@@ -10,17 +10,20 @@ Overview
 ++++++++
 
 These are notes by Bob Cox, from the great ``3dDeconvolve`` Upgrades
-of 2004 and 2007. This page contains notes on various features added in that
-happy time.
+of 2004 and 2007. This page contains notes on various features added
+in that happy time.
 
 Sections below will contain comments on underlying algorithms, option
 usage, and other words of wisdom that might be useful.
 
-The current help page is for ``3dDeconvolve`` is `here. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve/>`_
+The current help page is for ``3dDeconvolve`` is
+`here. <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve/>`__
 
-The original 2004 notes page is `here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSummer2004.html>`_
+The original 2004 notes page is
+`here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSummer2004.html>`__
 
-The original 2007 notes page is `here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSpring2007.html>`_
+The original 2007 notes page is
+`here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSpring2007.html>`__
 
 ``3dDeconvolve`` Upgrades Summer 2004
 +++++++++++++++++++++++++++++++++++++
@@ -33,8 +36,8 @@ SVD for X-matrix pseudoinverse
 Gaussian elimination on the normal equations of X has been replaced by
 using the SVD to compute the X matrix pseudoinverse. This can be
 disabled using the ``-nosvd`` option. If the SVD solution is on, then
-all-zero ``-stim_file`` functions will NOT be removed from the analysis
-(unlike the ``-nosvd`` analysis).
+all-zero ``-stim_file`` functions will NOT be removed from the
+analysis (unlike the ``-nosvd`` analysis).
 
 The reason for not removing the all-zero regressors is so that GLTs
 and other scripts that require knowing where various results are in
@@ -92,35 +95,40 @@ implemented.
 ``-xjpeg``
 ==========
 
-The new ``-xjpeg filename`` option will save a JPEG image of the columns of 
-the regression matrix X into the given file. 
-(image below is from the boot camp example)
+The new ``-xjpeg filename`` option will save a JPEG image of the
+columns of the regression matrix X into the given file. 
 
-.. image:: media/X.jpg
-    :width: 25%
-    :align: center
+.. list-table:: 
+   :header-rows: 1
+   :width: 40%
+
+   * - X-matrix from Bootcamp example
+   * - .. image:: media/X.jpg
+          :width: 100%   
+          :align: center
 
 * Each column is scaled separately, from white=minimum to black=maximum.
-* Environment variable ``AFNI_XJPEG_COLOR`` determine the colors of the lines 
-  drawn between the columns. 
+* Environment variable ``AFNI_XJPEG_COLOR`` determine the colors of
+  the lines drawn between the columns.
   
-  * The color format is ``rgbi:rf/gf/bf``, where each value rf,gf,bf is a 
-    number between 0.0 and 1.0 (inclusive). 
+  * The color format is ``rgbi:rf/gf/bf``, where each rf, gf and bf is
+    a number between 0.0 and 1.0 (inclusive).
   * For example, yellow would be ``rgbi:1.0/1.0/0.0``. 
   * As a special case, if this value is the string ``none`` or ``NONE``, 
     then these lines will not be drawn.
-  * This webpage is handy for getting color codes: 
-    https://rgbcolorpicker.com/0-1. (just ignore the "a" (alpha) value)
+  * See here for getting color codes: https://rgbcolorpicker.com/0-1
+    (ignore the alpha value "a").
 
 * Environment variable ``AFNI_XJPEG_IMXY`` determines the size of the 
   image saved when via the ``-xjpeg`` option to ``3dDeconvolve``. 
-* It should be in the format AxB:
+* It should be in the format **AxB**:
 
-  * ``A`` is the number of pixels the image is to be wide. 
+  * ``A`` is the number of pixels the image is to be wide 
     (across the matrix rows)
-  * ``B`` is the number of pixels high (down the columns); for example:
+  * ``B`` is the number of pixels high (down the columns)
+  * For example:
 
-    .. code-block::
+    .. code-block:: none
     
        setenv AFNI_XJPEG_IMXY 768x1024
 
@@ -138,20 +146,22 @@ the regression matrix X into the given file.
 Warnings
 ========
 
-* ``3dDeconvolve`` now checks for duplicate ``-stim_file`` names, and duplicate 
-  matrix columns. Only warning messages are printed -- these are not fatal 
-  errors (at least, if the SVD solution is on).
+``3dDeconvolve`` now checks for duplicate ``-stim_file`` names, and
+duplicate matrix columns. Only warning messages are printed -- these
+are not fatal errors (at least, if the SVD solution is on).
 
 .. _stats_decon2004_mat_inputs:
 
 Matrix Inputs
 =============
 
-* Matrix inputs for the ``-glt`` option can now use a notation like ``30@0`` to
-  indicate that 30 0s in a row are to be placed on the line. For example, if you
-  have 10 runs catenated together, and you used ``-polort 2``, then there are 30
-  baseline parameters to skip (usually) when specifying each GLT row; a sample
-  matrix file with 34 entries per row is below:
+Matrix inputs for the ``-glt`` option can now use a notation like
+``30@0`` to indicate that 30 0s in a row are to be placed on the
+line. For example, if you have 10 runs catenated together, and you
+used ``-polort 2``, then there are 30 baseline parameters to skip
+(usually) when specifying each GLT row. 
+
+The following is a sample matrix file with 34 entries per row:
 
   +------+---+----+---+----+
   | 30@0 | 1 | -1 | 0 |  0 |
@@ -164,96 +174,101 @@ Matrix Inputs
 ``-gltsym``
 ===========
 
-The new ``-gltsym gltname`` option lets you describe the rows of a GLT matrix
-using a symbolic notation. 
+The new ``-gltsym gltname`` option lets you describe the rows of a GLT
+matrix using a symbolic notation.
 
 * Each stimulus is symbolized by its ``-stim_label`` option. 
-* Each line in the ``gltname`` file corresponds to a row in the GLT matrix.
-* On each line should be a set of stimulus symbols, which can take the following
-  forms (using the label ``Stim`` as the examplar):
+* Each line in the ``gltname`` file corresponds to a row in the GLT
+  matrix.
+* On each line should be a set of stimulus symbols, which can take the
+  following forms (using the label ``Stim`` as the examplar):
 
-.. list-table::
-   :widths: 20 80
-   :align: left
+  .. list-table::
+     :widths: 20 80
+     :align: left
 
-   * - ``Stim``
-     - put +1 in the matrix row for each lag of ``Stim``
-   * - ``+Stim``
-     - put +1 in the matrix row for each lag of ``Stim`` (same as above)
-   * - ``-Stim``
-     - put -1 in the matrix row for each lag of ``Stim``
-   * - ``Stim[2..7]``
-     - put +1 in the matrix for lags 2..7 of ``Stim``
-   * - ``3*Stim[2..7]``
-     - put +3 in the matrix for lags 2..7 of ``Stim``
-   * - ``Stim[[2..4]]``
-     - put +1 in the matrix for lags 2..4 of ``Stim`` in 3 successive rows of 
-       the matrix, as in:
+     * - ``Stim``
+       - put +1 in the matrix row for each lag of ``Stim``
+     * - ``+Stim``
+       - put +1 in the matrix row for each lag of ``Stim`` (same as above)
+     * - ``-Stim``
+       - put -1 in the matrix row for each lag of ``Stim``
+     * - ``Stim[2..7]``
+       - put +1 in the matrix for lags 2..7 of ``Stim``
+     * - ``3*Stim[2..7]``
+       - put +3 in the matrix for lags 2..7 of ``Stim``
+     * - ``Stim[[2..4]]``
+       - put +1 in the matrix for lags 2..4 of ``Stim`` in 3 successive
+         rows of the matrix, as in:
 
-       +---+---+---+---+---+---+---+---+
-       | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
-       +---+---+---+---+---+---+---+---+
-       | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
-       +---+---+---+---+---+---+---+---+
-       | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
-       +---+---+---+---+---+---+---+---+
+         +---+---+---+---+---+---+---+---+
+         | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+         +---+---+---+---+---+---+---+---+
+         | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
+         +---+---+---+---+---+---+---+---+
+         | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+         +---+---+---+---+---+---+---+---+
 
-       whereas ``Stim[2..4]`` would yield one matrix row
+         \.\.\. whereas ``Stim[2..4]`` would yield one matrix row
 
-       +---+---+---+---+---+---+---+---+
-       | 0 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-       +---+---+---+---+---+---+---+---+
+         +---+---+---+---+---+---+---+---+
+         | 0 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+         +---+---+---+---+---+---+---+---+
 
-There can be no spaces or ``*`` characters in the stimulus symbols; each set
-of stimulus symbols on a row should be separated by one or more spaces. For
-example, the two multi-lag regressors entered with the options below.
+There can be no spaces or ``*`` characters in the stimulus symbols;
+each set of stimulus symbols on a row should be separated by one or
+more spaces. For example, the two multi-lag regressors entered with
+the options below.
 
-.. code-block::
+.. code-block:: none
 
    -stim_label 1 Ear -stim_minlag 1 0 -stim_maxlag 1 5 \
    -stim_label 2 Wax -stim_minlag 2 2 -stim_maxlag 2 7
 
 This could have a GLT matrix row specified by:
 
-.. code-block::
+.. code-block:: none
 
    +Ear[2..5] -Wax[4..7]
 
 Which would translate into a matrix row like (zeros for the baseline):
 
-.. code-block::
+.. code-block:: none 
 
    0 0 1 1 1 1 0 0 -1 -1 -1 -1
 
-* With ``-gltsym``, you do not have to specify the number of rows on the command
-  line -- the program will determine that from the file.
-* You can embed comment lines in the file -- these are lines that start with the
-  characters ``#`` or ``//``.
-* If you want to access the polynomial baseline parameters for some bizarre
-  reason, you can use the symbolic name ``Ort``; otherwise, the GLT matrix
-  elements corresponding to these parameters will all be set to 0, as in the
-  example above.
-* A GLT can be expressed directly on the command line with an option of the
-  form:
+Some comments:
+
+* With ``-gltsym``, you do not have to specify the number of rows on
+  the command line -- the program will determine that from the file.
+* You can embed comment lines in the file -- these are lines that
+  start with the characters ``#`` or ``//``.
+* If you want to access the polynomial baseline parameters for some
+  bizarre reason, you can use the symbolic name ``Ort``; otherwise,
+  the GLT matrix elements corresponding to these parameters will all
+  be set to 0, as in the example above.
+* A GLT can be expressed directly on the command line with an option
+  of the form:
 
   .. code-block::
   
      -gltsym 'SYM: +Ear[2..5] -Wax[4..7]'
 
-  where the ``SYM:`` that starts the string indicates that the rest of the
-  string should be used to define the 1 row matrix. It is important that this
-  string be enclosed in forward single quotes, as shown. If you want to have
-  multiple rows specified, use the ``\`` character to mark the end of each row,
-  as in:
+  where the ``SYM:`` that starts the string indicates that the rest of
+  the string should be used to define the 1 row matrix. It is
+  important that this string be enclosed in forward single quotes, as
+  shown. If you want to have multiple rows specified, use the ``\``
+  character to mark the end of each row, as in:
 
   .. code-block::
 
      -gltsym 'SYM: +Ear[2..5] \ -Wax[4..7]'
 
-* You probably want to use the ``-glt_label`` option with ``-gltsym``, as with 
-  ``-glt``.
-* If you want to have the matrices generated by ``-gltsym`` printed to the 
-  screen, you can set environment variable ``AFNI_GLTSYM_PRINT`` to ``YES``.
+* You probably want to use the ``-glt_label`` option with ``-gltsym``,
+  as with ``-glt``.
+* If you want to have the matrices generated by ``-gltsym`` printed to
+  the screen, you can set environment variable ``AFNI_GLTSYM_PRINT``
+  to ``YES``.
 
 
 .. _stats_decon2004_Legendre:
@@ -261,14 +276,16 @@ Which would translate into a matrix row like (zeros for the baseline):
 Legendre Polynomials
 ====================
 
-Polynomial baseline functions now default to Legendre polynomials, which are
-more pleasantly behaved than the older power baseline functions. If you need the
-old power functions, you must use the ``-nolegendre`` option; this should only
-be the case if you use the baseline parameter estimates for some purpose.
+Polynomial baseline functions now default to Legendre polynomials,
+which are more pleasantly behaved than the older power baseline
+functions. If you need the old power functions, you must use the
+``-nolegendre`` option; this should only be the case if you use the
+baseline parameter estimates for some purpose.
 
-* For each block of contiguous data, the time range from first to last is scaled
-  to the interval ``[-1,1]``. The standard Legendre polynomials P\ :sub:`n`\ (x)
-  are then entered as baseline regressors, for ``n=0,1,...``
+For each block of contiguous data, the time range from first to last
+is scaled to the interval ``[-1,1]``. The standard Legendre
+polynomials P\ :sub:`n`\ (x) are then entered as baseline regressors,
+for ``n=0,1,...``
 
 
 .. _stats_decon2004_cbucket:
@@ -282,17 +299,17 @@ useful if you want to do some calculations with these estimates; you won't have
 to extract them from the various statistics that are stored in the output of the
 ``-bucket bprefix`` option.
 
-.. _stats_decon2004_cbucket:
+.. _stats_decon2004_xsave:
 
 ``-xsave``
 ==========
 
-In combination with the old ``-bucket bprefix`` option, the new ``-xsave``
-option saves the X matrix (and some other information) into file
-``bprefix.xsave``. Use this option when you first run ``3dDeconvolve``, if you
-think you might want to run some extra GLTs later, using the ``-xrestore``
-option (below) -- this is usually much faster than running the whole analysis
-over from scratch.
+In combination with the old ``-bucket bprefix`` option, the new
+``-xsave`` option saves the X matrix (and some other information) into
+file ``bprefix.xsave``. Use this option when you first run
+``3dDeconvolve``, if you think you might want to run some extra GLTs
+later, using the ``-xrestore`` option (below) -- this is usually much
+faster than running the whole analysis over from scratch.
 
 
 .. _stats_decon2004_xrestore:
@@ -300,23 +317,26 @@ over from scratch.
 ``-xrestore``
 =============
 
-The new ``-xrestore filename.xsave`` option will read the ``-xsave`` file and
-allow you to carry out extra GLTs after the first ``3dDeconvolve`` run. When you
-use ``-xrestore``, the only other options that have effect are ``-glt``,
-``-glt_label``, ``-gltsym``, ``-num_glt``, ``-fout``, ``-tout``, ``-rout``,
-``-quiet``, and ``-bucket``. All other options on the command line will be
-ignored (silently). The original time series dataset (from ``-input``) is named
-in the ``-xsave`` file, and must be present for ``-xrestore`` to work. If the
-parameter estimates were saved in the original ``-bucket`` or ``-cbucket``
-dataset, they will also be read; otherwise, the estimates will be re-computed
-from the voxel time series as needed. The new output sub_bricks from the new
-``-glt`` options will be stored as follows:
+The new ``-xrestore filename.xsave`` option will read the ``-xsave``
+file and allow you to carry out extra GLTs after the first
+``3dDeconvolve`` run. When you use ``-xrestore``, the only other
+options that have effect are ``-glt``, ``-glt_label``, ``-gltsym``,
+``-num_glt``, ``-fout``, ``-tout``, ``-rout``, ``-quiet``, and
+``-bucket``. All other options on the command line will be ignored
+(silently). The original time series dataset (from ``-input``) is
+named in the ``-xsave`` file, and must be present for ``-xrestore`` to
+work. If the parameter estimates were saved in the original
+``-bucket`` or ``-cbucket`` dataset, they will also be read;
+otherwise, the estimates will be re-computed from the voxel time
+series as needed. The new output sub_bricks from the new ``-glt``
+options will be stored as follows:
 
-* No ``-bucket`` option given in the ``-xrestore`` run will be stored at end of
-  original ``-bucket`` dataset.
-* ``-bucket bbb`` option given in the ``-xrestore`` run will be stored in
-  dataset with prefix "bbb", which will be created if necessary; if "bbb"
-  already exists, new sub-bricks will be appended to this dataset.
+* No ``-bucket`` option given in the ``-xrestore`` run will be stored
+  at end of original ``-bucket`` dataset.
+* ``-bucket bbb`` option given in the ``-xrestore`` run will be stored
+  in dataset with prefix "bbb", which will be created if necessary; if
+  "bbb" already exists, new sub-bricks will be appended to this
+  dataset.
 
 
 .. _stats_decon2004_input:
@@ -326,13 +346,14 @@ from the voxel time series as needed. The new output sub_bricks from the new
 
 The ``-input`` option now allows input of multiple 3D+time datasets, as in:
 
-.. code-block::
+.. code-block:: none
     
    -input fred+orig ethel+orig lucy+orig ricky+orig
 
-Each command line argument after ``-input`` that does NOT start with a ``-``
-character is taken to be a new dataset. These datasets will be catenated
-together in time (internally) to form one big dataset. Other notes:
+Each command line argument after ``-input`` that does NOT start with a
+``-`` character is taken to be a new dataset. These datasets will be
+catenated together in time (internally) to form one big dataset. Other
+notes:
 
 * You must still provide regressors that are the full length of the catenated
   imaging runs; the program will NOT catenate files for the ``-input1D``,
@@ -346,9 +367,9 @@ together in time (internally) to form one big dataset. Other notes:
 Progress Meter
 ==============
 
-Unless you use the ``quiet`` option, ``3dDeconvolve`` now prints a "progress
-meter" while it runs. When it is done, this will look as below where each digit
-is printed when 2% of the voxels are done.
+Unless you use the ``quiet`` option, ``3dDeconvolve`` now prints a
+"progress meter" while it runs. When it is done, this will look as
+below where each digit is printed when 2% of the voxels are done.
 
 .. code-block::
 
@@ -360,8 +381,8 @@ is printed when 2% of the voxels are done.
 ``-stim_times``
 ===============
 
-Direct input of stimulus timing, plus generation of a response model, with the
-new ``-stim_times`` option:
+Direct input of stimulus timing, plus generation of a response model,
+with the new ``-stim_times`` option:
 
 .. code-block::
 
@@ -378,83 +399,87 @@ this file.
 
 1. A single column of numbers, in which case each time is relative to the start
    of the first imaging run ("global times").
-2. If there are ``R`` runs catenated together (either directly on the command
-   line, or as represented in the ``-concat`` option), the second format is to
-   give the times within each run separately. In this format, the input file
-   tname would have ``R`` rows, one per run; the times for each run take up
-   one row. For example, with R=2:
+
+2. If there are ``R`` runs catenated together (either directly on the
+   command line, or as represented in the ``-concat`` option), the
+   second format is to give the times within each run separately. In
+   this format, the input file tname would have ``R`` rows, one per
+   run; the times for each run take up one row. For example, with R=2:
 
    .. code-block::
 
       12.3 19.8 23.7 29.2 39.8 52.7 66.6
       21.8 32.7 41.9 55.5
      
-   These times will be converted to global times by the program, by adding the
-   time offset for each imaging run. 
+   These times will be converted to global times by the program, by
+   adding the time offset for each imaging run.
    
-   N.B.: The times are relative to the start
-   of the data time series as input to ``3dDeconvolve``. If the first few points
-   of each imaging run have been cut off, then the actual stimulus times must be
-   adjusted correspondingly (e.g., if 2 time points were excised with TR=2.5,
-   then the actual stimulus times should be reduced by 5.0 before being input to
-   ``3dDeconvolve``).
+N.B.: The times are relative to the start of the data time series as
+input to ``3dDeconvolve``. If the first few points of each imaging run
+have been cut off, then the actual stimulus times must be adjusted
+correspondingly (e.g., if 2 time points were excised with TR=2.5, then
+the actual stimulus times should be reduced by 5.0 before being input
+to ``3dDeconvolve``).
 
-3. When using the multi-row input style, you may have the situation where the
-   particular class of stimulus does not occur at all in a given imaging run. To
-   encode this, the corresponding row of the timing file should consist of a
-   single ``*`` character; for example, if there are 4 imaging runs but the kth
-   stimulus only occurs in runs 2 and 4, then the ``tname`` file would look
-   something like this:
+Two follow-up notes:
 
-   .. code-block::
-      
-      *
-      3.2 7.9 18.2 21.3
-      *
-      8.3 17.5 22.2
+* When using the multi-row input style, you may have the situation
+  where the particular class of stimulus does not occur at all in a
+  given imaging run. To encode this, the corresponding row of the
+  timing file should consist of a single ``*`` character; for
+  example, if there are 4 imaging runs but the kth stimulus only
+  occurs in runs 2 and 4, then the ``tname`` file would look
+  something like this:
 
-4. In the situation where you are using multi-row input, AND there is at most
-   one actual stimulus per run, then you might think that the correct input
-   would be something like:
+  .. code-block::
+     
+     *
+     3.2 7.9 18.2 21.3
+     *
+     8.3 17.5 22.2
 
-   .. code-block::
+* In the situation where you are using multi-row input AND there is
+  at most one actual stimulus per run, then you might think that the
+  correct input would be something like:
 
-      *
-      *
-      30
-      *
+  .. code-block::
 
-   **However, this will be confused with the 1 column format, which means global
-   times, and so this is wrong. Instead, you can put an extra * on one line
-   with an actual stimulus, and then things will work OK:**
+     *
+     *
+     30
+     *
 
-   .. code-block::
+  **However, this will be confused with the 1 column format, which means 
+  global times, and so this is wrong. Instead, you can put an extra \* on 
+  one line with an actual stimulus, and then things will work OK:**
 
-      *
-      *
-      30 *
-      *
+  .. code-block::
+
+     *
+     *
+     30 *
+     *
 
 rtype
 -----
 
 This allows you to play the game R-Type originally released in arcades back in 
-1987. `See here. <https://en.wikipedia.org/wiki/R-Type>`_.
+1987. `See here. <https://en.wikipedia.org/wiki/R-Type>`__.
 
 This is not to be confused with the ``Type R`` which is the performance editions
 of certain Honda models.
-`See here. <https://en.wikipedia.org/wiki/Honda_Type_R>`_.
+`See here. <https://en.wikipedia.org/wiki/Honda_Type_R>`__.
 
 All joking aside, ``rtype`` specifies the type of response model that is to
 follow each stimulus. The following formats for ``rtype`` are recognized:
 **THERE ARE OTHER AND MORE MODERN TYPES AVAILABLE. 
 SEE THE CURRENT HELP** 
-`HERE <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve>`_.
+`HERE <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dDeconvolve_sphx.html#ahelp-3ddeconvolve>`__.
 
 1. ``'GAM'`` is the response function h\ :sub:`G`\(t;b,c) = (t/(bc))\ :sup:`b`\
    exp(b-t/c) for the Cohen parameters b=8.6, c=0.547. This function peaks at
    the value 1 at t=bc, and is the same as the output of ``waver -GAM``.
-   See `here for waver <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`_.
+   See `here for waver <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/waver_sphx.html#ahelp-waver>`__.
 
    .. list-table::
       :widths: 50 50
@@ -550,9 +575,10 @@ SEE THE CURRENT HELP**
 
    * A 'tent' function is just the colloquial term for a 'linear B-spline'. That
      is tent(x) = max( 0 , 1-\|x\| )
-   * A 'tent' function model for the hemodynamic response function is the same
-     as modeling the HRF as a continuous piecewise linear function. Here, the
-     input 'n' is the number of straight-line pieces.
+   * A 'tent' function model for the hemodynamic response function is
+     the same as modeling the HRF as a continuous piecewise linear
+     function. Here, the input 'n' is the number of straight-line
+     pieces.
 
    .. list-table::
       :widths: 50 50
@@ -635,11 +661,12 @@ SEE THE CURRENT HELP**
 
 ----
 
-7. ``'POLY(b,c,n)'`` is a polynomial function deconvolution model, ranging
-   between times s+b and s+c after each stimulus time s, with n basis functions
-   (and n regression parameters per voxel). The qth basis function, for q=1..n,
-   is h\ :sub:`POLY,q`\(t) = P\ :sub:`q`\(2(t-b)/(c-b)-1) 
-   where P\ :sub:`q`\(x) is the qth Legendre polynomial.
+7. ``'POLY(b,c,n)'`` is a polynomial function deconvolution model,
+   ranging between times s+b and s+c after each stimulus time s, with
+   n basis functions (and n regression parameters per voxel). The qth
+   basis function, for q=1..n, is h\ :sub:`POLY,q`\(t) = P\
+   :sub:`q`\(2(t-b)/(c-b)-1) where P\ :sub:`q`\(x) is the qth Legendre
+   polynomial.
 
    .. list-table::
       :widths: 50 50
@@ -675,12 +702,13 @@ SEE THE CURRENT HELP**
        * h(t) peaks at t=4 with h(4)=1, whereas H(t) peaks at t=d/(1-exp(-d/4).
          Note that the peak value of H(t) depends on 'd'; call this peak value
          H :sub:`peak`\(d).
-   * ``'BLOCK(d)'`` means that the response function to a stimulus at time s is
-     H(t-s) for t=s..s+d+15.
-   * ``'BLOCK(d,p)'`` means that the response function to a stimulus at time s
-     is p⋅H(t-s)/H\ :sub:`peak`\(d) for t=s..s+d+15. That is, the response is
-     rescaled so that the peak value of the entire block is 'p' rather than 
-     H\ :sub:`peak`\(d). For most purposes, the best value would be p=1.
+   * ``'BLOCK(d)'`` means that the response function to a stimulus at
+     time s is :math:`H(t-s)` for :math:`t=s..s+d+15`.
+   * ``'BLOCK(d,p)'`` means that the response function to a stimulus
+     at time s is p⋅H(t-s)/H\ :sub:`peak`\(d) for t=s..s+d+15. That
+     is, the response is rescaled so that the peak value of the entire
+     block is 'p' rather than H\ :sub:`peak`\(d). For most purposes,
+     the best value would be p=1.
    * ``'BLOCK'`` is a 1 parameter model (the amplitude).
 
    .. list-table::
@@ -710,9 +738,10 @@ SEE THE CURRENT HELP**
 
 |
 
-9. ``'EXPR(b,c) exp1 exp2 ...'`` is a set of user-defined basis functions,
-   ranging between times s+b and s+c after each stimulus time s. The expressions
-   are given using the syntax of ``3dcalc``, and can use the symbolic variables:
+9. ``'EXPR(b,c) exp1 exp2 ...'`` is a set of user-defined basis
+   functions, ranging between times s+b and s+c after each stimulus
+   time s. The expressions are given using the syntax of ``3dcalc``,
+   and can use the symbolic variables:
 
    * ``'t'`` = time from stimulus
    * ``'x'`` = t scaled to range from 0 to 1 over the b..c interval
@@ -749,6 +778,7 @@ the response, care must be taken when using GLTs with these.
 
 * The parameters for ``GAM``, ``TENT``, ``CSPLIN``, and ``BLOCK`` do corresond
   directly to FMRI signal change amplitudes.
+
 * **I NEED TO THINK THIS THROUGH SOME MORE** (Says Bob)
 
 Next to be implemented (someday): an option to compute areas under the curve
@@ -780,20 +810,26 @@ Small changes: to the defaults, new options, *etc*.
 ===================================================
 
 * ``-nobout`` and ``-full_first`` are now the defaults. These changes mean that
-  if you *want* the β weights for the baseline parameters in the output
+  if you *want* the :math:`\beta` weights for the baseline parameters in the output
   ``-bucket`` dataset, you have to specify -bout on the command line. If you
   *want* the full-model statistics to appear last in the dataset, you have to
   specify ``-nofull_first`` on the command line.
-|
+
+  |
+
 * Even if you do not give the ``-fout`` option on the command line (indicating you
   do *not* want *F*-statistics for various hypotheses to be calculated), the program
   will still compute the full model *F*-statistics. If you don't want that for
   some reason, you have to use the new ``-nofullf_atall`` option.
-| 
+
+  |
+
 * If you do not give a ``-bucket`` option on the command line, then the program
   will act as if you had given ``-bucket Decon``. (This is known as the "Ah need
   a bucket" change, with apologies to KFC.)
-|
+
+  |
+
 * The program now *always* outputs (to a file) the regression matrix **X**, even
   if you don't give a ``-x1D`` option. The default filename will be the same as
   the ``-bucket`` prefix, with the suffix ``.x1D`` added.
@@ -803,7 +839,9 @@ Small changes: to the defaults, new options, *etc*.
     out as an array of unlabeled numbers.) These labels will be useful in an
     upcoming regression matrix analysis program being planned by Ziad Saad. They
     are also useful in the new program ``3dSynthesize`` (cf. *infra*).
-| 
+
+  | 
+
 * ``3dDeconvolve`` used to fail with the ``-nodata`` option combined with
   ``-stim_times``. This crash should be a thing of the past.
 
@@ -817,7 +855,8 @@ Small changes: to the defaults, new options, *etc*.
     default ``-nodata`` TR is 1.0 s. This TR is unimportant if you only use
     ``-stim_file``, but is crucial if you use ``-stim_times`` with ``-nodata``
     or with ``-input1D``.
-|
+
+  |
 
 * New option ``-float`` (or ``-datum float``) can be used to make all the output
   datasets be stored in floating point format. In the past, only scaled shorts
@@ -825,23 +864,31 @@ Small changes: to the defaults, new options, *etc*.
   problems. Shorts are still the default, but at some point in the future I may
   change the default to floats — if/when this happens, the option ``-short`` can
   be used if you like the more compact format.
-|
+
+  |
+
 * The program now reports when ``-stim_times`` time values are out of the time
   span of the dataset. These are not fatal errors, but can help notify you to
   potential problems of your timing files. (This problem is known as the PSFB
   syndrome — it's not as bad as the Mike Beauchamp syndrome, but try to avoid
   it.)
-|
+
+  |
+
 * The labels for the ``-bucket`` output dataset sub-bricks have been changed
   slightly to be more consistent and readable (e.g., ``Tstat`` instead of
   ``t-st`` to indicate a *t*-statistic).
-|
+
+  |
+
 * ``3dDeconvolve`` now computes a recommended ``-polort`` value (1 degree for
   every 150 s of continuous imaging). If your input value is less than this, a
   non-fatal WARNING message is printed. If you use ``-polort A``, then the
   program will automatically choose the polynomial degree to use for detrending
   (AKA high pass filtering).
-|
+
+  |
+
 * A new ``CSPLIN()`` model for ``-stim_times`` is now available. This function
   is a drop-in replacement for ``TENT()``, with the same 3 arguments. The basis
   functions are cardinal cubic splines, rather than cardinal linear splines.
@@ -931,13 +978,15 @@ New option for censoring time points
 New program ``3dSynthesize`` for creating 3D+time datasets
 ==========================================================
 
-* This program combines the β weights stored in the ``-cbucket`` output from
+* This program combines the :math:`\beta` weights stored in the ``-cbucket`` output from
   ``3dDeconvolve``, and the regression matrix time series stored in the ``-x1D``
   output, to produce model fit time series datasets. ``3dDeconvolve`` itself has
   the ``-fitts`` option to produce the full model fit in each voxel.
   ``3dSynthesize`` can be used to produce model fits from subsets of the full
   model.
-| 
+
+  | 
+
 * In the examples below, suppose that ``fred+orig`` is the output from
   ``-cbucket`` and that ``fred.x1D`` is the output from ``-x1D``. Also suppose
   that there were two stimulus classes, given labels ``Face`` and ``House`` in
@@ -970,9 +1019,12 @@ New program ``3dSynthesize`` for creating 3D+time datasets
   original time series dataset (with the ``Dataset #N`` plugin), you'll need the
   baseline model component so that the ``3dSynthesize`` output is on the same
   magnitude scale for graphing.
-* For further details, see the ``-help`` output from ``3dSynthesize``: available
-  `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dSynthesize_sphx.html#ahelp-3dsynthesize>`_.
-|
+
+* For further details, see the ``-help`` output from ``3dSynthesize``:
+  available `here
+  <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/3dSynthesize_sphx.html#ahelp-3dsynthesize>`__.
+
+  |
 
 * [**25 Jun 2007] Censoring**
 
@@ -1105,10 +1157,10 @@ generated for ``_AM2`` for each one column specified by the response model
 with ``_AM2``). The first column will be created by giving equal weight (1) to
 each event in the stimulus timing file. The second column will have each event
 weighted by the difference between its individual amplitude and the mean of all
-amplitudes in the timing file. The significance of the output β weight for this
+amplitudes in the timing file. The significance of the output :math:`\beta` weight for this
 second column (*e.g.*, given by using the ``-tout`` option) can be used to map
 regions that are (linearly) sensitive to the amplitude information. The
-significance of the combined β weights for the two columns (*e.g.*, given by
+significance of the combined :math:`\beta` weights for the two columns (*e.g.*, given by
 using the ``-fout`` option) can be used to map regions that are sensitive the
 stimulus class as a whole.
 
@@ -1150,10 +1202,11 @@ The reasoning behind separating the regressor columns into 2 classes (mean
 activation and AM-varying activation) is
 
   * to allow for voxels where the amplitude doesn't affect the result, and
-  * to allow for a cleaner interpretation; in voxels where both regressors have
-    significant weight, you can use the coefficient (β weight) of the first
-    regressor as the mean activation level, and the coefficient of the second as
-    the dependence of the activation level on the amplitude.
+  * to allow for a cleaner interpretation; in voxels where both
+    regressors have significant weight, you can use the coefficient
+    (:math:`\beta` weight) of the first regressor as the mean
+    activation level, and the coefficient of the second as the
+    dependence of the activation level on the amplitude.
 
 A numerical example might help elucidate:
 
