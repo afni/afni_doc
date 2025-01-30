@@ -1124,8 +1124,8 @@ and varying components. I do not recommend this, for reasons given below, but
 the option is available. (If you can think of a good reason to use this option
 for analysis of FMRI time series, please let me know!)
 
-Deconvolution with Amplitude Modulation:
-========================================
+Deconvolution with Amplitude Modulation
+=======================================
 
 It is also legal to use a deconvolution model (*e.g.*, ``'TENT()'``) with
 ``-stim_times_AM2``. However, you must realize that the program will compute a
@@ -1138,8 +1138,8 @@ present, the ``-iresp`` option will not output the HRF for the AM component of a
 deconvolution myself on real data. If you are going to try to do this, you
 should (a) understand what you are doing, and (b) consult with someone here.
 
-Why Use 2 Regressors?:
-======================
+Why Use 2 Regressors?
+=====================
 
 One user asked the following question: *"Can't I just use the AM
 weighted-regressor in the model by itself? Why do you have to include the
@@ -1184,8 +1184,8 @@ model is like the baseline model (*e.g.*, ``-polort`` stuff), in that it must be
 included in the fit since it does occur, but you are free to ignore it as you
 will. Interpreting the results is your problem.
 
-What about Losing Degrees of Freedom?:
-======================================
+What about Losing Degrees of Freedom?
+=====================================
 
 If you are concerned about losing degrees of freedom, since you will be adding
 regressors but not data, then I would run the analysis twice. Once with the mean
@@ -1206,8 +1206,8 @@ should help you decide very quickly if the two results look the same or not —
 of course not be identical, since they will have been calculated with different
 models.
 
-Caveats and Issues:
-===================
+Caveats and Issues
+==================
 
 One problem with the above idea is that one may not wish to assume that the FMRI
 signal is any particular function of the event amplitude values. I don't know at
