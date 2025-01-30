@@ -128,7 +128,7 @@ columns of the regression matrix X into the given file.
   * ``B`` is the number of pixels high (down the columns)
   * For example:
 
-    .. code-block:: none
+    .. code-block:: bash
     
        setenv AFNI_XJPEG_IMXY 768x1024
 
@@ -220,7 +220,7 @@ each set of stimulus symbols on a row should be separated by one or
 more spaces. For example, the two multi-lag regressors entered with
 the options below.
 
-.. code-block:: none
+.. code-block:: bash
 
    -stim_label 1 Ear -stim_minlag 1 0 -stim_maxlag 1 5 \
    -stim_label 2 Wax -stim_minlag 2 2 -stim_maxlag 2 7
@@ -496,13 +496,14 @@ SEE THE CURRENT HELP**
    
    Plot generated with:
 
-   .. code-block::
+   .. code-block:: bash
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg gam_x.jpg \
-                  -local_times -x1D stdout:                      \
-                  -stim_times 1 '1D: 10 60 110 170' 'GAM'        \
-      | 1dplot -THICK -one -stdin -xlabel Time  -jpg GAM_1d.jpg  \
-               -DAFNI_1DPLOT_COLOR_01=red 
+      3dDeconvolve                                                  \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg gam_x.jpg \
+          -local_times -x1D stdout:                                 \
+          -stim_times 1 '1D: 10 60 110 170' 'GAM'                   \
+        | 1dplot -THICK -one -stdin -xlabel Time  -jpg GAM_1d.jpg   \
+              -DAFNI_1DPLOT_COLOR_01=red 
 
 ----
 
@@ -527,13 +528,14 @@ SEE THE CURRENT HELP**
    
    Plot generated with:
 
-   .. code-block::
+   .. code-block:: bash
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg GAMbc_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'GAM(10,2)'  \
-      | 1dplot -THICK -one -stdin -xlabel Time -jpg GAMbc_1d.jpg \
-               -DAFNI_1DPLOT_COLOR_01=red 
+      3dDeconvolve                                                     \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg GAMbc_x.jpg  \
+          -local_times -x1D stdout:                                    \
+          -stim_times 1 '1D: 10 60 110 170' 'GAM(10,2)'                \
+        | 1dplot -THICK -one -stdin -xlabel Time -jpg GAMbc_1d.jpg     \
+             -DAFNI_1DPLOT_COLOR_01=red 
 
 ----
 
@@ -560,12 +562,13 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SPMG2_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'SPMG2'  \
-      | 1dplot -THICK -one -stdin -xlabel Time -jpg SPMG2_1d.jpg 
+      3dDeconvolve                                                    \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SPMG2_x.jpg \
+          -local_times -x1D stdout:                                   \
+          -stim_times 1 '1D: 10 60 110 170' 'SPMG2'                   \
+        | 1dplot -THICK -one -stdin -xlabel Time -jpg SPMG2_1d.jpg 
 
 ----
 
@@ -595,12 +598,13 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg TENT_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'TENT(3,30,3)'  \
-      | 1dplot -thick -one -stdin -xlabel Time -jpg TENT_1d.jpg
+      3dDeconvolve                                                    \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg TENT_x.jpg  \
+          -local_times -x1D stdout:                                   \
+          -stim_times 1 '1D: 10 60 110 170' 'TENT(3,30,3)'            \
+        | 1dplot -thick -one -stdin -xlabel Time -jpg TENT_1d.jpg
 
 ----
 
@@ -623,12 +627,13 @@ SEE THE CURRENT HELP**
 
    Plot generated with:
    
-   .. code-block::
+   .. code-block:: bash
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg CSPLIN_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'CSPLIN(1,30,4)'  \
-      | 1dplot -thick -one -stdin -xlabel Time -jpg CSPLIN_1d.jpg
+      3dDeconvolve                                                     \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg CSPLIN_x.jpg \
+          -local_times -x1D stdout:                                    \
+          -stim_times 1 '1D: 10 60 110 170' 'CSPLIN(1,30,4)'           \
+        | 1dplot -thick -one -stdin -xlabel Time -jpg CSPLIN_1d.jpg
 
 ----
 
@@ -654,10 +659,11 @@ SEE THE CURRENT HELP**
    
    .. code-block::
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SIN_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'SIN(1,30,2)'  \
-      | 1dplot -thick -one -stdin -xlabel Time -jpg SIN_1d.jpg
+      3dDeconvolve                                                  \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg SIN_x.jpg \
+          -local_times -x1D stdout:                                 \
+          -stim_times 1 '1D: 10 60 110 170' 'SIN(1,30,2)'           \
+        | 1dplot -thick -one -stdin -xlabel Time -jpg SIN_1d.jpg
 
 ----
 
@@ -685,10 +691,11 @@ SEE THE CURRENT HELP**
    
    .. code-block::
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg POLY_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'POLY(1,30,3)'  \
-      | 1dplot -thick -one -stdin -xlabel Time -jpg POLY_1d.jpg
+      3dDeconvolve                                                   \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg POLY_x.jpg \
+          -local_times -x1D stdout:                                  \
+          -stim_times 1 '1D: 10 60 110 170' 'POLY(1,30,3)'           \
+          | 1dplot -thick -one -stdin -xlabel Time -jpg POLY_1d.jpg
 
 ----
 
@@ -728,11 +735,12 @@ SEE THE CURRENT HELP**
    
    .. code-block::
 
-      3dDeconvolve -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg BLOCK_x.jpg \
-             -local_times -x1D stdout:                  \
-             -stim_times 1 '1D: 10 60 110 170' 'BLOCK(20,1)'  \
-      | 1dplot -thick -one -stdin -xlabel Time -jpg BLOCK_1d.jpg \
-               -DAFNI_1DPLOT_COLOR_01=red 
+      3dDeconvolve                                                    \
+          -nodata 200 1.0 -num_stimts 1 -polort -1 -xjpeg BLOCK_x.jpg \
+          -local_times -x1D stdout:                                   \
+          -stim_times 1 '1D: 10 60 110 170' 'BLOCK(20,1)'             \
+          | 1dplot -thick -one -stdin -xlabel Time -jpg BLOCK_1d.jpg  \
+                -DAFNI_1DPLOT_COLOR_01=red 
 
 ----
 
@@ -994,9 +1002,11 @@ New program ``3dSynthesize`` for creating 3D+time datasets
 
   * Baseline sub-model:
 
-    .. code-block::
+    .. code-block:: bash
 
-       3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline -prefix fred_baseline
+       3dSynthesize                                        \
+           -cbucket fred+orig -matrix fred.x1D             \
+           -select baseline -prefix fred_baseline
 
     For example, you could subtract ``fred+baseline+orig`` from the FMRI data
     time series, using ``3dcalc``, to get a signal+noise dataset with no
@@ -1005,15 +1015,19 @@ New program ``3dSynthesize`` for creating 3D+time datasets
 
   * Baseline plus ``Face`` stimulus sub-model (but not the ``House`` stimulus):
 
-    .. code-block::
+    .. code-block:: bash
 
-       3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline Face prefix fred_Face
+       3dSynthesize                                        \
+           -cbucket fred+orig -matrix fred.x1D             \
+           -select baseline Face prefix fred_Face
 
     Baseline plus ``House`` stimulus sub-model (but not the ``Face`` stimulus):
 
-    .. code-block::
+    .. code-block:: bash
 
-      3dSynthesize -cbucket fred+orig -matrix fred.x1D -select baseline House prefix fred_House
+       3dSynthesize                                        \
+           -cbucket fred+orig -matrix fred.x1D             \
+           -select baseline House prefix fred_House
 
 * In general, if you want to "Double Plot" the resulting dataset on top of the
   original time series dataset (with the ``Dataset #N`` plugin), you'll need the
@@ -1091,115 +1105,126 @@ which could be carried out in ``3dDeconvolve`` by using a 2 row GLT. The contras
 between the two conditions ("on−off") could be carried out with a 1 row GLT. For
 example:
 
-  .. code-block::
+  .. code-block:: bash
 
      3dDeconvolve ...                                                    \
-      -stim_times 1 regressor_on.1D  'BLOCK(1,1)' -stim_label 1 'On'  \
-      -stim_times 2 regressor_off.1D 'BLOCK(1,1)' -stim_label 2 'Off' \
-      -gltsym 'SYM: On \ Off' -glt_label 1 'On+Off'                   \
-      -gltsym 'SYM: On -Off'  -glt_label 2 'On-Off' ...
+         -stim_times 1 regressor_on.1D  'BLOCK(1,1)' -stim_label 1 'On'  \
+         -stim_times 2 regressor_off.1D 'BLOCK(1,1)' -stim_label 2 'Off' \
+         -gltsym 'SYM: On \ Off' -glt_label 1 'On+Off'                   \
+         -gltsym 'SYM: On -Off'  -glt_label 2 'On-Off' ...
 
-(A realistic ``3dDeconvolve`` command line would, of course, have more options
-to specify the input and output filenames, *etc.*) The above example assumes
-that each case ("on" and "off") is being analyzed with simple (fixed-shape)
-regression — short 1-second blocks of activity.
+(A realistic ``3dDeconvolve`` command line would, of course, have more
+options to specify the input and output filenames, etc.) The above
+example assumes that each case ("on" and "off") is being analyzed with
+simple (fixed-shape) regression -- short 1-second blocks of activity.
 
-Nothing more will be said here about binary AM, since it is just a standard
-application of ``3dDeconvolve``; the only (small) difference is that the
-stimulus class to which each individual stimulus is assigned is determined
-during the FMRI data acquisition itself, rather than determined by the
-investigator before the imaging session.
+Nothing more will be said here about binary AM, since it is just a
+standard application of ``3dDeconvolve``; the only (small) difference
+is that the stimulus class to which each individual stimulus is
+assigned is determined during the FMRI data acquisition itself, rather
+than determined by the investigator before the imaging session.
 
 Continuous AM
 =============
 
-More complex is the case where the AM measurement values fall onto a continuous
-(or finely graded discrete) scale. One form of analysis is then to construct two
-regressors: the first being the standard
-constant-amplitude-for-all-events-in-the-same-class time series, and the second
-having the amplitude for each event modulated by that event's AM value (or some
-function of the AM value). To make these two regressors be orthogonal, it is
-best to make the modulation be proportional to the difference between each
-event's AM value and the mean AM value for that stimulus class.
+More complex is the case where the AM measurement values fall onto a
+continuous (or finely graded discrete) scale. One form of analysis is
+then to construct two regressors: the first being the standard
+constant-amplitude-for-all-events-in-the-same-class time series, and
+the second having the amplitude for each event modulated by that
+event's AM value (or some function of the AM value). To make these two
+regressors be orthogonal, it is best to make the modulation be
+proportional to the difference between each event's AM value and the
+mean AM value for that stimulus class.
 
-The new ``-stim_times_AM2`` option is designed to make this type of analysis
-easy. The **'AM'** in the option suffix indicates that amplitude modulation for
-each time is expected in the input timing file. The **'2'** indicates that 2
-regressors will be generated from 1 stimulus timing file.
+The new ``-stim_times_AM2`` option is designed to make this type of
+analysis easy. The **'AM'** in the option suffix indicates that
+amplitude modulation for each time is expected in the input timing
+file. The **'2'** indicates that 2 regressors will be generated from 1
+stimulus timing file.
 
-The stimulus timing file for ``-stim_times_AM2`` has a slightly different format
-than the stimulus timing file for the standard ``-stim_times`` option. Each
-stimulus time in the ``_AM2`` file must have an amplitude "married" to it. For
-example:
+The stimulus timing file for ``-stim_times_AM2`` has a slightly
+different format than the stimulus timing file for the standard
+``-stim_times`` option. Each stimulus time in the ``_AM2`` file must
+have an amplitude "married" to it. For example:
 
 
   .. code-block::
 
     10*5 30*3 50*2 70*7 90*-3
 
-This indicates that the stimuli at times 10, 30, 50, 70, and 90 have amplitudes
-of 5, 3, 2, 7, and -3 (respectively). Note that if a stimulus time is given
-without an amplitude, the amplitude will be taken to be zero and 3dDeconvolve
-will print a warning message. (**N.B.**: the '*' separator can also be the 'x'
-character, if that is more convenient.)
+This indicates that the stimuli at times 10, 30, 50, 70, and 90 have
+amplitudes of 5, 3, 2, 7, and -3 (respectively). Note that if a
+stimulus time is given without an amplitude, the amplitude will be
+taken to be zero and 3dDeconvolve will print a warning
+message. (**N.B.**: the '*' separator can also be the 'x' character,
+if that is more convenient.)
 
-The program ``1dMarry`` can be used to "glue" two .1D formatted files together
-to produce a file appropriate for ``-stim_times_AM2``. With the ``-divorce``
-option, it can also split up a "married" file into 2 separate files — one with
-the times and one with the amplitudes. These features makes it relatively
-straightforward to run a standard ``3dDeconvolve`` analysis with ``-stim_times``
-and also the new ``-stim_times_AM2`` type of analysis.
+The program ``1dMarry`` can be used to "glue" two .1D formatted files
+together to produce a file appropriate for ``-stim_times_AM2``. With
+the ``-divorce`` option, it can also split up a "married" file into 2
+separate files -- one with the times and one with the
+amplitudes. These features makes it relatively straightforward to run
+a standard ``3dDeconvolve`` analysis with ``-stim_times`` and also the
+new ``-stim_times_AM2`` type of analysis.
 
-The same response models available with the standard ``-stim_times`` option are
-also usable with ``-stim_times_AM2``. Two regression matrix columns will be
-generated for ``_AM2`` for each one column specified by the response model
-(*e.g.*, ``'BLOCK(1,1)'`` generates 1 column normally, and 2 columns when used
-with ``_AM2``). The first column will be created by giving equal weight (1) to
-each event in the stimulus timing file. The second column will have each event
-weighted by the difference between its individual amplitude and the mean of all
-amplitudes in the timing file. The significance of the output :math:`\beta` weight for this
-second column (*e.g.*, given by using the ``-tout`` option) can be used to map
-regions that are (linearly) sensitive to the amplitude information. The
-significance of the combined :math:`\beta` weights for the two columns (*e.g.*, given by
-using the ``-fout`` option) can be used to map regions that are sensitive the
-stimulus class as a whole.
+The same response models available with the standard ``-stim_times``
+option are also usable with ``-stim_times_AM2``. Two regression matrix
+columns will be generated for ``_AM2`` for each one column specified
+by the response model (e.g., ``'BLOCK(1,1)'`` generates 1 column
+normally, and 2 columns when used with ``_AM2``). The first column
+will be created by giving equal weight (1) to each event in the
+stimulus timing file. The second column will have each event weighted
+by the difference between its individual amplitude and the mean of all
+amplitudes in the timing file. The significance of the output
+:math:`\beta` weight for this second column (e.g., given by using
+the ``-tout`` option) can be used to map regions that are (linearly)
+sensitive to the amplitude information. The significance of the
+combined :math:`\beta` weights for the two columns (e.g., given by
+using the ``-fout`` option) can be used to map regions that are
+sensitive the stimulus class as a whole.
 
-It can be useful and enlightening to plot the columns of the regression matrix
-that correspond to the equal-weight and variable-weight model time series
-generated by ``-stim_times_AM2``. For this purpose, program ``1dplot`` can be
+It can be useful and enlightening to plot the columns of the
+regression matrix that correspond to the equal-weight and
+variable-weight model time series generated by
+``-stim_times_AM2``. For this purpose, program ``1dplot`` can be
 applied to subsets of the .x1D file output by ``3dDeconvolve``.
 
-It is possible to use the option ``-stim_times_AM1`` if you want to just
-generate a single regression model where each event is simply scaled by its
-associated amplitude. There will be no separation of the model into the constant
-and varying components. I do not recommend this, for reasons given below, but
-the option is available. (If you can think of a good reason to use this option
-for analysis of FMRI time series, please let me know!)
+It is possible to use the option ``-stim_times_AM1`` if you want to
+just generate a single regression model where each event is simply
+scaled by its associated amplitude. There will be no separation of the
+model into the constant and varying components. I do not recommend
+this, for reasons given below, but the option is available. (If you
+can think of a good reason to use this option for analysis of FMRI
+time series, please let me know!)
 
 Deconvolution with Amplitude Modulation
 =======================================
 
-It is also legal to use a deconvolution model (*e.g.*, ``'TENT()'``) with
-``-stim_times_AM2``. However, you must realize that the program will compute a
-separate HRF shape for the AM component of the response from the mean component.
-It is not possible to specify that the AM component has the same shape as the
-mean component, and just has a different response amplitude — that would be a
-nonlinear regression problem, and ``3dDeconvolve`` isn't that flexible. Also, at
-present, the ``-iresp`` option will not output the HRF for the AM component of a
-``-stim_times_AM2`` deconvolution model. Nor have I actually tried using AM
-deconvolution myself on real data. If you are going to try to do this, you
-should (a) understand what you are doing, and (b) consult with someone here.
+It is also legal to use a deconvolution model (*e.g.*, ``'TENT()'``)
+with ``-stim_times_AM2``. However, you must realize that the program
+will compute a separate HRF shape for the AM component of the response
+from the mean component.  It is not possible to specify that the AM
+component has the same shape as the mean component, and just has a
+different response amplitude -- that would be a nonlinear regression
+problem, and ``3dDeconvolve`` isn't that flexible. Also, at present,
+the ``-iresp`` option will not output the HRF for the AM component of
+a ``-stim_times_AM2`` deconvolution model. Nor have I actually tried
+using AM deconvolution myself on real data. If you are going to try to
+do this, you should (a) understand what you are doing, and (b) consult
+with someone here.
 
 Why Use 2 Regressors?
 =====================
 
 One user asked the following question: *"Can't I just use the AM
-weighted-regressor in the model by itself? Why do you have to include the
-standard (mean amplitude) regressor in the full model to investigate the effect
-of event amplitude values?"* In other words, why not use ``-stim_times_AM1``?
+weighted-regressor in the model by itself? Why do you have to include
+the standard (mean amplitude) regressor in the full model to
+investigate the effect of event amplitude values?"* In other words,
+why not use ``-stim_times_AM1``?
 
-The reasoning behind separating the regressor columns into 2 classes (mean
-activation and AM-varying activation) is
+The reasoning behind separating the regressor columns into 2 classes
+(mean activation and AM-varying activation) is
 
   * to allow for voxels where the amplitude doesn't affect the result, and
   * to allow for a cleaner interpretation; in voxels where both
@@ -1211,63 +1236,69 @@ activation and AM-varying activation) is
 A numerical example might help elucidate:
 
 
-Suppose that you have 6 events, to be simple, and that the amplitudes for these
-events are {1, 2, 1, 2, 1, 2}, with mean=1.5. Now suppose you have a voxel that
-IS active with the task, but whose activity is not dependent on the amplitude at
-all. Say its activation level with each task is 6, so the "activity vector"
-(*i.e.*, the BOLD response amplitude for each event) is {6, 6, 6, 6, 6, 6}. This
-vector is highly correlated with the AM vector {1, 2, 1, 2, 1, 2} (cc=0.9486),
-so you will get a positive activation result at this voxel when using a single
-regressor. You can't tell from the regression if this voxel is sensitive to the
-amplitude modulation or not.
+Suppose that you have 6 events, to be simple, and that the amplitudes
+for these events are ``{1, 2, 1, 2, 1, 2}``, with mean=1.5. Now
+suppose you have a voxel that IS active with the task, but whose
+activity is not dependent on the amplitude at all. Say its activation
+level with each task is 6, so the "activity vector" (*i.e.*, the BOLD
+response amplitude for each event) is ``{6, 6, 6, 6, 6, 6}``. This
+vector is highly correlated with the AM vector ``{1, 2, 1, 2, 1, 2}``
+(cc=0.9486), so you will get a positive activation result at this
+voxel when using a single regressor. You can't tell from the
+regression if this voxel is sensitive to the amplitude modulation or
+not.
 
-But if you use 2 regressors, they would be proportional to {1, 1, 1, 1, 1, 1}
-and {-0.5, +0.5, -0.5, +0.5, -0.5, +0.5} (the differences of each event
-amplitude from the mean of 1.5). The first regression vector is perfectly
-correlated with the "activity vector" {6, 6, 6, 6, 6, 6} and the second
-regression vector is not correlated with the activity at all. So you would get
-an activation result saying "this voxel was activated by the task, but doesn't
-care about the amplitude". You cannot make such a dissection without using 2
-regressors.
+But if you use 2 regressors, they would be proportional to ``{1, 1, 1,
+1, 1, 1}`` and ``{-0.5, +0.5, -0.5, +0.5, -0.5, +0.5}`` (the
+differences of each event amplitude from the mean of 1.5). The first
+regression vector is perfectly correlated with the "activity vector"
+``{6, 6, 6, 6, 6, 6}`` and the second regression vector is not
+correlated with the activity at all. So you would get an activation
+result saying "this voxel was activated by the task, but doesn't care
+about the amplitude". You cannot make such a dissection without using
+2 regressors.
 
-Even if you don't care at all about such non-AM-dependent voxels, you must still
-include them if you think this may be a significant effect in the data. You have
-to model the data as it presents itself. In a sense, the constant-activation
-model is like the baseline model (*e.g.*, ``-polort`` stuff), in that it must be
-included in the fit since it does occur, but you are free to ignore it as you
+Even if you don't care at all about such non-AM-dependent voxels, you
+must still include them if you think this may be a significant effect
+in the data. You have to model the data as it presents itself. In a
+sense, the constant-activation model is like the baseline model
+(*e.g.*, ``-polort`` stuff), in that it must be included in the fit
+since it does occur, but you are free to ignore it as you
 will. Interpreting the results is your problem.
 
 What about Losing Degrees of Freedom?
 =====================================
 
-If you are concerned about losing degrees of freedom, since you will be adding
-regressors but not data, then I would run the analysis twice. Once with the mean
-regressors only, and then one with the mean and the variable regressors. Then
-decide if the maps from the mean regressors in the two cases differ markedly. My
-guess is that they will not, if you have a decent number of events in each case
-(30+). If they do not differ too much, then you are safe to use the double
-regressor (``AM2``) analysis. If they do differ a lot (*e.g.*, you lose a lot of
-mean regressor activation when you set the F-statistic p-values the same), then
-you probably can't use the double regressor analysis. But it is easy enough to
-try.
+If you are concerned about losing degrees of freedom, since you will
+be adding regressors but not data, then I would run the analysis
+twice. Once with the mean regressors only, and then one with the mean
+and the variable regressors. Then decide if the maps from the mean
+regressors in the two cases differ markedly. My guess is that they
+will not, if you have a decent number of events in each case (30+). If
+they do not differ too much, then you are safe to use the double
+regressor (``AM2``) analysis. If they do differ a lot (*e.g.*, you
+lose a lot of mean regressor activation when you set the F-statistic
+p-values the same), then you probably can't use the double regressor
+analysis. But it is easy enough to try.
 
-You can open two AFNI controllers, and view the single and double regressor
-analyses side-by-side. You can set the threshold sliders to be locked together
-in p-value (using ``Edit Environment`` on variable ``AFNI_THRESH_LOCK``). This
-should help you decide very quickly if the two results look the same or not —
-*same*, that is, from the viewpoint of interpreting the results. The maps will
-of course not be identical, since they will have been calculated with different
-models.
+You can open two AFNI controllers, and view the single and double
+regressor analyses side-by-side. You can set the threshold sliders to
+be locked together in p-value (using ``Edit Environment`` on variable
+``AFNI_THRESH_LOCK``). This should help you decide very quickly if the
+two results look the same or not -- *same*, that is, from the viewpoint
+of interpreting the results. The maps will of course not be identical,
+since they will have been calculated with different models.
 
 Caveats and Issues
 ==================
 
-One problem with the above idea is that one may not wish to assume that the FMRI
-signal is any particular function of the event amplitude values. I don't know at
-this time how to deal with this issue in the context of linear regression. For
-example, the "linear in event amplitude" model could be extended to allow for a
-quadratic term (``-stim_times_AM3``?), but it is highly unclear that this would
-be useful. Some sort of combination of regression analysis with a mutual
-information measurement might be needed (to quantify if the BOLD response is
-"predictable" from the AM information), but I don't fully know how to formulate
-this idea mathematically.
+One problem with the above idea is that one may not wish to assume
+that the FMRI signal is any particular function of the event amplitude
+values. I don't know at this time how to deal with this issue in the
+context of linear regression. For example, the "linear in event
+amplitude" model could be extended to allow for a quadratic term
+(``-stim_times_AM3``?), but it is highly unclear that this would be
+useful. Some sort of combination of regression analysis with a mutual
+information measurement might be needed (to quantify if the BOLD
+response is "predictable" from the AM information), but I don't fully
+know how to formulate this idea mathematically.
