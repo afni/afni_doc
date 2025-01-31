@@ -25,8 +25,8 @@ The original 2004 notes page is
 The original 2007 notes page is
 `here. <https://afni.nimh.nih.gov/pub/dist/doc/misc/Decon/DeconSpring2007.html>`__
 
-``3dDeconvolve`` Upgrades Summer 2004
-+++++++++++++++++++++++++++++++++++++
+``3dDeconvolve`` Upgrades: Summer 2004
++++++++++++++++++++++++++++++++++++++++++++
 
 .. _stats_decon2004_svd:
 
@@ -92,8 +92,8 @@ implemented.
 
 .. _stats_decon2004_xjpeg:
 
-``-xjpeg``
-==========
+Option: ``-xjpeg``
+=====================
 
 The new ``-xjpeg filename`` option will save a JPEG image of the
 columns of the regression matrix X into the given file. 
@@ -171,8 +171,8 @@ The following is a sample matrix file with 34 entries per row:
 
 .. _stats_decon2004_gltsym:
 
-``-gltsym``
-===========
+Option: ``-gltsym``
+======================
 
 The new ``-gltsym gltname`` option lets you describe the rows of a GLT
 matrix using a symbolic notation.
@@ -290,8 +290,8 @@ for ``n=0,1,...``
 
 .. _stats_decon2004_cbucket:
 
-``-cbucket``
-============
+Option: ``-cbucket``
+========================
 
 You can save ONLY the estimated parameters (AKA regression coefficients) for
 each voxel into a dataset with the new ``-cbucket cprefix`` option. This may be
@@ -301,8 +301,8 @@ to extract them from the various statistics that are stored in the output of the
 
 .. _stats_decon2004_xsave:
 
-``-xsave``
-==========
+Option: ``-xsave``
+===================
 
 In combination with the old ``-bucket bprefix`` option, the new
 ``-xsave`` option saves the X matrix (and some other information) into
@@ -314,8 +314,8 @@ faster than running the whole analysis over from scratch.
 
 .. _stats_decon2004_xrestore:
 
-``-xrestore``
-=============
+Option: ``-xrestore``
+========================
 
 The new ``-xrestore filename.xsave`` option will read the ``-xsave``
 file and allow you to carry out extra GLTs after the first
@@ -341,8 +341,8 @@ options will be stored as follows:
 
 .. _stats_decon2004_input:
 
-``-input``
-==========
+Option: ``-input``
+====================
 
 The ``-input`` option now allows input of multiple 3D+time datasets, as in:
 
@@ -378,8 +378,8 @@ below where each digit is printed when 2% of the voxels are done.
 
 .. _stats_decon2004_stim_times:
 
-``-stim_times``
-===============
+Option: ``-stim_times``
+============================
 
 Direct input of stimulus timing, plus generation of a response model,
 with the new ``-stim_times`` option:
@@ -817,7 +817,7 @@ The ``-nodata`` option now works with the ``-stim_times`` option.
 
 .. _stats_decon2007:
 
-Spring 2007 Changes to ``3dDeconvolve``
+``3dDeconvolve`` Updates: 2007 
 +++++++++++++++++++++++++++++++++++++++
 
 .. _stats_decon2007_small:
@@ -825,83 +825,90 @@ Spring 2007 Changes to ``3dDeconvolve``
 Small changes: to the defaults, new options, *etc*.
 ===================================================
 
-* ``-nobout`` and ``-full_first`` are now the defaults. These changes mean that
-  if you *want* the :math:`\beta` weights for the baseline parameters in the output
-  ``-bucket`` dataset, you have to specify -bout on the command line. If you
-  *want* the full-model statistics to appear last in the dataset, you have to
-  specify ``-nofull_first`` on the command line.
+* ``-nobout`` and ``-full_first`` are now the defaults. These changes
+  mean that if you *want* the :math:`\beta` weights for the baseline
+  parameters in the output ``-bucket`` dataset, you have to
+  specify -bout on the command line. If you *want* the full-model
+  statistics to appear last in the dataset, you have to specify
+  ``-nofull_first`` on the command line.
 
   |
 
-* Even if you do not give the ``-fout`` option on the command line (indicating you
-  do *not* want *F*-statistics for various hypotheses to be calculated), the program
-  will still compute the full model *F*-statistics. If you don't want that for
-  some reason, you have to use the new ``-nofullf_atall`` option.
+* Even if you do not give the ``-fout`` option on the command line
+  (indicating you do *not* want *F*-statistics for various hypotheses
+  to be calculated), the program will still compute the full model
+  *F*-statistics. If you don't want that for some reason, you have to
+  use the new ``-nofullf_atall`` option.
 
   |
 
-* If you do not give a ``-bucket`` option on the command line, then the program
-  will act as if you had given ``-bucket Decon``. (This is known as the "Ah need
-  a bucket" change, with apologies to KFC.)
+* If you do not give a ``-bucket`` option on the command line, then
+  the program will act as if you had given ``-bucket Decon``. (This is
+  known as the "Ah need a bucket" change, with apologies to KFC.)
 
   |
 
-* The program now *always* outputs (to a file) the regression matrix **X**, even
-  if you don't give a ``-x1D`` option. The default filename will be the same as
-  the ``-bucket`` prefix, with the suffix ``.x1D`` added.
+* The program now *always* outputs (to a file) the regression matrix
+  **X**, even if you don't give a ``-x1D`` option. The default
+  filename will be the same as the ``-bucket`` prefix, with the suffix
+  ``.x1D`` added.
 
-  * The matrix file format has been slightly altered to store column labels in
-    XML-style comments in the header. (Previously, the matrix was just written
-    out as an array of unlabeled numbers.) These labels will be useful in an
-    upcoming regression matrix analysis program being planned by Ziad Saad. They
-    are also useful in the new program ``3dSynthesize`` (cf. *infra*).
+  * The matrix file format has been slightly altered to store column
+    labels in XML-style comments in the header. (Previously, the
+    matrix was just written out as an array of unlabeled numbers.)
+    These labels will be useful in an upcoming regression matrix
+    analysis program being planned by Ziad Saad. They are also useful
+    in the new program ``3dSynthesize`` (cf. *infra*).
 
   | 
 
 * ``3dDeconvolve`` used to fail with the ``-nodata`` option combined with
   ``-stim_times``. This crash should be a thing of the past.
 
-  * When using ``-nodata``, the program needs to know the length of the
-    (non-existent) imaging data (number of TRs) and it also needs to know the
-    TR. The simplest and best way to specify these values is to put them
-    immediately after the ``-nodata`` option; for example ``-nodata 300 2.5`` to
-    indicate 300 time points with TR=2.5 s.
-  * If you don't do the above, then if you use ``-nlast``, that value (+1) will
-    be used as the number of TRs. If you don't give the TR in some way, then the
-    default ``-nodata`` TR is 1.0 s. This TR is unimportant if you only use
-    ``-stim_file``, but is crucial if you use ``-stim_times`` with ``-nodata``
-    or with ``-input1D``.
+  * When using ``-nodata``, the program needs to know the length of
+    the (non-existent) imaging data (number of TRs) and it also needs
+    to know the TR. The simplest and best way to specify these values
+    is to put them immediately after the ``-nodata`` option; for
+    example ``-nodata 300 2.5`` to indicate 300 time points with
+    TR=2.5 s.
+
+  * If you don't do the above, then if you use ``-nlast``, that value
+    (+1) will be used as the number of TRs. If you don't give the TR
+    in some way, then the default ``-nodata`` TR is 1.0 s. This TR is
+    unimportant if you only use ``-stim_file``, but is crucial if you
+    use ``-stim_times`` with ``-nodata`` or with ``-input1D``.
 
   |
 
-* New option ``-float`` (or ``-datum float``) can be used to make all the output
-  datasets be stored in floating point format. In the past, only scaled shorts
-  were possible, and the limited (16-bit) precision of these sometimes caused
-  problems. Shorts are still the default, but at some point in the future I may
-  change the default to floats — if/when this happens, the option ``-short`` can
-  be used if you like the more compact format.
+* New option ``-float`` (or ``-datum float``) can be used to make all
+  the output datasets be stored in floating point format. In the past,
+  only scaled shorts were possible, and the limited (16-bit) precision
+  of these sometimes caused problems. Shorts are still the default,
+  but at some point in the future I may change the default to floats --
+  if/when this happens, the option ``-short`` can be used if you like
+  the more compact format.
 
   |
 
-* The program now reports when ``-stim_times`` time values are out of the time
-  span of the dataset. These are not fatal errors, but can help notify you to
-  potential problems of your timing files. (This problem is known as the PSFB
-  syndrome — it's not as bad as the Mike Beauchamp syndrome, but try to avoid
-  it.)
+* The program now reports when ``-stim_times`` time values are out of
+  the time span of the dataset. These are not fatal errors, but can
+  help notify you to potential problems of your timing files. (This
+  problem is known as the PSFB syndrome -- it's not as bad as the Mike
+  Beauchamp syndrome, but try to avoid it.)
 
   |
 
-* The labels for the ``-bucket`` output dataset sub-bricks have been changed
-  slightly to be more consistent and readable (e.g., ``Tstat`` instead of
-  ``t-st`` to indicate a *t*-statistic).
+* The labels for the ``-bucket`` output dataset sub-bricks have been
+  changed slightly to be more consistent and readable (e.g., ``Tstat``
+  instead of ``t-st`` to indicate a *t*-statistic).
 
   |
 
-* ``3dDeconvolve`` now computes a recommended ``-polort`` value (1 degree for
-  every 150 s of continuous imaging). If your input value is less than this, a
-  non-fatal WARNING message is printed. If you use ``-polort A``, then the
-  program will automatically choose the polynomial degree to use for detrending
-  (AKA high pass filtering).
+* ``3dDeconvolve`` now computes a recommended ``-polort`` value (1
+  degree for every 150 s of continuous imaging). If your input value
+  is less than this, a non-fatal WARNING message is printed. If you
+  use ``-polort A``, then the program will automatically choose the
+  polynomial degree to use for detrending (AKA high pass filtering).
 
   |
 
@@ -1088,29 +1095,31 @@ response might depend on some externally observed data.
 Conceptual Introduction
 =======================
 
-When carrying out an FMRI experiment, the stimuli/tasks are grouped into
-classes. Within each class, the FMRI-measurable brain activity is presumed to be
-the same for each repetition of the task. This crude approximation is necessary
-since FMRI datasets are themselves crude, with low temporal resolution and a low
-contrast-to-noise ratio (*i.e.*, the BOLD signal change is not very big).
-Therefore multiple measurements of the "same" response are needed to build up
-decent statistics. 
+When carrying out an FMRI experiment, the stimuli/tasks are grouped
+into classes. Within each class, the FMRI-measurable brain activity is
+presumed to be the same for each repetition of the task. This crude
+approximation is necessary since FMRI datasets are themselves crude,
+with low temporal resolution and a low contrast-to-noise ratio
+(*i.e.*, the BOLD signal change is not very big).  Therefore multiple
+measurements of the "same" response are needed to build up decent
+statistics.
 
-In many experiments, with each individual stimulus/task a separate measurement
-of subject behavior is taken; for example, reaction time, galvanic skin
-response, emotional valence, pain level perception, et cetera. It is sometimes
-desirable to incorporate this **A**mplitude **M**odulation (**AM**) information
-into the FMRI data analysis.
+In many experiments, with each individual stimulus/task a separate
+measurement of subject behavior is taken; for example, reaction time,
+galvanic skin response, emotional valence, pain level perception, et
+cetera. It is sometimes desirable to incorporate this Amplitude
+Modulation (**AM**) information into the FMRI data analysis.
 
 Binary AM
 =========
 
-If the AM were binary in nature ("on" and "off"), one method of carrying out the
-analysis would be to split the tasks into two classes, and analyze these
-stimulus classes separately (*i.e.*, with two ``-stim_times`` options). The
-statistical test for activation ignoring the AM would then be a 2 DOF F-test,
-which could be carried out in ``3dDeconvolve`` by using a 2 row GLT. The contrast
-between the two conditions ("on−off") could be carried out with a 1 row GLT. For
+If the AM were binary in nature ("on" and "off"), one method of
+carrying out the analysis would be to split the tasks into two
+classes, and analyze these stimulus classes separately (*i.e.*, with
+two ``-stim_times`` options). The statistical test for activation
+ignoring the AM would then be a 2 DOF F-test, which could be carried
+out in ``3dDeconvolve`` by using a 2 row GLT. The contrast between the
+two conditions ("on−off") could be carried out with a 1 row GLT. For
 example:
 
   .. code-block:: bash
