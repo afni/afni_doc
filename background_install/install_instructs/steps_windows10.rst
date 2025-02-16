@@ -34,7 +34,8 @@ Install Linux
 -----------------------------------
 
 1. | Click here to install **WSL 1** (*noooot WSL 2*), and probably
-     select "Ubuntu 20.04" as your desired flavor of Linux:
+     select a modern Ubuntu (like "Ubuntu 22.04", at time of writing here)
+     as your desired flavor of Linux:
    | `https://docs.microsoft.com/en-us/windows/wsl/install-manual
      <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_
    | We list the same steps below, with some (possibly helpful) additional
@@ -80,8 +81,8 @@ Install Linux
 
    *(jump to)* **Step 6: Install your Linux distribution of choice**
 
-      | Select ``Ubuntu 20.04 LTS``.
-      | On next page, click "Get" button under Ubuntu 20.04 LTS.
+      | Select a modern Ubuntu version.
+      | On next page, click "Get" button under that version number.
       | Click on "Install" when asked.
       | Click on "Launch" when asked.
 
@@ -188,6 +189,14 @@ Install prerequisite: AFNI and package dependencies
      lsb_release -a
 
 #. For ... 
+
+   * | *... Ubuntu 24.04 users,* follow the setup instructions
+       through "Make AFNI/SUMA profiles" here:
+     | :ref:`Link to Ubuntu 24 setup instructions for AFNI <install_steps_linux_ubuntu24>`
+
+   * | *... Ubuntu 22.04 users,* follow the setup instructions
+       through "Make AFNI/SUMA profiles" here:
+     | :ref:`Link to Ubuntu 22 setup instructions for AFNI <install_steps_linux_ubuntu22>`
 
    * | *... Ubuntu 20.04 users,* follow the setup instructions
        through "Make AFNI/SUMA profiles" here:
