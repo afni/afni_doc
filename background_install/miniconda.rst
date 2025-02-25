@@ -89,7 +89,7 @@ Download+install miniconda
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
-   * *\.\.\. for Mac (M1 chip)*::
+   * *\.\.\. for Mac (M1/M2/M3/M4/etc. chip)*::
 
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-arm64.sh
        bash Miniconda3-latest-MacOSX-arm64.sh -b
@@ -506,7 +506,7 @@ Set up Conda (*quick*)
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
        bash Miniconda3-latest-MacOSX-x86_64.sh -b
 
-   * *\.\.\. for Mac (M1 chip)*::
+   * *\.\.\. for Mac (M1/M2/M3/M4/etc. chip)*::
 
        curl -OL https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-arm64.sh
        bash Miniconda3-latest-MacOSX-arm64.sh -b
