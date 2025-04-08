@@ -1,8 +1,8 @@
 .. _codex_fmri_2025_WardleEtal:
 
 
-**Wardle et al. (2025).** *Brief encounters with real objects modulate medial parietal but not occipitotemporal cortex*
-*************************************************************************************************************************
+**Wardle et al. (2025).** *Brief encounters with real objects modulate medial parietal ...*
+**********************************************************************************************
 
 .. contents:: :local:
 
