@@ -72,5 +72,5 @@ echo "++ EPI files: ${epi_files}"
     -cbucket      ${betadir}/${pname}.LOCstats.cbucket                       \
     -bucket       ${betadir}/${pname}.LOCstats.bucket
 
-source ${betadir}/${pname}.REML_cmd
+tcsh ${betadir}/${pname}.REML_cmd
 

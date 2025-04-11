@@ -115,5 +115,5 @@ echo "++ EPI files: ${epi_files}"
     -bucket       ${betadir}/${pname}.EXPstats.bucket
 
 
-source ${betadir}/${pname}.REML_cmd
+tcsh ${betadir}/${pname}.REML_cmd
 
