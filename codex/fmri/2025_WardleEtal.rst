@@ -55,7 +55,7 @@ recognition in both the human brain and in computational models.
 
 
 **Main programs:** 
-``afni_proc.py``
+``afni_proc.py``, ``3dDeconvolve``
 
 Download scripts
 ==================
@@ -70,10 +70,21 @@ To download, either:
 
      * - |s01|
        - ``afni_proc.py`` command for multiecho FMRI
+     * - |s02a|
+       - ``3dDeconvolve`` command for the functional localizer data
+     * - |s02b|
+       - ``3dDeconvolve`` command for the experimental runs
+     * - |s02c|
+       - ``3dDeconvolve`` command 3dDeconvolve for the experimental
+         runs, with individual modulation (1 beta per condition PER
+         RUN)
 
 * \.\.\. or copy+paste into a terminal::
 
     curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2025_WardleEtal/s1.afni_proc.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2025_WardleEtal/s2a.3dDeconvolve_localizer.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2025_WardleEtal/s2b.3dDeconvolve_experimental.tcsh
+    curl -O https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/codex/fmri/media/2025_WardleEtal/s2c.3dDeconvolve_experimental_IM.tcsh
 
 
 View scripts
@@ -90,6 +101,35 @@ script.*
    :language: sh
    :linenos:
 
+``s2a.3dDeconvolve_localizer.tcsh``
+-------------------------------------------
+
+.. literalinclude:: /codex/fmri/media/2025_WardleEtal/s2a.3dDeconvolve_localizer.tcsh
+   :language: sh
+   :linenos:
+
+``s2b.3dDeconvolve_experimental.tcsh``
+-------------------------------------------
+
+.. literalinclude:: /codex/fmri/media/2025_WardleEtal/s2b.3dDeconvolve_experimental.tcsh
+   :language: sh
+   :linenos:
+
+``s2c.3dDeconvolve_experimental_IM.tcsh``
+-------------------------------------------
+
+.. literalinclude:: /codex/fmri/media/2025_WardleEtal/s2c.3dDeconvolve_experimental_IM.tcsh
+   :language: sh
+   :linenos:
+
+
 .. aliases for scripts, so above is easier to read
 .. |s01| replace:: :download:`s1.afni_proc.tcsh
                    </codex/fmri/media/2025_WardleEtal/s1.afni_proc.tcsh>`
+.. |s02a| replace:: :download:`s2a.3dDeconvolve_localizer.tcsh
+                   </codex/fmri/media/2025_WardleEtal/s2a.3dDeconvolve_localizer.tcsh>`
+.. |s02b| replace:: :download:`s2b.3dDeconvolve_experimental.tcsh
+                   </codex/fmri/media/2025_WardleEtal/s2b.3dDeconvolve_experimental.tcsh>`
+.. |s02c| replace:: :download:`s2c.3dDeconvolve_experimental_IM.tcsh
+                   </codex/fmri/media/2025_WardleEtal/s2c.3dDeconvolve_experimental_IM.tcsh>`
+
