@@ -12,6 +12,8 @@
 If you make use of AFNI and its tools in your work, we ask that you
 please cite the main paper and any accompanying items as appropriate.
 
+.. _pub_cit_afni_pack:
+
 AFNI software package
 =====================
 
@@ -28,6 +30,8 @@ If you use AFNI in your work, please cite:
     visualization of FMRI Data.**  NMR in Biomedicine, 10: 171-178.
   | `<https://pubmed.ncbi.nlm.nih.gov/9430344/>`_
 
+
+.. _pub_cit_meth_gen:
 
 Methods: General functionality
 ===============================
@@ -278,6 +282,9 @@ estimation:
     Meeting of the Organization for Human Brain Mapping.
   | `ohbm_2024_taylor_etal_physio_calc_updates.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
 
+
+.. _pub_cit_meth_suma:
+
 Methods: SUMA
 ==============
 
@@ -336,6 +343,8 @@ If you use SUMA's :ref:`clipping plane <tut_clipping>` and/or the
   | `OHBM2022_lauren_clippingPlanes.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_lauren_clippingPlanes.pdf>`_
 
 
+.. _pub_cit_meth_proc:
+
 Methods: FMRI processing and pipelines
 ======================================
 
@@ -393,6 +402,17 @@ downloaded by running ``@Install_APMULTI_Demo1_rest``), please see:
     pipelines**. Proc. OHBM-2022.
   | `OHBM2022_tayloretal_apmulti.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_tayloretal_apmulti.pdf>`_
 
+If you would like an overview of many methods for denoising BOLD FMRI
+data (including phase-based and multi-echo FMRI approaches), as well
+as practical recommendations for preprocessing pipelines, consider reading:
+
+* | Caballero-Gaudes C, Reynolds RC (2017).  **Methods for cleaning the
+    BOLD fMRI signal.** Neuroimage 154:128-149. 
+    doi: 10.1016/j.neuroimage.2016.12.018
+  | `<https://pubmed.ncbi.nlm.nih.gov/27956209/>`_
+
+
+.. _pub_cit_meth_qc:
 
 Methods: Quality control (QC)
 =============================
@@ -466,6 +486,8 @@ data (and you should!), please see:
     doi.org/10.3389/fninf.2020.00018
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7263312/>`_
 
+
+.. _pub_cit_meth_group:
 
 Methods: Group analysis, stats and clustering
 =============================================
@@ -645,6 +667,8 @@ main FATCAT paper, above):
   | `<https://pubmed.ncbi.nlm.nih.gov/26447394/>`_
 
 
+.. _pub_cit_meth_align:
+
 Methods: Alignment 
 ====================
 
@@ -691,6 +715,8 @@ please refer to:
     839–848. doi: 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
+
+.. _pub_cit_meth_diff:
 
 Methods: Diffusion, DWI, DTI and HARDI
 ======================================
@@ -743,6 +769,9 @@ out:
 * `The TORTOISE homepage <https://tortoise.nibib.nih.gov/>`_, which
   contains links to code, the package's message board, and further
   reading.
+
+
+.. _pub_cit_add_applic:
 
 Methods: Additional applications
 ==================================
@@ -816,49 +845,64 @@ amount of AFNI functionality under the hood, here:
     Neuro. 2024;4. doi:10.52294/001c.123369
   | `<https://apertureneuro.org/article/123369-estimation-and-removal-of-residual-motion-artifact-in-retrospectively-motion-corrected-fmri-data-a-comparison-of-intervolume-and-intravolume-motion-u>`_
 
+If you wander into the realm of genetics and inheritance, you may want
+to check out this work about reducing biases in heritability estimates:
 
-Meta-methodology, commentary and validations
-=============================================
+* | Chen G, Moraczewski D, Taylor PA (2025). **Improving accuracy and
+    precision of heritability estimation in twin studies: Reassessing
+    the measurement error assumption.** Front. Genet. 16:1522729. 
+  | `<https://doi.org/10.3389/fgene.2025.1522729>`_
 
-If you want to note the good performance of AFNI's time series
-autocorrelation modeling (``3dREMLfit``) compared with other software,
-you might consider reading:
 
-* | Olszowy W, Aston J, Rua C, Williams GB (2019).  **Accurate
-    autocorrelation modeling substantially improves fMRI reliability.**
-    Nature Communications
-    10, 1220. doi.org/10.1038/s41467-019-09230-w
-  | `<https://www.nature.com/articles/s41467-019-09230-w>`_
+.. _pub_cit_meth_results:
 
-If you want to note the good performance of AFNI's defacing/refacing
-tool ``@afni_refacer_run``, you can check out this independent study
-that found it to be the overall best among currently available
-refacing/defacing tools:
+Methods: Results reporting, interpretation and reproducibility
+================================================================
 
-* | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
-    GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
-    Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
-    SR (2021). **Multisite Comparison of MRI Defacing Software Across
-    Multiple Cohorts.** Front. Psychiatry 12:617997. doi:
-    10.3389/fpsyt.2021.617997
-  | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
+*The titles in this section aren't exaggerations---this stuff really
+matters.  Results reporting is an important part of processing, and
+the choices you make have large consequences on understanding,
+interpreting and comparing data. Please also see* `this AFNI Academy
+playlist on the topic
+<https://www.youtube.com/watch?v=WLsLv12emTE&list=PL_CD549H9kgp1Z1Old-8vX5WefAvP3Yo9>`_
 
-If you want to note the good performance of AFNI's volume registration
-for motion correction with ``3dvolreg``, you might consider viewing:
+If you need any convincing that transparent thresholding is important
+for understand the results of a study or evaluating reproducibility
+in cross-study comparisons and meta-analysis, then please check out:
 
-* | Oakes TR, Johnstone T, Ores Walsh KS, Greischar LL, Alexander AL,
-    Fox AS, Davidson RJ (2005). **Comparison of fMRI motion correction
-    software tools.** Neuroimage. 28(3):529-543. 
-    doi:10.1016/j.neuroimage.2005.05.058
-  | `<https://pubmed.ncbi.nlm.nih.gov/16099178/>`_
+* | Taylor PA, Aggarwal H, Bandettini PA, Barilari M, Bright M,
+    Caballeros-Gaudes C, Calhoun VD, Chakravarty M, Devenyi G, Evans
+    J, Garza-Villarreal E, Rasgado-Toledo J, Gau R, Glen DR, Goebel R,
+    Gonzalez-Castillo J, Gulban OF, Halchenko Y, Handwerker D, Hanayik
+    T, Lauren PD, Leopold D, Lerch J, Mathys C, McCarthy P, McLeod A,
+    Mejia A, Moia S, Nichols TE, Pernet C, Pessoa L, Pfleiderer B,
+    Rajendra JK, Reyes L, Reynolds RC, Roopchansingh V, Rorden C, Russ
+    BE, Sundermann B, Thirion B, Torrisi S, Chen G (2025). **Go Figure:
+    Transparency in neuroscience images preserves context and
+    clarifies interpretation.** (*submitted*) arXiv:2504.07824
+  | `<https://arxiv.org/abs/2504.07824/>`_
 
-If you want to know about spatial smoothness estimation and resampling
-stability in AFNI, have a gander at:
+If you'd like to display more full results with transparent
+thresholding (rather than hiding away much information with
+all-or-nothing thresholding), then check out:
 
-* | Cox RW, Taylor PA (2017). **Stability of spatial smoothness and
-    cluster-size threshold estimates in FMRI using AFNI.**
-    arXiv:1709.07471 [stat.AP]
-  | `<https://arxiv.org/abs/1709.07471>`_
+* | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
+    DA, Bandettini PA, Mejia AF, Chen G (2023). **Highlight Results,
+    Don't Hide Them: Enhance interpretation, reduce biases and improve
+    reproducibility.** Neuroimage 274:120138. 
+    doi: 10.1016/j.neuroimage.2023.120138
+  | `<https://pubmed.ncbi.nlm.nih.gov/37116766/>`_
+
+In this commentary, we suggest: 1) adopting a modeling approach
+through accurately mapping the data hierarchy; 2) incorporating the
+spatial information across the brain; and 3) avoiding information
+over-reduction in result reporting:
+
+* | Chen G, Taylor PA, Stoddard J, Cox RW, Bandettini PA, Pessoa L
+    (2022).  **Sources of information waste in neuroimaging: mishandling
+    structures, thinking dichotomously, and over-reducing
+    data.** Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
+  | `<https://doi.org/10.52294/ApertureNeuro.2022.2.ZRJI8542>`_
 
 If you use proper statistical testing in your work (two-sided testing
 in most cases, or one-sided testing where clearly applicable), you
@@ -878,16 +922,11 @@ you scale your data in a voxelwise manner, you might consider referring to:
     Neuroimage. 147:952-959. doi:10.1016/j.neuroimage.2016.09.066
   | `<https://pubmed.ncbi.nlm.nih.gov/27729277/>`_
 
-If you'd like to display more full results with transparent
-thresholding (rather than hiding away much information with
-all-or-nothing thresholding), then check out:
 
-* | Taylor PA, Reynolds RC, Calhoun V, Gonzalez-Castillo J, Handwerker
-    DA, Bandettini PA, Mejia AF, Chen G (2023). **Highlight Results,
-    Don't Hide Them: Enhance interpretation, reduce biases and improve
-    reproducibility.** Neuroimage 274:120138. 
-    doi: 10.1016/j.neuroimage.2023.120138
-  | `<https://pubmed.ncbi.nlm.nih.gov/37116766/>`_
+.. _pub_cit_add_comm:
+
+Additional commentary and methodology notes
+=============================================
 
 If you are curious about how to deal with multiplicity issues in your
 statistical analysis of MRI, consider this discussion of neighborhood
@@ -900,14 +939,6 @@ multilevel (BML) approach:
     doi:10.1016/j.neuroimage.2019.116320
   | `<https://pubmed.ncbi.nlm.nih.gov/31698079/>`_
 
-If you would like an overview of many methods for denoising BOLD FMRI
-data (including phase-based and multi-echo FMRI approaches), as well
-as practical recommendations for preprocessing pipelines, consider reading:
-
-* | Caballero-Gaudes C, Reynolds RC (2017).  **Methods for cleaning the
-    BOLD fMRI signal.** Neuroimage 154:128-149. 
-    doi: 10.1016/j.neuroimage.2016.12.018
-  | `<https://pubmed.ncbi.nlm.nih.gov/27956209/>`_
 
 We illustrate that the trial sample size in experimental design is
 almost as important as subject sample size, in terms of statistical
@@ -919,36 +950,6 @@ condition-level generalizability:
     SP (2022). **Hyperbolic trade-off: the importance of balancing trial 
     and subject sample sizes in neuroimaging.** NeuroImage 247:118786.
   | `<https://pubmed.ncbi.nlm.nih.gov/34906711/>`_
-
-In this commentary, we suggest: 1) adopting a modeling approach
-through accurately mapping the data hierarchy; 2) incorporating the
-spatial information across the brain; and 3) avoiding information
-over-reduction in result reporting:
-
-* | Chen G, Taylor PA, Stoddard J, Cox RW, Bandettini PA, Pessoa L
-    (2022).  **Sources of information waste in neuroimaging: mishandling
-    structures, thinking dichotomously, and over-reducing
-    data.** Aperture Neuro. 2: DOI: 10.52294/2e179dbf-5e37-4338-a639-9ceb92b055ea
-  | `<https://doi.org/10.52294/ApertureNeuro.2022.2.ZRJI8542>`_
-
-For work checking out different methods of diffusion/DWI acquisition
-and correction, such as prospective motion correction and the TORTOISE
-toolbox, particularly in the case where subjects move (kids these
-days...), then please check out:
-
-* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
-    Meintjes E (2016). **Assessing the performance of different DTI
-    motion correction strategies in the presence of EPI distortion
-    correction.** Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
-  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
-
-If you want to learn about AFNI+SUMA results on the FIAC dataset,
-please see:
-
-* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
-    PSF, Cox RW (2006).  **FIAC Analysis According to AFNI and SUMA.**
-    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
-  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
 
 If you want to find out more about modeling the hemodynamic response
 in FMRI (particularly with using multivariate and linear mixed-effects
@@ -1025,6 +1026,8 @@ as an alternative, please check out/reference:
     doi: 10.1016/j.neuroimage.2016.12.018
   | `<https://pubmed.ncbi.nlm.nih.gov/27956209/>`_
 
+.. _pub_cit_code_hist:
+
 Code history
 -------------
 
@@ -1043,6 +1046,72 @@ underpinnings, please see the pithily titled:
   | `<https://pubmed.ncbi.nlm.nih.gov/21945692/>`_
 
 
+.. _pub_cit_prog_valid:
+
+Various program and software validations
+------------------------------------------
+
+If you want to note the good performance of AFNI's time series
+autocorrelation modeling (``3dREMLfit``) compared with other software,
+you might consider reading:
+
+* | Olszowy W, Aston J, Rua C, Williams GB (2019).  **Accurate
+    autocorrelation modeling substantially improves fMRI reliability.**
+    Nature Communications
+    10, 1220. doi.org/10.1038/s41467-019-09230-w
+  | `<https://www.nature.com/articles/s41467-019-09230-w>`_
+
+If you want to note the good performance of AFNI's defacing/refacing
+tool ``@afni_refacer_run``, you can check out this independent study
+that found it to be the overall best among currently available
+refacing/defacing tools:
+
+* | Theyers AE, Zamyadi M, O'Reilly M, Bartha R, Symons S, MacQueen
+    GM, Hassel S, Lerch JP, Anagnostou E, Lam RW, Frey BN, Milev R,
+    Müller DJ, Kennedy SH, Scott CJM, Strother SC, and Arnott
+    SR (2021). **Multisite Comparison of MRI Defacing Software Across
+    Multiple Cohorts.** Front. Psychiatry 12:617997. doi:
+    10.3389/fpsyt.2021.617997
+  | `<https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
+
+If you want to note the good performance of AFNI's volume registration
+for motion correction with ``3dvolreg``, you might consider viewing:
+
+* | Oakes TR, Johnstone T, Ores Walsh KS, Greischar LL, Alexander AL,
+    Fox AS, Davidson RJ (2005). **Comparison of fMRI motion correction
+    software tools.** Neuroimage. 28(3):529-543. 
+    doi:10.1016/j.neuroimage.2005.05.058
+  | `<https://pubmed.ncbi.nlm.nih.gov/16099178/>`_
+
+If you want to know about spatial smoothness estimation and resampling
+stability in AFNI, have a gander at:
+
+* | Cox RW, Taylor PA (2017). **Stability of spatial smoothness and
+    cluster-size threshold estimates in FMRI using AFNI.**
+    arXiv:1709.07471 [stat.AP]
+  | `<https://arxiv.org/abs/1709.07471>`_
+
+If you want to learn about AFNI+SUMA results on the FIAC dataset,
+please see:
+
+* | Saad ZS, Chen G, Reynolds RC, Christidis PP, Hammett KR, Bellgowan
+    PSF, Cox RW (2006).  **FIAC Analysis According to AFNI and SUMA.**
+    Human Brain Mapping 27: 417-424. doi: 10.1002/hbm.20247
+  | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6871397/>`_
+
+For work checking out different methods of diffusion/DWI acquisition
+and correction, such as prospective motion correction and the TORTOISE
+toolbox, particularly in the case where subjects move (kids these
+days...), then please check out:
+
+* | Taylor PA, Alhamud A, van der Kouwe A, Saleh MG, Laughton B,
+    Meintjes E (2016). **Assessing the performance of different DTI
+    motion correction strategies in the presence of EPI distortion
+    correction.** Hum. Brain Mapp. 37, 4405–4424. doi: 10.1002/hbm.23318
+  | `<https://pubmed.ncbi.nlm.nih.gov/27436169/>`_
+
+
+.. _pub_cit_data_hum:
 
 Data projects: human templates and atlases
 ==============================================
@@ -1093,6 +1162,8 @@ enforcing spatial correspondence across subjects:
     (2021). Schaefer-Yeo-AFNI-2021 Atlases: Improved ROIs with AFNI+SUMA
     Processing. In Proceedings of OHBM-2021.
   | `Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf <https://afni.nimh.nih.gov/pub/dist/HBM2021/Schaefer-Yeo_AFNI_Atlas_OHBM2021_Poster.pdf>`_
+
+.. _pub_cit_data_nonhum:
 
 Data projects: animal templates and atlases
 ==============================================
@@ -1222,6 +1293,8 @@ its roots at Cornell University):
     of the domestic canine brain.** Imaging Neuroscience 2: 1-21.
   | `<https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00276/123968>`_
 
+
+.. _pub_cit_data_nifti:
 
 Data projects: NIFTI format
 ==============================
