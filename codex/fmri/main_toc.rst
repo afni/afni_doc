@@ -16,6 +16,9 @@ FMRI Codex
    2024_BeynelEtal
    2024_TaylorEtal
    2023_ReynoldsEtal
+   2023_TevesEtal
+   2023_LeppingEtal
+   2023_Birn
    2023_ChenEtal
    2023_TaylorEtal
    2023_SteinhauserEtal

@@ -1,0 +1,121 @@
+.. _codex_fmri_2023_Birn:
+
+
+**Birn (2023).** *Quality control procedures and metrics for resting-state functional MRI*
+*******************************************************************************************************
+
+.. contents:: :local:
+
+.. highlight:: Tcsh
+
+Introduction
+============
+
+Here we present commands used in the following paper:
+
+* | Birn RM (2023).  Quality control procedures and metrics for
+    resting-state functional MRI. Front Neuroimaging 2:1072927.
+  | `<https://www.frontiersin.org/journals/neuroimaging/articles/10.3389/fnimg.2023.1072927/full>`_
+
+
+**Abstract:**  
+The monitoring and assessment of data quality is an essential step in
+the acquisition and analysis of functional MRI (fMRI) data. Ideally
+data quality monitoring is performed while the data are being acquired
+and the subject is still in the MRI scanner so that any errors can be
+caught early and addressed. It is also important to perform data
+quality assessments at multiple points in the processing
+pipeline. This is particularly true when analyzing datasets with large
+numbers of subjects, coming from multiple investigators and/or
+institutions. These quality control procedures should monitor not only
+the quality of the original and processed data, but also the accuracy
+and consistency of acquisition parameters. Between-site differences in
+acquisition parameters can guide the choice of certain processing
+steps (e.g., resampling from oblique orientations, spatial
+smoothing). Various quality control metrics can determine what
+subjects to exclude from the group analyses, and can also guide
+additional processing steps that may be necessary. This paper
+describes a combination of qualitative and quantitative assessments to
+determine the quality of fMRI data. Processing is performed using the
+AFNI data analysis package. Qualitative assessments include visual
+inspection of the structural T1-weighted and fMRI echo-planar images,
+functional connectivity maps, functional connectivity strength, and
+temporal signal-to-noise maps concatenated from all subjects into a
+movie format. Quantitative metrics include the acquisition parameters,
+statistics about the level of subject motion, temporal signal-to-noise
+ratio, smoothness of the data, and the average functional connectivity
+strength. These measures are evaluated at different steps in the
+processing pipeline to catch gross abnormalities in the data, and to
+determine deviations in acquisition parameters, the alignment to
+template space, the level of head motion, and other sources of
+noise. We also evaluate the effect of different quantitative QC
+cutoffs, specifically the motion censoring threshold, and the impact
+of bandpass filtering. These qualitative and quantitative metrics can
+then provide information about what subjects to exclude and what
+subjects to examine more closely in the analysis of large datasets.
+
+**Study keywords:** 
+ artifacts; connectivity; fMRI; motion; quality control
+
+
+**Main programs:** 
+``3dWarp``, ``3dSkullStrip``, ``@SSwarper``, ``3dTshift``, ``3dcalc``,
+``align_epi_anat.py``, ``3dNwarpApply``, ``3dAllineate``, 
+``1dnorm``, ``1d_tool.py``, ``1deval``, ``3dROIstats``, ``3dTstat``,
+``3dDeconvolve``, 
+``3dhistog``, ``3dTcorr1D``
+
+
+Download scripts
+================
+
+| **Github page:**
+| See this GitHub page for full descriptions and downloads 
+  of codes and supplementary text files:
+| `<https://github.com/rbirn/OpenQC>`_
+ 
+\... or copy+paste the following in a terminal::
+
+    git clone https://github.com/rbirn/OpenQC.git
+
+
+**Note:** This work was one of several contributed to the following
+Frontiers Research Topic project, described here:
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC (2022).  Demonstrating
+    Quality Control (QC) Procedures in fMRI.
+  | `Research Topic homepage <https://www.frontiersin.org/research-topics/33922/demonstrating-quality-control-qc-procedures-in-fmri>`_
+
+The datasets analyzed within it are publicly available and located
+here:
+
+* | Taylor PA, Etzel JA, Glen D, Reynolds RC, Moraczewski D, Basavaraj
+    A (2022). FMRI Open QC Project.  DOI 10.17605/OSF.IO/QAESM 
+  | `<https://osf.io/qaesm/>`_
+
+
+View scripts
+============
+
+*Because there are so many scripts for this project, we recommend
+downloading the full set from the github pages, above.  There are
+helpful supplemental notes there, as well.*
+
+
+``doProc_OpenQC_share.csh``
+-------------------------------------------
+
+Full processing (through regression modeling) of a resting state FMRI
+session for a single subject using AFNI programs separately (not via
+``afni_proc.py``).
+
+`<https://github.com/rbirn/OpenQC/blob/main/doProc_OpenQC_share.csh>`_
+
+``doQC_group_stats_share.csh``
+-------------------------------------------
+
+Calculate and tabulate some statistics about quality control metrics
+across a group so subjects.
+
+`<https://github.com/rbirn/OpenQC/blob/main/doQC_group_stats_share.csh>`_
+
