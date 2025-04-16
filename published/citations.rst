@@ -422,11 +422,19 @@ your FMRI data, including using the afni_proc.py quality control
     AFNI.** Front. Neurosci. 16:1073800. doi: 10.3389/fnins.2022.1073800
   | `<https://www.frontiersin.org/articles/10.3389/fnins.2022.1073800/full/>`_
 
-The above article was created as part of a Research Topic on
-demonstrating quality control in FMRI.  The Editorial for that
-Project---with a description of its inception, a summary of its
-contributions and some recommendations for moving forward---is
-here:
+  |
+
+* | *Comment:* The above article was created as part of a Research
+    Topic on demonstrating quality control in FMRI.  Please also check
+    out these other contributions for that Project that used AFNI for 
+    FMRI processing and QC: 
+  | `Birn (2023) <https://www.frontiersin.org/journals/neuroimaging/articles/10.3389/fnimg.2023.1072927/full>`_. **Quality control procedures and metrics for resting-state functional MRI**
+  | `Lepping et al. (2023) <https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1076824/full>`_. **Quality control in resting-state fMRI: the benefits of visual inspection**
+  | `Teves et al. (2023) <https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1100544/full>`_. **The art and science of using quality control to understand and improve fMRI data**
+
+The Editorial for that FMRI Open QC Project---with a description of
+its inception, a summary of its contributions and some recommendations
+for moving forward---is here:
 
 * | Taylor PA, Glen DR, Reynolds RC, Basavaraj A, Moraczewski D,
     Etzel JA (2023). **Editorial: Demonstrating quality control (QC)
