@@ -9,6 +9,7 @@ FMRI Codex
 .. toctree::
    :maxdepth: 2
 
+   2025_TaylorEtal
    2025_YueEtal
    2025_WardleEtal
    2024_ReynoldsEtal
