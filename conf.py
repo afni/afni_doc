@@ -228,6 +228,7 @@ html_theme_options = {
     "lighter_header_decor": "true",
     "linkcolor": "#1874CD",
     "bgcolor": "#F5F5F5",
+    "headfont": "local_PT_sans",  
     "bodyfont": "local_PT_sans",  
     "fontcssurl" : "local_PT_sans",
     #"bodyfont": "PT Sans, sans-serif",
