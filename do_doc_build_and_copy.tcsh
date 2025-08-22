@@ -266,6 +266,8 @@ if ( "$DO_BUILD" == "1" ) then
     echo "++ STEP: Make pretty list of other templates+atlases"
     python make_list_of_pub_dist_atlases.py
 
+    echo "++ ... and done making pretty list of other templates+atlases"
+
     # [PT: Mar 8, 2019] added
     if ( -e $aho_dir ) then
         echo "++ STEP: List AFNI handouts"
