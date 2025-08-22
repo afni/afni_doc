@@ -102,6 +102,8 @@ datapackages.
             fff.write(csv_line+"\n")
         csv_index = (csv_index + 1) % 3
 
+    print("... which completes the list of atlas names")
+
     # we might also have a last line with <3 elements left to write
     if csv_index :
         fff.write(csv_line+"\n")
@@ -120,3 +122,4 @@ datapackages.
 
     ## close the RST
     fff.close()
+    print("... and the RST file of atlases has been written and closed")
