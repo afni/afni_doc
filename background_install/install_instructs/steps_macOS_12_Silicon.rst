@@ -88,9 +88,7 @@ A. Use the *NIMH Self Service* application to install the dependencies
               :width: 100%  
       *  -
          -
-         - **NB:** The App finishes subtly, just changing text to read
-           "Reinstall". When it completes, carry on to further
-           installation stages below.
+         - **NB:** The App may take an hour or so to run.
 
    |
 
