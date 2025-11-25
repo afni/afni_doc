@@ -71,7 +71,7 @@ forget to do that!).
         those and re-run the system check.  
       | **Ask** any questions on the
         `Message Board
-        <https://discuss.afni.nimh.nih.gov>`_
+        <https://discuss.afni.nimh.nih.gov>`__
       |
         
    #. Open up the AFNI and SUMA GUIs, juuuust to make sure all is

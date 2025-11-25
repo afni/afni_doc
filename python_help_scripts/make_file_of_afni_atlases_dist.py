@@ -57,7 +57,7 @@ or improved upon by others that *are* now distributed (see above). In
 other cases, they just seemed to be less widely useful. If users have
 questions about what might be a better alternative to datasets
 relegated here, please ping on the `Message Board
-<https://discuss.afni.nimh.nih.gov>`_."""
+<https://discuss.afni.nimh.nih.gov>`__."""
 ]
 
 # ------------------------------------------------------------------

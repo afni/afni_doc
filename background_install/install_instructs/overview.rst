@@ -29,12 +29,12 @@ might change over time as the other packages develop.
 Basically, there's a lotta ins, a lotta outs, a lotta what-have-yous,
 a lot of strands to keep in one's head.  Hopefully the present
 documentation, available scripts, and helpful `Message Board
-polylogues <https://discuss.afni.nimh.nih.gov/>`_
+polylogues <https://discuss.afni.nimh.nih.gov/>`__
 facilitate the installation process. This document is fully intended
 to be enhanced and improved over time.  If you would like to help us
 by recommending additional sections or details wherever they might be
 useful, please post a request to the AFNI `Message Board
-<https://discuss.afni.nimh.nih.gov/>`_.
+<https://discuss.afni.nimh.nih.gov/>`__.
 
 Setting up systems
 ------------------

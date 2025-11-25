@@ -22,7 +22,7 @@ commands listed here.**
 recommendations in its "Please Fix" section.
 
 If you run into any problems, please just ask a clear question on the
-`Message Board <https://discuss.afni.nimh.nih.gov/>`_.
+`Message Board <https://discuss.afni.nimh.nih.gov/>`__.
 
 
 
