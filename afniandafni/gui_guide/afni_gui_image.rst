@@ -51,7 +51,7 @@ Image Window
              on the scroll-wheel, or shift+option on macOS.)
          
        * Keyboard shortcuts are listed 
-         `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#keyboard-shortcuts-image-viewer-window>`_.
+         `here <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/educational/gui_readme_tips.html#keyboard-shortcuts-image-viewer-window>`__.
        * ``Clusterize`` shortcuts (these have a *cool* animation effect):
        
          * ``j`` = Jump to the nearest cluster's peak (or center of mass)
@@ -933,7 +933,7 @@ only appear in the image window and do not change the data set on disk.
        * The image is first automasked then grey scale map is inverted.
        * The functionality is similar to what is described in the old message 
          board post 
-         `here <https://afni.nimh.nih.gov/afni/community/board/read.php?1,59489,59500>`_.
+         `here <https://afni.nimh.nih.gov/afni/community/board/read.php?1,59489,59500>`__.
        * This function is the same as the ``Swap`` button except that the 
          image is automasked and the background is not inverted. 
          :ref:`(see above)<gui_guide_image_window_RightButtons>`.

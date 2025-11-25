@@ -1,6 +1,6 @@
 :tocdepth: 2
 
-.. _edu_main_gui:
+.. _edu_afni_main_gui:
 
 GUI Guide
 =====================
