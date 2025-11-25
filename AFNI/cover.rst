@@ -88,6 +88,6 @@ etc.
 Automation of GUI behavior
 --------------------------
 
-You can automate the majority of tasks normally performed interactively... See demo scripts **@DriveSuma**, **@DriveAfni**, and **@DO.examples** available in the AFNI `distribution <https://afni.nimh.nih.gov/afni/download/afni/releases/latest>`_.
+You can automate the majority of tasks normally performed interactively... See demo scripts **@DriveSuma**, **@DriveAfni**, and **@DO.examples** available in the AFNI `distribution <https://afni.nimh.nih.gov/afni/download/afni/releases/latest>`__.
    
     
