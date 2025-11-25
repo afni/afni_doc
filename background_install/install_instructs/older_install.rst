@@ -9,7 +9,6 @@
 .. toctree::
    :maxdepth: 1
 
-   overview
    steps_linux_ubuntu18
    steps_linux_ubuntu16
    steps_linux_ubuntu
