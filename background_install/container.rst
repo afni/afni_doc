@@ -27,7 +27,7 @@ The continuous integration set up on AFNI's Github uses CircleCi and
 pushes to a Docker Hub account when it succeeds (*thanks, Dylan and
 Jakub!*). It is built with the Dockerfile in the base directory of the
 AFNI codebase and uses the CircleCi yml file `here
-<https://github.com/afni/afni/blob/master/.circleci/config.yml>`_.
+<https://github.com/afni/afni/blob/master/.circleci/config.yml>`__.
 
 **Get the image**
 
@@ -124,7 +124,7 @@ Then, you can run your docker container as follows (yes, two commands)::
       afni/afni_make_build
 
 The above is derived from notes and further discussion `here
-<https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285>`_.
+<https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285>`__.
 As written, the ``xhost`` command may just apply in ``zsh``/\ ``bash``
 shells.
 
