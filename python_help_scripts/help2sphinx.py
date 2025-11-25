@@ -40,6 +40,10 @@ from afnipy import afni_util as au
 ##    be adapted later by some enterprising spirit.
 ## + Also, fix issue here with incomplete list(s) being output if the
 #    total number of programs was not a factor of 3.
+#
+## [PT: Nov 25, 2025] replace "\*" with "\\*" to get rid of invalid escape
+## sequence warnings; also replace "\," with just ","
+#
 
 ## possible codes as characters
 hdr_codes = ['1','2','3','4']
@@ -191,7 +195,7 @@ This is a list of all AFNI programs.  Click on any name to see the
 help for that program.
 
 For additional reference, please also see the "classified" list of
-helps :ref:`HERE<edu_class_prog>`\, where programs are loosely grouped
+helps :ref:`HERE<edu_class_prog>`, where programs are loosely grouped
 by topic and functionality, with a brief description of each provided.
 
 .. csv-table::
@@ -281,7 +285,7 @@ for afni_prog in prog_list:
 
             # [PT: May 13, 2019] 
             if cur_line.__contains__("*") :
-                cur_line = cur_line.replace("*", "\*")
+                cur_line = cur_line.replace("*", "\\*")
 
             ### [PT: 27 Dec 2021] The following fix is added to
             ### address the numerous repeated warnings for
@@ -392,7 +396,7 @@ translated to modern(ish) human speak.
 It is possible that some of these manuals refer to programs that are
 no longer in circulation, typically having been deprecated for a newer
 one.  The "classified" list of program helps
-:ref:`HERE<edu_class_prog>`\, contains information on such
+:ref:`HERE<edu_class_prog>`, contains information on such
 deprecations and pointers to the more modern version.
 
 .. csv-table::
