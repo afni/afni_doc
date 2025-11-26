@@ -25,7 +25,7 @@ These setup instructions are for **macOS 11**.
 
 #. If you run into any problems, please just ask a clear question on
    the `Message Board
-   <https://discuss.afni.nimh.nih.gov/>`_.
+   <https://discuss.afni.nimh.nih.gov/>`__.
 
 
 Install Xcode and XQuartz (admin priviledges required)

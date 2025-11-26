@@ -1,4 +1,4 @@
-.. _U_basic_4:
+.. _U_basic_9:
 
 ******************************
 Basic Unix : Shell variables
@@ -40,6 +40,7 @@ CODE:
       echo $subj
       echo subj
       echo now processing subject $subj...
+
 CODEEND:
 
       The first line has no output, it simply creates a varaible
@@ -59,6 +60,7 @@ CODE:
       echo subject is $subj
       unset subj
       echo subject is $subj
+
 CODEEND:
 
       The first command just confirms the current value of subj, still
@@ -80,6 +82,7 @@ CODE:
       set ddir = $HOME/AFNI_data6/afni
       echo some data is in $ddir
       ls $ddir
+
 CODEEND:
 
       Here the 'ddir' variable is defined to be the name of a
@@ -95,6 +98,7 @@ CODE:
       set newdir = $HOME/AFNI_data6/pickle
       echo some data is in $ddir
       ls $ddir
+
 CODEEND:
 
       The first 2 commands are similar to those above, simply setting
@@ -115,6 +119,7 @@ CODE:
       ls
       cd $ddir
       ls
+
 CODEEND:
 
       Since $ddir points to one of the class data directories, the
@@ -149,6 +154,7 @@ CODE:
       echo data for $subj is under subjects/$subj/data
       echo data is under subjects/$subj_data
       echo data is under subjects/${subj}_data
+
 CODEEND:
 
       After setting 'subj', the first echo statement should work fine.
@@ -191,6 +197,7 @@ CODE:
       echo anat dataset: $anat_dset.HEAD
       ls -l $anat_dset.HEAD
       3dinfo $anat_dset.HEAD
+
 CODEEND:
 
       We start from AFNI_data6 for convenience, and set a subject ID
@@ -236,5 +243,6 @@ COMMENT:
 
    c2. AFNI programs can access datasets without the extension in the dataset
        name.  Unix programs need a complete, existing file name.
+
 COMMENTEND:
 

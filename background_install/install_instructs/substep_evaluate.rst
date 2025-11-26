@@ -19,7 +19,7 @@ If stuck, then ...
 
 * try searching online with the error message, and/or ask on the
   `Message Board
-  <https://discuss.afni.nimh.nih.gov>`_
+  <https://discuss.afni.nimh.nih.gov>`__
 
 * send the system check to an AFNI guru for advice---copy+paste::
 

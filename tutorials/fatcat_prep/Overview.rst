@@ -90,7 +90,7 @@ and ``dcm2niix``). They are bound to change (improve?) over
 time. Additional options can happily be added if they simplify your
 life and don't overly complicate mine.  And please let me know if you
 have any problems, via posting on the `Message Board
-<https://discuss.afni.nimh.nih.gov/>`_ or emailing.
+<https://discuss.afni.nimh.nih.gov/>`__ or emailing.
 
 *Much of this work was started at the* `University of Cape Town
 <http://www.bme.uct.ac.za/bme/researchgrouping-mri>`_, *SA-- thanks

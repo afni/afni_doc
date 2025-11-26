@@ -265,10 +265,14 @@ def parse_all_lines(LL, skip_lines=0):
 
         elif mode == 'START' and not(END_WITH_COLON) :
             obj = env_obj(obj_type="text")
+            # escape asterisks in text, to avoid bold/italic warnings
+            x = x.replace('*', '\\*')
             text = [ x ]
 
             for j in range(1, N-i):
                 w  = LL[i+j]
+                # escape asterisks in text, to avoid bold/italic warnings
+                w = w.replace('*', '\\*')
                 ws = w.strip()
                 if ws :
                     text.append( w )
@@ -282,6 +286,8 @@ def parse_all_lines(LL, skip_lines=0):
             if j :
                 i+= j-1
                 x  = LL[i]
+                # escape asterisks in text, to avoid bold/italic warnings
+                x = x.replace('*', '\\*')
                 xs = x.strip()
             if xs[-1] == ':' :
                 END_WITH_COLON = True

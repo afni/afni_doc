@@ -225,68 +225,90 @@ To exit or "deactivate" the current environment, type::
 
   conda deactivate
 
-Make new envs from cmd line: AFNI minimal Python
-------------------------------------------------------------
+
+Make new envs from text file: AFNI minimal Python
+----------------------------------------------------------------------
 
 There are many aspects to creating a new environment.  We only provide
 the most basic here.  For example, conda can manage much more
 complicated environments, beyond loading just Python+modules.
 
-Here is an example of creating a new environment from a command line,
-one that packages Python version 3.9 and a few useful modules (whose
-unspecified version numbers will be whatever conda decides, with
-Matplotlib being *at least* 2.2.3)::
-  
-  conda create -y                        \
-        -n py39_afni_tiny                \
-        python=3.9                       \
-        "matplotlib>=2.2.3" numpy scipy  \
-        flask flask-cors
+This is the file-based version to create a new environment.  While
+users can use an alternative method of a direct command line call, we
+find using a file preferable, for easier saving and sharing.  The file
+used here contains both specific and minimal package dependency
+versions. Its contents can also be combined directly with other
+environments you might have (e.g., by combining the dependency lists
+into a single file), to reduce potentially needless environment
+switching.
 
-This new environment's name is "py39_afni_tiny"; I called it this
-because that is basically the minimal set of modules used within AFNI
-(at present).
+We provide a few options for you to build environments, whether you
+want a very minimal one for AFNI dependencies, or whether you want
+some additional features.
 
-.. [PT: 2024-04-19 ] no longer directly advertise Python 2.7
+* *Option 1: Minimal dependencies.* To do a minimal environment build,
+  first download the environment file, called
+  :download:`environment_ex1.yml` (you can click on this link or open up
+  the downloaded file in a text editor to see its contents), by
+  copy+pasting::
 
-    To make a similar setup for Python 2.7 (no earlier versions of Python
-    should be used), one could run::
+     curl -O https://raw.githubusercontent.com/afni/afni_doc/refs/heads/master/background_install/environment_ex1.yml
 
-      conda create -y                        \
-            -n py27_afni_tiny                \
-            python=2.7                       \
-            "matplotlib>=2.2.3" numpy scipy  \
-            pillow 
+  Then, run the following to build the new environment using it::
 
-    ... and this would appear below:
-    py27_afni_tiny           /home/${USER}/miniconda3/envs/py27_afni_tiny
+    conda env create -f environment_ex1.yml
 
-Now, if I type ``conda list env``, I will see a list of all my
-available environments (where ``${USER}`` would actually be replaced
-by my username)::
+  The name of this environment is **py3_afni_tiny**.
+
+* *Option 2: Add in interactive Python.* If you like IPython and
+  jupyter-notebooks (in addition to the minimal AFNI dependencies), you
+  could download the following environment file, called
+  :download:`environment_ex3.yml` (you can click on this link or open up
+  the downloaded file in a text editor to see its contents), by
+  copy+pasting::
+
+     curl -O https://raw.githubusercontent.com/afni/afni_doc/refs/heads/master/background_install/environment_ex3.yml
+
+  Then, run the following to build the new environment using it::
+
+    conda env create -f environment_ex3.yml
+
+  The name of this environment is **py3_afni_mid**.
+
+Activate conda environment in one terminal
+----------------------------------------------------------------------
+
+Now, we can type ``conda list env`` to see a list of all available
+environments (where ``${USER}`` would actually be replaced by my
+username), which should include our newly made one from above.  
+
+The number of these might differ, based on whether you have installed
+other environments earlier, but let's just focus on setting up the
+minimal environment example from above.  So, perhaps the output of
+``conda list env`` will be::
 
    # conda environments:
    #
    base                  *  /home/${USER}/miniconda3
-   py39_afni_tiny           /home/${USER}/miniconda3/envs/py39_afni_tiny
+   py3_afni_tiny            /home/${USER}/miniconda3/envs/py3_afni_tiny
 
-As noted above, to switch to ``py39_afni_tiny``, I would type::
+To switch to using ``py3_afni_tiny`` in this terminal, type::
 
-  conda activate py39_afni_tiny
+  conda activate py3_afni_tiny
 
 To see what modules are installed in your active environment (and
 their version numbers) you can run::
 
    conda list
 
-\.\.\. which, in the current "py39_afni_tiny" would be as follows (and
+\.\.\. which, in the current "py3_afni_tiny" would be as follows (and
 you might have slightly different things):
 
 .. hidden-code-block:: none
    :starthidden: True
    :label: - show list output y/n -
 
-   # packages in environment at /home/ptaylor/miniconda3/envs/py39_afni_tiny:
+   # packages in environment at /home/ptaylor/miniconda3/envs/py3_afni_tiny:
    #
    # Name                    Version                   Build  Channel
    _libgcc_mutex             0.1                        main  
@@ -298,6 +320,8 @@ you might have slightly different things):
    cycler                    0.11.0             pyhd3eb1b0_0  
    dbus                      1.13.18              hb2f20db_0  
    expat                     2.4.1                h2531618_2  
+   flask                     3.1.2           py313h06a4308_0
+   flask-cors                6.0.1           py313h06a4308_0
    fontconfig                2.13.1               h6c09931_0  
    fonttools                 4.25.0             pyhd3eb1b0_0  
    freetype                  2.11.0               h70c0345_0  
@@ -362,52 +386,37 @@ you might have slightly different things):
 
 
 So, in this environment, I could run a program that imports
-matplotlib, whereas in the "base" environment, I couldn't.
+matplotlib or flask, for example.
 
-Make new envs from text file: AFNI minimal Python
-----------------------------------------------------------------------
+Activate conda environment by default in all new terminals
+----------------------------------------------------------
 
-This is the command line style to create a new environment (perhaps
-preferable to command line style, for easier saving and sharing),
-including both specific and minimal package dependency versions:
+By default, conda will load the "base" environment in any new
+terminal.  To instead have a different environment ``ENV_NAME`` loaded
+in each new terminal/shell, we can add the line ``conda activate
+ENV_NAME`` in the shell's ``~/.*rc`` file somewhere *after* the ``#
+>>> conda initialize >>>`` lines.
 
-* Make a new text file called :download:`environment_ex1.yml`:
+Since I am running "bash" shell, I have added the following line in my
+``~/.bashrc`` or ``~/.bash_profile`` \file (by opening that file with
+a text editor)::
 
-  .. include:: environment_ex1.yml
-     :literal:
-     :code: yaml
+  conda activate py3_afni_tiny
 
-  \.\.\. and then run::
+After sourcing that file or opening a new terminal, ``conda env list``
+should show that environment loaded, in this and in any new terminals.
 
-    conda env create -f environment_ex1.yml
+If you do choose to automatically activate your own env like this,
+then you might also want to run this in a terminal::
 
-  .. [PT: 2024-04-19 ] no longer directly advertise Python 2.7
+  conda config --set auto_activate_base false
 
-      * Make a new text file called :download:`environment_ex2.yml`:
-
-        .. include:: environment_ex2.yml
-           :literal:
-           :code: yaml
-
-        \.\.\. and then run::
-
-          conda env create -f environment_ex2.yml
-
-* *(Bonus, because I like IPython, and jupyter-notebooks are
-  common)* Make a new text file called
-  :download:`environment_ex3.yml`:
-
-  .. include:: environment_ex3.yml
-     :literal:
-
-  \.\.\. and then run::
-
-    conda env create -f environment_ex3.yml
+so that conda doesn't pre-load the "base" environment unnecessarily
+(taking a bit of time).
 
 
-
-Add to+update conda environments
--------------------------------------
+Update and add to existing conda environments
+----------------------------------------------
 
 To add a new package or module ``NEW_PACK`` to an existing environment
 ``ENV_NAME``, one can use the following syntax::
@@ -417,7 +426,7 @@ To add a new package or module ``NEW_PACK`` to an existing environment
 \.\.\. so, for example example, you could add the scipy module to one
 of the above environments with::
 
-  conda install -n py39_afni_tiny scipy
+  conda install -n py3_afni_tiny scipy
 
 To update a module or package ``CURR_PACK`` in a currently active
 environment, you can use::
@@ -436,33 +445,6 @@ you could simply keep adding to it.  This might be useful with AFNI,
 in particular, because there are so few requirements here (modern
 Python with a very small number of modules).
 
-
-Specify default environment for the terminal
------------------------------------------------
-
-By default, conda will load the "base" environment in any new
-terminal.  To instead have a different environment ``ENV_NAME`` loaded
-in each new terminal/shell, we can add the line ``conda activate
-ENV_NAME`` in the shell's ``~/.*rc`` file somewhere *after* the ``#
->>> conda initialize >>>`` lines.
-
-Since I am running "bash" shell, I have added the following line in my
-``~/.bashrc`` \file (by opening that file with a text editor)::
-
-  conda activate py39_afni_tiny
-
-After sourcing that file or opening a new terminal, ``conda env list``
-should show that environment loaded, in this and in any new terminals.
-If that did *not* work, please check that that the conda version is at
-least 4.6 (via ``conda -V``).
-
-If you do choose to automatically activate your own env like this,
-then you might also want to run this in a terminal::
-
-  conda config --set auto_activate_base false
-
-so that conda doesn't pre-load the "base" environment unnecessarily
-(taking a bit of time).
 
 
 Disable conda prompt string (opt)
@@ -539,68 +521,46 @@ Set up Conda (*quick*)
 
      conda --version
 
-#. **Make new envs from cmd line: AFNI minimal Python**
-
-   This is the command line style to create a new environment,
-   including both specific and minimal package dependency versions::
-
-      conda create -y                        \
-            -n py39_afni_tiny                \
-            python=3.9                       \
-            "matplotlib>=2.2.3" numpy scipy  \
-            flask flask-cors
-            
-
-   .. no longer include:
-      conda create -y                        \
-            -n py27_afni_tiny                \
-            python=2.7                       \
-            "matplotlib>=2.2.3" numpy scipy  \
-            pillow 
-
-   See the next section for a slightly better way.
-   
-   |
-
 #. **Make new envs from text file: AFNI minimal Python**
 
-   This is the command line style to create a new environment (perhaps
-   preferable to command line style, for easier saving and sharing),
-   including both specific and minimal package dependency versions:
+   This is the file-based version to create a new environment.  While
+   users can use an alternative method of a direct command line call, we
+   find using a file preferable, for easier saving and sharing.  The file
+   used here contains both specific and minimal package dependency
+   versions. 
 
-   * Make a new text file called :download:`environment_ex1.yml`:
+   * *Option 1: Minimal dependencies.* To do a minimal environment build,
+     first, download the file, which is called
+     :download:`environment_ex1.yml`::
 
-     .. include:: environment_ex1.yml
-        :literal:
+       curl -O https://raw.githubusercontent.com/afni/afni_doc/refs/heads/master/background_install/environment_ex1.yml
 
-     \.\.\. and then run::
+     Then, build the env by running::
 
        conda env create -f environment_ex1.yml
 
-   .. no longer include:
-       * Make a new text file called :download:`environment_ex2.yml`:
+     The name of this environment is **py3_afni_tiny**.
 
-         .. include:: environment_ex2.yml
-            :literal:
+   * *Option 2: Add in interactive Python.* If you like IPython and
+     jupyter-notebooks (in addition to the minimal AFNI dependencies),
+     you could download the following environment file, called
+     :download:`environment_ex3.yml`::
 
-         \.\.\. and then run::
+        curl -O https://raw.githubusercontent.com/afni/afni_doc/refs/heads/master/background_install/environment_ex3.yml
 
-           conda env create -f environment_ex2.yml
-
-   * *(Bonus, because I like IPython, and jupyter-notebooks are
-     common)* Make a new text file called
-     :download:`environment_ex3.yml`:
-
-     .. include:: environment_ex3.yml
-        :literal:
-
-     \.\.\. and then run::
+     Then, build the env by running::
 
        conda env create -f environment_ex3.yml
 
+     The name of this environment is **py_afni_mid**.
 
 
-#. **Load an existing environment**
+#. **Activate conda environment in one terminal**
+
+   List all available envs (starred one, if any, is currently
+   active)::
+
+     conda env list
 
    Copy+paste::
    
@@ -608,27 +568,25 @@ Set up Conda (*quick*)
 
    For example, from above to setup for AFNI::
 
-     conda activate py39_afni_tiny
+     conda activate py3_afni_tiny
 
-#. **Activate an env by default**
+
+#. **Activate an env by default in all new terminals**
 
    |
    | To activate some env ``ENV_NAME`` by default, put ``conda
      activate ENV_NAME`` in your shell's ``~/.*rc`` file, *after* the
      ``# <<< conda initialize <<<`` line.
    | For example, to set up for AFNI,
-     put ``conda activate py39_afni_tiny`` there.
+     put ``conda activate py3_afni_tiny`` there.
 
-   *NB1:* This assumes your conda version (``conda -V``) is at
-   least 4.6.
-
-   *NB2:* If you do automatically activate your own env, then also
+   *NB1:* If you do automatically activate your own env, then also
    copy+paste the following to not pre-load the "base" env (adding
    unnecessary time)::
 
      conda config --set auto_activate_base false
 
-   | *NB3:* In general, you don't want to keep appending different
+   | *NB2:* In general, you don't want to keep appending different
      ``conda activate ...`` commands in a ``~/.*rc`` file, as each one
      takes a bit of time.
    |
@@ -647,7 +605,7 @@ Set up Conda (*quick*)
 
    ::
 
-      conda install -n py39_afni_tiny pandas
+      conda install -n py3_afni_tiny pandas
 
 
 Short list of conda commands
@@ -720,7 +678,7 @@ Fancier things with Conda
 There are a lot of fancy things that can be done with Conda that we
 will not describe here.  A good starting point is the `Managing
 Environments documentation
-<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_.
+<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`__.
 
 Cloning
 -------
@@ -732,8 +690,8 @@ exact recipe to setup a duplicate environment on a different computer.
 This is a nice concept for reproducibility (as sometimes using
 different version numbers of modules can affect outputs/results).
 
-`More on cloning and building identical conda envs can be read
-<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#cloning-an-environment>`_.
+More on cloning and building identical conda envs can be read `here
+<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#cloning-an-environment>`__.
 
 Note that in practice, truly duplicating environments exactly is
 actually pretty tough.  Getting very close might be good enough for
@@ -743,7 +701,7 @@ View Conda Cheatsheet
 ----------------------
 
 It's here: `the conda cheatsheet
-<https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>`_.
+<https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>`__.
 
 
 Make conda environments, more generally
@@ -759,8 +717,8 @@ Let's say you want to add the Sphinx module with cloud-theme support
 (I doubt you will, but just as an example). If you try::
 
   conda create -y                 \
-      -n py39_afni_with_sph       \
-      python=3.9                  \
+      -n py3_afni_with_sph        \
+      python                      \
       matplotlib numpy scipy      \
       flask flask-cors            \
       sphinx cloud_sptheme
@@ -835,38 +793,39 @@ Kundu's multi-echo FMRI-processing program ``meica.py``, which must be
 run in Python 2.7 (because of when it was written and its developer
 has left the field).
 
-Some comments then about possible AFNI environments to make, or
-dependencies to combine with your other 
+Some comments about possible AFNI environments you can make, or
+dependencies to combine with your other existing environments:
 
-* for most projects with AFNI, you could use the ``py39_afni_tiny``
+* for most projects with AFNI, you could use the ``py3_afni_tiny``
   environments, described above, on its own or with its dependencies
   added to a pre-existing environment. **NB: there is no strict Python
-  3.9 requirement for AFNI**---it was just used in the example; one
-  should be fine using Python 3.7 or higher.  Also, Python 2.7 is
-  technically deprecated now (though most AFNI program run fine in it
-  still, having 3.\* makes a lot more sense).
+  requirement for AFNI**---it was just used in the example; one should
+  be fine using Python 3.7 or higher.  Also, Python 2.7 is technically
+  deprecated now (though most AFNI program run fine in it still,
+  having 3.\* makes a lot more sense).
 
-* *If* you will be using Prantik's older ``meica.py`` program, then
-  you would want a Python 2.7-based environment available.  It could
-  be used as your main environment, or it could just be one you switch
-  in-and-out of for running that specific program.  (Being able to
-  easily switch environments is basically the raison-d'etre of conda.)
-  However, for most application purposes (beyond methodological
-  comparison) we would perhaps recommend user's run the newer tedana
-  group's version of MEICA (see below).
+* *If* you will be using Kundu et al.'s older ``meica.py`` program,
+  then you would want a Python 2.7-based environment available.  It
+  could be used as your main environment, or it could just be one you
+  switch in-and-out of for running that specific program.  (Being able
+  to easily switch environments is basically the raison-d'etre of
+  conda.)  However, for most application purposes (beyond
+  methodological comparison) we would perhaps recommend user's run the
+  newer tedana group's version of MEICA (see just below).
 
 * *If* you want to incorporate the modern `TEDANA (Dupre et al., 2021)
-  <tutorials/fatcat_prep/Overview.rst>`_ into your AFNI processing of
-  ME-FMRI data, then here is an example of an environment
-  incorporating both sets of dependencies.  You could make a new text
-  file called :download:`environment_afni_ted.yml`:
+  <https://tedana.readthedocs.io/en/stable/>`__ into your AFNI
+  processing of ME-FMRI data, then here is an example of an
+  environment incorporating both sets of dependencies.  Download the
+  file called :download:`environment_afni_ted.yml`::
 
-  .. include:: environment_afni_ted.yml
-     :literal:
+    curl -O https://raw.githubusercontent.com/afni/afni_doc/refs/heads/master/background_install/environment_afni_ted.yml
 
-  \.\.\. and then run::
+  Then, build the env by running::
 
     conda env create -f environment_afni_ted.yml
+
+  The name of this environment is **py3_afni_ted**.
 
   NB: these reflect current TEDANA installation instructions, which
   might change over time.  We will try to keep up with those.
