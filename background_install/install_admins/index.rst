@@ -23,7 +23,7 @@ those in the main installation pages listed :ref:`here
 --------------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    steps_macOS_12_Silicon_admin
    steps_macOS_12_Intel_admin
