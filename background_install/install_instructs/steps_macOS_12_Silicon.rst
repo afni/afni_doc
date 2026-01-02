@@ -134,7 +134,7 @@ Setup Python (*a* method)
 
 
 Prepare for Bootcamp  (install demo data)
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: substep_bootcamp.rst
 
