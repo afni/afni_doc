@@ -411,7 +411,7 @@ then you might also want to run this in a terminal::
 
   conda config --set auto_activate false
 
-.. NTS::
+.. NTS:
    the configuration variable used to be "auto_activate_base", but
    from conda 25.5, the above is the new, preferred variable; the
    older one still works, but gives a warning
@@ -591,7 +591,7 @@ Set up Conda (*quick*)
 
      conda config --set auto_activate false
 
-   .. NTS::
+   .. NTS:
       the configuration variable used to be "auto_activate_base", but
       from conda 25.5, the above is the new, preferred variable; the
       older one still works, but gives a warning
