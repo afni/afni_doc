@@ -409,7 +409,12 @@ should show that environment loaded, in this and in any new terminals.
 If you do choose to automatically activate your own env like this,
 then you might also want to run this in a terminal::
 
-  conda config --set auto_activate_base false
+  conda config --set auto_activate false
+
+.. NTS::
+   the configuration variable used to be "auto_activate_base", but
+   from conda 25.5, the above is the new, preferred variable; the
+   older one still works, but gives a warning
 
 so that conda doesn't pre-load the "base" environment unnecessarily
 (taking a bit of time).
@@ -584,7 +589,13 @@ Set up Conda (*quick*)
    copy+paste the following to not pre-load the "base" env (adding
    unnecessary time)::
 
-     conda config --set auto_activate_base false
+     conda config --set auto_activate false
+
+   .. NTS::
+      the configuration variable used to be "auto_activate_base", but
+      from conda 25.5, the above is the new, preferred variable; the
+      older one still works, but gives a warning
+
 
    | *NB2:* In general, you don't want to keep appending different
      ``conda activate ...`` commands in a ``~/.*rc`` file, as each one
