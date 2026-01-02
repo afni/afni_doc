@@ -6,8 +6,10 @@
 **Install AFNI on Administered Systems**
 *******************************************
 
-These instructions are for those using administered systems.  Included
-are instructions for both:
+These instructions are for those using administered systems (but not
+*NIH-administered* systems, since there are specific instructions for
+those in the main installation pages listed :ref:`here
+<install_page>`).  Included are instructions divided into sections for:
 
 * | **administrators**
   |  Those with root privilege, and who are possibly installing on one or
@@ -18,16 +20,15 @@ are instructions for both:
      but who still might personalize their own setup on a distributed
      system
 
-The instruction pages are therefore given in pairs.  Some instructions
-will refer to the general, personal computer instructions :ref:`here
-<install_page>`.
-
-|
+--------------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
-   steps_mac_admin
+   steps_macOS_12_Silicon_admin
+   steps_macOS_12_Intel_admin
+
+   older_install
 
 
 .. some day add these?              
