@@ -28,7 +28,6 @@ will refer to the general, personal computer instructions :ref:`here
    :maxdepth: 3
 
    steps_mac_admin
-   steps_mac_reg
 
 
 .. some day add these?              
