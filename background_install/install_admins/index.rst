@@ -7,7 +7,7 @@
 *******************************************
 
 These instructions are for those using administered systems (but not
-*NIH-administered* systems, since there are specific instructions for
+*NIMH-administered* systems, since there are specific instructions for
 those in the main installation pages listed :ref:`here
 <install_page>`).  Included are instructions divided into sections for:
 

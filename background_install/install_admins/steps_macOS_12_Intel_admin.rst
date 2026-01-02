@@ -22,7 +22,7 @@ These setup instructions are for particular macOS systems:
 * an **administered computer**, meaning that the user does not have
   "root" privileges but they work with an administrator who does.
 
-* the computer is **not an NIH-administered one**, for which there are
+* the computer is **not an NIMH-administered one**, for which there are
   specific instructions for macOS 12 or greater with Intel CPUs
   :ref:`here <install_steps_mac12_Intel>`.
 
