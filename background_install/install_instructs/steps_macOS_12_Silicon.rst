@@ -59,9 +59,11 @@ A. Copy+paste the following to get download scripts::
    instructions are provided, with the necessary set of Python
    libraries provided for an environment (e.g., in
    "environment_ex1.yml"). These could be added to an existing
-   environment, or used to create a new one. **NB:** this should be
-   done *after* AFNI binaries have been compiled.
+   environment, or used to create a new one.
 
+.. NTS, the following line should no longer be necessary:
+   **NB:** this should be done *after* AFNI binaries have been
+   compiled.
 
 Quick setup (special case: NIMH-administered computers)
 ---------------------------------------------------------
