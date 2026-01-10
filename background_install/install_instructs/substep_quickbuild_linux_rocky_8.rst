@@ -83,3 +83,17 @@ forget to do that!).
       | Report any crashes!  Otherwise, you are all set.
       |
 
+#. **Prepare for Bootcamp**
+
+   | 
+
+   A. To download and unpack the AFNI Bootcamp data (NB: this will
+      overwrite any pre-existing Bootcamp data)::
+
+        cd
+        install_bootcamp_data.tcsh -do_install yes 
+
+      | If you want to remove the compressed packages that were
+        downloaded, you can also delete the ``afni_boot_packages/``
+        directory.
+
