@@ -33,15 +33,23 @@ Things to note before starting
 Install Linux
 -----------------------------------
 
-1. | Click here to install **WSL 1** (*noooot WSL 2*), and probably
-     select a modern Ubuntu (like "Ubuntu 22.04", at time of writing here)
-     as your desired flavor of Linux:
-   | `https://docs.microsoft.com/en-us/windows/wsl/install-manual
-     <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_
-   | We list the same steps below, with some (possibly helpful) additional
-     comments.
-     
+1. | Follow the instructions below to install WSL, making sure to
+     follow those specifically for **WSL 1** (*noooot WSL 2*).  To
+     help ensure that you get the right version, you can run the
+     following in the PowerShell before starting:
+       
+     .. code::
 
+        wsl.exe --set-default-version 1
+
+   | Also, when choosing your distribution, it probably select a
+     modern Ubuntu (like "Ubuntu 22.04", at time of writing here) as
+     your desired flavor of Linux: 
+   | `Microsoft Docs for WSL
+     <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_ |
+   | We list the same steps below, with some (possibly helpful)
+     additional comments.
+     
    **NB:** It may not be possible to run Windows PowerShell while the
    OS is in "S mode".  Since the PowerShell is needed to install WSL,
    you might have to leave S mode to be able to have Linux on current
