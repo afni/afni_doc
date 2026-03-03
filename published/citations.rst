@@ -257,7 +257,7 @@ If you are interested in modeling a detailed, voxelwise hemodynamic
 response function (HRF) *without* assuming a constant+canonical shape
 and *with* useful regularization, then see:
 
-* | Chen G, Taylor PA, Reynolds RC, Leibenluft E, Pine DS, Brotmas MA,
+* | Chen G, Taylor PA, Reynolds RC, Leibenluft E, Pine DS, Brotman MA,
     Pagliaccio D, Haller SP (2023). **BOLD response is more than just
     magnitude: improving detection sensitivity through capturing
     hemodynamic profiles.** Neuroimage 277:120224.
@@ -282,6 +282,13 @@ estimation:
     Meeting of the Organization for Human Brain Mapping.
   | `ohbm_2024_taylor_etal_physio_calc_updates.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
 
+If you are interested in support vector machine analysis of brain
+data, check out ``3dsvm``, and see here:
+
+* | LaConte S, Strother S, Cherkassky V, Anderson J, Hu X
+    (2005). **Support vector machines for temporal classification of
+    block design fMRI data.** Neuroimage. 26(2):317-29.
+  | `<https://pubmed.ncbi.nlm.nih.gov/15907293/>`_
 
 .. _pub_cit_meth_suma:
 
