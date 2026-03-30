@@ -1,7 +1,25 @@
 #!/bin/zsh
 
 # run afni_proc.py to perform full single subject regression
-
+# 
+# This script demonstrates how to construct a single subject
+# afni_proc.py pipeline for the memory condition including EPI
+# distortion correction and nonlinear standard space
+# registration. Running this script automatically creates an
+# afni_proc.py directory and generates the proc.TMN01 execution script
+# inside it.
+# 
+# Execution: 
+#    
+#    zsh s2-i.create_proc_M.zsh -s TMN01
+# 
+# The above command creates proc.TMN01. This is the generated
+# execution script running the full preprocessing steps for one
+# subject.  It is then executed, for example, with:
+#
+#    tcsh -xef proc.TMN01 |& tee output.proc.TMN01
+#
+#
 ## ==================================================== ##
 
 ## $# = the number of arguments

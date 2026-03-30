@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# run 3dLMEr for group level analysis
+# run 3dLMEr for group-level linear mixed effects analysis modeling
+# the continuous frequency variable with random intercepts.
+#
+# The model (-model "Freq+(1|Subj)+(1|Subj:Run)") is designed to
+# control for random effects across individual subjects and specific
+# runs, while -gltCode is used to explicitly extract the main linear
+# effect of the frequency.
 
 # ============================================================================
 

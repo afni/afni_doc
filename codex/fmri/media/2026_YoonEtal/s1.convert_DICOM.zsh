@@ -1,7 +1,14 @@
 #!/bin/zsh
 
 # run dcm2niix_afni to convert DICOMs to NIFTI volumes
-
+# 
+# This is an example of running dcm2niix_afni to convert raw DICOM
+# files into NIfTI format and organize structural and functional data.
+#
+# Execution: 
+# 
+#     zsh s1.convert_DICOM.zsh -s TMN01
+# 
 ##############################################################
 
 ## Process command line arguments
