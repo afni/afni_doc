@@ -15,9 +15,9 @@ Here we present commands used in the following paper:
 
 * | Wardle SG, Rispoli B, Roopchansingh V, Baker CI (2025). **Brief
     encounters with real objects modulate medial parietal but not
-    occipitotemporal cortex.** (*submitted*) 
-    bioRxiv doi: https://doi.org/10.1101/2024.08.05.606667
-  | `<https://doi.org/10.1101/2024.08.05.606667>`_
+    occipitotemporal cortex.** Journal of Neuroscience, 45,
+    e0834252025.
+  | `<https://doi.org/10.1523/JNEUROSCI.0834-25.2025>`_
 
 **Abstract:** 
 Humans are skilled at recognizing everyday objects from pictures, even
