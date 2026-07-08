@@ -2,9 +2,9 @@
 
 .. _tut_auto_@afni_refacer_run:
 
-***********************
-Using @afni_refacer_run
-***********************
+*********************************************************************
+Using afni_refacer2 (and @afni_refacer_run)
+*********************************************************************
 
 
 .. contents:: :local:
@@ -17,7 +17,8 @@ Introduction
 
 .. highlight:: Tcsh
 
-``@afni_refacer_run`` refaces and/or defaces a volumetric dataset,
+``afni_refacer2`` (and the older, very similar performing
+``@afni_refacer_run``) refaces and/or defaces a volumetric dataset,
 typically a (human) T1w volume.  It performs this task by using
 alignment to a reference dataset, which has pre-created mask regions
 to apply.  The header information of the output volume can also be
@@ -82,12 +83,25 @@ and sagittal slices.  They display the face and/or face_plus regions
 used, as well as the new dataset overlayed on the original, for
 comparison.
 
+| **Question: What is the difference between** ``afni_refacer2`` **and** 
+  ``@afni_refacer_run`` **?**
+| The updated command, ``afni_refacer2`` performs very similarly to
+  the original one (which was top performing in `this independent
+  study
+  <https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full>`_
+  of defacing tools across the field).  The main updates are "under
+  the hood" within the program itself, to be easier to maintain and
+  update as needed.  The main output difference is that by default,
+  the newer ``afni_refacer2`` performs a deeper anonymization when it
+  runs. That is, it uses a re/defacing shell that removes more face,
+  forehead and ears. In all cases, we recommend using the updated,
+  more flexible program, ``afni_refacer2``.
 
 
 A note on examples below
 --------------------------
 
-For the ``@afni_refacer_run`` examples below, we use data of the
+For the ``afni_refacer2`` examples below, we use data of the
 ``AFNI_data6/afni/`` directory of the freely available AFNI Bootcamp
 demo sets (see :ref:`here <Bootcamping>` if you don't have it yet).
 
@@ -139,7 +153,7 @@ dataset.
 
    # Example 1: run all reface/deface modes, and check results
    
-   @afni_refacer_run                                                     \
+   afni_refacer2                                                         \
        -input anat+orig.                                                 \
        -mode_all                                                         \
        -anonymize_output                                                 \
@@ -269,7 +283,7 @@ the full output name of the file.
 
    # Example 2: simple refacing (only)
    
-   @afni_refacer_run                                                     \
+   afni_refacer2                                                         \
        -input anat+orig.                                                 \
        -mode_reface                                                      \
        -anonymize_output                                                 \

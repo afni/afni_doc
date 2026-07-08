@@ -1,7 +1,7 @@
 #!/bin/tcsh
 
 
-# Using @afni_refacer_run
+# Using afni_refacer2 (which is an update of @afni_refacer_run)
 
 
 # ----------------------- A note on examples below -----------------------
@@ -25,7 +25,7 @@
 
 # Example 1: run all reface/deface modes, and check results
 
-@afni_refacer_run                                                     \
+afni_refacer2                                                         \
     -input anat+orig.                                                 \
     -mode_all                                                         \
     -anonymize_output                                                 \
@@ -37,7 +37,7 @@
 
 # Example 2: simple refacing (only)
 
-@afni_refacer_run                                                     \
+afni_refacer2                                                         \
     -input anat+orig.                                                 \
     -mode_reface                                                      \
     -anonymize_output                                                 \
