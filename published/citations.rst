@@ -38,6 +38,13 @@ Methods: General functionality
 
 If you use the realtime functionality from AFNI, please refer to:
 
+* | Cox RW, Jesmanowicz A, Hyde JS (1995). **Real-time functional
+    magnetic resonance imaging.** Magnetic Resonance in Medicine
+    33:230-236.
+  | `<https://pubmed.ncbi.nlm.nih.gov/7707914/>`_
+
+  |
+
 * | Cox RW, Jesmanowicz A (1999). **Real-time 3D image registration for
     functional MRI.**  Magnetic Resonance in Medicine, 42:
     1014-1018.
@@ -52,6 +59,7 @@ If you use (fast) ANATICOR to de-noise FMRI datasets, such as in
     doi:10.1016/j.neuroimage.2010.04.246
   | `<https://pubmed.ncbi.nlm.nih.gov/20420926/>`_
 
+  |
 
 * | Jo HJ, Reynolds RC, Gotts SJ, Handwerker DA, Balzekas I, Martin A,
     Cox RW, Bandettini PA (2020). **Fast detection and reduction of
@@ -195,7 +203,7 @@ splines; or, if you use ``3dMSS`` for multilevel smoothing splines at
 the population-level, please refer to:
 
 * | Chen G, Nash TA, Reding KM, Kohn PD, Wei S-M, Gregory MD,
-    Eisenberg DP, Cox RW, Berman KF, Kippenhan JS (2020). **Beyond
+    Eisenberg DP, Cox RW, Berman KF, Kippenhan JS (2021). **Beyond
     linearity in neuroimaging: Capturing nonlinear relationships with
     application to longitudinal studies.**  NeuroImage 233:117891.
   | `<https://pubmed.ncbi.nlm.nih.gov/33667672/>`_
@@ -274,13 +282,23 @@ estimation:
     Organization for Human Brain Mapping.
   | `ohbm_2023_PeterLauren.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2023/ohbm_2023_PeterLauren.pdf>`_
 
-  | 
+  |
 
 * | Lauren PD, Glen DR, Reynolds RC, Dean JN, Handwerker DA, Taylor PA
     (2024).  **New in AFNI's physio_calc.py (for FMRI physio regressors):
     QC images, reports and interactive mode.** Presented at the 30th Annual 
     Meeting of the Organization for Human Brain Mapping.
-  | `ohbm_2024_taylor_etal_physio_calc_updates.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
+  | `ohbm_2024_taylor_etal_physio_calc_updates.pdf 
+    <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_taylor_etal_physio_calc_updates.pdf>`_
+
+  |
+
+* | Lauren PD, Glen DR, Reynolds RC, Taylor PA (2025). **Updates to
+    AFNI's physio_calc.py: new respiratory response regressors and
+    more.** Presented at the 31st Annual Meeting of the Organization
+    for Human Brain Mapping.  
+  | `ohbm_2025_PeterLauren_physio_calc_updates.pdf
+    <https://afni.nimh.nih.gov/pub/dist/OHBM2025/ohbm_2025_PeterLauren_physio_calc_updates.pdf>`_
 
 If you are interested in support vector machine analysis of brain
 data, check out ``3dsvm``, and see here:
@@ -289,6 +307,14 @@ data, check out ``3dsvm``, and see here:
     (2005). **Support vector machines for temporal classification of
     block design fMRI data.** Neuroimage. 26(2):317-29.
   | `<https://pubmed.ncbi.nlm.nih.gov/15907293/>`_
+
+To read about FMRI experimental designs and processing strategies,
+please see:
+
+* | Birn RM, Cox RW, Bandettini PA (2004). **Experimental designs and
+    processing strategies for fMRI studies involving overt verbal
+    responses.** NeuroImage 23(3):1046-1058. 
+  | `<https://pubmed.ncbi.nlm.nih.gov/15528105/>`_
 
 .. _pub_cit_meth_suma:
 
@@ -404,10 +430,19 @@ For an example of using ``afni_proc.py`` to process multiecho FMRI
 data (with an accompanying demo with scripts and data that can be
 downloaded by running ``@Install_APMULTI_Demo1_rest``), please see:
 
+* | Reynolds RC, Gotts SJ, Gilmore AW, Glen DR, Taylor PA
+    (2021). **Multiple ways to process multi-echo FMRI data with
+    AFNI.** OHBM 2021, poster 2412.
+  | `ohbm_2021_poster_afni_apmulti.pdf
+    <https://afni.nimh.nih.gov/pub/dist/HBM2021/ohbm_2021_poster_afni_apmulti.pdf>`_
+
+  |
+
 * | Taylor PA, Gotts SJ, Gilmore AW, Teves J, Reynolds RC (2022). **A
     multi-echo FMRI processing demo including TEDANA in afni_proc.py
     pipelines**. Proc. OHBM-2022.
-  | `OHBM2022_tayloretal_apmulti.pdf <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_tayloretal_apmulti.pdf>`_
+  | `OHBM2022_tayloretal_apmulti.pdf 
+    <https://afni.nimh.nih.gov/pub/dist/OHBM2022/OHBM2022_tayloretal_apmulti.pdf>`_
 
 If you would like an overview of many methods for denoising BOLD FMRI
 data (including phase-based and multi-echo FMRI approaches), as well
@@ -434,6 +469,8 @@ To see a description of several QC tools in AFNI---including
     afni_proc.py and more.** Imaging Neuroscience 2: 1–39. 
     doi: 10.1162/imag_a_00246
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11382598/>`_
+
+  |
 
 * | *Comment:* it is also worth checking out this fun, online demo
     of the APQC HTML and some of its interactive functionality,
@@ -641,7 +678,7 @@ smoothness estimation in your work, please refer to:
 If you use the equitable thresholding and clustering (ETAC) method in
 your work, please refer to:
 
-* | Cox RW (2017). **Equitable Thresholding and Clustering: A Novel
+* | Cox RW (2019). **Equitable Thresholding and Clustering: A Novel
     Method for Functional Magnetic Resonance Imaging Clustering in AFNI.**
     9(7):529-538. doi: 10.1089/brain.2019.0666.
   | `<https://pubmed.ncbi.nlm.nih.gov/31115252/>`_
@@ -754,6 +791,19 @@ above):
     Tractography by including Diagonal Tract Propagation.** PLoS ONE
     7(9): e43415. 
   | `<https://pubmed.ncbi.nlm.nih.gov/22970125/>`_
+
+If you want to learn more about using FATCAT, in particular
+conjunction with TORTOISE and FreeSurfer tools, please check out this
+FATCAT_DEMO2 tutorial, as described here (and downloadable by running
+``@Install_FATCAT_DEMO2``):
+
+* | Taylor PA, Rajendra J, Nayak A, Irfanoglu MO, Glen DR, Reynolds RC
+    (2018). New analysis and visualization tools in AFNI-FATCAT (and
+    implementing other software). Proc Intl Soc Magn Reson Med 26,
+    abstract 1584.
+  | `<ISMRM_2018_FATCAT.pdf 
+     https://afni.nimh.nih.gov/pub/dist/ISMRM2018/ISMRM_2018_FATCAT.pdf/>`_
+  | `<https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/tutorials/fatcat_prep/main_toc.html>`_
 
 If you want to learn more about ways to reduce motion effects in
 DWI/DTI data (including using volumetric navigators during
