@@ -77,6 +77,14 @@ and even *highly probably* informative), please refer to:
     number e0185552. doi: 10.1371/journal.pone.0185552
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5626465/>`_
 
+If you use ``3dvolreg`` (e.g., for estimating subject motion), please
+refer to:
+
+* | Cox RW, Jesmanowicz A (1999). **Real-time 3D image registration for
+    functional MRI.**  Magnetic Resonance in Medicine, 42:
+    1014-1018.
+  | `<https://pubmed.ncbi.nlm.nih.gov/10571921/>`_
+
 If you use ``3ddelay``, please refer to:
 
 * | Saad ZS, Ropella KM, Cox RW, DeYoe EA (2001). **Analysis and use of
