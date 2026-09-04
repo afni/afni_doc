@@ -942,12 +942,14 @@ in cross-study comparisons and meta-analysis, then please check out:
     T, Lauren PD, Leopold D, Lerch J, Mathys C, McCarthy P, McLeod A,
     Mejia A, Moia S, Nichols TE, Pernet C, Pessoa L, Pfleiderer B,
     Rajendra JK, Reyes L, Reynolds RC, Roopchansingh V, Rorden C, Russ
-    BE, Sundermann B, Thirion B, Torrisi S, Chen G (2025). **Go Figure:
-    Transparency in neuroscience images preserves context and
-    clarifies interpretation.** Nature Methods (published).
-  | `<https://arxiv.org/abs/2504.07824/>`_
+    BE, Sundermann B, Thirion B, Torrisi S, Chen G (2026). **Go Figure:
+    Transparency in neuroscience images preserves context and clarifies
+    interpretation.** Nature Methods. doi:10.1038/s41592-026-03206-7.
+  | `Preliminary arXiv preprint <https://arxiv.org/abs/2504.07824/>`_
   | `<https://www.nature.com/articles/s41592-026-03206-7>`_ or this
     `view-only link from Nature Methods <https://rdcu.be/B4tikBETdQZa>`_
+  | `PMC manuscript of final version
+    <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13537210>`_
 
 If you'd like to display more full results with transparent
 thresholding (rather than hiding away much information with
