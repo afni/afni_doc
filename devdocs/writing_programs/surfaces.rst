@@ -128,6 +128,102 @@ Because the underlying storage is a ``NI_element``, you extract and add columns
 with the same NIML calls used everywhere else (``NI_add_column``,
 ``SUMA_AddDsetNelCol``, ``NI_extract_float_value``, ...).
 
+A small, complete surface program
+---------------------------------
+
+AFNI has no direct surface counterpart to :file:`src/3dToyProg.c`.  The
+closest shipped code examples are :file:`src/SUMA/SUMA_TestDsetIO.c` (dataset
+construction and I/O) and :file:`src/SUMA/SUMA_SurfMeasures.c` (mesh-based
+calculation).  They are useful references, but neither is a small tutorial
+program.
+
+The following ``SurfToyProg`` is the surface equivalent in scope: it reads a
+mesh, computes each node's distance from the origin, and writes those values
+as a NIML surface dataset.  Save it as ``SurfToyProg.c`` in the AFNI ``src``
+tree, add a normal SUMA-program build target, and run it as::
+
+   SurfToyProg -i lh.pial.gii -prefix node_radius
+
+It produces ``node_radius.niml.dset``.  The output is attached to the input
+surface's domain ID, so SUMA can load it onto that same mesh.
+
+.. code-block:: c
+
+   #include "mrilib.h"
+   #include "SUMA_suma.h"
+
+   int main( int argc , char *argv[] )
+   {
+      static char FuncName[] = { "SurfToyProg" };
+      char *surfname=NULL, *prefix="node_radius", *outname=NULL;
+      SUMA_SurfaceObject *SO=NULL;
+      SUMA_DSET *out=NULL;
+      int *node=NULL, n, i, iarg=1;
+      float *radius=NULL, x, y, z;
+
+      SUMA_STANDALONE_INIT;
+      SUMA_mainENTRY;
+
+      while( iarg < argc ) {
+         if( strcmp(argv[iarg],"-i") == 0 ) {
+            if( ++iarg >= argc ) ERROR_exit("Need a surface after -i") ;
+            surfname = argv[iarg++] ; continue ;
+         }
+         if( strcmp(argv[iarg],"-prefix") == 0 ) {
+            if( ++iarg >= argc ) ERROR_exit("Need a name after -prefix") ;
+            prefix = argv[iarg++] ; continue ;
+         }
+         ERROR_exit("Unknown option: %s",argv[iarg]) ;
+      }
+      if( surfname == NULL ) ERROR_exit("Use: SurfToyProg -i SURFACE [-prefix OUT]") ;
+
+      SO = SUMA_Load_Surface_Object_Wrapper(
+         surfname, NULL, NULL, SUMA_FT_NOT_SPECIFIED,
+         SUMA_FF_NOT_SPECIFIED, NULL, 0 ) ;
+      if( SO == NULL ) ERROR_exit("Cannot read surface %s",surfname) ;
+
+      n = SO->N_Node ;
+      node   = (int   *)SUMA_malloc(n*sizeof(*node)) ;
+      radius = (float *)SUMA_malloc(n*sizeof(*radius)) ;
+      for( i=0 ; i < n ; i++ ) {
+         node[i] = i ;                         /* dense: one row per node */
+         x = SO->NodeList[3*i] ;
+         y = SO->NodeList[3*i+1] ;
+         z = SO->NodeList[3*i+2] ;
+         radius[i] = sqrtf(x*x + y*y + z*z) ;
+      }
+
+      out = SUMA_CreateDsetPointer(prefix, SUMA_NODE_BUCKET,
+                                    NULL, SO->idcode_str, n) ;
+      if( out == NULL ) ERROR_exit("Cannot create output dataset") ;
+      if( !SUMA_AddDsetNelCol(out,"Node Index",SUMA_NODE_INDEX,node,NULL,1) ||
+          !SUMA_AddDsetNelCol(out,"Radius",SUMA_NODE_FLOAT,radius,NULL,1) )
+         ERROR_exit("Cannot add output columns") ;
+      if( !SUMA_AddNgrHist(out->ngr,"SurfToyProg",argc,argv) )
+         ERROR_exit("Cannot record output history") ;
+
+      outname = SUMA_WriteDset_ns(prefix,out,SUMA_ASCII_NIML,1,1) ;
+      if( outname == NULL ) ERROR_exit("Cannot write %s",prefix) ;
+      INFO_message("Wrote %s",outname) ;
+
+      SUMA_free(outname);
+      SUMA_FreeDset(out);
+      SUMA_Free_Surface_Object(SO);
+      SUMA_free(node); SUMA_free(radius);
+      return 0;
+   }
+
+This is deliberately much smaller than ``3dToyProg``: a surface program does
+not need to construct a grid, define voxel geometry, or manage sub-bricks.
+Its equivalent essentials are loading the mesh, preserving its domain ID,
+providing the node-index column, and adding one or more data columns.
+
+It is not necessary to add ``SurfToyProg`` to the distributed AFNI binaries.
+The existing programs already cover the production use cases, and a second
+toy executable would add a build and maintenance obligation.  It *is* useful
+as a documented reference here, where it gives a new SUMA developer one
+complete path from mesh to output dataset.
+
 How this fits together
 ======================
 
