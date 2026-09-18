@@ -9,6 +9,7 @@ Building, testing, contributing... get it here while it's hot.
 .. toctree::
    :maxdepth: 2
              
+   writing_programs/main_toc
    pull_requests/pr_ex
    openmp_notes
    running_tests_suite/main_toc
