@@ -57,43 +57,4 @@ forget to do that!).
         tcsh OS_notes.linux_ubuntu_26_64_c_nice.tcsh |& tee o.ubuntu_26_c.txt
 
 
-#. **Evaluate/check the setup**
-
-   |
-
-   A. Open a new terminal, and run the AFNI system check::
-
-        afni_system_check.py -check_all
-
-      | **Read** the "Please Fix" section at the bottom, to see if
-        setup is complete.  
-      | **If** there are suggested fixes, please do
-        those and re-run the system check.  
-      | **Ask** any questions on the
-        `Message Board
-        <https://discuss.afni.nimh.nih.gov/>`__
-      |
-        
-   #. Open up the AFNI and SUMA GUIs, juuuust to make sure all is
-      well::
-   
-        afni
-        suma
-
-      | Report any crashes!  Otherwise, you are all set.
-      |
-
-#. **Prepare for Bootcamp**
-
-   | 
-
-   A. To download and unpack the AFNI Bootcamp data (NB: this will
-      overwrite any pre-existing Bootcamp data)::
-
-        cd
-        install_bootcamp_data.tcsh -do_install yes 
-
-      | If you want to remove the compressed packages that were
-        downloaded, you can also delete the ``afni_boot_packages/``
-        directory.
 
