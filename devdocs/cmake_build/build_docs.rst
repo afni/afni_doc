@@ -1,292 +1,129 @@
 .. _devdocs_cmake:
 
-##########################################
-CMake builds for AFNI developers
-##########################################
+.. comment:
+
+   don't mix using '~~~~~' and '^^^^^^' for (sub)subsections.  Sphinx
+   will be unhappy.  Here, we opt to use only the latter.
+
+
+Cmake for AFNI - making AFNI is a piece of C(m)ake
+==================================================
 
 .. contents:: :local:
 
-.. default-role:: literal
+.. highlight:: none
 
-This page describes the CMake build as it exists in the AFNI source
-repository.  It is for contributors who are compiling, testing, or extending
-AFNI; it is not a replacement for normal user-installation instructions.
+.. admonition:: Documentation attribution
 
-AFNI has two maintained build systems.  CMake is the preferred system for new
-development work.  The traditional Makefile system remains important: it is
-used for established platform-specific builds and as a reference when the two
-systems' compiled-target inventories are compared.
+   Original CMake documentation by John Lee.  Modified by others.
 
+Overview
+---------
 
-Build systems and their roles
-=============================
+In addition to the build systems using make files, you can build the
+AFNI project using the CMake build system. This build system offers
+several advantages some of which are:
 
-The traditional build is configured *in* `src/`.  A developer selects a
-platform Makefile, copies it to `src/Makefile`, edits compiler, library-path,
-and installation settings as needed, and invokes targets such as `make
-vastness`.  Platform Makefiles and the shared `Makefile.INCLUDE` explicitly
-carry many compiler flags and library names.
+-  Parallel builds can be performed greatly accelerating build time (at
+   least an order of magnitude if you have the CPUs)
 
-The CMake build is configured *out of source*.  CMake detects the selected
-compiler and platform, discovers or builds dependencies, and writes a backend
-build system (usually Ninja or Unix Makefiles) into a separate build directory.
-It also records linking, installation, and dependency information on individual
-targets.  Do not mix the two systems in one directory: use a fresh CMake build
-directory instead of placing CMake output in `src/`.
+-  One build to rule them all… it configures itself for Linux or Mac
+   systems so you don't have to tweak it for your specific system. This
+   works for Clang, icc, gcc (the latter most frequently used)
 
-For new code, add the CMake definition and retain the corresponding Makefile
-entry when the program belongs to the legacy build.  AFNI's CMake configuration
-checks its expected installed targets against the package-component list and
-reports the difference from the legacy Makefile target list.
+-  Dependency management: as part of the previous point, you can detect
+   and build against dependencies on your system. Alternatively you can
+   specify CMake options to directly download, build, and install
+   dependencies from source
+
+-  Shared object linking: CMake manages shared object linking (linking
+   against .so or .dylib files) in a robust way. Depending on whether
+   you have a build directory or have installed the software, the rpath
+   of all binaries is set appropriately to link against all
+   dependencies.
 
 
-How the CMake project is organized
-==================================
+.. _devdocs_cmake_quickstart:
 
-The build starts at `CMakeLists.txt` in the AFNI repository root::
-
-   CMakeLists.txt
-       |-- cmake/afni_cmake_build_options.cmake
-       |-- cmake/afni_project_dependencies.cmake
-       |-- doc/
-       |-- src/
-       |     |-- core libraries and ordinary binaries
-       |     |-- X11/AFNI GUI targets and plugins
-       |     |-- SUMA targets
-       |     |-- tcsh, Python, and R scripts
-       |-- tests/
-       `-- packaging/installation_components.txt
-
-`cmake/afni_cmake_build_options.cmake` defines the public configuration
-switches and installation locations.  `cmake/afni_project_dependencies.cmake`
-finds system packages, selects in-tree dependencies, and uses `FetchContent`
-where AFNI can download a dependency.  The project-wide target helpers live in
-`cmake/get_build_macros_and_functions.cmake`.  In particular,
-`add_afni_executable()`, `add_afni_library()`, and `add_afni_plugin()`
-register targets for installation and expected-target checks.
-
-Within `src/`, ordinary non-GUI executables are primarily registered in
-`CMakeLists_binaries.txt`; X-dependent executables in
-`CMakeLists_x_dependent.txt`; and plugins in `CMakeLists_plugins.txt`.
-Subsystems with their own target graph, such as `SUMA`, `niml`, and
-`python_scripts`, have their own `CMakeLists.txt` files and are added by
-`src/CMakeLists.txt`.
-
-
-Quick start: full developer build
-=================================
-
-Install CMake, a C and C++ compiler, Ninja (recommended), and the development
-packages required by the features you plan to build.  The minimum CMake version
-is declared by the root `CMakeLists.txt`; use a current CMake where possible.
-
-AFNI expects `CC` and `CXX` to identify the compiler pair during its first
-configuration.  Set them before creating a build directory.  Changing a
-compiler, generator, architecture, or toolchain afterwards requires a new build
-directory (or a deliberate cache reset), not merely another build command.
-
-The following is an explicit full-suite developer configuration.  It enables
-every normal program family, R statistics, Python and tcsh scripts, OpenMP,
-tests, and all plugins.  It deliberately does *not* download distribution
-atlases; see :ref:`devdocs_cmake_atlases`.
+Quickstart
+----------
 
 ::
 
-   cd /path/to/afni
-   CC="$(command -v gcc)" CXX="$(command -v g++)" \
-   cmake -S . -B build/full -G Ninja \
-     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-     -DCMAKE_INSTALL_PREFIX="$PWD/install" \
-     -DCOMP_COREBINARIES=ON \
-     -DCOMP_GUI=ON -DCOMP_PLUGINS=ON -DCOMP_ALL_PLUGINS=ON \
-     -DCOMP_SUMA=ON -DCOMP_TCSH=ON -DCOMP_PYTHON=ON \
-     -DCOMP_RSTATS=ON \
-     -DUSE_OMP=ON -DENABLE_TESTS=ON
+   # change to your home directory, or whatever you would prefer
+   cd
+   git clone https://github.com/afni/afni
+   cd afni
+   mkdir build; cd build
+   cmake [options] ..
+   # can make specific targets like afni,3dDeconvolve,etc
+   make
 
-   cmake --build build/full --parallel
-   cmake --install build/full
+All binaries should now be present in ``./targets_built`` (in build
+directory). Note that scripts (tcsh, R, python etc.) will remain in
+the source tree until installation.
 
-`RelWithDebInfo` is a useful developer default.  Choose `Debug` for debugging
-or `Release` for an optimized local build.  `cmake --build` is portable across
-Ninja and Makefile generators; `--parallel` lets CMake choose a suitable
-parallel build count.  A specific target can be built with, for example,
-`cmake --build build/full --target 3dDeconvolve`.
+N.B. For a faster build you can instead use the ninja build system set
+the environment variable CMAKE_GENERATOR to "Ninja" and substitute the
+make command above for "ninja" (cmake v>3.14). But see `Section: Ninja
+build system <boring_cmake_ninja>`__.
 
-If you do not need R, omit `-DCOMP_RSTATS=ON`.  R is disabled by default
-because it requires a discoverable R installation.  Likewise, build only the
-core C libraries with `-DCOMP_CORELIBS_ONLY=ON`.  Component options are
-dependency-aware: disabling the GUI also disables its plugins and SUMA.
+For a more comprehensive overview see the `Section: Basic approach to
+building and installing <boring_cmake_basic_approach>`__.
 
-The compiler guard can be bypassed with `-DAFNI_COMPILER_CHECK=OFF`, but
-setting a real compiler pair is preferred.  Use that bypass only when a
-toolchain file has already established the compilers.
+.. _devdocs_cmake_install_dev:
 
+Installation of development dependencies
+----------------------------------------
 
-Build output, installation, and tests
-=====================================
+In order to get a basic working setup on your computer you can try the
+suggestions below :
 
-Compiled executables and libraries are written to `targets_built` inside the
-build directory.  This permits direct development use, for example::
+On Debian:
 
-   ./build/full/targets_built/afni
+::
 
-Shell and R scripts remain in the source tree until installation.  The Python
-part of the project has a development-install step by default so that the
-`pytest` target can use the selected Python interpreter and AFNI's Python
-package.  That step needs `setuptools` in that interpreter.  Set
-`-DSTANDARD_PYTHON_INSTALL=OFF` when that behavior is inappropriate for a
-particular build.
+   apt-get install ca-certificates curl freeglut3-dev libf2c2-dev               \
+                   libglib2.0-dev libglu1-mesa-dev libglw1-mesa-dev             \
+                   libgsl-dev libgts-dev libjpeg62 libmotif-dev libnetcdf-dev   \
+                   libxi-dev libxmhtml-dev libxmu-dev libxpm-dev libxt-dev      \
+                   libvolpack1-dev python-dev python3.6-dev qhull-bi            \
+                   r-base tcsh ninja-build
 
-To exercise AFNI's in-tree test setup, use::
+.. note:: GLW breaks our build on ubuntu/debian. Use neurodebian or use the
+          cmake option ``-DUSE_SYSTEM_GLW=OFF``.
 
-   cmake --build build/full --target pytest
+On macOS:
 
-The target rebuilds AFNI as needed and sets `PATH` so tests see compiled
-binaries plus source-tree scripts.  Test selection can be passed through the
-`ARGS` environment variable, for example::
+::
 
-   ARGS='scripts --workers 3 -k mask' \
-     cmake --build build/full --target pytest
+   brew cask install xquartz
+   brew unlink python\@2
+   brew install                                           \
+       llvm cmake ninja pkgconfig                         \
+       jpeg gsl gts openmotif netcdf libpng expat         \
+       freetype fontconfig gsl netpbm git-annex
 
-Use `cmake --install build/full` to install at the configured prefix.  A
-staged package-style installation can be made without changing that prefix::
+Note, for a more comprehensive list of development dependencies it may
+be worth checking out the files used for continuous integration
+testing: `github.com/afni/.circleci/config.yml
+<https://github.com/afni/afni/blob/master/.circleci/config.yml>`__ and
+`github.com/afni/.docker/afni_dev_base.dockerfile
+<https://github.com/afni/afni/blob/master/.docker/afni_dev_base.dockerfile>`__
 
-   DESTDIR="$PWD/stage" cmake --install build/full
-
-Choose an explicit `CMAKE_INSTALL_PREFIX` for developer builds.  CMake's
-default is normally `/usr/local`.
-
-
-Configuration reference
-=======================
-
-The component switches select what AFNI builds and installs:
-
-`COMP_CORELIBS_ONLY`
-   Build only the foundational C libraries and models.
-
-`COMP_COREBINARIES`
-   Build the large set of non-GUI C executables.
-
-`COMP_GUI`, `COMP_PLUGINS`, `COMP_ALL_PLUGINS`
-   Build the AFNI X11 GUI, its plugin framework, and respectively the complete
-   plugin set.  Plugins currently require the GUI.
-
-`COMP_SUMA`
-   Build SUMA and other OpenGL-dependent programs.  Requires `COMP_GUI`.
-
-`COMP_TCSH`, `COMP_PYTHON`, `COMP_RSTATS`
-   Install tcsh scripts, manage AFNI's Python package/scripts, and install
-   R-based statistics programs.  The R component is off by default.
-
-`COMP_ATLASES`
-   Fetch and install AFNI distribution data and atlases.  This is opt-in and
-   requires extra command-line tools and network access.
-
-`ENABLE_TESTS` and `RUN_PLUGIN_CHECK`
-   Enable the CTest tree and, respectively, build an additional link-time
-   plugin-symbol check.
-
-`CMAKE_BUILD_TYPE`, `CMAKE_INSTALL_PREFIX`, and `BUILD_SHARED_LIBS`
-   Select build optimization/debugging, the install tree, and shared-library
-   behavior.  AFNI defaults to a Debug build type if none is specified.
-
-`USE_OMP`
-   Request OpenMP.  If it is not specified, AFNI enables it only when CMake
-   finds a working C OpenMP implementation.  Explicitly requesting it without
-   a usable runtime is an error.
-
-`COMP_INSTALL_RESTRICTED_LIST`
-   Install only selected already-built components, for packaging workflows.
-   It does not turn on the corresponding build components.
-
-.. _devdocs_cmake_atlases:
-
-Atlases and distribution data
------------------------------
-
-`COMP_ATLASES=ON` is intentionally separate from the normal full build.  At
-configuration time AFNI requires `datalad` and `rsync`; the build then uses
-DataLad to obtain AFNI's distribution data.  Enable it only when producing or
-testing an installation that must contain these data::
-
-   cmake -S . -B build/with-atlases -G Ninja \
-     -DCOMP_ATLASES=ON ...
-
-
-Where dependencies enter the build
-==================================
-
-The following table maps AFNI's top-level dependency decisions.  It points
-developers to the place to modify when adding a dependency or diagnosing why an
-optional feature changed the configure result.
-
-.. list-table:: CMake dependency map
-   :header-rows: 1
-   :widths: 25 35 40
-
-   * - Build condition
-     - Dependencies
-     - Mechanism and location
-   * - Always
-     - Zlib; Python 3.6+ interpreter; f2c support
-     - Zlib and Python are required through `find_package`.
-       `src/f2c` is selected through AFNI's `optional_bundle` helper.
-   * - OpenMP requested or available
-     - C OpenMP runtime
-     - `find_package(OpenMP COMPONENTS C)`; `USE_OMP` is derived from the
-       result unless explicitly set.
-   * - Non-core build
-     - QHull; dcm2niix
-     - QHull can be system-provided or built from `src/qhulldir`.  AFNI's
-       dcm2niix source is added from `src/crorden` when appropriate.
-   * - AFNI GUI
-     - X11, Motif, JPEG, XmHTML
-     - X11, Motif, and JPEG are found as system dependencies.  XmHTML is
-       selected as a system dependency or AFNI's in-tree source.
-   * - SUMA
-     - OpenGL/XQuartzGL, GLUT, GLib2, GSL, GLw, GTS
-     - Linux and other non-macOS builds use OpenGL and may build GLUT in-tree;
-       macOS uses XQuartzGL.  GTS can be a system package or fetched with
-       `FetchContent`.  The default GLw handling avoids system GLw because
-       common system versions are incompatible with AFNI's needs.
-   * - R statistics
-     - R headers and libraries
-     - AFNI's `FindLibR.cmake` runs only when `COMP_RSTATS=ON`.
-   * - AFNI data formats
-     - NIFTI and GIFTI libraries
-     - Use system packages when requested; otherwise CMake fetches and builds
-       `nifti_clib` and `gifti_clib`.
-   * - Atlas installation
-     - DataLad and rsync
-     - Checked when `COMP_ATLASES=ON`; DataLad obtains the data at build time.
-
-`USE_SYSTEM_ALL` provides a coarse policy for several optional dependencies.
-Individual `USE_SYSTEM_*` cache variables override the policy for applicable
-libraries.  Use the system route for a controlled environment where all
-development packages are installed.  Use AFNI's bundled/fetched route when a
-specific library is absent or unsuitable.  This is a configuration decision:
-after changing it, rerun CMake so it can regenerate the target graph.
-
-`FetchContent` can require network access on the first configuration.  For
-offline or reproducible builds, pre-populate a source checkout and point CMake
-at it with the relevant `FETCHCONTENT_SOURCE_DIR_*` variable, or use the
-corresponding system library.  Inspect the declarations in
-`cmake/afni_project_dependencies.cmake` for the current dependency names and
-revisions.
-
+.. _devdocs_cmake_macos:
 
 macOS CMake builds
-==================
+------------------
 
 macOS builds need three decisions made in order: select a compiler/toolchain,
 allow CMake to discover matching dependencies, then select AFNI components.
 Choose the toolchain before CMake's first `project()` call; do not change it
 inside an existing build tree.
 
-For Apple Silicon, AFNI provides current Homebrew GCC and Homebrew LLVM
-toolchain files under `cmake/`.  With Xcode command-line tools, XQuartz,
-Homebrew dependencies, and Ninja available, a typical GCC build is::
+For Apple Silicon, AFNI provides Homebrew GCC and Homebrew LLVM toolchain files
+under `cmake/`.  With Xcode command-line tools, XQuartz, Homebrew
+dependencies, and Ninja available, a typical GCC build is::
 
    cd /path/to/afni
    cmake -S . -B build/macos-arm64 -G Ninja \
@@ -297,151 +134,529 @@ Homebrew dependencies, and Ninja available, a typical GCC build is::
      -DCOMP_TCSH=ON -DCOMP_PYTHON=ON
    cmake --build build/macos-arm64 --parallel
 
-The GCC toolchain accepts another installed Homebrew GCC version through
-`AFNI_HOMEBREW_GCC_VERSION`.  The analogous LLVM build replaces the toolchain
-path with `cmake/macos_homebrew_llvm_arm64_toolchain.cmake`.  For AppleClang,
-set `CC=/usr/bin/clang` and `CXX=/usr/bin/clang++` before configuration;
-set `CMAKE_OSX_ARCHITECTURES=arm64` as well when building under Rosetta or
-cross-compiling.
-
-SUMA on macOS uses XQuartz for X11 and GLUT.  AFNI's macOS dependency hints add
-Homebrew search prefixes and, for Apple Silicon SUMA builds, can discover Mesa
-and mesa-glu.  Set `AFNI_MESA_ROOT` and `AFNI_GLU_ROOT` explicitly if the
-automatic Homebrew locations are unsuitable.  AppleClang requires Homebrew's
-`libomp` to build with `USE_OMP=ON`; otherwise configure with
-`-DUSE_OMP=OFF`.  Homebrew LLVM supplies its own OpenMP runtime.
-
-Set `CMAKE_OSX_DEPLOYMENT_TARGET` before the first configure only when you
-need a specific minimum macOS release.  It must be compatible with every
-Homebrew library linked by the build.  The toolchain files choose a suitable
-default from the active SDK for their local-development use case.
+For a Homebrew LLVM build, replace the toolchain path with
+`cmake/macos_homebrew_llvm_arm64_toolchain.cmake`.  For AppleClang, set
+`CC=/usr/bin/clang` and `CXX=/usr/bin/clang++` before configuration.
+AppleClang needs Homebrew's `libomp` when building with `USE_OMP=ON`;
+otherwise configure with `-DUSE_OMP=OFF`.
 
 For detailed ARM guidance, dependency discovery, and distribution caveats, see
 `AFNI's macOS arm64 CMake notes
 <https://github.com/afni/afni/blob/master/cmake/README.macos-arm64.md>`__.
 
 
+.. _devdocs_cmake_basic_approach:
+
+Basic approach to building and installing
+-----------------------------------------
+
+Cmake detects all of the details of your system and then generate a
+build system (for example it will write Make files) that can
+subsequently be executed.
+
+.. _devdocs_cmake_config:
+
+Configuring cmake
+^^^^^^^^^^^^^^^^^
+
+When running cmake, it will try to find out the details of your system
+based on the options you have passed on the command line. This includes
+checking that required compiler properties and other dependencies are
+acceptable on the system. The most common errors at this point would be
+that you do not have a dependency installed.
+
+.. _devdocs_cmake_gen:
+
+Generating a build system
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Assuming no errors occur during cmake's configure-time, cmake will try
+to generate a build system. This consists of writing a set of build
+files (for example Make files) to the build directory that will execute
+on the current host.
+
+.. _devdocs_cmake_exec:
+
+Executing a build
+^^^^^^^^^^^^^^^^^
+
+After the build system is generated you can build your project in the
+conventional way. I.e. for a Make build system you simply execute:
+
+::
+
+   make
+
+This will generate all of the binaries and place them in the
+targets_built subdirectory of the build directory (removing any of these
+binaries will trigger a rebuild for these specific binaries and any of
+their dependents). You can run the executables as expected by simply
+typing something like
+
+::
+
+   ./targets_built/afni
+
+.. _devdocs_cmake_ninja:
+
+The ninja build system
+^^^^^^^^^^^^^^^^^^^^^^
+
+You can use this by setting the environment variable CMAKE_GENERATOR
+to "Ninja" (cmake version > 3.14) or by adding ``-GNinja`` to the
+cmake command. There are many performance advantages to using ninja,
+the most notable being that a ``no op`` build is close to
+instantaneous for "ninja" whereas for "make" the equivalent state
+takes approximately a minute to determine that nothing is currently
+required of the build system.
+
+One potential issue is that ninja automatically computes the number of
+threads it "should" use in parallel. On some Macs this seems to cause
+them to crash. This may be a memory issue. It could potentially be
+resolved by using ninja's `job pool functionality
+<https://ninja-build.org/manual.html#ref_pool>`__. For now the issue
+can be fixed using the -j flag to tell ninja to set the number of
+threads used for the build. The optimal number of threads to use can
+be figured out through experimentation.
+
+.. _devdocs_cmake_install:
+
+Installation
+^^^^^^^^^^^^
+
+WARNING: By default an installation will go into /usr/local which you
+likely do not want to do. When testing that the installation works this
+installation location can be overwritten easily by setting the
+environment variable ``DESTDIR``.
+
+For example in **bash**:
+
+::
+
+   DESTDIR=local_install_dir make install
+
+Using **tcsh**:
+
+::
+
+   setenv DESTDIR local_install_dir
+   make install
+
+.. _devdocs_cmake_use:
+
+Using an installation
+^^^^^^^^^^^^^^^^^^^^^
+
+It is worth noting that a build target (pytest) exists to do inplace
+testing on the build. As one might expect it uses the pytest software to
+run these tests. This setup may obviate any need to do an install as
+part of your development workflow. This has the advantage that it always
+checks that the project is up to date before running any tests, it
+manages test data, and it temporarily modifies the PATH in order to have
+all AFNI executables available for testing (both built binaries and
+scripts in the source tree). For further details have a look at the
+`Section: Running tests <boring_cmake_other_run_test>`__.
+
+The bin subdirectory of an installation should be added to one's path to
+make use of the "installed" AFNI. Note that this does not necessarily
+have to be installed into system directories. Once on the path, you
+should have access to all of the executables expected from a full AFNI
+installation (as in tcsh, R… with a cmake option, and python executables
+are not available following a build but they are available after an
+install). If you observe any behavior that deviates from a standard AFNI
+install please raise an issue on github.
+
 .. _devdocs_cmake_mod_targ:
 
-Adding a program, library, or plugin
-====================================
+Modifying targets in the cmake build
+------------------------------------
 
-Adding a C or C++ target has four parts: put its declaration in the correct
-CMake file, express its dependencies, assign its installation component, and
-verify its result against the existing build systems.
+This section is for when you have added a new software tool and you wish
+to incorporate it into the cmake build.
 
 .. _devdocs_cmake_add_targ:
 
-1. Choose the target definition file
-------------------------------------
+Adding new targets
+------------------
 
-Use `src/CMakeLists_binaries.txt` for a normal executable,
-`src/CMakeLists_x_dependent.txt` for an X-dependent executable, and
-`src/CMakeLists_plugins.txt` for a plugin.  If the new code is a coherent
-subsystem, create a local `CMakeLists.txt` and add it from
-`src/CMakeLists.txt`.  Follow nearby examples, especially where a program
-uses object libraries or sources from more than one directory.
+In brief if I want to add a new executable, my_new_binary, using my new
+source code in ``src/my_new_binary.c`` then I would add the cmake code:
 
-2. Register the target with AFNI's wrapper
-------------------------------------------
+::
 
-For a simple new executable in `src/new_exec.c`::
+   add_afni_executable(my_new_binary my_new_binary.c)
 
-   add_afni_executable(my_new_binary new_exec.c)
-   target_link_libraries(my_new_binary
-     PRIVATE
-       AFNI::mri
-       NIFTI::nifti2
-       m
-   )
+For a simple program, use the same base name for the target and its main
+source file.  They can differ when an established executable name must be
+preserved, or when the target combines support or generated sources whose
+names describe their implementation rather than the program.
 
-Use `add_afni_library()` for an AFNI library and `add_afni_plugin()` for a
-runtime AFNI plugin.  The wrappers set AFNI-specific link behavior and arrange
-installation.  AFNI libraries have aliases such as `AFNI::mri`; use those
-targets rather than constructing `-l` flags by hand.
+Executables, libraries, or plugins are added by using the cmake
+functions ``add_afni_executable``, ``add_afni_library``, and
+``add_afni_plugin``, respectively. These are wrappers around the
+standard equivalents of cmake
+(`cmake.org/cmake/help/latest/command/add_executable.html
+<https://cmake.org/cmake/help/latest/command/add_executable.html>`__).
+As with the make build system, CMake refers to all of these entities
+that require compilation as "targets".
 
-Declare dependencies with `target_link_libraries()`,
-`target_include_directories()`, `target_compile_definitions()`, and
-`target_compile_options()` on the target that needs them.  Use `PRIVATE`
-when a dependency is an implementation detail.  Use `PUBLIC` only when
-consumers of a library must also inherit its headers, compile definitions, or
-link requirements.  Prefer imported CMake targets such as `NIFTI::nifti2` to
-unstructured library variables whenever the dependency provides one.
+The cmake files for adding targets all follow the pattern
+``CMake*.txt``. It is usually fairly obvious which CMake file you
+should use for your new program (this is purely convention). For
+example, in general for adding new binary programs use the
+CMake_binaries.txt file. This will help to keep things more structured
+and typically there are many examples in the appropriate files to help
+you deal with tricky details. An attempt at an index of such details
+is in `Section: Examples <boring_cmake_other_ex>`_.
 
-If an external package is new to AFNI, add its discovery at the appropriate
-feature gate in `cmake/afni_project_dependencies.cmake` before linking it.
-Use a maintained CMake find module where available; otherwise add an AFNI
-`Find<Package>.cmake` module under `cmake/`.  Do not rely on a bare linker
-name happening to work on one developer's machine.
+Once you have correctly added a new target you will have to consider
+updating the list of expected targets (see `Section: List of expected
+targets <boring_cmake_other_det_targs>`__)
 
-3. Assign the installation component
-------------------------------------
+.. _devdocs_cmake_link_targ:
 
-Add the target and component to `packaging/installation_components.txt`, for
-example::
+Linking against targets
+-----------------------
 
-   my_new_binary, corebinaries
+The pattern to use for linking is target_link_libraries(target_name
+PRIVATE external_library). See the `Section: Examples
+<boring_cmake_other_ex>`__ to handle some of the trickier details.
 
-Valid component categories reflect the feature partition: `corelibs`,
-`corebinaries`, `gui`, `suma`, `plugins`, `python`, `tcsh`, and
-`rstats`.  The target wrapper uses this mapping to choose the CMake install
-component.  The mapping is also a safety check: an unmapped compiled target
-causes a configuration error.  The mapping can be regenerated for packaging
-workflows with `packaging/define_installation_components.py`, but review its
-output rather than treating it as a substitute for assigning the correct
-feature family.
+The ``PRIVATE`` keyword could also be ``PUBLIC`` and ``INTERFACE``
+(the latter is more nuanced, less common, and won't be covered
+here). This keyword triggers the behavior for transitive dependencies
+(the keyword is also relevant for include directories,compile
+definitions and link options).
 
-4. Verify the target and build parity
--------------------------------------
+We will use a generic example with libraries A, B, and C. Library B
+links against A. Library C links against B. If C needs to link against
+A because it has linked against B, we say that A is a transitive
+dependency of C. Typically if you are not sure you should likely be
+using ``PRIVATE``. I.e. B's linking to A is private. The implication
+of this is that library C does not necessarily link against A to
+function. If this is not the case and we know that any library linking
+against library B could not work without also linking against A we
+could consider using:
 
-Reconfigure after changing a `CMakeLists.txt` file, then build the exact
-target and run its help or focused test::
+::
 
-   cmake -S . -B build/full
-   cmake --build build/full --target my_new_binary
-   ./build/full/targets_built/my_new_binary -help
+   target_link_libraries(B PUBLIC A)
 
-At configuration, AFNI compares targets registered by CMake with
-`packaging/installation_components.txt`.  It also obtains legacy target
-lists from `src/Makefile.INCLUDE` and prints a Make-versus-CMake difference
-report.  Treat a parity failure as a prompt to update the right target list or
-component.  `REMOVE_BUILD_PARITY_CHECKS=ON` is an internal temporary
-diagnostic escape hatch, not a normal solution for a new target.
+.. _devdocs_cmake_link_ext:
+
+Linking against external software
+---------------------------------
+
+When linking against external software the pattern is very similar. The
+only difference is that library A described in the previous section will
+not exist unless we find the system dependency. CMake finds such
+dependencies and populates the appropriate targets using find modules,
+something like FindExpat.cmake. Many find modules are directly
+incorporated into CMake (eg
+`Expat <https://cmake.org/cmake/help/v3.10/module/FindEXPAT.html>`__).
+This can be great because using expat now becomes as simple as finding
+and then linking against the target that it has made available:
+
+::
+
+   find_package(EXPAT REQUIRED)
+   target_link_library(my_library PRIVATE EXPAT::EXPAT)
+
+The not so great bit is sometimes the behavior of these built in modules
+change across cmake versions. Awareness of this helps (use your own
+frozen version of it). In some cases the changes are not relevant and do
+not need to be worried about. In other case they make the build too
+fragile. Additionally, sometimes such a handy find module just doesn't
+exist. In this case one has to write their own find module. I have
+resorted to this solution many times
+(`github.com/afni/afni/tree/master/cmake <https://github.com/afni/afni/tree/master/cmake>`__).
+Sometimes you can find one elsewhere if you google and you can just
+coopt it for your own evil purposes, or just copy the pattern you
+observe in the cmake directory of that afni repo.
+
+One more caveat regarding what you are linking against and the pattern
+you use. CMake has changed a lot over the years and it is important to
+follow the above pattern and not some of the older patterns. Some
+examples of antipatterns that you will see and should be fervently
+avoided are:
+
+- Representing targets as variables (``${EXPAT_LIBRARIES}`` instead of
+  ``EXPAT::EXPAT``)
+
+- Not adding the appropriate code to find the dependency before you
+  use it.
+
+.. _devdocs_cmake_repr_targ:
+
+Representing targets as variables (bad)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes this is present because it's old cmake code or the find module
+is old cmake code. For example the `X11 find
+module <https://cmake.org/cmake/help/v3.17/module/FindX11.html>`__ has
+lots of variables. Rewriting such a find module would be foolish, so
+just accepting their inferior module for older cmake versions is the
+solution here. Or using the find module from a newer version by adding
+it to your own source code (it works sometimes). In general using these
+variables is a bad idea because if they are wrong -- as in silly typo on
+your part-- or the variable doesn't exist they expand to nothing, you
+link incorrectly, you have a slightly confusing error in linking
+(missing symbol) or a missing header when you try to include it.
+
+.. _devdocs_cmake_no_find:
+
+Not using a find module for dependencies (bad)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is a result of the sad fact that if I say something like the
+following it may just work:
+
+::
+
+   target_link_libraries(A PRIVATE expat)
+
+It works in a really uncontrolled way. You have not found the system
+dependency, populated all of the details of that dependency
+(transitive linking details, compile definitions, include directories,
+and link options). Instead you have just dropped ``-lnifti`` as an
+option to the linker. If your system is set up to work in this case,
+you don't realise that the build will now fail to work for all the
+people who do not have this system. You have also failed to take
+advantage of the convenient encapsulation of all of the details that
+are handled under the hood by the metadata associated with cmakes
+targets.
+
+.. _devdocs_cmake_other:
+
+Other details
+-------------
+
+.. _devdocs_cmake_other_troubshoot:
+
+Troubleshooting missing dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The most common error will be missing dependencies. I have currently
+attempted to mitigate this by setting the defaults to just work.
+Failures in this should be reported. In attempting to resolve this
+yourself you can attempt the following.
+
+1. Try to install the missing software. Hopefully, the missing package
+   will be fairly self-explanatory from the error message. The base
+   dockerfile should give you an idea of the dependencies that need to
+   be satisfied in order to fully build and test AFNI.
+
+#. You can try to use a build of the dependency from the AFNI
+   repo/cmake driven source code download. At the end of the cmake
+   options file (`github.com/afni/cmake/afni_cmake_build_options.cmake
+   <https://github.com/afni/afni/blob/master/cmake/afni_cmake_build_options.cmake>`__)
+   you can see many packages that can be installed using this
+   alternative strategy. The basic approach is to add a flag to the
+   cmake command to avoid trying to find the system installed version
+   of the software\.\.\. ``-DUSE_SYSTEM_<PACKAGE_NAME>=OFF``.
+
+There are situations in which the dependency resolution can be a lot
+more difficult. Getting help in those situations is probably best. The
+main issue would be that some software is in fact installed on the
+system but it is not detected. This is would be a bug in the cmake
+system and should be fixed.
+
+.. _devdocs_cmake_other_det_targs:
+
+Details of the expected targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The cmake system has "targets" for the various programs and libraries.
+The cmake build is set up to attempt build all targets to achieve
+feature parity with the Make build. There are fairly aggressive
+safeguards to try to enforce synchronization of the two builds. If
+targets are built that are not expected, or expected targets are not
+built, the cmake system will raise an error at configure time. This can
+be frustrating but will hopefully be relaxed in the future when a full
+transition to the cmake build has occurred.
+
+There are three ways of keeping track of the targets in the AFNI
+project:
+
+#. Extracting a list of targets build by the pre-existing Make build
+   system
+
+#. Checking the contents of `packaging/installed_components.txt
+   <https://github.com/afni/afni/blob/master/packaging/installation_components.txt>`__
+
+#. Extracting a list of targets built by the cmake generated build
+   system
+
+During the cmake build the contents of the category 3 is compared with
+that of category 2 and an error occurs if the two lists do not match. 3
+is compared to 1, and a report of the differences are detailed in the
+cmake output to help determine divergence in the two build systems.
+
+.. _devdocs_cmake_other_run_test:
+
+Running tests
+^^^^^^^^^^^^^^
+
+Warning: The details of this section are encapsulated in the
+run_afni_tests.py script in the tests directory. You may not wish to
+read this.
+
+A more extensive/up-to-date description can be found `at this link
+<https://docs.google.com/document/d/1j8DxfA215sxC77Spcn_Ap0Xd8QYY3CBFCeL6jkxA-RU/edit>`__.
+
+A build target (pytest) exists to do inplace testing on the build. This
+target uses the pytest software to run these tests. This setup may
+obviate any need to do an install as part of your development workflow.
+This has the advantage that it always checks that the project is up to
+date before running any tests, it manages test data, and it temporarily
+modifies the PATH in order to have all AFNI executables available for
+testing (both built binaries and scripts in the source tree). For
+further details have a look at the running tests section
+
+The ARGS environment variable can be set to modify the behavior of this
+target. Examples:
+
+::
+
+   export ARGS='scripts --workers 3 -k mask'
+   ninja pytest
+
+The bin subdirectory of a build should be added to one's path to make
+use of the "installed" AFNI. Note this may not be installed into system
+directories. This will give access to all of the executables expected
+from a full AFNI installation (as in tcsh, R, and python executables are
+installed into bin but they do not get copied into the build output
+directory).
+
+.. _devdocs_cmake_other_refs:
+
+Essential references
+^^^^^^^^^^^^^^^^^^^^
+
+The basic system setup on neurodebian for both make and cmake builds can
+be seen here (it is the instructions used to build the base docker image
+for both builds):
+`github.com/afni/.docker/afni_dev_base.dockerfile <https://github.com/afni/afni/blob/master/.docker/afni_dev_base.dockerfile>`__
+
+The cmake build on neurodebian can be seen in the cmake dockerfile:
+`github.com/afni/afni/.docker/cmake_build.dockerfile <https://github.com/afni/afni/blob/master/.docker/cmake_build.dockerfile>`__
+
+A build on MacOS occurs on CircleCI:
+`github.com/afni/.circleci/config.yml <https://github.com/afni/afni/blob/master/.circleci/config.yml>`__
+
+The books *Professional CMake* and *CMake Cookbook* are both
+excellent. The former serves as an in-depth advanced reference. The
+latter has many useful examples that are carefully explained.
+
+Testing documentation is `at this link
+<https://docs.google.com/document/d/1j8DxfA215sxC77Spcn_Ap0Xd8QYY3CBFCeL6jkxA-RU/edit>`__.
 
 
-Traditional Makefile build in brief
-===================================
+.. _devdocs_cmake_other_ex:
 
-The Makefile system remains the reference for legacy target coverage and for
-some release environments.  From `afni/src`, choose the platform definition
-closest to the host, copy it to `Makefile`, inspect values such as
-`INSTALLDIR`, compiler commands, library paths, OpenMP flags, and SUMA
-settings, and then run the intended target.  The repository README identifies
-`make vastness` as the traditional full build target; individual Makefiles
-and `Makefile.INCLUDE` determine exactly which programs that includes.
+Examples
+^^^^^^^^^^
 
-Unlike CMake, the Makefile setup does not centrally discover dependencies or
-preserve configuration in an isolated build directory.  That is why CMake is
-usually the more convenient choice for new development.  Do not remove legacy
-Makefile entries merely because a CMake target has been added: CMake's parity
-report is useful only while both target inventories remain meaningful.
+Sorted somewhat by order of frequency it is required:
 
+#. Adding targets whose .h files do not match the name of the ``*.c``
+   files:
 
-Troubleshooting and useful references
-======================================
+   https://github.com/afni/afni/blob/a823c647f491cfd2ad9bbf91c2d2fa99e49f0ee1/src/niml/CMakeLists.txt#L28
 
-Most CMake configure failures are missing development dependencies, an
-incompatible compiler/runtime pair, or a stale cache.  Read the first relevant
-`find_package` failure, then either install the required system development
-package or select an AFNI bundled/fetched alternative where one exists.  If the
-compiler, generator, architecture, or toolchain changed, remove only the
-specific build directory and configure again.
+#. Installing scripts and other files:
 
-Useful source references are:
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/scripts_install/CMakeLists.txt#L1
 
-* `AFNI CMake entry point <https://github.com/afni/afni/blob/master/CMakeLists.txt>`__
-* `Build options <https://github.com/afni/afni/blob/master/cmake/afni_cmake_build_options.cmake>`__
-* `Dependency configuration <https://github.com/afni/afni/blob/master/cmake/afni_project_dependencies.cmake>`__
-* `AFNI target helpers <https://github.com/afni/afni/blob/master/cmake/get_build_macros_and_functions.cmake>`__
-* `Current macOS ARM guidance <https://github.com/afni/afni/blob/master/cmake/README.macos-arm64.md>`__
-* `CI macOS build <https://github.com/afni/afni/blob/master/.circleci/config.yml>`__
+#. Specifying settings with default values that can be used throughout
+   the build:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/cmake/afni_cmake_build_options.cmake#L1
+
+#. Linking against external libraries:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/src/ptaylor/CMakeLists.txt#L85
+
+#. Setting compile time definitions for targets:
+
+   https://github.com/afni/afni/blob/23d6f34b4d67efced8c6ca0f5ec4febc9e34ecda/src/leej3/CMakeLists.txt#L10
+
+#. Setting compile time definitions for specific source files:
+
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/CMakeLists_mri.txt#L59
+
+#. Specifying public and private dependencies of libraries to
+   conveniently propagate compilation/link settings to dependent
+   libraries/executables
+
+   https://github.com/afni/afni/blob/8e6dbf7aaad26964127d23b40238dc4288c88a31/src/ptaylor/CMakeLists.txt#L18
+
+#. Adding headers that are needed at compilation but shouldn't be
+   distributed elsewhere:
+
+   https://github.com/afni/afni/blob/a823c647f491cfd2ad9bbf91c2d2fa99e49f0ee1/src/CMakeLists_binaries.txt#L419
+
+#. Using INTERFACE libraries to establish compile definitions, headers
+   etc but doesn't actually get created by the build system:
+
+   https://github.com/afni/afni/blob/2a093556a98ae83c5acae9a49a12561ef287206b/src/Audio/CMakeLists.txt#L1
+
+#. Writing custom commands for configure time
+
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/CMakeLists_mri.txt#L123
+
+#. Writing custom commands for build time
+
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/cmake/afni_project_dependencies.cmake#L130
+
+#. Creating "object" libraries (a collection of .o files for convenience
+   that can be reused across binaries)
+
+   https://github.com/afni/afni/blob/23d6f34b4d67efced8c6ca0f5ec4febc9e34ecda/src/leej3/CMakeLists.txt#L3
+
+#. Dealing with targets whose source files span several directories
+
+   https://github.com/afni/afni/blob/23d6f34b4d67efced8c6ca0f5ec4febc9e34ecda/src/CMakeLists_x_dependent.txt#L5
+
+#. Specifying linking in a conditional way dependending on system, build
+   configuration:
+
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/SUMA/CMakeLists.txt#L61
+
+#. Plugins:
+
+   https://github.com/afni/afni/blob/23d6f34b4d67efced8c6ca0f5ec4febc9e34ecda/src/CMakeLists_plugins.txt#L1
+
+#. Treating ``*.c`` files as similar to header files in that they are
+   included and dependent targets should also be able to include them:
+
+   https://github.com/afni/afni/blob/a882698ac88333055c1bee44ce36a0aeac89f5c4/src/CMakeLists_binaries.txt#L392
+
+#. Using external libraries that have diverged slightly from versions
+   now distributed by package-managers:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/cmake/afni_project_dependencies.cmake#L77
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/src/SUMA/CMakeLists.txt#L54
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/cmake/afni_project_dependencies.cmake#L163
+
+#. Encapsulating code in functions, despite the weird scoping rules of
+   the cmake language:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/cmake/get_build_macros_and_functions.cmake#L38
+
+#. Running build time checks on compiled binaries: TODO, would use
+   add_custom_command:
+
+#. Running build time check for missing symbols
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/cmake/FindGLw.cmake#L72
+
+#. Building with OMP support:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/src/ptaylor/CMakeLists.txt#L85
+
+#. Modifying the toolchain to deal with switching compilers:
+
+   https://github.com/afni/afni/blob/68e469cb8953adde4a21876c6b8b2e81f03ecad2/.circleci/config.yml#L391
