@@ -9,8 +9,8 @@
 
 .. highlight:: none
 
-What to do?
------------
+Things to note before starting
+---------------------------------
 
 These setup instructions are for **macOS 12 or greater with Intel
 CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
@@ -18,7 +18,7 @@ CPUs** (not :ref:`Apple Silicon <install_steps_mac12_Silicon>`).
 
 .. include:: substep_macos12_intro.rst
 
-Quick setup (General users)
+Quick setup for general users
 ----------------------------------
 
 This section describes primary installation instructions *for general
@@ -65,8 +65,8 @@ A. Copy+paste the following to get download scripts::
    compiled.
 
 
-Quick setup (special case: NIMH-administered computers)
----------------------------------------------------------
+Quick setup for NIMH-administered computers
+-----------------------------------------------------------
 
 This section describes primary installation instructions *for the
 special case of having a macOS computer administered by NIMH (NIH,
@@ -122,25 +122,32 @@ A. Use the *NIMH Self Service* application to install the dependencies
    done *after* AFNI binaries have been compiled.
 
 
-Evaluate setup/system (**important!**)
+Setup Python (*a* method)
+-----------------------------------------
+
+.. include:: substep_miniconda.rst
+
+
+Install Bootcamp demo data
+-----------------------------------------
+
+.. include:: substep_bootcamp.rst
+
+
+Evaluate setup/system (important!)
 -----------------------------------------
 
 .. include:: substep_evaluate.rst
 
 
+How to keep up-to-date (remember!)
+-----------------------------------------
+
+.. include:: substep_update.rst
+
+
 Optional Extras
 ---------------
-
-Setup Python (*a* method)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: substep_miniconda.rst
-
-
-Prepare for Bootcamp  (install demo data)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: substep_bootcamp.rst
 
 
 Setup terminal (opt)
@@ -148,23 +155,20 @@ Setup terminal (opt)
 
 .. include:: substep_mac_setup_term.rst
 
+.. note:
+   no longer including this
 
-Niceify terminal (add convenience!)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Niceify terminal (add convenience!)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: substep_rcfiles_mac.rst
-
-
-Install extras (recommended for Bootcamp prep)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: substep_extra_packs.rst
+   .. include:: substep_rcfiles_mac.rst
 
 
-Keep up-to-date (remember!)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Install extras (recommended for Bootcamp prep)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: substep_update.rst
+   .. include:: substep_extra_packs.rst
+
 
 
 Enable more SUMA keypresses (recommended)

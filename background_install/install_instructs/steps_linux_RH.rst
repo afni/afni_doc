@@ -20,18 +20,6 @@ Things to note before starting
 
 .. include:: substep_intro.rst
 
-#. **To copy and paste** in a Linux terminal, one can use
-   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
-   terminals, one might first enable this functionality: rightclick on
-   the panel's taskbar, select "Properties" and put a checkmark by
-   this option.)
-
-#. **To open a text file,** use any text editor you like, and/or you
-   can type ``gedit FILENAME``, such as either::
-
-     gedit ~/.bashrc 
-
-     gedit ~/.bashrc &
 
 
 Install prerequisite packages
@@ -130,20 +118,20 @@ Setup Python (opt)
 .. include:: substep_miniconda.rst
 
 
-Prepare for Bootcamp
---------------------
+Install Bootcamp demo data
+----------------------------------
 
 .. include:: substep_bootcamp.rst
 
 
-Evaluate setup/system (**important!**)
+Evaluate setup/system (important!)
 --------------------------------------------
 
 .. include:: substep_evaluate.rst
 
 
 Niceify terminal (optional, but goood)
---------------------------------------
+------------------------------------------------
 
 .. include:: substep_rcfiles.rst
 
@@ -152,8 +140,8 @@ Install extras (optional, but recommended for Bootcamp prep)
 
 .. include:: substep_extra_packs.rst
 
-Keep up-to-date (remember!)
----------------------------
+How to keep up-to-date (remember!)
+-------------------------------------
 
 .. include:: substep_update.rst
 

@@ -20,140 +20,131 @@ Things to note before starting
 
 .. include:: substep_intro.rst
 
-#. **To copy and paste** in a Linux terminal, one can use
-   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
-   terminals, one might first enable this functionality: rightclick on
-   the panel's taskbar, select "Properties" and put a checkmark by
-   this option.)
-
-#. **To open a text file,** use any text editor you like, and/or you
-   can type ``gedit FILENAME``, such as either::
-
-     gedit ~/.bashrc 
-
-     gedit ~/.bashrc &
-
 
 Quick setup
 ----------------------------------
 
 .. include:: substep_quickbuild_linux_Fed.rst
 
+.. NOTE:
+   not including this now
 
-(slow setup) Install prerequisite packages
----------------------------------------------
+   (slow setup) Install prerequisite packages
+   ---------------------------------------------
 
-1. To be able to install latest packages, copy+paste::
+   1. To be able to install latest packages, copy+paste::
 
-     sudo dnf update
+        sudo dnf update
 
-#. Copy+paste::
-   
-       sudo dnf install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
-                           PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
-                           xorg-x11-server-Xvfb firefox                       \
-                           python3-matplotlib python3-numpy                   \
-                           python3-flask python3-flask-cors
+   #. Copy+paste::
 
-   Copy+paste::
+          sudo dnf install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
+                              PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
+                              xorg-x11-server-Xvfb firefox                       \
+                              python3-matplotlib python3-numpy                   \
+                              python3-flask python3-flask-cors
 
-     sudo dnf update -y
-   
-  **Purpose:** Installs a lot of packages that AFNI depends on (so we
-  don't have to reinvent the wheel!).
-         
+      Copy+paste::
 
-(slow setup) Install AFNI binaries
----------------------------------------
+        sudo dnf update -y
 
-1. Choose one of the following approaches:
-
-   * *(default) To install the binaries from online*, copy+paste::
-
-       cd
-       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-       tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
+     **Purpose:** Installs a lot of packages that AFNI depends on (so we
+     don't have to reinvent the wheel!).
 
 
-   * *(alternative) To install already-downloaded binaries,* use
-     ``-local_package ..`` (replacing ``PATH_TO_FILE`` with the actual
-     path; also, if ``@update.afni.binaries`` has also been
-     downloaded, you can skip the ``curl ..`` command), copy+paste::
+   (slow setup) Install AFNI binaries
+   ---------------------------------------
 
-       cd
-       curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
-       tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
- 
-   **Purpose:** Download and unpack the current binaries in your
-   ``$HOME`` directory; set the AFNI binary directory name to
-   ``$HOME/abin/``; and add that location to the ``$PATH`` in both
-   ``~/.cshrc`` and ``~/.bashrc``.
+   1. Choose one of the following approaches:
+
+      * *(default) To install the binaries from online*, copy+paste::
+
+          cd
+          curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+          tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
 
 
-(slow setup) Install R
---------------------------
+      * *(alternative) To install already-downloaded binaries,* use
+        ``-local_package ..`` (replacing ``PATH_TO_FILE`` with the actual
+        path; also, if ``@update.afni.binaries`` has also been
+        downloaded, you can skip the ``curl ..`` command), copy+paste::
 
-1. Check your shell type (``echo $0``). For ... 
+          cd
+          curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+          tcsh @update.afni.binaries -local_package PATH_TO_FILE/linux_openmp_64.tgz -do_extras
 
-   |
+      **Purpose:** Download and unpack the current binaries in your
+      ``$HOME`` directory; set the AFNI binary directory name to
+      ``$HOME/abin/``; and add that location to the ``$PATH`` in both
+      ``~/.cshrc`` and ``~/.bashrc``.
 
-   * ... a ``tcsh`` terminal, copy+paste::
-   
-       setenv R_LIBS $HOME/R
-       mkdir  $R_LIBS
-       echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
-       . ~/.cshrc
 
-   * ... a ``bash`` terminal, copy+paste::
-   
-       export R_LIBS=$HOME/R
-       mkdir  $R_LIBS
-       echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
-       echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
-       . ~/.bashrc
+   (slow setup) Install R
+   --------------------------
 
-   | **Purpose:** Set the environment variable ``$R_LIBS`` to specify
-     where to install+find the **R** packages.
-   | 
+   1. Check your shell type (``echo $0``). For ... 
 
-#. Copy+paste::
-     
-     rPkgsInstall -pkgs ALL
+      |
 
-   **Purpose:** Get specific R packages needed for AFNI programs. This
-   step might take a while (of order an hour) to complete as R
-   compiles packages. Sigh.
+      * ... a ``tcsh`` terminal, copy+paste::
+
+          setenv R_LIBS $HOME/R
+          mkdir  $R_LIBS
+          echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
+          echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
+          . ~/.cshrc
+
+      * ... a ``bash`` terminal, copy+paste::
+
+          export R_LIBS=$HOME/R
+          mkdir  $R_LIBS
+          echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
+          echo  'export R_LIBS=$HOME/R' >> ~/.bashrc
+          . ~/.bashrc
+
+      | **Purpose:** Set the environment variable ``$R_LIBS`` to specify
+        where to install+find the **R** packages.
+      | 
+
+   #. Copy+paste::
+
+        rPkgsInstall -pkgs ALL
+
+      **Purpose:** Get specific R packages needed for AFNI programs. This
+      step might take a while (of order an hour) to complete as R
+      compiles packages. Sigh.
 
 .. ---------- HERE/BELOW: copy for all installs --------------
 
 
 
-(slow setup) Prepare for Bootcamp
------------------------------------
+Install Bootcamp demo data
+----------------------------------
 
 .. include:: substep_bootcamp.rst
 
 
-(slow setup) Evaluate setup/system (**important!**)
------------------------------------------------------
+Evaluate setup/system (important!)
+--------------------------------------------
 
 .. include:: substep_evaluate.rst
 
+.. NOTE:
+   not including this now
 
-(slow setup) Niceify terminal (optional, but goood)
----------------------------------------------------
+   (slow setup) Niceify terminal (optional, but goood)
+   ---------------------------------------------------
 
-.. include:: substep_rcfiles.rst
-
-
-(slow setup) Install extras (optional, but recommended for Bootcamp prep)
-----------------------------------------------------------------------------
-
-.. include:: substep_extra_packs.rst
+   .. include:: substep_rcfiles.rst
 
 
-(slow setup) Keep up-to-date (remember!)
+   (slow setup) Install extras (optional, but recommended for Bootcamp prep)
+   ----------------------------------------------------------------------------
+
+   .. include:: substep_extra_packs.rst
+
+
+How to keep up-to-date (remember!)
 ------------------------------------------------
 
 .. include:: substep_update.rst
