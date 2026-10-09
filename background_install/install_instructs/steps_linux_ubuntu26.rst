@@ -18,19 +18,6 @@ Things to note before starting
 
 .. include:: substep_intro.rst
 
-#. **To copy and paste** in a Linux terminal, one can use
-   ``Ctrl+Shift+c`` and ``Ctrl+Shift+v``, respectively.  (In WSL
-   terminals, one might first enable this functionality: rightclick on
-   the panel's taskbar, select "Properties" and put a checkmark by
-   this option.)
-
-#. **To open a text file,** use any text editor you like, and/or you
-   can type ``gedit FILENAME``, such as either::
-
-     gedit ~/.bashrc 
-
-     gedit ~/.bashrc &
-
 
 Quick setup
 ----------------------------------
@@ -41,24 +28,26 @@ Quick setup
 .. ---------- HERE/BELOW: copy+paste after (new) quick setup --------------
 
 
-(optional) Prepare for Bootcamp
+Install Bootcamp demo data
 -----------------------------------
 
 .. include:: substep_bootcamp.rst
 
 
-Evaluate setup/system (**important!**)
+Evaluate setup/system (important!)
 --------------------------------------------
 
 .. include:: substep_evaluate.rst
 
+.. note:
+   not including this here
 
-(optional) Install extra R packages
------------------------------------------------
+   (optional) Install extra R packages
+   -----------------------------------------------
 
-.. include:: substep_extra_packs.rst
+   .. include:: substep_extra_packs.rst
 
-Keep up-to-date (remember!)
+How to keep up-to-date (remember!)
 ------------------------------------------------
 
 .. include:: substep_update.rst
