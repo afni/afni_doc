@@ -13,7 +13,9 @@ Cmake for AFNI - making AFNI is a piece of C(m)ake
 
 .. highlight:: none
 
-Notes by J Lee.
+.. admonition:: Documentation attribution
+
+   Original CMake documentation by John Lee.  Modified by others.
 
 Overview
 ---------
@@ -108,6 +110,40 @@ testing: `github.com/afni/.circleci/config.yml
 <https://github.com/afni/afni/blob/master/.circleci/config.yml>`__ and
 `github.com/afni/.docker/afni_dev_base.dockerfile
 <https://github.com/afni/afni/blob/master/.docker/afni_dev_base.dockerfile>`__
+
+.. _devdocs_cmake_macos:
+
+macOS CMake builds
+------------------
+
+macOS builds need three decisions made in order: select a compiler/toolchain,
+allow CMake to discover matching dependencies, then select AFNI components.
+Choose the toolchain before CMake's first `project()` call; do not change it
+inside an existing build tree.
+
+For Apple Silicon, AFNI provides Homebrew GCC and Homebrew LLVM toolchain files
+under `cmake/`.  With Xcode command-line tools, XQuartz, Homebrew
+dependencies, and Ninja available, a typical GCC build is::
+
+   cd /path/to/afni
+   cmake -S . -B build/macos-arm64 -G Ninja \
+     -DCMAKE_TOOLCHAIN_FILE=cmake/macos_homebrew_gcc13_arm64_toolchain.cmake \
+     -DAFNI_HOMEBREW_GCC_VERSION=13 \
+     -DCOMP_COREBINARIES=ON \
+     -DCOMP_GUI=ON -DCOMP_PLUGINS=ON -DCOMP_SUMA=ON \
+     -DCOMP_TCSH=ON -DCOMP_PYTHON=ON
+   cmake --build build/macos-arm64 --parallel
+
+For a Homebrew LLVM build, replace the toolchain path with
+`cmake/macos_homebrew_llvm_arm64_toolchain.cmake`.  For AppleClang, set
+`CC=/usr/bin/clang` and `CXX=/usr/bin/clang++` before configuration.
+AppleClang needs Homebrew's `libomp` when building with `USE_OMP=ON`;
+otherwise configure with `-DUSE_OMP=OFF`.
+
+For detailed ARM guidance, dependency discovery, and distribution caveats, see
+`AFNI's macOS arm64 CMake notes
+<https://github.com/afni/afni/blob/master/cmake/README.macos-arm64.md>`__.
+
 
 .. _devdocs_cmake_basic_approach:
 
@@ -244,11 +280,16 @@ Adding new targets
 ------------------
 
 In brief if I want to add a new executable, my_new_binary, using my new
-source code in ``src/new_exec.c`` then I would add the cmake code:
+source code in ``src/my_new_binary.c`` then I would add the cmake code:
 
 ::
 
-   add_afni_executable(my_new_binary new_exec.c)
+   add_afni_executable(my_new_binary my_new_binary.c)
+
+For a simple program, use the same base name for the target and its main
+source file.  They can differ when an established executable name must be
+preserved, or when the target combines support or generated sources whose
+names describe their implementation rather than the program.
 
 Executables, libraries, or plugins are added by using the cmake
 functions ``add_afni_executable``, ``add_afni_library``, and
