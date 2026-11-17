@@ -316,6 +316,14 @@ data, check out ``3dsvm``, and see here:
     block design fMRI data.** Neuroimage. 26(2):317-29.
   | `<https://pubmed.ncbi.nlm.nih.gov/15907293/>`_
 
+If you are interested in real-time multivariate FMRI decoding with
+``3dsvm``, including applications to neurofeedback, brain-computer
+interfaces and adaptive task paradigms, please see:
+
+* | LaConte SM (2011). **Decoding fMRI brain states in real-time.**
+    NeuroImage 56(2):440-454. doi:10.1016/j.neuroimage.2010.06.052
+  | `<https://pubmed.ncbi.nlm.nih.gov/20600972/>`_
+
 To read about FMRI experimental designs and processing strategies,
 please see:
 
@@ -323,6 +331,25 @@ please see:
     processing strategies for fMRI studies involving overt verbal
     responses.** NeuroImage 23(3):1046-1058. 
   | `<https://pubmed.ncbi.nlm.nih.gov/15528105/>`_
+
+If you use Hilbert-transform estimation of FMRI response delays, such
+as with ``3ddelay`` or ``3dRetinoPhase``, please see:
+
+* | Saad ZS, DeYoe EA, Ropella KM (2003). **Estimation of FMRI
+    Response Delays.** NeuroImage 18(2):494-504.
+    doi:10.1016/S1053-8119(02)00024-1
+  | `<https://pubmed.ncbi.nlm.nih.gov/12595202/>`_
+
+If you are interested in the volumetric deep-learning approach to
+anatomical skullstripping associated with ``3dBrainTeaser``, please
+see this presentation of the framework and preliminary results:
+
+* | Narayana Swamy Y, McClure P, Reynolds RC, Pereira F, Taylor PA
+    (2024). **Skullstripping anatomical MRIs in AFNI using volumetric
+    deep learning network: Preliminary results.** Presented at the
+    30th Annual Meeting of the Organization for Human Brain Mapping.
+  | `OHBM 2024 skullstripping poster
+    <https://afni.nimh.nih.gov/pub/dist/OHBM2024/ohbm_2024_narayana_swamy_etal_vnet_skullstrip.pdf>`_
 
 .. _pub_cit_meth_suma:
 
@@ -656,6 +683,11 @@ causal inference (it contains both concepts and helpful guidelines):
     Neuro 4.
   | `<https://doi.org/10.52294/001c.124817>`_
 
+* | Zhong Y, Chen G, Taylor PA, Kang J (2025). **SIMBA: Scalable
+    Image Modeling using a Bayesian Approach, A Consistent Framework
+    for Including Spatial Dependencies in fMRI Studies.**
+    arXiv:2511.12825. Preprint.
+  | `<https://pubmed.ncbi.nlm.nih.gov/41479454/>`_
 
 If you use ``1dSVAR`` (Structured Vector AutoRegression), please refer
 to:
@@ -666,6 +698,13 @@ to:
     analysis.** Comput Biol Med 41(12):1142-55. doi:
     10.1016/j.compbiomed.2011.09.004.
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3223325/>`_
+
+* | Chen G, Glen DR, Stein JL, Meyer-Lindenberg AS, Saad ZS, Cox RW
+    (2007). **Model Validation and Automated Search in FMRI Path
+    Analysis: A Fast Open-Source Tool for Structural Equation
+    Modeling.** Human Brain Mapping Conference, 2007.
+  | `HBM 2007 poster
+    <https://sscc.nimh.nih.gov/sscc/posters/file.2007-06-07.0771819246>`_
 
 If you use clustering approaches such as 3dClustSim, ``3dttest++
 -Clustsim``, and/or the mixed autocorrelation function (ACF)
@@ -767,6 +806,15 @@ please refer to:
     839–848. doi: 10.1016/j.neuroimage.2008.09.037
   | `<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2649831/>`_
 
+If you use ``lesion_align`` for lesion-aware registration, or are
+interested in connectivity analysis of pediatric brains following
+surgical resection, please see this application:
+
+* | Maallo AMS, Granovetter MC, Freud E, Kastner S, Pinsk MA, Glen D,
+    Patterson C, Behrmann M (2020). **Large-scale resculpting of
+    cortical circuits in children after surgical resection.**
+    Sci Rep 10:21589. doi:10.1038/s41598-020-78394-z
+  | `<https://pubmed.ncbi.nlm.nih.gov/33299002/>`_
 
 .. _pub_cit_meth_diff:
 
